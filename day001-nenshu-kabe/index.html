@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>年収の壁ものさし 2026</title>
+<meta name="description" content="2026年10月の「106万円の壁」撤廃に対応。時給と週の勤務時間から、社会保険の加入判定・毎月の保険料・手取り・週19時間との差を計算する無料ツール。">
+<link rel="canonical" href="https://alternativestudio2021-collab.github.io/daily-launch-sites/day001-nenshu-kabe/">
+<meta property="og:type" content="website"><meta property="og:title" content="年収の壁ものさし 2026"><meta property="og:description" content="2026年10月の「106万円の壁」撤廃に対応。時給と週の勤務時間から、社会保険の加入判定・毎月の保険料・手取り・週19時間との差を計算する無料ツール。"><meta property="og:url" content="https://alternativestudio2021-collab.github.io/daily-launch-sites/day001-nenshu-kabe/"><meta name="twitter:card" content="summary">
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Zen+Kaku+Gothic+New:wght@700;900&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: 給与明細の方眼を下敷きにした1カラム。上に入力と「ものさし」、下に内訳と根拠 */
+:root{
+  --paper:#edf2ee; --sheet:#f8faf8; --ink:#1c2a25; --sub:#55665f; --rule:#c9d6cf;
+  --teal:#0d6a55; --teal-soft:#d6e8e0; --amber:#a86a12; --amber-soft:#f4e6cc; --strike:#8a958f;
+  --f-disp:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+  --f-body:"BIZ UDPGothic","Hiragino Sans","Noto Sans JP",system-ui,sans-serif;
+  --f-num:"IBM Plex Mono",ui-monospace,"SFMono-Regular",monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#121a17; --sheet:#18221e; --ink:#e3ece7; --sub:#9db0a7; --rule:#2d3c36;
+  --teal:#5cc2a4; --teal-soft:#1d3a31; --amber:#e3a64a; --amber-soft:#3a2e18; --strike:#6e7d76; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#121a17; --sheet:#18221e; --ink:#e3ece7; --sub:#9db0a7; --rule:#2d3c36;
+  --teal:#5cc2a4; --teal-soft:#1d3a31; --amber:#e3a64a; --amber-soft:#3a2e18; --strike:#6e7d76; color-scheme:dark}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.75;
+  background-image:linear-gradient(var(--rule) 1px,transparent 1px),linear-gradient(90deg,var(--rule) 1px,transparent 1px);
+  background-size:24px 24px;background-attachment:fixed}
+.wrap{max-width:880px;margin:0 auto;padding-inline:16px;padding-block:28px 56px;display:grid;gap:22px}
+header{display:grid;gap:6px}
+.eyebrow{font-size:12px;letter-spacing:.12em;color:var(--teal);font-weight:700}
+h1{font-family:var(--f-disp);font-weight:900;font-size:clamp(28px,6vw,44px);line-height:1.2;margin:0;text-wrap:balance}
+h1 s{color:var(--strike);text-decoration-thickness:3px}
+.lede{margin:0;color:var(--sub);max-width:62ch}
+h2{font-family:var(--f-disp);font-size:19px;margin:0;text-wrap:balance}
+.sheet{background:var(--sheet);border:1px solid var(--rule);border-radius:6px;padding:20px;display:grid;gap:16px;min-width:0}
+.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+.field{display:grid;gap:4px;min-width:0}
+.field label,.field .lbl{font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--sub)}
+input,select{font:inherit;font-family:var(--f-num);font-size:17px;color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:4px;padding:8px 10px;width:100%;box-sizing:border-box}
+select{font-family:var(--f-body);font-size:15px}
+input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.check{display:flex;gap:8px;align-items:center;font-size:14px}
+.check input{width:auto}
+.verdict{display:flex;flex-wrap:wrap;gap:8px}
+.pill{font-size:13px;font-weight:700;padding:3px 10px;border-radius:99px;border:1px solid var(--rule);background:var(--paper)}
+.pill.on{background:var(--teal-soft);border-color:var(--teal);color:var(--teal)}
+.pill.warn{background:var(--amber-soft);border-color:var(--amber);color:var(--amber)}
+.figures{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.fig{display:grid;gap:2px;border-top:2px solid var(--ink);padding-top:8px}
+.fig .k{font-size:12px;color:var(--sub);font-weight:700}
+.fig .v{font-family:var(--f-num);font-size:24px;font-weight:600;font-variant-numeric:tabular-nums}
+.fig .n{font-size:12px;color:var(--sub)}
+.ruler{overflow-x:auto}
+.ruler svg{display:block;width:100%;height:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+.tbl{overflow-x:auto}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--rule);vertical-align:top}
+td.num,th.num{text-align:right;font-family:var(--f-num);font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.total td{font-weight:700;border-bottom:2px solid var(--ink)}
+.note{font-size:13px;color:var(--sub);margin:0}
+.msg{margin:0;padding:12px 14px;border-left:4px solid var(--teal);background:var(--teal-soft);border-radius:0 4px 4px 0}
+.msg.warn{border-color:var(--amber);background:var(--amber-soft)}
+ul.walls{margin:0;padding-left:1.2em;display:grid;gap:8px}
+ul.walls b{font-family:var(--f-num)}
+.src{font-size:13px;display:grid;gap:4px;margin:0;padding-left:1.2em}
+a{color:var(--teal)}
+footer{font-size:12px;color:var(--sub)}
+@media (prefers-reduced-motion:no-preference){#dot{transition:transform .25s ease}}
+</style>
+</head><body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">2026年10月1日改正対応 ・ パート/アルバイト向け</div>
+  <h1><s>106万円</s>の壁がなくなった秋、あなたの手取りはどこにいる?</h1>
+  <p class="lede">時給と週の勤務時間を入れると、社会保険に入るかどうか、毎月いくら引かれるか、週19時間で働く場合と比べて手取りが増えるのか減るのかを、その場で計算します。</p>
+</header>
+
+<section class="sheet" aria-labelledby="h-in">
+  <h2 id="h-in">働き方を入れる</h2>
+  <div class="form">
+    <div class="field"><label for="wage">時給(円)</label><input id="wage" type="number" inputmode="numeric" min="500" step="10" value="1200"></div>
+    <div class="field"><label for="hours">週の所定労働時間(契約上)</label><input id="hours" type="number" inputmode="decimal" min="1" max="40" step="0.5" value="22"></div>
+    <div class="field"><label for="size">勤務先の規模</label>
+      <select id="size">
+        <option value="big" selected>従業員51人以上</option>
+        <option value="opt">50人以下・労使合意で任意加入している</option>
+        <option value="small">50人以下(上記以外)</option>
+      </select></div>
+    <div class="field"><label for="age">年齢</label>
+      <select id="age">
+        <option value="u19">18歳以下</option>
+        <option value="y19">19〜22歳</option>
+        <option value="a" selected>23〜39歳</option>
+        <option value="b">40〜59歳</option>
+        <option value="c">60〜64歳</option>
+        <option value="d">65歳以上</option>
+      </select></div>
+    <div class="field"><span class="lbl">その他</span>
+      <label class="check" for="student"><input id="student" type="checkbox"> 昼間の学生</label></div>
+  </div>
+  <p class="note">入力例として時給1,200円・週22時間を入れています。2026年度の最低賃金は全国加重平均1,177円です。</p>
+</section>
+
+<section class="sheet" aria-labelledby="h-out" aria-live="polite">
+  <h2 id="h-out">判定と手取り</h2>
+  <div class="verdict" id="pills"></div>
+  <div class="figures">
+    <div class="fig"><span class="k">年収の見込み(契約ベース)</span><span class="v" id="f-annual">—</span><span class="n" id="f-month">—</span></div>
+    <div class="fig"><span class="k">毎月引かれる社会保険料</span><span class="v" id="f-ins">—</span><span class="n" id="f-grade">—</span></div>
+    <div class="fig"><span class="k">社保を引いた手取り(月)</span><span class="v" id="f-net">—</span><span class="n">所得税・住民税は別</span></div>
+    <div class="fig"><span class="k">週19時間で働く場合との差(月)</span><span class="v" id="f-diff">—</span><span class="n" id="f-back">—</span></div>
+  </div>
+  <p class="msg" id="msg"></p>
+  <div class="ruler" aria-label="年収のものさし">
+    <svg id="ruler" viewBox="0 0 760 170" role="img" aria-labelledby="ruler-t"><title id="ruler-t">年収と主な壁の位置</title></svg>
+  </div>
+  <div class="tbl">
+    <table aria-label="毎月の社会保険料の内訳">
+      <thead><tr><th>項目</th><th class="num">料率(本人分)</th><th class="num">月額</th></tr></thead>
+      <tbody id="breakdown"></tbody>
+    </table>
+  </div>
+  <p class="note">健康保険は協会けんぽの全国平均料率で計算しています。加入先の健保組合や都道府県によって数百円単位でずれます。賞与・通勤手当・残業代は入れていません。</p>
+</section>
+
+<section class="sheet" aria-labelledby="h-walls">
+  <h2 id="h-walls">2026年秋の時点で残っている壁</h2>
+  <ul class="walls">
+    <li><b>106万円(月8.8万円)</b> ── 2026年10月1日に撤廃。従業員51人以上の勤務先なら、週20時間以上・学生でない、の条件だけで厚生年金と健康保険に入ります。</li>
+    <li><b>週20時間</b> ── 金額の代わりに残った線。契約上の所定労働時間で見ます。</li>
+    <li><b>130万円</b> ── 家族の社会保険の扶養に入れる上限。2026年4月から、残業代を含まない労働契約上の年収見込みで判定する方式に変わりました。19〜22歳は150万円、60歳以上は180万円が目安です。</li>
+    <li><b>136万円</b> ── 2026年分から、親などの税の扶養親族でいられる給与収入の上限(以前は123万円)。</li>
+    <li><b>178万円</b> ── 2026年分から、給与だけの人に所得税がかかり始める目安(以前は160万円)。今年の減税分は12月の年末調整でまとめて戻ります。</li>
+    <li><b>勤務先の規模</b> ── 50人以下の会社は、2027年10月に36人以上、2029年10月に21人以上、2032年10月に11人以上へと段階的に対象が広がります。</li>
+  </ul>
+  <p class="note">月収13万円未満で新たに加入する人には、勤務先が手続きすれば本人の保険料を最大3年間軽くする「保険料調整制度」が2026年10月から始まっています。このものさしでは軽減前の金額を表示しています。</p>
+</section>
+
+<section class="sheet" aria-labelledby="h-src">
+  <h2 id="h-src">根拠にした資料</h2>
+  <ul class="src">
+    <li><a href="https://www.tokyo-np.co.jp/article/518214" target="_blank" rel="noopener">「106万円の壁」撤廃 10月1日、厚生年金の収入要件(東京新聞)</a></li>
+    <li><a href="https://www.nenkin.go.jp/service/kounen/hokenryo/hokenryochosei/gaiyo.files/chirashi202610.pdf" target="_blank" rel="noopener">保険料調整制度のご案内(日本年金機構)</a></li>
+    <li><a href="https://www.kyoukaikenpo.or.jp/shibu/chiba/public_relations/002" target="_blank" rel="noopener">令和8年度 保険料率について(協会けんぽ)</a> ── 全国平均9.9%、介護1.62%、子ども・子育て支援金0.23%</li>
+    <li><a href="https://jsite.mhlw.go.jp/yamagata-roudoukyoku/koyouhoken-20260316.html" target="_blank" rel="noopener">令和8年度の雇用保険料率(厚生労働省 山形労働局)</a> ── 労働者負担0.5%</li>
+    <li><a href="https://hcm-jinjer.com/blog/jinji/ceiling-on-130/" target="_blank" rel="noopener">130万円の壁 2026年4月からの判定方法(jinjer)</a></li>
+    <li><a href="https://canon.jp/biz/solution/smb/tips/trend/nenmatsu2026" target="_blank" rel="noopener">2026年分 年末調整の改正点(キヤノン)</a></li>
+    <li><a href="https://kyuhu.jp/2026-10-kawaru-okane/" target="_blank" rel="noopener">2026年10月から変わるお金(給付金プラス)</a> ── 最低賃金・適用拡大の日程</li>
+  </ul>
+</section>
+
+<footer>
+  <p>このページは公開資料をもとにした概算ツールで、個別の税務・社会保険の相談に代わるものではありません。実際に加入するか、いくら引かれるかは、勤務先の人事・年金事務所・税務署で確認してください。情報は2026年10月13日時点。</p>
+</footer>
+</div>
+
+<script>
+(function(){
+  var HG=[[63000,58000],[73000,68000],[83000,78000],[93000,88000],[101000,98000],[107000,104000],[114000,110000],[122000,118000],[130000,126000],[138000,134000],[146000,142000],[155000,150000],[165000,160000],[175000,170000],[185000,180000],[195000,190000],[210000,200000],[230000,220000],[250000,240000],[270000,260000],[290000,280000],[310000,300000],[330000,320000],[350000,340000],[370000,360000],[395000,380000],[425000,410000]];
+  var R={health:.0495,care:.0081,kids:.00115,pension:.0915,emp:.005};
+  function grade(m){for(var i=0;i<HG.length;i++){if(m<HG[i][0])return HG[i][1];}return null;}
+  function yen(n){return Math.round(n).toLocaleString('ja-JP')+'円';}
+  function man(n){return (Math.round(n/1000)/10).toLocaleString('ja-JP')+'万円';}
+  var $=function(id){return document.getElementById(id);};
+
+  function calc(wage,hours,size,age,student){
+    var monthly=wage*hours*52/12, annual=monthly*12;
+    var full=hours>=30;
+    var enrolled=!student && hours>=20 && (full || size==='big' || size==='opt');
+    if(student && full) enrolled=true;
+    var emp=(hours>=20 && !student);
+    var rows=[], total=0;
+    if(enrolled){
+      var hg=grade(monthly), pg=hg===null?null:Math.max(88000,hg);
+      if(hg===null){return {monthly:monthly,annual:annual,enrolled:true,over:true};}
+      var h=hg*R.health; rows.push(['健康保険',R.health,h]); total+=h;
+      if(age==='b'||age==='c'){var c=hg*R.care; rows.push(['介護保険(40〜64歳)',R.care,c]); total+=c;}
+      var k=hg*R.kids; rows.push(['子ども・子育て支援金',R.kids,k]); total+=k;
+      var p=pg*R.pension; rows.push(['厚生年金',R.pension,p]); total+=p;
+      var gradeLabel='標準報酬月額 '+hg.toLocaleString('ja-JP')+'円'+(pg!==hg?'(年金は'+pg.toLocaleString('ja-JP')+'円)':'');
+    }
+    if(emp){var e=monthly*R.emp; rows.push(['雇用保険',R.emp,e]); total+=e;}
+    var depLimit=age==='y19'?1500000:(age==='c'||age==='d')?1800000:1300000;
+    return {monthly:monthly,annual:annual,enrolled:enrolled,emp:emp,rows:rows,total:total,net:monthly-total,gradeLabel:gradeLabel||'勤務先の社会保険には入らない',depLimit:depLimit,full:full};
+  }
+
+  function drawRuler(annual,depLimit){
+    var W=760,x0=30,x1=730,max=2000000;
+    var X=function(v){return x0+(Math.min(v,max)/max)*(x1-x0);};
+    var css=getComputedStyle(document.documentElement);
+    var ink=css.getPropertyValue('--ink').trim(),sub=css.getPropertyValue('--sub').trim(),teal=css.getPropertyValue('--teal').trim(),amber=css.getPropertyValue('--amber').trim(),strike=css.getPropertyValue('--strike').trim(),rule=css.getPropertyValue('--rule').trim();
+    var s='<title id="ruler-t">年収と主な壁の位置</title>';
+    s+='<line x1="'+x0+'" y1="106" x2="'+x1+'" y2="106" stroke="'+ink+'" stroke-width="2"/>';
+    for(var v=0;v<=max;v+=100000){var big=v%500000===0;s+='<line x1="'+X(v)+'" y1="106" x2="'+X(v)+'" y2="'+(big?120:113)+'" stroke="'+ink+'" stroke-width="1"/>';
+      if(big)s+='<text x="'+X(v)+'" y="140" text-anchor="middle" font-size="17" fill="'+sub+'" font-family="IBM Plex Mono,monospace">'+(v/10000)+'万</text>';}
+    var walls=[[1060000,'106万撤廃',strike,true],[depLimit,(depLimit/10000)+'万扶養',amber,false],[1360000,'136万税扶養',amber,false],[1780000,'178万所得税',amber,false]];
+    var lane=[20,44,20,44];
+    walls.forEach(function(w,i){var x=X(w[0]);
+      s+='<line x1="'+x+'" y1="'+(lane[i]+6)+'" x2="'+x+'" y2="106" stroke="'+w[2]+'" stroke-width="1.5" '+(w[3]?'stroke-dasharray="3 3"':'')+'/>';
+      s+='<text x="'+x+'" y="'+lane[i]+'" text-anchor="middle" font-size="17" fill="'+w[2]+'" font-family="BIZ UDPGothic,sans-serif" '+(w[3]?'text-decoration="line-through"':'')+'>'+w[1]+'</text>';});
+    var dx=X(annual);
+    s+='<g id="dot"><circle cx="'+dx+'" cy="106" r="10" fill="'+teal+'" stroke="'+ink+'" stroke-width="1.5"/>';
+    s+='<text x="'+Math.min(Math.max(dx,110),650)+'" y="166" text-anchor="middle" font-size="18" font-weight="700" fill="'+teal+'" font-family="BIZ UDPGothic,sans-serif">あなた '+man(annual)+(annual>max?' (目盛り外)':'')+'</text></g>';
+    $('ruler').innerHTML=s;
+  }
+
+  function run(){
+    var wage=+$('wage').value||0, hours=+$('hours').value||0, size=$('size').value, age=$('age').value, student=$('student').checked;
+    var r=calc(wage,hours,size,age,student);
+    var pills=[];
+    if(r.over){$('msg').textContent='月収が41万円を超える範囲はこのものさしの対象外です。';return;}
+    pills.push(['週'+hours+'時間',hours>=20?'on':'']);
+    pills.push([r.enrolled?'勤務先の社会保険に加入':'勤務先の社会保険には入らない',r.enrolled?'on':'']);
+    pills.push([r.emp?'雇用保険に加入':'雇用保険なし',r.emp?'on':'']);
+    if(!r.enrolled) pills.push([r.annual>=r.depLimit?'扶養(社保)の目安を超える':'扶養(社保)の目安内',r.annual>=r.depLimit?'warn':'']);
+    pills.push([r.annual>1780000?'所得税がかかる水準':'所得税の目安(178万)未満',r.annual>1780000?'warn':'']);
+    $('pills').innerHTML=pills.map(function(p){return '<span class="pill '+p[1]+'">'+p[0]+'</span>';}).join('');
+    $('f-annual').textContent=man(r.annual);
+    $('f-month').textContent='月 '+yen(r.monthly)+'(時給×週時間×52週÷12)';
+    $('f-ins').textContent=yen(r.total);
+    $('f-grade').textContent=r.gradeLabel;
+    $('f-net').textContent=yen(r.net);
+    var base=calc(wage,19,size,age,student);
+    var diff=r.net-base.net;
+    $('f-diff').textContent=(diff>=0?'+':'−')+yen(Math.abs(diff));
+    var back='';
+    if(r.enrolled && !base.enrolled){
+      var h=20; for(;h<=40;h+=0.5){var t=calc(wage,h,size,age,student); if(t.net>base.net) break;}
+      back=h<=40?'週'+h+'時間で週19時間の手取りを上回る':'週40時間でも上回らない';
+    } else back='週19時間の手取り '+yen(base.net);
+    $('f-back').textContent=back;
+    var rows=r.rows.map(function(x){return '<tr><td>'+x[0]+'</td><td class="num">'+(x[1]*100).toFixed(3).replace(/0+$/,'').replace(/\.$/,'')+'%</td><td class="num">'+yen(x[2])+'</td></tr>';}).join('');
+    rows+='<tr class="total"><td>合計</td><td></td><td class="num">'+yen(r.total)+'</td></tr>';
+    $('breakdown').innerHTML=rows;
+    var m=$('msg'); m.className='msg';
+    if(r.enrolled){
+      m.textContent='勤務先の厚生年金と健康保険に入る条件です。手取りは減りますが、将来の年金(老齢厚生年金)の上乗せと、病気やけがで休んだときの傷病手当金がつきます。'+(r.monthly<130000?'月収13万円未満なので、勤務先が保険料調整制度を使えば本人負担が軽くなる可能性があります。':'');
+    } else if(r.annual>=r.depLimit){
+      m.className='msg warn';
+      m.textContent='勤務先の社会保険に入らないまま、家族の扶養の目安('+man(r.depLimit)+')を超えます。この場合は国民年金と国民健康保険に自分で入るため、上の表にない負担が別にかかります。勤務時間を週20時間以上にして勤務先の保険に入るほうが負担が軽くなることが多いので、勤務先に確認してください。';
+    } else {
+      m.textContent='勤務先の社会保険には入らず、家族の扶養の目安内です。勤務先の規模が'+(size==='small'?'2027年10月以降に36人以上の対象に入ると、週20時間以上で加入対象になります。':'変わらなくても、週20時間以上になると加入対象です。');
+    }
+    drawRuler(r.annual,r.depLimit);
+  }
+  ['wage','hours','size','age','student'].forEach(function(id){$(id).addEventListener('input',run);$(id).addEventListener('change',run);});
+  if(window.matchMedia){try{window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',run);}catch(e){}}
+  new MutationObserver(run).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+  run();
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
