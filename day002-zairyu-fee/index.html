@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>在留手数料けいさん 2026</title>
+<meta name="description" content="2026年10月1日に改定された在留期間更新・在留資格変更・永住許可の手数料を、在留期間・窓口/オンライン・人数から計算。日本語・やさしい日本語・English・中文・Tiếng Việt対応の無料ツール。">
+<link rel="canonical" href="https://alternativestudio2021-collab.github.io/daily-launch-sites/day002-zairyu-fee/">
+<meta property="og:type" content="website"><meta property="og:title" content="在留手数料けいさん 2026 | Japan visa fee calculator"><meta property="og:description" content="2026年10月改定の在留期間更新・変更・永住の手数料を、期間・窓口/オンライン・人数から計算。5言語対応。"><meta property="og:url" content="https://alternativestudio2021-collab.github.io/daily-launch-sites/day002-zairyu-fee/"><meta property="og:locale" content="ja_JP"><meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@500;800&family=Noto+Sans+JP:wght@400;700&family=Space+Mono:wght@400;700&display=swap">
+<style>
+/* Layout: 在留カードと収入印紙をモチーフにした1カラム。上に人ごとの「申請カード」、右下に合計の印紙、下に根拠と注意 */
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+:root{
+  --bg:#eef0f6; --card:#fbfbfe; --ink:#161a33; --sub:#565c7a; --line:#cfd3e4;
+  --indigo:#27307a; --indigo-soft:#dfe2f4; --stamp:#c2410c; --stamp-soft:#fbe5d8; --ok:#1f6f50;
+  --f-disp:"M PLUS 1","Hiragino Sans","Noto Sans JP",sans-serif;
+  --f-body:"Noto Sans JP","Hiragino Sans","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  --f-num:"Space Mono",ui-monospace,"SFMono-Regular",monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#10132a; --card:#171b36; --ink:#e6e8f6; --sub:#a2a7c6; --line:#2c3159;
+  --indigo:#9aa5f5; --indigo-soft:#232a5c; --stamp:#f08a54; --stamp-soft:#3b2216; --ok:#6fd1a6; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#10132a; --card:#171b36; --ink:#e6e8f6; --sub:#a2a7c6; --line:#2c3159;
+  --indigo:#9aa5f5; --indigo-soft:#232a5c; --stamp:#f08a54; --stamp-soft:#3b2216; --ok:#6fd1a6; color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.75;
+  background-image:repeating-linear-gradient(135deg,transparent 0 22px,color-mix(in srgb,var(--line) 45%,transparent) 22px 23px)}
+.wrap{max-width:860px;margin:0 auto;padding-inline:16px;padding-block:20px 64px;display:grid;gap:22px}
+.langs{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}
+.langs button{font:inherit;font-size:13px;border:1px solid var(--line);background:var(--card);color:var(--sub);border-radius:999px;padding:4px 12px;cursor:pointer}
+.langs button[aria-pressed="true"]{background:var(--indigo);border-color:var(--indigo);color:var(--card)}
+header{display:grid;gap:8px}
+.eyebrow{font-family:var(--f-num);font-size:12px;letter-spacing:.14em;color:var(--stamp);font-weight:700}
+h1{font-family:var(--f-disp);font-weight:800;font-size:clamp(28px,6vw,46px);line-height:1.2;margin:0;text-wrap:balance}
+.lede{margin:0;color:var(--sub);max-width:64ch}
+h2{font-family:var(--f-disp);font-weight:800;font-size:19px;margin:0}
+.people{display:grid;gap:14px}
+.pcard{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--indigo);border-radius:8px;padding:16px;display:grid;gap:12px;min-width:0}
+.phead{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.pname{font-family:var(--f-num);font-weight:700;color:var(--indigo);letter-spacing:.08em}
+.rm{font:inherit;font-size:13px;border:0;background:none;color:var(--sub);cursor:pointer;text-decoration:underline}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.field{display:grid;gap:4px;min-width:0}
+.field label{font-size:12px;font-weight:700;color:var(--sub)}
+select{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:8px 10px;width:100%}
+select:focus-visible,button:focus-visible{outline:2px solid var(--stamp);outline-offset:2px}
+.pout{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;border-top:1px dashed var(--line);padding-top:10px}
+.yen{font-family:var(--f-num);font-weight:700;font-size:26px}
+.small{font-size:13px;color:var(--sub)}
+.old s{color:var(--sub)}
+.add{justify-self:start;font:inherit;font-weight:700;border:1px dashed var(--indigo);background:transparent;color:var(--indigo);border-radius:8px;padding:8px 16px;cursor:pointer}
+.total{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:18px}
+.stampbox{position:relative;border:3px double var(--stamp);color:var(--stamp);border-radius:4px;padding:10px 16px;text-align:center;transform:rotate(-2deg);background:var(--stamp-soft)}
+.stampbox .yen{font-size:clamp(26px,6vw,36px);color:var(--stamp)}
+.stampbox .small{color:var(--stamp)}
+.tbl-wrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:480px;font-size:14px}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);text-align:left}
+td.n,th.n{text-align:right;font-family:var(--f-num)}
+thead th{font-size:12px;color:var(--sub)}
+tr.hl td{background:var(--indigo-soft)}
+.box{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px 18px;display:grid;gap:10px}
+.box ul{margin:0;padding-left:1.2em;display:grid;gap:6px}
+.warn{border-color:var(--stamp);background:var(--stamp-soft)}
+a{color:var(--indigo)}
+.src{font-size:13px;color:var(--sub)}
+.src ol{margin:0;padding-left:1.4em;display:grid;gap:4px;word-break:break-all}
+footer{font-size:12px;color:var(--sub);display:grid;gap:6px}
+@media (max-width:520px){.total{grid-template-columns:1fr}.stampbox{justify-self:start}}
+</style>
+</head><body>
+<div class="wrap">
+  <nav class="langs" aria-label="Language">
+    <button type="button" data-lang="ja">日本語</button>
+    <button type="button" data-lang="easy">やさしい にほんご</button>
+    <button type="button" data-lang="en">English</button>
+    <button type="button" data-lang="zh">中文</button>
+    <button type="button" data-lang="vi">Tiếng Việt</button>
+  </nav>
+
+  <header>
+    <div class="eyebrow" data-i="eyebrow">FROM 2026.10.01</div>
+    <h1 data-i="title">在留手数料けいさん 2026</h1>
+    <p class="lede" data-i="lede"></p>
+  </header>
+
+  <section class="people" id="people" aria-live="polite"></section>
+  <button type="button" class="add" id="add" data-i="add"></button>
+
+  <section class="total">
+    <div style="display:grid;gap:4px">
+      <h2 data-i="totalH"></h2>
+      <div class="small" id="totalNote"></div>
+    </div>
+    <div class="stampbox"><div class="small" data-i="stampLbl"></div><div class="yen" id="total">0</div></div>
+  </section>
+
+  <section style="display:grid;gap:10px">
+    <h2 data-i="tableH"></h2>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th data-i="thPeriod"></th><th class="n" data-i="thCounter"></th><th class="n" data-i="thOnline"></th><th class="n" data-i="thYear"></th></tr></thead>
+      <tbody id="tbody"></tbody>
+    </table></div>
+    <p class="small" data-i="tableNote"></p>
+  </section>
+
+  <section class="box">
+    <h2 data-i="pointsH"></h2>
+    <ul id="points"></ul>
+  </section>
+
+  <section class="box warn">
+    <h2 data-i="scamH"></h2>
+    <p style="margin:0" data-i="scam"></p>
+  </section>
+
+  <section class="src">
+    <h2 style="font-size:15px" data-i="srcH"></h2>
+    <ol>
+      <li><a href="https://www.moj.go.jp/isa/11_00107.html" rel="noopener">出入国在留管理庁「在留手続等に係る手数料の改定について」</a></li>
+      <li><a href="https://www.moj.go.jp/isa/applications/procedures/16-3.html" rel="noopener">出入国在留管理庁「在留期間更新許可申請」</a></li>
+      <li><a href="https://www.nikkei.com/article/DGXZQOUA246820U6A820C2000000/" rel="noopener">日本経済新聞「永住許可20万円、在留資格更新は最大7万5000円 政府が手数料上げ」</a></li>
+      <li><a href="https://kumanichi.com/articles/2009630" rel="noopener">熊本日日新聞「引き上げの新在留手数料を公表 1年は3万3千円、期間で変動」</a></li>
+    </ol>
+  </section>
+
+  <footer>
+    <p style="margin:0" data-i="disclaimer"></p>
+    <p style="margin:0"><a href="../" data-i="home"></a> ・ <span data-i="updated"></span></p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  // 2026-10-01 以降に受付した申請。窓口=収入印紙、オンライン=コンビニ・銀行決済(別途決済手数料の場合あり)
+  var TIERS=[
+    {k:'m3', c:10000,o:10000,y:0.25},
+    {k:'m6', c:18000,o:15000,y:0.5},
+    {k:'lt1',c:25000,o:21000,y:null},
+    {k:'y1', c:33000,o:27000,y:1},
+    {k:'y2', c:48000,o:42000,y:null},
+    {k:'y3', c:64000,o:56000,y:3},
+    {k:'y5', c:75000,o:65000,y:5}
+  ];
+  var OLD={c:6000,o:5500,pr:10000}, PR=200000;
+
+  var T={
+  ja:{eyebrow:'2026年10月1日 受付分から',title:'在留手数料けいさん 2026',
+    lede:'在留期間更新・在留資格変更の手数料は、一律6,000円から「許可される在留期間」で決まる7段階(1万円〜7万5千円)に、永住許可は1万円から20万円に変わりました。家族や社員の人数分まとめて計算できます。',
+    person:'申請',rm:'削除',proc:'手続き',procU:'在留期間の更新',procC:'在留資格の変更',procP:'永住許可',
+    period:'許可される在留期間',channel:'申請方法',ch_c:'窓口(収入印紙)',ch_o:'オンライン(コンビニ・銀行決済)',
+    perYear:'1年あたり',oldWas:'改定前',add:'+ 人を追加',totalH:'合計',stampLbl:'納付額の目安',
+    totalNote:function(n,d){return n+'件の合計。改定前より '+d+' 円増えます。'},
+    tableH:'更新・変更の手数料(2026年10月1日〜)',thPeriod:'許可される在留期間',thCounter:'窓口',thOnline:'オンライン',thYear:'1年あたり(窓口)',
+    tableNote:'永住許可は200,000円(改定前10,000円)。オンラインは別途決済手数料がかかる場合があります。',
+    p:{m3:'3か月以下',m6:'3か月超〜6か月以下',lt1:'6か月超〜1年未満',y1:'1年',y2:'1年超〜3年未満',y3:'3年以上〜5年未満',y5:'5年以上'},
+    pointsH:'申請前に知っておくこと',
+    points:['金額は「申請した期間」ではなく「許可された期間」で決まります。3年を希望して1年で許可されれば、1年の33,000円です。',
+      '基準は申請の受付日です。2026年9月30日までに受付された申請は、許可が10月以降でも改定前の6,000円(オンライン5,500円)です。',
+      '手数料は許可のときに払います。窓口は収入印紙、オンライン申請は2026年10月からコンビニ決済か銀行決済のみで、クレジットカードやQRコード決済は使えません。',
+      '長い期間で許可されるほど1年あたりの負担は軽くなります(1年=33,000円、3年=約21,300円/年、5年=15,000円/年)。',
+      '家族も1人ずつ手数料がかかります。会社が負担するかどうかは雇用契約や社内規程によります。'],
+    scamH:'支払いを求めるメールに注意',
+    scam:'オンライン申請の決済案内は、出入国在留管理庁が指定した決済代行事業者のメールアドレスからだけ届きます。それ以外のメールやSMSで支払いを求められたら、払わずに入管庁の公式サイトで確認してください。',
+    srcH:'出典',disclaimer:'公表資料をもとにした目安の計算です。実際の金額と許可される期間は出入国在留管理庁の判断によります。個別の相談は地方出入国在留管理局か行政書士へ。',
+    home:'毎日ひとつの小さな道具箱',updated:'2026年10月14日 公開'},
+  easy:{eyebrow:'2026ねん 10がつ 1にち から',title:'ビザの おかね けいさん 2026',
+    lede:'ビザ(在留期間)を のばす とき、ビザを かえる ときの おかねが かわりました。まえは 6,000えん でした。いまは 10,000えん〜75,000えん です。永住(えいじゅう)は 200,000えん です。かぞくの ぶんも いっしょに けいさん できます。',
+    person:'ひと',rm:'けす',proc:'てつづき',procU:'ビザを のばす(更新)',procC:'ビザを かえる(変更)',procP:'永住(えいじゅう)',
+    period:'もらえる ビザの ながさ',channel:'どこで もうしこむ',ch_c:'まどぐち(収入印紙)',ch_o:'オンライン(コンビニ・ぎんこう)',
+    perYear:'1ねん あたり',oldWas:'まえ',add:'+ ひとを ふやす',totalH:'ぜんぶで',stampLbl:'はらう おかね',
+    totalNote:function(n,d){return n+'にん ぶん。まえより '+d+' えん たかい です。'},
+    tableH:'ビザを のばす・かえる おかね(2026ねん 10がつ 1にち から)',thPeriod:'ビザの ながさ',thCounter:'まどぐち',thOnline:'オンライン',thYear:'1ねん あたり',
+    tableNote:'永住(えいじゅう)は 200,000えん です(まえは 10,000えん)。オンラインは べつに てすうりょうが かかる ことが あります。',
+    p:{m3:'3かげつ まで',m6:'3かげつ より ながく 6かげつ まで',lt1:'6かげつ より ながく 1ねん より みじかい',y1:'1ねん',y2:'1ねん より ながく 3ねん より みじかい',y3:'3ねん〜5ねん より みじかい',y5:'5ねん いじょう'},
+    pointsH:'たいせつな こと',
+    points:['おかねは「もらえた ビザの ながさ」で きまります。3ねんを たのんで 1ねんに なったら、33,000えん です。',
+      '2026ねん 9がつ 30にち までに うけつけ された ひとは、まえの 6,000えん です。',
+      'おかねは きょかの とき はらいます。まどぐちは 収入印紙(しゅうにゅういんし)です。オンラインは コンビニか ぎんこう です。クレジットカードは つかえません。',
+      'ながい ビザほど 1ねん あたりは やすく なります。',
+      'かぞくも 1にん ずつ おかねが かかります。'],
+    scamH:'メールに ちゅうい',
+    scam:'おかねを はらって という メールは、入管(にゅうかん)が きめた 会社からだけ きます。ほかの メールや SMS では はらわないで ください。入管の ホームページで たしかめて ください。',
+    srcH:'しりょう',disclaimer:'これは めやす です。ほんとうの おかねと ビザの ながさは 入管(にゅうかん)が きめます。わからない ときは 入管か 行政書士(ぎょうせいしょし)に きいて ください。',
+    home:'毎日ひとつの小さな道具箱',updated:'2026ねん 10がつ 14にち'},
+  en:{eyebrow:'APPLICATIONS FROM 1 OCT 2026',title:'Japan Visa Fee Calculator 2026',
+    lede:'Japan raised its residence fees on 1 October 2026. Extending your period of stay or changing your status now costs ¥10,000–¥75,000 depending on the period granted (it was a flat ¥6,000). Permanent residence went from ¥10,000 to ¥200,000. Add family members or employees to see the total.',
+    person:'Applicant',rm:'Remove',proc:'Procedure',procU:'Extension of period of stay',procC:'Change of status',procP:'Permanent residence',
+    period:'Period of stay granted',channel:'How you apply',ch_c:'At the counter (revenue stamp)',ch_o:'Online (convenience store / bank)',
+    perYear:'Per year',oldWas:'Before',add:'+ Add a person',totalH:'Total',stampLbl:'Estimated fees',
+    totalNote:function(n,d){return 'Total for '+n+' application(s): ¥'+d+' more than before the change.'},
+    tableH:'Extension / change fees (from 1 Oct 2026)',thPeriod:'Period granted',thCounter:'Counter',thOnline:'Online',thYear:'Per year (counter)',
+    tableNote:'Permanent residence: ¥200,000 (previously ¥10,000). Online payment may add a processing fee.',
+    p:{m3:'3 months or less',m6:'Over 3 up to 6 months',lt1:'Over 6 months, under 1 year',y1:'1 year',y2:'Over 1, under 3 years',y3:'3 to under 5 years',y5:'5 years or more'},
+    pointsH:'Before you apply',
+    points:['The fee depends on the period you are granted, not the one you ask for. Ask for 3 years, get 1 year, and you pay ¥33,000.',
+      'What counts is the date your application was accepted. Applications accepted by 30 Sep 2026 pay the old ¥6,000 (¥5,500 online), even if approved later.',
+      'You pay when the permit is granted: revenue stamps at the counter; for online applications from Oct 2026, convenience-store or bank payment only (no credit card or QR payment).',
+      'Longer periods cost less per year: 1 year = ¥33,000, 3 years ≈ ¥21,300/yr, 5 years = ¥15,000/yr.',
+      'Each family member pays their own fee. Whether your employer covers it depends on your contract.'],
+    scamH:'Watch out for payment emails',
+    scam:'Payment instructions for online applications come only from the email address of the payment agent designated by the Immigration Services Agency. If any other email or SMS asks you to pay, do not pay. Check the official ISA website first.',
+    srcH:'Sources (Japanese)',disclaimer:'Estimates based on published materials. The Immigration Services Agency decides the actual fee and period. For individual cases, ask your regional immigration bureau or a licensed gyoseishoshi.',
+    home:'All tools (Japanese)',updated:'Published 14 Oct 2026'},
+  zh:{eyebrow:'2026年10月1日起受理的申请',title:'日本在留手续费计算 2026',
+    lede:'自2026年10月1日起,在留期间更新和在留资格变更的手续费从统一的6,000日元改为按“获准的在留期间”分7档(1万~7.5万日元),永住许可从1万日元涨至20万日元。可按家人或员工人数合计计算。',
+    person:'申请',rm:'删除',proc:'手续',procU:'在留期间更新',procC:'在留资格变更',procP:'永住许可',
+    period:'获准的在留期间',channel:'申请方式',ch_c:'窗口(收入印纸)',ch_o:'网上申请(便利店・银行支付)',
+    perYear:'每年',oldWas:'改定前',add:'+ 添加人员',totalH:'合计',stampLbl:'预计费用',
+    totalNote:function(n,d){return n+'件合计,比改定前多 '+d+' 日元。'},
+    tableH:'更新・变更手续费(2026年10月1日起)',thPeriod:'获准的在留期间',thCounter:'窗口',thOnline:'网上',thYear:'每年(窗口)',
+    tableNote:'永住许可 200,000日元(改定前10,000日元)。网上支付可能另收手续费。',
+    p:{m3:'3个月以下',m6:'超过3个月~6个月以下',lt1:'超过6个月~不满1年',y1:'1年',y2:'超过1年~不满3年',y3:'3年以上~不满5年',y5:'5年以上'},
+    pointsH:'申请前须知',
+    points:['金额取决于“获准的期间”,而不是“申请的期间”。申请3年但获准1年,则支付1年的33,000日元。',
+      '以受理日为准。2026年9月30日前受理的申请,即使10月以后获批,也按旧标准6,000日元(网上5,500日元)。',
+      '费用在获准时支付。窗口用收入印纸;网上申请自2026年10月起仅限便利店或银行支付,不能用信用卡或二维码支付。',
+      '获准期间越长,每年的负担越低(1年=33,000日元,3年≈每年21,300日元,5年=每年15,000日元)。',
+      '家人每人都需要支付。公司是否承担取决于劳动合同和公司规定。'],
+    scamH:'小心要求付款的邮件',
+    scam:'网上申请的付款通知只会来自出入国在留管理厅指定的支付代理机构的邮箱。如果收到其他邮件或短信要求付款,请不要支付,先到出入国在留管理厅官网确认。',
+    srcH:'资料来源(日文)',disclaimer:'本页根据公开资料估算。实际金额和获准期间由出入国在留管理厅决定。具体情况请咨询地方出入国在留管理局或行政书士。',
+    home:'全部工具(日文)',updated:'2026年10月14日发布'},
+  vi:{eyebrow:'HỒ SƠ NỘP TỪ 01/10/2026',title:'Tính lệ phí lưu trú Nhật Bản 2026',
+    lede:'Từ ngày 1/10/2026, lệ phí gia hạn thời gian lưu trú và thay đổi tư cách lưu trú không còn đồng giá 6.000 yên mà chia 7 mức (10.000–75.000 yên) theo thời hạn được cấp. Vĩnh trú tăng từ 10.000 yên lên 200.000 yên. Có thể cộng tổng cho cả gia đình hoặc nhân viên.',
+    person:'Hồ sơ',rm:'Xóa',proc:'Thủ tục',procU:'Gia hạn thời gian lưu trú',procC:'Thay đổi tư cách lưu trú',procP:'Vĩnh trú',
+    period:'Thời hạn được cấp',channel:'Cách nộp',ch_c:'Tại quầy (tem thu nhập)',ch_o:'Trực tuyến (cửa hàng tiện lợi / ngân hàng)',
+    perYear:'Mỗi năm',oldWas:'Trước đây',add:'+ Thêm người',totalH:'Tổng cộng',stampLbl:'Lệ phí dự kiến',
+    totalNote:function(n,d){return 'Tổng '+n+' hồ sơ: tăng '+d+' yên so với trước.'},
+    tableH:'Lệ phí gia hạn / thay đổi (từ 01/10/2026)',thPeriod:'Thời hạn được cấp',thCounter:'Tại quầy',thOnline:'Trực tuyến',thYear:'Mỗi năm (tại quầy)',
+    tableNote:'Vĩnh trú: 200.000 yên (trước đây 10.000 yên). Thanh toán trực tuyến có thể mất thêm phí xử lý.',
+    p:{m3:'Từ 3 tháng trở xuống',m6:'Trên 3 tháng đến 6 tháng',lt1:'Trên 6 tháng, dưới 1 năm',y1:'1 năm',y2:'Trên 1 năm, dưới 3 năm',y3:'Từ 3 năm đến dưới 5 năm',y5:'Từ 5 năm trở lên'},
+    pointsH:'Cần biết trước khi nộp',
+    points:['Lệ phí tính theo thời hạn được cấp, không phải thời hạn bạn xin. Xin 3 năm nhưng được 1 năm thì trả 33.000 yên.',
+      'Căn cứ là ngày hồ sơ được tiếp nhận. Hồ sơ tiếp nhận đến 30/9/2026 vẫn trả mức cũ 6.000 yên (trực tuyến 5.500 yên).',
+      'Lệ phí trả khi được cấp phép: tại quầy bằng tem thu nhập; hồ sơ trực tuyến từ 10/2026 chỉ trả qua cửa hàng tiện lợi hoặc ngân hàng (không dùng thẻ tín dụng hay QR).',
+      'Thời hạn càng dài, chi phí mỗi năm càng thấp (1 năm = 33.000 yên, 3 năm ≈ 21.300 yên/năm, 5 năm = 15.000 yên/năm).',
+      'Mỗi người trong gia đình đều phải trả. Công ty có chi trả hay không tùy hợp đồng lao động.'],
+    scamH:'Cẩn thận email đòi thanh toán',
+    scam:'Hướng dẫn thanh toán hồ sơ trực tuyến chỉ được gửi từ email của đơn vị thanh toán do Cục Quản lý Xuất nhập cảnh chỉ định. Nếu email hoặc SMS khác yêu cầu trả tiền, đừng trả. Hãy kiểm tra trên trang chính thức của Cục trước.',
+    srcH:'Nguồn (tiếng Nhật)',disclaimer:'Đây là ước tính dựa trên tài liệu công bố. Lệ phí và thời hạn thực tế do Cục Quản lý Xuất nhập cảnh quyết định. Trường hợp cụ thể, hãy hỏi Cục XNC khu vực hoặc gyoseishoshi.',
+    home:'Tất cả công cụ (tiếng Nhật)',updated:'Đăng ngày 14/10/2026'}
+  };
+  var HTMLLANG={ja:'ja',easy:'ja',en:'en',zh:'zh-Hans',vi:'vi'};
+  var lang='ja', people=[{proc:'u',tier:'y1',ch:'c'}];
+  try{var q=new URLSearchParams(location.search).get('lang');if(q&&T[q])lang=q;else{var s=localStorage.getItem('zf-lang');if(s&&T[s])lang=s;}}catch(e){}
+
+  function yen(n){return Math.round(n).toLocaleString('ja-JP');}
+  function fee(p){
+    if(p.proc==='p') return {now:PR,old:OLD.pr,y:null};
+    var t=TIERS.filter(function(x){return x.k===p.tier})[0];
+    var now=p.ch==='o'?t.o:t.c;
+    return {now:now,old:p.ch==='o'?OLD.o:OLD.c,y:t.y?now/t.y:null};
+  }
+  function opt(v,label,sel){return '<option value="'+v+'"'+(v===sel?' selected':'')+'>'+label+'</option>';}
+
+  function render(){
+    var L=T[lang];
+    document.documentElement.lang=HTMLLANG[lang];
+    document.querySelectorAll('[data-i]').forEach(function(el){var v=L[el.getAttribute('data-i')];if(typeof v==='string')el.textContent=v;});
+    document.querySelectorAll('.langs button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.lang===lang?'true':'false');});
+    document.getElementById('points').innerHTML=L.points.map(function(x){var li=document.createElement('li');li.textContent=x;return li.outerHTML;}).join('');
+    document.getElementById('tbody').innerHTML=TIERS.map(function(t){
+      return '<tr><td>'+L.p[t.k]+'</td><td class="n">'+yen(t.c)+'</td><td class="n">'+yen(t.o)+'</td><td class="n">'+(t.y?yen(t.c/t.y):'—')+'</td></tr>';
+    }).join('');
+
+    var box=document.getElementById('people'), sum=0, sumOld=0;
+    box.innerHTML='';
+    people.forEach(function(p,i){
+      var f=fee(p); sum+=f.now; sumOld+=f.old;
+      var c=document.createElement('article'); c.className='pcard';
+      var tierSel=TIERS.map(function(t){return opt(t.k,L.p[t.k],p.tier)}).join('');
+      c.innerHTML='<div class="phead"><span class="pname">'+L.person+' #'+(i+1)+'</span>'+(people.length>1?'<button type="button" class="rm">'+L.rm+'</button>':'')+'</div>'+
+        '<div class="grid">'+
+        '<div class="field"><label for="pr'+i+'">'+L.proc+'</label><select id="pr'+i+'" data-k="proc">'+opt('u',L.procU,p.proc)+opt('c',L.procC,p.proc)+opt('p',L.procP,p.proc)+'</select></div>'+
+        '<div class="field"'+(p.proc==='p'?' hidden':'')+'><label for="ti'+i+'">'+L.period+'</label><select id="ti'+i+'" data-k="tier">'+tierSel+'</select></div>'+
+        '<div class="field"'+(p.proc==='p'?' hidden':'')+'><label for="ch'+i+'">'+L.channel+'</label><select id="ch'+i+'" data-k="ch">'+opt('c',L.ch_c,p.ch)+opt('o',L.ch_o,p.ch)+'</select></div>'+
+        '</div>'+
+        '<div class="pout"><span class="yen">¥'+yen(f.now)+'</span>'+
+        (f.y&&p.tier!=='y1'?'<span class="small">'+L.perYear+' ¥'+yen(f.y)+'</span>':'')+
+        '<span class="small old">'+L.oldWas+' <s>¥'+yen(f.old)+'</s></span></div>';
+      c.querySelectorAll('select').forEach(function(s){s.addEventListener('change',function(){p[s.dataset.k]=s.value;render();});});
+      var rm=c.querySelector('.rm'); if(rm) rm.addEventListener('click',function(){people.splice(i,1);render();});
+      box.appendChild(c);
+    });
+    document.getElementById('total').textContent='¥'+yen(sum);
+    document.getElementById('totalNote').textContent=L.totalNote(people.length,yen(sum-sumOld));
+  }
+  document.getElementById('add').addEventListener('click',function(){
+    var last=people[people.length-1]||{proc:'u',tier:'y1',ch:'c'};
+    people.push({proc:last.proc,tier:last.tier,ch:last.ch});render();
+  });
+  document.querySelectorAll('.langs button').forEach(function(b){b.addEventListener('click',function(){
+    lang=b.dataset.lang;try{localStorage.setItem('zf-lang',lang)}catch(e){} render();
+  });});
+  render();
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
