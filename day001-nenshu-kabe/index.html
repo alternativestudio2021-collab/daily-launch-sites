@@ -67,6 +67,9 @@ ul.walls b{font-family:var(--f-num)}
 a{color:var(--teal)}
 .next{display:grid;gap:12px}
 .next .pr{justify-self:start;font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--sub);border:1px solid var(--rule);border-radius:3px;padding:0 6px}
+.faq{margin:0;display:grid;gap:4px}
+.faq dt{font-weight:700;margin-top:10px}
+.faq dd{margin:0;font-size:14px;line-height:1.9;color:var(--sub)}
 .share{margin:0;font-size:15px;line-height:2}
 .share a{color:var(--teal);font-weight:700}
 .offers{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
@@ -78,6 +81,7 @@ a{color:var(--teal)}
 footer{font-size:12px;color:var(--sub)}
 @media (prefers-reduced-motion:no-preference){#dot{transition:transform .25s ease}}
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "106万円の壁はいつなくなりましたか?", "acceptedAnswer": {"@type": "Answer", "text": "2026年10月1日です。月8.8万円の賃金要件がなくなり、従業員51人以上の勤務先では、週の所定労働時間が20時間以上で学生でなければ、厚生年金と健康保険に加入します。"}}, {"@type": "Question", "name": "契約は週20時間未満ですが、残業で20時間を超えることがあります。加入しますか?", "acceptedAnswer": {"@type": "Answer", "text": "実際の労働時間が2か月続けて週20時間以上になり、その後も続く見込みなら、3か月目から加入対象になります。たまに超える程度なら、契約上の時間で判定されます。"}}, {"@type": "Question", "name": "130万円の扶養の判定に残業代は入りますか?", "acceptedAnswer": {"@type": "Answer", "text": "2026年4月から、労働契約に書かれた時給・労働時間をもとにした年収見込みで判定する方式になり、契約にない残業代は含めません。19〜22歳は150万円、60歳以上は180万円が目安です。"}}, {"@type": "Question", "name": "178万円の壁とは何ですか?", "acceptedAnswer": {"@type": "Answer", "text": "2026年分から、給与だけの人に所得税がかかり始める年収の目安です(以前は160万円)。今年すでに引かれた所得税の差額は、12月の年末調整で戻ります。"}}, {"@type": "Question", "name": "新しく社会保険に入ると、保険料はすぐに全額かかりますか?", "acceptedAnswer": {"@type": "Answer", "text": "月収13万円未満で新たに加入する人は、勤務先が手続きすれば本人負担を最大3年間軽くできる「保険料調整制度」が2026年10月から始まっています。このものさしの金額は軽減前です。"}}]}</script>
 </head><body>
 <div class="wrap">
 <header>
@@ -168,6 +172,17 @@ footer{font-size:12px;color:var(--sub)}
   <p class="note">月収13万円未満で新たに加入する人には、勤務先が手続きすれば本人の保険料を最大3年間軽くする「保険料調整制度」が2026年10月から始まっています。このものさしでは軽減前の金額を表示しています。</p>
 </section>
 
+<section class="sheet" aria-labelledby="h-faq">
+  <h2 id="h-faq">よくある質問</h2>
+  <dl class="faq">
+    <dt>106万円の壁はいつなくなりましたか?</dt><dd>2026年10月1日です。月8.8万円の賃金要件がなくなり、従業員51人以上の勤務先では、週の所定労働時間が20時間以上で学生でなければ、厚生年金と健康保険に加入します。</dd>
+    <dt>契約は週20時間未満ですが、残業で20時間を超えることがあります。加入しますか?</dt><dd>実際の労働時間が2か月続けて週20時間以上になり、その後も続く見込みなら、3か月目から加入対象になります。たまに超える程度なら、契約上の時間で判定されます。</dd>
+    <dt>130万円の扶養の判定に残業代は入りますか?</dt><dd>2026年4月から、労働契約に書かれた時給・労働時間をもとにした年収見込みで判定する方式になり、契約にない残業代は含めません。19〜22歳は150万円、60歳以上は180万円が目安です。</dd>
+    <dt>178万円の壁とは何ですか?</dt><dd>2026年分から、給与だけの人に所得税がかかり始める年収の目安です(以前は160万円)。今年すでに引かれた所得税の差額は、12月の年末調整で戻ります。</dd>
+    <dt>新しく社会保険に入ると、保険料はすぐに全額かかりますか?</dt><dd>月収13万円未満で新たに加入する人は、勤務先が手続きすれば本人負担を最大3年間軽くできる「保険料調整制度」が2026年10月から始まっています。このものさしの金額は軽減前です。</dd>
+    </dl>
+</section>
+
 <section class="sheet" aria-labelledby="h-src">
   <h2 id="h-src">根拠にした資料</h2>
   <ul class="src">
@@ -189,7 +204,7 @@ footer{font-size:12px;color:var(--sub)}
 </section>
 
 <footer>
-  <p>このページは公開資料をもとにした概算ツールで、個別の税務・社会保険の相談に代わるものではありません。実際に加入するか、いくら引かれるかは、勤務先の人事・年金事務所・税務署で確認してください。情報は2026年10月13日時点。</p>
+  <p>このページは公開資料をもとにした概算ツールで、個別の税務・社会保険の相談に代わるものではありません。実際に加入するか、いくら引かれるかは、勤務先の人事・年金事務所・税務署で確認してください。情報は2026年10月14日時点。</p>
 </footer>
 </div>
 
