@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>iDeCo 12月からの上限ものさし</title>
+<meta name="description" content="2026年12月分からiDeCoの掛金上限が上がります(自営業 月7.5万円、会社員 月6.2万円、加入は70歳未満まで)。働き方と企業年金の掛金から、今の上限と12月からの上限、増やせる額、所得控除で軽くなる税額の目安を計算します。">
+<link rel="canonical" href="https://alternativestudio2021-collab.github.io/daily-launch-sites/day003-ideco-ue/">
+<meta property="og:type" content="website"><meta property="og:title" content="iDeCo 12月からの上限ものさし"><meta property="og:description" content="2026年12月分から上がるiDeCoの掛金上限を、働き方と企業年金の掛金から計算。増やせる額と税の軽減の目安、掛金変更の締切の確かめ方。"><meta property="og:url" content="https://alternativestudio2021-collab.github.io/daily-launch-sites/day003-ideco-ue/"><meta property="og:locale" content="ja_JP"><meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&family=BIZ+UDPGothic:wght@400;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: 積立の「器」をモチーフに、今の上限と12月からの上限を縦の目盛りで並べる。上に入力、中央に器の図と数字、下に締切と注意 */
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#f6f1e7; --paper:#fffcf5; --ink:#2a1f2d; --sub:#6b5d68; --rule:#e2d7c6;
+  --plum:#5b2a5e; --plum-soft:#eadcea; --gold:#b07a1c; --gold-soft:#f5e7c8; --old:#a99aa6; --warn:#a33a2a;
+  --f-disp:"Shippori Mincho B1","Hiragino Mincho ProN",serif;
+  --f-body:"BIZ UDPGothic","Hiragino Sans","Noto Sans JP",sans-serif;
+  --f-num:"JetBrains Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#18121a; --paper:#211a24; --ink:#efe6ee; --sub:#b4a6b2; --rule:#3a2f3d;
+  --plum:#d6a6da; --plum-soft:#3a2540; --gold:#e3b45a; --gold-soft:#3b2f18; --old:#6f6270; --warn:#f08a77; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#18121a; --paper:#211a24; --ink:#efe6ee; --sub:#b4a6b2; --rule:#3a2f3d;
+  --plum:#d6a6da; --plum-soft:#3a2540; --gold:#e3b45a; --gold-soft:#3b2f18; --old:#6f6270; --warn:#f08a77; color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.8}
+.wrap{max-width:820px;margin:0 auto;padding-inline:16px;padding-block:28px 64px;display:grid;gap:26px}
+header{display:grid;gap:10px}
+.eyebrow{font-family:var(--f-num);font-size:12px;letter-spacing:.16em;color:var(--gold);font-weight:700}
+h1{font-family:var(--f-disp);font-weight:800;font-size:clamp(28px,6vw,44px);line-height:1.25;margin:0;text-wrap:balance}
+h2{font-family:var(--f-disp);font-weight:800;font-size:20px;margin:0}
+.lede{margin:0;color:var(--sub);max-width:62ch}
+.due{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:baseline;border-top:2px solid var(--plum);border-bottom:1px solid var(--rule);padding:10px 0}
+.due b{font-family:var(--f-num);color:var(--plum);font-size:20px}
+.due span{color:var(--sub);font-size:14px}
+.sheet{background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:18px;display:grid;gap:14px;min-width:0}
+.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+label{display:grid;gap:4px;font-size:14px;font-weight:700}
+label small{font-weight:400;color:var(--sub);font-size:12px;line-height:1.6}
+select,input{font:inherit;font-size:16px;padding:8px 10px;border:1px solid var(--rule);border-radius:6px;background:var(--bg);color:var(--ink);width:100%;min-width:0}
+input{font-family:var(--f-num)}
+select:focus,input:focus{outline:2px solid var(--plum);outline-offset:1px}
+.result{display:grid;grid-template-columns:minmax(0,150px) minmax(0,1fr);gap:18px;align-items:end}
+@media (max-width:520px){.result{grid-template-columns:1fr}}
+.vessel{position:relative;height:260px;border:2px solid var(--ink);border-top:none;border-radius:0 0 18px 18px;background:var(--bg);overflow:hidden}
+.vessel .fill{position:absolute;left:0;right:0;bottom:0;transition:height .35s ease}
+.vessel .new{background:repeating-linear-gradient(45deg,var(--gold-soft) 0 8px,color-mix(in srgb,var(--gold) 30%,var(--gold-soft)) 8px 10px)}
+.vessel .now{background:var(--plum-soft);border-top:2px dashed var(--old)}
+.vessel .mine{background:var(--plum);opacity:.85}
+.vessel .tick{position:absolute;left:0;right:0;border-top:1px solid var(--ink);font-family:var(--f-num);font-size:11px;padding-left:4px;color:var(--ink)}
+.legend{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12px;color:var(--sub);margin-top:6px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+.figs{display:grid;gap:10px}
+.fig{display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:baseline;border-bottom:1px solid var(--rule);padding-bottom:8px}
+.fig span{font-size:14px;color:var(--sub)}
+.fig b{font-family:var(--f-num);font-size:20px;text-align:right}
+.fig.big b{font-size:28px;color:var(--plum)}
+.fig.gold b{color:var(--gold)}
+.msg{font-size:14px;background:var(--plum-soft);border-radius:6px;padding:10px 12px;margin:0}
+.msg.warn{background:color-mix(in srgb,var(--warn) 14%,var(--paper));color:var(--ink)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border-bottom:1px solid var(--rule);padding:8px 6px;text-align:left;vertical-align:top}
+td.n{font-family:var(--f-num);white-space:nowrap}
+td.n s{color:var(--old)}
+.tablewrap{overflow-x:auto}
+ol.steps{margin:0;padding-left:1.3em;display:grid;gap:8px}
+ul{margin:0;padding-left:1.2em;display:grid;gap:6px}
+a{color:var(--plum)}
+.pr{justify-self:start;font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--sub);border:1px solid var(--rule);border-radius:3px;padding:0 6px}
+.offer{border:1px solid var(--rule);border-radius:6px;padding:14px;display:grid;gap:6px;background:var(--bg)}
+details{border-bottom:1px solid var(--rule);padding:8px 0}
+summary{cursor:pointer;font-weight:700}
+details p{margin:6px 0 0;color:var(--sub)}
+.src{font-size:13px}
+.share{margin:0;line-height:2}
+footer{font-size:12px;color:var(--sub)}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"iDeCoの掛金上限はいつから上がりますか?","acceptedAnswer":{"@type":"Answer","text":"2026年12月分の掛金(2027年1月に引き落とされる分)からです。自営業など第1号被保険者は月6.8万円から7.5万円、企業年金のない会社員は月2.3万円から6.2万円になります。"}},{"@type":"Question","name":"上限が上がると掛金も自動で増えますか?","acceptedAnswer":{"@type":"Answer","text":"増えません。増やしたい人は自分で掛金額の変更を申し込みます。12月分から増やすための事前受付の締切は金融機関ごとに違い、三菱UFJ銀行は2026年10月31日必着としています。"}},{"@type":"Question","name":"専業主婦(第3号被保険者)の上限も上がりますか?","acceptedAnswer":{"@type":"Answer","text":"上がりません。第3号被保険者の上限は月2.3万円のままです。"}},{"@type":"Question","name":"会社に企業年金がある場合の上限はいくらですか?","acceptedAnswer":{"@type":"Answer","text":"企業型DCの事業主掛金や確定給付企業年金の他制度掛金相当額と合わせて月6.2万円までです。iDeCoに出せるのは6.2万円からそれらを引いた額で、iDeCo単独の月2万円の上限はなくなります。"}}]}</script>
+</head><body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">DAY 003 ・ 2026.12 iDeCo</div>
+  <h1>iDeCo 12月からの上限ものさし</h1>
+  <p class="lede">2026年12月分の掛金から、iDeCoに出せる上限が上がります。働き方と会社の企業年金の掛金を入れると、今の上限と12月からの上限、増やした場合に軽くなる税の目安が出ます。上限が上がっても掛金は自動では増えません。</p>
+  <div class="due"><b>10/31</b><span>12月分から増やすための事前受付の締切の一例(三菱UFJ銀行、必着)。締切は金融機関ごとに違います。</span></div>
+</header>
+
+<section class="sheet" aria-labelledby="h-in">
+  <h2 id="h-in">あなたの条件</h2>
+  <div class="form">
+    <label>働き方・年金の区分
+      <select id="kind">
+        <option value="k1">自営業・フリーランス・学生など(第1号)</option>
+        <option value="k2none" selected>会社員(企業年金なし)</option>
+        <option value="k2dc">会社員(企業型DCあり)</option>
+        <option value="k2db">会社員(確定給付企業年金あり)・公務員</option>
+        <option value="k3">会社員・公務員の配偶者で扶養内(第3号)</option>
+      </select>
+    </label>
+    <label id="otherBox">他の制度の掛金(月額・円)
+      <input id="other" type="number" inputmode="numeric" min="0" step="1000" value="0">
+      <small id="otherHint">企業型DCの事業主掛金とマッチング拠出、確定給付企業年金などの「他制度掛金相当額」の合計。勤務先や共済組合の案内で確かめてください。</small>
+    </label>
+    <label>今のiDeCoの掛金(月額・円)
+      <input id="cur" type="number" inputmode="numeric" min="0" step="1000" value="23000">
+      <small>まだ入っていなければ0</small>
+    </label>
+    <label>所得税の税率(課税所得で決まる)
+      <select id="rate">
+        <option value="0">0%(所得税がかからない)</option>
+        <option value="0.05">5%(課税所得 195万円未満)</option>
+        <option value="0.10" selected>10%(195万〜330万円未満)</option>
+        <option value="0.20">20%(330万〜695万円未満)</option>
+        <option value="0.23">23%(695万〜900万円未満)</option>
+        <option value="0.33">33%(900万〜1,800万円未満)</option>
+        <option value="0.40">40%(1,800万〜4,000万円未満)</option>
+        <option value="0.45">45%(4,000万円以上)</option>
+      </select>
+      <small>源泉徴収票の「給与所得控除後の金額」から所得控除の合計を引いた額が課税所得です。わからなければ10%で目安を見てください。</small>
+    </label>
+    <label>住民税
+      <select id="jumin"><option value="1" selected>かかっている(所得割10%)</option><option value="0">かかっていない</option></select>
+    </label>
+  </div>
+</section>
+
+<section class="sheet" aria-labelledby="h-out" aria-live="polite">
+  <h2 id="h-out">計算の結果</h2>
+  <div class="result">
+    <div>
+      <div class="vessel" id="vessel" role="img" aria-label="上限の比較図">
+        <div class="fill new" id="vNew"></div>
+        <div class="fill now" id="vNow"></div>
+        <div class="fill mine" id="vMine"></div>
+      </div>
+      <div class="legend"><span><i style="background:var(--plum)"></i>今の掛金</span><span><i style="background:var(--plum-soft)"></i>今の上限</span><span><i style="background:var(--gold)"></i>12月から増える枠</span></div>
+    </div>
+    <div class="figs">
+      <div class="fig"><span>今の上限(月)</span><b id="fNow">—</b></div>
+      <div class="fig big"><span>12月分からの上限(月)</span><b id="fNew">—</b></div>
+      <div class="fig"><span>今の掛金から増やせる額(月)</span><b id="fRoom">—</b></div>
+      <div class="fig"><span>上限まで増やした場合の年間掛金</span><b id="fYear">—</b></div>
+      <div class="fig gold"><span>増やした分で軽くなる税の目安(年)</span><b id="fTax">—</b></div>
+    </div>
+  </div>
+  <p class="msg" id="msg"></p>
+  <p class="note" style="margin:0;font-size:13px;color:var(--sub)">税の目安は「増やした掛金の年額 ×(所得税率 × 1.021 + 住民税10%)」で出しています。掛金は全額が所得控除になりますが、実際に戻る額は他の控除や年の途中の加入月数で変わります。掛金は月5,000円以上・1,000円単位です。</p>
+</section>
+
+<section class="sheet" aria-labelledby="h-tbl">
+  <h2 id="h-tbl">区分ごとの上限(月額)</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>区分</th><th>2026年11月分まで</th><th>12月分から</th></tr></thead>
+    <tbody>
+      <tr><td>自営業など(第1号)</td><td class="n"><s>68,000円</s></td><td class="n">75,000円</td></tr>
+      <tr><td colspan="3" style="font-size:13px;color:var(--sub);border-bottom-style:dashed">国民年金基金の掛金・付加保険料と合わせた額</td></tr>
+      <tr><td>会社員(企業年金なし)</td><td class="n"><s>23,000円</s></td><td class="n">62,000円</td></tr>
+      <tr><td>会社員(企業年金あり)・公務員</td><td class="n"><s>20,000円</s><br><small>(他制度と合わせて55,000円まで)</small></td><td class="n">62,000円 − 他制度の掛金</td></tr>
+      <tr><td>第3号(扶養内の配偶者)</td><td class="n">23,000円</td><td class="n">23,000円(据え置き)</td></tr>
+    </tbody>
+  </table></div>
+  <p style="margin:0;font-size:14px;color:var(--sub)">あわせて、加入できる年齢が70歳未満まで広がります(条件があります。加入先の金融機関で確かめてください)。</p>
+</section>
+
+<section class="sheet" aria-labelledby="h-steps">
+  <h2 id="h-steps">掛金を増やす手順</h2>
+  <ol class="steps">
+    <li><b>加入先の金融機関の案内を開く。</b>「iDeCo 制度改正」「掛金 事前受付」のページに締切と方法があります。三菱UFJ銀行は2026年10月31日必着、ほかの金融機関も10月末前後の締切が多いと報じられています。</li>
+    <li><b>事前受付で申し込む</b>と、12月分(2027年1月26日引き落とし)から新しい掛金になります。マネックス証券のように、毎月同じ額で出していない人はWeb(e-iDeCo)の事前申込みができない、とする金融機関もあります。</li>
+    <li><b>締切に間に合わなくても、12月1日以降に変更できます。</b>新しい掛金になる月が遅れるだけです(何月分からになるかは受付日で決まります)。</li>
+    <li><b>変更回数の心配はいりません。</b>国民年金基金連合会は、2026年12月1日〜2027年11月30日に、引き上げ前の上限を超える額へ増やす初回の変更を、年1回の変更回数に数えない扱いを案内しています(労働新聞の報道)。</li>
+  </ol>
+</section>
+
+<section class="sheet" aria-labelledby="h-care">
+  <h2 id="h-care">増やす前に考えておくこと</h2>
+  <ul>
+    <li>iDeCoのお金は原則60歳まで引き出せません。生活費の備えを残したうえで額を決めてください。</li>
+    <li>受け取るときは一時金なら退職所得、年金なら雑所得として課税されます。勤務先の退職金と受け取る時期が近いと、控除の枠を分け合うことがあります。</li>
+    <li>所得税・住民税がかかっていない人は、掛金を増やしても税は軽くなりません。</li>
+    <li>このページは制度の説明と概算だけで、どの商品を選ぶか・いくら掛けるべきかの助言はしていません。</li>
+  </ul>
+  <span class="pr">PR</span>
+  <div class="offer">
+    <p style="margin:0;font-size:14px;color:var(--sub)">iDeCoをどこまで増やすかを、NISAや住宅ローン、教育費と合わせて考えたい人向けに、お金の専門家(FP)に無料で相談できるサービスです。</p>
+    <div><a href="https://px.a8.net/svt/ejp?a8mat=4BEFL6+1U34XE+4GN2+1NJK7M" rel="nofollow">老後資金・資産形成をFPに無料相談！厳選プロが丁寧サポート【ガーデン】</a>
+<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=4BEFL6+1U34XE+4GN2+1NJK7M" alt=""></div>
+  </div>
+</section>
+
+<section class="sheet" aria-labelledby="h-faq">
+  <h2 id="h-faq">よくある質問</h2>
+  <details><summary>上限が上がると掛金も自動で増えますか?</summary><p>増えません。増やしたい人は自分で掛金額の変更を申し込みます。</p></details>
+  <details><summary>専業主婦(第3号被保険者)の上限も上がりますか?</summary><p>上がりません。月2.3万円のままです。</p></details>
+  <details><summary>会社に企業年金がある場合の上限は?</summary><p>企業型DCの事業主掛金や確定給付企業年金の他制度掛金相当額と合わせて月6.2万円までです。iDeCo単独の月2万円の上限はなくなります。</p></details>
+  <details><summary>NISAとどちらを優先すべきですか?</summary><p>人によって違うため、このページでは判断していません。60歳まで引き出せないことと、掛金が所得控除になることを比べて決めることになります。迷う場合はFPなどに相談してください。</p></details>
+</section>
+
+<section class="sheet" aria-labelledby="h-src">
+  <h2 id="h-src">出典</h2>
+  <ul class="src">
+    <li><a href="https://www.bk.mufg.jp/tameru/ideco/info/pop_20260813.html" target="_blank" rel="noopener">iDeCo制度改正と掛金の事前受付(三菱UFJ銀行)</a></li>
+    <li><a href="https://info.monex.co.jp/news/2026/20260901_04.html" target="_blank" rel="noopener">拠出限度額引き上げに伴う掛金変更の事前受付(マネックス証券)</a></li>
+    <li><a href="https://info.monex.co.jp/news/2026/20260514_01.html" target="_blank" rel="noopener">iDeCo拠出限度額および加入可能年齢の引き上げ(マネックス証券)</a></li>
+    <li><a href="https://www.matsui.co.jp/news/2026/detail_0731_01.html" target="_blank" rel="noopener">iDeCo制度改正のお知らせ(松井証券)</a></li>
+    <li><a href="https://dc.rakuten-sec.co.jp/lp/amendment_2026/" target="_blank" rel="noopener">iDeCo 2026年12月 制度改正・掛金引上情報(楽天証券)</a></li>
+    <li><a href="https://www.resonabank.co.jp/nenkin/ideco/column/column_0005.html" target="_blank" rel="noopener">2026年12月改正 iDeCoの掛金上限額や加入条件(りそなグループ)</a></li>
+    <li><a href="https://www.rodo.co.jp/news/224718/" target="_blank" rel="noopener">iDeCo 要件満たす増額 変更に算入せず 国民年金基金連合会(労働新聞)</a></li>
+  </ul>
+</section>
+
+<section class="sheet" aria-labelledby="h-share">
+  <h2 id="h-share">家族や同僚に送る</h2>
+  <p class="share"><a href="https://twitter.com/intent/tweet?text=iDeCo%2012%E6%9C%88%E3%81%8B%E3%82%89%E3%81%AE%E4%B8%8A%E9%99%90%E3%82%82%E3%81%AE%E3%81%95%E3%81%97%EF%BD%9C%E5%83%8D%E3%81%8D%E6%96%B9%E3%81%A8%E4%BC%81%E6%A5%AD%E5%B9%B4%E9%87%91%E3%81%8B%E3%82%89%E6%96%B0%E3%81%97%E3%81%84%E4%B8%8A%E9%99%90%E3%82%92%E8%A8%88%E7%AE%97&amp;url=https%3A%2F%2Falternativestudio2021-collab.github.io%2Fdaily-launch-sites%2Fday003-ideco-ue%2F" target="_blank" rel="noopener">Xで送る</a> ・ <a href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Falternativestudio2021-collab.github.io%2Fdaily-launch-sites%2Fday003-ideco-ue%2F" target="_blank" rel="noopener">LINEで送る</a> ・ <a href="../day001-nenshu-kabe/">年収の壁ものさし 2026</a> ・ <a href="../">ほかの道具を見る(毎日ひとつの小さな道具箱)</a></p>
+</section>
+
+<footer>
+  <p>このページは金融機関の公開資料と報道をもとにした概算ツールで、税務や投資の個別の相談に代わるものではありません。実際の上限・締切・手続きは、加入先の金融機関(運営管理機関)と勤務先で確かめてください。情報は2026年10月15日時点。</p>
+</footer>
+</div>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var yen=function(n){return Math.round(n).toLocaleString('ja-JP')+'円'};
+  var floor1000=function(n){return Math.max(0,Math.floor(n/1000)*1000)};
+  function limits(kind,other){
+    if(kind==='k1') return {now:68000-other,nu:75000-other};
+    if(kind==='k2none') return {now:23000,nu:62000};
+    if(kind==='k2dc'||kind==='k2db') return {now:Math.min(20000,55000-other),nu:62000-other};
+    return {now:23000,nu:23000};
+  }
+  function render(){
+    var kind=$('kind').value;
+    var showOther=(kind==='k1'||kind==='k2dc'||kind==='k2db');
+    $('otherBox').style.display=showOther?'':'none';
+    $('otherHint').textContent=kind==='k1'?'国民年金基金の掛金と付加保険料(月400円)の合計。入っていなければ0。':'企業型DCの事業主掛金とマッチング拠出、確定給付企業年金などの「他制度掛金相当額」の合計。勤務先や共済組合の案内で確かめてください。';
+    var other=showOther?Math.max(0,+$('other').value||0):0;
+    var cur=Math.max(0,+$('cur').value||0);
+    var rate=+$('rate').value, jumin=$('jumin').value==='1'?0.10:0;
+    var L=limits(kind,other);
+    var now=floor1000(L.now), nu=floor1000(L.nu);
+    if(now<5000) now=0; if(nu<5000) nu=0;
+    var room=Math.max(0,nu-cur);
+    var tax=room*12*(rate*1.021+jumin);
+    $('fNow').textContent=now?yen(now):'出せない';
+    $('fNew').textContent=nu?yen(nu):'出せない';
+    $('fRoom').textContent=yen(room);
+    $('fYear').textContent=yen(nu*12);
+    $('fTax').textContent=room?'約'+yen(Math.floor(tax/100)*100):'0円';
+    var max=Math.max(75000,nu,cur,1);
+    $('vNew').style.height=(nu/max*100)+'%';
+    $('vNow').style.height=(Math.min(now,nu||now)/max*100)+'%';
+    $('vMine').style.height=(Math.min(cur,Math.max(nu,now))/max*100)+'%';
+    var v=$('vessel'); [].slice.call(v.querySelectorAll('.tick')).forEach(function(t){t.remove()});
+    [20000,40000,60000].forEach(function(t){var d=document.createElement('div');d.className='tick';d.style.bottom=(t/max*100)+'%';d.textContent=(t/10000)+'万';v.appendChild(d);});
+    v.setAttribute('aria-label','今の上限'+yen(now)+'、12月からの上限'+yen(nu)+'、今の掛金'+yen(cur));
+    var m=$('msg'); m.className='msg';
+    if(kind==='k3'){m.textContent='第3号被保険者の上限は月2.3万円のまま変わりません。所得税・住民税がかかっていなければ、掛金による税の軽減もありません。';}
+    else if(!nu){m.className='msg warn';m.textContent='他の制度の掛金が大きく、iDeCoに出せる枠が月5,000円に届きません。勤務先の案内で掛金相当額を確かめてください。';}
+    else if(cur>nu){m.className='msg warn';m.textContent='今の掛金が12月からの上限を超えています。他の制度の掛金の入力を確かめ、合っていれば加入先に掛金の扱いを問い合わせてください。';}
+    else if(room===0){m.textContent='すでに12月からの上限まで出しています。手続きは不要です。';}
+    else if(rate===0&&!jumin){m.textContent='上限は'+yen(nu-now)+'上がりますが、所得税・住民税がかかっていないため、増やしても税は軽くなりません。';}
+    else {m.textContent='月にあと'+yen(room)+'増やせます(12月分からの上限は'+yen(nu)+')。12月分から増やすには、加入先の事前受付(10月末前後が多い)に申し込みます。間に合わなくても、12月1日以降に変更すれば、少し遅れて増やせます。';}
+  }
+  ['kind','other','cur','rate','jumin'].forEach(function(id){$(id).addEventListener('input',render);$(id).addEventListener('change',render);});
+  render();
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
