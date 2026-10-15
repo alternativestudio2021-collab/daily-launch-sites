@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>免税リファンド 店頭ふだ</title>
+<meta name="description" content="2026年11月1日の販売分から、外国人旅行者の免税は「税込で売って、出国時の税関確認のあとに返金する」リファンド方式に変わります。免税店が10月31日までに確かめること、店頭に貼る多言語の案内文(英語・中国語・韓国語)、税関確認の90日期限の計算をまとめました。">
+<link rel="canonical" href="https://alternativestudio2021-collab.github.io/daily-launch-sites/day004-menzei-refund/">
+<meta property="og:type" content="website"><meta property="og:title" content="免税リファンド 店頭ふだ"><meta property="og:description" content="11/1から免税はリファンド方式へ。免税店の10/31までの確認リストと、店頭に貼る多言語の案内文を作って印刷できます。"><meta property="og:url" content="https://alternativestudio2021-collab.github.io/daily-launch-sites/day004-menzei-refund/"><meta property="og:locale" content="ja_JP"><meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=M+PLUS+1p:wght@400;700&family=Space+Mono:wght@400;700&display=swap">
+<style>
+/* Layout: 店頭の値札・荷札がモチーフ。クラフト紙の地に、朱の判子と黒の太字。上から 締切の札 → 確認リスト → 掲示文メーカー(印刷) → 90日期限 → 変わる点 */
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#efe6d6; --tag:#fbf6ec; --ink:#1f1b16; --sub:#675d50; --rule:#d9ccb5;
+  --red:#c2361f; --red-soft:#f6ddd3; --teal:#1f5f63; --teal-soft:#d9ebea; --hole:#efe6d6;
+  --f-disp:"Dela Gothic One","Hiragino Sans",sans-serif;
+  --f-body:"M PLUS 1p","Hiragino Sans","Noto Sans JP",sans-serif;
+  --f-mono:"Space Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1a1714; --tag:#24201b; --ink:#f1e9dc; --sub:#b5a894; --rule:#3d362d;
+  --red:#ff7a5c; --red-soft:#43251d; --teal:#7cc7c9; --teal-soft:#1d3536; --hole:#1a1714; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1a1714; --tag:#24201b; --ink:#f1e9dc; --sub:#b5a894; --rule:#3d362d;
+  --red:#ff7a5c; --red-soft:#43251d; --teal:#7cc7c9; --teal-soft:#1d3536; --hole:#1a1714; color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.8}
+.wrap{max-width:860px;margin:0 auto;padding-inline:16px;padding-block:28px 64px;display:grid;gap:28px}
+header{display:grid;gap:12px}
+.kicker{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;color:var(--red);font-weight:700}
+h1{font-family:var(--f-disp);font-weight:400;font-size:clamp(30px,7vw,52px);line-height:1.15;margin:0;letter-spacing:.01em}
+h2{font-family:var(--f-disp);font-weight:400;font-size:22px;margin:0;line-height:1.3}
+h3{font-size:16px;margin:0}
+p{margin:0}
+.lede{color:var(--sub);max-width:64ch}
+a{color:var(--teal)}
+.tag{position:relative;background:var(--tag);border:1px solid var(--rule);border-radius:6px 22px 22px 6px;padding:20px 20px 20px 40px;display:grid;gap:14px;min-width:0}
+.tag::before{content:"";position:absolute;left:14px;top:22px;width:12px;height:12px;border-radius:50%;background:var(--hole);border:1px solid var(--rule)}
+.clock{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;align-items:center}
+.stamp{font-family:var(--f-disp);color:var(--red);border:3px solid var(--red);border-radius:8px;padding:6px 12px;transform:rotate(-4deg);font-size:clamp(26px,6vw,38px);line-height:1;grid-row:span 2;text-align:center}
+.stamp small{display:block;font-family:var(--f-body);font-size:11px;font-weight:700;margin-top:4px}
+.clock b{font-size:17px}
+.clock span{color:var(--sub);font-size:14px}
+.check{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.check li{display:grid;grid-template-columns:28px 1fr;gap:10px;padding:10px 0;border-bottom:1px dashed var(--rule)}
+.check li:last-child{border-bottom:0}
+.check input{width:22px;height:22px;margin:3px 0 0;accent-color:var(--red)}
+.check label{font-weight:700;cursor:pointer}
+.check p{font-size:13.5px;color:var(--sub);grid-column:2}
+.check li.done label{text-decoration:line-through;text-decoration-color:var(--red);color:var(--sub)}
+.meter{font-family:var(--f-mono);font-size:13px;color:var(--sub)}
+.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+fieldset{border:0;margin:0;padding:0;display:grid;gap:6px;min-width:0}
+legend,.lbl{font-size:14px;font-weight:700;padding:0;margin-bottom:4px}
+.opt{display:flex;gap:8px;align-items:center;font-size:14px}
+.opt input{accent-color:var(--teal);width:18px;height:18px;margin:0}
+input[type=text],input[type=number],input[type=date]{font:inherit;font-size:16px;padding:8px 10px;border:1px solid var(--rule);border-radius:6px;background:var(--bg);color:var(--ink);width:100%;min-width:0}
+.inline{display:flex;gap:6px;align-items:center}
+.inline input{width:90px}
+.hint{font-size:12.5px;color:var(--sub);line-height:1.6}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+button{font:inherit;font-weight:700;font-size:14px;padding:9px 16px;border-radius:999px;border:2px solid var(--ink);background:var(--ink);color:var(--tag);cursor:pointer}
+button.ghost{background:transparent;color:var(--ink)}
+button:focus-visible,input:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+/* 掲示文: 印刷するとA4の1枚になる */
+#sign{background:#fff;color:#111;border:2px solid #111;border-radius:4px;padding:22px;display:grid;gap:18px;font-family:var(--f-body)}
+#sign .shead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;border-bottom:3px solid #111;padding-bottom:10px;flex-wrap:wrap}
+#sign .shop{font-family:var(--f-disp);font-size:22px;line-height:1.2}
+#sign .date{font-family:var(--f-mono);font-size:12px;border:2px solid #c2361f;color:#c2361f;padding:2px 8px;border-radius:4px;font-weight:700;white-space:nowrap}
+.lang{display:grid;gap:6px;break-inside:avoid}
+.lang h4{margin:0;font-size:17px;line-height:1.4}
+.lang .code{font-family:var(--f-mono);font-size:11px;background:#111;color:#fff;padding:1px 6px;border-radius:3px;margin-right:8px;vertical-align:2px}
+.lang ol{margin:0;padding-left:1.4em;font-size:13.5px;line-height:1.65}
+.lang dl{margin:4px 0 0;display:grid;grid-template-columns:auto 1fr;gap:2px 12px;font-size:13.5px;background:#f2f2f2;padding:8px 10px;border-radius:4px}
+.lang dt{font-weight:700}
+.lang dd{margin:0}
+.copied{font-size:13px;color:var(--teal);min-height:1.5em}
+.deadline{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;align-items:end}
+.bigdate{font-family:var(--f-mono);font-size:clamp(24px,6vw,34px);font-weight:700;color:var(--red);line-height:1.2}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--rule);vertical-align:top}
+thead th{font-size:12px;color:var(--sub);font-weight:700;border-bottom:2px solid var(--ink)}
+td.new{color:var(--red);font-weight:700}
+.scroll{overflow-x:auto}
+.note{background:var(--teal-soft);border-left:4px solid var(--teal);padding:12px 14px;border-radius:4px;font-size:14px}
+.warn{background:var(--red-soft);border-left:4px solid var(--red);padding:12px 14px;border-radius:4px;font-size:14px}
+details{border-top:1px solid var(--rule);padding-top:10px}
+summary{cursor:pointer;font-weight:700}
+.src{font-size:13px;color:var(--sub);padding-left:1.2em;margin:8px 0 0}
+.src li{margin-bottom:4px;overflow-wrap:anywhere}
+footer{font-size:12.5px;color:var(--sub);display:grid;gap:6px;border-top:1px solid var(--rule);padding-top:14px}
+@media (max-width:520px){.tag{padding:18px 16px 18px 34px}.tag::before{left:11px}.clock{grid-template-columns:1fr}.stamp{grid-row:auto;justify-self:start}}
+@media print{
+  body{background:#fff}
+  .wrap>*:not(#signbox){display:none!important}
+  #signbox{border:0;padding:0;background:#fff}
+  #signbox>*:not(#sign){display:none!important}
+  #signbox::before{display:none}
+  #sign{border:0;padding:0}
+  @page{size:A4;margin:12mm}
+}
+</style>
+</head><body>
+<div class="wrap">
+  <header>
+    <div class="kicker">TAX-FREE → REFUND / 2026.11.01</div>
+    <h1>免税リファンド<br>店頭ふだ</h1>
+    <p class="lede">11月1日の販売分から、外国人旅行者への免税は「店頭で消費税を引く」方式から「税込で売り、出国時に税関の確認を受けたあとで返金する」リファンド方式に切り替わります。移行期間はありません。免税店が10月31日までに確かめることと、店頭に貼る英語・中国語・韓国語の案内文をここで用意できます。</p>
+  </header>
+
+  <section class="tag" aria-labelledby="h-clock">
+    <h2 id="h-clock" class="kicker" style="font-family:var(--f-mono);font-size:12px">きょうの位置</h2>
+    <div class="clock">
+      <div class="stamp" id="stamp">—<small id="stampUnit"></small></div>
+      <b id="clockMain">読み込み中</b>
+      <span id="clockSub"></span>
+    </div>
+  </section>
+
+  <section class="tag" aria-labelledby="h-check">
+    <h2 id="h-check">10月31日までの確認リスト</h2>
+    <p class="hint">チェックはこの端末のブラウザにだけ保存されます(送信はしません)。</p>
+    <ul class="check" id="check">
+      <li><input type="checkbox" id="c1"><label for="c1">免税販売手続の電子化の届出書を出しているか確かめる</label>
+        <p>正式名は「輸出物品販売場における購入記録情報の提供方法等の届出書」。10月31日までに出していない免税店は、同日で免税店の許可の効力がなくなり、11月1日以降は許可申請からやり直しになります。電子化済みの一般型・手続委託型の免税店は、新制度の許可を受けたものとみなされ、改めての申請は要りません。</p></li>
+      <li><input type="checkbox" id="c2"><label for="c2">いま使っている承認送信事業者に、11月以降の対応を聞く</label>
+        <p>観光庁の案内も「まずは利用中の承認送信事業者に連絡を」としています。リファンド方式に対応したシステムへの切り替え日、費用、返金まで任せられるかを確認します。</p></li>
+      <li><input type="checkbox" id="c3"><label for="c3">返金を自店でするか、返金事業者に任せるかを決める</label>
+        <p>返金は免税店か、免税店から委託を受けた返金事業者が行います。返金の方法(カード、口座など)や手数料をどちらが負担するかに法令上の決まりはなく、店と事業者の取り決めになります。政府は手数料を取りません。</p></li>
+      <li><input type="checkbox" id="c4"><label for="c4">レジ・POSを、11月1日の販売分から税込販売に切り替える設定をする</label>
+        <p>10月31日までの販売は従来どおり。日付で切り替わるので、営業日の締めと切替の時刻を事業者と合わせます。</p></li>
+      <li><input type="checkbox" id="c5"><label for="c5">返金と会計の処理を税理士と決めておく</label>
+        <p>返金前はいったん税込で売上を計上し、税関の確認情報を受け取ったあとに免税として処理します。確認前に返金することも認められていますが、税関で確認が得られなかった場合の負担は店側です。</p></li>
+      <li><input type="checkbox" id="c6"><label for="c6">税抜で単価100万円以上の商品があるか確かめる</label>
+        <p>該当する商品は、購入記録にシリアル番号などの詳細を入力する必要があります。</p></li>
+      <li><input type="checkbox" id="c7"><label for="c7">店頭の掲示とスタッフの説明をそろえる</label>
+        <p>下の掲示文メーカーで、返金方法・手数料・問い合わせ先を入れた案内を作れます。税関は返金の時期や方法の問い合わせに答えないため、問い合わせ先は店か返金事業者になります。</p></li>
+      <li><input type="checkbox" id="c8"><label for="c8">要らなくなる作業をやめる準備をする</label>
+        <p>一般物品と消耗品の区分、消耗品の特殊包装(封入)、消耗品の購入上限50万円は11月1日から廃止です。包装資材の発注を止めるなどの見直しを。</p></li>
+    </ul>
+    <p class="meter" id="meter">0 / 8 済み</p>
+  </section>
+
+  <section class="tag" id="signbox" aria-labelledby="h-sign">
+    <h2 id="h-sign">店頭に貼る案内文メーカー</h2>
+    <p class="hint">入れた内容は下の案内文にすぐ反映されます。「印刷」を押すと案内文だけがA4で印刷されます。訳文は当サイトが作った参考訳です。観光庁・国税庁の多言語リーフレットと並べて使ってください。</p>
+    <div class="form">
+      <label class="lbl" style="display:grid;gap:4px">店名<input type="text" id="shop" placeholder="例: 〇〇商店 本店" maxlength="40"></label>
+      <fieldset><legend>返金方法(複数可)</legend>
+        <label class="opt"><input type="checkbox" name="m" value="card" checked>クレジットカード</label>
+        <label class="opt"><input type="checkbox" name="m" value="bank">銀行口座</label>
+        <label class="opt"><input type="checkbox" name="m" value="app">電子決済・アプリ</label>
+        <label class="opt"><input type="checkbox" name="m" value="cash">店頭で現金</label>
+      </fieldset>
+      <fieldset><legend>返金の手数料</legend>
+        <label class="opt"><input type="radio" name="f" value="none" checked>なし(店が負担)</label>
+        <label class="opt"><input type="radio" name="f" value="pct">返金額から差し引く</label>
+        <div class="inline" style="padding-left:26px"><input type="number" id="pct" min="0" max="30" step="0.1" value="" placeholder="%" aria-label="手数料の割合(%)"><span>%</span></div>
+        <label class="opt"><input type="radio" name="f" value="tro">返金事業者の規定による</label>
+      </fieldset>
+      <fieldset><legend>返金までの目安</legend>
+        <div class="inline"><span>税関確認から約</span><input type="number" id="days" min="1" max="120" placeholder="日" aria-label="返金までの日数"><span>日</span></div>
+        <span class="hint">空欄なら「お会計時にご案内します」と表示します。</span>
+      </fieldset>
+      <label class="lbl" style="display:grid;gap:4px">問い合わせ先<input type="text" id="contact" placeholder="例: refund@example.com / 03-0000-0000" maxlength="80"></label>
+      <fieldset><legend>載せる言語</legend>
+        <label class="opt"><input type="checkbox" name="l" value="ja" checked>日本語</label>
+        <label class="opt"><input type="checkbox" name="l" value="en" checked>English</label>
+        <label class="opt"><input type="checkbox" name="l" value="zhs" checked>简体中文</label>
+        <label class="opt"><input type="checkbox" name="l" value="zht">繁體中文</label>
+        <label class="opt"><input type="checkbox" name="l" value="ko" checked>한국어</label>
+      </fieldset>
+    </div>
+    <div class="btns">
+      <button type="button" id="print">印刷する(A4)</button>
+      <button type="button" class="ghost" id="copy">文章をコピー</button>
+    </div>
+    <p class="copied" id="copied" aria-live="polite"></p>
+    <article id="sign" aria-label="案内文のプレビュー">
+      <div class="shead"><div class="shop" id="sShop">TAX-FREE</div><div class="date">FROM 2026.11.01</div></div>
+      <div id="sBody"></div>
+    </article>
+  </section>
+
+  <section class="tag" aria-labelledby="h-90">
+    <h2 id="h-90">税関確認の期限(購入日から90日)</h2>
+    <p class="hint">期限は購入日の翌日から数えて90日目まで。国税庁の例では、11月1日に買った品物は翌年1月30日までです。お客さまに聞かれたときの確認用に。</p>
+    <div class="deadline">
+      <label class="lbl" style="display:grid;gap:4px">購入日<input type="date" id="buy" min="2026-11-01"></label>
+      <div><div class="hint">この日までに出国し、税関の確認を受ける</div><div class="bigdate" id="due">—</div></div>
+    </div>
+  </section>
+
+  <section class="tag" aria-labelledby="h-diff">
+    <h2 id="h-diff">10月31日までと11月1日からの違い</h2>
+    <div class="scroll"><table>
+      <thead><tr><th scope="col">項目</th><th scope="col">10月31日の販売分まで</th><th scope="col">11月1日の販売分から</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">店頭の支払い</th><td>消費税を除いた価格(または店の免税カウンターで返金)</td><td class="new">消費税込みの価格</td></tr>
+        <tr><th scope="row">免税が決まる時点</th><td>店頭での手続き</td><td class="new">出国時に税関の確認を受けたあと、店か返金事業者が返金</td></tr>
+        <tr><th scope="row">購入の下限</th><td>同じ日・同じ店で税抜5,000円以上</td><td>変わらず</td></tr>
+        <tr><th scope="row">一般物品・消耗品の区分</th><td>あり</td><td class="new">廃止</td></tr>
+        <tr><th scope="row">消耗品の特殊包装・上限50万円</th><td>必要</td><td class="new">廃止</td></tr>
+        <tr><th scope="row">税関確認の期限</th><td>—</td><td class="new">購入日から90日以内</td></tr>
+        <tr><th scope="row">高額品</th><td>—</td><td class="new">税抜単価100万円以上はシリアル番号などを入力</td></tr>
+      </tbody>
+    </table></div>
+    <div class="warn">お客さまに必ず伝えたいこと: 税関の確認は1回のお会計(購入記録)ごとに行われます。同じお会計の品物が1つでも手元にないと、そのお会計の分はまとめて確認を受けられず、返金されません。免税で買った品物は預け荷物に入れず、手荷物で持っていってもらいます。</div>
+    <div class="note">空港・港では、手荷物を預ける前に出国エリアの免税手続端末でパスポートを読み取ります。端末の表示によっては、税関の窓口で品物を見せる必要があります。</div>
+  </section>
+
+  <section aria-labelledby="h-src">
+    <details open>
+      <summary id="h-src">出典(2026年10月16日に確認)</summary>
+      <ol class="src">
+        <li>観光庁 消費税免税店サイト「免税店向け よくある質問(リファンド方式)」 <a href="https://www.mlit.go.jp/kankocho/tax-free/page01_000001_00024.html" rel="noopener">mlit.go.jp/kankocho/tax-free/page01_000001_00024.html</a></li>
+        <li>観光庁 消費税免税店サイト「旅行者向け特設ページ 多言語リーフレット」 <a href="https://www.mlit.go.jp/kankocho/tax-free/page01_000001_00021.html" rel="noopener">mlit.go.jp/kankocho/tax-free/page01_000001_00021.html</a></li>
+        <li>観光庁「What is the Refund Method?」 <a href="https://www.mlit.go.jp/kankocho/tax-free/page01_000001_00028.html" rel="noopener">mlit.go.jp/kankocho/tax-free/page01_000001_00028.html</a></li>
+        <li>観光庁 リファンド方式の資料(PDF) <a href="https://www.mlit.go.jp/kankocho/tax-free/content/001978459.pdf" rel="noopener">mlit.go.jp/kankocho/tax-free/content/001978459.pdf</a></li>
+        <li>国税庁 免税制度のパンフレット(PDF) <a href="https://www.nta.go.jp/publication/pamph/shohi/menzei/202506/pdf/0025006-106.pdf" rel="noopener">nta.go.jp/publication/pamph/shohi/menzei/202506/pdf/0025006-106.pdf</a></li>
+        <li>トラベルボイス「免税店が準備すべき4ステップ ―ジャパンショッピングツーリズム協会が解説」(2026年8月15日) <a href="https://www.travelvoice.jp/20260815-160318" rel="noopener">travelvoice.jp/20260815-160318</a></li>
+        <li>税のしるべ「口座番号の誤りなどで返金できない場合は税関確認情報の保存で免税の適用可」 <a href="https://shirube.zaikyo.or.jp/article/2025/04/14/10322893.html" rel="noopener">shirube.zaikyo.or.jp/article/2025/04/14/10322893.html</a></li>
+      </ol>
+    </details>
+  </section>
+
+  <footer>
+    <p>このページは公開資料をもとにした情報提供で、税務の個別の判断はしていません。届出や会計処理は所轄の税務署・税理士に、システムの切り替えは承認送信事業者に確認してください。</p>
+    <p><a href="../">毎日ひとつの小さな道具箱</a>の4本目です。</p>
+  </footer>
+</div>
+<script>
+(function(){
+  const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+  const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+
+  // 東京の今日(日付だけ)
+  function tokyoToday(){
+    const p=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+    return new Date(p+'T00:00:00Z');
+  }
+  const DAY=864e5, START=new Date('2026-11-01T00:00:00Z');
+  const today=tokyoToday(), diff=Math.round((START-today)/DAY);
+  if(diff>0){
+    $('#stamp').firstChild.nodeValue=String(diff); $('#stampUnit').textContent='日';
+    $('#clockMain').textContent='11月1日の切り替えまで、あと'+diff+'日';
+    $('#clockSub').textContent='届出の確認は10月31日(土)まで。税務署の窓口は平日のみなので、実質は10月30日(金)までに済ませておくと安全です。';
+  }else{
+    const n=1-diff;
+    $('#stamp').firstChild.nodeValue=String(n); $('#stampUnit').textContent='日目';
+    $('#clockMain').textContent='リファンド方式が始まって'+n+'日目';
+    $('#clockSub').textContent='11月1日以降の販売は税込で売り、税関の確認後に返金します。下の案内文で、返金の方法と問い合わせ先をお客さまに伝えましょう。';
+  }
+
+  // 確認リスト
+  const boxes=$$('#check input');
+  function meter(){const d=boxes.filter(b=>b.checked).length;$('#meter').textContent=d+' / '+boxes.length+' 済み';
+    boxes.forEach(b=>b.closest('li').classList.toggle('done',b.checked));}
+  boxes.forEach(b=>{b.checked=store.get('d4-'+b.id)==='1';b.addEventListener('change',()=>{store.set('d4-'+b.id,b.checked?'1':'0');meter()})});
+  meter();
+
+  // 案内文
+  const T={
+    ja:{code:'JA',title:'免税のお買い物は「出国後の返金」に変わりました(2026年11月1日から)',
+      steps:['お会計は消費税込みの価格です。パスポートをご提示ください(同じ日に当店で税抜5,000円以上のお買い物が対象)。',
+        '出国の日、手荷物を預ける前に、空港・港の免税手続端末でパスポートを読み取り、税関の確認を受けてください。購入日から90日以内です。',
+        '税関で品物を見せるよう求められることがあります。免税で買った品物は預け荷物に入れず、手元にお持ちください。1回のお会計の品物が1つでも欠けると、そのお会計の分は確認を受けられず、返金されません。',
+        '確認のあと、当店(または当店が委託する返金事業者)から消費税相当額を返金します。'],
+      lm:'返金方法',lf:'手数料',lt:'返金の目安',lc:'お問い合わせ',contactNote:'返金の時期や方法は税関ではお答えできません。当店へお問い合わせください。',
+      m:{card:'クレジットカード',bank:'銀行口座',app:'電子決済・アプリ',cash:'店頭で現金'},
+      f:{none:'かかりません',pct:x=>'返金額から'+x+'%を差し引きます',tro:'返金事業者の規定によります'},
+      t:n=>'税関の確認から約'+n+'日',tNone:'お会計時にご案内します'},
+    en:{code:'EN',title:'Tax-free shopping is now refunded after departure (from 1 November 2026)',
+      steps:['You pay the price including consumption tax. Please show your passport (purchases of ¥5,000 or more, excluding tax, at this shop on the same day).',
+        'On the day you leave Japan, before checking in your baggage, scan your passport at a tax-free procedure terminal at the airport or seaport to get customs confirmation. This must be within 90 days of purchase.',
+        'Customs may ask to see the goods. Keep tax-free items with you, not in checked baggage. If any item from one receipt is missing, that whole receipt cannot be confirmed and will not be refunded.',
+        'After confirmation, we (or our refund operator) refund the consumption tax.'],
+      lm:'Refund method',lf:'Fee',lt:'Expected timing',lc:'Contact',contactNote:'Customs cannot answer questions about refunds. Please contact us.',
+      m:{card:'Credit card',bank:'Bank account',app:'E-payment / app',cash:'Cash at this shop'},
+      f:{none:'No fee',pct:x=>x+'% is deducted from the refund',tro:'Set by the refund operator'},
+      t:n=>'About '+n+' days after customs confirmation',tNone:'We will explain at checkout'},
+    zhs:{code:'简',title:'免税购物改为“离境后退税”(2026年11月1日起)',
+      steps:['结账时按含消费税的价格付款。请出示护照(同一天在本店购买满5,000日元〔不含税〕即可适用)。',
+        '离开日本当天,请在托运行李之前,在机场或港口的免税手续终端扫描护照,接受海关确认。须在购买之日起90天内完成。',
+        '海关可能要求查看商品。免税商品请随身携带,不要放入托运行李。同一张收据中只要缺少任何一件商品,该收据将无法确认,也无法退税。',
+        '确认后,由本店(或本店委托的退税运营商)退还相当于消费税的金额。'],
+      lm:'退款方式',lf:'手续费',lt:'退款时间(参考)',lc:'咨询',contactNote:'海关不受理退税咨询。请联系本店。',
+      m:{card:'信用卡',bank:'银行账户',app:'电子支付・App',cash:'本店现金'},
+      f:{none:'无',pct:x=>'从退款中扣除'+x+'%',tro:'按退税运营商规定'},
+      t:n=>'海关确认后约'+n+'天',tNone:'结账时为您说明'},
+    zht:{code:'繁',title:'免稅購物改為「離境後退稅」(2026年11月1日起)',
+      steps:['結帳時按含消費稅的價格付款。請出示護照(同一天在本店購買滿5,000日圓〔未稅〕即可適用)。',
+        '離開日本當天,請在託運行李之前,於機場或港口的免稅手續終端機掃描護照,接受海關確認。須於購買日起90天內完成。',
+        '海關可能要求查看商品。免稅商品請隨身攜帶,勿放入託運行李。同一張收據中只要缺少任何一件商品,該收據將無法確認,也無法退稅。',
+        '確認後,由本店(或本店委託的退稅業者)退還相當於消費稅的金額。'],
+      lm:'退款方式',lf:'手續費',lt:'退款時間(參考)',lc:'諮詢',contactNote:'海關不受理退稅諮詢。請聯絡本店。',
+      m:{card:'信用卡',bank:'銀行帳戶',app:'電子支付・App',cash:'本店現金'},
+      f:{none:'無',pct:x=>'從退款中扣除'+x+'%',tro:'依退稅業者規定'},
+      t:n=>'海關確認後約'+n+'天',tNone:'結帳時為您說明'},
+    ko:{code:'KO',title:'면세 쇼핑이 \'출국 후 환급\'으로 바뀌었습니다 (2026년 11월 1일부터)',
+      steps:['계산은 소비세가 포함된 가격으로 합니다. 여권을 제시해 주세요 (같은 날 본 매장에서 세금 제외 5,000엔 이상 구매 시 대상).',
+        '출국하는 날 수하물을 맡기기 전에 공항·항구의 면세 수속 단말기에서 여권을 스캔하고 세관 확인을 받으세요. 구매일로부터 90일 이내여야 합니다.',
+        '세관에서 물품 제시를 요구할 수 있습니다. 면세품은 위탁 수하물에 넣지 말고 직접 휴대하세요. 한 영수증의 물품 중 하나라도 없으면 그 영수증 전체가 확인되지 않아 환급받을 수 없습니다.',
+        '확인 후 본 매장(또는 본 매장이 위탁한 환급 사업자)이 소비세 상당액을 환급합니다.'],
+      lm:'환급 방법',lf:'수수료',lt:'환급 시기(기준)',lc:'문의',contactNote:'세관은 환급 문의에 답변하지 않습니다. 본 매장으로 문의해 주세요.',
+      m:{card:'신용카드',bank:'은행 계좌',app:'전자결제·앱',cash:'매장 현금'},
+      f:{none:'없음',pct:x=>'환급액에서 '+x+'% 공제',tro:'환급 사업자 규정에 따름'},
+      t:n=>'세관 확인 후 약 '+n+'일',tNone:'계산 시 안내해 드립니다'}
+  };
+  const HTMLLANG={ja:'ja',en:'en',zhs:'zh-Hans',zht:'zh-Hant',ko:'ko'};
+  const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const SEP={ja:'、',en:', ',zhs:'、',zht:'、',ko:', '};
+  let plain='';
+  function render(){
+    const shop=$('#shop').value.trim(), contact=$('#contact').value.trim();
+    const ms=$$('input[name=m]:checked').map(i=>i.value);
+    const fv=($$('input[name=f]:checked')[0]||{}).value||'none';
+    const pct=parseFloat($('#pct').value), days=parseInt($('#days').value,10);
+    const langs=$$('input[name=l]:checked').map(i=>i.value);
+    $('#sShop').textContent=shop?shop+' / TAX-FREE':'TAX-FREE';
+    const out=[], txt=[(shop||'TAX-FREE')+' — FROM 2026.11.01'];
+    langs.forEach(l=>{
+      const t=T[l];
+      const mtxt=ms.length?ms.map(k=>t.m[k]).join(SEP[l]):t.tNone;
+      const ftxt=fv==='pct'?(isFinite(pct)&&pct>0?t.f.pct(+pct.toFixed(1)):t.tNone):t.f[fv];
+      const ttxt=days>0?t.t(days):t.tNone;
+      const rows=[[t.lm,mtxt],[t.lf,ftxt],[t.lt,ttxt]];
+      if(contact)rows.push([t.lc,contact]);
+      out.push('<section class="lang" lang="'+HTMLLANG[l]+'"><h4><span class="code">'+t.code+'</span>'+esc(t.title)+'</h4><ol>'+
+        t.steps.map(s=>'<li>'+esc(s)+'</li>').join('')+'<li>'+esc(t.contactNote)+'</li></ol><dl>'+
+        rows.map(r=>'<dt>'+esc(r[0])+'</dt><dd>'+esc(r[1])+'</dd>').join('')+'</dl></section>');
+      txt.push('','['+t.code+'] '+t.title, ...t.steps.map((s,i)=>(i+1)+'. '+s), (t.steps.length+1)+'. '+t.contactNote, ...rows.map(r=>r[0]+': '+r[1]));
+    });
+    $('#sBody').innerHTML=out.join('')||'<p>言語を1つ以上選んでください。</p>';
+    $('#sBody').style.display='grid';$('#sBody').style.gap='16px';
+    plain=txt.join('\n');
+  }
+  $$('#signbox input').forEach(i=>i.addEventListener('input',render));
+  $$('#signbox input').forEach(i=>i.addEventListener('change',render));
+  $('#pct').addEventListener('focus',()=>{const r=document.querySelector('input[name=f][value=pct]');r.checked=true;render()});
+  $('#print').addEventListener('click',()=>window.print());
+  $('#copy').addEventListener('click',async()=>{
+    try{await navigator.clipboard.writeText(plain);$('#copied').textContent='コピーしました。POPや店のサイトに貼り付けて使えます。'}
+    catch(e){$('#copied').textContent='コピーできませんでした。案内文を選択してコピーしてください。'}
+  });
+  render();
+
+  // 90日期限
+  function due(){
+    const v=$('#buy').value; if(!v){$('#due').textContent='—';return}
+    const d=new Date(v+'T00:00:00Z'); d.setUTCDate(d.getUTCDate()+90);
+    const w='日月火水木金土'[d.getUTCDay()];
+    $('#due').textContent=d.getUTCFullYear()+'年'+(d.getUTCMonth()+1)+'月'+d.getUTCDate()+'日('+w+')';
+  }
+  const t0=today<START?START:today;
+  $('#buy').value=t0.toISOString().slice(0,10);
+  $('#buy').addEventListener('input',due); due();
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
