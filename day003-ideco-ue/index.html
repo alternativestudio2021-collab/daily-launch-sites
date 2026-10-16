@@ -33,6 +33,7 @@ h2{font-family:var(--f-disp);font-weight:800;font-size:20px;margin:0}
 .due{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:baseline;border-top:2px solid var(--plum);border-bottom:1px solid var(--rule);padding:10px 0}
 .due b{font-family:var(--f-num);color:var(--plum);font-size:20px}
 .due span{color:var(--sub);font-size:14px}
+.due .left{flex-basis:100%;color:var(--plum);font-weight:700;font-size:14px}
 .sheet{background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:18px;display:grid;gap:14px;min-width:0}
 .form{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
 label{display:grid;gap:4px;font-size:14px;font-weight:700}
@@ -82,7 +83,7 @@ footer{font-size:12px;color:var(--sub)}
   <div class="eyebrow">DAY 003 ・ 2026.12 iDeCo</div>
   <h1>iDeCo 12月からの上限ものさし</h1>
   <p class="lede">2026年12月分の掛金から、iDeCoに出せる上限が上がります。働き方と会社の企業年金の掛金を入れると、今の上限と12月からの上限、増やした場合に軽くなる税の目安が出ます。上限が上がっても掛金は自動では増えません。</p>
-  <div class="due"><b>10/30</b><span>12月分から増やすための事前受付の締切の一例(松井証券・マネックス証券、10月30日(金)必着。三菱UFJ銀行は10月31日必着)。締切は金融機関ごとに違うので、加入先の案内で確かめてください。</span></div>
+  <div class="due"><b>10/30</b><span>12月分から増やすための事前受付の締切の一例(松井証券・マネックス証券、10月30日(金)必着。三菱UFJ銀行は10月31日必着)。締切は金融機関ごとに違うので、加入先の案内で確かめてください。</span><span class="left" id="dueLeft" aria-live="polite"></span></div>
 </header>
 
 <section class="sheet" aria-labelledby="h-in">
@@ -266,6 +267,17 @@ footer{font-size:12px;color:var(--sub)}
   }
   ['kind','other','cur','rate','jumin'].forEach(function(id){$(id).addEventListener('input',render);$(id).addEventListener('change',render);});
   render();
+})();
+</script>
+<script>
+(function(){
+  var el=document.getElementById('dueLeft'); if(!el) return;
+  var now=new Date(Date.now()+9*3600*1000); // 日本時間の日付で数える
+  var today=Date.UTC(now.getUTCFullYear(),now.getUTCMonth(),now.getUTCDate());
+  var left=Math.round((Date.UTC(2026,9,30)-today)/86400000);
+  if(left>0) el.textContent='10月30日(金)必着の例まで、あと'+left+'日。郵送は届いた日で判断されるので、数日の余裕をみて出してください。';
+  else if(left===0) el.textContent='今日が10月30日(金)必着の例の締切日です。加入先ごとに締切が違うので、すぐに案内を確かめてください。';
+  else el.textContent='10月30日(金)必着の例は過ぎました。12月1日以降に変更を申し込めば、新しい掛金になる月が少し遅れるだけで増やせます。';
 })();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
