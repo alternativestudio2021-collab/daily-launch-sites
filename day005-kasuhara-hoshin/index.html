@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>カスハラ方針 したがき帳</title>
+<meta name="description" content="2026年10月1日から、従業員を1人でも雇う事業主はカスタマーハラスメント(カスハラ)の防止措置が義務になりました。店名と業種を選ぶと、お客様向けの基本方針、従業員向けの周知文、現場の対応手順、対応記録シートの下書きができ、そのままコピー・印刷できます。">
+<link rel="canonical" href="https://alternativestudio2021-collab.github.io/daily-launch-sites/day005-kasuhara-hoshin/">
+<meta property="og:type" content="website"><meta property="og:title" content="カスハラ方針 したがき帳"><meta property="og:description" content="10/1からカスハラ対策は全事業主の義務に。業種を選ぶと、基本方針・社内周知文・対応手順・記録シートの下書きができて印刷できます。"><meta property="og:url" content="https://alternativestudio2021-collab.github.io/daily-launch-sites/day005-kasuhara-hoshin/"><meta property="og:locale" content="ja_JP"><meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"カスハラ対策の義務化はいつからですか?","acceptedAnswer":{"@type":"Answer","text":"改正労働施策総合推進法により2026年10月1日からです。具体的な措置は2026年2月26日に告示された厚生労働省の指針(令和8年厚生労働省告示第51号)で示されています。"}},
+{"@type":"Question","name":"従業員が数人の小さな店も対象ですか?","acceptedAnswer":{"@type":"Answer","text":"対象です。労働者を1人でも雇っている事業主が対象で、パワハラ対策のときのような中小企業向けの猶予期間はありません。"}},
+{"@type":"Question","name":"お客様からの苦情はすべてカスハラになりますか?","acceptedAnswer":{"@type":"Answer","text":"なりません。指針は、顧客等の言動であること、社会通念上許容される範囲を超えていること、労働者の就業環境が害されることの3つをすべて満たすものをカスハラとしています。正当な苦情には通常どおり対応します。"}},
+{"@type":"Question","name":"対策をしないと罰則はありますか?","acceptedAnswer":{"@type":"Answer","text":"直接の刑事罰はなく、厚生労働大臣による助言・指導・勧告の対象になり、勧告に従わない場合は企業名が公表されることがあります。報告を求められて応じない、または虚偽の報告をした場合は過料の定めがあります。"}}
+]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@700;800&family=BIZ+UDPGothic:wght@400;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: 事務所の綴じ込み帳がモチーフ。左に紺の綴じ紐、罫線の紙、朱の確認印。上から 義務化の要点 → 入力 → 4種類の下書き(切替・コピー・印刷) → 5つの措置チェック → 判断の3要件 → よくある質問 → 出典 */
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#e7e9ee; --paper:#fdfcf8; --ink:#1b2033; --sub:#5a6075; --rule:#d6dae4; --line:#e9ecf2;
+  --navy:#26346b; --navy-soft:#e3e7f4; --vermil:#c4422a; --vermil-soft:#f7e1da; --ok:#2f6b4a;
+  --f-head:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;
+  --f-body:"BIZ UDPGothic","Hiragino Sans","Noto Sans JP",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#12141c; --paper:#1b1e29; --ink:#e9ebf2; --sub:#a4aac0; --rule:#323748; --line:#262a38;
+  --navy:#9fb0f0; --navy-soft:#252c47; --vermil:#ff8a6e; --vermil-soft:#3e2420; --ok:#7fd1a4; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12141c; --paper:#1b1e29; --ink:#e9ebf2; --sub:#a4aac0; --rule:#323748; --line:#262a38;
+  --navy:#9fb0f0; --navy-soft:#252c47; --vermil:#ff8a6e; --vermil-soft:#3e2420; --ok:#7fd1a4; color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);line-height:1.8;font-size:16px}
+.book{max-width:860px;margin:0 auto;padding:32px 16px 72px;display:grid;gap:22px}
+.sheet{position:relative;background:var(--paper);border:1px solid var(--rule);border-radius:4px 10px 10px 4px;padding:26px 22px 26px 40px;display:grid;gap:14px;min-width:0}
+.sheet::before{content:"";position:absolute;left:0;top:0;bottom:0;width:14px;background:var(--navy);border-radius:4px 0 0 4px;opacity:.9}
+.sheet::after{content:"";position:absolute;left:3px;top:24px;bottom:24px;width:8px;background:radial-gradient(circle,var(--bg) 2.5px,transparent 3px) 0 0/8px 28px repeat-y}
+h1,h2,h3{font-family:var(--f-head);margin:0;line-height:1.35;text-wrap:balance}
+h1{font-size:clamp(30px,6.4vw,46px);font-weight:800;letter-spacing:.02em}
+h2{font-size:clamp(20px,3.6vw,25px);font-weight:800;display:flex;gap:10px;align-items:baseline}
+h2 .n{font-family:var(--f-mono);font-size:13px;color:var(--vermil);border:1.5px solid var(--vermil);border-radius:50%;width:28px;height:28px;display:inline-grid;place-items:center;flex:none;transform:translateY(-3px)}
+h3{font-size:17px}
+p{margin:0}
+.lead{font-size:17px}
+.note{font-size:14px;color:var(--sub)}
+.kicker{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;color:var(--sub)}
+.stamp{justify-self:start;font-family:var(--f-head);font-weight:800;color:var(--vermil);border:2px solid var(--vermil);border-radius:6px;padding:4px 12px;transform:rotate(-2deg);font-size:15px}
+.stamp b{font-family:var(--f-mono)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:0;padding:0;list-style:none}
+.facts li{border-top:2px solid var(--navy);padding-top:8px;font-size:14px;color:var(--sub)}
+.facts b{display:block;color:var(--ink);font-size:17px}
+form.in{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px 18px}
+label{display:grid;gap:4px;font-size:14px;font-weight:700;min-width:0}
+label small{font-weight:400;color:var(--sub)}
+input[type=text],input[type=number],input[type=date],select{font:inherit;font-weight:400;color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-bottom:2px solid var(--navy);border-radius:3px;padding:8px 10px;width:100%;min-width:0}
+input:focus-visible,select:focus-visible,button:focus-visible,textarea:focus-visible,a:focus-visible{outline:2px solid var(--vermil);outline-offset:2px}
+.checks{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px 22px}
+.checks label{display:flex;gap:8px;align-items:center;font-weight:400}
+input[type=checkbox]{width:18px;height:18px;accent-color:var(--navy);flex:none}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;border-bottom:2px solid var(--navy)}
+.tabs button{font:inherit;font-size:14px;font-weight:700;background:transparent;color:var(--sub);border:1px solid var(--rule);border-bottom:none;border-radius:6px 6px 0 0;padding:8px 14px;cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--navy);color:var(--paper);border-color:var(--navy)}
+textarea.out{width:100%;min-height:420px;font:inherit;font-size:15px;line-height:2;color:var(--ink);border:1px solid var(--rule);border-radius:3px;padding:14px 16px;resize:vertical;
+  background:repeating-linear-gradient(var(--paper) 0 29px,var(--line) 29px 30px);background-attachment:local}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{font:inherit;font-size:14px;font-weight:700;border-radius:4px;padding:9px 16px;cursor:pointer;border:1.5px solid var(--navy);background:var(--navy);color:var(--paper)}
+.btn.ghost{background:transparent;color:var(--navy)}
+.done{font-size:13px;color:var(--ok);min-height:1em}
+.todo{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.todo>li{border:1px solid var(--rule);border-radius:4px;padding:12px 14px;display:grid;gap:6px}
+.todo h3{display:flex;gap:8px;align-items:baseline}
+.todo h3 span{font-family:var(--f-mono);font-size:13px;color:var(--navy)}
+.todo ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.todo ul label{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:15px}
+.todo ul input{margin-top:5px}
+.meter{display:flex;align-items:center;gap:12px;font-family:var(--f-mono);font-size:14px}
+.meter i{flex:1;height:8px;background:var(--line);border-radius:4px;overflow:hidden;display:block}
+.meter i b{display:block;height:100%;width:0;background:var(--vermil);transition:width .2s}
+.three{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;counter-reset:t;margin:0;padding:0;list-style:none}
+.three li{background:var(--navy-soft);border-radius:4px;padding:12px 14px;font-size:15px;counter-increment:t}
+.three li::before{content:"要件 " counter(t);display:block;font-family:var(--f-mono);font-size:12px;color:var(--navy);letter-spacing:.08em}
+.vs{width:100%;border-collapse:collapse;font-size:14px}
+.vs th,.vs td{border-bottom:1px solid var(--rule);padding:8px 6px;text-align:left;vertical-align:top}
+.vs th{font-weight:700;color:var(--sub);font-size:13px}
+.tablewrap{overflow-x:auto}
+details{border-top:1px solid var(--rule);padding:10px 0}
+details:last-of-type{border-bottom:1px solid var(--rule)}
+summary{cursor:pointer;font-weight:700}
+details p{margin-top:6px;font-size:15px}
+ul.src{margin:0;padding-left:1.2em;font-size:14px;display:grid;gap:4px;overflow-wrap:anywhere}
+a{color:var(--navy)}
+footer{font-size:12px;color:var(--sub);padding:0 4px}
+.warn{background:var(--vermil-soft);border-left:4px solid var(--vermil);padding:10px 14px;border-radius:2px;font-size:14px}
+#printArea{display:none}
+@media (max-width:520px){.sheet{padding:22px 16px 22px 30px}.sheet::before{width:10px}.sheet::after{left:1px}textarea.out{min-height:360px}}
+@media print{
+  body{background:#fff;color:#000}
+  .book{display:none}
+  #printArea{display:block;white-space:pre-wrap;font-family:var(--f-body);font-size:11pt;line-height:1.9;color:#000}
+  #printArea h1{font-family:var(--f-head);font-size:18pt;margin:0 0 12pt}
+  #printArea table{width:100%;border-collapse:collapse}
+  #printArea td,#printArea th{border:1px solid #000;padding:6pt;vertical-align:top;font-size:10.5pt;text-align:left}
+  @page{size:A4;margin:16mm}
+}
+</style>
+</head><body>
+<div class="book">
+
+<header class="sheet" aria-labelledby="h1">
+  <span class="kicker">毎日ひとつの小さな道具箱 ・ 005</span>
+  <h1 id="h1">カスハラ方針 したがき帳</h1>
+  <p class="lead">2026年10月1日から、従業員を1人でも雇っている事業主は、カスタマーハラスメント(カスハラ)を防ぐための措置をとることが義務になりました。店名と業種を選ぶと、必要な書類の下書きを4種類まとめて作れます。</p>
+  <span class="stamp" id="since">義務化から <b>—</b> 日</span>
+  <ul class="facts">
+    <li><b>2026年10月1日</b>改正労働施策総合推進法の施行日</li>
+    <li><b>規模を問わず</b>パート1人の店も対象。中小企業の猶予なし</li>
+    <li><b>5つの措置</b>方針の周知・相談窓口・事後対応・抑止・プライバシー保護等</li>
+    <li><b>勧告・公表</b>刑事罰はないが、指導・勧告に従わないと企業名公表の対象</li>
+  </ul>
+  <p class="note">入力した内容はこの端末の中だけで文章にしていて、どこにも送信しません。下書きは厚生労働省の指針の項目に沿って作ったもので、法律の助言ではありません。</p>
+</header>
+
+<section class="sheet" aria-labelledby="h-in">
+  <h2 id="h-in"><span class="n">1</span>店や会社のことを入れる</h2>
+  <form class="in" id="f" onsubmit="return false">
+    <label>事業者名(店名・会社名)<input type="text" id="name" value="〇〇商店" autocomplete="organization"></label>
+    <label>業種<select id="ind"></select></label>
+    <label>相談窓口の担当<small>役職か名前。小さな店なら店長・オーナーで構いません</small><input type="text" id="desk" value="店長"></label>
+    <label>窓口への連絡方法<small>内線・電話番号・LINEグループなど</small><input type="text" id="contact" value="直接声をかける、または電話"></label>
+    <label>応対を区切る目安(分)<small>電話や対面で、これを超えたら責任者に代わる</small><input type="number" id="limit" value="30" min="5" max="180" step="5"></label>
+    <label>制定日<input type="date" id="date"></label>
+    <div class="checks">
+      <label><input type="checkbox" id="ban" checked>悪質な場合は販売・サービスの提供や出入りをお断りする</label>
+      <label><input type="checkbox" id="rec">トラブル時は録音・録画をすることがある</label>
+      <label><input type="checkbox" id="police" checked>暴力・脅迫などは警察に通報すると明記する</label>
+    </div>
+  </form>
+</section>
+
+<section class="sheet" aria-labelledby="h-out">
+  <h2 id="h-out"><span class="n">2</span>下書きを選んで、直して、使う</h2>
+  <p class="note">文章はこの枠の中でそのまま書き直せます。業種や入力を変えると作り直されるので、手直しは最後にしてください。</p>
+  <div class="tabs" role="tablist" id="tabs">
+    <button role="tab" aria-selected="true" data-k="policy">お客様向け 基本方針</button>
+    <button role="tab" aria-selected="false" data-k="staff">従業員向け 周知文</button>
+    <button role="tab" aria-selected="false" data-k="flow">現場の対応手順</button>
+    <button role="tab" aria-selected="false" data-k="log">対応記録シート</button>
+  </div>
+  <textarea class="out" id="out" aria-label="下書き" spellcheck="false"></textarea>
+  <div class="bar">
+    <button class="btn" type="button" id="copy">コピーする</button>
+    <button class="btn ghost" type="button" id="print">この下書きを印刷(A4)</button>
+    <span class="done" id="done" role="status"></span>
+  </div>
+  <p class="note" id="useNote"></p>
+</section>
+
+<section class="sheet" aria-labelledby="h-todo">
+  <h2 id="h-todo"><span class="n">3</span>指針の5つの措置、どこまでできたか</h2>
+  <p class="note">厚生労働省の指針が事業主に求める措置を、小さな事業所でもできる行動に分けました。チェックはこのブラウザにだけ残ります。</p>
+  <div class="meter"><span id="cnt">0 / 0</span><i><b id="bar"></b></i></div>
+  <ol class="todo" id="todo"></ol>
+</section>
+
+<section class="sheet" aria-labelledby="h-judge">
+  <h2 id="h-judge"><span class="n">4</span>苦情とカスハラの線引き</h2>
+  <p>指針は、次の3つをすべて満たす言動をカスハラとしています。判断の物差しは、言われた本人の感じ方だけでなく「平均的な労働者がどう感じるか」です。</p>
+  <ol class="three">
+    <li>お客様・取引先・施設の利用者など、顧客等の言動である</li>
+    <li>業務の性質などに照らして、社会通念上許容される範囲を超えている</li>
+    <li>その言動で、働く人の就業環境が害される</li>
+  </ol>
+  <div class="tablewrap"><table class="vs">
+    <thead><tr><th scope="col">ふつうの苦情・要望</th><th scope="col">範囲を超えやすい言動</th></tr></thead>
+    <tbody>
+      <tr><td>商品の不良を指摘し、交換や返金を求める</td><td>根拠のない高額の金品や、規定を大きく超える補償を繰り返し求める</td></tr>
+      <tr><td>対応の悪さを指摘し、改善を求める</td><td>土下座・謝罪文・担当者の処分を求める、人格を否定する</td></tr>
+      <tr><td>説明に納得がいかず、責任者と話したいと言う</td><td>長時間居座る、何度も電話をかけ続ける、帰るよう求めても帰らない</td></tr>
+      <tr><td>口コミやSNSに感想を書く</td><td>従業員の名前や顔写真を晒すと脅す、無断で撮影して投稿する</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">要求の中身に理由があっても、言い方や手段(暴言、長時間の拘束、脅し)が度を超えていればカスハラに当たり得ます。逆に、強い口調でも内容が正当な苦情なら、まず通常どおり対応します。</p>
+</section>
+
+<section class="sheet" aria-labelledby="h-faq">
+  <h2 id="h-faq"><span class="n">5</span>よくある質問</h2>
+  <div>
+    <details><summary>従業員が数人の小さな店も対象ですか?</summary><p>対象です。労働者を1人でも雇っていれば規模や業種に関係なく、2026年10月1日から措置が義務になっています。パワハラ対策のときのような中小企業向けの猶予はありません。家族だけで営む店でも、パートやアルバイトを雇っていれば対象です。</p></details>
+    <details><summary>方針は店頭に貼らないといけませんか?</summary><p>指針が求めるのは、方針を決めて従業員に周知・啓発することです。お客様向けに店頭やホームページで公表することは、抑止につながる取り組みとして多くの自治体や企業が行っていますが、掲示の方法までは決められていません。小さな店なら、レジ横への掲示とホームページ・予約サイトへの掲載が手軽です。</p></details>
+    <details><summary>相談窓口は外部に頼まないといけませんか?</summary><p>社内の担当者で構いません。大事なのは、担当者が決まっていて従業員がそれを知っていること、カスハラかどうか微妙な段階でも相談を受けること、相談した人のプライバシーを守り不利益に扱わないことです。店長自身が当事者になったときの相談先(オーナー、本部、家族経営なら共同経営者など)も決めておくと止まりません。</p></details>
+    <details><summary>対策をしないと罰則はありますか?</summary><p>直接の刑事罰はありません。厚生労働大臣(都道府県労働局)による助言・指導・勧告の対象になり、勧告に従わない場合は企業名が公表されることがあります。報告を求められて応じない、または虚偽の報告をした場合は過料の定めがあります。</p></details>
+    <details><summary>就業規則も変える必要がありますか?</summary><p>方針や相談窓口を就業規則に書くかどうかは事業所によります。カスハラをした取引先への対応や、従業員を守るための配置換えなどを規則に入れる場合は、社会保険労務士や都道府県労働局の総合労働相談コーナー(無料)に相談してください。</p></details>
+  </div>
+</section>
+
+<section class="sheet" aria-labelledby="h-src">
+  <h2 id="h-src"><span class="n">6</span>出典と、もっと詳しい資料</h2>
+  <ul class="src">
+    <li><a href="https://www.mhlw.go.jp/content/11900000/001662576.pdf" target="_blank" rel="noopener">リーフレット 令和8年10月1日からカスタマーハラスメント対策が事業主の義務になります(簡易版、厚生労働省)</a></li>
+    <li><a href="https://www.mhlw.go.jp/content/11900000/001662580.pdf" target="_blank" rel="noopener">同リーフレット 詳細版(厚生労働省)</a></li>
+    <li><a href="https://www.mhlw.go.jp/content/11900000/001662584.pdf" target="_blank" rel="noopener">カスタマーハラスメント防止指針(令和8年厚生労働省告示第51号)</a></li>
+    <li><a href="https://www.mhlw.go.jp/content/11900000/001695619.pdf" target="_blank" rel="noopener">カスタマーハラスメント対策に関するQ&amp;A(厚生労働省)</a></li>
+    <li><a href="https://jsite.mhlw.go.jp/toyama-roudoukyoku/hourei_seido_tetsuzuki/customerharassmentshishin_00001.html" target="_blank" rel="noopener">カスタマーハラスメント防止指針の公布について(富山労働局)</a></li>
+    <li><a href="https://www.no-harassment.mhlw.go.jp/" target="_blank" rel="noopener">あかるい職場応援団(厚生労働省のハラスメント対策総合サイト、ポスター素材・企業マニュアル)</a></li>
+    <li><a href="https://www.nagashima.com/publications/publication20260305-1/" target="_blank" rel="noopener">厚生労働省、カスハラ指針を公表 ― 企業に求められる実務対応とは(長島・大野・常松法律事務所)</a> ── 抑止のための措置の例(警察への通報、警告文、販売の停止、出入り禁止)</li>
+    <li><a href="https://hatenabase.jp/blog/kasuhara-obligation-2026/" target="_blank" rel="noopener">カスハラ対策義務化 2026(はてなベース)</a> ── 対象範囲、猶予なし、勧告・公表と過料</li>
+    <li><a href="https://www.city.hiroshima.lg.jp/business/sangyo/1021490/1026451/1043769.html" target="_blank" rel="noopener">広島市 カスタマーハラスメント対策セミナー(10月28日)</a></li>
+  </ul>
+</section>
+
+<section class="sheet" aria-labelledby="h-share">
+  <h2 id="h-share"><span class="n">7</span>同業の人や取引先に送る</h2>
+  <p class="note">商店街や業界団体で同じ下書きを使うと、お客様にも「どの店でも同じルール」と伝わりやすくなります。</p>
+  <p><a href="https://twitter.com/intent/tweet?text=%E3%82%AB%E3%82%B9%E3%83%8F%E3%83%A9%E6%96%B9%E9%87%9D%20%E3%81%97%E3%81%9F%E3%81%8C%E3%81%8D%E5%B8%B3%EF%BD%9C10%2F1%E3%81%8B%E3%82%89%E5%85%A8%E4%BA%8B%E6%A5%AD%E4%B8%BB%E3%81%AE%E7%BE%A9%E5%8B%99%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F%E3%82%AB%E3%82%B9%E3%83%8F%E3%83%A9%E5%AF%BE%E7%AD%96%E3%81%AE%E3%80%81%E5%9F%BA%E6%9C%AC%E6%96%B9%E9%87%9D%E3%83%BB%E7%A4%BE%E5%86%85%E5%91%A8%E7%9F%A5%E6%96%87%E3%83%BB%E5%AF%BE%E5%BF%9C%E6%89%8B%E9%A0%86%E3%83%BB%E8%A8%98%E9%8C%B2%E3%82%B7%E3%83%BC%E3%83%88%E3%81%AE%E4%B8%8B%E6%9B%B8%E3%81%8D&amp;url=https%3A%2F%2Falternativestudio2021-collab.github.io%2Fdaily-launch-sites%2Fday005-kasuhara-hoshin%2F&amp;hashtags=%E3%82%AB%E3%82%B9%E3%83%8F%E3%83%A9%E5%AF%BE%E7%AD%96" target="_blank" rel="noopener">Xで送る</a> ・ <a href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Falternativestudio2021-collab.github.io%2Fdaily-launch-sites%2Fday005-kasuhara-hoshin%2F" target="_blank" rel="noopener">LINEで送る</a> ・ <a href="../">ほかの道具を見る(毎日ひとつの小さな道具箱)</a></p>
+  <p class="note">店で外国人のお客様に免税販売をしている場合は、11月1日からの<a href="../day004-menzei-refund/">免税リファンド方式の店頭案内</a>も同じ時期に用意が要ります。</p>
+</section>
+
+<footer>
+  <p>このページは厚生労働省の公表資料と報道・専門家の解説をもとにした下書き作成ツールで、個別の事案についての法律相談に代わるものではありません。実際の運用や就業規則の変更は、都道府県労働局の総合労働相談コーナー、社会保険労務士、弁護士に確認してください。情報は2026年10月17日時点。</p>
+</footer>
+</div>
+
+<div id="printArea" aria-hidden="true"></div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var IND={
+    food:{label:'飲食店',acts:['長時間の居座りや、大声での怒鳴り・威圧','根拠のない作り直し・無料提供・返金を繰り返し求めること','従業員を無断で撮影すること、SNSに名前や顔を晒すと脅すこと'],
+      scenes:[['料理への不満が強い口調で続く','内容を確認し、正当なら作り直しや返金を通常どおり行う。それ以上の要求には「本日はここまでの対応とさせてください」と伝え、責任者に代わる。'],['会計後も席を立たず、従業員を呼びつけて叱責し続ける','2人以上で対応し、時間を区切る。「これ以上のお話はお受けできません。お引き取りください」と伝え、応じなければ110番。'],['スマホで従業員を撮り始める','「従業員の撮影はご遠慮ください」と伝える。続く場合は対応を責任者に代え、撮影された従業員はバックヤードに下げる。']]},
+    retail:{label:'小売店',acts:['返品・交換の規定を大きく超える返金や金品の要求','土下座、謝罪文、従業員の処分などの要求','長時間・繰り返しの電話や来店による苦情'],
+      scenes:[['規定外の返品を強く求められる','規定と理由を説明し、例外にしない。「規定によりお受けできません」を繰り返し、責任者に代わる。'],['「土下座しろ」「名前を言え」と迫られる','土下座や個人名の提示には応じない。名札がフルネームの場合は姓のみやイニシャルに変えることも検討する。'],['同じ人から同じ苦情の電話が毎日かかる','初回の内容と回答を記録し、2回目以降は「先日お答えしたとおりです」と伝えて区切る。窓口を責任者1人にまとめる。']]},
+    lodging:{label:'宿泊業・旅館',acts:['客室・料理・サービスへの過剰な無償対応の要求','深夜の繰り返しの呼び出し、長時間の拘束','従業員へのつきまといや性的な言動'],
+      scenes:[['深夜にフロントへ何度も呼び出される','1人で客室に行かない。用件はフロントか電話で受け、緊急でなければ翌朝の対応と伝える。'],['宿泊料の全額返金を強く求められる','事実関係を確認し、提供できる対応を一度だけ示す。それ以上は「当館の対応はここまでです」と伝え、記録する。'],['従業員が性的な発言や接触を受けた','すぐにその従業員を担当から外し、責任者が対応する。悪質な場合は宿泊の継続をお断りし、警察に相談する。']]},
+    care:{label:'介護・医療',acts:['職員への暴言・暴力、セクシュアルハラスメント','時間外や休日の繰り返しの連絡、長時間の拘束','根拠のない担当者の変更・処分の強要'],
+      scenes:[['利用者・家族から大声で責められる','複数の職員で対応し、話を聞く場所と時間を決める。病状や認知症によるものかを分けて考え、ケアの問題として多職種で共有する。'],['家族から夜間や休日に何度も電話が来る','連絡を受ける時間帯と窓口を書面で伝える。緊急時の連絡先は分けて案内する。'],['職員が叩かれた、触られた','職員の安全を優先して担当を外し、記録と受診を行う。繰り返す場合は契約内容に沿って対応を検討し、悪質なら警察に相談する。']]},
+    salon:{label:'美容室・サロン',acts:['施術後の根拠のない全額返金や無料のやり直しの繰り返し要求','施術中・施術後の性的な言動','担当者の私生活への詮索、店外でのつきまとい'],
+      scenes:[['仕上がりに不満で全額返金を求められる','状態を一緒に確認し、店のお直し規定に沿って対応する。規定を超える要求は責任者が「お受けできません」と伝える。'],['施術中に性的な発言をされる','「そのようなお話はご遠慮ください」と一度伝え、続けば担当を代えるか施術を中止する。次回以降の予約はお断りを検討する。'],['担当者の連絡先を執拗に聞かれる','個人の連絡先は教えない決まりだと伝える。店外で待ち伏せされたら1人で帰らせず、警察に相談する。']]},
+    call:{label:'電話・コールセンター窓口',acts:['長時間・繰り返しの電話','担当者の個人名や私生活に触れる発言、脅し','「上の者を出せ」の繰り返しによる長時間の拘束'],
+      scenes:[['通話が目安の時間を超えて同じ話が続く','「これ以上同じお話が続く場合は、お電話を終了させていただきます」と予告し、それでも続けば終話する。'],['暴言や脅しが始まった','「このような発言が続く場合は、お電話を終了させていただきます」と伝えて終話。録音がある場合は保存し、責任者に報告する。'],['同じ人から1日に何度も電話がある','着信を責任者に集約し、回答は一度にまとめて文書で伝える方法を検討する。']]},
+    realestate:{label:'不動産・管理会社',acts:['夜間・休日の連絡や即時対応の強要','契約や管理の範囲を超える要求','担当者の自宅や私的な連絡先への接触'],
+      scenes:[['夜間に担当者の携帯へ繰り返し電話がある','会社の受付時間と緊急窓口を書面で案内し、担当者個人の番号は使わない。'],['管理範囲外の修繕や補償を求められる','契約書の該当箇所を示し、できることとできないことを文書で伝える。'],['事務所に来て長時間帰らない','2人以上で対応し、時間を区切って退去を求める。応じなければ110番。']]},
+    edu:{label:'教育・保育・塾',acts:['保護者などによる長時間の面談要求や暴言','職員の名前や写真をSNSに投稿する、または投稿すると脅すこと','時間外の繰り返しの連絡'],
+      scenes:[['保護者から長時間の面談を求められる','面談は事前予約・時間制とし、管理者を含む2人以上で対応する。終了時刻は最初に伝える。'],['職員を名指しで非難する投稿がされた','画面を保存して記録し、職員本人を1人で対応させない。削除依頼や法的手続きは管理者が専門家と相談する。'],['夜間に個人のスマホに連絡が来る','連絡は施設の電話・連絡帳に限ると全保護者に周知する。']]},
+    other:{label:'その他の業種',acts:['暴言、威圧、人格を否定する発言','根拠のない金品の要求や、度を超えた無償対応の要求','長時間の拘束、繰り返しの電話や来訪'],
+      scenes:[['強い口調の苦情が続く','まず事実と要求を確認し、正当な部分には通常どおり対応する。範囲を超えたら責任者に代わる。'],['帰るよう求めても帰らない','2人以上で対応し、退去を求める。応じなければ110番。'],['担当者を名指しで責める','担当者を外し、責任者が対応する。担当者は休ませ、話を聞く。']]}
+  };
+  var order=['food','retail','lodging','care','salon','call','realestate','edu','other'];
+  var sel=$('ind');
+  order.forEach(function(k){var o=document.createElement('option');o.value=k;o.textContent=IND[k].label;sel.appendChild(o);});
+
+  function today(){var d=new Date(Date.now()+9*3600e3);return d.toISOString().slice(0,10);}
+  $('date').value=today();
+  (function(){var d=Math.floor((Date.parse(today())-Date.parse('2026-10-01'))/864e5);$('since').innerHTML=d>=0?'義務化から <b>'+d+'</b> 日':'義務化まで <b>'+(-d)+'</b> 日';})();
+
+  function v(id,def){var x=($(id).value||'').trim();return x||def;}
+  function jdate(s){if(!s)return '';var p=s.split('-');return p[0]+'年'+(+p[1])+'月'+(+p[2])+'日';}
+
+  function build(k){
+    var n=v('name','当社'), ind=IND[sel.value], desk=v('desk','責任者'), ct=v('contact','直接声をかける'), lim=Math.max(5,+$('limit').value||30), dt=jdate($('date').value);
+    var ban=$('ban').checked, rec=$('rec').checked, pol=$('police').checked, L=[];
+    if(k==='policy'){
+      L.push('カスタマーハラスメントに対する基本方針','',n+'は、お客様のご意見やご要望を大切にし、誠実にお応えします。一方で、従業員が安心して働ける環境を守ることも、よいサービスを続けるために欠かせないと考えています。','',
+        '1. カスタマーハラスメントとは','お客様などからのご要求や言動のうち、内容や手段・態様が社会通念上許容される範囲を超え、従業員の就業環境を害するものをいいます。','',
+        '2. 対象となる行為の例');
+      ['暴力、暴言、威圧的・脅迫的な言動、人格を否定する発言'].concat(ind.acts).concat(['正当な理由のない謝罪(土下座など)や従業員の処分の要求','従業員へのつきまとい、性的な言動、プライバシーの侵害']).forEach(function(a){L.push('・'+a);});
+      L.push('','3. '+n+'の対応','上記の行為があった場合は、対応をお断りし、責任者に代わって対応します。');
+      if(ban)L.push('悪質と判断した場合は、商品の販売やサービスの提供、施設への立ち入りをお断りすることがあります。');
+      if(pol)L.push('暴行、脅迫、居座り(退去の求めに応じない)など犯罪に当たり得る行為には、警察に通報します。');
+      if(rec)L.push('トラブルの際は、事実を正しく確認するため、会話の録音や録画をすることがあります。');
+      L.push('','4. お客様へのお願い','従業員も同じ一人の人として接していただけますよう、ご理解とご協力をお願いいたします。','',dt+' 制定','',n);
+    }else if(k==='staff'){
+      L.push('お客様からのハラスメント(カスハラ)への対応について','',n+'で働く皆さんへ','',
+        n+'は、お客様などからの度を超えた言動から皆さんを守ります。2026年10月1日から、すべての事業主にこの対策が義務づけられています。','',
+        '1. 方針','お客様向けに「カスタマーハラスメントに対する基本方針」を定めました。正当なご意見には誠実に対応しますが、範囲を超えた言動には一人で耐えず、店(会社)として対応します。','',
+        '2. 相談窓口','担当: '+desk,'連絡方法: '+ct,'カスハラかどうか迷う場合や、これから起きそうだと感じた場合も、遠慮なく相談してください。'+desk+'自身が当事者のときは、別の責任者に相談してください。','',
+        '3. その場での動き方','・一人で対応しない。手が空いている人を呼ぶ','・目安の'+lim+'分を超えたら、'+desk+'に代わってもらう','・身の危険を感じたら、すぐにその場を離れる。迷わず110番してよい','',
+        '4. あとのこと','・起きたことは「対応記録シート」に、言われた言葉はそのまま書く','・店(会社)は事実を確認し、必要に応じて休憩、担当替え、配置の見直しを行う','・同じことが起きないよう、対応の仕方を見直して共有する','',
+        '5. 相談した人を守ります','・相談の内容や相談した人のことは、必要な人以外に伝えません','・相談したこと、事実の確認に協力したことを理由に、不利益な扱いをすることはありません','',
+        '6. 皆さんへのお願い','お客様に対しても、同僚に対しても、互いに尊重して接してください。','',dt,n);
+    }else if(k==='flow'){
+      L.push('現場の対応手順('+ind.label+')','',n,'',
+        '■ 基本の流れ','1) 話を聞き、何が起きたか・何を求めているかを確認する','2) 正当な苦情・要望には、通常どおり対応する','3) 範囲を超えたら、一人で対応しない。2人以上にする','4) '+lim+'分を目安に、'+desk+'に代わる','5) 「これ以上の対応はできません」と区切りを伝える','6) 帰らない・続く場合は、退去を求める'+(pol?'。暴力・脅し・居座りは110番':''),'7) 終わったら記録シートを書き、'+desk+'に報告。対応した人を休ませる','',
+        '■ この業種で起きやすい場面と動き方');
+      ind.scenes.forEach(function(s,i){L.push('','場面'+(i+1)+': '+s[0],'→ '+s[1]);});
+      L.push('','■ 区切るときの言い方(例)','「ご意見は承りました。この件についての当店の対応はここまでとさせてください」','「これ以上同じお話が続く場合は、対応を終了させていただきます」','「お引き取りください。お帰りいただけない場合は警察に連絡します」','',
+        '■ してはいけないこと','・その場で根拠のない金品や特別扱いを約束する','・従業員個人の名前・連絡先・住所を伝える','・一人で別室や客室に行く');
+    }else{
+      L.push('カスハラ 対応記録シート','',n,'',
+        '記入日: ____年__月__日   記入者: ________________','',
+        '日時: ____年__月__日 __時__分 〜 __時__分(約__分)','場所: □ 店頭・窓口 □ 電話 □ メール・SNS □ その他(________)','対応した人: ________________  同席・応援: ________________','相手: □ 初めて □ 以前にも(__回目)  わかる範囲の特徴: ________________','',
+        'きっかけ(何についてのご意見か):','________________________________________________','',
+        '相手の言動(言われた言葉はそのまま書く):','________________________________________________','________________________________________________','',
+        '求められたこと:','________________________________________________','',
+        'こちらの対応と伝えた内容:','________________________________________________','',
+        '結果: □ 収まった □ 責任者に交代 □ 退去を求めた □ 110番した □ その他','残っている証拠: □ 録音 □ 録画・防犯カメラ □ メール・SNSの画面 □ 目撃者(________)','',
+        '対応した人の様子・必要なケア: □ 休憩 □ 担当替え □ 受診 □ 面談','',
+        desk+'の確認: ____年__月__日  確認者: ________','今後の対応・共有事項:','________________________________________________');
+    }
+    return L.join('\n');
+  }
+
+  var cur='policy';
+  var NOTES={policy:'店頭(レジ横・入口)への掲示と、ホームページ・予約サイトへの掲載に使えます。',staff:'休憩室への掲示、全員への配布やLINEでの共有に使えます。周知した日と方法を控えておくと、措置をとった記録になります。',flow:'現場の人が見られる場所に置き、朝礼やミーティングで一度読み合わせてください。',log:'印刷して数枚を窓口の近くに置いておくと、起きた直後に書けます。'};
+  function render(){$('out').value=build(cur);$('useNote').textContent=NOTES[cur];$('done').textContent='';}
+  ['name','desk','contact','limit','date'].forEach(function(id){$(id).addEventListener('input',render);});
+  ['ind','ban','rec','police'].forEach(function(id){$(id).addEventListener('change',render);});
+  $('tabs').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;cur=b.dataset.k;
+    Array.prototype.forEach.call($('tabs').children,function(x){x.setAttribute('aria-selected',x===b?'true':'false');});render();});
+
+  $('copy').addEventListener('click',function(){var t=$('out').value;
+    var ok=function(){$('done').textContent='コピーしました';};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,function(){$('out').select();document.execCommand('copy');ok();});}
+    else{$('out').select();document.execCommand('copy');ok();}});
+  $('print').addEventListener('click',function(){var t=$('out').value.split('\n'),pa=$('printArea');pa.textContent='';
+    var h=document.createElement('h1');h.textContent=t.shift();pa.appendChild(h);
+    var body=document.createElement('div');body.textContent=t.join('\n').replace(/^\n+/,'');pa.appendChild(body);window.print();});
+
+  var TODO=[
+    ['方針を決めて周知する',['お客様向けの基本方針を作った','従業員に方針を伝えた(掲示・配布・朝礼など)','店頭やホームページで方針を公表した']],
+    ['相談窓口をつくる',['相談の担当者を決め、従業員に知らせた','担当者自身が当事者のときの相談先も決めた']],
+    ['起きたあとに迅速・適切に対応する',['対応の手順と記録シートを用意した','対応した従業員の休憩・担当替えなどのケアを決めた']],
+    ['抑止のための措置をとる',['悪質な場合の対応(警告・販売停止・出入り禁止・110番)を決めた','一人で対応しない、時間で区切るなどのルールを共有した']],
+    ['プライバシー保護と不利益取扱いの禁止',['相談者のプライバシーを守ることを従業員に伝えた','相談・協力を理由に不利益に扱わないことを従業員に伝えた']]
+  ];
+  var KEY='day005-todo', saved={};
+  try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')||{};}catch(e){saved={};}
+  var total=0, ol=$('todo');
+  TODO.forEach(function(g,i){var li=document.createElement('li'),h=document.createElement('h3');
+    h.innerHTML='<span>'+(i+1)+'</span>';h.appendChild(document.createTextNode(g[0]));li.appendChild(h);
+    var ul=document.createElement('ul');
+    g[1].forEach(function(t,j){var id='t'+i+'_'+j,l=document.createElement('label'),c=document.createElement('input');c.type='checkbox';c.id=id;c.checked=!!saved[id];
+      c.addEventListener('change',function(){saved[id]=c.checked;try{localStorage.setItem(KEY,JSON.stringify(saved));}catch(e){}meter();});
+      l.appendChild(c);l.appendChild(document.createTextNode(t));var x=document.createElement('li');x.appendChild(l);ul.appendChild(x);total++;});
+    li.appendChild(ul);ol.appendChild(li);});
+  function meter(){var n=ol.querySelectorAll('input:checked').length;$('cnt').textContent=n+' / '+total;$('bar').style.width=(n/total*100)+'%';}
+  meter();render();
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
