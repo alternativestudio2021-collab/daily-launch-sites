@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>年末調整 家族の欄ナビ 2026</title>
+<meta name="description" content="2026年分(令和8年分)の年末調整は、扶養の所得要件が62万円(給与だけなら年収136万円)に上がり、19〜22歳の子の特定親族特別控除も始まりました。家族の生年月日と年収を入れると、使える控除と金額、どの申告書のどの欄に書くかが分かります。入力内容は送信されません。">
+<link rel="canonical" href="https://alternativestudio2021-collab.github.io/daily-launch-sites/day006-nencho-kazoku/">
+<meta property="og:type" content="website"><meta property="og:title" content="年末調整 家族の欄ナビ 2026"><meta property="og:description" content="扶養は年収136万円まで、19〜22歳の子は197万円まで控除あり。家族ごとに控除の種類・金額・書く欄を判定します。"><meta property="og:url" content="https://alternativestudio2021-collab.github.io/daily-launch-sites/day006-nencho-kazoku/"><meta property="og:locale" content="ja_JP"><meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"2026年分の年末調整で、扶養に入れる家族の年収の上限はいくらですか?","acceptedAnswer":{"@type":"Answer","text":"所得税の扶養控除・配偶者控除の対象になる家族の合計所得金額の上限は62万円で、給与収入だけなら年収136万円以下です(2025年分は58万円、123万円以下)。"}},
+{"@type":"Question","name":"大学生の子が年収136万円を超えたら控除はなくなりますか?","acceptedAnswer":{"@type":"Answer","text":"19歳以上23歳未満の子は、合計所得123万円以下(給与だけなら年収197万円以下)まで特定親族特別控除が受けられます。年収159万円以下なら控除額は63万円で、特定扶養控除と同じ額です。年末調整で特定親族特別控除申告書を出します。"}},
+{"@type":"Question","name":"扶養控除等申告書の『源泉控除対象親族』とは何ですか?","acceptedAnswer":{"@type":"Answer","text":"控除対象扶養親族に、合計所得58万円超100万円以下の特定親族を加えたものです。毎月の源泉徴収税額を計算するときの人数に入れる家族で、令和8年分の様式から欄の名前が変わりました。"}},
+{"@type":"Question","name":"税の扶養と社会保険の扶養は同じですか?","acceptedAnswer":{"@type":"Answer","text":"別の制度です。社会保険(健康保険)の扶養は年収見込み130万円未満(19〜22歳は150万円未満、60歳以上は180万円未満)が目安で、税の136万円とは基準も判定方法も違います。"}}
+]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@700;900&family=Noto+Sans+JP:wght@400;700&family=Roboto+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: 会社から配られる年末調整の封筒と名札がモチーフ。クラフト紙の地に、家族ごとの名札カード。上から 今年変わった線 → 本人の所得 → 家族の名札(追加・削除) → 判定 → 勤務先へのメモ → 書類の対応表 → よくある質問 → 出典 */
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#efe6d6; --paper:#fffaf1; --ink:#2a2418; --sub:#6b604c; --rule:#dccfb6; --soft:#f6eedf;
+  --green:#2d6a4f; --green-soft:#dcefe3; --mustard:#b7791f; --mustard-soft:#fbecc9; --red:#b23b2a; --red-soft:#f7ded8;
+  --f-head:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif;
+  --f-body:"Noto Sans JP","Hiragino Sans",sans-serif;
+  --f-num:"Roboto Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1a1712; --paper:#24201a; --ink:#f0e9dc; --sub:#b8ac96; --rule:#3d362b; --soft:#2c271f;
+  --green:#7fcfa4; --green-soft:#1f3a2c; --mustard:#e8b25a; --mustard-soft:#3d3020; --red:#ff9a86; --red-soft:#40231e; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1a1712; --paper:#24201a; --ink:#f0e9dc; --sub:#b8ac96; --rule:#3d362b; --soft:#2c271f;
+  --green:#7fcfa4; --green-soft:#1f3a2c; --mustard:#e8b25a; --mustard-soft:#3d3020; --red:#ff9a86; --red-soft:#40231e; color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);line-height:1.8;font-size:16px}
+.wrap{max-width:820px;margin:0 auto;padding:32px 16px 72px;display:grid;gap:22px}
+h1,h2,h3{font-family:var(--f-head);margin:0;line-height:1.35;text-wrap:balance}
+h1{font-size:clamp(28px,6vw,42px);font-weight:900}
+h2{font-size:clamp(19px,3.4vw,23px);font-weight:900}
+h3{font-size:16px;font-weight:700}
+p{margin:0}
+a{color:var(--green)}
+.envelope{background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:24px 20px;display:grid;gap:12px;min-width:0}
+.hero{position:relative;overflow:hidden;padding-top:34px}
+.hero::before{content:"";position:absolute;left:0;right:0;top:0;height:14px;background:repeating-linear-gradient(-45deg,var(--green) 0 10px,transparent 10px 20px,var(--mustard) 20px 30px,transparent 30px 40px);opacity:.75}
+.kicker{font-family:var(--f-num);font-size:13px;color:var(--sub);letter-spacing:.06em}
+.lead{color:var(--sub)}
+.lines{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.line{border:1.5px dashed var(--rule);border-radius:10px;padding:12px;display:grid;gap:2px;background:var(--soft)}
+.line b{font-family:var(--f-num);font-size:22px;color:var(--green)}
+.line s{color:var(--sub);font-size:13px}
+.line span{font-size:13px;color:var(--sub)}
+label{font-size:14px;font-weight:700;display:grid;gap:4px}
+select,input{font:inherit;font-size:16px;padding:8px 10px;border:1.5px solid var(--rule);border-radius:8px;background:var(--paper);color:var(--ink);width:100%;min-width:0}
+select:focus,input:focus{outline:2px solid var(--green);outline-offset:1px}
+.tags{display:grid;gap:14px}
+.tag{position:relative;background:var(--paper);border:1.5px solid var(--rule);border-radius:12px;padding:18px 16px 16px;display:grid;gap:12px}
+.tag::before{content:"";position:absolute;top:-8px;left:50%;width:44px;height:14px;margin-left:-22px;border-radius:7px;background:var(--bg);border:1.5px solid var(--rule)}
+.tag .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.tag .head{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.tag .who{font-family:var(--f-head);font-weight:900;font-size:18px}
+.del{font:inherit;font-size:13px;border:1px solid var(--rule);background:transparent;color:var(--sub);border-radius:6px;padding:2px 10px;cursor:pointer}
+.verdict{border-radius:10px;padding:12px 14px;display:grid;gap:6px;background:var(--soft)}
+.verdict.ok{background:var(--green-soft)}
+.verdict.mid{background:var(--mustard-soft)}
+.verdict.no{background:var(--red-soft)}
+.verdict .big{font-family:var(--f-head);font-weight:900;font-size:18px}
+.verdict .amt{font-family:var(--f-num);font-weight:700}
+.verdict ul{margin:0;padding-left:1.2em;font-size:14px}
+.chip{display:inline-block;font-size:12px;font-weight:700;border-radius:999px;padding:0 10px;margin-right:6px;border:1px solid currentColor}
+.add{display:flex;flex-wrap:wrap;gap:8px}
+.add button,.btn{font:inherit;font-weight:700;font-size:15px;border:none;border-radius:999px;padding:8px 16px;background:var(--green);color:var(--paper);cursor:pointer}
+.add button.alt{background:transparent;color:var(--green);border:1.5px solid var(--green)}
+.memo{white-space:pre-wrap;font-size:14px;background:var(--soft);border:1px solid var(--rule);border-radius:10px;padding:14px;margin:0;font-family:var(--f-body)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border-bottom:1px solid var(--rule);padding:8px 6px;text-align:left;vertical-align:top}
+th{font-weight:700;color:var(--sub);font-size:13px}
+td.n{font-family:var(--f-num);white-space:nowrap}
+.scroll{overflow-x:auto}
+.note{font-size:13px;color:var(--sub)}
+details{border-top:1px solid var(--rule);padding:10px 0}
+summary{font-weight:700;cursor:pointer}
+details p{margin-top:6px;font-size:15px}
+.pr{justify-self:start;font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--sub);border:1px solid var(--rule);border-radius:3px;padding:0 6px}
+.offer{border:1px solid var(--rule);border-radius:10px;padding:14px;background:var(--soft);display:grid;gap:6px}
+.src{font-size:13px;padding-left:1.2em;margin:0}
+footer{font-size:12px;color:var(--sub)}
+@media print{body{background:#fff}.add,.del,.share,.noprint{display:none}.envelope,.tag{border-color:#999}}
+</style>
+</head><body>
+<div class="wrap">
+
+<header class="envelope hero">
+  <p class="kicker">2026年分(令和8年分)・年末調整</p>
+  <h1>年末調整 家族の欄ナビ 2026</h1>
+  <p class="lead">今年の年末調整は、家族を扶養に入れられる年収の線が上がり、19〜22歳の子のための新しい控除も始まりました。勤務先から申告書が配られる前に、家族ごとに「控除が使えるか」「いくらか」「どの用紙のどの欄に書くか」を確かめておけます。入力した内容はこの画面の中だけで計算し、どこにも送りません。</p>
+  <div class="lines">
+    <div class="line"><span>配偶者・扶養親族の年収の上限</span><b>136万円</b><s>2025年分 123万円</s><span>合計所得 62万円</span></div>
+    <div class="line"><span>19〜22歳の子の控除がつく上限</span><b>197万円</b><span>特定親族特別控除(合計所得123万円)</span></div>
+    <div class="line"><span>配偶者特別控除がつく上限</span><b>207万円</b><span>満額38万円は169万円まで</span></div>
+  </div>
+  <p class="note">年収はすべて「給与だけの場合」の目安です。年金・事業・アルバイト以外の収入がある家族は、下の入力で「合計所得金額」を選んでください。</p>
+</header>
+
+<section class="envelope" aria-labelledby="h-me">
+  <h2 id="h-me">1 あなた(申告書を出す人)の所得</h2>
+  <label>2026年の合計所得金額の見込み
+    <select id="me">
+      <option value="900">900万円以下(給与だけなら年収 約1,095万円以下)</option>
+      <option value="950">900万円超〜950万円以下(年収 約1,095〜1,145万円)</option>
+      <option value="1000">950万円超〜1,000万円以下(年収 約1,145〜1,195万円)</option>
+      <option value="over">1,000万円超</option>
+    </select>
+  </label>
+  <p class="note">配偶者控除・配偶者特別控除は、あなたの所得が高いほど少なくなり、1,000万円を超えると使えません。扶養控除はあなたの所得に関係なく使えます。</p>
+</section>
+
+<section class="envelope" aria-labelledby="h-fam">
+  <h2 id="h-fam">2 家族の名札</h2>
+  <p class="note">生計を一にする(仕送りを含めて家計が同じ)家族を1人ずつ足してください。年齢は2026年12月31日時点で判定します。</p>
+  <div class="tags" id="tags"></div>
+  <div class="add">
+    <button type="button" data-add="spouse">+ 配偶者</button>
+    <button type="button" data-add="child">+ 子</button>
+    <button type="button" data-add="parent">+ 親・祖父母</button>
+    <button type="button" class="alt" data-add="other">+ そのほかの親族</button>
+  </div>
+</section>
+
+<section class="envelope" aria-labelledby="h-memo">
+  <h2 id="h-memo">3 勤務先に出す前のメモ</h2>
+  <p class="note">判定をまとめた下書きです。コピーして手元に残すか、印刷して申告書を書くときに横に置いてください。</p>
+  <pre class="memo" id="memo">家族を足すと、ここにまとめが出ます。</pre>
+  <div class="add noprint"><button type="button" class="btn" id="copy">メモをコピー</button><button type="button" class="alt" id="print" style="font:inherit;font-weight:700;font-size:15px;border-radius:999px;padding:8px 16px;background:transparent;color:var(--green);border:1.5px solid var(--green);cursor:pointer">印刷する</button></div>
+</section>
+
+<section class="envelope" aria-labelledby="h-forms">
+  <h2 id="h-forms">年末調整で出す用紙と、家族を書く欄</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>用紙</th><th>家族について書くこと</th></tr></thead>
+    <tbody>
+      <tr><td>令和8年分 基礎控除申告書 兼 配偶者控除等申告書 兼 所得金額調整控除申告書 兼 特定親族特別控除申告書(1枚の兼用様式)</td><td>配偶者控除・配偶者特別控除を受ける配偶者と、特定親族特別控除を受ける19〜22歳の子の氏名・所得の見積額。今年の控除額はこの用紙で決まります。</td></tr>
+      <tr><td>令和8年分 扶養控除等(異動)申告書(年初に出したもの)</td><td>年の途中で家族の状況や年収の見込みが変わったら、年末調整の前に勤務先へ申し出て直します。今年の様式から「控除対象扶養親族」の欄は「源泉控除対象親族」に名前が変わっています。</td></tr>
+      <tr><td>令和9年分 扶養控除等(異動)申告書(11〜12月に配られるもの)</td><td>来年の毎月の給与から引く税額を決める用紙です。来年の年収の見込みで、源泉控除対象配偶者・源泉控除対象親族・16歳未満の扶養親族(住民税の欄)を書きます。</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">源泉控除対象親族は、控除対象扶養親族(合計所得62万円以下・16歳以上)に、合計所得100万円以下(給与だけなら年収174万円以下)の19〜22歳の特定親族を加えたものです。100万円を超え123万円以下の子は扶養控除等申告書には書かず、年末調整で特定親族特別控除申告書だけに書きます。</p>
+</section>
+
+<section class="envelope" aria-labelledby="h-shaho">
+  <h2 id="h-shaho">税の扶養と、社会保険の扶養は別もの</h2>
+  <p>ここで判定しているのは所得税の控除だけです。健康保険の扶養は年収見込み130万円未満(19〜22歳は150万円未満、60歳以上は180万円未満)が目安で、判定のしかたも違います。年収136万円で税の扶養に入れても、健康保険の扶養からは外れることがあります。働く時間と手取りの関係は<a href="../day001-nenshu-kabe/">年収の壁ものさし 2026</a>で計算できます。</p>
+  <span class="pr">PR</span>
+  <div class="offer">
+    <p class="note">家族の働き方と扶養、iDeCoや保険をまとめて見直したい人向けに、お金の専門家(FP)に無料で相談できるサービスです。</p>
+    <div><a href="https://px.a8.net/svt/ejp?a8mat=4BEFL6+1U34XE+4GN2+1NJK7M" rel="nofollow">老後資金・資産形成をFPに無料相談！厳選プロが丁寧サポート【ガーデン】</a>
+<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=4BEFL6+1U34XE+4GN2+1NJK7M" alt=""></div>
+  </div>
+</section>
+
+<section class="envelope" aria-labelledby="h-faq">
+  <h2 id="h-faq">よくある質問</h2>
+  <details><summary>年初に出した扶養控除等申告書に書かなかった家族も、控除を受けられますか?</summary><p>受けられます。年初の用紙は改正前の基準(合計所得58万円以下)で書いた人が多く、今年から対象になった家族(給与だけなら年収123万円超136万円以下など)が漏れがちです。年末調整の前に勤務先へ申し出て、扶養控除等申告書を直してもらってください。</p></details>
+  <details><summary>大学生の子のアルバイト収入が年収150万円になりそうです。</summary><p>19〜22歳なら特定親族特別控除の対象で、年収159万円以下なので控除額は63万円です(特定扶養控除と同じ額)。年末調整で特定親族特別控除申告書に書きます。健康保険の扶養は150万円未満が目安なので、こちらは超える可能性があります。</p></details>
+  <details><summary>子の年収がまだ確定していません。</summary><p>年末調整では12月31日までの見込みで書きます。見込みと実際がずれて控除額が変わった場合は、勤務先で年末調整をやり直してもらうか、自分で確定申告をして直します。</p></details>
+  <details><summary>共働きで、子をどちらの扶養に入れるか迷っています。</summary><p>扶養控除・特定親族特別控除は、同じ家族について夫婦の片方しか受けられません。どちらで受けても控除額は同じなので、所得税率の高い方で受けると税が軽くなることが多いですが、住民税や勤務先の家族手当の条件も関わるので、家族で決めてください。</p></details>
+  <details><summary>住民税も同じですか?</summary><p>違います。住民税では、たとえば特定親族特別控除の満額は45万円です。このページの金額は所得税の控除額です。</p></details>
+</section>
+
+<section class="envelope" aria-labelledby="h-src">
+  <h2 id="h-src">出典</h2>
+  <ul class="src">
+    <li><a href="https://www.nta.go.jp/publication/pamph/gensen/0025005-051.pdf" target="_blank" rel="noopener">令和7年度税制改正による基礎控除の見直し等について(国税庁)</a> ── 特定親族特別控除の創設、源泉控除対象親族の定義</li>
+    <li><a href="https://biz.moneyforward.com/payroll/basic/94813/" target="_blank" rel="noopener">年末調整2026年(令和8年)の変更点(マネーフォワード)</a></li>
+    <li><a href="https://www.obc.co.jp/360/list/post461" target="_blank" rel="noopener">2026年(令和8年)年末調整の変更点と実務チェックポイント(OBC)</a></li>
+    <li><a href="https://bakuraku.jp/knowledge/knowledge-labor/how-to-fill-out-the-declaration-for-the-deduction-for-dependents/" target="_blank" rel="noopener">扶養控除申告書の書き方と令和8年の扶養要件変更(バクラク)</a></li>
+    <li><a href="https://www.issoh.co.jp/column/details/11597/" target="_blank" rel="noopener">配偶者特別控除の早見表【2026年・令和8年分】</a></li>
+    <li><a href="https://zeimo.jp/article/71186" target="_blank" rel="noopener">特定親族特別控除・扶養控除の早見表【2026年版】(ZEIMO)</a></li>
+    <li><a href="https://www.city.adachi.tokyo.jp/ze/2026zeisei.html" target="_blank" rel="noopener">令和8年度から適用される主な税制改正等について(足立区)</a> ── 住民税の控除額</li>
+  </ul>
+  <p class="note">国税庁の令和8年分「年末調整のしかた」が公表されたら、金額と用紙名を照らし合わせて更新します。</p>
+</section>
+
+<section class="envelope share noprint" aria-labelledby="h-share">
+  <h2 id="h-share">家族や職場の人に送る</h2>
+  <p><a href="https://twitter.com/intent/tweet?text=%E5%B9%B4%E6%9C%AB%E8%AA%BF%E6%95%B4%20%E5%AE%B6%E6%97%8F%E3%81%AE%E6%AC%84%E3%83%8A%E3%83%93%202026%EF%BD%9C%E6%89%B6%E9%A4%8A%E3%81%AF%E5%B9%B4%E5%8F%8E136%E4%B8%87%E5%86%86%E3%81%BE%E3%81%A7%E3%80%8119%E3%80%9C22%E6%AD%B3%E3%81%AE%E5%AD%90%E3%81%AF197%E4%B8%87%E5%86%86%E3%81%BE%E3%81%A7&amp;url=https%3A%2F%2Falternativestudio2021-collab.github.io%2Fdaily-launch-sites%2Fday006-nencho-kazoku%2F" target="_blank" rel="noopener">Xで送る</a> ・ <a href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Falternativestudio2021-collab.github.io%2Fdaily-launch-sites%2Fday006-nencho-kazoku%2F" target="_blank" rel="noopener">LINEで送る</a> ・ <a href="../">ほかの道具を見る(毎日ひとつの小さな道具箱)</a></p>
+</section>
+
+<footer>
+  <p>このページは公開資料をもとにした判定の目安で、個別の税務相談に代わるものではありません。年収から合計所得への換算は給与所得控除の概算で、障害者控除・寡婦控除・ひとり親控除、青色事業専従者などの扱いは含みません。最終的には勤務先の担当者や税務署で確認してください。情報は2026年10月18日時点。</p>
+</footer>
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var REL={spouse:'配偶者',child:'子',parent:'親・祖父母',other:'そのほかの親族'};
+  var people=[], seq=0;
+  var END=new Date(2026,11,31);
+  function age(b){if(!b)return null;var d=new Date(b+'T00:00:00');if(isNaN(d))return null;var a=END.getFullYear()-d.getFullYear();if(END.getMonth()<d.getMonth()||(END.getMonth()===d.getMonth()&&END.getDate()<d.getDate()))a--;return a;}
+  // 給与収入(万円)→合計所得(万円)。2026年分の給与所得控除(最低74万円)による目安
+  function fromSalary(x){
+    if(x<=74)return 0;
+    if(x<=220)return x-74;
+    if(x<=360)return x-(x*0.3+8);
+    if(x<=660)return x-(x*0.2+44);
+    if(x<=850)return x-(x*0.1+110);
+    return x-195;
+  }
+  var TOKUTEI=[[85,63],[90,61],[95,51],[100,41],[105,31],[110,21],[115,11],[120,6],[123,3]];
+  var SPOUSE_UP=[95,100,105,110,115,120,125,130,133];
+  var SPOUSE_AMT={'900':[38,36,31,26,21,16,11,6,3],'950':[26,24,21,18,14,11,8,4,2],'1000':[13,12,11,9,7,6,4,2,1]};
+  var SPOUSE_BASE={'900':[38,48],'950':[26,32],'1000':[13,16]};
+  function man(v){return (Math.round(v*10)/10).toLocaleString('ja-JP')+'万円'}
+
+  function judge(p,me){
+    var a=age(p.birth), inc=p.mode==='salary'?fromSalary(p.amount):p.amount, r={inc:inc,age:a,notes:[]};
+    if(a===null){r.cls='';r.title='生年月日を入れてください';r.amt=0;return r;}
+    if(p.amount===''||isNaN(p.amount)){r.cls='';r.title='年収(または所得)を入れてください';r.amt=0;return r;}
+    if(p.rel==='spouse'){
+      if(me==='over'){r.cls='no';r.title='配偶者控除・配偶者特別控除は使えません';r.amt=0;r.notes.push('あなたの合計所得が1,000万円を超えるため。');if(inc<=62)r.notes.push('配偶者が障害者なら障害者控除は使えるため、扶養控除等申告書の「同一生計配偶者」欄に書きます。');return r;}
+      if(inc<=62){var old=a>=70;r.amt=SPOUSE_BASE[me][old?1:0];r.cls='ok';r.title=(old?'老人控除対象配偶者の配偶者控除':'配偶者控除');
+        r.form='兼用様式の「配偶者控除等申告書」欄';}
+      else if(inc<=133){var i=0;while(inc>SPOUSE_UP[i])i++;r.amt=SPOUSE_AMT[me][i];r.cls='mid';r.title='配偶者特別控除';r.form='兼用様式の「配偶者控除等申告書」欄';}
+      else{r.cls='no';r.title='配偶者の控除は使えません';r.amt=0;r.notes.push('配偶者の合計所得が133万円(給与だけなら年収207万円)を超えるため。');return r;}
+      r.gensen=(me==='900'&&inc<=95);
+      r.notes.push(r.gensen?'来年も同じくらいの年収なら、令和9年分の扶養控除等申告書の「源泉控除対象配偶者」欄に書きます。':'扶養控除等申告書の「源泉控除対象配偶者」欄には書きません(あなたの所得が900万円超か、配偶者の所得が95万円超のため)。');
+      return r;
+    }
+    if(a<16){r.cls='';r.title='所得税の扶養控除はありません(16歳未満)';r.amt=0;r.notes.push('扶養控除等申告書の「住民税に関する事項」の16歳未満の扶養親族の欄に書きます。住民税の非課税判定などに使われます。');return r;}
+    if(a>=19&&a<=22){
+      if(inc<=62){r.cls='ok';r.title='特定扶養控除';r.amt=63;r.form='扶養控除等申告書の「源泉控除対象親族」欄';r.notes.push('年初の扶養控除等申告書に書いていなければ、年末調整の前に勤務先に申し出て直します。');}
+      else if(inc<=123){var j=0;while(inc>TOKUTEI[j][0])j++;r.amt=TOKUTEI[j][1];r.cls='mid';r.title='特定親族特別控除(2026年分から新設)';r.form='兼用様式の「特定親族特別控除申告書」欄';
+        r.notes.push(inc<=100?'合計所得100万円以下なので、扶養控除等申告書の「源泉控除対象親族」欄にも書きます。':'合計所得100万円超なので、扶養控除等申告書には書かず、年末調整の申告書だけで控除を受けます。');}
+      else{r.cls='no';r.title='控除は使えません';r.amt=0;r.notes.push('合計所得が123万円(給与だけなら年収197万円)を超えるため。');return r;}
+      return r;
+    }
+    if(inc>62){r.cls='no';r.title='扶養控除は使えません';r.amt=0;r.notes.push('合計所得が62万円(給与だけなら年収136万円)を超えるため。19〜22歳の特定親族特別控除は、この年齢では使えません。');return r;}
+    if(a>=70){var dou=p.rel==='parent'&&p.live==='yes';r.amt=dou?58:48;r.cls='ok';r.title=dou?'老人扶養控除(同居老親等)':'老人扶養控除';r.form='扶養控除等申告書の「源泉控除対象親族」欄';
+      if(p.rel==='parent'&&p.live!=='yes')r.notes.push('あなたか配偶者の親・祖父母で、ふだん同居していれば58万円(同居老親等)になります。');}
+    else{r.amt=38;r.cls='ok';r.title='一般の扶養控除';r.form='扶養控除等申告書の「源泉控除対象親族」欄';}
+    if(inc>58)r.notes.push('合計所得58万円超62万円以下(給与だけなら年収123万円超136万円以下)は今年から対象になった範囲です。年初の申告書に書いていなければ勤務先に申し出ます。');
+    return r;
+  }
+
+  function add(rel){people.push({id:++seq,rel:rel,birth:'',mode:'salary',amount:'',live:'no'});render();}
+  function render(){
+    var box=$('tags');box.innerHTML='';
+    people.forEach(function(p,idx){
+      var el=document.createElement('div');el.className='tag';
+      el.innerHTML='<div class="head"><span class="who">'+REL[p.rel]+' '+(idx+1)+'</span><button type="button" class="del">外す</button></div>'+
+        '<div class="row"><label>生年月日<input type="date" data-k="birth" value="'+p.birth+'" min="1900-01-01" max="2026-12-31"></label>'+
+        '<label>収入の種類<select data-k="mode"><option value="salary"'+(p.mode==='salary'?' selected':'')+'>給与だけ(年収で入力)</option><option value="total"'+(p.mode==='total'?' selected':'')+'>合計所得金額で入力</option></select></label>'+
+        '<label>2026年の見込み(万円)<input type="number" inputmode="decimal" min="0" step="1" data-k="amount" value="'+p.amount+'" placeholder="例 130"></label>'+
+        (p.rel==='parent'?'<label>ふだん同居している<select data-k="live"><option value="no"'+(p.live!=='yes'?' selected':'')+'>いいえ</option><option value="yes"'+(p.live==='yes'?' selected':'')+'>はい</option></select></label>':'')+
+        '</div><div class="verdict" aria-live="polite"></div>';
+      el.querySelector('.del').onclick=function(){people=people.filter(function(q){return q.id!==p.id});render();};
+      el.querySelectorAll('[data-k]').forEach(function(inp){inp.addEventListener('input',function(){var k=inp.dataset.k;p[k]=k==='amount'?(inp.value===''?'':+inp.value):inp.value;update();});});
+      box.appendChild(el);
+    });
+    update();
+  }
+  function update(){
+    var me=$('me').value, lines=[], total=0;
+    document.querySelectorAll('.tag').forEach(function(el,idx){
+      var p=people[idx], r=judge(p,me), v=el.querySelector('.verdict');
+      v.className='verdict '+(r.cls||'');
+      var h='<span class="big">'+r.title+'</span>';
+      if(r.amt)h+='<span>所得税の控除額 <span class="amt">'+r.amt+'万円</span></span>';
+      if(r.age!==null&&p.amount!==''){h+='<span class="note">'+r.age+'歳(12/31時点)・合計所得 約'+man(Math.max(0,r.inc))+'</span>';}
+      if(r.form)h+='<span><span class="chip">書く欄</span>'+r.form+'</span>';
+      if(r.notes.length)h+='<ul><li>'+r.notes.join('</li><li>')+'</li></ul>';
+      v.innerHTML=h;
+      if(r.age!==null&&p.amount!==''){total+=r.amt;lines.push('・'+REL[p.rel]+(idx+1)+'('+r.age+'歳、合計所得 約'+man(Math.max(0,r.inc))+'): '+r.title+(r.amt?' '+r.amt+'万円':'')+(r.form?' / '+r.form:''));}
+    });
+    $('memo').textContent=lines.length?('年末調整 家族の欄メモ(2026年分)\n'+lines.join('\n')+'\n\n家族の控除の合計 '+total+'万円(所得税)\n※税の扶養と健康保険の扶養は別。年収の見込みが変わったら勤務先に伝える。'):'家族を足すと、ここにまとめが出ます。';
+  }
+  document.querySelectorAll('[data-add]').forEach(function(b){b.onclick=function(){add(b.dataset.add)}});
+  $('me').addEventListener('change',update);
+  $('copy').onclick=function(){var t=$('memo').textContent;if(navigator.clipboard)navigator.clipboard.writeText(t).then(function(){$('copy').textContent='コピーしました'},function(){});};
+  $('print').onclick=function(){window.print()};
+  add('spouse');add('child');
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
