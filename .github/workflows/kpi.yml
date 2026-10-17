@@ -1,0 +1,53 @@
+# 毎朝、Cloudflare Web Analytics から事業ごとの訪問数を読み取り、
+# 暗号化して kpi-data ブランチに置く。8:25 の定時タスクが復号して台帳に記録する。
+# 公開リポジトリなので、ログや平文ファイルに数字を残さない。
+name: kpi
+
+on:
+  schedule:
+    - cron: "40 22 * * *"   # 毎日 7:40 JST(混雑で遅れても 8:25 に間に合うように)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kpi
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: .github/scripts
+
+      - name: 訪問数を取得して暗号化
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          KPI_KEY: ${{ secrets.KPI_KEY }}
+        run: |
+          set -euo pipefail
+          test -n "$CF_API_TOKEN" || { echo "secret CF_API_TOKEN がありません"; exit 1; }
+          test -n "$KPI_KEY" || { echo "secret KPI_KEY がありません"; exit 1; }
+          work="$(mktemp -d)"
+          python3 .github/scripts/kpi_fetch.py "$work/kpi.json"
+          openssl enc -aes-256-cbc -pbkdf2 -iter 200000 -salt -a \
+            -pass env:KPI_KEY -in "$work/kpi.json" -out "$RUNNER_TEMP/kpi.json.enc"
+          rm -rf "$work"
+
+      - name: kpi-data ブランチに置く
+        run: |
+          set -euo pipefail
+          out="$(mktemp -d)"
+          cd "$out"
+          git init -q -b kpi-data
+          cp "$RUNNER_TEMP/kpi.json.enc" .
+          printf '%s\n' "暗号化した訪問数(AES-256-CBC, PBKDF2)。復号の鍵は公開していません。" > README.md
+          git add kpi.json.enc README.md
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -q -m "kpi: $(TZ=Asia/Tokyo date +%Y-%m-%dT%H:%M%z)"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" kpi-data:kpi-data
