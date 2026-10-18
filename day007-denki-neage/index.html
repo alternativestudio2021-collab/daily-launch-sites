@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>11月の電気代 値上げ早見 2026</title>
+<meta name="description" content="2026年10月使用分から国の電気代支援(1kWhあたり3.5円)がなくなり、11月1日からは託送料金の見直しで大手電力の家庭向け料金が上がります。電力会社・契約アンペア・使用量を入れると、9月と比べた上がり幅と、11月以降の値上げ分の目安が分かります。">
+<link rel="canonical" href="https://alternativestudio2021-collab.github.io/daily-launch-sites/day007-denki-neage/">
+<meta property="og:type" content="website"><meta property="og:title" content="11月の電気代 値上げ早見 2026"><meta property="og:description" content="支援の終了(10月使用分〜)と託送料金の見直し(11月1日〜)。2つの値上げを分けて、自分の家の上がり幅を計算します。"><meta property="og:url" content="https://alternativestudio2021-collab.github.io/daily-launch-sites/day007-denki-neage/"><meta property="og:site_name" content="毎日ひとつの小さな道具箱"><meta property="og:locale" content="ja_JP"><meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"2026年11月から電気代が上がるのはなぜですか?","acceptedAnswer":{"@type":"Answer","text":"送配電網の利用料である託送料金が2026年11月1日から見直され、東京電力エナジーパートナー、中部電力ミライズ、九州電力など大手電力がその分を家庭向けの料金単価に反映するためです。経済産業省は9月4日に一般送配電事業者8社の収入の見通しの変更を承認しました。"}},
+{"@type":"Question","name":"10月の電気代も上がりますか?","acceptedAnswer":{"@type":"Answer","text":"国の電気・ガス料金支援は2026年7〜9月使用分が対象で、低圧の値引きは7月・9月が1kWhあたり3.5円、8月が4.5円でした。10月使用分からは値引きがなくなるため、同じ使用量なら9月使用分より1kWhあたり3.5円高くなります。"}},
+{"@type":"Question","name":"東京電力の従量電灯Bはいくら上がりますか?","acceptedAnswer":{"@type":"Answer","text":"東京電力エナジーパートナーの発表では、30A・月260kWhのモデルで月9,307円から9,561円へ、254円の値上げです。基本料金(30Aで240.93円増)が中心で、電力量料金は1kWhあたり0.05円の引き上げです。"}},
+{"@type":"Question","name":"北陸電力も値上げされますか?","acceptedAnswer":{"@type":"Answer","text":"今回の託送料金の見直しは北海道・東北・東京・中部・関西・四国・九州・沖縄の8社が対象で、北陸エリアは含まれていません。中国エリアは中国電力ネットワークが別に11月1日からの値上げを届け出ています。"}},
+{"@type":"Question","name":"新電力と契約している場合はどうなりますか?","acceptedAnswer":{"@type":"Answer","text":"託送料金は小売事業者が支払う費用なので、値上げするか、いくら上げるかは契約先ごとに違います。楽天でんき、ソフトバンクでんき、Looopでんきなども11月からの単価見直しを告知しています。契約先のお知らせを確認してください。"}}
+]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=DotGothic16&family=M+PLUS+1:wght@800;900&display=swap">
+<style>
+/* Layout: ポストに入る「電気ご使用量のお知らせ(検針票)」がモチーフ。感熱紙の細長い票に、ミシン目と黒いメーター窓。上から 2つの値上げ → 計算票 → 10社の一覧 → いつの請求から → 票のどこを見るか → よくある質問 → 出典 */
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#e9e7e1; --slip:#fdfcf8; --ink:#1f2430; --sub:#5f6472; --rule:#d6d3ca; --soft:#f3f1ea;
+  --meter:#1c1f1a; --digit:#c8f27a; --amber:#c27c00; --amber-soft:#fbefd5; --blue:#245b9e; --blue-soft:#e1ebf7; --red:#b4322a;
+  --f-head:"M PLUS 1","Hiragino Sans",sans-serif;
+  --f-body:"BIZ UDPGothic","Hiragino Sans","Noto Sans JP",sans-serif;
+  --f-dot:"DotGothic16",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#14161b; --slip:#1d2027; --ink:#e8e9ee; --sub:#a4a8b5; --rule:#343844; --soft:#252932;
+  --meter:#0b0d0a; --digit:#b6e868; --amber:#f0b240; --amber-soft:#3a2e17; --blue:#8bb6ee; --blue-soft:#1f2c40; --red:#ff8e84; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#14161b; --slip:#1d2027; --ink:#e8e9ee; --sub:#a4a8b5; --rule:#343844; --soft:#252932;
+  --meter:#0b0d0a; --digit:#b6e868; --amber:#f0b240; --amber-soft:#3a2e17; --blue:#8bb6ee; --blue-soft:#1f2c40; --red:#ff8e84; color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);line-height:1.8;font-size:16px}
+a{color:var(--blue)}
+.wrap{max-width:720px;margin:0 auto;padding:32px 16px 72px;display:grid;grid-template-columns:minmax(0,1fr);gap:28px}
+.slip{background:var(--slip);border-radius:4px;padding:24px 20px;position:relative;box-shadow:0 1px 0 var(--rule)}
+.slip.perf::before{content:"";position:absolute;left:12px;right:12px;top:-1px;border-top:2px dashed var(--rule)}
+.kicker{font-family:var(--f-dot);font-size:14px;color:var(--amber);letter-spacing:.08em}
+h1{font-family:var(--f-head);font-weight:900;font-size:clamp(28px,6vw,40px);line-height:1.25;margin:4px 0 12px;text-wrap:balance}
+h2{font-family:var(--f-head);font-weight:800;font-size:clamp(20px,4vw,24px);line-height:1.4;margin:0 0 12px}
+h3{font-size:16px;margin:16px 0 4px}
+p{margin:0 0 10px}
+.lead{color:var(--sub)}
+.two{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:16px}
+.cause{border:1px solid var(--rule);border-radius:4px;padding:14px 16px;background:var(--soft)}
+.cause b{display:block;font-family:var(--f-head);font-weight:800;font-size:17px}
+.cause .when{font-family:var(--f-dot);font-size:13px;color:var(--amber)}
+.cause p{font-size:14px;margin:6px 0 0}
+form{display:grid;gap:16px}
+label{display:grid;gap:4px;font-weight:700;font-size:15px}
+label small{font-weight:400;color:var(--sub);font-size:13px}
+select,input{font:inherit;font-size:17px;padding:10px 12px;border:1px solid var(--rule);border-radius:4px;background:var(--slip);color:var(--ink);width:100%}
+input:focus-visible,select:focus-visible{outline:2px solid var(--amber);outline-offset:1px}
+.row{display:grid;gap:16px;grid-template-columns:1fr 1fr}
+@media (max-width:480px){.row{grid-template-columns:1fr}}
+.meter{background:var(--meter);color:var(--digit);border-radius:6px;padding:16px;display:grid;gap:12px;font-family:var(--f-dot)}
+.meter .cell{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:8px;border-bottom:1px dashed #3b4235;padding-bottom:8px}
+.meter .cell:last-child{border-bottom:0;padding-bottom:0}
+.meter .lab{font-size:13px;color:#9aa58b;line-height:1.5}
+.meter .val{font-size:clamp(24px,6vw,32px);letter-spacing:.04em;white-space:nowrap}
+.meter .val small{font-size:14px}
+.meter .total .val{color:#ffd76a}
+.note{font-size:14px;color:var(--sub)}
+.tag{display:inline-block;font-size:12px;padding:0 6px;border-radius:3px;background:var(--amber-soft);color:var(--amber);font-weight:700;vertical-align:1px}
+.tag.ok{background:var(--blue-soft);color:var(--blue)}
+.basis{font-size:14px;background:var(--soft);border-left:3px solid var(--amber);padding:10px 12px;border-radius:0 4px 4px 0}
+.tbl{width:100%;min-width:560px;border-collapse:collapse;font-size:14px}
+.tbl th,.tbl td{border-bottom:1px solid var(--rule);padding:8px 6px;text-align:left;vertical-align:top}
+.tbl th{font-size:13px;color:var(--sub);font-weight:700}
+.tbl td.n{font-family:var(--f-dot);white-space:nowrap;text-align:right;font-size:15px}
+.scroll{overflow-x:auto;margin:0 -4px;padding:0 4px}
+.timeline{display:grid;gap:0;margin:8px 0 0;padding:0;list-style:none}
+.timeline li{display:grid;grid-template-columns:96px 1fr;gap:12px;padding:10px 0;border-bottom:1px dashed var(--rule)}
+.timeline li:last-child{border-bottom:0}
+.timeline .d{font-family:var(--f-dot);color:var(--amber);font-size:15px}
+.timeline p{margin:0;font-size:15px}
+.slipmap{display:grid;gap:8px;margin-top:8px}
+.slipmap div{display:grid;grid-template-columns:150px 1fr;gap:12px;font-size:15px;padding:8px 10px;background:var(--soft);border-radius:4px}
+.slipmap b{font-family:var(--f-dot);font-weight:400}
+@media (max-width:480px){.slipmap div,.timeline li{grid-template-columns:1fr;gap:2px}}
+details{border-bottom:1px solid var(--rule);padding:10px 0}
+summary{cursor:pointer;font-weight:700}
+details p{margin:8px 0 0;font-size:15px}
+.src{font-size:13px;color:var(--sub);padding-left:18px;margin:0}
+.src li{margin-bottom:4px;overflow-wrap:anywhere}
+.share{display:flex;flex-wrap:wrap;gap:8px}
+.btn{font:inherit;font-size:15px;font-weight:700;padding:10px 16px;border-radius:4px;border:1px solid var(--ink);background:var(--ink);color:var(--slip);cursor:pointer;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--ink)}
+.others{display:grid;gap:8px;margin-top:8px}
+.others a{display:block;padding:10px 12px;border:1px solid var(--rule);border-radius:4px;text-decoration:none;color:inherit;font-size:15px}
+.others a span{display:block;font-size:13px;color:var(--sub)}
+footer{font-size:12px;color:var(--sub)}
+</style>
+</head><body>
+<div class="wrap">
+
+<header class="slip">
+  <div class="kicker">電気ご使用量のお知らせ ─ 2026年秋の変更</div>
+  <h1>11月の電気代 値上げ早見 2026</h1>
+  <p class="lead">今年の秋は、電気代が2段階で上がります。電力会社と使用量を入れると、9月と比べてどれだけ上がるかを、理由ごとに分けて出します。入力した内容は送信されません。</p>
+  <div class="two">
+    <div class="cause"><span class="when">① 10月使用分から</span><b>国の値引きがなくなる</b><p>7〜9月使用分にあった電気・ガス料金支援(低圧で1kWhあたり3.5円、8月は4.5円)が終わり、9月の請求より使った分だけ高くなります。</p></div>
+    <div class="cause"><span class="when">② 11月1日使用分から</span><b>料金単価そのものが上がる</b><p>送配電網の利用料(託送料金)の見直しを受けて、大手電力が家庭向けの単価を改定。基本料金が中心に上がり、東京電力のモデルで月254円です。</p></div>
+  </div>
+</header>
+
+<section class="slip perf" aria-labelledby="calc-h">
+  <h2 id="calc-h">わが家の上がり幅を計算する</h2>
+  <form id="f" onsubmit="return false">
+    <label>契約している電力会社<small>新電力の方は、住んでいる地域の大手電力を選ぶと、目安として比べられます</small>
+      <select id="co"></select>
+    </label>
+    <div class="row">
+      <label>月の使用量(kWh)<small>検針票やアプリの「ご使用量」</small>
+        <input id="kwh" type="number" inputmode="numeric" min="0" max="3000" step="1" value="260">
+      </label>
+      <label id="ampWrap">契約アンペア<small>検針票の「契約」欄(例: 30A)</small>
+        <select id="amp"><option value="10">10A</option><option value="15">15A</option><option value="20">20A</option><option value="30" selected>30A</option><option value="40">40A</option><option value="50">50A</option><option value="60">60A</option></select>
+      </label>
+    </div>
+    <label>新電力と契約していますか<small>託送料金をどれだけ料金に反映するかは契約先ごとに違います</small>
+      <select id="pps"><option value="0" selected>いいえ(大手電力の従量電灯)</option><option value="1">はい(新電力・ガス会社など)</option></select>
+    </label>
+  </form>
+
+  <div class="meter" aria-live="polite" style="margin-top:20px">
+    <div class="cell"><div class="lab">① 支援の終了で上がる分<br>(9月使用分と比べて、10月使用分〜)</div><div class="val" id="o1">—</div></div>
+    <div class="cell"><div class="lab">② 料金改定で上がる分<br>(11月1日使用分〜、毎月)</div><div class="val" id="o2">—</div></div>
+    <div class="cell total"><div class="lab">①+② 9月使用分と比べた差<br>(同じ使用量の場合)</div><div class="val" id="o3">—</div></div>
+    <div class="cell"><div class="lab">② の1年分の目安</div><div class="val" id="o4">—</div></div>
+  </div>
+  <p class="basis" id="basis" style="margin-top:12px"></p>
+  <p class="note">燃料費調整額と再エネ賦課金は月ごとに変わるため、ここには入れていません。冬は使用量そのものが増えるので、実際の請求額の差はこれより大きくなることがあります。</p>
+</section>
+
+<section class="slip perf" aria-labelledby="list-h">
+  <h2 id="list-h">大手電力10社の11月改定(家庭向け)</h2>
+  <p class="lead">各社のモデル家庭での値上げ額です。使用量や計算に含める項目が社ごとに違うので、横並びの比較はできません。</p>
+  <div class="scroll"><table class="tbl" id="tbl"><thead><tr><th>会社</th><th>モデルの条件</th><th style="text-align:right">月の値上げ</th><th>中身</th></tr></thead><tbody></tbody></table></div>
+  <p class="note"><span class="tag ok">公式</span>は各社の発表資料、<span class="tag">集計</span>は比較サイト(Selectra 9月29日時点)の一覧によるものです。最終的な単価は各社の料金表で確認してください。</p>
+</section>
+
+<section class="slip perf" aria-labelledby="when-h">
+  <h2 id="when-h">いつの請求から変わるか</h2>
+  <p class="lead">電気代は「検針日から次の検針日まで」の使用分で計算されます。月の途中に検針日がある家庭では、変更が2回の請求にまたがります。</p>
+  <ol class="timeline">
+    <li><span class="d">9月使用分</span><p>支援の最後の月。低圧は1kWhあたり3.5円の値引き(8月使用分は4.5円)。検針票に「国の支援による値引き」などの行があります。</p></li>
+    <li><span class="d">10月使用分</span><p>値引きなし。主に11月の検針・請求に出ます。同じ使用量なら、260kWhで910円高くなる計算です。</p></li>
+    <li><span class="d">11月1日〜</span><p>大手電力の新しい単価が適用。検針期間が10月と11月にまたがる場合、11月1日以降の日数分だけ新単価で日割りになります。</p></li>
+    <li><span class="d">12月の請求</span><p>新単価をほぼ1か月通して使った最初の請求。ここで②の値上げ分が丸ごと見えてきます。</p></li>
+  </ol>
+  <p class="note">10月使用分以降の国の支援について、10月18日時点で新たな実施の発表は確認できていません。発表があればこのページを更新します。</p>
+</section>
+
+<section class="slip perf" aria-labelledby="map-h">
+  <h2 id="map-h">検針票のどこを見るか</h2>
+  <div class="slipmap">
+    <div><b>ご使用量</b><span>計算に入れる kWh。前の月と比べると、上がった理由が使用量なのか単価なのかを分けられます。</span></div>
+    <div><b>ご契約</b><span>30A などのアンペア。今回は基本料金の上げ幅が大きいので、アンペアが大きい家ほど上がり方も大きくなります(東京・中部・九州)。</span></div>
+    <div><b>燃料費調整額</b><span>燃料価格に合わせて毎月変わる部分。今回の値上げとは別です。</span></div>
+    <div><b>再エネ発電賦課金</b><span>全国一律の単価。毎年5月分から見直されます。</span></div>
+    <div><b>支援による値引き</b><span>7〜9月使用分にだけある行。10月使用分から消えます。</span></div>
+  </div>
+  <p class="note" style="margin-top:12px">アンペアを下げると基本料金は安くなりますが、同時に使える家電が減ってブレーカーが落ちやすくなります。変更は契約先に申し込み、工事が必要な場合もあります。</p>
+</section>
+
+<section class="slip perf" aria-labelledby="faq-h">
+  <h2 id="faq-h">よくある質問</h2>
+  <details><summary>なぜ11月に上がるのですか?</summary><p>送電線や配電線の利用料(託送料金)は、一般送配電事業者が5年ごとの計画で決めています。需要の減少や設備費用の増加を受けて、経済産業省が9月4日に8社の収入の見通しの変更を承認し、11月1日から託送料金が上がります。大手電力はこれを家庭向けの単価に反映します。</p></details>
+  <details><summary>使用量を減らせば値上げを避けられますか?</summary><p>東京・中部・九州の改定は基本料金が中心で、1kWhあたりの単価はほとんど変わりません(九州は0.04円の引き下げ)。使用量を減らしても②の分は小さくなりにくく、①の支援終了分(1kWhあたり3.5円)のほうが使用量に比例します。</p></details>
+  <details><summary>北陸電力・中国電力はどうなりますか?</summary><p>北陸エリアは今回の託送料金の見直しの対象外です。中国エリアは中国電力ネットワークが11月1日からの値上げを国に届け出ており(低圧の平均単価 9.34円→10.46円/kWh)、中国電力は従量電灯Aのモデルで月363円の値上げとしています。</p></details>
+  <details><summary>新電力の場合は?</summary><p>託送料金は小売事業者が支払う費用で、料金への反映は契約先が決めます。楽天でんき(プランSの従量単価をエリアごとに改定)、ソフトバンクでんき(11月1日使用分から)、Looopでんき、東邦ガス(モデル月525円増)などが告知を出しています。契約先のお知らせ欄を確認してください。</p></details>
+  <details><summary>この計算はどこまで正確ですか?</summary><p>①は国の値引き単価(3.5円/kWh)をそのまま掛けています。②は、東京・中部・九州は各社が公表した基本料金と電力量料金の差から計算し、そのほかの会社はモデル家庭の値上げ額をそのまま示しています。税込の概算で、燃料費調整額や段階料金の細かな差は含みません。</p></details>
+</section>
+
+<section class="slip perf" aria-labelledby="share-h">
+  <h2 id="share-h">家族や職場に伝える</h2>
+  <div class="share">
+    <button class="btn" type="button" id="copy">計算結果をコピー</button>
+    <a class="btn ghost" id="xshare" href="#" target="_blank" rel="noopener">Xで共有</a>
+    <a class="btn ghost" id="lshare" href="#" target="_blank" rel="noopener">LINEで送る</a>
+  </div>
+  <p class="note" id="copied" role="status" style="margin-top:8px"></p>
+  <h3>あわせて使える道具</h3>
+  <div class="others">
+    <a href="../day001-nenshu-kabe/">年収の壁ものさし 2026<span>パート・アルバイトの社会保険と手取りを計算</span></a>
+    <a href="../day006-nencho-kazoku/">年末調整 家族の欄ナビ 2026<span>扶養の136万円と、申告書のどの欄に書くか</span></a>
+  </div>
+</section>
+
+<section class="slip perf" aria-labelledby="src-h">
+  <h2 id="src-h">出典</h2>
+  <ol class="src">
+    <li>経済産業省「一般送配電事業者8社の託送供給等に係る収入の見通しの変更承認申請を承認しました」(2026年9月4日) https://www.meti.go.jp/press/2026/09/202609004001.html</li>
+    <li>経済産業省「一般送配電事業者8社から託送供給等約款の変更届出を受理しました」(2026年9月11日) https://www.meti.go.jp/press/2026/09/20260911003.html</li>
+    <li>経済産業省 電気・ガス料金支援(2026年7〜9月使用分)の特例認可(2026年6月12日) https://www.meti.go.jp/press/2026/06/20260612003/20260612003.html / 資源エネルギー庁 電気・ガス料金支援 https://denkigas-gekihenkanwa.go.jp/</li>
+    <li>東京電力エナジーパートナー「低圧の料金メニューの見直しについて」 https://www.tepco.co.jp/ep/private/plan/teiatsu_minaoshi_2026.html / プレスリリース(2026年9月29日) https://www.tepco.co.jp/ep/notice/pressrelease/2026/pdf/26x3201.pdf</li>
+    <li>中部電力ミライズ「2026年11月 電気料金単価の見直しについて」 https://miraiz.chuden.co.jp/revision202611/ / 単価表 https://miraiz.chuden.co.jp/files/01/revision202611/revision202611_02.pdf</li>
+    <li>九州電力「託送料金見直しを反映した新たな電気料金単価を設定します」(2026年9月28日) https://www.kyuden.co.jp/press/2026/h260928-1.html</li>
+    <li>四国電力「【2026年11月実施】託送料金見直しに伴う低圧の電気料金の見直しについて」 https://www.yonden.co.jp/publish/page_37.html</li>
+    <li>関西電力送配電「託送料金における収入の見通しの変更承認について」(2026年9月4日) https://www.kansai-td.co.jp/new-consignment-fee/20260904_revenue-cap.html</li>
+    <li>Selectra「2026年11月から電気代値上げ 託送料金の改定」(大手各社のモデル比較) https://selectra.jp/energy/news/electricity-price-increase-november-2026-wheeling-fee</li>
+    <li>Selectra「中国電力ネットワークが託送料金を値上げ」 https://selectra.jp/energy/news/chugoku-electricity-network-wheeling-fee-increase-2026</li>
+    <li>エネがえる「2026年11月の電気料金値上げ」(北陸エリアの扱い) https://www.enegaeru.com/2026-wheeling-charge-repricing</li>
+    <li>新電力の告知: Looopでんき https://looop-denki.com/home/news/271948/ / ソフトバンクでんき https://www.softbank.jp/support/faq/view/204354 / 楽天でんき(Selectra) https://selectra.jp/energy/news/rakuten-denki-price-increase-november-2026 / 東邦ガス(Selectra) https://selectra.jp/energy/news/tohogas-electricity-price-increase-november-2026</li>
+  </ol>
+  <p class="note" style="margin-top:10px">2026年10月19日時点の公開情報をまとめたものです。各社の料金は改定されることがあるため、契約先の料金表で確認してください。</p>
+</section>
+
+<footer>毎日ひとつの小さな道具箱 Day 7 ─ <a href="../">一覧へ</a>。このページは情報提供を目的としたもので、特定の電力会社やプランを勧めるものではありません。</footer>
+</div>
+
+<script>
+// 支援の値引き単価(低圧・税込): 7月・9月 3.5円/kWh、8月 4.5円/kWh。10月使用分からなし
+const SUBSIDY_SEP=3.5;
+// mode: unit=公表単価の差から計算 / model=モデル額をそのまま / none=改定なし
+// basic10=10Aあたり基本料金の増額(円)、perKwh=電力量料金の増減(円/kWh)
+const CO=[
+ {id:"hokkaido",name:"北海道電力",plan:"従量電灯B",mode:"model",model:"30A・230kWh",before:11115,after:11596,inc:481,src:"集計",what:"託送料金の見直しを反映。11月分は日割り"},
+ {id:"tohoku",name:"東北電力",plan:"従量電灯B",mode:"model",model:"30A・260kWh",before:8204,after:8689,inc:485,src:"集計",what:"託送料金の見直しを反映(+5.9%)"},
+ {id:"tokyo",name:"東京電力EP",plan:"従量電灯B",mode:"unit",amp:true,basic10:80.31,perKwh:0.05,model:"30A・260kWh",before:9307,after:9561,inc:254,src:"公式",what:"基本料金 30Aで935.25→1,176.18円、電力量料金 全段階+0.05円/kWh"},
+ {id:"chubu",name:"中部電力ミライズ",plan:"従量電灯B",mode:"unit",amp:true,basic10:126.78,perKwh:0.056,model:"30A・260kWh",inc:395,src:"公式",what:"基本料金 30Aで963.42→1,343.76円。原価算定の誤りの是正を含む"},
+ {id:"hokuriku",name:"北陸電力",plan:"従量電灯B",mode:"none",model:"—",inc:0,src:"公式",what:"今回の託送料金見直しの対象外。家庭向け料金の見直しなし"},
+ {id:"kansai",name:"関西電力",plan:"従量電灯A",mode:"model",amp:false,model:"260kWh",before:6175,after:6582,inc:407,src:"集計",what:"最低料金 522.58→763.81円(+6.6%)"},
+ {id:"chugoku",name:"中国電力",plan:"従量電灯A",mode:"model",amp:false,model:"会社のモデル",inc:363,src:"集計",what:"中国電力ネットワークの値上げ届出を反映。低圧の託送平均単価 9.34→10.46円/kWh"},
+ {id:"shikoku",name:"四国電力",plan:"従量電灯A",mode:"model",amp:false,model:"260kWh",before:8894,after:9372,inc:478,src:"公式",what:"すべての電気料金単価を見直し"},
+ {id:"kyushu",name:"九州電力",plan:"従量電灯B",mode:"unit",amp:true,basic10:125.45,perKwh:-0.04,model:"30A・250kWh",before:6876,after:7243,inc:367,src:"公式",what:"基本料金 10Aあたり316.24→441.69円、電力量料金 各段階−0.04円/kWh"},
+ {id:"okinawa",name:"沖縄電力",plan:"従量電灯",mode:"model",amp:false,model:"会社のモデル",inc:590,src:"集計",what:"託送料金の見直しを反映(+6.4%)"}
+];
+const $=id=>document.getElementById(id);
+const yen=n=>(n<0?"−":"")+Math.round(Math.abs(n)).toLocaleString("ja-JP");
+const coSel=$("co");
+CO.forEach(c=>{const o=document.createElement("option");o.value=c.id;o.textContent=`${c.name}(${c.plan})`;if(c.id==="tokyo")o.selected=true;coSel.appendChild(o)});
+const tb=document.querySelector("#tbl tbody");
+CO.forEach(c=>{const tr=document.createElement("tr");
+ const ba=c.before?`<br><small>${yen(c.before)}→${yen(c.after)}円</small>`:"";
+ tr.innerHTML=`<td><b>${c.name}</b><br><small>${c.plan}</small></td><td>${c.model}${ba}</td><td class="n">${c.mode==="none"?"なし":"+"+yen(c.inc)+"円"}</td><td><span class="tag${c.src==="公式"?" ok":""}">${c.src}</span> ${c.what}</td>`;
+ tb.appendChild(tr)});
+let lastText="";
+function calc(){
+ const c=CO.find(x=>x.id===coSel.value);
+ const kwh=Math.max(0,Math.min(3000,Number($("kwh").value)||0));
+ const amp=Number($("amp").value);
+ const pps=$("pps").value==="1";
+ $("ampWrap").style.display=c.amp?"":"none";
+ const r1=SUBSIDY_SEP*kwh;
+ let r2,basis;
+ if(c.mode==="unit"){
+  r2=c.basic10*amp/10+c.perKwh*kwh;
+  basis=`② は${c.name}が公表した単価の差(基本料金 10Aあたり+${c.basic10.toFixed(2)}円、電力量料金 ${c.perKwh>0?"+":""}${c.perKwh}円/kWh${c.id==="chubu"?"、電力量料金はモデル額からの逆算":""})から、${amp}A・${kwh}kWhで計算しました。`;
+ }else if(c.mode==="none"){
+  r2=0;basis=`${c.name}は今回の託送料金見直しの対象外のため、② は0円としています。`;
+ }else{
+  r2=c.inc;basis=`${c.name}は単価の差を確認できていないため、② はモデル(${c.model})の値上げ額をそのまま示しています。基本料金・最低料金が中心の改定なら、使用量が違っても大きくは変わりません。`;
+ }
+ if(pps)basis+=` 新電力の場合、② は地域の大手電力の改定を目安として示したもので、実際の額は契約先の発表で確認してください。① の支援は新電力の契約でも同じく終わります。`;
+ $("o1").innerHTML=`+${yen(r1)}<small>円/月</small>`;
+ $("o2").innerHTML=`${r2>=0?"+":""}${yen(r2)}<small>円/月</small>`;
+ $("o3").innerHTML=`+${yen(r1+r2)}<small>円/月</small>`;
+ $("o4").innerHTML=`${r2>=0?"+":""}${yen(r2*12)}<small>円/年</small>`;
+ $("basis").textContent=basis;
+ lastText=`電気代 9月使用分→11月以降(同じ${kwh}kWhの場合)\n${c.name}${c.amp?" "+amp+"A":""}${pps?"(新電力は目安)":""}\n① 支援の終了 +${yen(r1)}円/月\n② 11月の料金改定 ${r2>=0?"+":""}${yen(r2)}円/月\n合計 +${yen(r1+r2)}円/月\n${location.href.split("#")[0]}`;
+ const short=`今年の秋は電気代が2段階で上がる。わが家(${kwh}kWh)は9月より月+${yen(r1+r2)}円の計算`;
+ const url=location.href.split("#")[0];
+ $("xshare").href="https://twitter.com/intent/tweet?text="+encodeURIComponent(short)+"&url="+encodeURIComponent(url);
+ $("lshare").href="https://social-plugins.line.me/lineit/share?url="+encodeURIComponent(url);
+}
+["co","kwh","amp","pps"].forEach(id=>$(id).addEventListener("input",calc));
+$("copy").addEventListener("click",async()=>{
+ try{await navigator.clipboard.writeText(lastText);$("copied").textContent="コピーしました。"}
+ catch(e){$("copied").textContent="コピーできませんでした。お使いのブラウザで選択してコピーしてください。"}
+});
+calc();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
