@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>食料品1% レシートしわけ</title>
+<meta name="description" content="10月20日に衆院で審議入りした、飲食料品の消費税を2027年4月から2年間1%にする法案。成立した場合に家計の負担がいくら減るかを、毎月の買い物を「1%になるもの」「10%のままのもの」「8%のままのもの」に仕分けて計算します。お店が値下げにどこまで反映するかも選べます。水道水・本みりん・イートイン・出前・新聞など、どの税率になるかの早見と、法案の審議日程も。">
+<link rel="canonical" href="https://alternativestudio2021-collab.github.io/daily-launch-sites/day009-shokuhin-1pct/">
+<meta property="og:type" content="website"><meta property="og:title" content="食料品1% レシートしわけ"><meta property="og:description" content="法案が成立したら家計はいくら軽くなる? 持ち帰りの食品は8%→1%、外食と酒は10%のまま、定期購読の新聞は8%のまま。毎月の買い物を仕分けて、月・年・2年間の差を計算します。"><meta property="og:url" content="https://alternativestudio2021-collab.github.io/daily-launch-sites/day009-shokuhin-1pct/"><meta property="og:locale" content="ja_JP"><meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"食料品の消費税1%はいつからですか?","acceptedAnswer":{"@type":"Answer","text":"政府の法案では2027年4月1日から2029年3月31日までの2年間です。法案は10月9日に国会へ提出され、10月20日に衆院本会議で審議入りしました。2026年10月21日時点では成立しておらず、内容や時期が国会の審議で変わる可能性があります。"}},
+{"@type":"Question","name":"外食やお酒も1%になりますか?","acceptedAnswer":{"@type":"Answer","text":"なりません。報道されている法案の内容では、1%になるのは今8%の軽減税率が適用されている飲食料品で、店内での飲食(外食)・ケータリング・酒類は10%のままです。テイクアウトや出前・宅配は今と同じく軽減の対象で、1%になる見込みです。"}},
+{"@type":"Question","name":"新聞は1%になりますか?","acceptedAnswer":{"@type":"Answer","text":"報道や解説では、週2回以上発行される新聞の定期購読は8%のまま据え置かれるとされています。"}},
+{"@type":"Question","name":"食費が月5万円だと、いくら負担が減りますか?","acceptedAnswer":{"@type":"Answer","text":"持ち帰りの食品・飲み物が税込で月5万円の場合、税率の差がそのまま値下げに反映されれば、税込の支払いは月約3,240円、年約38,900円、2年間で約77,800円減ります(5万円×7÷108)。お店の値下げが税率の差より小さければ、減る額もそれだけ小さくなります。"}}
+]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DotGothic16&family=M+PLUS+1+Code:wght@400;700&family=M+PLUS+1p:wght@400;700;800&display=swap">
+<style>
+/* Layout: 感熱紙のレシートがモチーフ。上下がギザギザに切れた細長い紙に、入力欄が品目の行として並び、下に「お会計の差」が合計行として出る。上から 今どうなっているか → 仕分けの計算 → 何%になるかの早見 → 審議の日程 → よくある質問 → 出典 */
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#e7e4dc; --paper:#fdfcf8; --ink:#1e1d1a; --sub:#67635a; --rule:#c9c4b8; --soft:#f3f1ea;
+  --red:#c2271c; --red-soft:#fbe6e2; --blue:#24508f; --blue-soft:#e3ebf6; --gray-soft:#ecebe6;
+  --f-head:"M PLUS 1p","Hiragino Sans","Noto Sans JP",sans-serif;
+  --f-body:"M PLUS 1p","Hiragino Sans","Noto Sans JP",sans-serif;
+  --f-mono:"M PLUS 1 Code",ui-monospace,"Osaka-Mono",monospace;
+  --f-dot:"DotGothic16","M PLUS 1 Code",monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141412; --paper:#1f1e1b; --ink:#ecebe4; --sub:#a8a397; --rule:#3c3a34; --soft:#27261f;
+  --red:#ff7a6b; --red-soft:#3d1f1b; --blue:#8db4ec; --blue-soft:#1d2a3c; --gray-soft:#2a2925; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141412; --paper:#1f1e1b; --ink:#ecebe4; --sub:#a8a397; --rule:#3c3a34; --soft:#27261f;
+  --red:#ff7a6b; --red-soft:#3d1f1b; --blue:#8db4ec; --blue-soft:#1d2a3c; --gray-soft:#2a2925; color-scheme:dark}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.8}
+a{color:var(--blue)}
+.wrap{max-width:760px;margin:0 auto;padding:28px 16px 72px;display:grid;gap:28px}
+.crumb{font-size:13px;color:var(--sub)}
+.crumb a{color:inherit}
+h1,h2,h3{font-family:var(--f-head);line-height:1.35;margin:0;text-wrap:balance}
+h1{font-size:clamp(28px,6vw,42px);font-weight:800;letter-spacing:.02em}
+h1 small{display:block;font-family:var(--f-dot);font-size:15px;font-weight:400;color:var(--red);letter-spacing:.12em;margin-bottom:6px}
+h2{font-size:clamp(20px,4vw,24px);font-weight:800}
+p{margin:0}
+.lead{color:var(--sub)}
+.status{display:flex;gap:10px;align-items:flex-start;background:var(--paper);border-left:4px solid var(--red);padding:12px 14px;font-size:14px}
+.status b{color:var(--red)}
+/* レシート */
+.receipt{position:relative;background:var(--paper);padding:30px 18px 34px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));
+  --z:10px;
+  -webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/var(--z) 51% repeat-x,conic-gradient(from 135deg at top,#0000,#000 1deg 89deg,#0000 90deg) top/var(--z) 51% repeat-x;
+  mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/var(--z) 51% repeat-x,conic-gradient(from 135deg at top,#0000,#000 1deg 89deg,#0000 90deg) top/var(--z) 51% repeat-x}
+.rhead{text-align:center;font-family:var(--f-dot);display:grid;gap:2px;padding-bottom:14px;border-bottom:1px dashed var(--rule)}
+.rhead .shop{font-size:20px;letter-spacing:.2em}
+.rhead .meta{font-size:12px;color:var(--sub)}
+.presets{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:14px 0;border-bottom:1px dashed var(--rule)}
+.presets span{font-size:13px;color:var(--sub);width:100%;text-align:center}
+button{font:inherit}
+.chip{font-family:var(--f-mono);font-size:14px;border:1px solid var(--rule);background:var(--soft);color:var(--ink);padding:6px 12px;border-radius:999px;cursor:pointer;min-height:36px}
+.chip:hover,.chip:focus-visible{border-color:var(--ink);outline:none}
+.lines{display:grid;padding:6px 0}
+.line{display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:center;padding:12px 0;border-bottom:1px dotted var(--rule)}
+.line label{font-weight:700;font-size:15px}
+.line .hint{grid-column:1/-1;font-size:12.5px;color:var(--sub);line-height:1.6}
+.line .tag{font-family:var(--f-mono);font-size:12px;padding:1px 6px;border-radius:3px;margin-left:6px;white-space:nowrap;vertical-align:1px}
+.tag.down{background:var(--red-soft);color:var(--red)}
+.tag.same{background:var(--gray-soft);color:var(--sub)}
+.amt{display:flex;align-items:center;gap:4px;font-family:var(--f-mono)}
+.amt input{width:7.5em;font:inherit;font-size:17px;text-align:right;padding:6px 8px;border:1px solid var(--rule);border-radius:4px;background:var(--soft);color:var(--ink)}
+.amt input:focus{outline:2px solid var(--blue);outline-offset:1px}
+.pass{padding:14px 0;border-bottom:1px dashed var(--rule);display:grid;gap:8px}
+.pass legend{font-weight:700;font-size:15px;padding:0}
+.pass fieldset{border:0;margin:0;padding:0;display:grid;gap:8px}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg label{display:flex;align-items:center;gap:6px;border:1px solid var(--rule);border-radius:4px;padding:6px 10px;font-size:14px;cursor:pointer;background:var(--soft);min-height:36px}
+.seg input{accent-color:var(--red)}
+.seg label:has(input:checked){border-color:var(--red);background:var(--red-soft)}
+.total{font-family:var(--f-mono);padding-top:14px;display:grid;gap:6px}
+.trow{display:flex;justify-content:space-between;gap:12px;font-size:15px}
+.trow.big{font-size:clamp(20px,5vw,26px);font-weight:700;color:var(--red);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:8px 0;margin:6px 0}
+.trow span:last-child{text-align:right}
+.rfoot{font-size:12.5px;color:var(--sub);border-top:1px dashed var(--rule);margin-top:12px;padding-top:12px;display:grid;gap:4px}
+.barcode{height:34px;margin:16px auto 0;width:min(240px,80%);background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 5px,transparent 5px 8px,var(--ink) 8px 11px,transparent 11px 12px);opacity:.75}
+/* 本文パネル */
+.panel{background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:20px 18px;display:grid;gap:14px}
+.no{font-family:var(--f-dot);color:var(--red);margin-right:8px}
+.note{font-size:13px;color:var(--sub)}
+.facts{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.fact{border:1px solid var(--rule);border-radius:4px;padding:12px;display:grid;gap:4px;background:var(--soft)}
+.fact .k{font-size:13px;color:var(--sub)}
+.fact .v{font-family:var(--f-mono);font-size:20px;font-weight:700}
+.fact .v.r{color:var(--red)}
+/* 早見 */
+.quiz{display:grid;gap:8px}
+.q{display:grid;grid-template-columns:1fr auto;gap:2px 12px;align-items:center;border-bottom:1px dotted var(--rule);padding:10px 0}
+.q .n{font-weight:700}
+.q .why{grid-column:1/-1;font-size:13px;color:var(--sub);line-height:1.6}
+.rate{font-family:var(--f-mono);font-weight:700;font-size:15px;padding:2px 10px;border-radius:3px;white-space:nowrap}
+.rate.one{background:var(--red-soft);color:var(--red)}
+.rate.ten{background:var(--gray-soft);color:var(--ink)}
+.rate.eight{background:var(--blue-soft);color:var(--blue)}
+.filter{display:flex;flex-wrap:wrap;gap:6px}
+.filter button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+/* 日程 */
+.tl{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.tl li{display:grid;grid-template-columns:7.5em 1fr;gap:12px;padding:10px 0;border-bottom:1px dotted var(--rule)}
+.tl time{font-family:var(--f-mono);font-size:14px;color:var(--sub)}
+.tl li.done time{color:var(--ink);font-weight:700}
+.tl li.now{background:var(--red-soft);margin:0 -10px;padding:10px}
+.tl li.now time{color:var(--red)}
+.tl .tbd{font-size:12px;font-family:var(--f-mono);color:var(--sub);border:1px solid var(--rule);border-radius:3px;padding:0 5px;margin-left:6px}
+details.faq{border-bottom:1px dotted var(--rule);padding:10px 0}
+details.faq summary{cursor:pointer;font-weight:700}
+details.faq p{margin-top:8px;color:var(--sub);font-size:15px}
+.pr{justify-self:start;font-family:var(--f-mono);font-size:12px;font-weight:700;border:1px solid var(--sub);color:var(--sub);padding:0 8px;border-radius:3px}
+.offer{display:grid;gap:8px;font-size:15px}
+.links{display:grid;gap:8px}
+.links a{display:grid;padding:10px 12px;border:1px solid var(--rule);border-radius:4px;text-decoration:none;color:var(--ink);background:var(--soft)}
+.links a span{font-size:13px;color:var(--sub)}
+.links a:hover,.links a:focus-visible{border-color:var(--ink);outline:none}
+.src{font-size:13px;color:var(--sub);display:grid;gap:4px;padding-left:1.2em;margin:0}
+.src a{word-break:break-all}
+.share{display:flex;flex-wrap:wrap;gap:8px}
+footer{font-size:12px;color:var(--sub);display:grid;gap:4px}
+@media print{body{background:#fff}.presets,.share,.filter{display:none}}
+</style>
+</head><body>
+<div class="wrap">
+<nav class="crumb"><a href="../">毎日ひとつの小さな道具箱</a> / 009</nav>
+
+<header style="display:grid;gap:12px">
+  <h1><small>2027.04 → 2029.03 案</small>食料品1% レシートしわけ</h1>
+  <p class="lead">飲食料品の消費税を2年間だけ1%にする法案が、10月20日に衆院で審議入りしました。成立した場合、ふだんの買い物のうち何が1%になり、何が10%や8%のまま残るのか。毎月の支払いを仕分けて、家計の負担がいくら減るかを計算します。</p>
+  <div class="status" role="note"><span>●</span><span><b>まだ成立していません(10月21日時点)。</b>与党は11月上旬の衆院通過を目指していますが、参院は与党が過半数に届かず、修正や時期のずれもありえます。このページの数字は政府案どおりに決まった場合の試算です。</span></div>
+</header>
+
+<section class="panel" aria-labelledby="h-now">
+  <h2 id="h-now"><span class="no">01</span>政府案の中身</h2>
+  <div class="facts">
+    <div class="fact"><span class="k">持ち帰りの食品・飲み物</span><span class="v r">8% → 1%</span><span class="note">テイクアウト・出前・宅配も同じ</span></div>
+    <div class="fact"><span class="k">店内での飲食・酒類</span><span class="v">10% のまま</span><span class="note">ケータリングも10%</span></div>
+    <div class="fact"><span class="k">定期購読の新聞</span><span class="v">8% のまま</span><span class="note">週2回以上発行のもの</span></div>
+    <div class="fact"><span class="k">期間</span><span class="v">2年間</span><span class="note">2027年4月1日〜2029年3月31日</span></div>
+  </div>
+  <p class="note">1%の内訳は国の消費税0.78%と地方消費税0.22%。1%になる範囲は、今8%の軽減税率がかかっている範囲と同じとされています。あわせて、働く人に市町村から年1回払う「就業者負担軽減支援金」も法案に入っていますが、金額や所得の線はまだ示されていないため、下の計算には入れていません。</p>
+</section>
+
+<section aria-labelledby="h-calc" style="display:grid;gap:12px">
+  <h2 id="h-calc"><span class="no">02</span>毎月の支払いを仕分ける</h2>
+  <p class="note">金額は税込で、だいたいの月額を入れてください。家計簿アプリの「食費」には外食やお酒も混ざっていることが多いので、分けて入れると差が正確になります。</p>
+  <div class="receipt" id="receipt">
+    <div class="rhead">
+      <span class="shop">わが家の食費</span>
+      <span class="meta">月額・税込 / 2027年4月以降の試算</span>
+    </div>
+    <div class="presets">
+      <span>持ち帰りの食品をざっくり入れる</span>
+      <button class="chip" type="button" data-p="30000">月3万円</button>
+      <button class="chip" type="button" data-p="50000">月5万円</button>
+      <button class="chip" type="button" data-p="75000">月7.5万円</button>
+      <button class="chip" type="button" data-p="100000">月10万円</button>
+    </div>
+    <div class="lines">
+      <div class="line"><label for="a">スーパー・コンビニの食品<span class="tag down">8→1%</span></label>
+        <span class="amt"><input id="a" inputmode="numeric" value="50000" aria-describedby="ha">円</span>
+        <span class="hint" id="ha">野菜・肉・パン・お菓子・ジュース・水など。ネットスーパーや生協の宅配も含みます。</span></div>
+      <div class="line"><label for="b">テイクアウト・出前・宅配<span class="tag down">8→1%</span></label>
+        <span class="amt"><input id="b" inputmode="numeric" value="5000" aria-describedby="hb">円</span>
+        <span class="hint" id="hb">持ち帰りの弁当・総菜、ピザやフードデリバリー。店のイートインで食べた分は下の「外食」へ。</span></div>
+      <div class="line"><label for="c">外食(店内で食べる)<span class="tag same">10%のまま</span></label>
+        <span class="amt"><input id="c" inputmode="numeric" value="12000" aria-describedby="hc">円</span>
+        <span class="hint" id="hc">レストラン・フードコート・イートイン・ケータリング。</span></div>
+      <div class="line"><label for="d">お酒<span class="tag same">10%のまま</span></label>
+        <span class="amt"><input id="d" inputmode="numeric" value="4000" aria-describedby="hd">円</span>
+        <span class="hint" id="hd">ビール・ワイン・日本酒・本みりん。ノンアルコール飲料(アルコール1%未満)は上の食品へ。</span></div>
+      <div class="line"><label for="e">新聞の定期購読<span class="tag same">8%のまま</span></label>
+        <span class="amt"><input id="e" inputmode="numeric" value="0" aria-describedby="he">円</span>
+        <span class="hint" id="he">配達で取っている新聞。駅やコンビニで1部ずつ買う新聞は今も10%です。</span></div>
+    </div>
+    <div class="pass">
+      <fieldset>
+        <legend>お店の値下げはどこまで?</legend>
+        <div class="seg" role="radiogroup">
+          <label><input type="radio" name="p" value="1" checked>税率の差ぶん全部</label>
+          <label><input type="radio" name="p" value="0.75">4分の3</label>
+          <label><input type="radio" name="p" value="0.5">半分</label>
+        </div>
+        <p class="note">税率が下がっても、値札をいくらにするかは各店が決めます。仕入れ値や人件費の上昇が続けば、税率の差より値下げが小さい店も出ます。</p>
+      </fieldset>
+    </div>
+    <div class="total" aria-live="polite">
+      <div class="trow"><span>今の月の支払い</span><span id="o-now">—</span></div>
+      <div class="trow"><span>1%になった後</span><span id="o-after">—</span></div>
+      <div class="trow big"><span>月に減る額</span><span id="o-month">—</span></div>
+      <div class="trow"><span>1年で</span><span id="o-year">—</span></div>
+      <div class="trow"><span>2年間で</span><span id="o-2y">—</span></div>
+      <div class="trow"><span>支払い全体に占める減り方</span><span id="o-pct">—</span></div>
+    </div>
+    <div class="rfoot">
+      <span>※ 1%対象の税込額 × 7 ÷ 108 × 値下げの割合で計算。税込108円の品が101円になる割合(約6.5%)です。</span>
+      <span>※ 2029年4月以降は8%に戻る案です。就業者負担軽減支援金は金額未定のため含みません。</span>
+    </div>
+    <div class="barcode" aria-hidden="true"></div>
+  </div>
+  <div class="share">
+    <button class="chip" type="button" id="copy">結果をコピー</button>
+    <a class="chip" id="xshare" href="#" target="_blank" rel="noopener" style="text-decoration:none">Xで共有</a>
+    <a class="chip" id="lshare" href="#" target="_blank" rel="noopener" style="text-decoration:none">LINEで送る</a>
+  </div>
+  <p class="note">参考: 総務省の家計調査(2025年)では、二人以上の世帯の食料への支出は月89,754円、このうち外食が14,446円と集計されています(酒類も「食料」に含まれます)。</p>
+</section>
+
+<section class="panel" aria-labelledby="h-quiz">
+  <h2 id="h-quiz"><span class="no">03</span>これは何%? 迷いやすい20品</h2>
+  <p class="note">1%になる範囲は今の軽減税率(8%)の範囲と同じとされているため、国税庁の軽減税率Q&Aの考え方で仕分けています。法案の審議で範囲が変われば、ここも変わります。</p>
+  <div class="filter" role="group" aria-label="絞り込み">
+    <button class="chip" type="button" data-f="all" aria-pressed="true">すべて</button>
+    <button class="chip" type="button" data-f="one" aria-pressed="false">1%になる</button>
+    <button class="chip" type="button" data-f="ten" aria-pressed="false">10%のまま</button>
+    <button class="chip" type="button" data-f="eight" aria-pressed="false">8%のまま</button>
+  </div>
+  <div class="quiz" id="quiz"></div>
+</section>
+
+<section class="panel" aria-labelledby="h-tl">
+  <h2 id="h-tl"><span class="no">04</span>決まるまでの日程</h2>
+  <ol class="tl">
+    <li class="done"><time>2026.09.15</time><span>税制改正の大綱を閣議決定(食料品1%と所得に連動した給付)</span></li>
+    <li class="done"><time>2026.10.05</time><span>臨時国会が召集(会期は12月12日まで)</span></li>
+    <li class="done"><time>2026.10.09</time><span>関連法案を閣議決定し、国会に提出</span></li>
+    <li class="done now"><time>2026.10.20</time><span>衆院本会議で審議入り。同じ日に国民民主党が対案(住民税の減税と低所得者向けの給付が柱)を提出</span></li>
+    <li><time>2026.11 上旬</time><span>与党が目指す衆院通過<span class="tbd">予定</span></span></li>
+    <li><time>2026.12.12</time><span>会期末。参院で可決されるかが焦点<span class="tbd">未定</span></span></li>
+    <li><time>2027.04.01</time><span>1%の適用開始(政府案)<span class="tbd">案</span></span></li>
+    <li><time>2029.03.31</time><span>1%の適用終了。翌日から8%に戻る(政府案)<span class="tbd">案</span></span></li>
+  </ol>
+  <p class="note">審議の動きがあれば、このページの日付と内容を更新します。</p>
+</section>
+
+<section class="panel" aria-labelledby="h-faq">
+  <h2 id="h-faq"><span class="no">05</span>よくある質問</h2>
+  <details class="faq"><summary>今のうちに買いだめしたほうがいいですか?</summary><p>1%になるのは2027年4月からの案なので、今の買い物には関係しません。逆に、1%が始まる直前に買い控え、終わる2029年3月の直前に買いだめが起きることを心配する声があります。日持ちしない食品が多い食費では、時期をずらしてもできることは限られます。</p></details>
+  <details class="faq"><summary>レジの合計はきっちり6.5%下がりますか?</summary><p>税率の差だけで計算すると、税込108円の品が101円になります(約6.5%)。ただし値札は各店が決めるため、端数の扱いや仕入れ値の上昇で、下がり方は店ごとに違います。上の計算で「値下げの割合」を変えて幅を見てください。</p></details>
+  <details class="faq"><summary>給付(就業者負担軽減支援金)はもらえますか?</summary><p>法案では、働く人に市町村から年1回支払う支援金が設けられ、口座を登録していれば申請は不要とされています。ただし金額や対象になる所得の線は、10月21日時点で示されていません。決まり次第、このページに追記します。</p></details>
+  <details class="faq"><summary>法案が成立しなかったらどうなりますか?</summary><p>今の軽減税率8%のままです。修正されて税率や期間、開始時期が変わる可能性もあります。</p></details>
+  <details class="faq"><summary>お店や会社の側は何を準備すればいいですか?</summary><p>レジの税率設定、値札、インボイスの税率区分、仕入れの税額控除の計算が変わります。国税庁がQ&Aを出しているほか、レジや会計ソフトの各社が対応の案内を始めています。このページは家計の試算向けで、事業者の手続きは扱っていません。</p></details>
+</section>
+
+<section class="panel" aria-labelledby="h-pr">
+  <span class="pr">PR</span>
+  <h2 id="h-pr">食費の外まで家計を見直したいとき</h2>
+  <p class="note">この枠には広告(アフィリエイトリンク)が含まれます。リンク先で申し込みがあると、このサイトに紹介料が入ります。</p>
+  <div class="offer">
+    <p>減税で浮く額は、月数千円の家庭が多い計算です。電気代や保険、教育費、老後の資金まで含めて家計を組み直したい人向けに、お金の専門家(FP)に無料で相談できるサービスです。</p>
+    <div><a href="https://px.a8.net/svt/ejp?a8mat=4BEFL6+1U34XE+4GN2+1NJK7M" rel="nofollow">老後資金・資産形成をFPに無料相談！厳選プロが丁寧サポート【ガーデン】</a>
+<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=4BEFL6+1U34XE+4GN2+1NJK7M" alt=""></div>
+  </div>
+</section>
+
+<section class="panel" aria-labelledby="h-more">
+  <h2 id="h-more">家計の変わり目をほかにも</h2>
+  <div class="links">
+    <a href="../day007-denki-neage/">11月の電気代 値上げ早見 2026<span>国の値引き終了と託送料金の見直しで、どれだけ上がるか</span></a>
+    <a href="../day008-furusato-masu/">ふるさと納税 上限の升 2026<span>2026年分の上限を去年と並べて計算</span></a>
+    <a href="../day001-nenshu-kabe/">年収の壁ものさし 2026<span>パート・アルバイトの社会保険と手取り</span></a>
+  </div>
+</section>
+
+<section class="panel" aria-labelledby="h-src">
+  <h2 id="h-src">出典</h2>
+  <ul class="src">
+    <li>時事ドットコム「消費減税法案、衆院審議入り 与党11月上旬通過目指す」(2026年10月20日) <a href="https://www.jiji.com/jc/article?k=2026102000124&amp;g=pol">https://www.jiji.com/jc/article?k=2026102000124&amp;g=pol</a></li>
+    <li>共同通信(nippon.com)「消費減税、衆院で論戦スタート 法案審議入り、飲食料品1%」(2026年10月20日) <a href="https://www.nippon.com/ja/news/kd1485134061381910908/">https://www.nippon.com/ja/news/kd1485134061381910908/</a></li>
+    <li>東京新聞「消費減税、対案訴え論戦 給付併せ審議入り」(2026年10月20日) <a href="https://www.tokyo-np.co.jp/article/522808">https://www.tokyo-np.co.jp/article/522808</a></li>
+    <li>NHK「政府 食料品の消費税減税関連法案を国会に提出」(2026年10月9日) <a href="https://news.web.nhk/newsweb/na/nd-20261009de56958">https://news.web.nhk/newsweb/na/nd-20261009de56958</a></li>
+    <li>日本経済新聞「食品消費税1%へ法案閣議決定 所得連動給付、30年度以降は年1回」 <a href="https://www.nikkei.com/article/DGXZQOUA082SK0Y6A001C2000000/">https://www.nikkei.com/article/DGXZQOUA082SK0Y6A001C2000000/</a></li>
+    <li>日本経済新聞「食品消費税2年限り1% 中低所得者は先行給付、政府が税制大綱決定」 <a href="https://www.nikkei.com/article/DGXZQOUA142E10U6A910C2000000/">https://www.nikkei.com/article/DGXZQOUA142E10U6A910C2000000/</a></li>
+    <li>日本経済新聞「食品消費税1%法案、参院で混乱の公算」 <a href="https://www.nikkei.com/article/DGXZQOUA2451E0U6A920C2000000/">https://www.nikkei.com/article/DGXZQOUA2451E0U6A920C2000000/</a></li>
+    <li>国税庁「消費税の軽減税率制度に関するQ&amp;A(個別事例編)」ほか 軽減税率制度のページ <a href="https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/index.htm">https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/index.htm</a></li>
+    <li>税理士による解説(対象・新聞8%据え置き・税率の内訳) <a href="https://taxlabor.com/food-tax-reduction-2026/">https://taxlabor.com/food-tax-reduction-2026/</a> / <a href="https://jitsumu-guide.com/food-consumption-tax-reduction-2027-guide/">https://jitsumu-guide.com/food-consumption-tax-reduction-2027-guide/</a></li>
+    <li>総務省「家計調査 家計収支編 二人以上の世帯 2025年」(e-Stat) <a href="https://www.e-stat.go.jp/stat-search/files?page=1&amp;layout=datalist&amp;lid=000001478746">https://www.e-stat.go.jp/stat-search/files?page=1&amp;layout=datalist&amp;lid=000001478746</a>、集計の引用元 <a href="https://www.giken.co.jp/column/household-survey-2025/">https://www.giken.co.jp/column/household-survey-2025/</a></li>
+  </ul>
+</section>
+
+<footer>
+  <span>このページは公開資料と報道をもとにした試算と情報提供です。税額の個別の判断は税務署・税理士に確認してください。</span>
+  <span>最終更新 2026年10月21日 / <a href="../">毎日ひとつの小さな道具箱</a></span>
+</footer>
+</div>
+
+<script>
+(function(){
+  var ids=['a','b','c','d','e'];
+  var el=function(i){return document.getElementById(i)};
+  function num(v){v=String(v).replace(/[^0-9]/g,'');return v?parseInt(v,10):0}
+  function yen(n){return Math.round(n).toLocaleString('ja-JP')+'円'}
+  var last='';
+  function calc(){
+    var a=num(el('a').value),b=num(el('b').value),c=num(el('c').value),d=num(el('d').value),e=num(el('e').value);
+    var p=parseFloat((document.querySelector('input[name="p"]:checked')||{value:1}).value);
+    var down=(a+b)*7/108*p;
+    var now=a+b+c+d+e;
+    el('o-now').textContent=yen(now);
+    el('o-after').textContent=yen(now-down);
+    el('o-month').textContent='−'+yen(down);
+    el('o-year').textContent='−'+yen(down*12);
+    el('o-2y').textContent='−'+yen(down*24);
+    el('o-pct').textContent=now?('−'+(down/now*100).toFixed(1)+'%'):'—';
+    last='食料品の消費税が1%になったら(政府案): 月の食費'+yen(now)+'のうち、持ち帰りの食品'+yen(a+b)+'が対象。月'+yen(down)+'・年'+yen(down*12)+'・2年で'+yen(down*24)+'減る計算でした。';
+    var url=location.href.split('#')[0];
+    el('xshare').href='https://twitter.com/intent/tweet?text='+encodeURIComponent(last)+'&url='+encodeURIComponent(url);
+    el('lshare').href='https://social-plugins.line.me/lineit/share?url='+encodeURIComponent(url)+'&text='+encodeURIComponent(last);
+  }
+  ids.forEach(function(i){el(i).addEventListener('input',calc)});
+  document.querySelectorAll('input[name="p"]').forEach(function(r){r.addEventListener('change',calc)});
+  document.querySelectorAll('[data-p]').forEach(function(btn){btn.addEventListener('click',function(){el('a').value=btn.getAttribute('data-p');calc()})});
+  el('copy').addEventListener('click',function(){
+    var t=last+' '+location.href.split('#')[0];
+    try{navigator.clipboard.writeText(t).then(function(){el('copy').textContent='コピーしました'},function(){el('copy').textContent='コピーできませんでした'})}catch(err){el('copy').textContent='コピーできませんでした'}
+  });
+  calc();
+
+  var Q=[
+    ['one','スーパーで買う野菜・肉・魚・パン','食品表示法の「食品」(酒類を除く)の販売は軽減の対象。'],
+    ['one','ペットボトルのミネラルウォーター','飲料水として売られる水は食品。'],
+    ['ten','水道水','水道水は生活用水として供給されるため対象外。ペットボトルの水とは扱いが違います。'],
+    ['ten','ビール・ワイン・日本酒','酒類は対象外。'],
+    ['ten','本みりん','アルコール分があり酒類にあたるため対象外。'],
+    ['one','みりん風調味料','アルコール分1%未満で酒類ではないため食品。'],
+    ['one','ノンアルコールビール','アルコール分1%未満なら酒類ではなく食品。'],
+    ['ten','医薬部外品の栄養ドリンク','医薬品・医薬部外品は食品ではないため対象外。清涼飲料水として売られるものは食品です。'],
+    ['one','コンビニで買って持ち帰る弁当','持ち帰りは食品の販売。'],
+    ['ten','コンビニのイートインで食べる弁当','店内の飲食設備で食べるのは外食。レジで店内飲食かを確かめるのはこのためです。'],
+    ['ten','フードコートでの食事','共用のテーブル・椅子で食べるのは外食。'],
+    ['one','ピザの宅配・フードデリバリー','届けるだけの出前・宅配は食品の販売。'],
+    ['ten','ケータリング・出張料理','客の指定した場所で調理・盛り付け・配膳をするものは対象外。'],
+    ['one','テイクアウトのコーヒー','持ち帰りの飲み物は食品の販売。'],
+    ['one','おもちゃ付きのお菓子(税抜1万円以下)','食品と食品以外のセット(一体資産)は、税抜1万円以下で食品の価額が3分の2以上なら対象。'],
+    ['ten','ペットフード','人の食用ではないため食品にあたらず対象外。'],
+    ['one','かき氷用・飲み物用の氷','食用の氷は食品。'],
+    ['ten','ドライアイス・保冷剤','食用ではないため対象外。'],
+    ['eight','配達で取っている新聞(週2回以上発行)','今の軽減税率8%の対象。1%にはならず8%のまま据え置きと報じられています。'],
+    ['ten','駅やコンビニで買う新聞','定期購読ではないため、今も10%。']
+  ];
+  var label={one:'1%',ten:'10%',eight:'8%'};
+  var box=el('quiz');
+  box.innerHTML=Q.map(function(q){return '<div class="q" data-k="'+q[0]+'"><span class="n">'+q[1]+'</span><span class="rate '+q[0]+'">'+label[q[0]]+'</span><span class="why">'+q[2]+'</span></div>'}).join('');
+  document.querySelectorAll('[data-f]').forEach(function(b){b.addEventListener('click',function(){
+    var f=b.getAttribute('data-f');
+    document.querySelectorAll('[data-f]').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+    box.querySelectorAll('.q').forEach(function(r){r.hidden=!(f==='all'||r.getAttribute('data-k')===f)});
+  })});
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
