@@ -16,7 +16,9 @@ ACCOUNT_TAG = "325da2b63e5b32d897a5a87353dad067"
 SITE_TAG = "9581a3c8e05b48b88f0cddf2c6ed869b"
 PATH_PREFIX = "/daily-launch-sites/"
 START = dt.datetime(2026, 10, 12, 15, 0, tzinfo=dt.timezone.utc)  # 2026-10-13 00:00 JST
-CHUNK = dt.timedelta(days=7)
+# 10/21 朝、累計が前回より減ったり(2→0)、直近24時間が0のまま累計だけ10に跳ねたりした。
+# 7日まとめて聞くと間引き(adaptive sampling)が粗くなるとみて、1日ずつ聞いて足す。
+CHUNK = dt.timedelta(days=1)
 API = "https://api.cloudflare.com/client/v4/graphql"
 
 
@@ -58,6 +60,44 @@ def query(token, since, until):
     return out
 
 
+def sampling(token, since, until):
+    """パスごとのページ表示数と間引き率の平均を返す(診断用)。失敗しても本体は止めない。"""
+    q = (
+        "query($a:String!,$f:AccountRumPageloadEventsAdaptiveGroupsFilter_InputObject!)"
+        "{viewer{accounts(filter:{accountTag:$a}){rows:rumPageloadEventsAdaptiveGroups("
+        "limit:1000,filter:$f){count avg{sampleInterval} dimensions{requestPath}}}}}"
+    )
+    variables = {
+        "a": ACCOUNT_TAG,
+        "f": {"AND": [
+            {"datetime_geq": iso(since), "datetime_lt": iso(until)},
+            {"siteTag": SITE_TAG},
+            {"bot": 0},
+        ]},
+    }
+    try:
+        req = urllib.request.Request(
+            API,
+            data=json.dumps({"query": q, "variables": variables}).encode(),
+            headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+        )
+        with urllib.request.urlopen(req, timeout=60) as r:
+            body = json.load(r)
+        if body.get("errors"):
+            return {}
+        out = {}
+        for row in body["data"]["viewer"]["accounts"][0]["rows"]:
+            path = row["dimensions"]["requestPath"] or ""
+            if path.startswith(PATH_PREFIX):
+                out[path] = {
+                    "pageviews": int(row["count"]),
+                    "sampleInterval": row.get("avg", {}).get("sampleInterval"),
+                }
+        return out
+    except Exception:
+        return {}
+
+
 def main():
     token = os.environ.get("CF_API_TOKEN")
     if not token:
@@ -72,10 +112,13 @@ def main():
             total[p] = total.get(p, 0) + v
         t = u
     last24 = query(token, now - dt.timedelta(hours=24), now)
+    diag = sampling(token, max(START, now - dt.timedelta(days=7)), now)  # 1回の問い合わせ期間の上限に合わせて直近7日
 
     paths = {}
     for p in sorted(set(total) | set(last24)):
         paths[p] = {"visits": total.get(p, 0), "visits24h": last24.get(p, 0)}
+        if p in diag:
+            paths[p]["diag"] = diag[p]
 
     jst = dt.timezone(dt.timedelta(hours=9))
     result = {
