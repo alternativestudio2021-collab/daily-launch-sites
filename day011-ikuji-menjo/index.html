@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>国民年金 育児免除 月かぞえ帳</title>
+<meta name="description" content="2026年10月に始まった国民年金保険料の育児期間免除。子の誕生日と、母・父・養父母のどれかを選ぶと、何年何月から何月まで免除になるか、保険料がいくら払わずに済むか、届出が要るかを月ごとのカレンダーで示します。10月より前に生まれた子の場合、夫婦ふたりとも第1号の場合も。">
+<link rel="canonical" href="https://alternativestudio2021-collab.github.io/daily-launch-sites/day011-ikuji-menjo/">
+<meta property="og:type" content="website"><meta property="og:title" content="国民年金 育児免除 月かぞえ帳"><meta property="og:description" content="自営業・フリーランスの親は、子が1歳になるまで国民年金保険料が免除(所得制限なし・納付済み扱い)。うちの子だと何か月・いくら? 父も対象、10月より前に生まれた子も10月分から。誕生日を入れて月ごとに確かめます。"><meta property="og:url" content="https://alternativestudio2021-collab.github.io/daily-launch-sites/day011-ikuji-menjo/"><meta property="og:locale" content="ja_JP"><meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"国民年金の育児期間免除はだれが対象ですか?","acceptedAnswer":{"@type":"Answer","text":"国民年金の第1号被保険者(自営業、フリーランス、学生、無職の人など)で、1歳未満の子を養育している実父母・養父母です。所得の制限はありません。会社員・公務員(第2号)や、その扶養に入っている配偶者(第3号)は対象外です。制度は2026年10月1日に始まりました。"}},
+{"@type":"Question","name":"父親も免除になりますか?","acceptedAnswer":{"@type":"Answer","text":"なります。実父や養父母は、子を養育することになった月から1歳の誕生日の前月までの最大12か月が免除です。夫婦ともに第1号被保険者なら、ふたりとも免除を受けられます。"}},
+{"@type":"Question","name":"2026年10月より前に生まれた子でも対象ですか?","acceptedAnswer":{"@type":"Answer","text":"2026年10月時点で1歳未満であれば対象です。ただし免除されるのは2026年10月分以降で、それより前の月にさかのぼることはありません。たとえば2026年3月生まれの子の父なら、2026年10月から2027年2月までの5か月分です。"}},
+{"@type":"Question","name":"免除された期間は年金が減りますか?","acceptedAnswer":{"@type":"Answer","text":"減りません。育児期間の免除は保険料を納めた期間として扱われ、老齢基礎年金の額に反映されます。所得が少ないときの通常の全額免除(年金額への反映は2分の1)とは扱いが違います。"}}
+]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap">
+<style>
+/* Layout: 子どもの最初の1年を、月ごとの丸い「はんこ」のマスで数える帳面。上から 制度のあらまし → 入力 → 月のマス(産前産後・育児免除・対象外) → 金額と届出 → 早見の例 → よくある質問 → 出典 */
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#f6f1e7; --paper:#fffdf8; --ink:#2d2a26; --sub:#6e675d; --rule:#e2d9c8; --soft:#f1ebdf;
+  --sage:#3f7a5f; --sage-soft:#dcebe2; --apri:#c8642f; --apri-soft:#fbe3d4; --gray:#a59d90; --gray-soft:#ece7de;
+  --f-body:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;
+  --f-hand:"Klee One","Zen Maru Gothic",serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#191714; --paper:#23201c; --ink:#efe9de; --sub:#b3aa9b; --rule:#3d3730; --soft:#2b2722;
+  --sage:#86c7a6; --sage-soft:#1f3329; --apri:#f2a271; --apri-soft:#3c2619; --gray:#7d766b; --gray-soft:#2f2b26; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#191714; --paper:#23201c; --ink:#efe9de; --sub:#b3aa9b; --rule:#3d3730; --soft:#2b2722;
+  --sage:#86c7a6; --sage-soft:#1f3329; --apri:#f2a271; --apri-soft:#3c2619; --gray:#7d766b; --gray-soft:#2f2b26; color-scheme:dark}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.85}
+a{color:var(--sage)}
+.wrap{max-width:780px;margin:0 auto;padding:28px 16px 72px;display:grid;gap:30px}
+.crumb{font-size:13px;color:var(--sub)}
+.crumb a{color:inherit}
+h1,h2,h3{line-height:1.4;margin:0;text-wrap:balance}
+h1{font-size:clamp(28px,6.4vw,44px);font-weight:900;letter-spacing:.02em}
+h1 small{display:block;font-family:var(--f-hand);font-weight:600;font-size:.42em;color:var(--apri);letter-spacing:.08em;margin-bottom:6px}
+h2{font-size:clamp(20px,4.4vw,26px);font-weight:700;display:flex;gap:10px;align-items:center}
+h2::before{content:"";width:14px;height:14px;border-radius:50%;background:var(--sage);flex:none}
+.lead{margin:12px 0 0;font-size:17px}
+.note{font-size:13px;color:var(--sub)}
+.card{background:var(--paper);border:1px solid var(--rule);border-radius:18px;padding:22px 18px;display:grid;gap:14px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:0;padding:0;list-style:none}
+.facts li{background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:12px 14px;font-size:14px;line-height:1.6}
+.facts b{display:block;font-size:20px;color:var(--sage);font-weight:900}
+form{display:grid;gap:16px}
+fieldset{border:0;margin:0;padding:0;display:grid;gap:8px}
+legend{font-weight:700;margin-bottom:6px;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{display:flex;align-items:center;gap:6px;padding:8px 14px;border:1.5px solid var(--rule);border-radius:999px;background:var(--soft);cursor:pointer;font-size:15px}
+.chips input{accent-color:var(--sage)}
+.chips label:has(input:checked){border-color:var(--sage);background:var(--sage-soft)}
+.row{display:grid;gap:6px}
+.row label{font-weight:700}
+input[type=date],input[type=month]{font:inherit;padding:10px 12px;border:1.5px solid var(--rule);border-radius:12px;background:var(--paper);color:var(--ink);max-width:260px;width:100%}
+.hide{display:none!important}
+.out{display:grid;gap:18px}
+.sum{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.sum div{border-radius:14px;padding:12px 14px;background:var(--soft)}
+.sum .k{font-size:13px;color:var(--sub)}
+.sum .v{font-size:clamp(22px,5vw,30px);font-weight:900;line-height:1.3}
+.sum .ikuji{background:var(--sage-soft)} .sum .ikuji .v{color:var(--sage)}
+.sum .sanzen{background:var(--apri-soft)} .sum .sanzen .v{color:var(--apri)}
+.months{display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,1fr));gap:10px;list-style:none;margin:0;padding:0}
+.months li{display:grid;justify-items:center;gap:4px;text-align:center;font-size:12px;line-height:1.35;color:var(--sub)}
+.stamp{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-hand);font-weight:600;font-size:15px;line-height:1.15;border:2px dashed var(--gray);color:var(--gray);background:var(--paper)}
+.m-ikuji .stamp{border:2.5px solid var(--sage);color:var(--sage);background:var(--sage-soft);transform:rotate(-8deg)}
+.m-sanzen .stamp{border:2.5px solid var(--apri);color:var(--apri);background:var(--apri-soft);transform:rotate(6deg)}
+.months .ym{font-weight:700;color:var(--ink);font-size:13px}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--sub);margin:0;padding:0;list-style:none}
+.legend span{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+.todo{border-left:5px solid var(--apri);background:var(--paper);border-radius:0 14px 14px 0;padding:14px 16px;display:grid;gap:6px}
+.todo.ok{border-left-color:var(--sage)}
+.todo h3{font-size:17px}
+.todo ul{margin:0;padding-left:1.2em}
+.empty{padding:16px;border-radius:14px;background:var(--soft);font-size:15px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border-bottom:1px solid var(--rule);padding:8px 6px;text-align:left;vertical-align:top}
+th{font-weight:700;color:var(--sub);font-size:13px}
+td.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.tablebox{overflow-x:auto}
+details{background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:12px 16px}
+summary{cursor:pointer;font-weight:700}
+details p{margin:8px 0 0}
+.pr{border:1px dashed var(--rule);border-radius:14px;padding:14px 16px;font-size:14px;display:grid;gap:6px;background:var(--paper)}
+.pr .tag{display:inline-block;font-size:11px;font-weight:700;border:1px solid var(--sub);color:var(--sub);border-radius:4px;padding:0 6px;width:max-content}
+.links{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.src{font-size:13px;color:var(--sub);padding-left:1.2em;margin:0;word-break:break-all}
+footer{font-size:12px;color:var(--sub);border-top:1px solid var(--rule);padding-top:16px}
+@media print{.noprint{display:none}body{background:#fff}}
+</style>
+</head><body>
+<div class="wrap">
+  <nav class="crumb"><a href="../">毎日ひとつの小さな道具箱</a> / Day 11</nav>
+
+  <header>
+    <h1><small>2026年10月から はじまった制度</small>国民年金 育児免除 月かぞえ帳</h1>
+    <p class="lead">自営業・フリーランス・無職などで国民年金(第1号)に入っている親は、子が1歳になるまで保険料が免除になります。所得制限はなく、免除された月も「納めた月」として年金に数えられます。うちの子の場合は何年何月から何か月か、いくら払わずに済むかを、月のマスで数えます。</p>
+  </header>
+
+  <ul class="facts">
+    <li><b>月17,920円</b>2026年度の国民年金保険料。2027年度は月18,290円</li>
+    <li><b>父 最大12か月</b>養育を始めた月から1歳の誕生日の前月まで</li>
+    <li><b>母 最大13か月</b>産前産後免除(4か月)+続く9か月。多胎は最大15か月</li>
+    <li><b>10月分から</b>施行前の月にはさかのぼらない。事前の届出もできない</li>
+  </ul>
+
+  <section class="card" aria-labelledby="h-calc">
+    <h2 id="h-calc">うちの場合を数える</h2>
+    <form id="f" onsubmit="return false">
+      <fieldset>
+        <legend>あなたは子の</legend>
+        <div class="chips">
+          <label><input type="radio" name="role" value="mother" checked>実母</label>
+          <label><input type="radio" name="role" value="father">実父</label>
+          <label><input type="radio" name="role" value="adopt">養父母(特別養子縁組の監護期間・養子縁組里親を含む)</label>
+        </div>
+      </fieldset>
+      <div class="row">
+        <label for="birth">子の誕生日(まだ生まれていなければ出産予定日)</label>
+        <input type="date" id="birth" required>
+      </div>
+      <div class="row hide" id="adoptRow">
+        <label for="start">養育を始めた日(委託・同居を始めた日)</label>
+        <input type="date" id="start">
+      </div>
+      <fieldset id="multiRow">
+        <legend>多胎(ふたご以上)ですか</legend>
+        <div class="chips">
+          <label><input type="radio" name="multi" value="0" checked>いいえ</label>
+          <label><input type="radio" name="multi" value="1">はい</label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>この期間、あなたは国民年金の第1号ですか</legend>
+        <div class="chips">
+          <label><input type="radio" name="g1" value="all" checked>ずっと第1号</label>
+          <label><input type="radio" name="g1" value="from">途中から第1号(会社を辞めた等)</label>
+        </div>
+        <div class="row hide" id="g1Row">
+          <label for="g1from">第1号になった月</label>
+          <input type="month" id="g1from">
+        </div>
+        <p class="note">会社員・公務員(第2号)と、その扶養に入っている配偶者(第3号)は対象外です。第2号の人には厚生年金の育児休業中の保険料免除という別の仕組みがあります。</p>
+      </fieldset>
+      <fieldset>
+        <legend>配偶者(子のもう一人の親)も第1号ですか</legend>
+        <div class="chips">
+          <label><input type="radio" name="pair" value="0" checked>いいえ・わからない</label>
+          <label><input type="radio" name="pair" value="1">はい(ふたり分を出す)</label>
+        </div>
+      </fieldset>
+    </form>
+
+    <div class="out" id="out" aria-live="polite">
+      <p class="empty">子の誕生日を入れると、ここに月のマスが出ます。</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-ex" style="display:grid;gap:12px">
+    <h2 id="h-ex">誕生月ごとの早見(単胎・ずっと第1号の場合)</h2>
+    <p class="note">育児免除として2026年10月以降に免除される月数です。母は産前産後免除(出産月の前月から4か月)を受けている前提。金額は2026年度月17,920円・2027年度月18,290円で計算。</p>
+    <div class="tablebox"><table id="exTable"><thead><tr><th>子の誕生月</th><th>実母</th><th>実父</th><th>夫婦の合計</th></tr></thead><tbody></tbody></table></div>
+  </section>
+
+  <section class="card" aria-labelledby="h-how">
+    <h2 id="h-how">届出のしかた</h2>
+    <ul style="margin:0;padding-left:1.2em;display:grid;gap:6px">
+      <li><b>どこで:</b> マイナポータル(電子申請)、住んでいる市区町村の国民年金の窓口、年金事務所、日本年金機構への郵送。</li>
+      <li><b>いつから:</b> 子を養育することになった日から。制度が始まる前の事前届出はできず、受付は2026年10月1日から。</li>
+      <li><b>書類:</b> 「育児免除該当届」。添付書類は原則不要(マイナンバーで確認)。外国籍の親子、特別養子縁組、里親委託などは追加の書類が要ることがあります。</li>
+      <li><b>母で届出が要らない場合:</b> 産前産後免除を受けていて、その期間が2026年9月以降に終わる実母は、続く育児免除の届出が不要とされ、日本年金機構から通知が届きます。9月より前に産前産後免除が終わった人は届出が必要です。</li>
+      <li><b>もう払ってしまった:</b> 免除の月の保険料を前納・納付済みなら還付の対象です。ただし過去2年以内に未納の月があると、還付より先にそちらへ充てられます。</li>
+      <li><b>付加保険料(月400円):</b> 育児免除の期間も納められます(付加保険料は免除の対象外)。国民年金基金にも加入を続けられます。</li>
+    </ul>
+    <p class="note">受付の細かな扱い(郵送の宛先、窓口の持ち物)は自治体ごとに案内が少しずつ違います。届出の前に、お住まいの市区町村か年金事務所の案内を見てください。</p>
+  </section>
+
+  <section aria-labelledby="h-faq" style="display:grid;gap:10px">
+    <h2 id="h-faq">よくある質問</h2>
+    <details><summary>免除されると年金が減りませんか?</summary><p>減りません。育児期間の免除は保険料を納めた期間として老齢基礎年金に数えられます。所得が少ないときに申請する通常の全額免除は、年金額への反映が2分の1なので、扱いが違います。</p></details>
+    <details><summary>夫(妻)が会社員で、自分はその扶養に入っています</summary><p>扶養に入っている配偶者は第3号で、もともと保険料の負担がないため対象外です。会社員本人(第2号)も対象外で、こちらは勤務先を通じた育児休業中の厚生年金保険料の免除があります。</p></details>
+    <details><summary>10月より前に生まれた子は?</summary><p>2026年10月の時点で1歳未満なら対象です。免除は2026年10月分からで、9月以前の月にはさかのぼりません。2025年10月以前に生まれた子は、10月にはすでに1歳になっている(またはその月が1歳の誕生月)ため対象外です。</p></details>
+    <details><summary>保険料の支払いが減ると、年末調整や確定申告で困りますか?</summary><p>払っていない月の保険料は社会保険料控除に入れられないので、控除額はその分小さくなります。年末調整で配偶者の国民年金保険料を控除している人は、実際に払った額で書いてください(<a href="../day006-nencho-kazoku/">年末調整 家族の欄ナビ</a>)。</p></details>
+    <details><summary>所得が少なく、通常の全額免除を受けています</summary><p>自治体の案内では、すでに通常の免除や納付猶予、学生納付特例を受けている人も、届出をすれば育児免除の期間として扱われるとされています(原則として新たに届出が必要)。育児免除のほうが年金額への反映が大きくなります。</p></details>
+  </section>
+
+  <aside class="pr noprint" aria-label="広告">
+    <span class="tag">PR</span>
+    <div>子育てしながら在宅・短時間で働ける仕事を探すときに。<br>
+主婦のための求人応援サイト<br>
+<a href="https://px.a8.net/svt/ejp?a8mat=4BEFL6+1O4SVM+3CLE+5YRHE" rel="nofollow">「ママワークス」<b>mamaworks.jp</b></a>
+<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=4BEFL6+1O4SVM+3CLE+5YRHE" alt=""></div>
+    <span class="note">広告リンクです。このページの計算や内容は広告主と関係なく作成しています。</span>
+  </aside>
+
+  <section aria-labelledby="h-rel" style="display:grid;gap:10px" class="noprint">
+    <h2 id="h-rel">あわせて</h2>
+    <ul class="links">
+      <li><a href="../day006-nencho-kazoku/">年末調整 家族の欄ナビ 2026</a> — 社会保険料控除・配偶者の欄の書き方</li>
+      <li><a href="../day008-furusato-masu/">ふるさと納税 上限の升 2026</a> — 2026年分の上限の目安</li>
+      <li><a href="../day003-ideco-ue/">iDeCo 12月からの上限ものさし</a> — 自営業は月7.5万円まで</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="h-src" style="display:grid;gap:8px">
+    <h2 id="h-src">出典</h2>
+    <ol class="src">
+      <li>日本年金機構「国民年金保険料の育児免除制度」 https://www.nenkin.go.jp/service/kokunen/menjo/ikujimenjo.html</li>
+      <li>日本年金機構「国民年金保険料の育児免除該当届(電子申請)」 https://www.nenkin.go.jp/denshibenri_kojin/shinseisho/ikuji/ikujimenjogaitou.html</li>
+      <li>厚生労働省「国民年金第1号被保険者の育児期間の保険料免除」 https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000143356_00038.html</li>
+      <li>横浜市「国民年金保険料の育児期間免除制度」 https://www.city.yokohama.lg.jp/kurashi/koseki-zei-hoken/nenkin/konnan/ikujikikannmennzyo.html</li>
+      <li>杉並区「10月から国民年金保険料の育児期間の免除制度が始まります」 https://www.city.suginami.tokyo.jp/s035/news/28286.html</li>
+      <li>江東区「国民年金保険料の育児期間免除」 https://www.city.koto.lg.jp/060306/kurashi/nenkin/kokumin/hoken/20261001.html</li>
+      <li>小平市「国民年金保険料 産前産後期間の免除制度」(付加保険料・還付と充当) https://www.city.kodaira.tokyo.jp/kurashi/074/074063.html</li>
+      <li>全国国民年金基金「国民年金第1号被保険者の育児期間に係る保険料免除制度について」 https://www.zenkoku-kikin.or.jp/news/4774/</li>
+      <li>広島市「国民年金保険料」(2026年度 月17,920円・付加保険料400円) https://www.city.hiroshima.lg.jp/living/hoken-nenkin/1021145/1006017/1025571/1048233.html</li>
+      <li>江戸川区「国民年金保険料の前納」(2027年度 月18,290円) https://www.city.edogawa.tokyo.jp/e053/kurashi/nenkin/oshirase/r4nendozennou.html</li>
+      <li>くらしむ「国民年金の育児免除が2026年10月スタート」(施行前に生まれた子の例) https://kurasim.com/blog/kokumin-nenkin-ikuji-menjo-explained</li>
+    </ol>
+  </section>
+
+  <footer>2026年10月23日時点の公開資料をもとにした情報提供です。免除の期間は、出産予定日と実際の出産日がずれた場合や、第1号の資格が途中で変わった場合に変わることがあります。2025年度以前の月は月17,510円、2028年度以降の保険料額は未定のため、この計算では2027年度と同じ月18,290円で仮に計算しています。最終的な扱いは日本年金機構・市区町村の案内で確認してください。入力した日付はこの端末の中だけで計算し、送信しません。</footer>
+</div>
+<script>
+(function(){
+  var START = 2026*12 + 9; // 2026年10月
+  function fee(m){ // m: 月の通し番号(year*12+month0)
+    var fy = Math.floor(m/12) - ((m%12) < 3 ? 1 : 0); // 年度
+    return fy <= 2025 ? 17510 : fy === 2026 ? 17920 : 18290;
+  }
+  function label(m){ return Math.floor(m/12) + "年" + (m%12+1) + "月"; }
+  function toM(d){ return d.getFullYear()*12 + d.getMonth(); }
+  function yen(n){ return n.toLocaleString("ja-JP") + "円"; }
+  function parseDate(v){ if(!v) return null; var p=v.split("-"); return new Date(+p[0], +p[1]-1, +p[2]); }
+
+  // 1人分の月ごとの区分を返す
+  function plan(role, birthM, startM, multi, g1fromM){
+    var end = birthM + 11; // 1歳の誕生日の前月
+    var months = [];
+    var sanzenFrom = null, sanzenTo = null, ikujiFrom;
+    if(role === "mother"){
+      sanzenFrom = birthM - (multi ? 3 : 1);
+      sanzenTo = birthM + 2;
+      ikujiFrom = sanzenTo + 1;
+      if(g1fromM !== null && g1fromM > sanzenFrom){
+        // 産前産後の期間に第1号でなかった月がある場合は、第1号になった月以降を数える
+        sanzenFrom = Math.max(sanzenFrom, g1fromM);
+        if(sanzenFrom > sanzenTo){ sanzenFrom = null; sanzenTo = null; ikujiFrom = Math.max(birthM, g1fromM); }
+      }
+    } else {
+      ikujiFrom = role === "adopt" ? Math.max(startM, birthM) : birthM;
+    }
+    var first = sanzenFrom !== null ? sanzenFrom : Math.min(ikujiFrom, birthM);
+    for(var m = first; m <= end; m++){
+      var t = "none", why = "";
+      if(g1fromM !== null && m < g1fromM){ t = "none"; why = "第1号でない"; }
+      else if(sanzenFrom !== null && m >= sanzenFrom && m <= sanzenTo){ t = "sanzen"; }
+      else if(m >= ikujiFrom){
+        if(m < START){ t = "none"; why = "施行前"; } else { t = "ikuji"; }
+      } else { t = "none"; why = "養育前"; }
+      months.push({m:m, t:t, why:why});
+    }
+    var ik = months.filter(function(x){return x.t==="ikuji";});
+    var sz = months.filter(function(x){return x.t==="sanzen";});
+    return {
+      months: months, sanzenEnd: sanzenTo,
+      ikujiN: ik.length, ikujiYen: ik.reduce(function(s,x){return s+fee(x.m);},0),
+      sanzenN: sz.length, sanzenYen: sz.reduce(function(s,x){return s+fee(x.m);},0),
+      ikujiFirst: ik.length ? ik[0].m : null, ikujiLast: ik.length ? ik[ik.length-1].m : null
+    };
+  }
+
+  function stampHTML(x){
+    var cls = x.t === "ikuji" ? "m-ikuji" : x.t === "sanzen" ? "m-sanzen" : "m-none";
+    var inner = x.t === "ikuji" ? "育児<br>免除" : x.t === "sanzen" ? "産前<br>産後" : (x.why || "—");
+    var sub = x.t === "none" ? "" : yen(fee(x.m));
+    return '<li class="'+cls+'"><span class="stamp">'+inner+'</span><span class="ym">'+label(x.m)+'</span><span>'+sub+'</span></li>';
+  }
+
+  function todo(role, p, birthM){
+    var nowM = toM(new Date());
+    var items = [], ok = false, title;
+    if(p.ikujiN === 0){
+      return '<div class="todo"><h3>育児免除の対象になる月がありません</h3><p style="margin:0">2026年10月より前に1歳の誕生日の前月が終わっているか、その期間に第1号ではありませんでした。</p></div>';
+    }
+    if(role === "mother" && p.sanzenEnd !== null && p.sanzenEnd >= 2026*12+8){
+      ok = true;
+      title = "産前産後免除を受けていれば、育児免除の届出は原則いりません";
+      items.push("産前産後免除の期間が2026年9月以降に終わる実母は、続く育児免除が届出なしで適用され、日本年金機構から通知が届くとされています。");
+      if(birthM > nowM - 1) items.push("産前産後免除の届出がまだなら、出産予定日の6か月前から出せます(市区町村の窓口・マイナポータル)。");
+      items.push("通知が届かない、または産前産後免除を受けていない場合は、育児免除該当届を出してください。");
+    } else {
+      title = "育児免除該当届を出してください";
+      items.push("マイナポータル、市区町村の国民年金の窓口、年金事務所、日本年金機構への郵送のどれかで出せます。添付書類は原則不要です。");
+      if(p.ikujiFirst !== null && p.ikujiFirst < nowM) items.push(label(p.ikujiFirst)+"分からすでに対象です。納付書で払ってしまった月があれば、届出のあと還付の対象になります(過去2年以内の未納があれば先にそちらへ充当)。");
+      if(role === "adopt") items.push("特別養子縁組の監護期間・里親委託の場合は、それがわかる書類の添付を求められることがあります。");
+    }
+    return '<div class="todo'+(ok?' ok':'')+'"><h3>'+title+'</h3><ul>'+items.map(function(s){return "<li>"+s+"</li>";}).join("")+'</ul></div>';
+  }
+
+  var f = document.getElementById("f"), out = document.getElementById("out");
+  function val(n){ var e=f.querySelector('input[name="'+n+'"]:checked'); return e ? e.value : null; }
+
+  function render(){
+    var role = val("role"), multi = val("multi") === "1", pair = val("pair") === "1";
+    document.getElementById("adoptRow").classList.toggle("hide", role !== "adopt");
+    document.getElementById("multiRow").classList.toggle("hide", role !== "mother");
+    document.getElementById("g1Row").classList.toggle("hide", val("g1") !== "from");
+    var b = parseDate(document.getElementById("birth").value);
+    if(!b){ out.innerHTML = '<p class="empty">子の誕生日を入れると、ここに月のマスが出ます。</p>'; save(); return; }
+    var birthM = toM(b);
+    var s = parseDate(document.getElementById("start").value);
+    var startM = s ? toM(s) : birthM;
+    var g1v = document.getElementById("g1from").value;
+    var g1fromM = (val("g1") === "from" && g1v) ? (+g1v.split("-")[0])*12 + (+g1v.split("-")[1]-1) : null;
+    if(role === "adopt" && s && startM > birthM + 11){
+      out.innerHTML = '<p class="empty">養育を始めた月が、子の1歳の誕生日の前月より後です。育児免除の対象になりません。</p>'; save(); return;
+    }
+    var p = plan(role, birthM, startM, role === "mother" && multi, g1fromM);
+    var html = '<div class="sum">';
+    html += '<div class="ikuji"><div class="k">育児免除(2026年10月以降)</div><div class="v">'+p.ikujiN+'か月</div><div>'+yen(p.ikujiYen)+'</div></div>';
+    if(role === "mother") html += '<div class="sanzen"><div class="k">産前産後免除(別の制度)</div><div class="v">'+p.sanzenN+'か月</div><div>'+yen(p.sanzenYen)+'</div></div>';
+    if(pair){
+      var other = role === "mother" ? plan("father", birthM, birthM, false, null) : role === "father" ? plan("mother", birthM, birthM, multi, null) : plan("adopt", birthM, startM, false, null);
+      var who = role === "mother" ? "実父" : role === "father" ? "実母" : "もう一人の養親";
+      var both = p.ikujiYen + p.sanzenYen + other.ikujiYen + other.sanzenYen;
+      html += '<div><div class="k">'+who+'(ずっと第1号として)</div><div class="v">'+(other.ikujiN+other.sanzenN)+'か月</div><div>'+yen(other.ikujiYen+other.sanzenYen)+'</div></div>';
+      html += '<div><div class="k">夫婦で払わずに済む合計</div><div class="v">'+yen(both)+'</div><div class="note">産前産後免除を含む</div></div>';
+    }
+    html += '</div>';
+    html += '<ul class="legend"><li><span style="background:var(--sage)"></span>育児免除</li>'+(role==="mother"?'<li><span style="background:var(--apri)"></span>産前産後免除</li>':'')+'<li><span style="border:2px dashed var(--gray)"></span>免除なし(施行前など)</li></ul>';
+    html += '<ol class="months">'+p.months.map(stampHTML).join("")+'</ol>';
+    if(p.ikujiFirst !== null) html += '<p style="margin:0">育児免除は <b>'+label(p.ikujiFirst)+'</b> から <b>'+label(p.ikujiLast)+'</b> まで。この間の月も保険料を納めた月として年金に数えられます。</p>';
+    html += todo(role, p, birthM);
+    if(role === "mother" && b > new Date()) html += '<p class="note">出産予定日で計算しています。実際の出産日が予定日と違う月になると、期間の始まりと終わりがずれます。</p>';
+    out.innerHTML = html;
+    save();
+  }
+
+  function save(){
+    try{
+      localStorage.setItem("day011", JSON.stringify({role:val("role"), multi:val("multi"), g1:val("g1"), pair:val("pair"),
+        birth:document.getElementById("birth").value, start:document.getElementById("start").value, g1from:document.getElementById("g1from").value}));
+    }catch(e){}
+  }
+  function load(){
+    try{
+      var d = JSON.parse(localStorage.getItem("day011") || "null"); if(!d) return;
+      ["role","multi","g1","pair"].forEach(function(n){ var e=f.querySelector('input[name="'+n+'"][value="'+d[n]+'"]'); if(e) e.checked = true; });
+      ["birth","start","g1from"].forEach(function(id){ if(d[id]) document.getElementById(id).value = d[id]; });
+    }catch(e){}
+  }
+
+  // 早見表: 2025年11月〜2027年3月生まれ
+  var tb = document.querySelector("#exTable tbody"), rows = "";
+  for(var m = 2025*12+10; m <= 2027*12+2; m++){
+    var mo = plan("mother", m, m, false, null), fa = plan("father", m, m, false, null);
+    rows += "<tr><td>"+label(m)+"</td><td class=num>"+mo.ikujiN+"か月 "+yen(mo.ikujiYen)+"</td><td class=num>"+fa.ikujiN+"か月 "+yen(fa.ikujiYen)+"</td><td class=num>"+yen(mo.ikujiYen+fa.ikujiYen)+"</td></tr>";
+  }
+  tb.innerHTML = rows;
+
+  load();
+  f.addEventListener("input", render);
+  f.addEventListener("change", render);
+  render();
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
