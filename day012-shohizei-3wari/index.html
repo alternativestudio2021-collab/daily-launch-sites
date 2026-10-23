@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>消費税 2割→3割 ものさし 2026–2029</title>
+<meta name="description" content="インボイス登録で課税事業者になった個人事業主・フリーランス向け。2割特例が最後になる2026年分、3割特例の2027・2028年分、特例がなくなる2029年分の消費税の納付額を、売上と業種から2割/3割特例・簡易課税・本則課税で並べて計算します。10月から70%に下がった免税事業者からの仕入れの控除割合も日付で確かめられます。">
+<link rel="canonical" href="https://alternativestudio2021-collab.github.io/daily-launch-sites/day012-shohizei-3wari/">
+<meta property="og:type" content="website"><meta property="og:title" content="消費税 2割→3割 ものさし 2026–2029"><meta property="og:description" content="フリーランスの消費税、2割特例は2026年分で最後。2027・28年分は3割特例、2029年分からは簡易か本則。売上と業種を入れると、4年分の納付額の目安を方式ごとに並べます。"><meta property="og:url" content="https://alternativestudio2021-collab.github.io/daily-launch-sites/day012-shohizei-3wari/"><meta property="og:locale" content="ja_JP"><meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"インボイスの2割特例はいつまで使えますか?","acceptedAnswer":{"@type":"Answer","text":"2023年10月1日から2026年9月30日までの日を含む課税期間が対象です。個人事業者は2026年分(2027年3月に申告)が最後です。法人は2026年9月30日を含む事業年度までです。"}},
+{"@type":"Question","name":"3割特例とは何ですか?","acceptedAnswer":{"@type":"Answer","text":"令和8年度税制改正で設けられた、2割特例の後を引き継ぐ軽減措置です。個人事業者に限り、2027年分と2028年分の申告で、納付税額を売上に係る消費税額の3割にできます。法人は対象外です。対象は2割特例と同じく、インボイス登録がなければ免税事業者だった人(基準期間の課税売上高が1,000万円以下など)です。"}},
+{"@type":"Question","name":"3割特例と簡易課税はどちらが有利ですか?","acceptedAnswer":{"@type":"Answer","text":"3割特例はみなし仕入率70%の簡易課税と同じ納付額になります。卸売業(第1種90%)や小売業(第2種80%)は簡易課税の方が少なく、製造業等(第3種70%)は同じ、飲食店(第4種60%)・サービス業やフリーランスの多くが入る第5種(50%)・不動産業(第6種40%)は3割特例の方が少なくなります。経費が大きい場合は本則課税が少なくなることもあります。"}},
+{"@type":"Question","name":"免税事業者からの仕入れは、2026年10月から何%控除できますか?","acceptedAnswer":{"@type":"Answer","text":"令和8年度税制改正で、2026年10月1日から2028年9月30日までは70%、2028年10月1日から2030年9月30日までは50%、2030年10月1日から2031年9月30日までは30%となり、それ以降は控除できません。2026年9月30日までの仕入れは80%です。どの割合になるかは課税仕入れを行った日で決まります。"}}
+]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Shippori+Antique+B1&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: 4年分(2026〜2029)を横に並べた「納付額の物差し」。上から 見出しと年表 → 入力(売上・業種・経費・対象チェック) → 年ごとの方式比べ → 免税事業者からの仕入れ 控除割合 → 届出と期限 → FAQ → 出典 */
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#eef0f4; --card:#ffffff; --ink:#1b2333; --sub:#5a6476; --rule:#d5dae4; --soft:#f5f6f9;
+  --navy:#1f3a6b; --navy-soft:#e3e9f5; --mustard:#b8860b; --mustard-soft:#fbf1d6; --rust:#b2452e; --rust-soft:#f8e1db; --teal:#1d7a6e; --teal-soft:#d9efeb;
+  --f:"BIZ UDPGothic","Hiragino Sans","Noto Sans JP",sans-serif; --f-head:"Shippori Antique B1","BIZ UDPGothic",sans-serif; --f-num:"JetBrains Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#12161e; --card:#1a2030; --ink:#e7ebf3; --sub:#a3adbf; --rule:#2e3648; --soft:#202739;
+  --navy:#8fb0ec; --navy-soft:#22304d; --mustard:#e6b84a; --mustard-soft:#3a3020; --rust:#f08c74; --rust-soft:#41261f; --teal:#6fcfbf; --teal-soft:#1b3632; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12161e; --card:#1a2030; --ink:#e7ebf3; --sub:#a3adbf; --rule:#2e3648; --soft:#202739;
+  --navy:#8fb0ec; --navy-soft:#22304d; --mustard:#e6b84a; --mustard-soft:#3a3020; --rust:#f08c74; --rust-soft:#41261f; --teal:#6fcfbf; --teal-soft:#1b3632; color-scheme:dark}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);font-size:16px;line-height:1.8}
+a{color:var(--navy)}
+.wrap{max-width:860px;margin:0 auto;padding:24px 16px 72px;display:grid;gap:28px}
+.crumb{font-size:13px;color:var(--sub)} .crumb a{color:inherit}
+h1,h2,h3{margin:0;line-height:1.35;text-wrap:balance;font-family:var(--f-head);font-weight:400}
+h1{font-size:clamp(28px,6.6vw,46px);letter-spacing:.01em}
+h1 .arrow{color:var(--mustard)}
+h2{font-size:clamp(20px,4.4vw,26px);border-left:6px solid var(--navy);padding-left:12px}
+h3{font-size:18px}
+p{margin:0}
+.lead{color:var(--sub);max-width:46em}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:20px;display:grid;gap:14px}
+.num{font-family:var(--f-num);font-variant-numeric:tabular-nums}
+/* 年表 */
+.ruler{display:grid;grid-template-columns:repeat(4,1fr);border:2px solid var(--ink);border-radius:6px;overflow:hidden;background:var(--card)}
+.ruler div{padding:10px 8px 12px;border-right:1px solid var(--rule);display:grid;gap:4px;align-content:start;position:relative}
+.ruler div:last-child{border-right:0}
+.ruler div::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:repeating-linear-gradient(90deg,var(--ink) 0 1px,transparent 1px 10%)}
+.ruler .y{font-family:var(--f-num);font-weight:700;font-size:18px;margin-top:6px}
+.ruler .m{font-size:13px;font-weight:700}
+.ruler .s{font-size:12px;color:var(--sub);line-height:1.5}
+.ruler .r2{background:var(--mustard-soft)} .ruler .r3{background:var(--teal-soft)} .ruler .r0{background:var(--soft)}
+/* 入力 */
+form{display:grid;gap:16px}
+.row{display:grid;gap:6px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label .h{font-weight:700;font-size:15px}
+label .n{display:block;font-size:13px;color:var(--sub);line-height:1.5}
+input[type=text],input[type=date],select{width:100%;font:inherit;font-family:var(--f-num);font-size:17px;padding:10px 12px;border:1px solid var(--rule);border-radius:6px;background:var(--soft);color:var(--ink)}
+select{font-family:var(--f)}
+input:focus-visible,select:focus-visible{outline:3px solid var(--navy-soft);border-color:var(--navy)}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg label{display:flex;gap:6px;align-items:center;padding:8px 12px;border:1px solid var(--rule);border-radius:999px;background:var(--soft);cursor:pointer;font-size:15px}
+.seg input{accent-color:var(--navy)}
+.checks{display:grid;gap:8px;padding:12px;border:1px dashed var(--rule);border-radius:8px}
+.checks label{display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:1.6}
+.checks input{margin-top:5px;accent-color:var(--navy);width:18px;height:18px;flex:none}
+details.more summary{cursor:pointer;color:var(--navy);font-weight:700;font-size:15px}
+details.more[open]{display:grid;gap:14px}
+details.more[open] summary{margin-bottom:6px}
+/* 結果 */
+.status{padding:12px 14px;border-radius:8px;font-size:15px;line-height:1.7}
+.status.ok{background:var(--teal-soft)} .status.ng{background:var(--rust-soft)}
+.years{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.yr{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:14px;display:grid;gap:10px;align-content:start}
+.yr .yh{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.yr .yh b{font-family:var(--f-num);font-size:20px}
+.yr .yh span{font-size:12px;color:var(--sub)}
+.bar{display:grid;gap:3px}
+.bar .lab{display:flex;justify-content:space-between;gap:6px;font-size:13px}
+.bar .lab .v{font-family:var(--f-num);font-weight:700}
+.bar .track{height:10px;background:var(--soft);border-radius:3px;overflow:hidden}
+.bar .fill{height:100%;border-radius:3px}
+.bar.t2 .fill{background:var(--mustard)} .bar.t3 .fill{background:var(--teal)} .bar.kan .fill{background:var(--navy)} .bar.hon .fill{background:var(--rust)}
+.bar .lab .nm{white-space:nowrap}
+.bar.best .lab .nm::after{content:"最少";font-size:11px;background:var(--ink);color:var(--card);padding:1px 6px;border-radius:3px;margin-left:6px;vertical-align:1px}
+.bar.na{opacity:.45} .bar.na .lab .v{font-weight:400}
+.legend{font-size:13px;color:var(--sub);display:flex;flex-wrap:wrap;gap:6px 14px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+.sum{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:15px}
+.sum dt{color:var(--sub)} .sum dd{margin:0;font-family:var(--f-num);font-weight:700}
+.note{font-size:13px;color:var(--sub);line-height:1.7}
+/* 表 */
+.tbl{width:100%;border-collapse:collapse;font-size:14px}
+.tbl th,.tbl td{border-bottom:1px solid var(--rule);padding:8px 6px;text-align:left;vertical-align:top}
+.tbl th{font-size:13px;color:var(--sub);font-weight:700}
+.tbl td.r{text-align:right;font-family:var(--f-num)}
+.scroll{overflow-x:auto}
+.pct{font-family:var(--f-num);font-size:34px;font-weight:700;color:var(--navy);line-height:1}
+.steps{display:grid;gap:10px;margin:0;padding:0;list-style:none;counter-reset:s}
+.steps li{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;padding:12px;background:var(--card);border:1px solid var(--rule);border-radius:8px}
+.steps li .d{font-family:var(--f-num);font-weight:700;color:var(--navy);white-space:nowrap}
+.steps li p{font-size:15px}
+.faq details{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:12px 14px}
+.faq summary{cursor:pointer;font-weight:700}
+.faq details p{margin-top:8px;font-size:15px}
+.faq{display:grid;gap:8px}
+.src{font-size:13px;color:var(--sub);display:grid;gap:4px;padding-left:1.2em;margin:0;word-break:break-all}
+.links{display:flex;flex-wrap:wrap;gap:8px}
+.links a{font-size:14px;padding:6px 12px;border:1px solid var(--rule);border-radius:999px;background:var(--card);text-decoration:none}
+footer{font-size:12px;color:var(--sub);display:grid;gap:6px}
+@media (max-width:560px){
+  .ruler{grid-template-columns:1fr 1fr}
+  .ruler div:nth-child(2){border-right:0}
+  .ruler div:nth-child(-n+2){border-bottom:1px solid var(--rule)}
+  .row2{grid-template-columns:1fr}
+  .card{padding:16px}
+}
+</style>
+</head><body>
+<div class="wrap">
+  <div class="crumb"><a href="../">毎日ひとつの小さな道具箱</a> / Day 12</div>
+
+  <header style="display:grid;gap:14px">
+    <h1>消費税 2割<span class="arrow">→</span>3割 ものさし<br><span class="num" style="font-size:.5em">2026–2029</span></h1>
+    <p class="lead">インボイス登録をきっかけに課税事業者になった個人事業主・フリーランスの消費税は、2割特例が2026年分で終わり、2027年分と2028年分は「3割特例」、2029年分からは簡易課税か本則課税になります。売上と業種を入れると、4年分の納付額の目安を方式ごとに並べます。</p>
+    <div class="ruler" aria-label="2026年から2029年の特例の移り変わり">
+      <div class="r2"><span class="y">2026</span><span class="m">2割特例 最後の年</span><span class="s">2027年3月31日が申告・納付期限</span></div>
+      <div class="r3"><span class="y">2027</span><span class="m">3割特例</span><span class="s">個人事業者のみ</span></div>
+      <div class="r3"><span class="y">2028</span><span class="m">3割特例</span><span class="s">個人事業者のみ</span></div>
+      <div class="r0"><span class="y">2029</span><span class="m">特例なし</span><span class="s">簡易課税か本則課税</span></div>
+    </div>
+  </header>
+
+  <section class="card" aria-labelledby="in-h">
+    <h2 id="in-h">売上と業種を入れる</h2>
+    <form id="f" onsubmit="return false">
+      <div class="row">
+        <span class="h" style="font-weight:700;font-size:15px">事業のかたち</span>
+        <div class="seg" role="radiogroup">
+          <label><input type="radio" name="kind" value="kojin" checked> 個人事業者</label>
+          <label><input type="radio" name="kind" value="hojin"> 法人</label>
+        </div>
+      </div>
+      <div class="row2">
+        <label class="row"><span class="h">1年の売上(税込)</span><span class="n">標準税率10%の売上。8%の売上がある人は下の「くわしく」へ</span>
+          <input type="text" id="s10" inputmode="numeric" value="6,000,000" autocomplete="off"></label>
+        <label class="row"><span class="h">業種(簡易課税の区分)</span><span class="n">迷ったら「くわしく」の下の早見を</span>
+          <select id="gyo">
+            <option value="0.9">第1種 卸売業(みなし仕入率90%)</option>
+            <option value="0.8">第2種 小売業・農林漁業の飲食料品(80%)</option>
+            <option value="0.7">第3種 製造業・建設業など(70%)</option>
+            <option value="0.6">第4種 飲食店業など(60%)</option>
+            <option value="0.5" selected>第5種 サービス業・デザイン・ライター・IT受託など(50%)</option>
+            <option value="0.4">第6種 不動産業(40%)</option>
+          </select></label>
+      </div>
+      <div class="row2">
+        <label class="row"><span class="h">経費のうち消費税がかかるもの(税込)</span><span class="n">インボイス(登録番号つきの領収書)がもらえるもの。家賃(住宅)・給与・保険料・税金は入れない</span>
+          <input type="text" id="k_inv" inputmode="numeric" value="900,000" autocomplete="off"></label>
+        <label class="row"><span class="h">そのうち免税事業者からの仕入れ(税込)</span><span class="n">インボイスがもらえない外注・仕入れ。本則課税では日付に応じて80%→70%→50%だけ控除</span>
+          <input type="text" id="k_men" inputmode="numeric" value="300,000" autocomplete="off"></label>
+      </div>
+      <div class="checks" aria-label="2割特例・3割特例を使えるかの確認">
+        <label><input type="checkbox" id="c1" checked> インボイス登録をしていなければ、免税事業者のままだった(2年前の課税売上高が1,000万円以下)</label>
+        <label><input type="checkbox" id="c2" checked> 前年1〜6月の売上と給与の支払いが、どちらかは1,000万円以下</label>
+        <label><input type="checkbox" id="c3" checked> 課税期間を1か月・3か月に短くする届出を出していない</label>
+        <label><input type="checkbox" id="c4" checked> 2023年9月以前から、自分で選んで課税事業者になっていたわけではない</label>
+      </div>
+      <details class="more">
+        <summary>くわしく(軽減税率8%の売上、業種の早見)</summary>
+        <label class="row"><span class="h">軽減税率8%の売上(税込)</span><span class="n">飲食料品の販売・テイクアウトなど。食料品1%法案が成立すると2027年4月からの扱いが変わります(このページでは8%のまま計算)</span>
+          <input type="text" id="s8" inputmode="numeric" value="0" autocomplete="off"></label>
+        <div class="scroll"><table class="tbl">
+          <thead><tr><th>区分</th><th>みなし仕入率</th><th>主な業種</th></tr></thead>
+          <tbody>
+            <tr><td>第1種</td><td class="r">90%</td><td>卸売業(仕入れた物をそのまま事業者に売る)</td></tr>
+            <tr><td>第2種</td><td class="r">80%</td><td>小売業(仕入れた物をそのまま消費者に売る)、農林漁業のうち飲食料品の譲渡</td></tr>
+            <tr><td>第3種</td><td class="r">70%</td><td>製造業、建設業、農林漁業(飲食料品以外)、鉱業など</td></tr>
+            <tr><td>第4種</td><td class="r">60%</td><td>飲食店業、ほかの区分に当たらないもの</td></tr>
+            <tr><td>第5種</td><td class="r">50%</td><td>サービス業、運輸通信業、金融保険業。デザイン、執筆、撮影、システム開発の受託など多くのフリーランス</td></tr>
+            <tr><td>第6種</td><td class="r">40%</td><td>不動産業</td></tr>
+          </tbody></table></div>
+        <p class="note">区分は売上の取引ごとに決まります。2種類以上の事業がある場合の計算はこのページでは扱いません(いちばん多い区分を選ぶと目安になります)。</p>
+      </details>
+    </form>
+  </section>
+
+  <section style="display:grid;gap:14px" aria-labelledby="out-h" aria-live="polite">
+    <h2 id="out-h">年ごとの納付額の目安</h2>
+    <div id="status" class="status ok"></div>
+    <div class="legend"><span><i style="background:var(--mustard)"></i>2割特例</span><span><i style="background:var(--teal)"></i>3割特例</span><span><i style="background:var(--navy)"></i>簡易課税</span><span><i style="background:var(--rust)"></i>本則課税</span></div>
+    <div class="years" id="years"></div>
+    <div class="card">
+      <dl class="sum" id="sum"></dl>
+      <p class="note">金額は消費税と地方消費税の合計の目安です。実際の申告では国税(7.8%・6.24%)と地方税を分けて計算し、端数を切り捨てるため、数百円ずれることがあります。1年を通して同じ売上・経費が続くとし、免税事業者からの仕入れは月ごとに均等とみなして、年の途中で控除割合が変わる年(2026年・2028年)は月数で按分しています。</p>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="men-h">
+    <h2 id="men-h">免税事業者からの仕入れ 何%控除できる?</h2>
+    <p>インボイスのない仕入れ(免税事業者への外注など)の消費税は、本則課税で経過措置として一部だけ控除できます。令和8年度税制改正で、2026年10月から一気に50%へ下がる予定だったところが70%になり、期間も2年延びました。割合は<b>仕入れを行った日</b>で決まります。</p>
+    <div class="row2">
+      <label class="row"><span class="h">仕入れの日</span><input type="date" id="md" value="2026-10-24"></label>
+      <label class="row"><span class="h">金額(税込・10%)</span><input type="text" id="ma" inputmode="numeric" value="110,000" autocomplete="off"></label>
+    </div>
+    <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+      <span class="pct" id="mp">70%</span>
+      <span id="mt" style="font-size:15px"></span>
+    </div>
+    <div class="scroll"><table class="tbl">
+      <thead><tr><th>仕入れの日</th><th>控除できる割合</th><th></th></tr></thead>
+      <tbody>
+        <tr><td>2023年10月1日〜2026年9月30日</td><td class="r">80%</td><td></td></tr>
+        <tr><td>2026年10月1日〜2028年9月30日</td><td class="r">70%</td><td>改正で新設</td></tr>
+        <tr><td>2028年10月1日〜2030年9月30日</td><td class="r">50%</td><td></td></tr>
+        <tr><td>2030年10月1日〜2031年9月30日</td><td class="r">30%</td><td>改正で新設</td></tr>
+        <tr><td>2031年10月1日〜</td><td class="r">0%</td><td>控除できない</td></tr>
+      </tbody></table></div>
+    <p class="note">経過措置を使うには、帳簿に「80%控除対象」「70%控除対象」などと書き、区分記載請求書等(相手の名前・日付・内容・税率ごとの金額)を保存します。同じ相手からの年間の仕入れが大口になる場合は、超えた部分に経過措置が使えない上限があります(上限額は改正で見直されたとの解説があるため、国税庁の資料で確認してください)。簡易課税・2割特例・3割特例では仕入れの中身は納付額に影響しません。</p>
+  </section>
+
+  <section style="display:grid;gap:14px" aria-labelledby="todo-h">
+    <h2 id="todo-h">日付で見る、届出と期限</h2>
+    <ol class="steps">
+      <li><span class="d">2026.9.30</span><p>2割特例の対象は、この日を含む課税期間まで。個人事業者は2026年分(1〜12月)が最後。法人はこの日を含む事業年度が最後です。</p></li>
+      <li><span class="d">2026.10.1</span><p>免税事業者からの仕入れの控除割合が80%から70%に。</p></li>
+      <li><span class="d">2027.3.31</span><p>2026年分の消費税の申告・納付期限(個人)。2割特例は届出なしで、申告書に付記して使います。</p></li>
+      <li><span class="d">2027年分</span><p>3割特例が使える最初の年(個人のみ)。2割特例と同じく申告時に選ぶ形と解説されています。簡易課税にしたい場合、2割特例・3割特例を使った翌年に限って「簡易課税制度選択届出書」の提出期限が緩められています(改正前はその年中、令和8年度改正後はその年の申告期限までとする解説あり)。原則は「使いたい年の前年12月31日まで」です。</p></li>
+      <li><span class="d">2028.10.1</span><p>免税事業者からの仕入れの控除割合が70%から50%に。</p></li>
+      <li><span class="d">2029年分</span><p>3割特例はなく、簡易課税(基準期間の課税売上高5,000万円以下で届出が必要、原則2年続ける)か本則課税。3割特例を2028年分まで使い、2029年分から簡易課税にするなら、届出の時期を税務署か税理士に確かめておくと安心です。</p></li>
+    </ol>
+    <p class="note">届出の期限は改正の細部(要件・様式)がまだ解説によって書き方が違います。実際に出す前に、国税庁の2割特例特設ページと令和8年度改正の資料、所轄の税務署で確認してください。</p>
+  </section>
+
+  <section style="display:grid;gap:12px" aria-labelledby="faq-h">
+    <h2 id="faq-h">よくある質問</h2>
+    <div class="faq">
+      <details><summary>3割特例を使うのに届出は要りますか?</summary><p>2割特例と同じく、事前の届出は不要で、申告書に適用する旨を書いて選ぶ形と解説されています。簡易課税の届出を出していても、2割特例は申告のときに選べます。3割特例についても同様の扱いとする解説が多いですが、正式な様式は国税庁の案内で確かめてください。</p></details>
+      <details><summary>3割特例と簡易課税の第5種、どれくらい違いますか?</summary><p>売上税額に対して、3割特例は30%、第5種の簡易課税は50%を納めます。税込660万円の売上(売上税額60万円)なら、3割特例18万円、簡易課税30万円、2割特例なら12万円です。2026年分から2027年分にかけて、同じ売上でも6万円上がる計算です。</p></details>
+      <details><summary>法人は3割特例を使えますか?</summary><p>使えません。3割特例は個人事業者だけが対象です。法人は2026年9月30日を含む事業年度で2割特例が終わり、その次からは簡易課税か本則課税です。</p></details>
+      <details><summary>売上が1,000万円を超えた年はどうなりますか?</summary><p>2割特例・3割特例は、その年の2年前(基準期間)の課税売上高が1,000万円を超えると使えません。インボイス登録がなくても課税事業者になる年だからです。このページでは上の確認欄で判定していますが、年によって基準期間の売上は違うので、年ごとに確かめてください。</p></details>
+      <details><summary>インボイス登録をやめるとどうなりますか?</summary><p>登録の取りやめは届出で可能ですが、取引先が仕入税額控除を受けにくくなり、取引条件に影響することがあります。やめるかどうかは取引先との関係も含めて判断が必要で、このページでは扱いません。</p></details>
+    </div>
+  </section>
+
+  <section style="display:grid;gap:10px">
+    <h2>あわせて使う</h2>
+    <div class="links">
+      <a href="../day009-shokuhin-1pct/">Day 9 食料品1% レシートしわけ</a>
+      <a href="../day004-menzei-refund/">Day 4 免税リファンド 店頭ふだ</a>
+      <a href="../day003-ideco-ue/">Day 3 iDeCo 12月からの上限ものさし</a>
+    </div>
+  </section>
+  <!-- 収益化の枠: 会計ソフト(確定申告・消費税申告)のA8公式コードを受け取ったら、ここに「PR」表記付きで1枠置く。コードはowner_actions a8-kaikei-day012 で依頼中 -->
+
+  <section style="display:grid;gap:10px">
+    <h2>出典</h2>
+    <ol class="src">
+      <li>国税庁「2割特例 特設ページ」(個人事業者は令和9年・令和10年分の申告で3割特例を適用できる旨) https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/invoice_2tokurei.htm</li>
+      <li>国税庁「2割特例(インボイス発行事業者となる小規模事業者に対する負担軽減措置)の概要」 https://www.nta.go.jp/publication/pamph/shohi/kaisei/202304/01.htm</li>
+      <li>freee「インボイス制度の経過措置とは?控除割合の見直し(7・5・3割控除)」 https://www.freee.co.jp/kb/kb-invoice/invoice_transitional_measures/</li>
+      <li>マネーフォワード「インボイス制度における軽減措置とは?3割特例と7・5・3割控除の変更点」 https://biz.moneyforward.com/invoice/basic/55388/</li>
+      <li>補助金ポータル「【令和8年度税制改正】インボイス制度の経過措置はどう変わる?」 https://hojyokin-portal.jp/columns/invoice_keikasochi</li>
+      <li>佐田税理士事務所「インボイスの経過措置、令和8年10月から何が変わる?」(2026/7/21) https://www.sadatax.com/blog/2026-07-21-invoice-keikasochi-r8kaisei/</li>
+      <li>koyano-cpa.gr.jp「インボイス経過措置は8割から70%控除へ」 https://koyano-cpa.gr.jp/nobiyo-kaikei/column/8872/</li>
+      <li>yasuda-cpa-office.com「簡易課税制度選択届出書の提出期限が弾力化」(2026/5/29) https://www.yasuda-cpa-office.com/post/post-20260529-01</li>
+      <li>yasuda-cpa-office.com「2割特例の後に簡易課税を選ぶときの届出期限に注意」(2026/6/14) https://www.yasuda-cpa-office.com/post/post-20260614-01</li>
+      <li>chuo-consulting.co.jp「2割特例を適用した課税期間後に簡易課税を選択する場合の届出書の提出期限」 https://chuo-consulting.co.jp/topics/222/</li>
+      <li>toshin-sougou.or.jp「【令和8年税制改正】個人事業主のインボイス3割特例」 https://toshin-sougou.or.jp/tax_news01</li>
+      <li>小松公認会計士・税理士事務所「個人事業主の消費税 2割特例はいつまで?」 https://komatsu-taxoffice.com/blog/article-shohizei-2wari-3wari.html</li>
+    </ol>
+  </section>
+
+  <footer>
+    <p>このページは公開資料をもとにした計算の目安と制度の説明で、税務の助言ではありません。個別の判断は税務署・税理士に確認してください。入力した数字は送信されず、この端末のブラウザにだけ保存されます。</p>
+    <p>公開 2026年10月24日 / 毎日ひとつの小さな道具箱 Day 12</p>
+  </footer>
+</div>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var KEY='day012-shohizei-3wari';
+  var fields=['s10','s8','k_inv','k_men','gyo','c1','c2','c3','c4','md','ma'];
+  function num(v){v=String(v||'').replace(/[^\d]/g,'');return v?parseInt(v,10):0}
+  function yen(n){return Math.round(n).toLocaleString('ja-JP')+'円'}
+  function fmt(el){var n=num(el.value);el.value=n?n.toLocaleString('ja-JP'):'0'}
+  // 免税事業者からの仕入れ 控除割合(仕入れの日で決まる)
+  function menRate(d){
+    if(d<'2023-10-01')return null;
+    if(d<='2026-09-30')return .8; if(d<='2028-09-30')return .7;
+    if(d<='2030-09-30')return .5; if(d<='2031-09-30')return .3; return 0;
+  }
+  // 暦年ごとの平均(月で按分)
+  var yearMen={2026:(9*.8+3*.7)/12,2027:.7,2028:(9*.7+3*.5)/12,2029:.5};
+  function load(){try{var s=JSON.parse(localStorage.getItem(KEY)||'null');if(!s)return;
+    fields.forEach(function(k){if(s[k]===undefined)return;var el=$(k);if(el.type==='checkbox')el.checked=s[k];else el.value=s[k]});
+    if(s.kind){var r=document.querySelector('input[name=kind][value='+s.kind+']');if(r)r.checked=true}}catch(e){}}
+  function save(){try{var s={kind:document.querySelector('input[name=kind]:checked').value};
+    fields.forEach(function(k){var el=$(k);s[k]=el.type==='checkbox'?el.checked:el.value});
+    localStorage.setItem(KEY,JSON.stringify(s))}catch(e){}}
+  function calc(){
+    var kojin=document.querySelector('input[name=kind]:checked').value==='kojin';
+    var s10=num($('s10').value),s8=num($('s8').value),kinv=num($('k_inv').value),kmen=num($('k_men').value);
+    var rate=parseFloat($('gyo').value);
+    var ok=$('c1').checked&&$('c2').checked&&$('c3').checked&&$('c4').checked;
+    var uri=s10*10/110+s8*8/108;               // 売上税額
+    var kmenIn=Math.min(kmen,kinv);
+    var invTax=(kinv-kmenIn)*10/110, menTax=kmenIn*10/110;
+    var st=$('status');
+    if(!ok){st.className='status ng';st.textContent='確認欄に当てはまらない項目があるため、2割特例・3割特例は使えない前提で計算しています(簡易課税と本則課税だけ)。'}
+    else if(!kojin){st.className='status ng';st.textContent='法人は3割特例の対象外です。2割特例は2026年9月30日を含む事業年度まで。ここでは暦年に置き換えて、2026年は2割特例、2027年以降は簡易課税と本則課税で並べています。'}
+    else{st.className='status ok';st.textContent='確認欄がすべて当てはまるので、2026年分は2割特例、2027・2028年分は3割特例も選べる前提で計算しています。'}
+    var years=[2026,2027,2028,2029],html='',rows=[],max=0,data=[];
+    years.forEach(function(y){
+      var m=[];
+      if(y===2026)m.push({c:'t2',n:'2割特例',v:uri*.2,a:ok});
+      if(y===2027||y===2028)m.push({c:'t3',n:'3割特例',v:uri*.3,a:ok&&kojin});
+      m.push({c:'kan',n:'簡易課税',v:uri*(1-rate),a:true});
+      m.push({c:'hon',n:'本則課税',v:Math.max(0,uri-invTax-menTax*yearMen[y]),a:true});
+      m.forEach(function(x){if(x.v>max)max=x.v});
+      data.push({y:y,m:m});
+    });
+    data.forEach(function(d){
+      var avail=d.m.filter(function(x){return x.a}),best=avail.reduce(function(a,b){return b.v<a.v?b:a},avail[0]);
+      d.best=best;
+      html+='<div class="yr"><div class="yh"><b>'+d.y+'</b><span>年分・申告は'+(d.y+1)+'年3月</span></div>';
+      d.m.forEach(function(x){
+        var w=max?Math.max(1,x.v/max*100):0;
+        html+='<div class="bar '+x.c+(x.a?'':' na')+(x===best?' best':'')+'"><div class="lab"><span class="nm">'+x.n+'</span><span class="v">'+(x.a?yen(x.v):'使えない')+'</span></div><div class="track"><div class="fill" style="width:'+(x.a?w:0)+'%"></div></div></div>';
+      });
+      html+='</div>';
+    });
+    $('years').innerHTML=html;
+    var b26=data[0].best.v,b27=data[1].best.v,b29=data[3].best.v;
+    var sum='<dt>売上にかかる消費税</dt><dd>'+yen(uri)+'</dd>'+
+      '<dt>2026年分(最少)</dt><dd>'+yen(b26)+'・'+data[0].best.n+'</dd>'+
+      '<dt>2027年分(最少)</dt><dd>'+yen(b27)+'・'+data[1].best.n+'(2026年分より '+(b27>=b26?'+':'')+yen(b27-b26)+')</dd>'+
+      '<dt>2029年分(最少)</dt><dd>'+yen(b29)+'・'+data[3].best.n+'(2026年分より '+(b29>=b26?'+':'')+yen(b29-b26)+')</dd>'+
+      '<dt>毎月の積立の目安</dt><dd>2027年分は月 '+yen(b27/12)+'</dd>';
+    $('sum').innerHTML=sum;
+    // 仕入れの日
+    var r=menRate($('md').value||''),ma=num($('ma').value);
+    if(r===null){$('mp').textContent='—';$('mt').textContent='2023年10月より前は経過措置の対象期間ではありません(インボイス制度前の扱い)。'}
+    else{$('mp').textContent=Math.round(r*100)+'%';$('mt').innerHTML='消費税 '+yen(ma*10/110)+' のうち、控除できるのは <b class="num">'+yen(ma*10/110*r)+'</b>(本則課税の場合)';}
+    save();
+  }
+  load();
+  ['s10','s8','k_inv','k_men','ma'].forEach(function(k){var el=$(k);el.addEventListener('blur',function(){fmt(el);calc()})});
+  document.getElementById('f').addEventListener('input',calc);
+  document.getElementById('f').addEventListener('change',calc);
+  ['md','ma'].forEach(function(k){$(k).addEventListener('input',calc)});
+  calc();
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
