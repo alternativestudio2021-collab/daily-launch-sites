@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>PHP2Shell 点検票 小さなサイトの持ち主向け(CVE-2026-109618/109619)</title>
+<meta name="description" content="10月21日に公表されたPHPの重大な脆弱性(php2shell、CVE-2026-109618・109619)について、レンタルサーバーや制作会社に任せている小さなお店・個人のサイトの持ち主が、自分のPHPが対象か、今日なにを確かめるか、制作会社に何を聞くかを1枚で点検できるページ。修正版の判定、置き場所別のやることリスト、問い合わせ文面、主要レンタルサーバーの発表、8.2のサポート終了まで。">
+<link rel="canonical" href="https://alternativestudio2021-collab.github.io/daily-launch-sites/day013-php-tenken/">
+<meta property="og:type" content="website"><meta property="og:title" content="PHP2Shell 点検票 小さなサイトの持ち主向け"><meta property="og:description" content="PHPの重大脆弱性、自分のサイトは対象? バージョンを入れると修正版かどうか、置き場所を選ぶと今日やること、制作会社への確認文面が出ます。">
+<meta property="og:url" content="https://alternativestudio2021-collab.github.io/daily-launch-sites/day013-php-tenken/"><meta property="og:locale" content="ja_JP"><meta property="og:site_name" content="毎日ひとつの小さな道具箱"><meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"PHP2Shell(php2shell)の修正版はどのバージョンですか?","acceptedAnswer":{"@type":"Answer","text":"2026年10月21日に公開された PHP 8.5.12、8.4.27、8.3.36、8.2.35 です。それより前の8.2〜8.5系が対象です。8.1以前はサポートが終わっており、PHPの公式な修正版は出ていません。"}},
+{"@type":"Question","name":"レンタルサーバーでPHPのバージョン表示が変わっていません。未修正ですか?","acceptedAnswer":{"@type":"Answer","text":"番号だけでは判断できません。共用レンタルサーバーでは、表示上の番号を変えずにサーバー側で修正を当てた会社が多いと報じられています。契約しているレンタルサーバーの公式のお知らせで、使っているPHPのバージョンが対応済みかを確かめてください。"}},
+{"@type":"Question","name":"WordPressを使っていなければ関係ありませんか?","acceptedAnswer":{"@type":"Answer","text":"関係があります。今回の問題はWordPressなどのアプリではなくPHPそのものにあるため、EC-CUBEやLaravel、自作のPHPなど、PHPで動くサイト全般が対象になり得ます。逆にBASEやShopifyのようなサービスでお店を作っている場合は、サーバーは運営会社が管理しているので、運営会社のお知らせを確認します。"}},
+{"@type":"Question","name":"7月のwp2shellとは違うものですか?","acceptedAnswer":{"@type":"Answer","text":"別物です。wp2shellは2026年7月に公表されたWordPress本体の脆弱性で、修正版はWordPress 6.9.5と7.0.2とされています。PHP2ShellはPHPの脆弱性です。WordPressのサイトは両方の更新が済んでいるかを確かめます。"}},
+{"@type":"Question","name":"PHP 8.2はいつまで使えますか?","acceptedAnswer":{"@type":"Answer","text":"PHP 8.2のセキュリティサポートは2026年12月31日で終わる予定です。今回の修正版8.2.35を当てたあとも、年内に8.3以上へ切り替える計画を立てておくと安心です。"}}
+]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700;900&family=IBM+Plex+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: 設備点検の「点検票」。黒い罫線の帳票に、判定のスタンプ(要更新/修正版/公式修正なし)を押す。上から 見出しと要点 → ①番号判定 → ②置き場所別のやること → ③問い合わせ文面 → ④レンタルサーバー各社の発表 → ⑤更新のあと → ⑥便乗の詐欺 → FAQ → 出典 */
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#f3f1ea; --paper:#fffdf7; --ink:#16181c; --sub:#5b5f66; --rule:#16181c; --hair:#cfcab9; --soft:#f2eedf;
+  --hazard:#e8a317; --hazard-soft:#fdf0cf; --red:#c2321f; --red-soft:#f9dfd9; --green:#1f7a45; --green-soft:#dcefe2; --blue:#24508f;
+  --f:"Zen Kaku Gothic New","Hiragino Sans","Noto Sans JP",sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121315; --paper:#1b1d21; --ink:#ecebe6; --sub:#a6a9ae; --rule:#ecebe6; --hair:#3a3d43; --soft:#24262b;
+  --hazard:#f0b53a; --hazard-soft:#3a2f17; --red:#f2836f; --red-soft:#3d221d; --green:#6fd09a; --green-soft:#183324; --blue:#8db4ef; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121315; --paper:#1b1d21; --ink:#ecebe6; --sub:#a6a9ae; --rule:#ecebe6; --hair:#3a3d43; --soft:#24262b;
+  --hazard:#f0b53a; --hazard-soft:#3a2f17; --red:#f2836f; --red-soft:#3d221d; --green:#6fd09a; --green-soft:#183324; --blue:#8db4ef; color-scheme:dark}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);font-size:16px;line-height:1.8}
+a{color:var(--blue)}
+.tape{height:14px;background:repeating-linear-gradient(-45deg,var(--hazard) 0 14px,var(--ink) 14px 28px)}
+.wrap{max-width:860px;margin:0 auto;padding:20px 16px 72px;display:grid;gap:26px}
+.crumb{font-size:13px;color:var(--sub)} .crumb a{color:inherit}
+h1,h2,h3{margin:0;line-height:1.35;text-wrap:balance}
+h1{font-size:clamp(28px,6.6vw,44px);font-weight:900;letter-spacing:.01em}
+h1 small{display:block;font-size:.45em;font-weight:700;color:var(--sub);letter-spacing:.04em;margin-bottom:4px}
+h2{font-size:clamp(19px,4.2vw,24px);font-weight:900;display:flex;gap:10px;align-items:baseline}
+h2 .n{font-family:var(--mono);font-size:.8em;background:var(--ink);color:var(--paper);padding:0 8px;border-radius:2px}
+h3{font-size:17px;font-weight:700}
+p{margin:0}
+.sheet{background:var(--paper);border:2px solid var(--rule);border-radius:4px;padding:20px 18px;display:grid;gap:14px}
+.sheet.thin{border-width:1px;border-color:var(--hair)}
+.lead{font-size:17px}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));border:1px solid var(--rule);border-radius:2px}
+.meta div{padding:10px 12px;border-right:1px dashed var(--hair);border-bottom:1px dashed var(--hair)}
+.meta b{display:block;font-size:12px;color:var(--sub);font-weight:700}
+.meta span{font-family:var(--mono);font-weight:700;font-size:17px}
+.note{font-size:14px;color:var(--sub)}
+.warn{background:var(--hazard-soft);border-left:5px solid var(--hazard);padding:10px 12px;font-size:15px}
+label.f{display:grid;gap:4px;font-weight:700;font-size:15px}
+input[type=text],input[type=url]{font:inherit;font-family:var(--mono);font-size:18px;padding:10px 12px;border:2px solid var(--rule);border-radius:3px;background:var(--paper);color:var(--ink);width:100%;max-width:340px}
+input[type=url]{max-width:100%;font-size:16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{font:inherit;font-family:var(--mono);font-size:14px;padding:4px 10px;border:1px solid var(--hair);background:var(--soft);color:var(--ink);border-radius:3px;cursor:pointer}
+.stamp{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;border:2px dashed var(--hair);border-radius:4px;padding:14px}
+.stamp .s{font-weight:900;font-size:20px;padding:8px 12px;border:3px solid currentColor;border-radius:6px;transform:rotate(-4deg);white-space:nowrap;text-align:center;min-width:120px}
+.s.red{color:var(--red);background:var(--red-soft)} .s.green{color:var(--green);background:var(--green-soft)} .s.amber{color:#9a6a00;background:var(--hazard-soft)} .s.gray{color:var(--sub);background:var(--soft)}
+:root[data-theme="dark"] .s.amber{color:var(--hazard)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .s.amber{color:var(--hazard)}}
+.vtable{width:100%;border-collapse:collapse;font-size:15px}
+.vtable th,.vtable td{border:1px solid var(--rule);padding:6px 8px;text-align:left;vertical-align:top}
+.vtable th{background:var(--soft);font-weight:700}
+.vtable td.m{font-family:var(--mono);font-weight:700;white-space:nowrap}
+.scroll{overflow-x:auto}
+fieldset{border:none;margin:0;padding:0;display:grid;gap:8px}
+legend{font-weight:700;margin-bottom:6px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px solid var(--hair);border-radius:3px;background:var(--paper);cursor:pointer}
+.opt:has(input:checked){border:2px solid var(--rule);background:var(--soft)}
+.opt input{margin-top:6px;accent-color:var(--ink)}
+.opt small{display:block;color:var(--sub);font-size:13px}
+ol.check{list-style:none;margin:0;padding:0;counter-reset:c;display:grid;gap:0;border-top:2px solid var(--rule)}
+ol.check li{counter-increment:c;display:grid;grid-template-columns:34px 1fr;gap:8px;padding:10px 4px;border-bottom:1px solid var(--hair)}
+ol.check li input{width:22px;height:22px;accent-color:var(--green);margin-top:3px}
+ol.check li.done .t{text-decoration:line-through;color:var(--sub)}
+ol.check .t b{display:block}
+ol.check .t span{font-size:14px;color:var(--sub)}
+.prog{font-family:var(--mono);font-weight:700}
+textarea{font:inherit;font-size:14px;line-height:1.7;width:100%;min-height:330px;padding:12px;border:2px solid var(--rule);border-radius:3px;background:var(--paper);color:var(--ink)}
+.btn{font:inherit;font-weight:700;padding:8px 16px;border:2px solid var(--rule);border-radius:3px;background:var(--ink);color:var(--paper);cursor:pointer;justify-self:start}
+.count{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.count .big{font-family:var(--mono);font-size:40px;font-weight:700;line-height:1}
+ul.plain{margin:0;padding-left:1.2em;display:grid;gap:6px}
+details{border-top:1px solid var(--hair);padding:10px 0}
+details summary{font-weight:700;cursor:pointer}
+details p{margin-top:6px}
+.src{font-size:13px;word-break:break-all;margin:0;padding-left:1.4em;display:grid;gap:4px}
+.pr-slot{display:none}
+footer{font-size:13px;color:var(--sub);display:grid;gap:6px}
+@media (max-width:520px){.stamp{grid-template-columns:1fr}.stamp .s{justify-self:start}}
+@media print{.tape,.chips,.btn{display:none}body{background:#fff}}
+</style>
+</head>
+<body>
+<div class="tape" aria-hidden="true"></div>
+<main class="wrap">
+  <nav class="crumb"><a href="../">毎日ひとつの小さな道具箱</a> / Day 13</nav>
+
+  <header class="sheet">
+    <h1><small>小さなお店・個人サイトの持ち主向け</small>PHP2Shell 点検票</h1>
+    <p class="lead">10月21日、Webサイトの多くで使われているプログラミング言語PHPに、外から乗っ取られるおそれのある脆弱性が2件公表されました(通称 php2shell)。銀行や飲食チェーンのアプリが予防のために止まったのはこのためです。サイトを自分で直せなくても、<b>自分のPHPが対象か</b>、<b>誰に何を確かめるか</b>は今日決められます。</p>
+    <div class="meta">
+      <div><b>番号</b><span>CVE-2026-109618<br>CVE-2026-109619</span></div>
+      <div><b>深刻度(CVSS v4.0)</b><span>9.2 Critical</span></div>
+      <div><b>修正版の公開</b><span>2026-10-21</span></div>
+      <div><b>IPAの注意喚起</b><span>2026-10-22</span></div>
+    </div>
+    <p class="warn">PHPの開発チームは「修正版への更新が唯一の確実な対策」としていると報じられています。公表直後から攻撃の試みが観測されています(watchTowr、10/21)。ここに書いた内容は10月24日までの公表資料と報道をまとめたもので、最新の状況は契約先の公式のお知らせで確かめてください。</p>
+  </header>
+
+  <section class="sheet" id="ver" aria-labelledby="h-ver">
+    <h2 id="h-ver"><span class="n">01</span>PHPの番号を入れて判定</h2>
+    <p>レンタルサーバーの管理画面(「PHPバージョン設定」など)や、制作会社からの回答に書かれた番号を入れてください。</p>
+    <label class="f">PHPのバージョン
+      <input type="text" id="vin" inputmode="decimal" placeholder="例 8.3.30" autocomplete="off" spellcheck="false">
+    </label>
+    <div class="chips" aria-label="例を入れる">
+      <button type="button" data-v="8.3.30">8.3.30</button><button type="button" data-v="8.4.27">8.4.27</button><button type="button" data-v="8.1">8.1</button><button type="button" data-v="7.4.33">7.4.33</button><button type="button" data-v="8.2">8.2</button>
+    </div>
+    <div class="stamp" id="vres" aria-live="polite">
+      <div class="s gray" id="vstamp">未記入</div>
+      <div id="vtext">番号を入れると、修正版かどうかと、次にやることを表示します。</div>
+    </div>
+    <div class="scroll">
+    <table class="vtable">
+      <thead><tr><th>系列</th><th>修正版(10/21公開)</th><th>セキュリティサポート</th></tr></thead>
+      <tbody>
+        <tr><td class="m">8.5</td><td class="m">8.5.12</td><td>2029年12月31日まで</td></tr>
+        <tr><td class="m">8.4</td><td class="m">8.4.27</td><td>2028年12月31日まで</td></tr>
+        <tr><td class="m">8.3</td><td class="m">8.3.36</td><td>2027年12月31日まで</td></tr>
+        <tr><td class="m">8.2</td><td class="m">8.2.35</td><td><b>2026年12月31日で終了</b></td></tr>
+        <tr><td class="m">8.1以前</td><td>公式の修正版なし</td><td>終了済み(一部のサーバー会社・ベンダーが独自の修正を提供)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="note">共用レンタルサーバーでは、<b>番号を変えずにサーバー側で修正を当てた</b>会社が多いと報じられています。管理画面の番号が「8.3.30」のままでも未修正とは限らず、逆に番号だけで安全とも言えません。共用サーバーの方は ④ の各社の発表で確かめてください。どの古い版から影響があるかは資料によって「PHP 5以降」「5.4以降」と食い違いがあります。</p>
+  </section>
+
+  <section class="sheet" id="where" aria-labelledby="h-where">
+    <h2 id="h-where"><span class="n">02</span>サイトの置き場所を選ぶ → 今日やること</h2>
+    <fieldset id="place">
+      <legend>あなたのサイト(またはお店のネットショップ・予約ページ)は、どこで動いていますか</legend>
+      <label class="opt"><input type="radio" name="p" value="shared"><span>共用レンタルサーバー<small>エックスサーバー、さくらのレンタルサーバ、ロリポップ!、ConoHa WING など。WordPressを自分で入れた場合も多くはここ</small></span></label>
+      <label class="opt"><input type="radio" name="p" value="agency"><span>制作会社・保守会社に任せている<small>サーバーの契約や更新を外部にお願いしている。自分では管理画面を触らない</small></span></label>
+      <label class="opt"><input type="radio" name="p" value="vps"><span>VPS・クラウド・自社サーバーを自分たちで管理<small>サーバーにログインしてPHPを入れ替えられる</small></span></label>
+      <label class="opt"><input type="radio" name="p" value="saas"><span>ネットショップ作成サービス・予約サービスなどを使っている<small>BASE、STORES、Shopify、Wix、ペライチ、予約システムなど。サーバーは運営会社が管理</small></span></label>
+      <label class="opt"><input type="radio" name="p" value="unknown"><span>わからない<small>前任者や知人が作った、昔からあるサイトなど</small></span></label>
+    </fieldset>
+    <div id="todo" hidden>
+      <div class="count"><h3 id="todoTitle">今日やること</h3><span class="prog" id="prog"></span></div>
+      <ol class="check" id="todoList"></ol>
+      <p class="note">チェックはこの端末のブラウザにだけ保存されます。</p>
+    </div>
+  </section>
+
+  <section class="sheet" id="mail" aria-labelledby="h-mail">
+    <h2 id="h-mail"><span class="n">03</span>制作会社・保守担当への確認文面</h2>
+    <p>任せている相手に、何を聞けば「対応済み」の中身がわかるかをまとめた文面です。サイトのURLとお名前を入れるとそのまま使えます。</p>
+    <label class="f">サイトのURL<input type="url" id="mUrl" placeholder="https://example.jp/" autocomplete="off"></label>
+    <label class="f">差出人(お店・会社名とお名前)<input type="text" id="mFrom" placeholder="○○商店 山田" autocomplete="off" style="font-family:var(--f);font-size:16px;max-width:100%"></label>
+    <textarea id="mBody" readonly aria-label="確認の文面"></textarea>
+    <button class="btn" type="button" id="mCopy">文面をコピー</button>
+  </section>
+
+  <section class="sheet" id="hosts" aria-labelledby="h-hosts">
+    <h2 id="h-hosts"><span class="n">04</span>主要レンタルサーバーの発表(10/23ごろまで)</h2>
+    <p class="note">各社のお知らせを伝えた報道・まとめ記事の要約です。対応は時間とともに進むため、必ず契約先の公式のお知らせ・管理画面の告知で最新を確かめてください。</p>
+    <div class="scroll">
+    <table class="vtable">
+      <thead><tr><th>サービス</th><th>伝えられている対応</th><th>利用者がやること</th></tr></thead>
+      <tbody>
+        <tr><td>エックスサーバー</td><td>PHP 8.2〜8.5は10/22早朝に修正の適用を完了、それより古い版は順次対応と報じられた</td><td>8.1以前を使っていれば、対応状況の告知を確認し、8.3以上への切り替えを検討</td></tr>
+        <tr><td>さくらのレンタルサーバ</td><td>コントロールパネルで選べる全てのPHPバージョンで対応完了と報じられた</td><td>告知の確認。古い版のままなら切り替えの計画</td></tr>
+        <tr><td>ロリポップ!</td><td>修正を完了し、停止していたサイトの表示を再開。8系と7.4は公式の修正版、それ以外は独自の修正と発表</td><td>サイトが表示されるか確認。古い版のままなら切り替えの計画</td></tr>
+        <tr><td>ConoHa WING</td><td>PHP 5.6〜8.5の提供中の全バージョンに修正を適用と発表。利用者のバージョン変更は不要としている(完了時刻の伝え方には差がある)</td><td>告知の確認</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="note">Cloudflareは、無料プランを含む全プランのWAFにこの攻撃を防ぐルールを10/21から既定で入れたと報じられています。ただしWAFは更新の代わりにはなりません。</p>
+  </section>
+
+  <section class="sheet" id="after" aria-labelledby="h-after">
+    <h2 id="h-after"><span class="n">05</span>更新が済んだあとに見ておくこと</h2>
+    <p>更新は「これから入られない」ための対策で、公表前後にすでに入られていた場合は残ります。専門の調査が必要かを判断する材料として、次を見ておきます。</p>
+    <ul class="plain">
+      <li>WordPressなどの管理画面に、<b>見覚えのない管理者ユーザー</b>が増えていないか</li>
+      <li>サーバーのファイル一覧で、<b>10/17以降に作られた見覚えのないPHPファイル</b>がないか(アップロード用のフォルダやキャッシュ用のフォルダは特に)。Amazonのおとりサーバーでは公表4日前の10/17に試みが記録されたと報じられています</li>
+      <li>トップページや問い合わせフォームが、<b>知らないサイトへ転送</b>されたり、見覚えのない文字が入ったりしていないか</li>
+      <li>レンタルサーバーから<b>「不審なファイルを検出」</b>などの通知メールが来ていないか</li>
+      <li>不安があれば、サーバー・管理画面・FTP・データベースの<b>パスワードを変える</b>(更新の後に)</li>
+    </ul>
+    <p class="note">おかしな点が見つかったら、サイトを一時的に非公開にしてから、制作会社やレンタルサーバーのサポートに相談します。個人情報が漏れたおそれがある場合は、個人情報保護委員会への報告が必要になることがあります。</p>
+  </section>
+
+  <section class="sheet thin" id="scam" aria-labelledby="h-scam">
+    <h2 id="h-scam"><span class="n">06</span>便乗の詐欺に気をつける</h2>
+    <p>銀行のネットバンキングや飲食店のアプリが相次いで止まり、「再開しました」「確認が必要です」といった連絡が増える時期です。メールやSMSのリンクからログインせず、ふだん使っている公式アプリやブックマークから入ってください。FX取引の利用者から不正アクセスで資産を失ったという声が出ていると報じられていますが(10/23)、原因や今回の脆弱性との関係は確定していません。</p>
+  </section>
+
+  <!-- PR枠: レンタルサーバー・WAFなどの提携コードを受け取ったら、このコメントの位置に「PR」表記付きで置く(現状は未提携のため何も表示しない) -->
+
+  <section class="sheet thin" id="faq" aria-labelledby="h-faq">
+    <h2 id="h-faq"><span class="n">Q</span>よくある質問</h2>
+    <details><summary>WordPressを使っていなければ関係ありませんか?</summary><p>関係があります。問題はWordPressなどのアプリではなくPHPそのものにあるため、EC-CUBEやLaravel、自作のPHPなど、PHPで動くサイト全般が対象になり得ます。BASEやShopifyのようなサービスでお店を作っている場合は、サーバーは運営会社の管理なので、運営会社のお知らせを確認します。</p></details>
+    <details><summary>7月のwp2shellとは違うものですか?</summary><p>別物です。wp2shellは2026年7月に公表されたWordPress本体の脆弱性で、修正版はWordPress 6.9.5と7.0.2とされています。WordPressのサイトは、PHPとWordPress本体の両方の更新が済んでいるかを確かめます。</p></details>
+    <details><summary>サイトを止めた方がいいですか?</summary><p>修正が済んだかわからず、すぐに確認も取れないときは、一時的に止めるのも選択肢です。国内では銀行や自治体、厚生労働省関係の31サイトなどが予防のために一時停止しました。修正の適用を確認できたら再開します。</p></details>
+    <details><summary>PHP 8.2を使っています。修正版を当てれば終わりですか?</summary><p>8.2のセキュリティサポートは2026年12月31日で終わる予定です。8.2.35を当てたあとも、年内に8.3以上へ切り替える計画を立てておくと、次に同じような問題が出たときに慌てずに済みます。切り替えの前に、プラグインやテーマが新しい版に対応しているかを確かめます。</p></details>
+    <details><summary>8.1以前でも直せますか?</summary><p>PHPの公式な修正版は出ていません。一部のレンタルサーバーや、cPanelなどのベンダーが独自に修正を当てています。自分で管理するサーバーなら、サポート中の8.3以上への移行が基本です。</p></details>
+    <details><summary>このページは安全を保証しますか?</summary><p>いいえ。公表資料と報道をもとに、確かめる順番を整理したものです。個別のサイトが安全かどうかは、サーバーやアプリを管理している人が確認する必要があります。</p></details>
+  </section>
+
+  <section class="sheet thin" aria-labelledby="h-src">
+    <h3 id="h-src">出典(2026年10月24日に確認)</h3>
+    <ol class="src">
+      <li>IPA「PHPの脆弱性対策について(CVE-2026-109618、CVE-2026-109619:PHP2shell)」 https://www.ipa.go.jp/security/security-alert/2026/alert20261022.html</li>
+      <li>CERT-EU「Critical Vulnerabilities in PHP」 https://cert.europa.eu/publications/security-advisories/2026-018</li>
+      <li>Help Net Security「PHP2Shell: Critical PHP vulnerabilities patched」 https://www.helpnetsecurity.com/2026/10/21/php2shell-php-vulnerabilities-patched-cve-2026-109618-cve-2026-109619/</li>
+      <li>watchTowr「PHP2Shell FAQ」 https://watchtowr.com/intelligence/php-cve-2026-109618-faq/</li>
+      <li>GMO Flatt Security Blog「PHPの重大な脆弱性『php2shell』の概要と対応指針」 https://blog.flatt.tech/entry/php2shell</li>
+      <li>piyolog「PHPの2件の深刻な脆弱性についてまとめてみた」 https://piyolog.hatenadiary.jp/entry/2026/10/21/174516</li>
+      <li>SecurityWeek「PHP2Shell: Mass Exploitation Looms for Leaked Critical PHP Flaws」 https://www.securityweek.com/php2shell-mass-exploitation-looms-for-leaked-critical-php-flaws/</li>
+      <li>日本経済新聞「PHP欠陥、銀行や通信でもサービス停止広がる」 https://www.nikkei.com/article/DGXZQOUC220J30S6A021C2000000/</li>
+      <li>日本経済新聞「PHP脆弱性、厚労省関係は31サイトで一時停止 漏洩報告はゼロ」 https://www.nikkei.com/article/DGXZQOUA230TO0T21C26A0000000/</li>
+      <li>TENCY「PHPに重大な脆弱性|主要レンタルサーバーの対応状況(2026/10/23時点)」 https://tency.co.jp/information/php-critical-vulnerability-2026-10/</li>
+      <li>Webセキュリティ診断センター「レンタルサーバーのPHP脆弱性対応状況」 https://websec-center.com/blog/rental-server-php2shell-taiou/</li>
+      <li>THREE D PLUS「ロリポップ!のPHP脆弱性対応(2026年10月)」 https://threedplus.co.jp/2026/10/22/lolipop-php-vulnerability-2026-10/</li>
+      <li>technobezz「Cloudflare WAF Adds php2shell Protection for Free and Paid Plans」 https://www.technobezz.com/news/cloudflare-waf-adds-php2shell-protection-across-plans</li>
+      <li>Elastic Security Labs「wp2shell WordPress RCE detection」 https://www.elastic.co/security-labs/wp2shell-wordpress-rce-detection-elastic-defend</li>
+      <li>ライブドアニュース「不正アクセスで『財産失った』FX取引の利用者から被害の声」 https://news.livedoor.com/article/detail/32641675/</li>
+    </ol>
+  </section>
+
+  <footer>
+    <p>入力したバージョン・URL・お名前は、この端末の中だけで使い、どこにも送りません。</p>
+    <p>このページは技術的な情報の整理で、特定のサイトの安全を保証するものではありません。<a href="../">毎日ひとつの小さな道具箱</a> / Day 13 / 2026-10-25 公開</p>
+  </footer>
+</main>
+<script>
+(function(){
+  var KEY='day013-php-tenken';
+  var st={};
+  try{st=JSON.parse(localStorage.getItem(KEY)||'{}')||{};}catch(e){st={};}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(st));}catch(e){}}
+  var $=function(id){return document.getElementById(id);};
+
+  // ---- 01 version check ----
+  var FIX={'8.5':12,'8.4':27,'8.3':36,'8.2':35};
+  var EOL={'8.5':'2029年12月31日','8.4':'2028年12月31日','8.3':'2027年12月31日','8.2':'2026年12月31日'};
+  function judge(raw){
+    var s=(raw||'').trim().replace(/^php\s*/i,'');
+    if(!s) return {c:'gray',s:'未記入',t:'番号を入れると、修正版かどうかと、次にやることを表示します。'};
+    var m=s.match(/^(\d+)\.(\d+)(?:\.(\d+))?/);
+    if(!m) return {c:'gray',s:'読めません',t:'「8.3.30」のように、数字とピリオドで入れてください。'};
+    var ma=+m[1], mi=+m[2], pa=m[3]===undefined?null:+m[3], br=ma+'.'+mi;
+    if(ma>8||(ma===8&&mi>5)) return {c:'gray',s:'対象外の可能性',t:br+' 系は今回の修正版の一覧にありません。番号を確かめてください。'};
+    if(FIX[br]!==undefined){
+      var f=br+'.'+FIX[br];
+      if(pa===null) return {c:'amber',s:'3つ目の数字を確認',t:br+' 系は '+f+' 以上なら修正版です。管理画面に「'+br+'」までしか出ない共用サーバーでは、サーバー会社の告知で対応済みかを確かめてください。'+(br==='8.2'?' なお8.2のサポートは2026年12月31日で終わります。':'')};
+      if(pa>=FIX[br]) return {c:'green',s:'修正版',t:s+' は修正版('+f+')以上です。サポートは'+EOL[br]+'まで。'+(br==='8.2'?' 年内に8.3以上へ切り替える計画を立ててください。':' ⑤ の「更新が済んだあとに見ておくこと」も確かめてください。')};
+      return {c:'red',s:'要更新',t:s+' は対象です。修正版は '+f+'。ただし共用レンタルサーバーでは番号を変えずに修正済みのことがあるので、サーバー会社の告知を確認し、自分で管理するサーバーなら '+f+' 以上に更新してください。'};
+    }
+    if(ma===8||ma===7||(ma===5&&mi>=4)||(ma===5&&mi>=0&&mi<4)){
+      return {c:'red',s:'公式修正なし',t:br+' 系はPHPのサポートが終わっており、公式の修正版は出ていません。共用レンタルサーバーなら独自の修正が入ったかを告知で確認し、早めに8.3以上へ切り替えてください。切り替えの前に、プラグインやテーマが対応しているかを確かめます。'};
+    }
+    return {c:'red',s:'公式修正なし',t:br+' はかなり古い版で、長くサポート外です。今回の影響範囲は資料で食い違いがありますが、いずれにせよ早めの移行が必要です。'};
+  }
+  var vin=$('vin');
+  function showV(){var r=judge(vin.value);var el=$('vstamp');el.className='s '+r.c;el.textContent=r.s;$('vtext').textContent=r.t;st.v=vin.value;save();}
+  vin.addEventListener('input',showV);
+  document.querySelectorAll('.chips button').forEach(function(b){b.addEventListener('click',function(){vin.value=b.getAttribute('data-v');showV();});});
+  if(st.v){vin.value=st.v;}
+  showV();
+
+  // ---- 02 todo ----
+  var T={
+    shared:{title:'共用レンタルサーバーの方',items:[
+      ['契約先のお知らせを開く','管理画面のトップや「障害・メンテナンス情報」に、今回のPHPの脆弱性への対応が載っています。使っているPHPのバージョンが「対応済み」に入っているかを見ます。'],
+      ['管理画面でPHPのバージョンを見る','「PHPバージョン設定」などの画面で、ドメインごとに確かめます。複数のサイトがあれば全部。8.1以前なら、8.3以上への切り替えを予定に入れます。'],
+      ['サイトが表示されるか確かめる','予防のため一時停止した会社もあります。トップ、問い合わせフォーム、予約・購入のページを開いてみます。'],
+      ['WordPress本体・プラグインも更新','PHPとは別に、7月のwp2shell(WordPress 6.9.5/7.0.2で修正)も済んでいるか。管理画面の「更新」を開きます。'],
+      ['⑤ の「更新が済んだあとに見ておくこと」を確認','見覚えのない管理者やファイルがないか。'],
+      ['8.2を使っているなら年内の切り替えを予定に','8.2のサポートは2026年12月31日で終わります。']
+    ]},
+    agency:{title:'制作会社・保守会社に任せている方',items:[
+      ['③ の文面で確認を送る','「対応しました」だけでなく、PHPのバージョンと適用日、8.1以前ならどうするかまで返事をもらいます。'],
+      ['サーバーの契約者が誰かを確かめる','自分名義のレンタルサーバーなら、自分の管理画面にも告知が出ています。ログイン情報が手元にあるか見ておきます。'],
+      ['サイトが表示されるか確かめる','トップ、問い合わせフォーム、予約・購入のページ。'],
+      ['返事の期限を決める','今日中に返事がなく、個人情報(問い合わせ・予約・会員)を扱うサイトなら、一時停止をお願いするかを決めます。'],
+      ['保守契約の範囲を確かめる','PHPの更新や8.2の切り替え(年内)が保守に含まれるか。含まれなければ見積もりを依頼します。']
+    ]},
+    vps:{title:'自分たちでサーバーを管理している方',items:[
+      ['php -v と php-fpm -v で実際の版を確かめる','Webで動いているPHPとコマンドのPHPが違うことがあります。phpinfo()は確認後すぐ消します。'],
+      ['修正版(8.5.12/8.4.27/8.3.36/8.2.35)に更新','OSのパッケージなら、ディストリビューションの修正パッケージ(番号が違うことがある)の告知を確認。更新後はPHP-FPMやApacheを再起動して全ワーカーを入れ替えます。'],
+      ['8.1以前はサポート版へ移行','公式の修正版はありません。ベンダーの独自パッチを使うなら、その範囲を確かめます。'],
+      ['すぐ更新できないときの暫定策を検討','memory_limit・post_max_sizeの見直し、アップロードを受けないアプリでのmultipart/form-dataの遮断、WAFなどが挙げられています。php.iniなどアプリから上書きできない場所に設定し、更新するまでのつなぎに留めます。'],
+      ['10/17以降のログとファイルを確認','Webサーバーのプロセスからのシェル起動、新しく作られたPHPファイル、外向きの不審な通信。']
+    ]},
+    saas:{title:'ネットショップ作成・予約サービスを使っている方',items:[
+      ['運営会社のお知らせを確認','サーバーは運営会社の管理です。今回の件で停止や対応の告知が出ていないか、管理画面やお知らせのページを見ます。'],
+      ['独自に足したものがないか思い出す','別のレンタルサーバーに置いたブログ、LP、予約フォーム、WordPressなどがあれば、そちらは「共用レンタルサーバー」として点検します。'],
+      ['運営会社から求められたら対応','パスワード変更などの案内があれば、メールのリンクではなく、ふだんのログイン画面から行います。']
+    ]},
+    unknown:{title:'どこで動いているかわからない方',items:[
+      ['サイトを作った人・お金を払っている先を探す','毎月・毎年の請求(サーバー代、ドメイン代、保守費)の明細に、会社名が載っています。'],
+      ['請求先がレンタルサーバー会社なら','その会社の管理画面に入れるかを試し、「共用レンタルサーバーの方」の点検に進みます。'],
+      ['請求先が制作会社なら','③ の文面で確認を送ります。'],
+      ['どちらもわからず、問い合わせや予約を受けているなら','フォームを一時的に止めるか、電話受付だけにするかを決めます。'],
+      ['8.1以前の古いサイトなら作り直しも視野に','サポートの終わった版では、今回のような問題が出ても修正が届きません。']
+    ]}
+  };
+  st.done=st.done||{};
+  function renderTodo(k){
+    var d=T[k]; if(!d) return;
+    $('todo').hidden=false; $('todoTitle').textContent='今日やること: '+d.title;
+    var ol=$('todoList'); ol.innerHTML='';
+    d.items.forEach(function(it,i){
+      var id=k+'-'+i, li=document.createElement('li'), cb=document.createElement('input');
+      cb.type='checkbox'; cb.checked=!!st.done[id]; cb.setAttribute('aria-label',it[0]);
+      if(cb.checked) li.className='done';
+      cb.addEventListener('change',function(){st.done[id]=cb.checked;li.className=cb.checked?'done':'';save();prog(k);});
+      var t=document.createElement('div'); t.className='t';
+      var b=document.createElement('b'); b.textContent=it[0]; var s=document.createElement('span'); s.textContent=it[1];
+      t.appendChild(b); t.appendChild(s); li.appendChild(cb); li.appendChild(t); ol.appendChild(li);
+    });
+    prog(k);
+  }
+  function prog(k){var n=T[k].items.length,c=0;for(var i=0;i<n;i++){if(st.done[k+'-'+i])c++;}$('prog').textContent=c+' / '+n;}
+  document.querySelectorAll('#place input').forEach(function(r){
+    r.addEventListener('change',function(){st.p=r.value;save();renderTodo(r.value);});
+    if(st.p===r.value){r.checked=true;}
+  });
+  if(st.p) renderTodo(st.p);
+
+  // ---- 03 mail ----
+  function body(){
+    var u=$('mUrl').value.trim()||'(サイトのURL)', f=$('mFrom').value.trim()||'(お名前)';
+    return 'いつもお世話になっております。'+f+'です。\n\n'+
+    '10月21日に公表されたPHPの脆弱性(CVE-2026-109618、CVE-2026-109619、通称php2shell)について、\n'+
+    '当方のサイト '+u+' の状況を教えてください。\n\n'+
+    '1. サイトで動いているPHPのバージョン(例 8.3.36)\n'+
+    '2. 修正版の適用、またはサーバー会社による修正の適用が済んでいるか。済んでいれば、その日時\n'+
+    '3. 8.1以前を使っている場合、今後の対応(サポート版への切り替えの予定と費用)\n'+
+    '4. 10月17日以降、不審なファイルやアクセスがないかの確認の有無と結果\n'+
+    '5. WordPress等を使っている場合、本体・プラグインが最新か(7月のwp2shellの修正を含む)\n'+
+    '6. PHP 8.2を使っている場合、12月31日のサポート終了までの切り替え予定\n\n'+
+    'お問い合わせフォームや予約など、お客様の情報を扱う部分がありますので、\n'+
+    '恐れ入りますが、○月○日までにご返信いただけると助かります。\n'+
+    '確認が取れるまでの間、一時的に止めた方がよい部分があれば、あわせてご助言ください。\n\n'+
+    'よろしくお願いいたします。\n'+f;
+  }
+  function renderMail(){$('mBody').value=body();st.mu=$('mUrl').value;st.mf=$('mFrom').value;save();}
+  if(st.mu)$('mUrl').value=st.mu; if(st.mf)$('mFrom').value=st.mf;
+  $('mUrl').addEventListener('input',renderMail); $('mFrom').addEventListener('input',renderMail);
+  renderMail();
+  $('mCopy').addEventListener('click',function(){
+    var ta=$('mBody'),b=$('mCopy');
+    function ok(){b.textContent='コピーしました';setTimeout(function(){b.textContent='文面をコピー';},1800);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(ta.value).then(ok,function(){ta.select();document.execCommand('copy');ok();});}
+    else{ta.select();document.execCommand('copy');ok();}
+  });
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
