@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>変動金利 返済の階段 2026 9月の利上げで毎月いくら・いつ増えるか(5年ルール・125%ルール対応)</title>
+<meta name="description" content="日銀は2026年9月に政策金利を1.25%へ。変動金利の住宅ローンは、毎月の返済がいつ・いくら増えるのか。残高・残り年数・いまの金利を入れると、5年ルールがない場合の新しい返済額と、5年ルール・125%ルールがある場合の利息の割合、元金の減り方、最後に残るおそれのある額まで計算します。10月29〜30日の日銀会合と、11月の短期プライムレート改定の日付も。">
+<link rel="canonical" href="https://alternativestudio2021-collab.github.io/daily-launch-sites/day014-hendo-kinri/">
+<meta property="og:type" content="website"><meta property="og:title" content="変動金利 返済の階段 2026"><meta property="og:description" content="9月の利上げ(1.25%)で、変動金利の住宅ローンの返済は毎月いくら・いつ増える? 5年ルール・125%ルールがある場合の利息の割合と元金の減り方も計算します。">
+<meta property="og:url" content="https://alternativestudio2021-collab.github.io/daily-launch-sites/day014-hendo-kinri/"><meta property="og:locale" content="ja_JP"><meta property="og:site_name" content="毎日ひとつの小さな道具箱"><meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"9月の日銀の利上げで、変動金利の住宅ローンはすぐ上がりますか?","acceptedAnswer":{"@type":"Answer","text":"すぐではありません。銀行はまず短期プライムレートや住宅ローンの基準金利を改定し、そのあと契約ごとの見直し日に適用金利が変わります。年2回(多くは4月1日・10月1日)見直す契約では、10月1日の時点で反映されていなければ次は2027年4月1日の基準日です。毎月見直す銀行もあります。日付は契約書と銀行のお知らせで確かめてください。"}},
+{"@type":"Question","name":"5年ルールがあれば返済額は増えないので安心ですか?","acceptedAnswer":{"@type":"Answer","text":"返済額は5年ごとにしか変わりませんが、その間も金利が上がれば利息の割合が増え、元金の減りが遅くなります。金利が大きく上がると、毎月の返済額より利息が多くなる未払利息が出ることがあり、125%ルールで返済額が抑えられた分は、最後に残高として残ることがあります。"}},
+{"@type":"Question","name":"契約時の金利の引下げ幅(優遇幅)は変わりますか?","acceptedAnswer":{"@type":"Answer","text":"全期間引下げ型では、ふつう引下げ幅は完済まで変わらず、基準金利が上がった分だけ適用金利が上がります。当初の数年だけ大きく引き下げる型では、その期間が終わると引下げ幅が小さくなります。契約書の金利の欄で確かめてください。"}},
+{"@type":"Question","name":"10月29〜30日の日銀会合で、また利上げされますか?","acceptedAnswer":{"@type":"Answer","text":"10月は据え置きの見通しが多く報じられています(テレ東BIZ、第一生命経済研究所など)。一方で、次の利上げを12月とみる予想もあります(野村證券)。このページでは予想を前提にせず、上げ幅を自分で選んで返済額を計算できるようにしています。"}}
+]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&family=M+PLUS+1p:wght@400;500;700&family=Roboto+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: 「階段」。政策金利の段差を見出しの背景に描き、計算結果は段ごとに積む。上から 見出しと3つの要点 → ①いつ上がるか(日付の段) → ②計算(入力 → 5年ルールなし/あり の2列) → ③上げ幅ごとの表 → ④契約書で見る場所 → PR → FAQ → 出典 */
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#eef0f3; --paper:#ffffff; --ink:#18202b; --sub:#5a6472; --hair:#d5dae1; --soft:#f4f6f8;
+  --navy:#1d2f4f; --navy-2:#2c4673; --copper:#b8642b; --copper-soft:#f7e6d8; --teal:#1e7a72; --teal-soft:#dcefec; --alert:#b3302a; --alert-soft:#f8dedb;
+  --step1:#d9dfe9; --step2:#bfc9da; --step3:#9fb0c9; --step4:#7b91b4;
+  --f:"M PLUS 1p","Hiragino Sans","Noto Sans JP",sans-serif; --serif:"Shippori Mincho B1","Hiragino Mincho ProN",serif; --mono:"Roboto Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#10141a; --paper:#171c24; --ink:#e7eaef; --sub:#a1aab7; --hair:#2d3542; --soft:#1d232d;
+  --navy:#a9bde0; --navy-2:#7f9bcc; --copper:#e39a62; --copper-soft:#3a2617; --teal:#6dcbc0; --teal-soft:#16302d; --alert:#f08a80; --alert-soft:#3b1d1a;
+  --step1:#1f2733; --step2:#28344a; --step3:#33445f; --step4:#3f5679; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#10141a; --paper:#171c24; --ink:#e7eaef; --sub:#a1aab7; --hair:#2d3542; --soft:#1d232d;
+  --navy:#a9bde0; --navy-2:#7f9bcc; --copper:#e39a62; --copper-soft:#3a2617; --teal:#6dcbc0; --teal-soft:#16302d; --alert:#f08a80; --alert-soft:#3b1d1a;
+  --step1:#1f2733; --step2:#28344a; --step3:#33445f; --step4:#3f5679; color-scheme:dark}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);font-size:16px;line-height:1.8}
+a{color:var(--navy-2)}
+h1,h2,h3{margin:0;line-height:1.4;text-wrap:balance}
+.hero{position:relative;overflow:hidden;background:var(--paper);border-bottom:1px solid var(--hair)}
+.hero svg.stairs{display:block;margin:18px -16px -34px auto;width:min(560px,100%);height:auto;pointer-events:none}
+.hero .in{position:relative;max-width:900px;margin:0 auto;padding:20px 16px 34px}
+.crumb{font-size:13px;color:var(--sub)} .crumb a{color:inherit}
+.kicker{margin-top:18px;font-family:var(--mono);font-size:13px;letter-spacing:.08em;color:var(--copper)}
+h1{font-family:var(--serif);font-weight:800;font-size:clamp(28px,6vw,46px);color:var(--navy);margin-top:6px}
+h1 small{display:block;font-size:.5em;font-weight:600;color:var(--ink);margin-top:6px}
+.lede{max-width:34em;margin:14px 0 0}
+.points{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:8px;max-width:36em}
+.points li{background:color-mix(in srgb,var(--paper) 88%,transparent);border-left:4px solid var(--copper);padding:8px 12px;border-radius:0 8px 8px 0}
+.updated{margin-top:14px;font-size:13px;color:var(--sub)}
+.wrap{max-width:900px;margin:0 auto;padding:26px 16px 72px;display:grid;gap:26px}
+.panel{background:var(--paper);border:1px solid var(--hair);border-radius:14px;padding:22px 18px}
+.panel h2{font-family:var(--serif);font-size:clamp(21px,4.4vw,27px);color:var(--navy);display:flex;gap:12px;align-items:baseline}
+.panel h2 .no{font-family:var(--mono);font-size:14px;color:#fff;background:var(--copper);border-radius:6px;padding:1px 8px;flex:none}
+.note{font-size:14px;color:var(--sub)}
+/* timeline as steps */
+.steps{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:0}
+.steps li{display:grid;grid-template-columns:108px minmax(0,1fr);gap:14px;align-items:start;padding:12px 0;border-top:1px dashed var(--hair)}
+.steps li:first-child{border-top:0}
+.steps .d{font-family:var(--mono);font-weight:700;font-size:14px;color:var(--navy-2);padding-top:2px}
+.steps .d span{display:block;font-family:var(--f);font-weight:500;font-size:12px;color:var(--sub)}
+.steps li.next .d{color:var(--copper)}
+.steps b{color:var(--ink)}
+.tag{display:inline-block;font-size:12px;border-radius:999px;padding:0 9px;margin-left:6px;vertical-align:2px}
+.tag.fact{background:var(--teal-soft);color:var(--teal)} .tag.fc{background:var(--copper-soft);color:var(--copper)}
+/* form */
+.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:18px}
+.field label{display:block;font-weight:700;font-size:14px}
+.field .hint{font-size:12px;color:var(--sub);display:block}
+.field input[type=number],.field select{width:100%;font:inherit;font-family:var(--mono);font-size:18px;padding:9px 10px;border:1.5px solid var(--hair);border-radius:9px;background:var(--soft);color:var(--ink)}
+.field input:focus,.field select:focus{outline:3px solid color-mix(in srgb,var(--copper) 45%,transparent);border-color:var(--copper)}
+.unit{display:flex;align-items:center;gap:6px} .unit span{font-size:14px;color:var(--sub);flex:none}
+.rise{margin-top:18px}
+.rise .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.chips button{font:inherit;font-family:var(--mono);font-size:15px;padding:6px 14px;border-radius:999px;border:1.5px solid var(--navy-2);background:transparent;color:var(--navy-2);cursor:pointer}
+.chips button[aria-pressed="true"]{background:var(--navy-2);color:var(--paper)}
+.rule5{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px 18px;font-size:15px}
+.rule5 label{display:flex;gap:6px;align-items:center;cursor:pointer}
+.out{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:22px}
+.card{border-radius:12px;padding:16px;border:1.5px solid var(--hair);background:var(--soft)}
+.card h3{font-size:16px}
+.card.a{border-color:var(--navy-2)} .card.b{border-color:var(--teal)}
+.card.dim{opacity:.55}
+.big{font-family:var(--mono);font-weight:700;font-size:clamp(26px,6vw,34px);color:var(--navy);line-height:1.2;margin-top:6px}
+.big small{font-size:15px;font-weight:500;color:var(--sub)}
+.delta{font-family:var(--mono);font-weight:700;color:var(--copper)}
+.kv{margin:10px 0 0;padding:0;list-style:none;font-size:14px}
+.kv li{display:flex;justify-content:space-between;gap:10px;border-top:1px solid var(--hair);padding:5px 0}
+.kv li b{font-family:var(--mono);white-space:nowrap}
+.bar{height:14px;border-radius:7px;background:var(--step2);overflow:hidden;display:flex;margin-top:8px}
+.bar i{display:block;height:100%}
+.bar .int{background:var(--copper)} .bar .pri{background:var(--teal)}
+.legend{font-size:12px;color:var(--sub);display:flex;gap:14px;margin-top:4px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+.warn{margin-top:12px;background:var(--alert-soft);color:var(--alert);border-radius:8px;padding:8px 12px;font-size:14px}
+.warn:empty{display:none}
+table{border-collapse:collapse;width:100%;font-size:14px;margin-top:14px}
+th,td{padding:8px 6px;border-bottom:1px solid var(--hair);text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+thead th{font-size:12px;color:var(--sub);font-weight:500}
+td{font-family:var(--mono)}
+.tbl{overflow-x:auto}
+.where{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:14px}
+.where div{border:1px solid var(--hair);border-radius:10px;padding:12px;background:var(--soft)}
+.where b{display:block;color:var(--navy)}
+.pr{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:700;border:1.5px solid var(--sub);color:var(--sub);border-radius:4px;padding:0 6px}
+.offer{margin-top:10px;padding:12px;border-radius:10px;background:var(--soft)}
+details.faq{border-top:1px solid var(--hair);padding:10px 0}
+details.faq summary{cursor:pointer;font-weight:700}
+.src{font-size:13px;padding-left:1.3em} .src li{margin:3px 0;word-break:break-all}
+footer.f{font-size:13px;color:var(--sub)}
+@media (max-width:520px){.steps li{grid-template-columns:84px minmax(0,1fr);gap:10px}}
+.wrap>*{min-width:0} .steps li>div{min-width:0;overflow-wrap:anywhere}
+@media print{.hero svg.stairs,.chips,.pr-panel{display:none}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="in">
+    <div class="crumb"><a href="../">毎日ひとつの小さな道具箱</a> / Day 14</div>
+    <div class="kicker">VARIABLE-RATE MORTGAGE · 2026.10</div>
+    <h1>変動金利 返済の階段<small>9月の利上げで、毎月の返済はいつ・いくら増えるか</small></h1>
+    <p class="lede">日銀は2026年9月18日に政策金利を1.25%程度へ上げました。変動金利の住宅ローンでは、銀行の基準金利が上がり、契約の見直し日をまたいで返済に届きます。残高と残り年数を入れると、その段差がいくらになるかを計算します。</p>
+    <ul class="points">
+      <li>上がり方は「基準金利の改定 → 契約の見直し日 → 返済額」の順。銀行と契約で日付が違います。</li>
+      <li>5年ルールがあると返済額はしばらく同じでも、利息の割合が増えて元金が減りにくくなります。</li>
+      <li>次の日銀会合は10月29〜30日。据え置きの見方が多い一方、12月の利上げを予想する声もあります。</li>
+    </ul>
+    <div class="updated">2026年10月26日 公開 / 計算は元利均等返済・ボーナス返済なしの概算です</div>
+    <svg class="stairs" viewBox="0 0 560 220" aria-hidden="true">
+    <rect x="0" y="170" width="140" height="50" fill="var(--step1)"/>
+    <rect x="140" y="140" width="140" height="80" fill="var(--step2)"/>
+    <rect x="280" y="105" width="140" height="115" fill="var(--step3)"/>
+    <rect x="420" y="65" width="140" height="155" fill="var(--step4)"/>
+    <text x="16" y="200" font-family="Roboto Mono,monospace" font-size="15" fill="var(--sub)">〜5月</text>
+    <text x="156" y="170" font-family="Roboto Mono,monospace" font-size="15" fill="var(--sub)">1.00% 6月</text>
+    <text x="296" y="135" font-family="Roboto Mono,monospace" font-size="15" fill="var(--paper)">1.25% 9月</text>
+    <text x="436" y="95" font-family="Roboto Mono,monospace" font-size="15" fill="var(--paper)">次の段?</text>
+  </svg>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section class="panel" aria-labelledby="h-when">
+  <h2 id="h-when"><span class="no">1</span>いつ上がるか、日付の段</h2>
+  <p class="note">緑の印は公表資料や報道で確かめた事実、橙の印は予想です。自分の銀行の日付は、契約書と銀行のお知らせで確かめてください。</p>
+  <ol class="steps">
+    <li><div class="d">6月<span>2026年</span></div><div>日銀が政策金利を<b>1.0%程度</b>へ。大手行は8月3日に短期プライムレートを2.125%→2.375%に上げ、住宅ローンの基準金利も順に上がりました。<span class="tag fact">事実</span></div></li>
+    <li><div class="d">9/18<span>木</span></div><div>日銀が政策金利を<b>1.0%→1.25%程度</b>へ(賛成7・反対2)。<span class="tag fact">事実</span></div></li>
+    <li><div class="d">10/1<span>木</span></div><div>10月の住宅ローン金利で、みずほ・りそな・三井住友信託が変動型の基準金利を0.25%上げ、9月に上げた三菱UFJ・三井住友とあわせて<b>大手5行とも年3.375%</b>に(時事通信)。ドコモSMBCネット銀行は短期プライムレートを2.675%→2.925%に改定。<span class="tag fact">事実</span></div></li>
+    <li class="next"><div class="d">10/29–30<span>木・金</span></div><div>日銀の金融政策決定会合。<b>据え置きの見通しが多数</b>(テレ東BIZ、第一生命経済研究所)。野村證券は次の利上げを12月とみています。<span class="tag fc">予想</span></div></li>
+    <li class="next"><div class="d">11/2<span>月</span></div><div>三菱UFJ信託銀行が短期プライムレートを<b>2.375%→2.625%</b>に改定(9月18日発表)。ほかの銀行の改定日は各行の発表を確かめてください。<span class="tag fact">事実</span></div></li>
+    <li class="next"><div class="d">2027/4/1<span>基準日</span></div><div>適用金利を<b>年2回(4月1日・10月1日)</b>見直す契約で、10月1日に間に合わなかった上げ幅が反映される次の基準日。新しい金利の返済が始まる月は銀行によって違います(6月・7月の返済からなど)。毎月見直す銀行では、これより早く反映されます。</div></li>
+  </ol>
+</section>
+
+<section class="panel" aria-labelledby="h-calc">
+  <h2 id="h-calc"><span class="no">2</span>自分の返済で計算する</h2>
+  <p class="note">返済予定表(残高・残り回数)と、いまの適用金利を見ながら入れてください。入力はこの端末の中だけで計算し、どこにも送りません。</p>
+  <div class="form">
+    <div class="field"><label for="bal">いまの残高<span class="hint">返済予定表の「残高」</span></label><div class="unit"><input id="bal" type="number" inputmode="decimal" min="1" step="10" value="3000"><span>万円</span></div></div>
+    <div class="field"><label for="yrs">残りの返済期間<span class="hint">完済までの年数</span></label><div class="unit"><input id="yrs" type="number" inputmode="decimal" min="1" max="50" step="1" value="30"><span>年</span></div></div>
+    <div class="field"><label for="rate">いまの適用金利<span class="hint">基準金利 − 引下げ幅</span></label><div class="unit"><input id="rate" type="number" inputmode="decimal" min="0" max="10" step="0.001" value="0.9"><span>%</span></div></div>
+  </div>
+  <div class="rise">
+    <label style="font-weight:700;font-size:14px" id="lab-rise">適用金利の上げ幅</label>
+    <div class="chips" role="group" aria-labelledby="lab-rise">
+      <button type="button" data-r="0.25" aria-pressed="true">+0.25%<span class="note"> 9月分</span></button>
+      <button type="button" data-r="0.5" aria-pressed="false">+0.50%</button>
+      <button type="button" data-r="0.75" aria-pressed="false">+0.75%</button>
+      <button type="button" data-r="1" aria-pressed="false">+1.00%</button>
+    </div>
+    <p class="note" style="margin:6px 0 0">+0.25%は9月の利上げ1回分。+0.5%以上は、この先の利上げが続いた場合の仮の数字です。</p>
+  </div>
+  <div class="rule5" role="radiogroup" aria-label="返済額の見直しルール">
+    <label><input type="radio" name="r5" value="no"> 5年ルールなし(金利が変わると返済額も変わる)</label>
+    <label><input type="radio" name="r5" value="yes" checked> 5年ルール・125%ルールあり</label>
+    <label><input type="radio" name="r5" value="unk"> わからない(両方を見る)</label>
+  </div>
+  <div class="field" id="f-left" style="margin-top:12px;max-width:340px"><label for="left">次の返済額の見直しまで<span class="hint">5年ルールありの場合。借入れや前回見直しから5年ごと</span></label><div class="unit"><input id="left" type="number" inputmode="decimal" min="0" max="5" step="0.5" value="3"><span>年</span></div></div>
+
+  <div class="out" aria-live="polite">
+    <div class="card a" id="cardA">
+      <h3>5年ルールなしの場合</h3>
+      <div class="big" id="aPay">—</div>
+      <div>毎月 <span class="delta" id="aDiff">—</span> / 年 <span class="delta" id="aYear">—</span></div>
+      <ul class="kv">
+        <li><span>いまの毎月の返済</span><b id="aNow">—</b></li>
+        <li><span>完済までの利息の増加</span><b id="aTotal">—</b></li>
+      </ul>
+    </div>
+    <div class="card b" id="cardB">
+      <h3>5年ルール・125%ルールありの場合</h3>
+      <div class="big" id="bPay">—</div>
+      <div id="bSub" class="note">—</div>
+      <div class="bar" aria-hidden="true"><i class="int" id="bInt"></i><i class="pri" id="bPri"></i></div>
+      <div class="legend"><span><i style="background:var(--copper)"></i>利息</span><span><i style="background:var(--teal)"></i>元金</span><span id="bShare"></span></div>
+      <ul class="kv">
+        <li><span>見直し時の残高(上がらなかった場合との差)</span><b id="bBal">—</b></li>
+        <li><span>見直し後の毎月の返済</span><b id="bNext">—</b></li>
+        <li><span>完済までの利息の増加</span><b id="bTotal">—</b></li>
+      </ul>
+      <div class="warn" id="bWarn"></div>
+    </div>
+  </div>
+  <p class="note" style="margin-top:14px">計算の前提: 元利均等返済、ボーナス返済なし、金利は今日から上がった後の値でずっと続くとし、5年ルールありでは5年ごとに返済額を見直して前の返済額の1.25倍を上限にしています。実際の返済額は、銀行の計算方法(端数・見直し月)で数百円ずれることがあります。</p>
+</section>
+
+<section class="panel" aria-labelledby="h-tbl">
+  <h2 id="h-tbl"><span class="no">3</span>上げ幅ごとの毎月の返済</h2>
+  <p class="note">上の残高・年数・金利で、5年ルールがない場合の毎月の返済額を並べています。</p>
+  <div class="tbl"><table>
+    <thead><tr><th>適用金利</th><th>毎月の返済</th><th>いまとの差(月)</th><th>差(年)</th><th>完済までの利息</th></tr></thead>
+    <tbody id="tb"></tbody>
+  </table></div>
+</section>
+
+<section class="panel" aria-labelledby="h-where">
+  <h2 id="h-where"><span class="no">4</span>契約書で見る場所</h2>
+  <p>計算に使う3つの数字と2つのルールは、ローンの契約書(金銭消費貸借契約書)と返済予定表に書かれています。ネット銀行では会員ページで見られることが多いです。</p>
+  <div class="where">
+    <div><b>適用金利の見直し日</b>「毎年4月1日・10月1日の基準金利をもとに」など。毎月見直しの契約もあります。</div>
+    <div><b>返済額の見直し</b>「5年ごとに見直す」「見直し後の返済額は直前の1.25倍を上限」と書かれていれば5年ルール・125%ルールあり。</div>
+    <div><b>引下げ幅</b>「全期間」か「当初○年」か。当初型は期間が終わると引下げ幅が小さくなり、利上げとは別に適用金利が上がります。</div>
+    <div><b>未払利息の扱い</b>利息が返済額を超えた分をどう扱うか。最終回の一括返済になるかどうか。</div>
+    <div><b>銀行からのお知らせ</b>適用金利が変わると、書面や会員ページで新しい金利と返済額が届きます。届いたら上の欄に入れ直します。</div>
+  </div>
+  <p class="note">固定金利への借換えや繰上げ返済をするかどうかは、手数料・固定金利の水準・手元資金で変わるため、このページでは判断しません。借入先の銀行や、お金の専門家に相談してください。</p>
+</section>
+
+<section class="panel pr-panel" aria-labelledby="h-pr">
+  <span class="pr">PR</span>
+  <h2 id="h-pr" style="margin-top:6px">返済が増えたあとの家計を相談したいとき</h2>
+  <p class="note">この枠には広告(アフィリエイトリンク)が含まれます。リンク先で申し込みがあると、このサイトに紹介料が入ります。</p>
+  <div class="offer">
+    <p style="margin-top:0">住宅ローンの返済が増えると、教育費や老後の積立てとの配分を考え直すことになります。家計全体をお金の専門家(FP)に無料で相談できるサービスです。</p>
+    <div><a href="https://px.a8.net/svt/ejp?a8mat=4BEFL6+1U34XE+4GN2+1NJK7M" rel="nofollow">老後資金・資産形成をFPに無料相談！厳選プロが丁寧サポート【ガーデン】</a>
+<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=4BEFL6+1U34XE+4GN2+1NJK7M" alt=""></div>
+  </div>
+  <!-- 住宅ローン比較・借換えの案件の枠(A8の公式コードを受け取ったら、ここに改変せず入れる) -->
+</section>
+
+<section class="panel" aria-labelledby="h-faq">
+  <h2 id="h-faq"><span class="no">5</span>よくある質問</h2>
+  <details class="faq"><summary>9月の日銀の利上げで、変動金利の住宅ローンはすぐ上がりますか?</summary><p>すぐではありません。銀行はまず短期プライムレートや住宅ローンの基準金利を改定し、そのあと契約ごとの見直し日に適用金利が変わります。年2回(多くは4月1日・10月1日)見直す契約では、10月1日の時点で反映されていなければ、次は2027年4月1日の基準日です。毎月見直す銀行もあります。</p></details>
+  <details class="faq"><summary>5年ルールがあれば返済額は増えないので安心ですか?</summary><p>返済額は5年ごとにしか変わりませんが、その間も金利が上がれば利息の割合が増え、元金の減りが遅くなります。金利が大きく上がると、毎月の返済額より利息が多くなる未払利息が出ることがあり、125%ルールで抑えられた分は最後に残高として残ることがあります。上の計算では、その額も出しています。</p></details>
+  <details class="faq"><summary>契約時の金利の引下げ幅(優遇幅)は変わりますか?</summary><p>全期間引下げ型では、ふつう引下げ幅は完済まで変わらず、基準金利が上がった分だけ適用金利が上がります。当初の数年だけ大きく引き下げる型では、その期間が終わると引下げ幅が小さくなります。</p></details>
+  <details class="faq"><summary>10月29〜30日の日銀会合で、また利上げされますか?</summary><p>10月は据え置きの見通しが多く報じられています(テレ東BIZ、第一生命経済研究所など)。一方で、次の利上げを12月とみる予想もあります(野村證券)。このページは予想を前提にせず、上げ幅を自分で選んで計算できるようにしています。会合の結果が出たら、このページの日付の段を更新します。</p></details>
+  <details class="faq"><summary>元金均等返済や固定期間選択型でも使えますか?</summary><p>このページの計算は元利均等返済の変動金利向けです。5年ルール・125%ルールは元利均等返済の変動金利に付くもので、元金均等返済や固定期間選択型にはふつうありません。固定期間選択型は、固定期間が終わるときの金利で返済額が決まります。</p></details>
+</section>
+
+<section class="panel" aria-labelledby="h-src">
+  <h2 id="h-src">出典</h2>
+  <ol class="src">
+    <li>共同通信(熊本日日新聞)「日銀利上げ、1・25%に ペース最短3カ月に加速」 <a href="https://kumanichi.com/articles/2037289">kumanichi.com/articles/2037289</a></li>
+    <li>秋田魁新報「日銀、1・0%程度政策金利維持 6月利上げの影響見極め」(2026/7/31) <a href="https://www.sakigake.jp/news/article/20260731CO0087/">sakigake.jp</a></li>
+    <li>三菱UFJ信託銀行「円普通預金金利及び短期プライムレートの改定について」(2026/9/18) <a href="https://www.tr.mufg.jp/ippan/release/pdf_mutb/260918_1.pdf">tr.mufg.jp/ippan/release/pdf_mutb/260918_1.pdf</a></li>
+    <li>ドコモSMBCネット銀行 プレスリリース(2026/9/18) <a href="https://www.netbk.co.jp/contents/company/press/2026/0918_006377.html">netbk.co.jp/contents/company/press/2026/0918_006377.html</a></li>
+    <li>三菱UFJ銀行 ニュースリリース(2026/6/16、短期プライムレート8/3改定) <a href="https://www.bk.mufg.jp/news/news2026/pdf/news0616.pdf">bk.mufg.jp/news/news2026/pdf/news0616.pdf</a></li>
+    <li>みずほ銀行 ニュースリリース(2026/6/16) <a href="https://www.mizuhobank.co.jp/release/pdf/20260616release_jp.pdf">mizuhobank.co.jp/release/pdf/20260616release_jp.pdf</a></li>
+    <li>時事通信「変動金利、3行引き上げ 固定は全行引き上げ―10月住宅ローン」(2026/9/30) <a href="https://www.jiji.com/jc/article?k=2026093001014&amp;g=eco">jiji.com</a></li>
+    <li>BUSINESS INSIDER JAPAN「主要銀行の『住宅ローン』、2026年10月の金利はどうなった?」 <a href="https://news.yahoo.co.jp/articles/2c2e95894bde84d7b3e047c6434d698c26734232">news.yahoo.co.jp</a></li>
+    <li>テレ東BIZ「10月利上げ見送りへ 日銀 影響見極め」 <a href="https://txbiz.tv-tokyo.co.jp/wbs/news/post_351067">txbiz.tv-tokyo.co.jp/wbs/news/post_351067</a></li>
+    <li>第一生命経済研究所「10月の金融政策決定会合は利上げ見送りへ」 <a href="https://www.dlri.co.jp/report/macro/666536.html">dlri.co.jp/report/macro/666536.html</a></li>
+    <li>野村證券 森田京平「利上げ時期を12月に前倒し」 <a href="https://www.nomura.co.jp/wealthstyle/article/0886/">nomura.co.jp/wealthstyle/article/0886/</a></li>
+    <li>日本銀行 公表予定(金融政策決定会合の日程) <a href="https://www.boj.or.jp/announcements/calendar/index.htm">boj.or.jp/announcements/calendar/</a></li>
+    <li>SBI新生銀行「5年ルール・125%ルールとは」 <a href="https://www.sbishinseibank.co.jp/retail/housing/column/vol72.html">sbishinseibank.co.jp/retail/housing/column/vol72.html</a></li>
+    <li>楽天銀行「5年ルール」 <a href="https://www.rakuten-bank.co.jp/home-loan/terms/5nenrule/">rakuten-bank.co.jp/home-loan/terms/5nenrule/</a></li>
+  </ol>
+</section>
+
+<footer class="f">このページは公開資料をもとにした情報提供と概算の計算です。借換えや返済方法の判断、正確な返済額は、借入先の金融機関の案内と書面で確認してください。 / <a href="../">毎日ひとつの小さな道具箱 一覧へ</a></footer>
+</main>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var rise=0.25;
+  function yen(v){return Math.round(v).toLocaleString('ja-JP')+'円'}
+  function man(v){var m=v/10000;return (Math.abs(m)>=100?Math.round(m).toLocaleString('ja-JP'):(Math.round(m*10)/10).toLocaleString('ja-JP'))+'万円'}
+  function sgn(v){return (v>=0?'+':'−')+yen(Math.abs(v))}
+  function sgnMan(v){return (v>=0?'+':'−')+man(Math.abs(v))}
+  function pay(P,rAnnual,n){var r=rAnnual/100/12;if(n<=0)return P;if(r===0)return P/n;return P*r/(1-Math.pow(1+r,-n))}
+  // 5年ルールあり: m か月後に最初の見直し、以後60か月ごと。見直し後の返済額は直前の1.25倍まで
+  function sim5(P,rAnnual,n,pay0,m){
+    var r=rAnnual/100/12,bal=P,unpaid=0,p=pay0,totalPaid=0,first=null,firstInt=null,balAtReset=null,maxUnpaid=0,nextReset=m;
+    for(var k=0;k<n;k++){
+      if(k===nextReset&&k>0){var np=pay(bal+unpaid,rAnnual,n-k);p=Math.min(np,p*1.25);if(first===null){first=p;balAtReset=bal+unpaid}nextReset+=60}
+      else if(k===nextReset&&k===0){var np0=pay(bal,rAnnual,n);p=Math.min(np0,p*1.25);first=p;balAtReset=bal;nextReset+=60}
+      var it=bal*r;if(firstInt===null)firstInt=it;
+      var paidNow=Math.min(p,bal+unpaid+it);
+      totalPaid+=paidNow;
+      var toInt=Math.min(paidNow,it+unpaid);
+      var restInt=it+unpaid-toInt;
+      unpaid=restInt;
+      bal=bal-(paidNow-toInt);
+      if(unpaid>maxUnpaid)maxUnpaid=unpaid;
+      if(bal<=0.5&&unpaid<=0.5){bal=0;unpaid=0;break}
+    }
+    return {first:first,firstInt:firstInt,balAtReset:balAtReset,leftover:Math.max(0,bal+unpaid),maxUnpaid:maxUnpaid,totalPaid:totalPaid};
+  }
+  function balAfter(P,rAnnual,pmt,m){var r=rAnnual/100/12,b=P;for(var k=0;k<m;k++){b=b-(pmt-b*r)}return b}
+  function calc(){
+    var P=parseFloat($('bal').value)*10000,y=parseFloat($('yrs').value),r0=parseFloat($('rate').value);
+    var mode=(document.querySelector('input[name=r5]:checked')||{}).value||'yes';
+    $('f-left').style.display=mode==='no'?'none':'';
+    $('cardA').classList.toggle('dim',mode==='yes');$('cardB').classList.toggle('dim',mode==='no');
+    if(!(P>0)||!(y>0)||!(r0>=0)||r0>15){['aPay','bPay'].forEach(function(i){$(i).textContent='—'});return}
+    var n=Math.round(y*12),r1=r0+rise;
+    var p0=pay(P,r0,n),p1=pay(P,r1,n);
+    $('aNow').textContent=yen(p0);
+    $('aPay').innerHTML=yen(p1)+' <small>/月</small>';
+    $('aDiff').textContent=sgn(p1-p0);$('aYear').textContent=sgn((p1-p0)*12);
+    $('aTotal').textContent=sgnMan(p1*n-p0*n);
+    // 5年ルールあり
+    var m=Math.round(Math.max(0,Math.min(5,parseFloat($('left').value)||0))*12);if(m>=n)m=n-1;
+    var s=sim5(P,r1,n,p0,m),base=sim5(P,r0,n,p0,m);
+    var it=s.firstInt,share=Math.min(1,it/p0);
+    $('bPay').innerHTML=yen(p0)+' <small>/月(見直しまで同じ)</small>';
+    $('bSub').textContent='返済額は変わらず、うち利息が '+yen(P*r0/1200)+' → '+yen(it)+'(月 '+sgn(it-P*r0/1200)+')';
+    $('bInt').style.width=(share*100)+'%';$('bPri').style.width=((1-share)*100)+'%';
+    $('bShare').textContent='利息の割合 '+Math.round(share*100)+'%';
+    var bNo=balAfter(P,r0,p0,m),bYes=s.balAtReset!==null?s.balAtReset:balAfter(P,r1,p0,m);
+    $('bBal').textContent=man(bYes)+'('+sgnMan(bYes-bNo)+')';
+    $('bNext').textContent=s.first!==null?yen(s.first)+'('+sgn(s.first-p0)+')':'—';
+    $('bTotal').textContent=sgnMan(s.totalPaid+s.leftover-(p0*n));
+    var w='';
+    if(it>p0)w+='利息が毎月の返済額を上回り、未払利息が出ます(最大 '+man(s.maxUnpaid)+')。';
+    if(s.leftover>1000)w+='125%ルールで返済額が抑えられるため、最終回に約 '+man(s.leftover)+' が残る計算です(一括返済の扱いは契約で確かめてください)。';
+    $('bWarn').textContent=w;
+    // 表
+    var rows='';[0,0.25,0.5,0.75,1,1.5].forEach(function(d){var pp=pay(P,r0+d,n);rows+='<tr><td>'+(r0+d).toFixed(3).replace(/0+$/,'').replace(/\.$/,'')+'%'+(d===0?'(いま)':' (+'+d+')')+'</td><td>'+yen(pp)+'</td><td>'+(d===0?'—':sgn(pp-p0))+'</td><td>'+(d===0?'—':sgn((pp-p0)*12))+'</td><td>'+man(pp*n-P)+'</td></tr>'});
+    $('tb').innerHTML=rows;
+  }
+  document.querySelectorAll('.chips button').forEach(function(b){b.addEventListener('click',function(){
+    document.querySelectorAll('.chips button').forEach(function(x){x.setAttribute('aria-pressed','false')});
+    b.setAttribute('aria-pressed','true');rise=parseFloat(b.getAttribute('data-r'));calc()})});
+  ['bal','yrs','rate','left'].forEach(function(i){$(i).addEventListener('input',calc)});
+  document.querySelectorAll('input[name=r5]').forEach(function(x){x.addEventListener('change',calc)});
+  calc();
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
