@@ -10,6 +10,8 @@
 {"@type":"Question","name":"レンタルサーバーでPHPのバージョン表示が変わっていません。未修正ですか?","acceptedAnswer":{"@type":"Answer","text":"番号だけでは判断できません。共用レンタルサーバーでは、表示上の番号を変えずにサーバー側で修正を当てた会社が多いと報じられています。契約しているレンタルサーバーの公式のお知らせで、使っているPHPのバージョンが対応済みかを確かめてください。"}},
 {"@type":"Question","name":"WordPressを使っていなければ関係ありませんか?","acceptedAnswer":{"@type":"Answer","text":"関係があります。今回の問題はWordPressなどのアプリではなくPHPそのものにあるため、EC-CUBEやLaravel、自作のPHPなど、PHPで動くサイト全般が対象になり得ます。逆にBASEやShopifyのようなサービスでお店を作っている場合は、サーバーは運営会社が管理しているので、運営会社のお知らせを確認します。"}},
 {"@type":"Question","name":"7月のwp2shellとは違うものですか?","acceptedAnswer":{"@type":"Answer","text":"別物です。wp2shellは2026年7月に公表されたWordPress本体の脆弱性で、修正版はWordPress 6.9.5と7.0.2とされています。PHP2ShellはPHPの脆弱性です。WordPressのサイトは両方の更新が済んでいるかを確かめます。"}},
+{"@type":"Question","name":"設定を変えれば更新しなくても大丈夫ですか?","acceptedAnswer":{"@type":"Answer","text":"いいえ。session.upload_progress.enabled を 0 にする設定は、修正版を当てるまでの一時的な緩和策として紹介されていますが、2件のうち1件しか防げない、設定だけでは防げないとの指摘があります。修正版への更新が必要です。"}},
+{"@type":"Question","name":"実際に乗っ取られたサイトはありますか?","acceptedAnswer":{"@type":"Answer","text":"攻撃の試みは公表直後から大量に観測されています。watchTowrは10/21〜22の時点で成功した攻撃は見ていないと述べた一方、Patchstackは実際の悪用を確認したと伝えられ、見方が分かれています。米CISAは10/21時点で悪用確認済みの一覧(KEV)に載せていません。被害の報告が少ないことは、更新しなくてよい理由にはなりません。"}},
 {"@type":"Question","name":"PHP 8.2はいつまで使えますか?","acceptedAnswer":{"@type":"Answer","text":"PHP 8.2のセキュリティサポートは2026年12月31日で終わる予定です。今回の修正版8.2.35を当てたあとも、年内に8.3以上へ切り替える計画を立てておくと安心です。"}}
 ]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -108,7 +110,7 @@ footer{font-size:13px;color:var(--sub);display:grid;gap:6px}
       <div><b>修正版の公開</b><span>2026-10-21</span></div>
       <div><b>IPAの注意喚起</b><span>2026-10-22</span></div>
     </div>
-    <p class="warn">PHPの開発チームは「修正版への更新が唯一の確実な対策」としていると報じられています。公表直後から攻撃の試みが観測されています(watchTowr、10/21)。ここに書いた内容は10月24日までの公表資料と報道をまとめたもので、最新の状況は契約先の公式のお知らせで確かめてください。</p>
+    <p class="warn">PHPの開発チームは「修正版への更新が唯一の確実な対策」としていると報じられています。公表直後から攻撃の試みが大量に観測されています(watchTowr、Cloudflare、10/21〜)。ここに書いた内容は10月25日までの公表資料と報道をまとめたもので、最新の状況は契約先の公式のお知らせで確かめてください。</p>
   </header>
 
   <section class="sheet" id="ver" aria-labelledby="h-ver">
@@ -209,11 +211,14 @@ footer{font-size:13px;color:var(--sub);display:grid;gap:6px}
     <details><summary>サイトを止めた方がいいですか?</summary><p>修正が済んだかわからず、すぐに確認も取れないときは、一時的に止めるのも選択肢です。国内では銀行や自治体、厚生労働省関係の31サイトなどが予防のために一時停止しました。修正の適用を確認できたら再開します。</p></details>
     <details><summary>PHP 8.2を使っています。修正版を当てれば終わりですか?</summary><p>8.2のセキュリティサポートは2026年12月31日で終わる予定です。8.2.35を当てたあとも、年内に8.3以上へ切り替える計画を立てておくと、次に同じような問題が出たときに慌てずに済みます。切り替えの前に、プラグインやテーマが新しい版に対応しているかを確かめます。</p></details>
     <details><summary>8.1以前でも直せますか?</summary><p>PHPの公式な修正版は出ていません。一部のレンタルサーバーや、cPanelなどのベンダーが独自に修正を当てています。自分で管理するサーバーなら、サポート中の8.3以上への移行が基本です。</p></details>
+    <details><summary>設定を変えれば、更新しなくても大丈夫ですか?</summary><p>いいえ。<code>session.upload_progress.enabled</code> を <code>0</code> にする設定は、修正版を当てるまでの一時的な緩和策として紹介されていますが、「2件のうち1件しか防げない」「設定変更だけでは防げない」との指摘があります。共用レンタルサーバーでは、この設定はサーバー会社の側で済ませていることが多く、利用者が触る必要はありません。いずれにしても、修正版への更新が済んでいるかを確かめます。</p></details>
+    <details><summary>実際に乗っ取られたサイトはありますか?</summary><p>攻撃の試みは公表直後から大量に観測されています。watchTowrは10/21〜22の時点で「成功した例はまだない」と述べた一方、Patchstackは実際の悪用を確認したと伝えられており、見方が分かれています。米国のCISAは更新を急ぐよう呼びかけていますが、10/21時点で悪用確認済みの一覧(KEV)には載せていません。国内でも厚労省関係のサイトは「漏えいの報告はゼロ」と報じられています。被害の報告が少ないのは、各社が早く止めて直したからでもあり、更新しなくてよい理由にはなりません。</p></details>
+    <details><summary>10/23に「追加の脆弱性が出た」と聞きました。</summary><p>10月25日夕方の時点で、PHP公式・IPA・CISAの公表資料からは、CVE-2026-109618と109619以外の新しい番号は確認できませんでした。10/23に更新されたPalo Alto Networks(Unit 42)の解説も、同じ2件についてのものです。番号がはっきりしない情報で慌てて設定を変えるより、修正版(8.5.12/8.4.27/8.3.36/8.2.35)以上か、契約先が修正済みと発表しているかを確かめてください。新しい発表があれば、このページに追記します。</p></details>
     <details><summary>このページは安全を保証しますか?</summary><p>いいえ。公表資料と報道をもとに、確かめる順番を整理したものです。個別のサイトが安全かどうかは、サーバーやアプリを管理している人が確認する必要があります。</p></details>
   </section>
 
   <section class="sheet thin" aria-labelledby="h-src">
-    <h3 id="h-src">出典(2026年10月24日に確認)</h3>
+    <h3 id="h-src">出典(2026年10月25日に確認)</h3>
     <ol class="src">
       <li>IPA「PHPの脆弱性対策について(CVE-2026-109618、CVE-2026-109619:PHP2shell)」 https://www.ipa.go.jp/security/security-alert/2026/alert20261022.html</li>
       <li>CERT-EU「Critical Vulnerabilities in PHP」 https://cert.europa.eu/publications/security-advisories/2026-018</li>
@@ -230,6 +235,10 @@ footer{font-size:13px;color:var(--sub);display:grid;gap:6px}
       <li>technobezz「Cloudflare WAF Adds php2shell Protection for Free and Paid Plans」 https://www.technobezz.com/news/cloudflare-waf-adds-php2shell-protection-across-plans</li>
       <li>Elastic Security Labs「wp2shell WordPress RCE detection」 https://www.elastic.co/security-labs/wp2shell-wordpress-rce-detection-elastic-defend</li>
       <li>ライブドアニュース「不正アクセスで『財産失った』FX取引の利用者から被害の声」 https://news.livedoor.com/article/detail/32641675/</li>
+      <li>SecurityWeek「PHP2Shell Patches Land as First Exploitation Attempts Hit Sensors」 https://www.securityweek.com/php2shell-patches-land-as-first-exploitation-attempts-hit-sensors</li>
+      <li>@IT「PHPの重大脆弱性『php2shell』、パッチ公開まで待てない GMOが示した暫定策と注意点」 https://atmarkit.itmedia.co.jp/ait/articles/2610/21/news072.html</li>
+      <li>SOCRadar「PHP2Shell: CVE-2026-109618 and CVE-2026-109619」 https://socradar.io/blog/php2shell-cve-2026-109618-cve-2026-109619/</li>
+      <li>Unit 42「Threat Brief: Critical Vulnerabilities in PHP(10/23更新)」 https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/</li>
     </ol>
   </section>
 
