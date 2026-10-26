@@ -9,7 +9,7 @@
 {"@type":"Question","name":"9月の日銀の利上げで、変動金利の住宅ローンはすぐ上がりますか?","acceptedAnswer":{"@type":"Answer","text":"すぐではありません。銀行はまず短期プライムレートや住宅ローンの基準金利を改定し、そのあと契約ごとの見直し日に適用金利が変わります。年2回(多くは4月1日・10月1日)見直す契約では、10月1日の時点で反映されていなければ次は2027年4月1日の基準日です。毎月見直す銀行もあります。日付は契約書と銀行のお知らせで確かめてください。"}},
 {"@type":"Question","name":"5年ルールがあれば返済額は増えないので安心ですか?","acceptedAnswer":{"@type":"Answer","text":"返済額は5年ごとにしか変わりませんが、その間も金利が上がれば利息の割合が増え、元金の減りが遅くなります。金利が大きく上がると、毎月の返済額より利息が多くなる未払利息が出ることがあり、125%ルールで返済額が抑えられた分は、最後に残高として残ることがあります。"}},
 {"@type":"Question","name":"契約時の金利の引下げ幅(優遇幅)は変わりますか?","acceptedAnswer":{"@type":"Answer","text":"全期間引下げ型では、ふつう引下げ幅は完済まで変わらず、基準金利が上がった分だけ適用金利が上がります。当初の数年だけ大きく引き下げる型では、その期間が終わると引下げ幅が小さくなります。契約書の金利の欄で確かめてください。"}},
-{"@type":"Question","name":"10月29〜30日の日銀会合で、また利上げされますか?","acceptedAnswer":{"@type":"Answer","text":"10月は据え置きの見通しが多く報じられています(テレ東BIZ、第一生命経済研究所など)。一方で、次の利上げを12月とみる予想もあります(野村證券)。このページでは予想を前提にせず、上げ幅を自分で選んで返済額を計算できるようにしています。"}}
+{"@type":"Question","name":"10月29〜30日の日銀会合で、また利上げされますか?","acceptedAnswer":{"@type":"Answer","text":"10月は1.25%で据え置く公算が大きいと報じられています(日本経済新聞の報道、テレ東BIZ、第一生命経済研究所など。10月26日時点)。一方で、次の利上げを12月とみる予想もあります(野村證券)。このページでは予想を前提にせず、上げ幅を自分で選んで返済額を計算できるようにしています。"}}
 ]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -105,6 +105,8 @@ td{font-family:var(--mono)}
 .offer{margin-top:10px;padding:12px;border-radius:10px;background:var(--soft)}
 details.faq{border-top:1px solid var(--hair);padding:10px 0}
 details.faq summary{cursor:pointer;font-weight:700}
+.share{margin:14px 0 0;font-size:15px;line-height:2}
+.share a{font-weight:700}
 .src{font-size:13px;padding-left:1.3em} .src li{margin:3px 0;word-break:break-all}
 footer.f{font-size:13px;color:var(--sub)}
 @media (max-width:520px){.steps li{grid-template-columns:84px minmax(0,1fr);gap:10px}}
@@ -124,7 +126,7 @@ footer.f{font-size:13px;color:var(--sub)}
       <li>5年ルールがあると返済額はしばらく同じでも、利息の割合が増えて元金が減りにくくなります。</li>
       <li>次の日銀会合は10月29〜30日。据え置きの見方が多い一方、12月の利上げを予想する声もあります。</li>
     </ul>
-    <div class="updated">2026年10月26日 公開 / 計算は元利均等返済・ボーナス返済なしの概算です</div>
+    <div class="updated">2026年10月26日 公開(同日夕方に日付の段を更新) / 計算は元利均等返済・ボーナス返済なしの概算です</div>
     <svg class="stairs" viewBox="0 0 560 220" aria-hidden="true">
     <rect x="0" y="170" width="140" height="50" fill="var(--step1)"/>
     <rect x="140" y="140" width="140" height="80" fill="var(--step2)"/>
@@ -146,8 +148,8 @@ footer.f{font-size:13px;color:var(--sub)}
   <ol class="steps">
     <li><div class="d">6月<span>2026年</span></div><div>日銀が政策金利を<b>1.0%程度</b>へ。大手行は8月3日に短期プライムレートを2.125%→2.375%に上げ、住宅ローンの基準金利も順に上がりました。<span class="tag fact">事実</span></div></li>
     <li><div class="d">9/18<span>木</span></div><div>日銀が政策金利を<b>1.0%→1.25%程度</b>へ(賛成7・反対2)。<span class="tag fact">事実</span></div></li>
-    <li><div class="d">10/1<span>木</span></div><div>10月の住宅ローン金利で、みずほ・りそな・三井住友信託が変動型の基準金利を0.25%上げ、9月に上げた三菱UFJ・三井住友とあわせて<b>大手5行とも年3.375%</b>に(時事通信)。ドコモSMBCネット銀行は短期プライムレートを2.675%→2.925%に改定。<span class="tag fact">事実</span></div></li>
-    <li class="next"><div class="d">10/29–30<span>木・金</span></div><div>日銀の金融政策決定会合。<b>据え置きの見通しが多数</b>(テレ東BIZ、第一生命経済研究所)。野村證券は次の利上げを12月とみています。<span class="tag fc">予想</span></div></li>
+    <li><div class="d">10/1<span>木</span></div><div>10月の住宅ローン金利で、みずほ・りそな・三井住友信託が変動型の基準金利を0.25%上げ、9月に上げた三菱UFJ・三井住友とあわせて<b>大手5行とも年3.375%</b>に(時事通信)。ドコモSMTBネット銀行(8月3日に住信SBIネット銀行から社名変更)は短期プライムレートを2.675%→2.925%に改定。<span class="tag fact">事実</span></div></li>
+    <li class="next"><div class="d">10/29–30<span>木・金</span></div><div>日銀の金融政策決定会合。<b>1.25%で据え置く公算が大きい</b>と報じられています(日本経済新聞の報道として外為どっとコムが10/25に紹介。テレ東BIZ、第一生命経済研究所も同じ見方)。短期金利の市場では据え置きが約97%織り込まれているとの報道もあります(みんかぶ、10/25)。結果は30日に公表されます。野村證券は次の利上げを12月とみています。<span class="tag fc">予想</span></div></li>
     <li class="next"><div class="d">11/2<span>月</span></div><div>三菱UFJ信託銀行が短期プライムレートを<b>2.375%→2.625%</b>に改定(9月18日発表)。ほかの銀行の改定日は各行の発表を確かめてください。<span class="tag fact">事実</span></div></li>
     <li class="next"><div class="d">2027/4/1<span>基準日</span></div><div>適用金利を<b>年2回(4月1日・10月1日)</b>見直す契約で、10月1日に間に合わなかった上げ幅が反映される次の基準日。新しい金利の返済が始まる月は銀行によって違います(6月・7月の返済からなど)。毎月見直す銀行では、これより早く反映されます。</div></li>
   </ol>
@@ -244,8 +246,9 @@ footer.f{font-size:13px;color:var(--sub)}
   <details class="faq"><summary>9月の日銀の利上げで、変動金利の住宅ローンはすぐ上がりますか?</summary><p>すぐではありません。銀行はまず短期プライムレートや住宅ローンの基準金利を改定し、そのあと契約ごとの見直し日に適用金利が変わります。年2回(多くは4月1日・10月1日)見直す契約では、10月1日の時点で反映されていなければ、次は2027年4月1日の基準日です。毎月見直す銀行もあります。</p></details>
   <details class="faq"><summary>5年ルールがあれば返済額は増えないので安心ですか?</summary><p>返済額は5年ごとにしか変わりませんが、その間も金利が上がれば利息の割合が増え、元金の減りが遅くなります。金利が大きく上がると、毎月の返済額より利息が多くなる未払利息が出ることがあり、125%ルールで抑えられた分は最後に残高として残ることがあります。上の計算では、その額も出しています。</p></details>
   <details class="faq"><summary>契約時の金利の引下げ幅(優遇幅)は変わりますか?</summary><p>全期間引下げ型では、ふつう引下げ幅は完済まで変わらず、基準金利が上がった分だけ適用金利が上がります。当初の数年だけ大きく引き下げる型では、その期間が終わると引下げ幅が小さくなります。</p></details>
-  <details class="faq"><summary>10月29〜30日の日銀会合で、また利上げされますか?</summary><p>10月は据え置きの見通しが多く報じられています(テレ東BIZ、第一生命経済研究所など)。一方で、次の利上げを12月とみる予想もあります(野村證券)。このページは予想を前提にせず、上げ幅を自分で選んで計算できるようにしています。会合の結果が出たら、このページの日付の段を更新します。</p></details>
+  <details class="faq"><summary>10月29〜30日の日銀会合で、また利上げされますか?</summary><p>10月は1.25%で据え置く公算が大きいと報じられています(日本経済新聞の報道、テレ東BIZ、第一生命経済研究所など。10月26日時点)。一方で、次の利上げを12月とみる予想もあります(野村證券)。このページは予想を前提にせず、上げ幅を自分で選んで計算できるようにしています。会合の結果が出たら、このページの日付の段を更新します。</p></details>
   <details class="faq"><summary>元金均等返済や固定期間選択型でも使えますか?</summary><p>このページの計算は元利均等返済の変動金利向けです。5年ルール・125%ルールは元利均等返済の変動金利に付くもので、元金均等返済や固定期間選択型にはふつうありません。固定期間選択型は、固定期間が終わるときの金利で返済額が決まります。</p></details>
+<p class="share">10/30の日銀会合の結果が出たら、このページの日付の段を直します。家族と返済の話をするときに: <a href="https://twitter.com/intent/tweet?text=%E5%A4%89%E5%8B%95%E9%87%91%E5%88%A9%20%E8%BF%94%E6%B8%88%E3%81%AE%E9%9A%8E%E6%AE%B5%202026%7C9%E6%9C%88%E3%81%AE%E5%88%A9%E4%B8%8A%E3%81%92%E3%81%A7%E4%BD%8F%E5%AE%85%E3%83%AD%E3%83%BC%E3%83%B3%E3%81%AE%E8%BF%94%E6%B8%88%E3%81%AF%E3%81%84%E3%81%A4%E3%83%BB%E3%81%84%E3%81%8F%E3%82%89%E5%A2%97%E3%81%88%E3%82%8B%E3%81%8B%285%E5%B9%B4%E3%83%AB%E3%83%BC%E3%83%AB%E3%83%BB125%25%E3%83%AB%E3%83%BC%E3%83%AB%E5%AF%BE%E5%BF%9C%29&amp;url=https%3A%2F%2Falternativestudio2021-collab.github.io%2Fdaily-launch-sites%2Fday014-hendo-kinri%2F" target="_blank" rel="noopener">Xで送る</a> ・ <a href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Falternativestudio2021-collab.github.io%2Fdaily-launch-sites%2Fday014-hendo-kinri%2F" target="_blank" rel="noopener">LINEで送る</a> ・ <a href="../day008-furusato-masu/">ふるさと納税 上限の升 2026</a> ・ <a href="../day006-nencho-kazoku/">年末調整 家族の欄ナビ 2026</a> ・ <a href="../">ほかの道具を見る</a></p>
 </section>
 
 <section class="panel" aria-labelledby="h-src">
@@ -254,13 +257,16 @@ footer.f{font-size:13px;color:var(--sub)}
     <li>共同通信(熊本日日新聞)「日銀利上げ、1・25%に ペース最短3カ月に加速」 <a href="https://kumanichi.com/articles/2037289">kumanichi.com/articles/2037289</a></li>
     <li>秋田魁新報「日銀、1・0%程度政策金利維持 6月利上げの影響見極め」(2026/7/31) <a href="https://www.sakigake.jp/news/article/20260731CO0087/">sakigake.jp</a></li>
     <li>三菱UFJ信託銀行「円普通預金金利及び短期プライムレートの改定について」(2026/9/18) <a href="https://www.tr.mufg.jp/ippan/release/pdf_mutb/260918_1.pdf">tr.mufg.jp/ippan/release/pdf_mutb/260918_1.pdf</a></li>
-    <li>ドコモSMBCネット銀行 プレスリリース(2026/9/18) <a href="https://www.netbk.co.jp/contents/company/press/2026/0918_006377.html">netbk.co.jp/contents/company/press/2026/0918_006377.html</a></li>
+    <li>ドコモSMTBネット銀行(旧・住信SBIネット銀行) プレスリリース(2026/9/18) <a href="https://www.netbk.co.jp/contents/company/press/2026/0918_006377.html">netbk.co.jp/contents/company/press/2026/0918_006377.html</a></li>
     <li>三菱UFJ銀行 ニュースリリース(2026/6/16、短期プライムレート8/3改定) <a href="https://www.bk.mufg.jp/news/news2026/pdf/news0616.pdf">bk.mufg.jp/news/news2026/pdf/news0616.pdf</a></li>
     <li>みずほ銀行 ニュースリリース(2026/6/16) <a href="https://www.mizuhobank.co.jp/release/pdf/20260616release_jp.pdf">mizuhobank.co.jp/release/pdf/20260616release_jp.pdf</a></li>
     <li>時事通信「変動金利、3行引き上げ 固定は全行引き上げ―10月住宅ローン」(2026/9/30) <a href="https://www.jiji.com/jc/article?k=2026093001014&amp;g=eco">jiji.com</a></li>
     <li>BUSINESS INSIDER JAPAN「主要銀行の『住宅ローン』、2026年10月の金利はどうなった?」 <a href="https://news.yahoo.co.jp/articles/2c2e95894bde84d7b3e047c6434d698c26734232">news.yahoo.co.jp</a></li>
     <li>テレ東BIZ「10月利上げ見送りへ 日銀 影響見極め」 <a href="https://txbiz.tv-tokyo.co.jp/wbs/news/post_351067">txbiz.tv-tokyo.co.jp/wbs/news/post_351067</a></li>
     <li>第一生命経済研究所「10月の金融政策決定会合は利上げ見送りへ」 <a href="https://www.dlri.co.jp/report/macro/666536.html">dlri.co.jp/report/macro/666536.html</a></li>
+    <li>外為どっとコム マネ育チャンネル「来週のドル円相場はどうなる?10/26週のイベント予定」(2026/10/25、日本経済新聞の報道を紹介) <a href="https://gaitame.com/media/entry/2026/10/25/070000_1">gaitame.com/media/entry/2026/10/25/070000_1</a></li>
+    <li>みんかぶ「【中銀チェック】日銀も据え置き、展望レポートは物価見通しの上方修正へ」(2026/10/25) <a href="https://fx.minkabu.jp/news/382530">fx.minkabu.jp/news/382530</a></li>
+    <li>ドコモSMTBネット銀行・NTTドコモ・三井住友信託銀行「商号の変更について」(2025/12/19) <a href="https://www.netbk.co.jp/contents/company/press/2025/1219_004783.html">netbk.co.jp/contents/company/press/2025/1219_004783.html</a></li>
     <li>野村證券 森田京平「利上げ時期を12月に前倒し」 <a href="https://www.nomura.co.jp/wealthstyle/article/0886/">nomura.co.jp/wealthstyle/article/0886/</a></li>
     <li>日本銀行 公表予定(金融政策決定会合の日程) <a href="https://www.boj.or.jp/announcements/calendar/index.htm">boj.or.jp/announcements/calendar/</a></li>
     <li>SBI新生銀行「5年ルール・125%ルールとは」 <a href="https://www.sbishinseibank.co.jp/retail/housing/column/vol72.html">sbishinseibank.co.jp/retail/housing/column/vol72.html</a></li>
