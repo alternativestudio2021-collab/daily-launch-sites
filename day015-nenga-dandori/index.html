@@ -8,8 +8,9 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"2027年用の年賀状はいつから出せますか?","acceptedAnswer":{"@type":"Answer","text":"年賀状としての受付(引受)は2026年12月20日(日)からです。前の年(2026年用)は12月15日からでした。12月19日までにポストに入れると、ふつうの郵便として年内に届いてしまいます。"}},
 {"@type":"Question","name":"元日に届けるには、いつまでに出せばいいですか?","acceptedAnswer":{"@type":"Answer","text":"日本郵便の案内では、12月20日から12月27日(日)までの投函が目安です(一部地域を除く)。27日でもポストの最終集荷のあとだと翌日の扱いになるので、集荷時刻までに入れるか郵便局の窓口へ持ち込みます。"}},
-{"@type":"Question","name":"年賀はがきはいくらですか?","acceptedAnswer":{"@type":"Answer","text":"無地とインクジェット紙は1枚85円です。寄付金付の絵入りは1枚につき5円の寄付金が上乗せされます。販売は2026年11月2日(月)9時から2027年1月15日(金)までです。"}},
+{"@type":"Question","name":"年賀はがきはいくらですか?","acceptedAnswer":{"@type":"Answer","text":"無地とインクジェット紙は1枚85円です。寄付金付の絵入りは1枚につき5円の寄付金が上乗せされます。一部の地域では、企業の広告が入った広告付(1枚80円)も売られます。販売は2026年11月2日(月)9時から2027年1月15日(金)までです。"}},
 {"@type":"Question","name":"年賀状じまいは、どう書けば失礼になりませんか?","acceptedAnswer":{"@type":"Answer","text":"新年のあいさつ、年賀状を今年で終える一言、これまでのお礼、今後もお付き合いを続けたい気持ち、必要なら新しい連絡手段、の順にすると角が立ちにくいとされます。相手によって送る・送らないを分けてもかまいません。"}},
+{"@type":"Question","name":"お年玉くじの抽せん日と賞品は?","acceptedAnswer":{"@type":"Answer","text":"抽せんは2027年1月25日(月)です。1等は現金30万円、2等は賞品カタログギフト、3等はお年玉切手シート。当せんしたはがきはくじ番号の部分を切り取らずに郵便局へ持っていき、1月26日(火)から7月26日(月)までに引き換えます。前の年と違い、1等は現金だけになりました。"}},
 {"@type":"Question","name":"喪中のときや、松の内を過ぎたときは?","acceptedAnswer":{"@type":"Answer","text":"喪中はがき(年賀欠礼)は、相手が年賀状の準備を始める前、11月中から遅くとも12月初めに届くように出すのが一般的です。松の内(多くは1月7日、関西などは1月15日)を過ぎたら、年賀状ではなく寒中見舞いとして出します。"}}
 ]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -151,6 +152,7 @@ footer{margin-top:48px;font-size:13px;color:var(--sub);border-top:1px solid var(
       <div class="radios" role="radiogroup">
         <label><input type="radio" name="kind" value="85" checked>無地・インクジェット紙 85円</label>
         <label><input type="radio" name="kind" value="90">寄付金付の絵入り 90円</label>
+        <label><input type="radio" name="kind" value="80">広告付 80円(一部の地域だけで販売)</label>
       </div>
       <div class="row">
         <div><label for="pace">1日に書ける枚数<span class="hint">宛名と一言まで仕上げる枚数</span></label><input type="number" id="pace" min="1" max="500" value="8" inputmode="numeric"></div>
@@ -170,7 +172,7 @@ footer{margin-top:48px;font-size:13px;color:var(--sub);border-top:1px solid var(
         <dt>書き始める日</dt><dd id="oStart">-</dd>
       </dl>
       <div class="verdict" id="oVerdict"></div>
-      <p class="note" style="margin-top:10px">切手代とはがき代は一体(85円に郵便料金を含む)。印刷を頼む場合は、注文の締切が投函より前になるので、各社の締切を先に確かめてください。</p>
+      <p class="note" style="margin-top:10px">切手代とはがき代は一体(85円などの額面に郵便料金を含む)。印刷を頼む場合は、注文の締切が投函より前になるので、各社の締切を先に確かめてください。</p>
       <!-- PR枠: 年賀状印刷(楽天アフィリエイト)の公式コードが届いたら、ここに「PR」表記付きで改変せず貼る。owner_actions rakuten-nenga-day015 -->
     </div>
   </div>
@@ -219,8 +221,9 @@ footer{margin-top:48px;font-size:13px;color:var(--sub);border-top:1px solid var(
   <h2><span class="num">5</span>よくある質問</h2>
   <details><summary>2027年用の年賀状はいつから出せますか?</summary><p>年賀状としての受付(引受)は2026年12月20日(日)からです。前の年(2026年用)は12月15日からでした。12月19日までにポストに入れると、ふつうの郵便として年内に届いてしまいます。</p></details>
   <details><summary>元日に届けるには、いつまでに出せばいいですか?</summary><p>日本郵便の案内では、12月20日から12月27日(日)までの投函が目安です(一部地域を除く)。27日でもポストの最終集荷のあとだと翌日の扱いになるので、集荷時刻までに入れるか郵便局の窓口へ持ち込みます。</p></details>
-  <details><summary>年賀はがきはいくらですか?</summary><p>無地とインクジェット紙は1枚85円です。寄付金付の絵入りは1枚につき5円の寄付金が上乗せされます。販売は2026年11月2日(月)9時から2027年1月15日(金)までです。</p></details>
+  <details><summary>年賀はがきはいくらですか?</summary><p>無地とインクジェット紙は1枚85円です。寄付金付の絵入りは1枚につき5円の寄付金が上乗せされます。一部の地域では、企業の広告が入った広告付(1枚80円)も売られます。販売は2026年11月2日(月)9時から2027年1月15日(金)までです。</p></details>
   <details><summary>年賀状じまいは、どう書けば失礼になりませんか?</summary><p>新年のあいさつ、年賀状を今年で終える一言、これまでのお礼、今後もお付き合いを続けたい気持ち、必要なら新しい連絡手段、の順にすると角が立ちにくいとされます。相手によって送る・送らないを分けてもかまいません。</p></details>
+  <details><summary>お年玉くじの抽せん日と賞品は?</summary><p>抽せんは2027年1月25日(月)です。1等は現金30万円、2等は賞品カタログギフト、3等はお年玉切手シート。当せんしたはがきはくじ番号の部分を切り取らずに郵便局へ持っていき、1月26日(火)から7月26日(月)までに引き換えます。前の年と違い、1等は現金だけになりました。届いた年賀状は、引換期限まで捨てずに取っておいてください。</p></details>
   <details><summary>喪中のときや、松の内を過ぎたときは?</summary><p>喪中はがき(年賀欠礼)は、相手が年賀状の準備を始める前、11月中から遅くとも12月初めに届くように出すのが一般的です。松の内(多くは1月7日、関西などは1月15日)を過ぎたら、年賀状ではなく寒中見舞いとして出します。</p></details>
   <div class="share">
     <a class="btn ghost" id="shX" target="_blank" rel="noopener">Xで共有</a>
@@ -240,6 +243,8 @@ footer{margin-top:48px;font-size:13px;color:var(--sub);border-top:1px solid var(
     <li>KADOKAWA「日本の伝統美 和の年賀状 2027」(年賀状じまい文例を収録) https://www.kadokawa.co.jp/product/322605000719/</li>
     <li>オリコン ニュースリリース 日本ホールマーク 2027年年賀関連新商品(年賀状じまいシール) https://www.oricon.co.jp/pressrelease/2969293/</li>
     <li>All About 喪中はがきを出す時期 https://allabout.co.jp/gm/gc/489600/</li>
+    <li>日本郵便 別紙4 2027(令和9)年用年賀はがき・寄付金付年賀郵便切手のお年玉賞品(PDF) https://files.japanpost.jp/assets/34d9d11432734cfaa759e78fe395b688/c0c0efeb4555437cb25da56f67ba30d2/20260831_02_09.pdf</li>
+    <li>オリコンニュース「日本郵便、2027年「年賀はがき」概要を発表 変更点/デザイン/お年玉賞品など明らかに」 https://www.oricon.co.jp/news/2477509/full/</li>
   </ol>
   <p class="note">2026年10月27日時点で確認した内容です。地域や配達状況で変わることがあるので、最終的には日本郵便と最寄りの郵便局の案内で確かめてください。文例は一般的な書き方の例で、特定の作法を保証するものではありません。</p>
 </section>
@@ -270,7 +275,9 @@ footer{margin-top:48px;font-size:13px;color:var(--sub);border-top:1px solid var(
     {d:D(2026,12,27),t:'元日に届く投函の目安の最終日(前の年は12月25日)',key:1},
     {d:D(2027,1,1),t:'元日'},
     {d:D(2027,1,7),t:'松の内(多くの地域)。過ぎたら寒中見舞い'},
-    {d:D(2027,1,15),t:'年賀はがきの販売終了。関西などの松の内'}
+    {d:D(2027,1,15),t:'年賀はがきの販売終了。関西などの松の内'},
+    {d:D(2027,1,25),t:'お年玉くじの抽せん'},
+    {d:D(2027,1,26),t:'当せん品の引き換え開始(7月26日まで、郵便局で)'}
   ];
   var dleft=diff(today,D(2026,12,27));
   $('today').innerHTML='今日は'+fmt(today)+'。元日に届く投函の目安(12月27日)まで <b>'+(dleft>=0?'あと'+dleft+'日':'過ぎています')+'</b>。';
