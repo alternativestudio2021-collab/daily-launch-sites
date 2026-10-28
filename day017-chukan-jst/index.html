@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>米中間選挙2026 日本時間の開票時計|州ごとの投票締切は11月4日(水)朝8時〜午後3時、結果はいつわかる</title>
+<meta name="description" content="2026年米中間選挙(現地11月3日)の投票締切を、州ごとに日本時間で並べました。最初の締切は日本時間11月4日(水)午前8時、最後はアラスカの午後3時。時刻を動かすと、その時点で締め切った州と、接戦とされる上院選・知事選が開票に入ったかがわかります。アラスカの順位付け集計(11/18)やジョージアの決選投票(12/1)など、すぐに決まらない日程も。">
+<link rel="canonical" href="https://alternativestudio2021-collab.github.io/daily-launch-sites/day017-chukan-jst/">
+<meta property="og:type" content="website"><meta property="og:title" content="米中間選挙2026 日本時間の開票時計"><meta property="og:description" content="投票締切は日本時間11月4日(水)朝8時〜午後3時。州ごとの締切と、すぐに決まらない日程を日本時間で。">
+<meta property="og:url" content="https://alternativestudio2021-collab.github.io/daily-launch-sites/day017-chukan-jst/"><meta property="og:locale" content="ja_JP"><meta property="og:site_name" content="毎日ひとつの小さな道具箱"><meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;700;900&family=DotGothic16&family=Space+Mono:wght@400;700&display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"米中間選挙の結果は日本時間でいつわかりますか?","acceptedAnswer":{"@type":"Answer","text":"投票日は現地11月3日(火)です。投票の締切は州によって違い、日本時間では11月4日(水)午前8時(インディアナ州・ケンタッキー州の東部)から午後3時(アラスカ州のアリューシャン列島)までです。締切直後に当選確実が出る州もありますが、接戦の州や郵便投票の多い州は数日から数週間かかります。"}},
+{"@type":"Question","name":"アメリカとの時差は何時間ですか?","acceptedAnswer":{"@type":"Answer","text":"アメリカは2026年11月1日(日)に夏時間が終わるので、投票日の11月3日は標準時です。日本時間は東部時間より14時間、中部時間より15時間、山岳部時間より16時間、太平洋時間より17時間進んでいます。"}},
+{"@type":"Question","name":"何議席が改選されますか?","acceptedAnswer":{"@type":"Answer","text":"下院は435議席すべて、上院は100議席のうち35議席(定期の33議席と、ヴァンス氏・ルビオ氏の後任を決める特別選挙2議席)、知事は36州です。"}},
+{"@type":"Question","name":"投票日のあとに決まるものは?","acceptedAnswer":{"@type":"Answer","text":"ジョージア州は過半数を取った候補がいないと、上位2人による決選投票が12月1日(現地)にあります。アラスカ州とメイン州は順位付け投票で、1回目で過半数がいないと集計が続きます(アラスカの順位付け集計は11月18日に始まるとされています)。カリフォルニア州は投票日の消印があり7日以内に届いた郵便投票を数えるので、確定は12月になります。新しい議会は2027年1月3日(現地)に始まります。"}}
+]}</script>
+<style>
+/* Layout: 夜の発車標をモチーフに、日本時間の時刻を大きく。上に今の時刻と残り、中央に時刻のつまみと締め切った州、下に州の表とあとから決まる日程 */
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#eef0f3; --paper:#ffffff; --ink:#151a24; --sub:#5a6273; --rule:#d5d9e1;
+  --board:#10141d; --board-ink:#f2c14e; --board-dim:#6e6446; --board-line:#262c3a;
+  --lamp:#f2c14e; --lamp-soft:#fbf0cf; --wait:#8a93a6; --hot:#c4512c; --hot-soft:#f7e1d8;
+  --f-disp:"M PLUS 1","Hiragino Sans","Noto Sans JP",sans-serif;
+  --f-dot:"DotGothic16","M PLUS 1",monospace;
+  --f-num:"Space Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0b0e14; --paper:#141924; --ink:#e7eaf0; --sub:#9aa3b5; --rule:#2a3141;
+  --board:#06080c; --board-ink:#f6cd63; --board-dim:#5d553c; --board-line:#1f2532;
+  --lamp:#f6cd63; --lamp-soft:#2f2914; --wait:#6c7488; --hot:#ef8a62; --hot-soft:#3a2219; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0b0e14; --paper:#141924; --ink:#e7eaf0; --sub:#9aa3b5; --rule:#2a3141;
+  --board:#06080c; --board-ink:#f6cd63; --board-dim:#5d553c; --board-line:#1f2532;
+  --lamp:#f6cd63; --lamp-soft:#2f2914; --wait:#6c7488; --hot:#ef8a62; --hot-soft:#3a2219; color-scheme:dark}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-disp);line-height:1.75;font-size:16px}
+.wrap{max-width:900px;margin:0 auto;padding-inline:16px;padding-block:28px 64px;display:grid;gap:28px}
+a{color:inherit}
+.board{background:var(--board);color:var(--board-ink);border-radius:10px;padding:22px 20px 20px;display:grid;gap:14px;box-shadow:inset 0 0 0 1px var(--board-line)}
+.eyebrow{font-family:var(--f-num);font-size:12px;letter-spacing:.14em;color:var(--board-dim)}
+h1{margin:0;font-family:var(--f-dot);font-weight:400;font-size:clamp(26px,5.6vw,44px);line-height:1.25;letter-spacing:.02em;text-wrap:balance}
+.lede{margin:0;color:#d9dbe2;font-size:15px;max-width:44em}
+.flaps{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.flap{border:1px solid var(--board-line);border-radius:6px;padding:10px 12px;display:grid;gap:2px;background:#0000}
+.flap b{font-family:var(--f-dot);font-weight:400;font-size:clamp(22px,4.2vw,30px);line-height:1.15}
+.flap span{font-size:12px;color:#aeb3c0}
+.now{font-family:var(--f-num);font-size:13px;color:#aeb3c0}
+.now b{color:var(--board-ink);font-weight:700}
+h2{font-size:clamp(19px,3.2vw,24px);margin:0;font-weight:900;line-height:1.4}
+section{display:grid;gap:14px}
+.card{background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:18px}
+.dial{display:grid;gap:12px}
+.dial-top{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 16px}
+.dial-time{font-family:var(--f-dot);font-size:clamp(36px,8vw,56px);line-height:1}
+.dial-day{font-size:14px;color:var(--sub)}
+input[type=range]{width:100%;accent-color:var(--hot);height:28px}
+.ticks{display:flex;justify-content:space-between;font-family:var(--f-num);font-size:11px;color:var(--sub)}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+button{font:inherit;font-size:14px;border:1px solid var(--rule);background:var(--paper);color:var(--ink);border-radius:99px;padding:6px 14px;cursor:pointer;min-height:36px}
+button[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--hot);outline-offset:2px}
+.meter{display:grid;grid-template-columns:repeat(51,1fr);gap:2px}
+.meter i{display:block;height:14px;border-radius:2px;background:var(--rule)}
+.meter i.on{background:var(--lamp)}
+.meter i.part{background:linear-gradient(90deg,var(--lamp) 50%,var(--rule) 50%)}
+.sum{font-size:15px}
+.sum b{font-family:var(--f-num)}
+.races{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px;margin:0;padding:0;list-style:none}
+.races li{border:1px solid var(--rule);border-radius:8px;padding:8px 10px;font-size:14px;display:grid;gap:2px}
+.races li .st{font-weight:700}
+.races li .tm{font-family:var(--f-num);font-size:12px;color:var(--sub)}
+.races li.open{border-color:var(--lamp);background:var(--lamp-soft)}
+.races li.open .badge{color:var(--ink)}
+.badge{font-size:12px;color:var(--wait)}
+.tablewrap{overflow-x:auto;border:1px solid var(--rule);border-radius:10px;background:var(--paper)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:14px}
+th,td{padding:8px 10px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+th{font-size:12px;color:var(--sub);font-weight:700;position:sticky;top:0;background:var(--paper)}
+td.t{font-family:var(--f-num);white-space:nowrap}
+tr.closed td.t:first-of-type{color:var(--ink)}
+tr.closed td.t b::before{content:"● ";color:var(--lamp)}
+tr:not(.closed) td.t b::before{content:"○ ";color:var(--wait)}
+tr.hot td.n{font-weight:700}
+.tag{display:inline-block;font-size:11px;border:1px solid var(--rule);border-radius:4px;padding:0 5px;margin:1px 2px 1px 0;white-space:nowrap}
+.tag.r{border-color:var(--hot);color:var(--hot)}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.later{list-style:none;margin:0;padding:0;display:grid;gap:0;border-left:3px solid var(--rule);margin-left:6px}
+.later li{position:relative;padding:4px 0 14px 20px}
+.later li::before{content:"";position:absolute;left:-8px;top:10px;width:13px;height:13px;border-radius:50%;background:var(--paper);border:3px solid var(--hot)}
+.later .d{font-family:var(--f-num);font-weight:700;display:block}
+.later p{margin:0;color:var(--sub);font-size:14px}
+.note{font-size:14px;color:var(--sub);margin:0}
+.callout{border-left:4px solid var(--hot);background:var(--hot-soft);padding:10px 14px;border-radius:0 8px 8px 0;font-size:14px}
+details{border-top:1px solid var(--rule);padding:10px 0}
+summary{cursor:pointer;font-weight:700}
+details p{margin:8px 0 0;color:var(--sub);font-size:15px}
+.src ol{margin:0;padding-left:1.4em;display:grid;gap:4px;word-break:break-all;font-size:13px;color:var(--sub)}
+.share{display:flex;flex-wrap:wrap;gap:8px}
+.share a{font-size:14px;border:1px solid var(--rule);border-radius:99px;padding:6px 14px;text-decoration:none;background:var(--paper)}
+footer{font-size:12px;color:var(--sub);display:grid;gap:6px}
+footer a{color:var(--sub)}
+@media (max-width:520px){.board{padding:18px 14px}.card{padding:14px}.meter i{height:10px}}
+</style>
+</head><body>
+<div class="wrap">
+
+<header class="board">
+  <div class="eyebrow">DAY 017 ・ US MIDTERMS 2026 ・ JST</div>
+  <h1>米中間選挙2026 日本時間の開票時計</h1>
+  <p class="lede">現地11月3日(火)の投票は、日本では11月4日(水)の朝から昼過ぎにかけて州ごとに締め切られます。アメリカは11月1日に夏時間が終わるので、東部との時差は14時間です。締切の時刻を日本時間に直して並べ、時刻を動かすとその時点で開票に入った州がわかるようにしました。</p>
+  <div class="flaps">
+    <div class="flap"><span>最初の締切</span><b>11/4 08:00</b><span>インディアナ・ケンタッキーの東部</span></div>
+    <div class="flap"><span>東部の主な州</span><b>09:00〜10:00</b><span>ジョージア・ペンシルベニアなど</span></div>
+    <div class="flap"><span>西海岸</span><b>13:00</b><span>カリフォルニア・ワシントン</span></div>
+    <div class="flap"><span>最後の締切</span><b>15:00</b><span>アラスカのアリューシャン列島</span></div>
+  </div>
+  <div class="now" id="now" aria-live="polite"></div>
+</header>
+
+<section aria-labelledby="h-dial">
+  <h2 id="h-dial">日本時間の何時に、どこまで締め切っているか</h2>
+  <div class="card dial">
+    <div class="dial-top">
+      <span class="dial-time" id="dialTime">10:00</span>
+      <span class="dial-day" id="dialDay">2026年11月4日(水) 日本時間</span>
+    </div>
+    <label for="slider" class="note">つまみを動かすと、その時刻に投票を締め切った州が数えられます(15分きざみ)</label>
+    <input type="range" id="slider" min="0" max="32" step="1" value="8" aria-describedby="dialDay">
+    <div class="ticks" aria-hidden="true"><span>7:00</span><span>9:00</span><span>11:00</span><span>13:00</span><span>15:00</span></div>
+    <div class="btns" role="group" aria-label="よく見る時刻">
+      <button type="button" data-t="4">8:00 最初</button>
+      <button type="button" data-t="8">9:00 始業</button>
+      <button type="button" data-t="12">10:00</button>
+      <button type="button" data-t="20">12:00 昼休み</button>
+      <button type="button" data-t="24">13:00</button>
+      <button type="button" data-t="32">15:00 全部</button>
+      <button type="button" id="followNow" aria-pressed="false">今の時刻にあわせる</button>
+    </div>
+    <div class="meter" id="meter" role="img" aria-label="締め切った州の数"></div>
+    <p class="sum" id="sum"></p>
+  </div>
+  <h3 style="margin:0;font-size:16px">接戦・注目とされる上院選(Cook Political Report 10/20時点の評価)</h3>
+  <ul class="races" id="races"></ul>
+  <p class="note">評価は選挙分析サイト Cook Political Report の10月20日時点のもので、どちらが勝つかの予想ではありません。他の分析機関では評価が違う州もあります。「開票中」は投票の締切を過ぎたという意味で、結果が出たという意味ではありません。</p>
+</section>
+
+<section aria-labelledby="h-table">
+  <h2 id="h-table">州ごとの投票締切(日本時間 11月4日)</h2>
+  <div class="filters" role="group" aria-label="表の絞り込み">
+    <button type="button" data-f="all" aria-pressed="true">50州+DC</button>
+    <button type="button" data-f="sen" aria-pressed="false">上院選がある州(35)</button>
+    <button type="button" data-f="gov" aria-pressed="false">知事選がある州(36)</button>
+    <button type="button" data-f="hot" aria-pressed="false">接戦の上院選</button>
+  </div>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>州</th><th>日本時間の締切</th><th>現地の締切</th><th>改選</th></tr></thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+  <p class="note">● はつまみの時刻までに締め切った州。州内で時間帯が分かれる州は、早い地域と遅い地域の2つを書いています。オレゴン州は郵便投票の州で、時刻は投票用紙の提出の締切です。時刻は複数の報道・選挙情報サイトの一覧をもとにした目安で、投票所に並んでいる人は締切後も投票できる州があります。正確な時刻は各州の選挙管理当局の案内でお確かめください。</p>
+</section>
+
+<section aria-labelledby="h-later">
+  <h2 id="h-later">その日に決まらないもの(日本時間)</h2>
+  <div class="callout">議会の多数派が投票日の夜(日本の4日昼)に決まらないことはよくあります。接戦の州は郵便投票や不在者投票を数え終えるまで当選確実が出ず、数日かかることがあります。</div>
+  <ol class="later">
+    <li><span class="d">11月4日(水) 8:00〜15:00</span><p>各州の投票締切。締切直後に当選確実が出る州もあれば、夜まで、あるいは数日かかる州もあります。</p></li>
+    <li><span class="d">11月10日ごろ〜12月18日</span><p>各州が結果を正式に確定(認定)する期間。州によって日付が違います。</p></li>
+    <li><span class="d">11月18日(水)ごろ</span><p>アラスカ州の順位付け投票の集計。1回目で過半数の候補がいないと、この日以降の集計で決まります。上院選(サリバン氏とペルトラ氏)は接戦とされています。</p></li>
+    <li><span class="d">数日〜</span><p>メイン州も連邦の選挙は順位付け投票で、1回目で過半数がいないと集計が延びます。上院選(コリンズ氏)は接戦とされています。</p></li>
+    <li><span class="d">12月2日(水) 朝</span><p>ジョージア州の決選投票(現地12月1日)。過半数を取った候補がいない選挙は、上位2人で決め直します。</p></li>
+    <li><span class="d">12月12日(土)ごろ</span><p>カリフォルニア州の州としての確定(現地12月11日の予定)。投票日の消印があり7日以内に届いた郵便投票まで数えるため、下院の接戦区は時間がかかります。</p></li>
+    <li><span class="d">2027年1月4日(月) 午前2時</span><p>新しい議会の始まり(憲法で定められた現地1月3日正午)。</p></li>
+  </ol>
+  <div class="btns"><button type="button" id="ics">主な時刻をカレンダーに入れる(.ics)</button></div>
+  <p class="note">カレンダーには、最初の締切(4日8:00)、東部の主な締切(9:00)、西海岸(13:00)、最後の締切(15:00)、アラスカの集計(11/18)、ジョージアの決選投票の締切(12/2 9:00)、新議会(1/4 2:00)が入ります。</p>
+</section>
+
+<section aria-labelledby="h-num">
+  <h2 id="h-num">何を選ぶ選挙か</h2>
+  <div class="card" style="display:grid;gap:8px">
+    <p style="margin:0"><b>下院</b> 435議席すべて(任期2年)。<b>上院</b> 100議席のうち35議席(定期改選33と、副大統領になったヴァンス氏・国務長官になったルビオ氏の後任を決めるオハイオ州とフロリダ州の特別選挙)。<b>知事</b> 36州。</p>
+    <p class="note">選挙前の上院は共和党53・民主党45・無所属2(民主党と会派を組む)と集計されており、民主党が多数を取るには差し引き4議席を増やす必要があるとされています。議席数は欠員などで変わることがあります。</p>
+  </div>
+</section>
+
+<section aria-labelledby="h-faq">
+  <h2 id="h-faq">よくある質問</h2>
+  <div>
+    <details><summary>日本のニュースで「当選確実」が出るのはいつ?</summary><p>アメリカの報道機関(AP通信など)が、開票の進み方と出口調査から当選確実を出すのが一般的です。差が大きい州は締切の直後に出ることがあり、日本時間の4日朝9時台からぽつぽつ出始めます。接戦の州は郵便投票を数え終えるまで出ません。</p></details>
+    <details><summary>11月3日は日本の祝日ですが、投票はいつ始まっていますか?</summary><p>東部の多くの州で投票所が開くのは現地の午前6〜7時ごろで、日本時間では3日(文化の日)の夜8〜9時ごろです。期日前投票や郵便投票はそれより前から始まっています。</p></details>
+    <details><summary>時差を自分で計算するには?</summary><p>11月1日に夏時間が終わったあとは、日本時間=東部時間+14時間、中部時間+15時間、山岳部時間+16時間、太平洋時間+17時間です。アリゾナ州はもともと夏時間を使わないので、11月は山岳部時間と同じです。ハワイ州は+19時間です。</p></details>
+    <details><summary>表の時刻と、ニュースで見た時刻が違います</summary><p>州の一部だけ時間帯が違う州(フロリダ州の西部、テキサス州のエルパソ周辺、ミシガン州の北部など)は、早い地域の締切と最後の締切が1時間ずれます。この表では両方を書いています。締切時刻に投票所に並んでいる人は投票できるため、実際の開票の始まりは少し遅れることがあります。</p></details>
+  </div>
+</section>
+
+<section aria-labelledby="h-share">
+  <h2 id="h-share">共有</h2>
+  <div class="share"><a id="shX" href="#" target="_blank" rel="noopener">Xで共有</a><a id="shLine" href="#" target="_blank" rel="noopener">LINEで送る</a></div>
+</section>
+
+<section class="src" aria-labelledby="h-src">
+  <h2 id="h-src">出典(2026年10月29日に確認)</h2>
+  <ol>
+    <li>The Hill「2026 midterm elections: When polls close; when results are expected」 https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results/</li>
+    <li>270toWin「2026 Election Poll Closing Times」 https://www.270towin.com/poll-closing-times/</li>
+    <li>Ballotpedia「State Poll Opening and Closing Times (2026)」 https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)</li>
+    <li>Cook Political Report「2026 CPR Senate Race Ratings」 https://www.cookpolitical.com/ratings/senate-race-ratings</li>
+    <li>CNN「Cook Political Report shifts two races toward Democrats and one toward Republicans」(2026年10月20日) https://www.cnn.com/2026/10/20/politics/live-news/midterm-election-congress</li>
+    <li>The Washington Post「Three Senate races shift toward Democrats in Cook ratings」(2026年10月6日) https://www.washingtonpost.com/politics/2026/10/06/three-senate-races-shift-toward-democrats-cook-ratings/</li>
+    <li>Wikipedia「2026 United States Senate elections」 https://en.wikipedia.org/wiki/2026_United_States_Senate_elections</li>
+    <li>Wikipedia「2026 United States gubernatorial elections」 https://en.wikipedia.org/wiki/2026_United_States_gubernatorial_elections</li>
+    <li>Al Jazeera「US midterms 2026: All you need to know in maps and charts」(2026年10月26日) https://www.aljazeera.com/news/2026/10/26/us-midterm-elections-2026-in-maps-and-charts</li>
+    <li>Congress Countdown「When Will We Know the 2026 Election Results? State-by-State Guide」 https://www.congresscountdown.com/info/when-will-we-know-election-results</li>
+    <li>Bipartisan Policy Center「The 2026 Midterms: Key Dates and Events」 https://bipartisanpolicy.org/article/the-2026-midterms-key-dates-and-events/</li>
+    <li>ジェトロ「2026年米国中間選挙」特集 https://www.jetro.go.jp/biznews/feature/usmidterm2026.html</li>
+  </ol>
+</section>
+
+<footer>
+  <div>公開資料をもとにした情報提供です。特定の政党・候補者を支持するものではありません。時刻と日程は変わることがあるので、各州の選挙管理当局と報道でお確かめください。</div>
+  <div>2026年10月29日公開 ・ <a href="../">毎日ひとつの小さな道具箱</a></div>
+</footer>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  function $(id){return document.getElementById(id)}
+  // [略称, 州名, 早い地域の締切(東部時間・11/3の時), 最後の締切(同), 上院, 知事, 現地の締切, 補足]
+  var S=[
+    ['AL','アラバマ',20,20,1,1,'19:00(中部)'],
+    ['AK','アラスカ',24,25,1,1,'20:00(アラスカ)、アリューシャン列島 20:00(ハワイ・アリューシャン)'],
+    ['AZ','アリゾナ',21,21,0,1,'19:00(山岳部)'],
+    ['AR','アーカンソー',20.5,20.5,1,1,'19:30(中部)'],
+    ['CA','カリフォルニア',23,23,0,1,'20:00(太平洋)'],
+    ['CO','コロラド',21,21,1,1,'19:00(山岳部)'],
+    ['CT','コネチカット',20,20,0,1,'20:00(東部)'],
+    ['DE','デラウェア',20,20,1,0,'20:00(東部)'],
+    ['DC','ワシントンDC',20,20,0,0,'20:00(東部)'],
+    ['FL','フロリダ',19,20,1,1,'19:00(大部分は東部、西部は中部)'],
+    ['GA','ジョージア',19,19,1,1,'19:00(東部)'],
+    ['HI','ハワイ',24,24,0,1,'19:00(ハワイ)'],
+    ['ID','アイダホ',22,23,1,1,'20:00(南部は山岳部、北部は太平洋)'],
+    ['IL','イリノイ',20,20,1,1,'19:00(中部)'],
+    ['IN','インディアナ',18,19,0,0,'18:00(大部分は東部、北西・南西は中部)'],
+    ['IA','アイオワ',21,21,1,1,'20:00(中部)'],
+    ['KS','カンザス',20,21,1,1,'19:00(大部分は中部、西部は山岳部)'],
+    ['KY','ケンタッキー',18,19,1,0,'18:00(東部と中部)'],
+    ['LA','ルイジアナ',21,21,1,0,'20:00(中部)'],
+    ['ME','メイン',20,20,1,1,'20:00(東部)'],
+    ['MD','メリーランド',20,20,0,1,'20:00(東部)'],
+    ['MA','マサチューセッツ',20,20,1,1,'20:00(東部)'],
+    ['MI','ミシガン',20,21,1,1,'20:00(大部分は東部、北部の一部は中部)'],
+    ['MN','ミネソタ',21,21,1,1,'20:00(中部)'],
+    ['MS','ミシシッピ',20,20,1,0,'19:00(中部)'],
+    ['MO','ミズーリ',20,20,0,0,'19:00(中部)'],
+    ['MT','モンタナ',22,22,1,0,'20:00(山岳部)'],
+    ['NE','ネブラスカ',21,22,1,1,'20:00(大部分は中部、西部は山岳部)'],
+    ['NV','ネバダ',22,22,0,1,'19:00(太平洋)'],
+    ['NH','ニューハンプシャー',19,20,1,1,'19:00〜20:00(町ごとに違う)'],
+    ['NJ','ニュージャージー',20,20,1,0,'20:00(東部)'],
+    ['NM','ニューメキシコ',21,21,1,1,'19:00(山岳部)'],
+    ['NY','ニューヨーク',21,21,0,1,'21:00(東部)'],
+    ['NC','ノースカロライナ',19.5,19.5,1,0,'19:30(東部)'],
+    ['ND','ノースダコタ',20,21,0,0,'中部と山岳部で分かれる'],
+    ['OH','オハイオ',19.5,19.5,1,1,'19:30(東部)'],
+    ['OK','オクラホマ',20,20,1,1,'19:00(中部)'],
+    ['OR','オレゴン',22,23,1,1,'20:00(大部分は太平洋、東部の一部は山岳部)'],
+    ['PA','ペンシルベニア',20,20,0,1,'20:00(東部)'],
+    ['RI','ロードアイランド',20,20,1,1,'20:00(東部)'],
+    ['SC','サウスカロライナ',19,19,1,1,'19:00(東部)'],
+    ['SD','サウスダコタ',20,21,1,1,'19:00(東部は中部、西部は山岳部)'],
+    ['TN','テネシー',20,20,1,1,'東部20:00・中部19:00'],
+    ['TX','テキサス',20,21,1,1,'19:00(大部分は中部、エルパソ周辺は山岳部)'],
+    ['UT','ユタ',22,22,0,0,'20:00(山岳部)'],
+    ['VT','バーモント',19,19,0,1,'19:00(東部)'],
+    ['VA','バージニア',19,19,1,0,'19:00(東部)'],
+    ['WA','ワシントン',23,23,0,0,'20:00(太平洋)'],
+    ['WV','ウェストバージニア',19.5,19.5,1,0,'19:30(東部)'],
+    ['WI','ウィスコンシン',21,21,0,1,'20:00(中部)'],
+    ['WY','ワイオミング',21,21,1,1,'19:00(山岳部)']
+  ];
+  // 上院選のCook評価(10/20時点)
+  var R={AK:'接戦',IA:'接戦(現職不在)',KS:'接戦',ME:'接戦',MI:'接戦(現職不在)',OH:'接戦(特別選挙)',TX:'接戦(現職不在)',MN:'民主党やや優勢(現職不在)',NH:'民主党やや優勢(現職不在)',SC:'共和党やや優勢',NC:'民主党優勢',MS:'共和党優勢'};
+  var HOT={AK:1,IA:1,KS:1,ME:1,MI:1,OH:1,TX:1};
+  var NAME={};S.forEach(function(s){NAME[s[0]]=s[1]});
+
+  // 東部時間の時(11/3) → 日本時間 11/4 の "H:MM"
+  function jst(h){var m=Math.round((h+14-24)*60);return Math.floor(m/60)+':'+('0'+(m%60)).slice(-2)}
+  // つまみ: 0 = 日本時間 7:00、1きざみ15分
+  function toET(v){return 7+v/4+10}
+  function label(v){var m=7*60+v*15;return Math.floor(m/60)+':'+('0'+(m%60)).slice(-2)}
+
+  // 表
+  var tb=$('tbody'),rows=[];
+  S.forEach(function(s){
+    var tr=document.createElement('tr');
+    var t=s[2]===s[3]?'<b>'+jst(s[2])+'</b>':'<b>'+jst(s[2])+'</b> / '+jst(s[3]);
+    var tags='';
+    if(s[4])tags+='<span class="tag'+(HOT[s[0]]?' r':'')+'">上院'+(R[s[0]]?'・'+R[s[0]]:'')+'</span>';
+    if(s[5])tags+='<span class="tag">知事</span>';
+    tags+='<span class="tag">下院</span>';
+    tr.innerHTML='<td class="n">'+s[1]+'<br><span class="note" style="font-size:11px">'+s[0]+'</span></td><td class="t">'+t+'</td><td style="font-size:13px;color:var(--sub)">'+s[6]+'</td><td>'+tags+'</td>';
+    if(HOT[s[0]])tr.classList.add('hot');
+    tb.appendChild(tr);rows.push({tr:tr,s:s});
+  });
+  // 絞り込み
+  var fb=document.querySelectorAll('[data-f]');
+  fb.forEach(function(b){b.addEventListener('click',function(){
+    fb.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+    var f=b.dataset.f;
+    rows.forEach(function(r){
+      var s=r.s,show=f==='all'||(f==='sen'&&s[4])||(f==='gov'&&s[5])||(f==='hot'&&HOT[s[0]]);
+      r.tr.style.display=show?'':'none';
+    });
+  })});
+
+  // メーター
+  var meter=$('meter');
+  var order=S.map(function(s,i){return i}).sort(function(a,b){return S[a][2]-S[b][2]||S[a][3]-S[b][3]});
+  var cells=[];
+  order.forEach(function(i){var c=document.createElement('i');c.title=S[i][1];meter.appendChild(c);cells[i]=c});
+
+  // 注目の上院選
+  var raceKeys=['OH','NC','NH','ME','MI','TX','KS','SC','MS','IA','MN','AK'];
+  var ul=$('races'),raceEls={};
+  raceKeys.forEach(function(k){
+    var s=S.filter(function(x){return x[0]===k})[0];
+    var li=document.createElement('li');
+    li.innerHTML='<span class="st">'+s[1]+'</span><span class="badge">'+R[k]+'</span><span class="tm">締切 '+(s[2]===s[3]?jst(s[2]):jst(s[2])+'〜'+jst(s[3]))+'</span><span class="badge st2"></span>';
+    ul.appendChild(li);raceEls[k]={li:li,s:s};
+  });
+  raceKeys.sort(function(a,b){return raceEls[a].s[3]-raceEls[b].s[3]}).forEach(function(k){ul.appendChild(raceEls[k].li)});
+
+  var slider=$('slider'),follow=false;
+  function render(v){
+    var et=toET(v);
+    $('dialTime').textContent=label(v);
+    var full=0,part=0,sen=0,gov=0;
+    S.forEach(function(s,i){
+      var c=cells[i];c.className='';
+      if(et>=s[3]){c.className='on';full++;if(s[4])sen++;if(s[5])gov++}
+      else if(et>=s[2]){c.className='part';part++}
+    });
+    rows.forEach(function(r){r.tr.classList.toggle('closed',et>=r.s[2])});
+    var txt;
+    if(full===0&&part===0)txt='まだどの州も締め切っていません。最初の締切は8:00(インディアナ州・ケンタッキー州の東部)です。';
+    else if(full===S.length)txt='50州とワシントンDCの<b>すべて</b>で投票を締め切りました。ここからは開票と、接戦の州の集計待ちです。';
+    else if(full===0)txt='全域で締め切った州はまだありません。<b>'+part+'</b>州で一部の地域だけ締め切りました。';
+    else txt='全域で投票を締め切ったのは<b>'+full+'</b>(DCを含む51のうち)'+(part?'、ほかに<b>'+part+'</b>州が一部の地域だけ締め切り':'')+'。上院選のある35州のうち<b>'+sen+'</b>州、知事選のある36州のうち<b>'+gov+'</b>州が全域で開票に入っています。';
+    $('sum').innerHTML=txt;
+    raceKeys.forEach(function(k){
+      var r=raceEls[k],s=r.s,b=r.li.querySelector('.st2');
+      var open=et>=s[3];
+      r.li.classList.toggle('open',open);
+      b.textContent=open?'開票中':(et>=s[2]?'一部の地域で締切':'投票中');
+    });
+    meter.setAttribute('aria-label',S.length+'のうち'+full+'の州・DCが締切');
+  }
+  slider.addEventListener('input',function(){setFollow(false);render(+slider.value)});
+  document.querySelectorAll('[data-t]').forEach(function(b){b.addEventListener('click',function(){setFollow(false);slider.value=b.dataset.t;render(+b.dataset.t)})});
+
+  // 今の時刻
+  var START=Date.UTC(2026,10,3,22,0),END=Date.UTC(2026,10,4,6,0); // 日本時間 11/4 7:00〜15:00
+  var OPEN=Date.UTC(2026,10,3,11,0),FIRST=Date.UTC(2026,10,3,23,0);
+  function nowV(){var n=Date.now();if(n<START)return 0;if(n>END)return 32;return Math.floor((n-START)/900000)}
+  function setFollow(on){follow=on;$('followNow').setAttribute('aria-pressed',on?'true':'false');if(on){slider.value=nowV();render(+slider.value)}}
+  $('followNow').addEventListener('click',function(){setFollow(!follow)});
+  function tick(){
+    var n=Date.now(),el=$('now'),d;
+    if(n<OPEN){d=Math.ceil((OPEN-n)/3600000);el.innerHTML='東部の投票所が開くまで <b>'+(d>48?Math.ceil(d/24)+'日':d+'時間')+'</b> ・ 最初の締切まで <b>'+Math.ceil((FIRST-n)/86400000)+'日</b>'}
+    else if(n<FIRST){d=Math.ceil((FIRST-n)/60000);el.innerHTML='投票中 ・ 最初の締切(日本時間 4日 8:00)まで <b>'+Math.floor(d/60)+'時間'+(d%60)+'分</b>'}
+    else if(n<=END){el.innerHTML='いま開票の時間帯です ・ 最後の締切(15:00)まで <b>'+Math.ceil((END-n)/60000)+'分</b>'}
+    else el.innerHTML='すべての州で投票の締切が過ぎました。あとから決まる日程は下の一覧へ。';
+    if(follow){var v=nowV();if(+slider.value!==v){slider.value=v;render(v)}}
+  }
+  tick();setInterval(tick,30000);
+  var n0=Date.now();
+  if(n0>=START&&n0<=END)setFollow(true);else render(+slider.value);
+
+  // .ics
+  $('ics').addEventListener('click',function(){
+    function f(ms){return new Date(ms).toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'')}
+    var ev=[
+      [Date.UTC(2026,10,3,23,0),'米中間選挙 最初の投票締切(インディアナ・ケンタッキー東部)'],
+      [Date.UTC(2026,10,4,0,0),'米中間選挙 東部の主な州の締切(ジョージア・バージニアなど。10時にペンシルベニアなど)'],
+      [Date.UTC(2026,10,4,4,0),'米中間選挙 西海岸の締切(カリフォルニア・ワシントン)'],
+      [Date.UTC(2026,10,4,6,0),'米中間選挙 最後の締切(アラスカ・アリューシャン列島)'],
+      [Date.UTC(2026,10,18,0,0),'アラスカ州 順位付け投票の集計(現地11/18ごろ)'],
+      [Date.UTC(2026,11,2,0,0),'ジョージア州 決選投票の締切(現地12/1、ある場合)'],
+      [Date.UTC(2027,0,3,17,0),'米国 新議会の始まり(現地1/3正午)']
+    ];
+    var L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//daily-launch-sites//day017//JA','CALSCALE:GREGORIAN'];
+    var stamp=f(Date.now());
+    ev.forEach(function(e,i){
+      L.push('BEGIN:VEVENT','UID:day017-'+i+'@daily-launch-sites','DTSTAMP:'+stamp,'DTSTART:'+f(e[0]),'DTEND:'+f(e[0]+1800000),'SUMMARY:'+e[1],'DESCRIPTION:日程は変わることがあります。'+location.origin+location.pathname,'END:VEVENT');
+    });
+    L.push('END:VCALENDAR');
+    var blob=new Blob([L.join('\r\n')+'\r\n'],{type:'text/calendar;charset=utf-8'});
+    var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='us-midterms-2026-jst.ics';document.body.appendChild(a);a.click();
+    setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},1000);
+  });
+
+  var url=location.origin+location.pathname,msg='米中間選挙の投票締切は日本時間11月4日(水)朝8時〜午後3時。州ごとの締切と、接戦の上院選がいつ開票に入るかを日本時間で';
+  $('shX').href='https://twitter.com/intent/tweet?text='+encodeURIComponent(msg)+'&url='+encodeURIComponent(url);
+  $('shLine').href='https://social-plugins.line.me/lineit/share?url='+encodeURIComponent(url);
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
