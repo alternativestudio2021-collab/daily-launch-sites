@@ -8,8 +8,9 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"持続化補助金の第20回はいつからいつまでですか?","acceptedAnswer":{"@type":"Answer","text":"一般型・通常枠の第20回は、申請受付が2026年11月5日(木)から12月15日(火)17時までです。商工会・商工会議所が発行する事業支援計画書(様式4)の発行受付は12月4日(金)で締め切られます。日程は変更されることがあると案内されています。"}},
 {"@type":"Question","name":"補助金はいくらまで出ますか?","acceptedAnswer":{"@type":"Answer","text":"補助率は原則3分の2、上限は50万円です。インボイス特例で50万円、賃金引上げ特例で150万円が上乗せされ、両方なら最大250万円です。賃金引上げ特例を使う事業者のうち赤字(直近の課税所得がゼロ以下)の場合は補助率が4分の3になります。特例の要件を満たせないと、上乗せ分だけでなく補助金全体が交付されないと解説されています。"}},
-{"@type":"Question","name":"第19回から何が変わりましたか?","acceptedAnswer":{"@type":"Answer","text":"主なものは、ウェブサイト関連費が交付申請額の4分の1(最大50万円)から30万円(税込)の上限に変わったこと、ネット広告やSNS広告が広報費の区分に移ったこと、相見積が要る金額が100万円超から50万円超(税込)に下がったこと、賃金引上げ特例の要件が事業場内最低賃金+50円から給与支給総額の年平均3.0%以上の増加に変わったことです。"}},
+{"@type":"Question","name":"第19回から何が変わりましたか?","acceptedAnswer":{"@type":"Answer","text":"主なものは、ウェブサイト関連費の上限が補助金交付申請額の4分の1(最大50万円)から30万円(税込)に変わったこと、ネット広告やSNS広告が広報費の区分に移ったこと、相見積が要る金額が100万円超から50万円超(税込)に下がったこと、賃金引上げ特例の要件が事業場内最低賃金+50円から給与支給総額の年平均3.0%以上の増加に変わったことです。"}},
 {"@type":"Question","name":"郵送で申請できますか?","acceptedAnswer":{"@type":"Answer","text":"第20回は電子申請のみで、郵送は受け付けないと案内されています。GビズIDプライムのアカウントが要ります。マイナンバーカードとスマートフォンでのオンライン申請なら最短即日、書類の郵送申請は1〜2週間以上かかります。"}},
+{"@type":"Question","name":"11月5日より前に様式4を依頼できますか?","acceptedAnswer":{"@type":"Answer","text":"様式4(事業支援計画書)の発行受付は、申請受付が始まってから開始すると案内されています。それまでに様式2・3の下書きと見積集めを進め、商工会・商工会議所の相談日を予約しておくと、受付開始後すぐに依頼できます。"}},
 {"@type":"Question","name":"採択前に発注した費用は対象になりますか?","acceptedAnswer":{"@type":"Answer","text":"対象になりません。補助の対象は交付決定のあとに発注・契約・支払いをした経費です。補助金は事業が終わって実績報告をしたあとに支払われる後払いなので、いったん全額を立て替える資金が要ります。"}}
 ]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -168,7 +169,7 @@ footer{font-size:12px;color:var(--sub);display:grid;gap:6px}
         <label><input type="radio" name="doc" value="half">下書きの途中</label>
         <label><input type="radio" name="doc" value="almost">ほぼ書けた</label>
       </div></fieldset>
-      <fieldset><legend>使うお金の見積書</legend><div class="opts" data-k="quote">
+      <fieldset><legend>補助事業で使う経費の見積書</legend><div class="opts" data-k="quote">
         <label><input type="radio" name="quote" value="done">そろっている</label>
         <label><input type="radio" name="quote" value="one">1社分だけある</label>
         <label><input type="radio" name="quote" value="none" checked>まだ</label>
@@ -178,10 +179,10 @@ footer{font-size:12px;color:var(--sub);display:grid;gap:6px}
     <div class="verdict" id="verdict" role="status" aria-live="polite"></div>
 
     <div class="gantt" id="gantt" aria-hidden="true"></div>
-    <div class="legend"><span><i style="background:var(--ink)"></i>今日</span><span><i style="background:var(--blue)"></i>受付開始</span><span><i style="background:var(--orange)"></i>様式4締切</span><span><i style="background:var(--red)"></i>申請締切</span><span><i style="background:repeating-linear-gradient(45deg,var(--blue) 0 3px,var(--blue-soft) 3px 6px)"></i>待ち時間</span></div>
+    <div class="legend"><span><i style="background:var(--ink)"></i>今日</span><span><i style="background:var(--blue)"></i>受付開始</span><span><i style="background:var(--orange)"></i>様式4締切</span><span><i style="background:var(--red)"></i>申請締切</span><span><i style="background:repeating-linear-gradient(45deg,var(--blue) 0 3px,var(--blue-soft) 3px 6px)"></i>待ち時間</span><span><i style="background:var(--red)"></i>(横棒が赤)締切に間に合わない</span></div>
 
     <ol class="steps" id="steps"></ol>
-    <p class="note">日数の目安: GビズIDプライムはオンライン申請なら最短即日、郵送は1〜2週間(1か月かかった例の紹介もあり)。様式4は即日発行ではなく、書類を確認したあとメールで届きます(1〜2週間かかる場合があるとの解説あり)。計画書の日数は、本業の合間に書く前提のおおよその見込みです。祝日(11/3・11/23)は窓口が休みのことが多いので工程から外しています。</p>
+    <p class="note">日数の目安: GビズIDプライムはオンライン申請なら最短即日、郵送は1〜2週間(1か月かかった例の紹介もあるため、工程表では3週間で見ています)。様式4は即日発行ではなく、書類を確認したあとメールで届きます(1〜2週間かかる場合があるとの解説あり)。計画書の日数は、本業の合間に書く前提のおおよその見込みです。祝日(11/3・11/23)は窓口が休みのことが多いので工程から外しています。</p>
     <div class="share"><button class="btn" type="button" id="ics">締切をカレンダーに入れる(.ics)</button><button class="btn" type="button" onclick="print()">工程表を印刷</button></div>
   </section>
 
@@ -227,7 +228,7 @@ footer{font-size:12px;color:var(--sub);display:grid;gap:6px}
     <h2><span class="n">04</span>第20回で変わったところ・つまずきやすいところ</h2>
     <dl>
       <dt>ウェブサイト関連費は30万円(税込)まで、単独では申請できない</dt>
-      <dd>第19回までの「交付申請額の4分の1(最大50万円)」から、30万円(税込)の上限に変わりました。ホームページ・ECサイトの制作はこの区分、ネット広告・SNS広告・運用代行は広報費の区分に移っています。ウェブ関連の経費だけでの申請はできません。広報費にも30万円の上限が付いたとする解説もあるので、要領で確かめてください。</dd>
+      <dd>第19回までの「補助金交付申請額の4分の1(最大50万円)」から、補助金交付申請額で30万円(税込)の上限に変わりました。補助率2/3なら、経費45万円分で上限に届きます。特例で全体の上限を上げても、この30万円は変わらないと解説されています。ホームページ・ECサイトの制作はこの区分、ネット広告・SNS広告・運用代行は広報費の区分に移っています。ウェブ関連の経費だけでの申請はできません。広報費にも同じ30万円の上限が付いたとする解説もあるので、要領で確かめてください。</dd>
       <dt>相見積は50万円(税込)超から</dt>
       <dd>機械装置などで、1件50万円(税込)を超える発注は相見積が要ります。第19回までは100万円超でした。委託・外注にも広がったと紹介する記事もあります。</dd>
       <dt>賃金引上げ特例は「給与支給総額 年平均3.0%以上」に</dt>
@@ -245,7 +246,8 @@ footer{font-size:12px;color:var(--sub);display:grid;gap:6px}
     <h2><span class="n">05</span>よくある質問</h2>
     <details><summary>第20回はいつからいつまで?</summary><p>申請受付は2026年11月5日(木)から12月15日(火)17時まで。様式4の発行受付は12月4日(金)までです。日程は変更されることがあると案内されています。</p></details>
     <details><summary>補助金はいくらまで?</summary><p>補助率は原則3分の2、上限は50万円。インボイス特例で+50万円、賃金引上げ特例で+150万円、両方で最大250万円です。赤字で賃金引上げ特例を使う場合は補助率4分の3。</p></details>
-    <details><summary>郵送で出せますか?</summary><p>第20回は電子申請のみで郵送は不可と案内されています。GビズIDプライムが要ります。電子申請システムは10月22日時点で「準備中」とされていたので、受付開始の前後に事務局の案内を確認してください。</p></details>
+    <details><summary>郵送で出せますか?</summary><p>第20回は電子申請のみで郵送は不可と案内されています。GビズIDプライムが要ります。電子申請システムの公開状況は、受付開始(11/5)の前後に事務局サイトで確認してください。</p></details>
+    <details><summary>11/5より前に様式4を頼めますか?</summary><p>様式4(事業支援計画書)の発行受付は、申請受付が始まってから開始すると案内されています。それまでは様式2・3の下書きと見積集めを進め、窓口の相談日を予約しておくと、受付開始後すぐに依頼できます。工程表でも、様式4の依頼は11/5以降に置いています。</p></details>
     <details><summary>採択の前に発注してもいい?</summary><p>対象外になります。交付決定のあとに発注・契約・支払いをした経費が対象です。補助金は後払いなので、立て替える資金も用意しておきます。</p></details>
     <details><summary>商工会と商工会議所、どちらに行けばいい?</summary><p>事業所のある地域によって決まります。市区町村の中心部は商工会議所、町村部などは商工会の地区であることが多く、日程は両方とも同じです。どちらか分からなければ、市区町村の産業振興の窓口か近くの商工会議所に聞くと案内してもらえます。</p></details>
   </section>
@@ -266,6 +268,8 @@ footer{font-size:12px;color:var(--sub);display:grid;gap:6px}
       <li><a href="https://j-net21.smrj.go.jp/news/nskto6000001zxd4.html">J-Net21「持続化補助金<一般型・通常枠>」第20回公募要領を公開 受け付け開始は11月5日</a></li>
       <li><a href="https://j-net21.smrj.go.jp/snavi/articles/183798">J-Net21 支援情報ヘッドライン 商工会議所地区 第20回公募</a></li>
       <li><a href="https://j-net21.smrj.go.jp/snavi/articles/183795">J-Net21 支援情報ヘッドライン 商工会地区 第20回公募</a></li>
+      <li><a href="https://mirasapo-plus.go.jp/infomation/32381/">ミラサポplus(中小企業庁)「持続化補助金<一般型・通常枠>(第20回)の公募要領を公開【申請受付期間:11/5〜12/15】」</a></li>
+      <li><a href="https://mirasapo-plus.go.jp/wordpress/wp-content/uploads/2026/05/27181402/r6_koubover7_ip20.pdf">小規模事業者持続化補助金<一般型 通常枠> 第20回公募 公募要領(PDF、ミラサポplus掲載版)</a></li>
       <li><a href="https://official.jizokukanb.com/shinsei">小規模事業者持続化補助金【一般型・通常枠】申請について(電子申請のみ・郵送不可、様式4の依頼)</a></li>
       <li><a href="https://hojokin-dx.com/articles/jizokuka-hojokin-20th-application-guide-2026/">【12月15日締切】持続化補助金 第20回の準備スケジュールと変更点</a></li>
       <li><a href="https://goto-g.com/jizokuka-hojo-dai20kai-henkouten/">第20回の変更点まとめ(ウェブ費・広報費・相見積の基準)</a></li>
@@ -302,7 +306,7 @@ footer{font-size:12px;color:var(--sub);display:grid;gap:6px}
 
   $('asof').textContent='今日('+(T.getUTCFullYear())+'年'+fmt(T)+')を起点に計算しています。';
   function cd(id,d,label){var n=diff(T,d);$(id).textContent=n>0?'あと'+n+'日':(n===0?'今日':label)}
-  cd('c-open',OPEN,'受付中');cd('c-y4',Y4,'締切済み');cd('c-end',END,'締切済み');
+  cd('c-open',OPEN,T>END?'受付終了':'受付中');cd('c-y4',Y4,'締切済み');cd('c-end',END,'締切済み');
 
   function val(n){var e=document.querySelector('input[name='+n+']:checked');return e?e.value:''}
   function plan(){
@@ -311,7 +315,7 @@ footer{font-size:12px;color:var(--sub);display:grid;gap:6px}
     // GビズID
     var gEnd=T;
     if(g==='online'){gEnd=addWork(T,2);tasks.push({l:'GビズIDプライム',s:T,e:gEnd,sub:'オンライン 最短即日'})}
-    else if(g==='mail'){gEnd=addWork(T,10);var gWait=add(T,21);tasks.push({l:'GビズIDプライム',s:T,e:gEnd,w:gWait,sub:'郵送 1〜3週間'});gEnd=gWait}
+    else if(g==='mail'){gEnd=addWork(T,1);var gWait=add(T,21);tasks.push({l:'GビズIDプライム',s:T,e:gEnd,w:gWait,sub:'郵送 3週間で計算'});gEnd=gWait}
     else tasks.push({l:'GビズIDプライム',done:1,sub:'取得済み'});
     // 窓口
     var dEnd=T;
@@ -338,6 +342,7 @@ footer{font-size:12px;color:var(--sub);display:grid;gap:6px}
     // verdict
     var v=$('verdict');
     if(T>END){v.className='verdict bad';v.innerHTML='<b>第20回の受付は終わりました。</b><span>次の公募の日程は事務局の発表を待ってください。</span>'}
+    else if(T>Y4){v.className='verdict bad';v.innerHTML='<b>様式4の発行受付は12/4(金)で締め切られています。</b><span>12/4までに依頼済みなら、様式4が届きしだい12/15(火)17時までに電子申請を。締切後の発行依頼は理由を問わず認められないと公募要領にあるので、依頼していない場合は次の公募に向けて準備を。</span>'}
     else if(req<=Y4T){v.className='verdict';v.innerHTML='<b>このペースなら、様式4の依頼は '+fmt(req)+' ごろ。締切(12/4)まで '+diff(req,Y4)+'日の余裕があります。</b><span>余裕は窓口の混雑と書き直しに回すつもりで。申請の送信は '+fmt(subE)+' ごろの見込みです。</span>'}
     else if(req<=Y4){v.className='verdict warn';v.innerHTML='<b>様式4の依頼が '+fmt(req)+' ごろになり、締切(12/4)まで '+diff(req,Y4)+'日しかありません。</b><span>窓口が独自に早く締め切る場合は間に合いません。今週中に窓口へ連絡し、計画書は下書きの段階で見てもらうと日数を詰められます。</span>'}
     else{v.className='verdict bad';v.innerHTML='<b>このままだと、様式4の依頼が '+fmt(req)+' になり、12/4の締切に間に合わない計算です。</b><span>'+(g==='mail'?'GビズIDはマイナンバーカードでのオンライン申請に切り替えると早まります。':'')+'計画書を書きながら窓口に相談する、経費を見積がそろう物に絞る、などで前倒しを。</span>'}
@@ -368,13 +373,13 @@ footer{font-size:12px;color:var(--sub);display:grid;gap:6px}
     // steps
     var s=[];
     if(g==='online')s.push([gEnd,'GビズIDプライムを申請','マイナンバーカードとスマホのアプリで。最短即日。代表者本人の申請が要る']);
-    if(g==='mail')s.push([T,'GビズIDプライムの書類を今日出す','印鑑証明書(法人は代表者、個人は本人)と申請書を郵送。届くまで1〜3週間を見ておく。カードがあればオンラインの方が速い']);
+    if(g==='mail')s.push([T,'GビズIDプライムの書類を今日出す','印鑑証明書(法人は代表者、個人は本人)と申請書を郵送。届くまで1〜2週間、長いと1か月近く。カードがあればオンラインの方が速い']);
     if(dk==='no')s.push([dEnd,'商工会・商工会議所に電話して相談日を予約','「持続化補助金 第20回、様式4のお願い」と伝え、独自の締切がないかも聞く']);
-    if(qt!=='done')s.push([qEnd,'見積書を集める','1件50万円(税込)を超える物は相見積。ウェブ制作は30万円(税込)の上限を意識した構成で']);
+    if(qt!=='done')s.push([qEnd,'見積書を集める','1件50万円(税込)を超える物は相見積。ウェブ関連の補助は30万円(税込)までなので、それを前提にした構成で']);
     s.push([cEnd,'様式2・3の下書きを仕上げる','強み→課題→何にいくら→売上がどう伸びる、の順に。窓口で見てもらう前提で、完璧でなくてよい']);
     s.push([req,'様式4の発行を依頼',req>Y4?'締切(12/4)を過ぎる計算。今日、窓口に相談を':'締切は12/4(金)。発行はメールで届く']);
     s.push([sub,'様式4を受け取り、電子申請の入力を始める','決算書・確定申告書のPDF、特例の証明を添付']);
-    s.push([subE<=SUBT?subE:SUBT,'送信','締切は12/15(火)17:00。直前の混雑を避けて目標は'+fmt(SUBT)]);
+    s.push([subE,'送信',subE<=SUBT?'締切は12/15(火)17:00。直前の混雑を避けて目標は'+fmt(SUBT):(subE>END?'締切(12/15 17:00)を過ぎる計算。前の工程を詰められないか、今日、窓口に相談を':'目標の'+fmt(SUBT)+'より遅い計算。締切は12/15(火)17:00なので、前の工程を詰める')]);
     s.sort(function(a,b){return a[0]-b[0]});
     $('steps').innerHTML=s.map(function(x){var late=x[0]>END||(x[1].indexOf('様式4の発行')===0&&x[0]>Y4);return '<li><span class="when'+(late?' late':'')+'">'+fmt(x[0])+'</span><span class="what"><b>'+x[1]+'</b><span>'+x[2]+'</span></span></li>'}).join('');
   }
@@ -385,7 +390,7 @@ footer{font-size:12px;color:var(--sub);display:grid;gap:6px}
   $('ics').addEventListener('click',function(){
     function ev(d,t,id){var s=d.toISOString().slice(0,10).replace(/-/g,'');var e=add(d,1).toISOString().slice(0,10).replace(/-/g,'');return 'BEGIN:VEVENT\r\nUID:'+id+'@daily-launch-sites\r\nDTSTAMP:20261028T000000Z\r\nDTSTART;VALUE=DATE:'+s+'\r\nDTEND;VALUE=DATE:'+e+'\r\nSUMMARY:'+t+'\r\nEND:VEVENT\r\n'}
     var c='BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//daily-launch-sites//day016//JA\r\n'+ev(OPEN,'持続化補助金 第20回 受付開始','j20open')+ev(Y4T,'持続化補助金 様式4の依頼(目標)','j20y4t')+ev(Y4,'持続化補助金 様式4 発行受付締切','j20y4')+ev(SUBT,'持続化補助金 送信(目標)','j20subt')+ev(END,'持続化補助金 第20回 申請締切 17:00','j20end')+'END:VCALENDAR\r\n';
-    var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([c],{type:'text/calendar'}));a.download='jizokuka-20.ics';document.body.appendChild(a);a.click();a.remove();
+    var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([c],{type:'text/calendar;charset=utf-8'}));a.download='jizokuka-20.ics';document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(a.href)},1000);
   });
 
   // money
@@ -406,21 +411,21 @@ footer{font-size:12px;color:var(--sub);display:grid;gap:6px}
     var rate=(wage&&red)?3/4:2/3, rl=(wage&&red)?'3/4':'2/3';
     var tot=0,by={},big=[];
     rows.querySelectorAll('tr').forEach(function(tr){
-      var c=tr.querySelector('select').value,a=+tr.querySelector('input[type=number]').value||0;
+      var c=tr.querySelector('select').value,a=Math.max(0,+tr.querySelector('input[type=number]').value||0);
       tot+=a;by[c]=(by[c]||0)+a;if(a>500000)big.push(c+' '+yen(a));
     });
-    var raw=Math.floor(tot*rate),subv=Math.min(raw,cap);
+    var web=by['ウェブサイト関連費']||0,webSub=Math.floor(web*rate),webCut=Math.max(0,webSub-300000);
+    var raw=Math.floor(tot*rate)-webCut,subv=Math.min(raw,cap);
     $('s-cost').textContent=yen(tot);$('s-sub').textContent=yen(subv);$('s-self').textContent=yen(tot-subv);
     $('s-rate-l').textContent='補助率 '+rl+' での補助額(上限 '+(cap/10000)+'万円)';
     $('s-box').className=raw>cap?'hit':'';
     var f=[];
     if(red&&!wage)f.push(['','補助率4分の3は、賃金引上げ特例を使う赤字の事業者だけ。いまは2/3で計算しています。']);
     if(raw>cap)f.push(['','上限('+(cap/10000)+'万円)に当たっています。上限を超えた分は自己負担です。']);
-    var web=by['ウェブサイト関連費']||0;
-    if(web>300000)f.push(['ng','ウェブサイト関連費が'+yen(web)+'。第20回は30万円(税込)が上限です。構成を見直すか、超えた分は自己負担に。']);
+    if(webCut)f.push(['ng','ウェブサイト関連費が'+yen(web)+'。第20回はこの区分の補助金が30万円(税込)までなので、補助額はその分を30万円で止めて計算しています(補助率'+rl+'なら経費'+yen(Math.ceil(300000/rate))+'で上限)。']);
     if(web>0&&web===tot)f.push(['ng','ウェブサイト関連費だけでは申請できません。']);
     var pr=by['広報費']||0;
-    if(pr>300000)f.push(['','広報費が'+yen(pr)+'。第20回で広報費にも30万円の上限が付いたとする解説があります。要領で確認を。']);
+    if(pr*rate>300000)f.push(['','広報費が'+yen(pr)+'。第20回で広報費にも補助金30万円(税込)の上限が付いたとする解説が複数あります。この計算には入れていないので、要領で確認を。']);
     if(big.length)f.push(['','50万円(税込)を超える発注には相見積が要ります: '+big.join('、')]);
     if(wage)f.push(['','賃金引上げ特例は、給与支給総額を年平均3.0%以上増やすことが要件。満たせないと補助金全体が交付されないと解説されています。']);
     if(inv)f.push(['','インボイス特例は、免税事業者だった事業者がインボイス発行事業者に登録した場合が対象。登録の時期の条件は要領で確認を。']);
