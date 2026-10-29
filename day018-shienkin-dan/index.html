@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>新給付 どの段にいる?|就業者負担軽減支援金 年収119万円以下は年5千円案 自分は対象か・決まっていること</title>
+<meta name="description" content="2027年度から始まる見込みの所得連動型の新給付「就業者負担軽減支援金」。10月29日に示された『年収119万円以下は年5千円程度』の参考値と、下限(53万・74万・106万円)・上限(300万・350万円)の案を並べ、年収を入れると自分がどの段(支給なし・定額・増える段・減る段・上限超え)に入るかを示します。受け取り方と、まだ決まっていないことも。">
+<link rel="canonical" href="https://alternativestudio2021-collab.github.io/daily-launch-sites/day018-shienkin-dan/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="新給付 どの段にいる?|就業者負担軽減支援金 年収119万円以下は年5千円案">
+<meta property="og:description" content="年収を入れると、いま示されている参考値・案のどの段に入るかがわかります。下限は53万/74万/106万円の3案、上限は300万/350万円。受け取り方と未決定の点も。">
+<meta property="og:url" content="https://alternativestudio2021-collab.github.io/daily-launch-sites/day018-shienkin-dan/">
+<meta property="og:site_name" content="毎日ひとつの小さな道具箱">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"就業者負担軽減支援金はいくらもらえますか?","acceptedAnswer":{"@type":"Answer","text":"2026年10月30日時点で金額は決まっていません。政府は10月29日、年収119万円以下の人は年5千円程度を『参考』とする案を与野党に示したと報じられています。10月17日には約2千万人に1人平均年3万円程度とする案が『一つの参考』として示されたと報じられました。金額は法律の成立後に政令で決まる見込みです。"}},
+{"@type":"Question","name":"いつからもらえますか?","acceptedAnswer":{"@type":"Answer","text":"法案では2027年4月1日の施行とされ、支給は原則年1回です。初回の支給時期はまだ示されていません。法案は国会で審議中です。"}},
+{"@type":"Question","name":"申請は必要ですか?","acceptedAnswer":{"@type":"Answer","text":"制度の大綱では、公金受取口座を登録していて受給資格と金額が明らかな人は市町村が職権で認定できるとされ、未登録の人は請求が必要と解説されています。具体的な手続きは、制度が決まった後に市区町村が案内します。"}},
+{"@type":"Question","name":"年金だけで暮らしている人は対象ですか?","acceptedAnswer":{"@type":"Answer","text":"大綱の要件では一定の勤労所得(給与や事業の所得)が必要とされ、年金だけの人は対象にならないと解説されています。"}}
+]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@700;800&family=BIZ+UDPGothic:wght@400;700&family=DM+Mono:wght@500&display=swap">
+<style>
+/* Layout: 等高線の地図がモチーフ。給付額の形を「段丘」の断面図として描き、年収の位置に旗を立てる。上から 見出し → 断面図と入力 → 3案の判定 → 受け取り方 → 経緯 → 未決定 → FAQ → 出典 */
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#eef0e6; --paper:#f8f8f1; --ink:#22281f; --sub:#5f6858; --rule:#cfd5c3;
+  --moss:#47693a; --moss-soft:#dce8d2; --clay:#b4572e; --clay-soft:#f3dfd3; --sky:#2f5f7a; --sky-soft:#d8e6ee;
+  --contour:rgba(71,105,58,.13);
+  --f-disp:"Shippori Mincho B1","Hiragino Mincho ProN",serif;
+  --f-body:"BIZ UDPGothic","Hiragino Sans","Noto Sans JP",sans-serif;
+  --f-mono:"DM Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#151912; --paper:#1d2219; --ink:#e7ecdf; --sub:#a6b09b; --rule:#343d2d;
+  --moss:#93c47d; --moss-soft:#26351f; --clay:#f08c5f; --clay-soft:#3d261b; --sky:#86bedc; --sky-soft:#1c2e38;
+  --contour:rgba(147,196,125,.08); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#151912; --paper:#1d2219; --ink:#e7ecdf; --sub:#a6b09b; --rule:#343d2d;
+  --moss:#93c47d; --moss-soft:#26351f; --clay:#f08c5f; --clay-soft:#3d261b; --sky:#86bedc; --sky-soft:#1c2e38;
+  --contour:rgba(147,196,125,.08); color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.85;
+  background-image:repeating-radial-gradient(circle at 85% -10%,transparent 0 38px,var(--contour) 38px 39px);background-attachment:fixed}
+.wrap{max-width:860px;margin:0 auto;padding-inline:16px;padding-block:32px 72px;display:grid;gap:28px}
+header{display:grid;gap:12px}
+.kicker{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;color:var(--moss)}
+h1{font-family:var(--f-disp);font-weight:800;font-size:clamp(30px,6.4vw,50px);line-height:1.2;margin:0;text-wrap:balance}
+h1 small{display:block;font-size:.42em;font-weight:700;color:var(--sub);margin-top:8px;letter-spacing:.02em}
+h2{font-family:var(--f-disp);font-size:clamp(20px,3.6vw,25px);margin:0 0 10px;line-height:1.4}
+p{margin:0 0 10px}
+.lede{font-size:16px}
+.status{border-left:4px solid var(--clay);background:var(--clay-soft);padding:10px 14px;border-radius:0 6px 6px 0;font-size:14px}
+.sheet{background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:20px 18px;min-width:0}
+.hint{font-size:13px;color:var(--sub)}
+a{color:var(--sky)}
+/* 入力 */
+.form{display:grid;gap:14px;margin-top:6px}
+.field{display:grid;gap:6px}
+.field>span{font-weight:700;font-size:14px}
+.inc{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.inc input[type=range]{flex:1 1 220px;accent-color:var(--clay)}
+.inc input[type=number]{width:96px;font:inherit;font-family:var(--f-mono);font-size:18px;padding:4px 8px;border:1px solid var(--rule);border-radius:6px;background:var(--bg);color:var(--ink)}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg label{position:relative}
+.seg input{position:absolute;opacity:0;inset:0}
+.seg span{display:inline-block;padding:5px 12px;border:1px solid var(--rule);border-radius:99px;font-size:13px;cursor:pointer;background:var(--bg)}
+.seg input:checked+span{background:var(--moss);color:var(--paper);border-color:var(--moss)}
+.seg input:focus-visible+span{outline:2px solid var(--sky);outline-offset:2px}
+/* 断面図 */
+.prof{width:100%;height:auto;display:block;margin:6px 0 2px}
+.prof .ground{fill:var(--moss-soft);stroke:var(--moss);stroke-width:2}
+.prof .axis{stroke:var(--rule);stroke-width:1}
+.prof text{font-family:var(--f-mono);font-size:17px;fill:var(--sub)}
+.prof .q{font-family:var(--f-disp);font-size:30px;fill:var(--moss)}
+.prof .flag line{stroke:var(--clay);stroke-width:2}
+.prof .flag path{fill:var(--clay)}
+.prof .flag text{fill:var(--clay);font-weight:700}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:var(--sub)}
+/* 判定 */
+.verdict{font-family:var(--f-disp);font-size:clamp(19px,3.4vw,24px);line-height:1.5;margin:4px 0 12px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+@media (max-width:560px){.grid3{grid-template-columns:1fr}}
+.cell{border:1px solid var(--rule);border-radius:8px;padding:10px 12px;background:var(--bg);display:grid;gap:4px;align-content:start}
+.cell .h{font-family:var(--f-mono);font-size:12px;color:var(--sub)}
+.cell b{font-size:15px}
+.cell .s{font-size:12.5px;color:var(--sub);line-height:1.65}
+.cell.none{border-style:dashed}
+.cell.flat{border-color:var(--moss);background:var(--moss-soft)}
+.cell.slope{border-color:var(--sky);background:var(--sky-soft)}
+.cell.over{border-color:var(--clay);background:var(--clay-soft)}
+.notes{margin:12px 0 0;padding-left:1.2em;font-size:14px}
+.notes li{margin-bottom:6px}
+/* 経緯 */
+.tl{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.tl li{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:10px 0;border-top:1px dashed var(--rule)}
+.tl li:first-child{border-top:0}
+.tl time{font-family:var(--f-mono);font-size:13px;color:var(--moss)}
+.tl li.next time{color:var(--clay)}
+@media (max-width:480px){.tl li{grid-template-columns:1fr;gap:2px}}
+.unk{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px;margin:0;padding:0;list-style:none}
+.unk li{border:1px dashed var(--clay);border-radius:8px;padding:10px 12px;font-size:14px;background:var(--paper)}
+.unk b{display:block;font-size:14px}
+details{border-top:1px solid var(--rule);padding:10px 0}
+details:last-child{border-bottom:1px solid var(--rule)}
+summary{cursor:pointer;font-weight:700}
+details p{margin:8px 0 0;font-size:14px}
+.pr{display:inline-block;font-family:var(--f-mono);font-size:11px;border:1px solid var(--sub);color:var(--sub);border-radius:4px;padding:0 6px;margin-top:6px}
+.offer{display:grid;gap:6px;margin-top:6px;padding:12px;border:1px solid var(--rule);border-radius:8px;background:var(--bg);font-size:14px}
+.src{font-size:13px;padding-left:1.2em;margin:0}
+.src li{margin-bottom:4px;word-break:break-all}
+footer{font-size:12px;color:var(--sub);display:grid;gap:6px}
+</style>
+</head><body>
+<div class="wrap">
+  <header>
+    <div class="kicker">INCOME-LINKED BENEFIT / FY2027–28 / 2026.10.30 時点</div>
+    <h1>新給付、<br>どの段にいる?<small>就業者負担軽減支援金の「段丘」を年収で歩く</small></h1>
+    <p class="lede">2027年度から始まる見込みの所得連動型の新給付「就業者負担軽減支援金」について、政府は10月29日、<b>年収119万円以下の人は年5千円程度</b>を「参考」とする案を与野党に示したと報じられました。金額はまだ決まっていません。ここでは、いま示されている参考値と案を並べて、年収を入れると自分がどの段に入るかを示します。</p>
+    <p class="status" role="note"><b>2026年10月30日朝の時点の状況。</b>法案は10月9日に国会へ提出され、審議中です。所得の下限・上限と金額は、法律が成立した後に政令で決まる見込みです。下の判定は「案が通った場合にどの段か」の目安で、支給を約束するものではありません。</p>
+  </header>
+
+  <section class="sheet" aria-labelledby="h-map">
+    <h2 id="h-map">断面図に旗を立てる</h2>
+    <p class="hint">入力はこの端末の中だけで計算し、どこにも送りません。年収は前年の「給与の総支給額(税・保険料を引く前)」です。</p>
+    <svg class="prof" id="prof" viewBox="0 0 640 240" role="img" aria-labelledby="profT"><title id="profT">年収と給付額の形(模式図)</title></svg>
+    <div class="legend"><span>高さは模式です。決まっている金額は「5千円程度」(参考値)だけで、それより右の高さはまだ示されていません。</span></div>
+
+    <div class="form">
+      <div class="field">
+        <span id="lb-inc">前年の給与収入(年収)</span>
+        <div class="inc">
+          <input type="range" id="incR" min="0" max="500" step="1" value="150" aria-labelledby="lb-inc">
+          <input type="number" id="incN" min="0" max="2000" step="1" value="150" aria-label="年収(万円)"><span>万円</span>
+        </div>
+      </div>
+      <div class="field">
+        <span>収入の種類</span>
+        <div class="seg" role="radiogroup" aria-label="収入の種類">
+          <label><input type="radio" name="kind" value="kyuyo" checked><span>給与だけ</span></label>
+          <label><input type="radio" name="kind" value="jigyo"><span>事業・フリーランス(も)</span></label>
+          <label><input type="radio" name="kind" value="both"><span>給与と年金</span></label>
+          <label><input type="radio" name="kind" value="nenkin"><span>年金だけ</span></label>
+        </div>
+      </div>
+      <div class="field">
+        <span>扶養している19歳未満の子</span>
+        <div class="seg" role="radiogroup" aria-label="扶養している19歳未満の子">
+          <label><input type="radio" name="kids" value="0" checked><span>いない</span></label>
+          <label><input type="radio" name="kids" value="1"><span>1人</span></label>
+          <label><input type="radio" name="kids" value="2"><span>2人</span></label>
+          <label><input type="radio" name="kids" value="3"><span>3人以上</span></label>
+        </div>
+      </div>
+      <div class="field">
+        <span>上限の案</span>
+        <div class="seg" role="radiogroup" aria-label="上限の案">
+          <label><input type="radio" name="upper" value="350" checked><span>年収350万円程度(首相が10/20に参考として示した)</span></label>
+          <label><input type="radio" name="upper" value="300"><span>300万円程度(9/30の報道)</span></label>
+        </div>
+      </div>
+      <div class="field">
+        <span>公金受取口座(マイナポータルで登録する給付の受け取り口座)</span>
+        <div class="seg" role="radiogroup" aria-label="公金受取口座">
+          <label><input type="radio" name="acct" value="yes"><span>登録している</span></label>
+          <label><input type="radio" name="acct" value="no"><span>していない</span></label>
+          <label><input type="radio" name="acct" value="unk" checked><span>わからない</span></label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sheet" aria-labelledby="h-res" aria-live="polite">
+    <h2 id="h-res">判定(下限の3案ごと)</h2>
+    <p class="verdict" id="verdict">—</p>
+    <div class="grid3" id="cells"></div>
+    <ul class="notes" id="notes"></ul>
+  </section>
+
+  <section class="sheet" aria-labelledby="h-shape">
+    <h2 id="h-shape">段の名前と、決まっていること</h2>
+    <p>制度の大綱では、支援額は所得に応じて次のような形になると解説されています。区切りの額(所得下限額・逓増開始額・逓減開始額・所得上限額など)と各段の金額は、政令で決めるとされています。</p>
+    <ol class="notes">
+      <li><b>支給なし</b>: 勤労所得が「所得下限額」以下。下限は給与収入で約53万円・74万円・約106万円の案があり、与党は106万円を軸に、公明党は53万円までの拡大を求めていると報じられています。</li>
+      <li><b>定額の段</b>: 下限を超え、逓増が始まる額まで。10月29日の参考値は<b>年収119万円以下で年5千円程度</b>。119万円は住民税(所得割)がかからない水準で、国や自治体が所得を正確に把握していない層のため定額にすると報じられています。</li>
+      <li><b>増えていく段</b>: 所得が増えるほど一定の割合で支援額が増える。</li>
+      <li><b>平らな段</b>: 一定の額(支援基本額)で止まる。</li>
+      <li><b>減っていく段</b>: 所得が「逓減開始額」を超えると一定の割合で減り、所得上限額でゼロになる。</li>
+    </ol>
+    <p>このほか、扶養する19歳未満の子がいると「こども加算」が上乗せされ、所得上限額も子の数に応じて引き上げられるとされています。支援額は1,000円単位(端数切り上げ)。10月17日には「約2千万人に1人平均年3万円程度」とする案が「一つの参考」として示されたと報じられていますが、これは平均で、誰もが3万円という意味ではありません。</p>
+  </section>
+
+  <section class="sheet" aria-labelledby="h-get">
+    <h2 id="h-get">受け取り方(見込み)</h2>
+    <ul class="notes">
+      <li>支給するのは住んでいる市区町村で、原則年1回。施行は2027年4月1日の予定です。</li>
+      <li>大綱では、公金受取口座を登録していて受給資格と金額が明らかな人は、市区町村が職権で認定できるとされています。登録していない人は自分で請求する必要があると解説されています。</li>
+      <li>判定には前年の所得が使われるとされるため、2027年度分は2026年(今年)の収入が目安になる見込みです。年末調整や確定申告で所得が正しく市区町村に届いていることが前提になります。</li>
+      <li>公金受取口座はマイナポータルから登録できます(<a href="https://www.digital.go.jp/policies/account_registration" rel="noopener">デジタル庁の案内</a>)。この給付のために今すぐ必要な手続きはまだありません。「給付金の手続き」をうたう電話やSMSで口座番号や暗証番号を聞かれても答えないでください。</li>
+    </ul>
+  </section>
+
+  <section class="sheet" aria-labelledby="h-tl">
+    <h2 id="h-tl">ここまでの経緯</h2>
+    <ol class="tl">
+      <li><time>2026/09/11</time><span>制度の大綱案。給与収入119万円の水準から支援額が増え始める設計と報じられる。</span></li>
+      <li><time>2026/09/30</time><span>対象の年収上限を300万円程度とする案が浮上と報道。</span></li>
+      <li><time>2026/10/09</time><span>食料品の消費税を1%にする法案とあわせて、支援金の法案を国会に提出。施行日は2027年4月1日とされる。</span></li>
+      <li><time>2026/10/14</time><span>首相が衆院予算委で、対象は就業者の3割・約2千万人を「一つの参考」と答弁。</span></li>
+      <li><time>2026/10/17</time><span>2027・28年度は約2千万人に1人平均年3万円程度とする案を与野党に提示と報道。</span></li>
+      <li><time>2026/10/20</time><span>首相が衆院本会議で、年収100万〜350万円を「一つの参考」と答弁。</span></li>
+      <li><time>2026/10/29</time><span>年収119万円以下は年5千円程度を「参考」とする案を与野党に提示と報道。</span></li>
+      <li class="next"><time>11月上旬</time><span>与党は衆院通過を目指すと報道(日程は未定)。</span></li>
+      <li class="next"><time>2026/12/12</time><span>今国会の会期末。成立すれば、金額と区切りの額は政令で決まる。</span></li>
+      <li class="next"><time>2027/04/01</time><span>施行予定。初回の支給時期はまだ示されていません。</span></li>
+    </ol>
+  </section>
+
+  <section class="sheet" aria-labelledby="h-unk">
+    <h2 id="h-unk">まだ決まっていないこと</h2>
+    <ul class="unk">
+      <li><b>所得の下限</b>53万・74万・106万円のどれか、または別の額か。</li>
+      <li><b>所得の上限</b>300万円程度か350万円程度か。子の数でどれだけ上がるか。</li>
+      <li><b>平らな段の金額</b>平均3万円程度の案はあるが、最大額は示されていない。</li>
+      <li><b>こども加算の額</b>子1人あたりいくらか。</li>
+      <li><b>初回の支給時期</b>2027年度中のいつか。</li>
+      <li><b>事業所得の数え方</b>フリーランス・自営業の「一定額を超える事業所得」の線。</li>
+    </ul>
+  </section>
+
+  <section class="sheet" aria-labelledby="h-link">
+    <h2 id="h-link">あわせて使える道具</h2>
+    <ul class="notes">
+      <li>同じ法案の食料品1%で、家計の負担がいくら減るか: <a href="../day009-shokuhin-1pct/">食料品1% レシートしわけ</a></li>
+      <li>今年の年末調整で家族の控除をどの欄に書くか(所得が正しく届く前提になります): <a href="../day006-nencho-kazoku/">年末調整 家族の欄ナビ 2026</a></li>
+    </ul>
+    <span class="pr">PR</span>
+    <div class="offer">
+      <p style="margin:0;font-size:14px;color:var(--sub)">子育てや扶養の範囲に合わせて、在宅や短時間の仕事を探している人向けの求人サイトです。</p>
+      <div>主婦のための求人応援サイト<br>
+<a href="https://px.a8.net/svt/ejp?a8mat=4BEFL6+1O4SVM+3CLE+5YRHE" rel="nofollow">「ママワークス」<b>mamaworks.jp</b></a>
+<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=4BEFL6+1O4SVM+3CLE+5YRHE" alt=""></div>
+    </div>
+  </section>
+
+  <section class="sheet" aria-labelledby="h-faq">
+    <h2 id="h-faq">よくある質問</h2>
+    <details><summary>結局いくらもらえますか?</summary><p>10月30日時点で決まっていません。示されているのは「年収119万円以下は年5千円程度」(10/29)と「約2千万人に平均年3万円程度」(10/17)の参考値だけです。どちらも政府が与野党に示した案で、法律の成立後に政令で決まります。</p></details>
+    <details><summary>年収119万円を少し超えると5千円より増えますか?</summary><p>大綱の形では、119万円あたりから所得に応じて増えていく設計と解説されています。ただ、どの割合で増えるかは示されていません。</p></details>
+    <details><summary>パートで扶養の範囲内(年収100万円前後)ですが対象ですか?</summary><p>下限の案で分かれます。下限が106万円なら年収100万円は対象外、74万円や53万円なら定額の段(参考値で年5千円程度)に入ります。上の判定で3案を並べています。配偶者の所得による要件は2027・28年度の支給には使わないと解説されています。</p></details>
+    <details><summary>年金だけで暮らしている場合は?</summary><p>大綱の要件では一定の勤労所得が必要とされ、年金だけの人は対象にならないと解説されています。給与と年金の両方がある人は、税・保険料の負担から年金収入を差し引いた額が基準(純負担基準額)を超えるかどうかという要件もあります。</p></details>
+    <details><summary>申請の受付はもう始まっていますか?</summary><p>始まっていません。法案が審議中で、金額も決まっていない段階です。この給付を名目に口座情報や手数料を求める連絡は詐欺を疑ってください。</p></details>
+  </section>
+
+  <section class="sheet" aria-labelledby="h-src">
+    <h2 id="h-src">出典</h2>
+    <p class="hint">10月30日朝に確認。報道は見出しと配信記事の要旨にもとづきます。大綱・法案の本文は内閣官房の資料で確かめてください。</p>
+    <ol class="src">
+      <li><a href="https://www.niigata-nippo.co.jp/articles/-/933517" rel="noopener">新給付、年収119万円以下は年5千円案(共同通信、新潟日報 2026/10/29)</a></li>
+      <li><a href="https://www.ehime-np.co.jp/article/ky2026102901001379" rel="noopener">同(愛媛新聞 2026/10/29)</a></li>
+      <li><a href="https://www.nikkei.com/article/DGXZQOUA298CL0Z21C26A0000000/" rel="noopener">低所得者に定額年5000円 政府、先行給付で「参考値」提示へ(日本経済新聞 2026/10/29)</a></li>
+      <li><a href="https://kumanichi.com/articles/2047683" rel="noopener">新給付制度、平均3万円案を提示 27・28年度、2千万人対象(共同通信、熊本日日新聞 2026/10/17)</a></li>
+      <li><a href="https://www.nri.com/jp/media/column/kiuchi/20261021.html" rel="noopener">木内登英 コラム(野村総合研究所 2026/10/21)</a></li>
+      <li><a href="https://www.nri.com/jp/media/column/kiuchi/20260930.html" rel="noopener">就業者負担軽減支援金の基本設計と課題(野村総合研究所 2026/9/30)</a></li>
+      <li><a href="https://limo.media/articles/-/138492" rel="noopener">9月11日の大綱案、給与収入「119万円」から支援額が増え始める(LIMO)</a></li>
+      <li><a href="https://hontax.com/blog/shugyosha-futan-keigen-shienkin/" rel="noopener">就業者負担軽減支援金。令和9年4月から市町村が年1回支給(ふじみの会計事務所)</a></li>
+      <li><a href="https://politicsjp.net/articles/shugyosha-futan-keigen-shienkin-270401/" rel="noopener">就業者負担軽減支援金|令和9年4月導入の大綱(politicsjp)</a></li>
+      <li><a href="https://kakeisan.com/posts/shugyosha-futan-keigen-shienkin/" rel="noopener">就業者負担軽減支援金とは ― 2027年4月に始まる給付は誰に届くか(kakeisan)</a></li>
+      <li><a href="https://min-taxes.com/column/shugyosha-futan-keigen-shienkin/" rel="noopener">就業者負担軽減支援金のもらい方|公金受取口座があれば申請不要(min-taxes)</a></li>
+      <li><a href="https://www.digital.go.jp/policies/account_registration" rel="noopener">公金受取口座登録制度(デジタル庁)</a></li>
+    </ol>
+  </section>
+
+  <footer>
+    <p>このページは報道と解説にもとづく情報提供で、支給の可否や金額を約束するものではありません。実際の対象と金額は、法律・政令と市区町村の案内で確かめてください。</p>
+    <p><a href="../">毎日ひとつの小さな道具箱</a> / Day 18</p>
+  </footer>
+</div>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var LOWERS=[{v:53,n:'下限 約53万円の案',w:'公明党が求める'},{v:74,n:'下限 74万円の案',w:''},{v:106,n:'下限 約106万円の案',w:'与党が軸'}];
+  var FLAT_END=119;
+  function val(name){var e=document.querySelector('input[name="'+name+'"]:checked');return e?e.value:''}
+  function inc(){var n=parseFloat($('incN').value);return isFinite(n)&&n>=0?n:0}
+  function zone(x,L,U){
+    if(x<=L)return 'none';
+    if(x<=FLAT_END)return 'flat';
+    if(x<=U)return 'slope';
+    return 'over';
+  }
+  var LABEL={none:'支給なし(下限以下)',flat:'定額の段',slope:'増える段〜減る段のどこか',over:'上限を超える'};
+  var SUB={
+    none:'下限を超える勤労所得がないため、案のとおりなら対象外。',
+    flat:'参考値は年5千円程度(10/29)。',
+    slope:'119万円より上は金額の区切りが示されていません。平均3万円程度の案があります。',
+    over:'案の上限を超えるため対象外の見込み。'
+  };
+  function draw(x,U){
+    var X0=30,X1=620,Y0=205,MAX=450;
+    var sx=function(v){return X0+(Math.min(v,MAX)/MAX)*(X1-X0)};
+    var L=106, yFlat=Y0-18, yTop=Y0-120;
+    var pts=[[X0,Y0],[sx(L),Y0],[sx(L),yFlat],[sx(FLAT_END),yFlat],[sx(FLAT_END+70),yTop],[sx(U-90),yTop],[sx(U),Y0],[X1,Y0]];
+    var d='M'+pts.map(function(p){return p[0].toFixed(1)+' '+p[1].toFixed(1)}).join(' L')+' Z';
+    var s='';
+    s+='<line class="axis" x1="'+X0+'" y1="'+Y0+'" x2="'+X1+'" y2="'+Y0+'"/>';
+    s+='<path class="ground" d="'+d+'"/>';
+    [0,100,200,300,400].forEach(function(t){s+='<text x="'+sx(t)+'" y="'+(Y0+16)+'" text-anchor="middle">'+t+'万</text>'});
+    s+='<text x="'+(sx(L)+4)+'" y="'+(yFlat-10)+'" text-anchor="start">5千円</text>';
+    s+='<text class="q" x="'+((sx(FLAT_END+70)+sx(U-90))/2)+'" y="'+(yTop-10)+'" text-anchor="middle">?</text>';
+    s+='<text x="'+(sx(L)-6)+'" y="'+(Y0-6)+'" text-anchor="end">下限</text>';
+    s+='<text x="'+(sx(U)+6)+'" y="'+(Y0-6)+'" text-anchor="start">上限</text>';
+    var fx=sx(x), fy=Y0-185;
+    s+='<g class="flag"><line x1="'+fx+'" y1="'+Y0+'" x2="'+fx+'" y2="'+fy+'"/><path d="M'+fx+' '+fy+' l26 8 l-26 8 Z"/><text x="'+(fx+(fx>460?-6:30))+'" y="'+(fy+14)+'" text-anchor="'+(fx>460?'end':'start')+'">'+x+'万円'+(x>MAX?'(枠外)':'')+'</text></g>';
+    $('prof').innerHTML='<title id="profT">年収と給付額の形(模式図、下限は106万円の案で描画)</title>'+s;
+  }
+  function render(){
+    var x=inc(), U=parseInt(val('upper'),10), kind=val('kind'), kids=parseInt(val('kids'),10), acct=val('acct');
+    $('incR').value=Math.min(x,500);
+    draw(x,U);
+    var html='', zs=[];
+    LOWERS.forEach(function(l){
+      var z=kind==='nenkin'?'none':zone(x,l.v,U);
+      zs.push(z);
+      var sub=kind==='nenkin'?'年金だけの人は勤労所得の要件を満たさない見込み。':SUB[z];
+      if(z==='over'&&kids>0)sub='案の上限は超えるが、子がいると上限が引き上げられるとされ、対象に入る可能性あり。';
+      html+='<div class="cell '+z+'"><span class="h">'+l.n+(l.w?'('+l.w+')':'')+'</span><b>'+LABEL[z]+'</b><span class="s">'+sub+'</span></div>';
+    });
+    $('cells').innerHTML=html;
+    var v;
+    if(kind==='nenkin')v='年金だけの場合、案の要件では対象にならない見込みです。';
+    else if(zs.every(function(z){return z==='none'}))v='年収'+x+'万円は、3つの下限案のどれでも下限以下です。';
+    else if(zs.every(function(z){return z===zs[0]})){
+      v=zs[0]==='flat'?'年収'+x+'万円は、どの下限案でも「定額の段」。参考値では年5千円程度です。':
+        zs[0]==='slope'?'年収'+x+'万円は「増える段〜減る段」のどこか。金額の区切りはまだ示されていません。':
+        '年収'+x+'万円は、上限'+U+'万円程度の案を超えます。';
+    }else v='年収'+x+'万円は、下限の案によって「支給なし」と「定額の段」に分かれます。';
+    $('verdict').textContent=v;
+    var n=[];
+    if(kind==='jigyo')n.push('事業・フリーランスの所得は、売上から経費を引いた事業所得のうち一定額を超える分が勤労所得に数えられるとされます。給与の年収とは換算が違うので、この目安はずれます。');
+    if(kind==='both')n.push('給与と年金の両方がある人は、税・保険料の負担から年金収入を差し引いた額が基準(純負担基準額)を超えるかどうかの要件もあり、年金が多いと外れる可能性があります。');
+    if(kids>0&&kind!=='nenkin')n.push('扶養する19歳未満の子がいると「こども加算」が上乗せされ、所得上限額も引き上げられるとされています(額は未定)。');
+    if(acct==='yes')n.push('公金受取口座を登録している人は、市区町村が職権で認定できるとされています。条件によっては請求が要るので、制度が決まったら市区町村の案内を確かめてください。');
+    if(acct==='no')n.push('公金受取口座がない場合は自分で請求する必要があると解説されています。マイナポータルから登録できます(急ぐ必要はまだありません)。');
+    if(acct==='unk')n.push('公金受取口座の登録はマイナポータルの「公金受取口座」の欄で確かめられます。');
+    if(x>500)n.push('入力した年収はグラフの枠より右です。');
+    $('notes').innerHTML=n.map(function(t){return '<li>'+t+'</li>'}).join('');
+  }
+  $('incR').addEventListener('input',function(){$('incN').value=this.value;render()});
+  $('incN').addEventListener('input',render);
+  document.querySelectorAll('input[type=radio]').forEach(function(r){r.addEventListener('change',render)});
+  render();
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
