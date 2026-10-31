@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>連勤チェック シフト表 ― 13日上限案・週1休・4週4休を一度に見る</title>
+<meta name="description" content="シフト表を貼り付けるかマスを押すだけで、スタッフごとの最長連勤日数、毎週1日の休日、4週4休、研究会案の2週2休、検討中の「連続勤務は最長13日」に当たるかをまとめて確かめられます。登録不要、入力はこの端末の中だけで計算します。">
+<link rel="canonical" href="https://alternativestudio2021-collab.github.io/daily-launch-sites/day020-renkin-check/">
+<meta property="og:type" content="website"><meta property="og:title" content="連勤チェック シフト表 ― 13日上限案・週1休・4週4休"><meta property="og:description" content="シフト表を貼るだけで、スタッフごとの最長連勤と休日の取り方を確かめられます。検討中の「最長13日」案にも対応。">
+<meta property="og:url" content="https://alternativestudio2021-collab.github.io/daily-launch-sites/day020-renkin-check/"><meta property="og:locale" content="ja_JP"><meta property="og:site_name" content="毎日ひとつの小さな道具箱"><meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"連続勤務の上限13日はもう決まったのですか?","acceptedAnswer":{"@type":"Answer","text":"決まっていません。2025年1月の厚生労働省の研究会報告書が「13日を超える連続勤務をさせてはならない」旨の規定を設けるべきと提言し、2026年10月30日の労働政策審議会の分科会で、厚労省が最長13日とする方向で検討していると報じられました。法案の提出時期や施行日、例外の範囲は未定です。"}},
+{"@type":"Question","name":"いまの法律では何日まで連続で働かせられますか?","acceptedAnswer":{"@type":"Answer","text":"労働基準法35条は毎週少なくとも1回の休日を求めています。週1休なら連続勤務は最長12日です。就業規則で起算日を定めて4週4日の休日とする変形休日制を使うと、理論上は48日続けて働かせることもできてしまうため、見直しが議論されています。"}},
+{"@type":"Question","name":"夜勤明けの日は休日に数えられますか?","acceptedAnswer":{"@type":"Answer","text":"法定休日は原則として暦日(午前0時から午後12時まで)の休みとされているため、夜勤が明けた日はこのページでは休日に数えず、勤務日として扱います。"}},
+{"@type":"Question","name":"入力したシフト表はどこかに送られますか?","acceptedAnswer":{"@type":"Answer","text":"送られません。計算はすべてブラウザの中で行い、保存はこの端末のブラウザにだけ残ります。"}}
+]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@400;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap">
+<style>
+/* Layout: 「詰所の勤務表」。方眼の紙、マス目のシフト表が主役。上から 見出し → 使い方3行 → 1 期間と前提 → 2 シフト表(押す/貼る) → 3 結果 → 判定の物差し → FAQ → 出典 */
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#f3f1ea; --paper:#fffdf6; --ink:#1f2421; --sub:#59605b; --grid:#e3dfd2; --line:#cfc9b8;
+  --work:#2f6b4f; --work-soft:#dcebe2; --rest:#ffffff; --ake:#6a5a8c; --ake-soft:#e7e1f1;
+  --amber:#a8650c; --amber-soft:#fbecd2; --red:#b3261e; --red-soft:#f8dcd8; --ok:#2f6b4f;
+  --f:"Zen Kaku Gothic New","Hiragino Sans","Noto Sans JP",sans-serif; --mono:"M PLUS 1 Code",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141716; --paper:#1c201e; --ink:#e7ebe8; --sub:#a4aca7; --grid:#2a2f2c; --line:#3a413d;
+  --work:#8fd0ad; --work-soft:#22362b; --rest:#1c201e; --ake:#c3b3ec; --ake-soft:#2d2840;
+  --amber:#f0b45a; --amber-soft:#3a2c17; --red:#ff9a90; --red-soft:#3d1f1c; --ok:#8fd0ad; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141716; --paper:#1c201e; --ink:#e7ebe8; --sub:#a4aca7; --grid:#2a2f2c; --line:#3a413d;
+  --work:#8fd0ad; --work-soft:#22362b; --rest:#1c201e; --ake:#c3b3ec; --ake-soft:#2d2840;
+  --amber:#f0b45a; --amber-soft:#3a2c17; --red:#ff9a90; --red-soft:#3d1f1c; --ok:#8fd0ad; color-scheme:dark}
+html{-webkit-text-size-adjust:100%}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);line-height:1.75;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:24px 24px}
+a{color:var(--work)}
+.wrap{max-width:1000px;margin:0 auto;padding:0 16px 64px}
+header{padding:28px 0 8px}
+.kicker{font-family:var(--mono);font-size:12px;color:var(--sub);letter-spacing:.08em}
+h1{font-size:clamp(24px,5vw,36px);line-height:1.3;margin:6px 0 10px}
+h1 small{display:block;font-size:.5em;color:var(--sub);font-weight:400;margin-top:6px}
+.lead{max-width:720px;margin:0}
+.news{margin:14px 0 0;padding:10px 14px;border-left:4px solid var(--amber);background:var(--amber-soft);font-size:14px;max-width:760px}
+section{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:18px 18px 20px;margin:18px 0;box-shadow:0 1px 0 var(--line)}
+h2{font-size:19px;margin:0 0 10px;display:flex;gap:10px;align-items:baseline}
+h2 .n{font-family:var(--mono);font-size:13px;color:var(--paper);background:var(--ink);padding:0 7px;border-radius:2px}
+.row{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:flex-end}
+label.f{display:flex;flex-direction:column;font-size:13px;color:var(--sub);gap:4px}
+input,select,textarea,button{font:inherit;color:inherit}
+input[type=date],input[type=number],select,input[type=text]{background:var(--bg);border:1px solid var(--line);border-radius:3px;padding:6px 8px;min-height:38px}
+input[type=number]{width:90px}
+.chk{display:flex;gap:8px;align-items:flex-start;font-size:14px;max-width:640px}
+.chk input{margin-top:6px}
+.btn{background:var(--ink);color:var(--paper);border:0;border-radius:3px;padding:8px 14px;cursor:pointer;min-height:38px}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.note{font-size:13px;color:var(--sub)}
+.legend{display:flex;flex-wrap:wrap;gap:10px;font-size:13px;color:var(--sub);margin:8px 0}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+.sw{display:inline-block;width:18px;height:18px;border:1px solid var(--line);border-radius:2px;font-family:var(--mono);font-size:11px;text-align:center;line-height:16px}
+.scroller{overflow-x:auto;margin:10px -4px 0;padding:0 4px 6px;-webkit-overflow-scrolling:touch}
+table.shift{border-collapse:collapse;font-family:var(--mono);font-size:12px}
+table.shift th,table.shift td{border:1px solid var(--line);padding:0;text-align:center}
+table.shift thead th{background:var(--bg);font-weight:400;padding:2px 0;min-width:26px;line-height:1.25}
+table.shift thead th.sun{color:var(--red)} table.shift thead th.sat{color:#3b6aa8}
+table.shift thead th.wk{border-left:2px solid var(--ink)}
+table.shift td.wk{border-left:2px solid var(--ink)}
+table.shift th.name{position:sticky;left:0;z-index:2;background:var(--paper);min-width:110px;text-align:left;padding:2px 4px}
+table.shift th.name input{width:100px;border:0;background:transparent;padding:4px 2px;min-height:30px;font-family:var(--f);font-size:13px}
+table.shift td button{width:26px;height:32px;border:0;background:var(--rest);cursor:pointer;font-family:var(--mono);font-size:12px;padding:0;display:block}
+table.shift td button.w{background:var(--work-soft);color:var(--work);font-weight:700}
+table.shift td button.a{background:var(--ake-soft);color:var(--ake);font-weight:700}
+table.shift td button.r{color:var(--sub)}
+table.shift td button.s7{box-shadow:inset 0 -4px 0 var(--amber)}
+table.shift td button.s14{box-shadow:inset 0 -4px 0 var(--red);background:var(--red-soft);color:var(--red)}
+table.shift td.del button{width:30px;background:transparent;color:var(--sub)}
+table.shift td.carry input{width:44px;border:0;background:transparent;text-align:center;min-height:30px;font-family:var(--mono)}
+textarea{width:100%;min-height:120px;background:var(--bg);border:1px solid var(--line);border-radius:3px;padding:8px;font-family:var(--mono);font-size:13px}
+details.paste{margin-top:14px;border-top:1px dashed var(--line);padding-top:10px}
+details.paste summary{cursor:pointer;font-weight:700}
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:14px}
+.tile{border:1px solid var(--line);border-radius:3px;padding:10px 12px;background:var(--bg)}
+.tile b{display:block;font-family:var(--mono);font-size:26px;line-height:1.2}
+.tile span{font-size:12px;color:var(--sub)}
+.tile.bad b{color:var(--red)} .tile.warn b{color:var(--amber)} .tile.good b{color:var(--ok)}
+.cards{display:grid;gap:10px}
+.card{border:1px solid var(--line);border-left:6px solid var(--ok);border-radius:3px;padding:10px 14px;background:var(--paper)}
+.card.warn{border-left-color:var(--amber)} .card.bad{border-left-color:var(--red)}
+.card h3{margin:0 0 4px;font-size:16px;display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
+.card h3 .big{font-family:var(--mono);font-size:20px}
+.card ul{margin:4px 0 0;padding-left:1.2em;font-size:14px}
+.tag{font-size:12px;border-radius:99px;padding:0 8px;border:1px solid currentColor;white-space:nowrap}
+.tag.ok{color:var(--ok)} .tag.warn{color:var(--amber)} .tag.bad{color:var(--red)} .tag.na{color:var(--sub)}
+table.rule{border-collapse:collapse;width:100%;font-size:14px}
+table.rule th,table.rule td{border:1px solid var(--line);padding:8px;text-align:left;vertical-align:top}
+table.rule th{background:var(--bg);font-weight:700;width:28%}
+.faq details{border-bottom:1px solid var(--line);padding:8px 0}
+.faq summary{cursor:pointer;font-weight:700}
+.src li{font-size:13px;margin:4px 0;word-break:break-all}
+.share{display:flex;flex-wrap:wrap;gap:8px}
+footer{font-size:13px;color:var(--sub);margin-top:24px}
+@media print{
+  body{background:#fff;color:#000}
+  header .news,.btns,details.paste,.share,footer,.noprint,section.faq,section.src{display:none!important}
+  section{border:0;box-shadow:none;padding:0;margin:10px 0}
+  .scroller{overflow:visible}
+  table.shift td button{height:22px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">毎日ひとつの小さな道具箱 / DAY 020</div>
+  <h1>連勤チェック シフト表<small>最長連勤・週1休・4週4休・検討中の「最長13日」を一度に見る</small></h1>
+  <p class="lead">シフト表のマスを押すか、表計算ソフトからコピーして貼ると、スタッフごとに何日続けて働く並びになっているかと、休日の取り方がいまのルールに合っているかを示します。店長・施設長・シフト担当の下書き確認用です。</p>
+  <p class="news"><b>10月30日の動き:</b> 労働政策審議会の分科会で、厚生労働省が労働基準法に連続勤務日数の上限を設け、最長13日とする方向で検討していると報じられました。経営側は災害時などの例外を求めています。法案・施行日は未定です(下の「出典」参照)。</p>
+</header>
+
+<section id="s1">
+  <h2><span class="n">1</span>期間と前提</h2>
+  <div class="row">
+    <label class="f">表の始まりの日<input type="date" id="start"></label>
+    <label class="f">日数<select id="days"><option value="28">28日(4週)</option><option value="35">35日(5週)</option><option value="42">42日(6週)</option><option value="56">56日(8週)</option><option value="31">31日(1か月)</option><option value="30">30日</option></select></label>
+    <label class="f">週の始まり<select id="wkstart"><option value="0">日曜(就業規則に定めがない場合)</option><option value="1">月曜</option><option value="2">火曜</option><option value="3">水曜</option><option value="4">木曜</option><option value="5">金曜</option><option value="6">土曜</option></select></label>
+  </div>
+  <div style="margin-top:12px" class="chk"><input type="checkbox" id="hen"><label for="hen">就業規則で4週4日の休日(変形休日制)を定め、<b>4週の起算日をこの表の始まりの日にしている</b>。チェックすると、週1休が取れていない週があっても、4週ごとに4日以上の休みがあれば「いまのルールでは可」と表示します。</label></div>
+  <p class="note">「前の期間からの連勤」には、表の始まりの日の前日まで何日続けて働いていたかを入れます(前月末から続く連勤を見落とさないため)。</p>
+</section>
+
+<section id="s2">
+  <h2><span class="n">2</span>シフト表</h2>
+  <div class="legend">
+    <span><i class="sw" style="background:var(--work-soft);color:var(--work)">出</i>勤務</span>
+    <span><i class="sw" style="background:var(--ake-soft);color:var(--ake)">明</i>夜勤明け(休日に数えない)</span>
+    <span><i class="sw">休</i>休み</span>
+    <span><i class="sw" style="box-shadow:inset 0 -4px 0 var(--amber)"></i>7日以上続く連勤</span>
+    <span><i class="sw" style="box-shadow:inset 0 -4px 0 var(--red);background:var(--red-soft)"></i>14日以上(13日上限案を超える)</span>
+  </div>
+  <p class="note">マスを押すたびに 休 → 出 → 明 → 休 と変わります。太い縦線は週の区切りです。</p>
+  <div class="scroller"><table class="shift" id="tbl"></table></div>
+  <div class="btns">
+    <button class="btn" id="add">スタッフを1行足す</button>
+    <button class="btn ghost" id="sample">見本を入れる</button>
+    <button class="btn ghost" id="clear">表を空にする</button>
+    <button class="btn ghost" id="csv">CSVで保存</button>
+    <button class="btn ghost" id="print">印刷</button>
+  </div>
+  <details class="paste">
+    <summary>表計算ソフトから貼り付ける</summary>
+    <p class="note">1行に1人。名前のあとに、日ごとの記号を並べます(タブ・カンマ・空白の区切りはあってもなくても構いません)。<br>勤務: <code>出 ○ ◯ 1 日 早 遅 中 夜 A B C</code> / 夜勤明け: <code>明 入</code>(入は勤務扱い) / 休み: <code>休 × 公 有 - 0 /</code> と空欄</p>
+    <textarea id="pasteBox" placeholder="山田	出	出	出	休	出	出	出	出	休	…&#10;佐藤,○○○×○○○○○○×○○○○…"></textarea>
+    <div class="btns"><button class="btn" id="doPaste">この内容で表を作る</button></div>
+  </details>
+</section>
+
+<section id="s3">
+  <h2><span class="n">3</span>結果</h2>
+  <div class="summary" id="sum"></div>
+  <div class="cards" id="cards"></div>
+  <p class="note" style="margin-top:10px">表の端で週や4週が途中までしかない部分は判定に入れていません。休日のうち何日が法定休日かは就業規則の定め方で変わります。この表は「休みの日があるか」だけを見ています。</p>
+</section>
+
+<section id="rules">
+  <h2><span class="n">物差し</span>このページが使っている判定</h2>
+  <table class="rule">
+    <tr><th>週1休(いまのルール)</th><td>労働基準法35条1項: 毎週少なくとも1回の休日。週の始まりは就業規則で決めていなければ日曜から土曜とされています。週1休を守ると、連続勤務は最長12日になります。</td></tr>
+    <tr><th>4週4休(いまのルールの例外)</th><td>同条2項: 4週間を通じて4日以上の休日を与える形。就業規則で4週の起算日を定めることが必要です。並べ方によっては理論上48日続けて働く形も作れてしまうことが、見直し議論のきっかけになっています。</td></tr>
+    <tr><th>13日上限(検討中)</th><td>2025年1月の厚生労働省「労働基準関係法制研究会」報告書が、「13日を超える連続勤務をさせてはならない」旨の規定を設けるべきと提言。2026年10月30日の分科会で、厚労省が最長13日の方向で検討していると報道。14日以上の連勤に赤い印を付けます。</td></tr>
+    <tr><th>2週2休(研究会の案)</th><td>同報告書は、4週4休の特例を2週2休にするなど、連続勤務の最大日数を短くする方向も示しています。参考として、表の始まりから2週ごとに休みが2日以上あるかを表示します。</td></tr>
+    <tr><th>7日以上の連勤</th><td>法令の基準ではありません。週1休を守っていても週をまたいで最大12連勤になるため、シフトの見直し候補として黄色の印を付けています。</td></tr>
+  </table>
+  <p class="note">このページは情報提供のための道具で、個別の労務判断や法的な助言ではありません。迷う場合は、所轄の労働基準監督署や社会保険労務士にご相談ください。</p>
+</section>
+
+<section class="faq" id="faq">
+  <h2><span class="n">FAQ</span>よくある質問</h2>
+  <details><summary>連続勤務の上限13日はもう決まったのですか?</summary><p>決まっていません。2025年1月の研究会報告書が提言し、2026年10月30日の労働政策審議会の分科会で厚労省が最長13日の方向で検討していると報じられた段階です。経営側は緊急時・災害時の例外を、労働側は例外があっても超えられない上限日数を法令で定めることを求めていると伝えられています。法案の提出時期と施行日は未定です。</p></details>
+  <details><summary>いまの法律では何日まで連続で働かせられますか?</summary><p>週1休なら最長12日です。4週4休の変形休日制では、4週の前半と後半に休みを寄せる並べ方で、理論上48日続けて働かせることもできてしまいます。なお連続勤務とは別に、時間外・休日労働には36協定と上限規制があります。</p></details>
+  <details><summary>夜勤明けの日は休日に数えられますか?</summary><p>法定休日は原則として暦日(午前0時から午後12時まで)の休みとされているため、このページでは夜勤明けの日を休日に数えず、勤務日として扱います。交替制勤務などで例外的な扱いが認められる場合もあるので、該当しそうなときは労働基準監督署に確認してください。</p></details>
+  <details><summary>有給休暇の日は休みに数えていいですか?</summary><p>このページでは「働かなかった日」として休みに数えます。ただし有給休暇は本来、労働日に取るものなので、法定休日の代わりにはなりません。休日の数を確かめる目的なら、有給の日は「有」と入れて、別途、法定休日が確保できているかを就業規則に照らして見てください。</p></details>
+  <details><summary>入力したシフト表はどこかに送られますか?</summary><p>送られません。計算はすべてブラウザの中で行い、保存はこの端末のブラウザにだけ残ります。共用のパソコンでは、使い終わったら「表を空にする」を押してください。</p></details>
+</section>
+
+<section class="share noprint">
+  <h2><span class="n">共有</span>シフト担当の人に送る</h2>
+  <div class="share"><a class="btn ghost" id="shX" target="_blank" rel="noopener">Xで共有</a><a class="btn ghost" id="shL" target="_blank" rel="noopener">LINEで送る</a><button class="btn ghost" id="shC">URLをコピー</button></div>
+</section>
+
+<section class="src" id="src">
+  <h2><span class="n">出典</span>確かめた資料(2026年11月1日時点)</h2>
+  <ul>
+    <li>朝日新聞(Yahoo!ニュース配信)「連続勤務日数に上限設定へ 最長13日を検討 経営側は例外求める」2026年10月30日 <a href="https://news.yahoo.co.jp/articles/e3ce20f9d67af2b5b60393981585fb239faab362" rel="noopener">https://news.yahoo.co.jp/articles/e3ce20f9d67af2b5b60393981585fb239faab362</a></li>
+    <li>厚生労働省「労働基準関係法制研究会の報告書を公表します」 <a href="https://www.mhlw.go.jp/stf/newpage_48220.html" rel="noopener">https://www.mhlw.go.jp/stf/newpage_48220.html</a></li>
+    <li>日本経済新聞「連続勤務は最長13日に、労基法改正を提言 厚労省研究会」 <a href="https://www.nikkei.com/article/DGXZQOUA240Z50U4A221C2000000/" rel="noopener">https://www.nikkei.com/article/DGXZQOUA240Z50U4A221C2000000/</a></li>
+    <li>労働政策研究・研修機構「ビジネス・レーバー・トレンド」2025年3月号 研究会報告書の解説 <a href="https://www.jil.go.jp/kokunai/blt/backnumber/2025/03/special_03.html" rel="noopener">https://www.jil.go.jp/kokunai/blt/backnumber/2025/03/special_03.html</a></li>
+    <li>労働新聞社「連続勤務に上限設定 労基法見直しへ報告書 厚労省研究会」 <a href="https://www.rodo.co.jp/news/189705/" rel="noopener">https://www.rodo.co.jp/news/189705/</a></li>
+    <li>e-Gov法令検索「労働基準法」第35条(休日) <a href="https://laws.e-gov.go.jp/law/322AC0000000049" rel="noopener">https://laws.e-gov.go.jp/law/322AC0000000049</a></li>
+  </ul>
+</section>
+
+<footer>
+  <p><a href="../">毎日ひとつの小さな道具箱</a> のひとつです。誤りに気づいたら、一覧ページからお知らせください。</p>
+</footer>
+</div>
+
+<script>
+(function(){
+var $=function(id){return document.getElementById(id)};
+var KEY='day020-renkin-v1';
+var W='w',A='a',R='r';
+var state={start:'2026-11-01',days:28,wk:0,hen:false,staff:[]};
+function load(){try{var s=JSON.parse(localStorage.getItem(KEY)||'null');if(s&&s.staff)state=s;}catch(e){}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
+function parseD(s){var p=s.split('-');return new Date(+p[0],+p[1]-1,+p[2])}
+function addD(d,n){var x=new Date(d.getTime());x.setDate(x.getDate()+n);return x}
+function md(d){return (d.getMonth()+1)+'/'+d.getDate()}
+var WD=['日','月','火','水','木','金','土'];
+function blank(name){var c=[];for(var i=0;i<state.days;i++)c.push(R);return {name:name||'',carry:0,c:c}}
+function fit(){state.staff.forEach(function(s){while(s.c.length<state.days)s.c.push(R);if(s.c.length>state.days)s.c.length=state.days;})}
+
+function analyse(s){
+  var n=state.days,start=parseD(state.start),res={};
+  // streaks
+  var run=+s.carry||0,max=run,maxEnd=run>0?-1:null,lens=new Array(n);
+  var runStart=0,segs=[];var cur=run, curStart=run>0?-run:0;
+  for(var i=0;i<n;i++){
+    if(s.c[i]===R){ if(cur>0)segs.push([curStart,i-1,cur]); cur=0; }
+    else{ if(cur===0)curStart=i; cur++; }
+  }
+  if(cur>0)segs.push([curStart,n-1,cur]);
+  segs.forEach(function(g){if(g[2]>max){max=g[2];}});
+  var mark=new Array(n).fill(0);
+  segs.forEach(function(g){var lv=g[2]>=14?14:(g[2]>=7?7:0);if(lv)for(var j=Math.max(0,g[0]);j<=g[1];j++)mark[j]=lv;});
+  var best=null;segs.forEach(function(g){if(!best||g[2]>best[2])best=g;});
+  res.max=max;res.best=best;res.mark=mark;res.segs=segs;
+  // weeks
+  var off=(start.getDay()-state.wk+7)%7, first=off===0?0:7-off, weeks=[];
+  for(var w=first;w+7<=n;w+=7){var r=0;for(var k=w;k<w+7;k++)if(s.c[k]===R)r++;weeks.push({from:w,rest:r});}
+  res.weeks=weeks;res.weekNG=weeks.filter(function(x){return x.rest<1});
+  var blocks4=[];for(var b=0;b+28<=n;b+=28){var r4=0;for(var k2=b;k2<b+28;k2++)if(s.c[k2]===R)r4++;blocks4.push({from:b,rest:r4});}
+  res.b4=blocks4;res.b4NG=blocks4.filter(function(x){return x.rest<4});
+  var blocks2=[];for(var b2=0;b2+14<=n;b2+=14){var r2=0;for(var k3=b2;k3<b2+14;k3++)if(s.c[k3]===R)r2++;blocks2.push({from:b2,rest:r2});}
+  res.b2=blocks2;res.b2NG=blocks2.filter(function(x){return x.rest<2});
+  // current rule
+  if(state.hen){res.law=blocks4.length?(res.b4NG.length?'ng':'ok'):'na';}
+  else{res.law=weeks.length?(res.weekNG.length?'ng':'ok'):'na';}
+  res.over13=max>=14;
+  res.worked=s.c.filter(function(x){return x!==R}).length;
+  return res;
+}
+
+function render(){
+  fit();
+  $('start').value=state.start;$('days').value=String(state.days);$('wkstart').value=String(state.wk);$('hen').checked=!!state.hen;
+  var start=parseD(state.start),n=state.days,t=$('tbl');
+  var h='<thead><tr><th class="name">名前</th><th title="前の期間からの連勤">前から<br>連勤</th>';
+  for(var i=0;i<n;i++){var d=addD(start,i),cls=[];if(d.getDay()===0)cls.push('sun');if(d.getDay()===6)cls.push('sat');if(d.getDay()===state.wk&&i>0)cls.push('wk');h+='<th class="'+cls.join(' ')+'">'+md(d)+'<br>'+WD[d.getDay()]+'</th>';}
+  h+='<th></th></tr></thead><tbody>';
+  var results=state.staff.map(analyse);
+  state.staff.forEach(function(s,ri){
+    var r=results[ri];
+    h+='<tr><th class="name"><input type="text" data-r="'+ri+'" class="nm" value="'+esc(s.name)+'" placeholder="スタッフ'+(ri+1)+'" aria-label="名前"></th>';
+    h+='<td class="carry"><input type="number" min="0" max="60" data-r="'+ri+'" class="cy" value="'+(+s.carry||0)+'" aria-label="前の期間からの連勤日数"></td>';
+    for(var i=0;i<n;i++){var d=addD(start,i),v=s.c[i],lab=v===W?'出':v===A?'明':'休',cl=v+(r.mark[i]===14?' s14':r.mark[i]===7?' s7':'');
+      h+='<td class="'+(d.getDay()===state.wk&&i>0?'wk':'')+'"><button class="'+cl+'" data-r="'+ri+'" data-i="'+i+'" aria-label="'+esc(s.name||('スタッフ'+(ri+1)))+' '+md(d)+' '+lab+'">'+lab+'</button></td>';}
+    h+='<td class="del"><button data-del="'+ri+'" aria-label="この行を消す" title="この行を消す">×</button></td></tr>';
+  });
+  h+='</tbody>';t.innerHTML=h;
+  renderResults(results);
+  save();
+}
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function day(i){return md(addD(parseD(state.start),i))}
+function renderResults(results){
+  var staff=state.staff,n13=0,nLaw=0,n7=0,maxAll=0;
+  results.forEach(function(r){if(r.over13)n13++;if(r.law==='ng')nLaw++;if(r.max>=7&&!r.over13)n7++;if(r.max>maxAll)maxAll=r.max;});
+  $('sum').innerHTML=
+    tile(maxAll+'日','いちばん長い連勤',maxAll>=14?'bad':maxAll>=7?'warn':'good')+
+    tile(n13+'人','14日以上(13日上限案を超える)',n13?'bad':'good')+
+    tile(nLaw+'人',state.hen?'4週4休が足りない':'休みのない週がある',nLaw?'bad':'good')+
+    tile(n7+'人','7〜13日の連勤がある',n7?'warn':'good');
+  var html='';
+  staff.forEach(function(s,i){
+    var r=results[i],nm=esc(s.name||('スタッフ'+(i+1)));
+    var lv=(r.over13||r.law==='ng')?'bad':(r.max>=7||r.b2NG.length)?'warn':'';
+    var li=[];
+    if(r.best&&r.max>0){var a=r.best[0],b=r.best[1];li.push('最長の連勤: '+(a<0?'前の期間から':day(a))+' 〜 '+day(b)+'('+r.max+'日)');}
+    else li.push('連勤なし');
+    if(state.hen){
+      if(!r.b4.length)li.push('4週4休: 表が28日に満たないため判定なし');
+      else li.push('4週4休: '+r.b4.map(function(x){return day(x.from)+'〜の4週 休み'+x.rest+'日'}).join(' / '));
+    }
+    if(r.weeks.length){li.push('週1休: '+(r.weekNG.length?'休みがない週 '+r.weekNG.map(function(x){return day(x.from)+'〜'+day(x.from+6)}).join('、'):'全'+r.weeks.length+'週で休みあり'));}
+    if(r.b2.length)li.push('2週2休(研究会の案、参考): '+(r.b2NG.length?'足りない2週 '+r.b2NG.map(function(x){return day(x.from)+'〜'+day(x.from+13)+'(休み'+x.rest+'日)'}).join('、'):'すべての2週で2日以上'));
+    li.push('勤務日 '+r.worked+'日 / '+state.days+'日'+(+s.carry?'(前の期間からの連勤 '+(+s.carry)+'日を含めて計算)':''));
+    var lawTag=r.law==='ok'?'<span class="tag ok">いまのルール: 可</span>':r.law==='ng'?'<span class="tag bad">いまのルール: 休日が足りない</span>':'<span class="tag na">いまのルール: 判定に必要な期間が足りない</span>';
+    var capTag=r.over13?'<span class="tag bad">13日上限案: 超える</span>':'<span class="tag ok">13日上限案: 収まる</span>';
+    html+='<div class="card '+lv+'"><h3>'+nm+' <span class="big">'+r.max+'連勤</span>'+lawTag+capTag+'</h3><ul><li>'+li.join('</li><li>')+'</li></ul></div>';
+  });
+  $('cards').innerHTML=html||'<p class="note">スタッフの行を足すか、見本を入れてください。</p>';
+}
+function tile(v,l,c){return '<div class="tile '+c+'"><b>'+v+'</b><span>'+l+'</span></div>'}
+
+$('tbl').addEventListener('click',function(e){
+  var b=e.target.closest('button');if(!b)return;
+  if(b.dataset.del!=null){var k=+b.dataset.del;if(confirm('「'+(state.staff[k].name||('スタッフ'+(k+1)))+'」の行を消しますか?')){state.staff.splice(k,1);render();}return;}
+  var r=+b.dataset.r,i=+b.dataset.i,v=state.staff[r].c[i];
+  state.staff[r].c[i]=v===R?W:v===W?A:R;render();
+  var nb=document.querySelector('#tbl button[data-r="'+r+'"][data-i="'+i+'"]');if(nb)nb.focus();
+});
+$('tbl').addEventListener('change',function(e){
+  var t=e.target,r=+t.dataset.r;if(isNaN(r))return;
+  if(t.classList.contains('nm')){state.staff[r].name=t.value;render();}
+  if(t.classList.contains('cy')){state.staff[r].carry=Math.max(0,Math.min(60,parseInt(t.value,10)||0));render();}
+});
+$('start').addEventListener('change',function(){if(this.value){state.start=this.value;render();}});
+$('days').addEventListener('change',function(){state.days=+this.value;render();});
+$('wkstart').addEventListener('change',function(){state.wk=+this.value;render();});
+$('hen').addEventListener('change',function(){state.hen=this.checked;render();});
+$('add').addEventListener('click',function(){state.staff.push(blank());render();});
+$('clear').addEventListener('click',function(){if(confirm('表の内容を消しますか?')){state.staff=[blank()];render();}});
+$('sample').addEventListener('click',function(){
+  state.start='2026-11-01';state.days=28;state.wk=0;
+  function mk(name,str,carry){var c=str.split('').map(function(ch){return ch==='出'?W:ch==='明'?A:R});return {name:name,carry:carry||0,c:c}}
+  state.staff=[
+    mk('見本A(週1休)','休出出出出出休休出出出出出休出出出休出出出出出出休出出休',0),
+    mk('見本B(週末に休みを寄せた)','出出出出出出休休出出出出出出出出出出出休休出出出出出出出',2),
+    mk('見本C(夜勤あり)','休出出明休出出明休休出出明休出出明休出出出明休休出出明休',0),
+    mk('見本D(4週の両端に休みを寄せた)','休休'+'出'.repeat(24)+'休休',0)
+  ];render();
+});
+$('csv').addEventListener('click',function(){
+  var start=parseD(state.start),rows=[['名前','前から連勤'].concat(Array.from({length:state.days},function(_,i){return md(addD(start,i))}))];
+  state.staff.forEach(function(s){rows.push([s.name,s.carry].concat(s.c.map(function(v){return v===W?'出':v===A?'明':'休'})))});
+  var res=state.staff.map(analyse);rows.push([]);rows.push(['名前','最長連勤','いまのルール','13日上限案']);
+  state.staff.forEach(function(s,i){rows.push([s.name,res[i].max,res[i].law==='ok'?'可':res[i].law==='ng'?'休日不足':'判定なし',res[i].over13?'超える':'収まる'])});
+  var txt='﻿'+rows.map(function(r){return r.map(function(x){x=String(x==null?'':x);return /[",\n]/.test(x)?'"'+x.replace(/"/g,'""')+'"':x}).join(',')}).join('\r\n');
+  var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([txt],{type:'text/csv'}));a.download='renkin-check-'+state.start+'.csv';document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},500);
+});
+$('print').addEventListener('click',function(){window.print()});
+var WORK=/[出○◯〇1日早遅中夜入ABCabc勤]/,AKE=/[明]/,REST=/[休×✕xX公有\-0\/特振代]/;
+$('doPaste').addEventListener('click',function(){
+  var lines=$('pasteBox').value.split(/\r?\n/).filter(function(l){return l.trim()});if(!lines.length)return;
+  var out=[];
+  lines.forEach(function(l){
+    var cells=/[\t,]/.test(l)?l.split(/[\t,]/):null,name='',codes=[];
+    if(cells){name=cells.shift().trim();cells.forEach(function(c){c=c.trim();codes.push(!c?R:AKE.test(c)?A:REST.test(c)?R:W)});}
+    else{var m=l.match(/^\s*(\S+?)[\s:：]+(.+)$/);if(!m)return;name=m[1];m[2].replace(/\s+/g,'').split('').forEach(function(ch){codes.push(AKE.test(ch)?A:REST.test(ch)?R:WORK.test(ch)?W:R)});}
+    if(name||codes.length)out.push({name:name,carry:0,c:codes});
+  });
+  if(!out.length){alert('読み取れる行がありませんでした。1行目に名前、その後に記号を並べてください。');return;}
+  var mx=Math.max.apply(null,out.map(function(s){return s.c.length}));
+  var opts=[28,30,31,35,42,56],pick=opts.find(function(o){return o>=mx})||56;state.days=pick;
+  state.staff=out;render();document.getElementById('s3').scrollIntoView({behavior:'smooth'});
+});
+var url=location.href.split('#')[0];
+$('shX').href='https://twitter.com/intent/tweet?text='+encodeURIComponent('連勤チェック シフト表。貼るだけでスタッフごとの最長連勤と、週1休・4週4休・検討中の「最長13日」に当たるかが分かります')+'&url='+encodeURIComponent(url);
+$('shL').href='https://social-plugins.line.me/lineit/share?url='+encodeURIComponent(url);
+$('shC').addEventListener('click',function(){var b=this;(navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(function(){b.textContent='コピーしました'},function(){prompt('このURLをコピーしてください',url)})});
+
+load();
+if(!state.staff.length){state.staff=[];$('sample').click();}else render();
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
