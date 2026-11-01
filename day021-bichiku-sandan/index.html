@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>備蓄の算段帳 3日・1週間ぶん</title>
+<meta name="description" content="防災庁の発足日(2026年11月2日)に合わせた備蓄の「緊急要請」で呼びかけられた、食べ物・水・トイレの最低3日、できれば1週間ぶん。家族の人数を入れると必要な量を出し、家にある数を引いた不足ぶんを1〜4週に分けた買い物メモにします。">
+<link rel="canonical" href="https://alternativestudio2021-collab.github.io/daily-launch-sites/day021-bichiku-sandan/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="備蓄の算段帳 3日・1週間ぶん">
+<meta property="og:description" content="家族の人数から水・主食・おかず・携帯トイレ・カセットボンベの量を出し、家にあるぶんを引いて、不足を何週かに分けて買う。">
+<meta property="og:url" content="https://alternativestudio2021-collab.github.io/daily-launch-sites/day021-bichiku-sandan/">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Dela+Gothic+One&family=Martian+Mono:wght@500;700&display=swap">
+<style>
+:root{
+  --bg:#ece7da;--paper:#f8f5ec;--ink:#24231e;--sub:#625e52;--rule:#cbc3ad;
+  --khaki:#5e6438;--khaki-soft:#e3e3c9;--orange:#c4501a;--orange-soft:#f6dfcf;--ok:#3d6b3a;
+  --f-body:"BIZ UDPGothic","Hiragino Sans","Noto Sans JP",sans-serif;--f-head:"Dela Gothic One","BIZ UDPGothic",sans-serif;--f-num:"Martian Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#191a14;--paper:#22231b;--ink:#ece8da;--sub:#aaa592;--rule:#3c3d30;
+  --khaki:#b8bf84;--khaki-soft:#2f3222;--orange:#f08a52;--orange-soft:#3a2518;--ok:#8fc48a;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#191a14;--paper:#22231b;--ink:#ece8da;--sub:#aaa592;--rule:#3c3d30;
+  --khaki:#b8bf84;--khaki-soft:#2f3222;--orange:#f08a52;--orange-soft:#3a2518;--ok:#8fc48a;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);line-height:1.8;font-size:16px}
+.wrap{max-width:880px;margin:0 auto;padding:28px 16px 72px;display:grid;gap:28px}
+a{color:var(--khaki)}
+h1,h2{font-family:var(--f-head);font-weight:400;margin:0;line-height:1.35;text-wrap:balance}
+h1{font-size:clamp(28px,6vw,46px)}
+h2{font-size:clamp(20px,3.6vw,26px)}
+h3{font-size:17px;margin:0}
+p{margin:0}
+.num{font-family:var(--f-num);font-variant-numeric:tabular-nums}
+.stamp{display:inline-block;font-family:var(--f-num);font-size:12px;letter-spacing:.08em;border:2px solid var(--orange);color:var(--orange);padding:2px 8px;border-radius:3px;transform:rotate(-2deg)}
+header.hero{display:grid;gap:14px;padding:22px 20px;background:var(--paper);border:1px solid var(--rule);border-left:10px solid var(--khaki);border-radius:4px}
+.hero .lead{color:var(--sub)}
+.quote{font-size:clamp(17px,3vw,21px);font-weight:700;border-top:2px dashed var(--rule);padding-top:12px}
+.quote small{display:block;font-weight:400;font-size:13px;color:var(--sub)}
+section.card{background:var(--paper);border:1px solid var(--rule);border-radius:4px;padding:20px;display:grid;gap:16px}
+.steps{display:flex;gap:8px;flex-wrap:wrap;font-family:var(--f-num);font-size:12px;color:var(--sub)}
+.steps span{border:1px solid var(--rule);border-radius:99px;padding:2px 10px}
+fieldset{border:0;margin:0;padding:0;display:grid;gap:10px}
+legend{font-weight:700;margin-bottom:6px}
+.people{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.people label,.opt label{display:grid;gap:4px;font-size:14px;color:var(--sub)}
+input[type=number]{font:inherit;font-family:var(--f-num);font-size:18px;width:100%;padding:8px 10px;border:1px solid var(--rule);border-radius:4px;background:var(--bg);color:var(--ink)}
+input[type=number]:focus,button:focus-visible{outline:3px solid var(--orange);outline-offset:1px}
+.seg{display:inline-flex;border:2px solid var(--khaki);border-radius:6px;overflow:hidden}
+.seg button{font:inherit;font-weight:700;border:0;background:transparent;color:var(--khaki);padding:8px 16px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--khaki);color:var(--paper)}
+.opt{display:flex;flex-wrap:wrap;gap:16px;align-items:end}
+.opt label{min-width:150px}
+/* 棚札 */
+.shelf{display:grid;gap:12px}
+.tag{display:grid;grid-template-columns:1fr auto;gap:6px 14px;padding:14px 16px;border:1px solid var(--rule);border-radius:4px;background:var(--bg);position:relative}
+.tag::before{content:"";position:absolute;left:-1px;top:14px;width:6px;height:22px;background:var(--khaki);border-radius:0 3px 3px 0}
+.tag.short::before{background:var(--orange)}
+.tag h3{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.tag h3 .basis{font-weight:400;font-size:12px;color:var(--sub)}
+.need{font-family:var(--f-num);font-size:22px;font-weight:700;text-align:right;white-space:nowrap}
+.need small{font-size:13px;font-weight:500;color:var(--sub)}
+.have{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:14px;color:var(--sub)}
+.have input{width:110px;font-size:16px;padding:5px 8px}
+.bar{grid-column:1/-1;height:10px;background:var(--orange-soft);border-radius:2px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--khaki);width:0;transition:width .2s}
+.verdict{grid-column:1/-1;font-size:14px;font-weight:700}
+.verdict.ok{color:var(--ok)}.verdict.ng{color:var(--orange)}
+.note{font-size:13px;color:var(--sub)}
+/* 買い物メモ */
+.plan{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.week{border:2px dashed var(--rule);border-radius:6px;padding:12px 14px;background:var(--bg)}
+.week h3{font-family:var(--f-num);font-size:14px;color:var(--khaki);margin-bottom:6px}
+.week ul{margin:0;padding-left:1.1em;font-size:15px}
+.week li{margin:2px 0}
+.empty{color:var(--sub);font-size:14px}
+.tools{display:flex;flex-wrap:wrap;gap:10px}
+.btn{font:inherit;font-weight:700;padding:9px 16px;border-radius:4px;border:2px solid var(--khaki);background:var(--khaki);color:var(--paper);cursor:pointer}
+.btn.ghost{background:transparent;color:var(--khaki)}
+.check{display:grid;gap:6px;margin:0;padding:0;list-style:none}
+.check li{display:flex;gap:8px;align-items:flex-start}
+.check input{margin-top:6px;accent-color:var(--khaki);width:18px;height:18px;flex:none}
+.facts{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.facts li{padding-left:16px;border-left:3px solid var(--khaki)}
+.warn{background:var(--orange-soft);border:1px solid var(--orange);border-radius:4px;padding:12px 14px;font-size:15px}
+details{border-top:1px solid var(--rule);padding:10px 0}
+details summary{cursor:pointer;font-weight:700}
+details p{margin-top:8px;color:var(--sub)}
+ol.src{margin:0;padding-left:1.4em;font-size:13px;color:var(--sub);word-break:break-all}
+footer{font-size:12px;color:var(--sub);display:grid;gap:6px}
+.toplink{font-size:13px}
+@media (max-width:520px){.tag{grid-template-columns:1fr}.need{text-align:left}}
+@media print{
+  body{background:#fff;color:#000;font-size:12px}
+  .noprint,.hero .lead,.toplink,footer,.faq,.why{display:none!important}
+  section.card,header.hero{border:1px solid #999;break-inside:avoid}
+  .week{border-color:#999}
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"緊急要請は何を求めているのですか","acceptedAnswer":{"@type":"Answer","text":"報道によると、細野防災担当相は防災庁の発足日の2026年11月2日に、全国民と中央省庁・全都道府県に向けて災害への備えを求める緊急要請を出す方針で、食べ物・水・トイレを最低3日、できれば1週間ぶん用意するよう呼びかけています。正式な文面は11月2日の政府発表で確認してください。"}},
+{"@type":"Question","name":"何か大きな災害が起きるという予告ですか","acceptedAnswer":{"@type":"Answer","text":"報道では、特定の災害を予告するものではなく、南海トラフ地震や首都直下地震などで行政の支援が届くまで時間がかかる場合に備えて自助を促す趣旨と説明されています。"}},
+{"@type":"Question","name":"水は1人何リットル必要ですか","acceptedAnswer":{"@type":"Answer","text":"農林水産省の資料では、飲み水と調理に使う水で1人1日3リットルが目安です。食器洗いなどの生活用水は別に必要です。"}},
+{"@type":"Question","name":"携帯トイレは何回分あればよいですか","acceptedAnswer":{"@type":"Answer","text":"内閣府のガイドラインをもとに、自治体は1人1日5回分を目安としています。4人家族で1週間なら140回分です。"}},
+{"@type":"Question","name":"一度に全部買ったほうがよいですか","acceptedAnswer":{"@type":"Answer","text":"一度に買い込むと店頭の品薄を招きやすく、期限の管理も難しくなります。このページでは不足ぶんを1〜4週に分けた買い物メモを作れます。普段使う食品を多めに置いて、使ったら買い足すローリングストックが続けやすい方法です。"}}
+]}
+</script>
+</head><body>
+<div class="wrap">
+
+<p class="toplink noprint"><a href="../">← 毎日ひとつの小さな道具箱</a></p>
+
+<header class="hero">
+  <span class="stamp">2026.11.02 防災庁 発足日</span>
+  <h1>備蓄の算段帳<br>3日・1週間ぶん</h1>
+  <p class="lead">家族の人数を入れると、水・主食・おかず・携帯トイレ・カセットボンベの必要量を出します。家にある数を引いた不足ぶんは、1〜4週に分けた買い物メモにできます。入力はこの端末の中だけで使い、どこにも送りません。</p>
+  <p class="quote">「最低限3日、できれば1週間、食べ物や水、トイレを用意していただきたい」<small>細野豪志防災担当相。10月下旬、フジテレビのネット番組での発言として報道<a href="#s1">[1]</a>。11月2日の防災庁発足に合わせ、全国民と中央省庁・全都道府県に備えを求める「緊急要請」を出す方針と伝えられています<a href="#s1">[1]</a><a href="#s2">[2]</a>。</small></p>
+</header>
+
+<section class="card" aria-labelledby="h-in">
+  <div class="steps noprint"><span>1 人数</span><span>2 日数</span><span>3 家にある数</span><span>4 買い物メモ</span></div>
+  <h2 id="h-in">1. 家族と日数</h2>
+  <fieldset>
+    <legend>家にいる人数</legend>
+    <div class="people">
+      <label>大人(中学生以上)<input type="number" id="adults" min="0" max="20" value="2" inputmode="numeric"></label>
+      <label>子ども(小学生まで)<input type="number" id="kids" min="0" max="20" value="1" inputmode="numeric"></label>
+      <label>乳児(ミルク・おむつ)<input type="number" id="babies" min="0" max="10" value="0" inputmode="numeric"></label>
+      <label>犬・猫<input type="number" id="pets" min="0" max="20" value="0" inputmode="numeric"></label>
+    </div>
+  </fieldset>
+  <div class="opt">
+    <div>
+      <p style="font-weight:700;margin-bottom:6px">何日ぶん備えるか</p>
+      <div class="seg" role="group" aria-label="日数">
+        <button type="button" data-days="3" aria-pressed="false">最低 3日</button>
+        <button type="button" data-days="7" aria-pressed="true">できれば 1週間</button>
+      </div>
+    </div>
+    <label>おかずの品数(1人1日)<input type="number" id="dishes" min="1" max="6" value="2" inputmode="numeric"></label>
+    <label id="diaperWrap">おむつ(1人1日の枚数)<input type="number" id="diapers" min="1" max="20" value="8" inputmode="numeric"></label>
+  </div>
+  <p class="note">子どもも水と携帯トイレは大人と同じ量で数えます(少なめに見積もらないため)。主食とおかずは子ども1人を大人と同じ食数で数え、量の調整は各家庭にお任せします。</p>
+</section>
+
+<section class="card" aria-labelledby="h-shelf">
+  <h2 id="h-shelf">2. 必要な量と、家にある数</h2>
+  <p class="note noprint">「家にある」に今ある数を入れると、足りない分が下の買い物メモに回ります。期限が切れたもの、すぐ切れるものは数えないでください。</p>
+  <div class="shelf" id="shelf"></div>
+</section>
+
+<section class="card" aria-labelledby="h-plan">
+  <h2 id="h-plan">3. 分けて買う買い物メモ</h2>
+  <div class="opt noprint">
+    <div>
+      <p style="font-weight:700;margin-bottom:6px">何週に分けて買うか</p>
+      <div class="seg" role="group" aria-label="週の数" id="weeksSeg">
+        <button type="button" data-weeks="1" aria-pressed="false">1週</button>
+        <button type="button" data-weeks="2" aria-pressed="true">2週</button>
+        <button type="button" data-weeks="4" aria-pressed="false">4週</button>
+      </div>
+    </div>
+  </div>
+  <p class="note">水とトイレを先に、食べ物は後の週に回しています。災害時に最初に困りやすいのが飲み水とトイレだからです。</p>
+  <div class="plan" id="plan"></div>
+  <div class="tools noprint">
+    <button class="btn" type="button" id="print">買い物メモを印刷</button>
+    <button class="btn ghost" type="button" id="copy">メモをコピー</button>
+    <button class="btn ghost" type="button" id="reset">入力を消す</button>
+  </div>
+  <!-- PR枠: 防災備蓄(水・携帯トイレ・保存食)の楽天アフィリエイト公式コードが届いたら、ここに「PR」表記付きで改変せず貼る。owner_actions rakuten-bichiku-day021 -->
+</section>
+
+<section class="card" aria-labelledby="h-extra">
+  <h2 id="h-extra">数では出せない、家ごとの備え</h2>
+  <ul class="check" id="extra">
+    <li><input type="checkbox" id="x1"><label for="x1">ふだん飲んでいる薬(処方薬は残りが少なくなる前に。お薬手帳の写しかスマホの写真も)</label></li>
+    <li><input type="checkbox" id="x2"><label for="x2">乳児がいる家は粉ミルクか液体ミルク、哺乳瓶、おしりふき</label></li>
+    <li><input type="checkbox" id="x3"><label for="x3">食物アレルギーや持病のある人が食べられる食品(避難所で手に入りにくい)</label></li>
+    <li><input type="checkbox" id="x4"><label for="x4">カセットこんろ本体(ボンベだけあっても使えない)</label></li>
+    <li><input type="checkbox" id="x5"><label for="x5">懐中電灯・ラジオ・モバイルバッテリー・乾電池</label></li>
+    <li><input type="checkbox" id="x6"><label for="x6">ポリ袋・ラップ・ウェットティッシュ(皿に敷けば洗い物の水を減らせる)</label></li>
+    <li><input type="checkbox" id="x7"><label for="x7">ペットの療法食・薬・キャリー・飼い主の連絡先を書いた札</label></li>
+  </ul>
+</section>
+
+<section class="card why" aria-labelledby="h-facts">
+  <h2 id="h-facts">要請について分かっていること(11月2日朝の時点)</h2>
+  <ul class="facts">
+    <li>防災庁は2026年11月2日に発足。細野防災担当相は同じ日に、全国民だけでなく中央省庁と全都道府県にも災害への備えを進めるよう「緊急要請」を出す方針と報じられています<a href="#s1">[1]</a><a href="#s2">[2]</a>。</li>
+    <li>中身は食べ物・水・トイレを「最低3日、できれば1週間」。南海トラフ地震や首都直下地震などで行政の支援が遅れる可能性を考え、自助を進めてもらうことで、公助を本当に必要な人に集中させる、という説明です<a href="#s2">[2]</a>。</li>
+    <li>特定の災害を予告するものではないと伝えられています。SNSでは「何か起きるのか」という憶測も広がり、買い占めへの注意も呼びかけられています<a href="#s3">[3]</a>。</li>
+    <li>要請の正式な文面は11月2日に公表される予定で、このページはそれ以前の報道をもとにしています。数字が公表内容と違っていた場合は、公式の数字を優先してください。</li>
+  </ul>
+  <div class="warn">店頭の水や携帯トイレが一時的に減ることがあります。家にあるものを先に数え、足りない分を何回かに分けて買うと、お店の在庫も自分の財布も無理がありません。</div>
+</section>
+
+<section class="card why" aria-labelledby="h-basis">
+  <h2 id="h-basis">計算のもと</h2>
+  <ul class="facts">
+    <li><b>水</b> 1人1日3リットル(飲み水と調理用)。食器洗いなどの生活用水は別<a href="#s4">[4]</a><a href="#s5">[5]</a>。</li>
+    <li><b>携帯トイレ</b> 1人1日5回分。内閣府「避難所におけるトイレの確保・管理ガイドライン」をもとに自治体が示す目安<a href="#s6">[6]</a><a href="#s7">[7]</a>。</li>
+    <li><b>カセットボンベ</b> 1人1週間におよそ6本(農林水産省の家庭備蓄の資料)<a href="#s8">[8]</a><a href="#s9">[9]</a>。3日なら日数に合わせて按分し、端数は切り上げ。</li>
+    <li><b>主食</b> 1人1日3食。パックごはん・カップ麺・乾麺など何で数えても構いません。米なら2kgでおよそ26食(1合で茶わん2杯として)。</li>
+    <li><b>おかず</b> 1人1日2品(缶詰・レトルトなど)をこのページの仮置きにしています。品数は上の欄で変えられます。</li>
+    <li><b>ペット</b> フードと水を少なくとも5日分、できれば7日分以上。環境省のガイドラインにもとづき自治体が示す目安<a href="#s10">[10]</a><a href="#s11">[11]</a>。3日を選んでもペットは5日分以上で数えます。</li>
+  </ul>
+</section>
+
+<section class="card faq" aria-labelledby="h-faq">
+  <h2 id="h-faq">よくある質問</h2>
+  <details><summary>要請に従わないと罰則がありますか</summary><p>報道されている内容は「要請」で、各家庭に備えを呼びかけるものです。どこまで備えるかは家の広さや家計に合わせて決めてください。まずは3日ぶんから始めても構いません。</p></details>
+  <details><summary>水は2リットルのペットボトル何本ですか</summary><p>4人家族で1週間なら3L×4人×7日=84リットル、2Lボトルで42本(6本入りの箱で7箱)です。棚札の「2Lボトル換算」に家族の人数での本数を出しています。</p></details>
+  <details><summary>携帯トイレはなぜこんなに多いのですか</summary><p>断水や下水管の損傷で、家のトイレが流せなくなることがあるためです。1人1日5回で、4人家族の1週間なら140回分になります。便器にかぶせて使う袋と凝固剤がセットになったものが一般的です。</p></details>
+  <details><summary>特別な非常食を買わないといけませんか</summary><p>農林水産省は、ふだんの食品を少し多めに買い置きし、使った分を買い足す「ローリングストック」を勧めています<a href="#s5">[5]</a>。パックごはん、缶詰、レトルト、乾麺など、家族が食べ慣れたもので数えてください。</p></details>
+  <details><summary>入力した内容はどこかに送られますか</summary><p>送りません。入力はこの端末のブラウザに保存され、次に開いたときに続きから使えます。「入力を消す」で消せます。</p></details>
+</section>
+
+<section class="card" aria-labelledby="h-src">
+  <h2 id="h-src">出典</h2>
+  <ol class="src">
+    <li id="s1">朝鮮日報日本語版(Yahoo!ニュース)「日本政府、災害用品の1週間分備蓄を要請へ」 <a href="https://news.yahoo.co.jp/articles/7d026c22b53ff880f6891967de98709f54d9591d">news.yahoo.co.jp/articles/7d026c22…</a></li>
+    <li id="s2">内外タイムス(dメニューニュース)「食べ物や水の備蓄要請で『巨大地震の前兆か』とパニックに 細野大臣による“呼びかけ”の真意は」 <a href="https://topics.smt.docomo.ne.jp/article/npn/nation/npn-300595263">topics.smt.docomo.ne.jp/…/npn-300595263</a></li>
+    <li id="s3">ライブドアニュース「11月2日に何かが起きる!? 細野豪志大臣の『緊急要請』がネットで歪曲 買い占め注意!」 <a href="https://news.livedoor.com/article/detail/32680761/">news.livedoor.com/article/detail/32680761/</a></li>
+    <li id="s4">農林水産省 食育白書(令和4年度)家庭での備蓄 <a href="https://www.maff.go.jp/j/syokuiku/wpaper/r4/r4_h/book/part2/chap3/b2_c3_2_07.html">maff.go.jp/j/syokuiku/wpaper/r4/…</a></li>
+    <li id="s5">農林水産省 家庭備蓄ポータル <a href="https://www.maff.go.jp/j/zyukyu/foodstock/index.html">maff.go.jp/j/zyukyu/foodstock/</a></li>
+    <li id="s6">広島市 家庭でのトイレの備え <a href="https://www.city.hiroshima.lg.jp/saigaiinfo/saigai/1021018/1025517/1049251.html">city.hiroshima.lg.jp/…/1049251.html</a></li>
+    <li id="s7">神奈川県 携帯トイレを備蓄しましょう <a href="https://www.pref.kanagawa.jp/docs/j8g/bousai/keitaitoirebitiku.html">pref.kanagawa.jp/docs/j8g/bousai/keitaitoirebitiku.html</a></li>
+    <li id="s8">農林水産省 aff(あふ)2026年3月号 家庭備蓄特集 <a href="https://www.maff.go.jp/j/pr/aff/2603/spe1_01.html">maff.go.jp/j/pr/aff/2603/spe1_01.html</a></li>
+    <li id="s9">農林水産省 食育ガイド 第8章 <a href="https://www.maff.go.jp/j/syokuiku/plan/4_plan/togo/html/part8.html">maff.go.jp/j/syokuiku/plan/…/part8.html</a></li>
+    <li id="s10">相模原市 ペットの災害対策 <a href="https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/pet/1020618.html">city.sagamihara.kanagawa.jp/…/1020618.html</a></li>
+    <li id="s11">三重県 ペットの防災 <a href="https://www.pref.mie.lg.jp/ASMILE/71984044638.htm">pref.mie.lg.jp/ASMILE/71984044638.htm</a></li>
+  </ol>
+</section>
+
+<footer>
+  <p>このページは報道と公的資料をもとにした目安の計算で、量を保証するものではありません。持病・アレルギー・乳児の食事は、かかりつけ医や自治体の窓口の案内を優先してください。</p>
+  <p>2026年11月2日 公開。「毎日ひとつの小さな道具箱」Day 21。</p>
+</footer>
+</div>
+
+<script>
+(function(){
+  var KEY='day021-bichiku-v1';
+  var state={adults:2,kids:1,babies:0,pets:0,days:7,dishes:2,diapers:8,weeks:2,have:{}};
+  try{var s=JSON.parse(localStorage.getItem(KEY)||'null');if(s&&typeof s==='object'){for(var k in s){state[k]=s[k];}}}catch(e){}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+  var $=function(id){return document.getElementById(id);};
+  var ids=['adults','kids','babies','pets','dishes','diapers'];
+  ids.forEach(function(id){$(id).value=state[id];$(id).addEventListener('input',function(){var v=parseInt(this.value,10);state[id]=isNaN(v)||v<0?0:v;save();render();});});
+  function seg(sel,attr,key){
+    document.querySelectorAll(sel+' button').forEach(function(b){
+      b.setAttribute('aria-pressed',String(+b.getAttribute(attr)===state[key]));
+      b.addEventListener('click',function(){state[key]=+b.getAttribute(attr);document.querySelectorAll(sel+' button').forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});save();render();});
+    });
+  }
+  seg('.seg[aria-label="日数"]','data-days','days');
+  seg('#weeksSeg','data-weeks','weeks');
+
+  // order = 買う順(水・トイレを先に)
+  function items(){
+    var n=state.adults+state.kids, d=state.days, petDays=Math.max(d,5);
+    var list=[
+      {key:'water',name:'水(飲み水・調理用)',unit:'L',need:3*n*d,basis:'1人1日3L',hint:function(q){return '2Lボトル換算 '+Math.ceil(q/2)+'本';},prio:1},
+      {key:'toilet',name:'携帯トイレ',unit:'回分',need:5*n*d,basis:'1人1日5回',prio:1},
+      {key:'gas',name:'カセットボンベ',unit:'本',need:Math.ceil(6*n*d/7),basis:'1人1週間6本',prio:2},
+      {key:'staple',name:'主食(ごはん・麺など)',unit:'食',need:3*n*d,basis:'1人1日3食',hint:function(q){return '米なら約'+String(Math.ceil(q*2/26*2)/2)+'kg';},prio:3},
+      {key:'dish',name:'おかず(缶詰・レトルト)',unit:'品',need:state.dishes*n*d,basis:'1人1日'+state.dishes+'品',prio:3}
+    ];
+    if(state.babies>0){list.push({key:'diaper',name:'乳児のおむつ',unit:'枚',need:state.diapers*state.babies*d,basis:'1人1日'+state.diapers+'枚',prio:2});}
+    if(state.pets>0){
+      list.push({key:'petfood',name:'ペットのフード',unit:'日分',need:petDays*state.pets,basis:'1匹'+petDays+'日分以上(頭数×日)',prio:2});
+      list.push({key:'petwater',name:'ペットの水',unit:'日分',need:petDays*state.pets,basis:'1匹'+petDays+'日分以上(頭数×日)',prio:2});
+    }
+    return list;
+  }
+  function fmt(x){return x.toLocaleString('ja-JP');}
+  function render(){
+    $('diaperWrap').style.display=state.babies>0?'':'none';
+    var list=items(), shelf=$('shelf');
+    shelf.innerHTML='';
+    list.forEach(function(it){
+      var have=+(state.have[it.key]||0), short=Math.max(0,it.need-have), pct=it.need?Math.min(100,have/it.need*100):100;
+      it.short=short;
+      var el=document.createElement('div');el.className='tag'+(short>0?' short':'');
+      el.innerHTML='<h3>'+it.name+' <span class="basis">'+it.basis+'</span></h3>'+
+        '<div class="need"><span class="num">'+fmt(it.need)+'</span> <small>'+it.unit+'</small></div>'+
+        '<div class="have"><label>家にある <input type="number" min="0" inputmode="numeric" value="'+(have||'')+'" placeholder="0" aria-label="'+it.name+'の家にある数"> '+it.unit+'</label>'+(it.hint&&it.need?'<span>'+it.hint(it.need)+'</span>':'')+'</div>'+
+        '<div class="bar" aria-hidden="true"><i style="width:'+pct+'%"></i></div>'+
+        '<p class="verdict '+(short>0?'ng':'ok')+'">'+(it.need===0?'人数を入れてください':short>0?'あと '+fmt(short)+' '+it.unit+' 足りません':'足りています')+'</p>';
+      el.querySelector('input').addEventListener('change',function(){var v=parseInt(this.value,10);state.have[it.key]=isNaN(v)||v<0?0:v;save();render();});
+      shelf.appendChild(el);
+    });
+    plan(list);
+  }
+  var lastText='';
+  function plan(list){
+    var W=state.weeks, weeks=[];for(var i=0;i<W;i++)weeks.push([]);
+    var need=list.filter(function(it){return it.short>0;});
+    // 優先度の高いものを前の週に寄せる: prio1は第1週から、prio2は中ほど、prio3は後半から割り振る
+    need.forEach(function(it){
+      var start=W===1?0:(it.prio===1?0:it.prio===2?Math.floor((W-1)/2):Math.min(W-1,Math.floor(W/2)));
+      var span=W-start, base=Math.floor(it.short/span), rem=it.short%span;
+      for(var w=0;w<span;w++){var q=base+(w<rem?1:0);if(q>0)weeks[start+w].push(it.name+' '+fmt(q)+' '+it.unit+(it.key==='water'?'(2L×'+Math.ceil(q/2)+'本)':''));}
+    });
+    var box=$('plan');box.innerHTML='';var txt=['備蓄の買い物メモ('+(state.days===7?'1週間':'3日')+'ぶん・'+(state.adults+state.kids)+'人)'];
+    if(!need.length){box.innerHTML='<p class="empty">いま入力した数では、足りないものはありません。期限の近いものから食べて、食べた分を買い足してください。</p>';lastText='足りないものはありません';return;}
+    weeks.forEach(function(ws,i){
+      var d=document.createElement('div');d.className='week';
+      d.innerHTML='<h3>第'+(i+1)+'週</h3>'+(ws.length?'<ul>'+ws.map(function(s){return '<li>'+s+'</li>';}).join('')+'</ul>':'<p class="empty">この週は買い足しなし</p>');
+      box.appendChild(d);txt.push('【第'+(i+1)+'週】');ws.forEach(function(s){txt.push('・'+s);});
+    });
+    lastText=txt.join('\n');
+  }
+  $('print').addEventListener('click',function(){window.print();});
+  $('copy').addEventListener('click',function(){var b=this;function done(){b.textContent='コピーしました';setTimeout(function(){b.textContent='メモをコピー';},1600);}
+    if(navigator.clipboard){navigator.clipboard.writeText(lastText).then(done,function(){prompt('コピーしてください',lastText);});}else{prompt('コピーしてください',lastText);}});
+  $('reset').addEventListener('click',function(){try{localStorage.removeItem(KEY);}catch(e){}location.reload();});
+  // チェックリストも保存
+  document.querySelectorAll('#extra input').forEach(function(c){c.checked=!!(state.have['x_'+c.id]);c.addEventListener('change',function(){state.have['x_'+c.id]=c.checked?1:0;save();});});
+  render();
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
