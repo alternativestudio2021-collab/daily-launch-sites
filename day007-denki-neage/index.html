@@ -130,7 +130,8 @@ footer{font-size:12px;color:var(--sub)}
     <div class="cell"><div class="lab">② の1年分の目安</div><div class="val" id="o4">—</div></div>
   </div>
   <p class="basis" id="basis" style="margin-top:12px"></p>
-  <p class="note">燃料費調整額と再エネ賦課金は月ごとに変わるため、ここには入れていません。冬は使用量そのものが増えるので、実際の請求額の差はこれより大きくなることがあります。2027年1月以降の冬の支援(2026年は1〜3月使用分に実施)は、10月20日時点で政府の発表が見当たりません。発表があればここに反映します。</p>
+  <p class="note">燃料費調整額と再エネ賦課金は月ごとに変わるため、ここには入れていません。冬は使用量そのものが増えるので、実際の請求額の差はこれより大きくなることがあります。</p>
+  <div class="winter" id="winter" style="margin-top:14px;padding:12px 14px;border:1px dashed currentColor;border-radius:6px"><b>冬の支援が12月使用分から再開されます(10月29日 首相表明)</b><p id="o5" style="margin:6px 0 0">—</p><p class="note" style="margin:6px 0 0">電気(低圧)の値引きは1kWhあたり12月使用分1円、2027年1月・2月使用分4.5円と報じられています。11月使用分には値引きはありません。都市ガスの単価と3月使用分の扱いは、11月1日時点で発表を確認できていません(3月は「気候やエネルギー価格を見て検討」)。正式な単価は資源エネルギー庁の特設ページで確認してください。</p></div>
 </section>
 
 <section class="slip perf" aria-labelledby="list-h">
@@ -148,8 +149,9 @@ footer{font-size:12px;color:var(--sub)}
     <li><span class="d">10月使用分</span><p>値引きなし。主に11月の検針・請求に出ます。同じ使用量なら、260kWhで910円高くなる計算です。</p></li>
     <li><span class="d">11月1日〜</span><p>大手電力の新しい単価が適用。検針期間が10月と11月にまたがる場合、11月1日以降の日数分だけ新単価で日割りになります。</p></li>
     <li><span class="d">12月の請求</span><p>新単価をほぼ1か月通して使った最初の請求。ここで②の値上げ分が丸ごと見えてきます。</p></li>
+    <li><span class="d">12月使用分〜</span><p>国の支援が再開(10月29日の首相表明)。電気は1kWhあたり12月使用分1円、1月・2月使用分4.5円の値引きと報じられています。12月使用分は主に1月の検針・請求に出ます。標準的な家庭で、12月〜2月の3か月に電気・ガス合わせて7,000円程度の負担減とされています。</p></li>
   </ol>
-  <p class="note">10月使用分以降の国の支援について、10月18日時点で新たな実施の発表は確認できていません。発表があればこのページを更新します。</p>
+  <p class="note">10月・11月使用分には国の値引きはありません。冬の支援の単価は報道ベースで、正式な発表が出たらこのページを直します(11月1日時点)。</p>
 </section>
 
 <section class="slip perf" aria-labelledby="map-h">
@@ -194,6 +196,7 @@ footer{font-size:12px;color:var(--sub)}
   <ol class="src">
     <li>経済産業省「一般送配電事業者8社の託送供給等に係る収入の見通しの変更承認申請を承認しました」(2026年9月4日) https://www.meti.go.jp/press/2026/09/202609004001.html</li>
     <li>経済産業省「一般送配電事業者8社から託送供給等約款の変更届出を受理しました」(2026年9月11日) https://www.meti.go.jp/press/2026/09/20260911003.html</li>
+    <li>時事通信「電気・ガス代支援、12月再開 ガソリン補助は段階的縮小―高市首相表明」(2026年10月29日) https://www.jiji.com/jc/article?k=2026102901064&amp;g=pol / 中日新聞「12月から電気ガス7千円負担減 ガソリン補助金は縮小、首相表明」 https://www.chunichi.co.jp/article/1332252</li>
     <li>経済産業省 電気・ガス料金支援(2026年7〜9月使用分)の特例認可(2026年6月12日) https://www.meti.go.jp/press/2026/06/20260612003/20260612003.html / 資源エネルギー庁 電気・ガス料金支援 https://denkigas-gekihenkanwa.go.jp/</li>
     <li>東京電力エナジーパートナー「低圧の料金メニューの見直しについて」 https://www.tepco.co.jp/ep/private/plan/teiatsu_minaoshi_2026.html / プレスリリース(2026年9月29日) https://www.tepco.co.jp/ep/notice/pressrelease/2026/pdf/26x3201.pdf</li>
     <li>中部電力ミライズ「2026年11月 電気料金単価の見直しについて」 https://miraiz.chuden.co.jp/revision202611/ / 単価表 https://miraiz.chuden.co.jp/files/01/revision202611/revision202611_02.pdf</li>
@@ -205,7 +208,7 @@ footer{font-size:12px;color:var(--sub)}
     <li>エネがえる「2026年11月の電気料金値上げ」(北陸エリアの扱い) https://www.enegaeru.com/2026-wheeling-charge-repricing</li>
     <li>新電力の告知: Looopでんき https://looop-denki.com/home/news/271948/ / ソフトバンクでんき https://www.softbank.jp/support/faq/view/204354 / 楽天でんき(Selectra) https://selectra.jp/energy/news/rakuten-denki-price-increase-november-2026 / 東邦ガス(Selectra) https://selectra.jp/energy/news/tohogas-electricity-price-increase-november-2026</li>
   </ol>
-  <p class="note" style="margin-top:10px">2026年10月19日時点の公開情報をまとめたものです。各社の料金は改定されることがあるため、契約先の料金表で確認してください。</p>
+  <p class="note" style="margin-top:10px">2026年10月19日時点の公開情報をまとめたものです(冬の支援の再開は11月1日に追記)。各社の料金は改定されることがあるため、契約先の料金表で確認してください。</p>
 </section>
 
 <footer>毎日ひとつの小さな道具箱 Day 7 ─ <a href="../">一覧へ</a>。このページは情報提供を目的としたもので、特定の電力会社やプランを勧めるものではありません。</footer>
@@ -260,6 +263,7 @@ function calc(){
  $("o3").innerHTML=`+${yen(r1+r2)}<small>円/月</small>`;
  $("o4").innerHTML=`${r2>=0?"+":""}${yen(r2*12)}<small>円/年</small>`;
  $("basis").textContent=basis;
+ $("o5").textContent=`同じ${kwh}kWhを使った場合、12月使用分は−${yen(kwh*1)}円、1月・2月使用分は各−${yen(kwh*4.5)}円の値引きになる見込みです(電気のみ、税込の概算)。9月使用分の値引き(1kWhあたり3.5円)と比べると、12月は小さく、1月・2月は大きい値引きです。`;
  lastText=`電気代 9月使用分→11月以降(同じ${kwh}kWhの場合)\n${c.name}${c.amp?" "+amp+"A":""}${pps?"(新電力は目安)":""}\n① 支援の終了 +${yen(r1)}円/月\n② 11月の料金改定 ${r2>=0?"+":""}${yen(r2)}円/月\n合計 +${yen(r1+r2)}円/月\n${location.href.split("#")[0]}`;
  const short=`今年の秋は電気代が2段階で上がる。わが家(${kwh}kWh)は9月より月+${yen(r1+r2)}円の計算`;
  const url=location.href.split("#")[0];
