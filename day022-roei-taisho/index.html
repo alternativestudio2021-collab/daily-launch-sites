@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>漏えい通知が来たら やること仕分け帳|漏れた項目から「今日・今週・3か月」の対処と相談先を出す</title>
+<meta name="description" content="個人情報の漏えいのお知らせが届いたら。氏名・電話・メール・パスワード・カード・口座番号・免許証・車のナンバーなど漏れた項目を選ぶと、今日やること、今週やること、3か月見張ることと、来そうな詐欺の手口、相談先(188・#9110・IPA)を並べます。IPAの10/26公開の対処法にもとづく無料のチェック表。">
+<link rel="canonical" href="https://alternativestudio2021-collab.github.io/daily-launch-sites/day022-roei-taisho/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="漏えい通知が来たら やること仕分け帳">
+<meta property="og:description" content="漏れた項目を選ぶと、今日・今週・3か月の対処と、来そうな手口、相談先を並べます。入力は端末の外に送りません。">
+<meta property="og:url" content="https://alternativestudio2021-collab.github.io/daily-launch-sites/day022-roei-taisho/">
+<meta property="og:site_name" content="毎日ひとつの小さな道具箱">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Dela+Gothic+One&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+:root{
+  --bg:#e9ecef; --paper:#fdfdfb; --ink:#14191f; --sub:#56606b; --rule:#c9d0d7; --soft:#f1f3f5;
+  --navy:#1f3550; --navy-soft:#e3e9f1; --signal:#f2b705; --signal-soft:#fff4cc; --red:#c0392b; --red-soft:#fbe4e1; --ok:#2e7d4f; --ok-soft:#e1f1e7;
+  --f:"BIZ UDPGothic","Hiragino Sans","Noto Sans JP",sans-serif; --h:"Dela Gothic One","BIZ UDPGothic",sans-serif; --m:"JetBrains Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f1318; --paper:#171c22; --ink:#e7ebef; --sub:#a3adb8; --rule:#2c3540; --soft:#1d232a;
+  --navy:#9cb9db; --navy-soft:#1c2836; --signal:#f2c43d; --signal-soft:#332a0c; --red:#f08b7f; --red-soft:#3a1d1a; --ok:#7cc79a; --ok-soft:#16291e; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1318; --paper:#171c22; --ink:#e7ebef; --sub:#a3adb8; --rule:#2c3540; --soft:#1d232a;
+  --navy:#9cb9db; --navy-soft:#1c2836; --signal:#f2c43d; --signal-soft:#332a0c; --red:#f08b7f; --red-soft:#3a1d1a; --ok:#7cc79a; --ok-soft:#16291e; color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);line-height:1.8;font-size:16px}
+a{color:var(--navy)}
+.wrap>*{min-width:0}
+.wrap{max-width:940px;margin:0 auto;padding:20px 16px 72px;display:grid;gap:22px}
+.crumb{font-size:13px;color:var(--sub)}
+.crumb a{color:var(--sub)}
+/* 封筒の表書き風ヘッダ */
+.env{position:relative;background:var(--paper);border:1px solid var(--rule);border-radius:4px;padding:28px 22px 22px;overflow:hidden}
+.env::before{content:"";position:absolute;inset:0 0 auto 0;height:10px;background:repeating-linear-gradient(135deg,var(--red) 0 14px,var(--paper) 14px 22px,var(--navy) 22px 36px,var(--paper) 36px 44px)}
+.env .to{font-family:var(--m);font-size:12px;letter-spacing:.08em;color:var(--sub)}
+.env h1{font-family:var(--h);font-weight:400;font-size:clamp(28px,6vw,46px);line-height:1.25;margin:6px 0 10px;letter-spacing:.01em}
+.env h1 em{font-style:normal;background:linear-gradient(transparent 58%,var(--signal) 58%)}
+.env p{margin:0;color:var(--sub);max-width:46em}
+.stamp{position:absolute;right:18px;top:26px;transform:rotate(8deg);border:3px double var(--red);color:var(--red);font-family:var(--h);padding:4px 10px;font-size:15px;border-radius:6px;opacity:.85}
+@media (max-width:560px){.stamp{position:static;display:inline-block;transform:rotate(-3deg);margin-bottom:6px}}
+.meta{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:12px;font-size:13px;color:var(--sub)}
+.meta b{color:var(--ink)}
+section.card{background:var(--paper);border:1px solid var(--rule);border-radius:4px;padding:20px 18px}
+h2{font-family:var(--h);font-weight:400;font-size:21px;margin:0 0 12px;line-height:1.4;display:flex;gap:10px;align-items:baseline}
+h2 .n{font-family:var(--m);font-size:13px;color:var(--paper);background:var(--navy);padding:1px 8px;border-radius:3px}
+h3{font-size:16px;margin:16px 0 6px}
+p{margin:0 0 10px}
+.hint{font-size:13px;color:var(--sub)}
+/* 項目の札 */
+.tags{display:grid;grid-template-columns:repeat(auto-fill,minmax(176px,1fr));gap:8px}
+.tag{position:relative}
+.tag input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.tag label{display:block;border:1.5px solid var(--rule);background:var(--soft);border-radius:4px;padding:10px 12px 10px 38px;cursor:pointer;font-weight:700;font-size:15px;line-height:1.45;min-height:100%}
+.tag label small{display:block;font-weight:400;font-size:12px;color:var(--sub)}
+.tag label::before{content:"";position:absolute;left:12px;top:13px;width:16px;height:16px;border:2px solid var(--sub);border-radius:3px;background:var(--paper)}
+.tag input:checked + label{border-color:var(--navy);background:var(--navy-soft)}
+.tag input:checked + label::before{background:var(--navy);border-color:var(--navy);box-shadow:inset 0 0 0 3px var(--paper)}
+.tag input:focus-visible + label{outline:3px solid var(--signal);outline-offset:2px}
+.tag.hi label{border-style:dashed}
+.ch{display:flex;flex-wrap:wrap;gap:8px}
+.ch .tag{flex:1 1 150px}
+.ch .tag label::before{border-radius:50%}
+.alert{border-left:6px solid var(--red);background:var(--red-soft);padding:12px 14px;border-radius:0 4px 4px 0;margin:12px 0 0}
+.alert b{color:var(--red)}
+.okline{border-left:6px solid var(--ok);background:var(--ok-soft);padding:10px 14px;border-radius:0 4px 4px 0;margin:12px 0 0;font-size:14px}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.btn{font:inherit;font-weight:700;font-size:14px;padding:9px 16px;border-radius:4px;border:1.5px solid var(--navy);background:var(--navy);color:var(--paper);cursor:pointer;text-decoration:none;display:inline-block}
+.btn.ghost{background:transparent;color:var(--navy)}
+.btn:focus-visible{outline:3px solid var(--signal);outline-offset:2px}
+/* 3つの棚 */
+.lanes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media (max-width:760px){.lanes{grid-template-columns:1fr}}
+.lane{border:1px solid var(--rule);border-radius:4px;background:var(--soft);display:flex;flex-direction:column}
+.lane header{padding:10px 12px;border-bottom:3px solid var(--navy);display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.lane header b{font-family:var(--h);font-weight:400;font-size:18px}
+.lane header span{font-family:var(--m);font-size:12px;color:var(--sub)}
+.lane.today header{border-color:var(--red)}
+.lane.week header{border-color:var(--signal)}
+.lane ul{list-style:none;margin:0;padding:8px;display:grid;gap:6px}
+.lane li{background:var(--paper);border:1px solid var(--rule);border-radius:3px;padding:8px 10px 8px 34px;position:relative;font-size:14px;line-height:1.6}
+.lane li input{position:absolute;left:10px;top:11px;width:16px;height:16px;accent-color:var(--navy)}
+.lane li .why{display:block;font-size:12px;color:var(--sub);margin-top:2px}
+.lane li.done{opacity:.55}
+.lane li.done .txt{text-decoration:line-through}
+.empty{padding:14px;color:var(--sub);font-size:14px}
+.prog{font-family:var(--m);font-size:13px;color:var(--sub);margin-top:8px}
+/* 手口 */
+.tricks{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.tricks li{border:1px dashed var(--red);border-radius:4px;padding:10px 12px;background:var(--paper)}
+.tricks li b{display:block}
+.tricks li span{font-size:14px;color:var(--sub)}
+/* 相談先 */
+.tel{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.tel div{border:1px solid var(--rule);border-radius:4px;padding:10px 12px;background:var(--soft)}
+.tel .num{font-family:var(--m);font-weight:700;font-size:22px;color:var(--navy);display:block;line-height:1.3}
+.tel small{display:block;color:var(--sub);font-size:12px;line-height:1.6}
+/* メモ欄 */
+.form{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.form label{font-size:13px;color:var(--sub);display:grid;gap:4px}
+.form input{font:inherit;font-size:15px;padding:8px 10px;border:1.5px solid var(--rule);border-radius:4px;background:var(--paper);color:var(--ink)}
+.form input:focus{outline:3px solid var(--signal);outline-offset:1px;border-color:var(--navy)}
+/* 表 */
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:620px}
+th,td{border-bottom:1px solid var(--rule);padding:8px 8px;text-align:left;vertical-align:top}
+th{font-size:12px;color:var(--sub);font-weight:700;background:var(--soft)}
+td .d{font-family:var(--m);font-size:12px;white-space:nowrap}
+details{border-top:1px solid var(--rule);padding:10px 0}
+details:last-child{border-bottom:1px solid var(--rule)}
+summary{cursor:pointer;font-weight:700}
+summary:focus-visible{outline:3px solid var(--signal)}
+ol.src{font-size:13px;color:var(--sub);padding-left:22px;margin:0;word-break:break-all}
+ol.src li{margin-bottom:4px}
+footer{font-size:12px;color:var(--sub)}
+#toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:8px 16px;border-radius:4px;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none}
+#toast.on{opacity:1}
+@media print{
+  body{background:#fff;color:#000;font-size:12px}
+  .noprint,.crumb,.stamp,#toast{display:none!important}
+  .env::before{display:none}
+  section.card,.env{border:none;padding:6px 0}
+  .lanes{grid-template-columns:1fr 1fr 1fr}
+  .lane li input{accent-color:#000}
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"漏えいのお知らせが届いたら、まず何をすればよいですか?","acceptedAnswer":{"@type":"Answer","text":"届いたメールやSMSのリンクは使わず、事業者の公式サイトを自分で開いて、お知らせの本文で『どの情報が漏れたか』を確かめます。IPAは漏れた情報の種類によって対処が変わるとしています。分からないときは公式サイトに載っている窓口に問い合わせます。"}},
+{"@type":"Question","name":"氏名と住所と電話番号だけなら、何もしなくてよいですか?","acceptedAnswer":{"@type":"Answer","text":"すぐにお金が動く情報ではありませんが、本物らしく見せた詐欺メール・SMS・電話や、身に覚えのない着払いの荷物に使われることがあります。突然届く連絡は疑ってかかり、リンクを開かず、着払いの荷物は受け取らないようにします。"}},
+{"@type":"Question","name":"銀行の口座番号が漏れたら、口座を作り直すべきですか?","acceptedAnswer":{"@type":"Answer","text":"まず取引銀行に、どの事業者から口座番号が漏れたと連絡があったかを伝え、銀行の案内に従ってください。その後しばらくは、入出金の明細と、身に覚えのない口座振替の登録がないかを確かめます。口座番号を口実に暗証番号やワンタイムパスワードを聞く連絡には応じません。"}},
+{"@type":"Question","name":"被害者向けの情報共有サイトに登録してもよいですか?","acceptedAnswer":{"@type":"Answer","text":"慎重にしてください。GMOの不正アクセスでは、被害者に情報共有を呼びかける不審なサイトが公表前から用意されており、攻撃者側との関連が報じられています(NHK、2026年10月31日)。見舞金・補償の案内は、その事業者の公式サイトで確かめてから手続きします。"}},
+{"@type":"Question","name":"誰に相談すればよいですか?","acceptedAnswer":{"@type":"Answer","text":"契約や請求のトラブルは消費者ホットライン188、詐欺や不正アクセスの相談は警察相談専用電話#9110、お金をだまし取られた・今まさに被害が起きているときは110番か最寄りの警察署です。パソコンやスマホの設定やウイルスの不安はIPAの情報セキュリティ安心相談窓口(03-5978-7509、平日10〜17時)が受け付けています。"}}
+]}
+</script>
+</head><body>
+<div class="wrap">
+<nav class="crumb"><a href="../">毎日ひとつの小さな道具箱</a> / 022</nav>
+
+<header class="env">
+  <div class="stamp" aria-hidden="true">要確認</div>
+  <div class="to">TO: 漏えいのお知らせを受け取った方へ ─ 2026年11月</div>
+  <h1>漏えい通知が来たら<br><em>やること仕分け帳</em></h1>
+  <p>お知らせに書かれた「漏えいした項目」を選ぶと、今日やること・今週やること・3か月見張ることに仕分け、来そうな詐欺の手口と相談先を並べます。IPA(情報処理推進機構)が10月26日に公開した「漏えいした際の対処」を土台にしています。</p>
+  <div class="meta"><span>基準日 <b>2026年11月3日</b></span><span>入力は<b>この端末の中だけ</b>で処理し、送信しません</span></div>
+</header>
+
+<section class="card" aria-labelledby="h1x">
+  <h2 id="h1x"><span class="n">1</span>お知らせは、どうやって届きましたか</h2>
+  <div class="ch" id="chan" role="group" aria-label="お知らせが届いた方法">
+    <div class="tag"><input type="radio" name="ch" id="ch-post" value="post"><label for="ch-post">郵送の書面<small>封書・はがき</small></label></div>
+    <div class="tag"><input type="radio" name="ch" id="ch-site" value="site"><label for="ch-site">公式サイト・報道で知った<small>自分で見に行った</small></label></div>
+    <div class="tag"><input type="radio" name="ch" id="ch-mail" value="mail"><label for="ch-mail">メール</label></div>
+    <div class="tag"><input type="radio" name="ch" id="ch-sms" value="sms"><label for="ch-sms">SMS(ショートメッセージ)</label></div>
+    <div class="tag"><input type="radio" name="ch" id="ch-tel" value="tel"><label for="ch-tel">電話</label></div>
+    <div class="tag"><input type="radio" name="ch" id="ch-sns" value="sns"><label for="ch-sns">SNS・「被害者の会」などのサイト</label></div>
+  </div>
+  <div id="chMsg" aria-live="polite"></div>
+</section>
+
+<section class="card" aria-labelledby="h2x">
+  <h2 id="h2x"><span class="n">2</span>漏えいした(おそれがある)項目</h2>
+  <p class="hint">お知らせの「漏えいした可能性のある情報」の欄を見て、当てはまるものを全部選んでください。点線の札は、お金や契約に直結しやすい項目です。</p>
+  <div class="tags" id="items"></div>
+  <div class="btns noprint">
+    <button class="btn ghost" type="button" id="allClear">選択をすべて外す</button>
+  </div>
+</section>
+
+<section class="card" aria-labelledby="h3x" id="result">
+  <h2 id="h3x"><span class="n">3</span>やること 3つの棚</h2>
+  <p class="hint">終わったものにチェックを入れると、この端末に記録されます(ほかの人には見えません)。</p>
+  <div class="lanes">
+    <div class="lane today"><header><b>今日</b><span id="cT">0件</span></header><ul id="lT"></ul></div>
+    <div class="lane week"><header><b>今週</b><span id="cW">0件</span></header><ul id="lW"></ul></div>
+    <div class="lane later"><header><b>3か月見張る</b><span id="cL">0件</span></header><ul id="lL"></ul></div>
+  </div>
+  <div class="prog" id="prog"></div>
+  <div class="btns noprint">
+    <button class="btn" type="button" id="bPrint">印刷する</button>
+    <button class="btn ghost" type="button" id="bCopy">メモとしてコピー</button>
+    <button class="btn ghost" type="button" id="bIcs">1か月後・3か月後の見直しをカレンダーに入れる</button>
+  </div>
+</section>
+
+<section class="card" aria-labelledby="h4x">
+  <h2 id="h4x"><span class="n">4</span>この組み合わせで来そうな手口</h2>
+  <ul class="tricks" id="tricks"></ul>
+</section>
+
+<section class="card" aria-labelledby="h5x">
+  <h2 id="h5x"><span class="n">5</span>手元の控え</h2>
+  <p class="hint">問い合わせのときに聞かれやすいことです。この端末にだけ保存されます。</p>
+  <div class="form">
+    <label>お知らせを出した事業者<input id="fCo" autocomplete="off" placeholder="例: ○○株式会社"></label>
+    <label>お知らせを受け取った日<input id="fDate" type="date"></label>
+    <label>公式の問い合わせ窓口(公式サイトで確認したもの)<input id="fTel" autocomplete="off" placeholder="電話番号やフォームの場所"></label>
+    <label>お知らせの文書番号・お客さま番号など<input id="fNo" autocomplete="off"></label>
+  </div>
+  <div class="okline">書面・メールは消さずに残しておきます。あとで補償や見舞金の手続き、警察への相談で、いつ何が届いたかを示す材料になります。</div>
+</section>
+
+<section class="card" aria-labelledby="h6x">
+  <h2 id="h6x"><span class="n">6</span>相談先</h2>
+  <div class="tel">
+    <div><b>消費者ホットライン</b><span class="num">188</span><small>身に覚えのない請求、契約トラブル。最寄りの消費生活センターにつながります。</small></div>
+    <div><b>警察相談専用電話</b><span class="num">#9110</span><small>詐欺や不正アクセスの相談。受付時間は都道府県ごとに違います(多くは平日の日中)。</small></div>
+    <div><b>お金の被害・緊急</b><span class="num">110</span><small>お金をだまし取られた、今まさに不正に操作されているときは、110番か最寄りの警察署へ。</small></div>
+    <div><b>IPA 情報セキュリティ安心相談窓口</b><span class="num">03-5978-7509</span><small>パソコン・スマホの設定、ウイルスの不安。10:00〜17:00(土日祝・年末年始を除く)。メール anshin@ipa.go.jp</small></div>
+  </div>
+  <p class="hint" style="margin-top:10px">運転免許証など本人確認書類が漏れたときは、IPAが信用情報機関への「本人申告」の検討を挙げています(CIC、日本信用情報機構 JICC、全国銀行個人信用情報センター KSC)。申告のしかたは各機関の公式サイトで確かめてください。</p>
+</section>
+
+<section class="card" aria-labelledby="h7x">
+  <h2 id="h7x"><span class="n">7</span>最近発表された主な漏えい・不正アクセス</h2>
+  <p class="hint">報道と各社の発表をもとにした要約です。対象かどうか、補償の有無は、必ず各社の公式サイトで確かめてください。</p>
+  <div class="tbl"><table>
+    <thead><tr><th>発表</th><th>どこで</th><th>漏れた(おそれがある)項目と状況</th><th>出典</th></tr></thead>
+    <tbody>
+      <tr><td><span class="d">2026-11-02</span></td><td>プレステージ・インターナショナルのグループ会社(ロードサービスの受付・手配システム)</td><td>最大約550万件。氏名・住所・電話番号・メールアドレス・金融機関の口座番号・車両の登録番号・車台番号など。10/29に検知、10/30にシステム停止。自動車メーカー・ディーラー・損害保険会社などから受託した業務の情報とされ、対象者への連絡は取引先と協議して決めるとしています。カード情報の漏えいは確認されていないとのこと。</td><td><a href="#s5">5</a> <a href="#s6">6</a></td></tr>
+      <tr><td><span class="d">2026-10-21〜</span></td><td>GMOインターネットグループ(「お名前.com」のFX自動売買向けクラウド)</td><td>利用者の口座で第三者による不正な取引の報告。攻撃者側が個人情報を公開したと報じられ、GMOは情報が公開された人へ上限300万円の見舞金の方針。被害者に情報共有を呼びかける不審なサイトが攻撃者側と関連する可能性も報じられています。</td><td><a href="#s7">7</a> <a href="#s8">8</a> <a href="#s9">9</a> <a href="#s15">15</a></td></tr>
+      <tr><td><span class="d">2026-11-01</span></td><td>GMO傘下の企業向けID管理サービス</td><td>約4万5000人分の顧客情報。9年近く外部から取得できる状態だったと報道。</td><td><a href="#s10">10</a></td></tr>
+      <tr><td><span class="d">2026-10-23</span></td><td>ペイクラウドHD子会社の電子マネー発行サービス「Value Card」</td><td>ID番号・PIN番号・残高情報 計142万4,748件。会社は個人情報は含まれないと説明。</td><td><a href="#s11">11</a></td></tr>
+      <tr><td><span class="d">2026-07-06</span></td><td>KDDI(ニフティ、ビッグローブなどISP 6社のメール)</td><td>約1223万人分のメールアドレス、うち約762万人分のパスワード。各社がパスワード変更を要請。</td><td><a href="#s12">12</a></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="card" aria-labelledby="h8x">
+  <h2 id="h8x"><span class="n">8</span>よくある質問</h2>
+  <details><summary>漏えいのお知らせが届いたら、まず何をすればよいですか?</summary><p>届いたメールやSMSのリンクは使わず、事業者の公式サイトを自分で開いて、お知らせの本文で「どの情報が漏れたか」を確かめます。IPAは漏れた情報の種類によって対処が変わるとしています<a href="#s1">[1]</a>。分からないときは公式サイトに載っている窓口に問い合わせます。</p></details>
+  <details><summary>氏名と住所と電話番号だけなら、何もしなくてよいですか?</summary><p>すぐにお金が動く情報ではありませんが、本物らしく見せた詐欺メール・SMS・電話や、身に覚えのない着払いの荷物に使われることがあります。突然届く連絡は疑ってかかり、リンクを開かず、着払いの荷物は受け取らないようにします<a href="#s1">[1]</a><a href="#s3">[3]</a>。</p></details>
+  <details><summary>銀行の口座番号が漏れたら、口座を作り直すべきですか?</summary><p>まず取引銀行に、どの事業者から口座番号が漏れたと連絡があったかを伝え、銀行の案内に従ってください。その後しばらくは、入出金の明細と、身に覚えのない口座振替の登録がないかを確かめます。口座番号を口実に暗証番号やワンタイムパスワードを聞く連絡には応じません。</p></details>
+  <details><summary>被害者向けの情報共有サイトに登録してもよいですか?</summary><p>慎重にしてください。GMOの不正アクセスでは、被害者に情報共有を呼びかける不審なサイトが公表前から用意されており、攻撃者側との関連が報じられています<a href="#s9">[9]</a>。見舞金・補償の案内は、その事業者の公式サイトで確かめてから手続きします。</p></details>
+  <details><summary>誰に相談すればよいですか?</summary><p>契約や請求のトラブルは消費者ホットライン188、詐欺や不正アクセスの相談は警察相談専用電話#9110、お金をだまし取られた・今まさに被害が起きているときは110番か最寄りの警察署です<a href="#s14">[14]</a>。パソコンやスマホの設定やウイルスの不安はIPAの情報セキュリティ安心相談窓口が受け付けています<a href="#s13">[13]</a>。</p></details>
+</section>
+
+<section class="card noprint" aria-labelledby="h9x">
+  <h2 id="h9x"><span class="n">9</span>家族に送る</h2>
+  <p class="hint">同じサービスを家族で使っていると、家族にも同じお知らせが届いていることがあります。</p>
+  <div class="btns"><a class="btn ghost" id="shL" target="_blank" rel="noopener">LINEで送る</a><a class="btn ghost" id="shX" target="_blank" rel="noopener">Xで共有</a><button class="btn ghost" type="button" id="shC">URLをコピー</button></div>
+  <!-- PR枠(準備中): パスワード管理・セキュリティソフトのA8案件は未提携。提携後に公式コードを改変せず「PR」表記付きで掲載する -->
+</section>
+
+<section class="card" aria-labelledby="hsx">
+  <h2 id="hsx">出典</h2>
+  <ol class="src">
+    <li id="s1">IPA「自分の個人情報等が漏えいした際の『対処』と『日頃の対策』」(2026年10月26日) <a href="https://www.ipa.go.jp/security/anshin/attention/2026/mgdayori20261026.html">ipa.go.jp</a></li>
+    <li id="s2">@IT「個人情報、漏れたらまず何する? ID/PW、クレカ、免許証、メールアドレス、情報別やることまとめ」(2026年10月30日) <a href="https://atmarkit.itmedia.co.jp/ait/articles/2610/30/news022.html">atmarkit.itmedia.co.jp</a></li>
+    <li id="s3">Impress Watch「個人でできる情報漏えい被害時の対処法 日頃の対策などIPAが解説」 <a href="https://www.watch.impress.co.jp/docs/news/2151488.html">watch.impress.co.jp</a></li>
+    <li id="s4">INTERNET Watch「自分の個人情報などが漏えいした際の『対処』と『日頃の対策』まとめ、IPAが公開」 <a href="https://internet.watch.impress.co.jp/docs/news/2151185.html">internet.watch.impress.co.jp</a></li>
+    <li id="s5">NHK「ロードサービス利用者の個人情報 最大約550万件漏えい」(2026年11月2日) <a href="https://news.web.nhk/newsweb/na/nd-20261102de69807">news.web.nhk</a></li>
+    <li id="s6">共同通信(四国新聞)「ロードサービス企業で最大550万件流出」(2026年11月2日) <a href="http://www.shikoku-np.co.jp/flash/article.aspx?id=20261102000757">shikoku-np.co.jp</a></li>
+    <li id="s7">ITmedia NEWS「『お名前.com』のFX自動売買VPS、不正アクセスで金銭被害か」(2026年10月23日) <a href="https://www.itmedia.co.jp/news/article/2610/23/2000002532/">itmedia.co.jp</a></li>
+    <li id="s8">時事ドットコム「GMOの『顧客情報』公開 見舞金、最大300万円」(2026年10月27日) <a href="https://www.jiji.com/jc/article?k=2026102700370&amp;g=eco">jiji.com</a></li>
+    <li id="s9">NHK「GMOの被害者情報集める不審サイト ハッカー側と関連か」(2026年10月31日) <a href="https://news.web.nhk/newsweb/na/nd-20261031de69043">news.web.nhk</a></li>
+    <li id="s10">NHK「GMO傘下 顧客情報漏えい 9年近く外部から取得可能な状態」(2026年11月1日) <a href="https://news.web.nhk/newsweb/na/nd-20261101de69281">news.web.nhk</a></li>
+    <li id="s11">セキュリティ対策Lab「ペイクラウド子会社『Value Card』で142万4,748件の情報流出」 <a href="https://rocket-boys.co.jp/?p=45080">rocket-boys.co.jp</a></li>
+    <li id="s12">秋田魁新報(共同)「パスワード漏れ762万人 KDDI、不正アクセス問題で」(2026年7月6日) <a href="https://www.sakigake.jp/news/article/20260706CO0109/">sakigake.jp</a></li>
+    <li id="s13">IPA「情報セキュリティ安心相談窓口」 <a href="https://www.ipa.go.jp/security/anshin/about.html">ipa.go.jp</a></li>
+    <li id="s14">鹿児島市 消費者情報(怪しいSMS等の相談先 188・#9110) <a href="https://www.city.kagoshima.lg.jp/shimin/shiminbunka/syouhi/kurashi/shohisekatsu/koho/abc/documents/vol208.pdf">city.kagoshima.lg.jp</a></li>
+    <li id="s15">日本経済新聞「GMO不正アクセス、FX5社で被害 片山金融相『監視強化を要請』」 <a href="https://www.nikkei.com/article/DGXZQOUB270N70X21C26A0000000/">nikkei.com</a></li>
+  </ol>
+</section>
+
+<footer>このページは公開資料をもとにした情報提供で、法律や個別の手続きの助言ではありません。補償・見舞金・対象かどうかは、お知らせを出した事業者の公式の案内に従ってください。<br>毎日ひとつの小さな道具箱 / Day 22 / 2026年11月3日公開</footer>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+var $=function(id){return document.getElementById(id)};
+var KEY='day022-roei-v1';
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return {}}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
+var st=load(); st.items=st.items||[]; st.done=st.done||{}; st.f=st.f||{};
+
+/* 項目 */
+var ITEMS=[
+ {k:'name',t:'氏名',s:'名前・ふりがな'},
+ {k:'addr',t:'住所',s:'郵便番号を含む'},
+ {k:'tel',t:'電話番号',s:'携帯・自宅'},
+ {k:'mail',t:'メールアドレス',s:''},
+ {k:'birth',t:'生年月日',s:'性別など'},
+ {k:'pw',t:'ID・パスワード',s:'ログイン情報',hi:1},
+ {k:'card',t:'クレジットカード',s:'番号・有効期限',hi:1},
+ {k:'bank',t:'銀行の口座番号',s:'金融機関・支店・名義',hi:1},
+ {k:'idd',t:'本人確認書類',s:'免許証・マイナンバーカードの画像や番号',hi:1},
+ {k:'car',t:'車のナンバー・車台番号',s:'車検証の情報'},
+ {k:'hist',t:'契約・購入・利用の履歴',s:'何をいつ使ったか'},
+ {k:'trade',t:'証券・FX・暗号資産の口座',s:'ログイン情報・取引の権限',hi:1}
+];
+/* 対処: w=today/week/later, src=出典番号 */
+var ACT=[
+ {id:'c1',w:'T',on:'*',t:'事業者の公式サイトを自分で開き(検索かブックマークから)、お知らせの本文で漏れた項目と窓口を確かめる',y:'届いたメール・SMSのリンクは使わない',src:[1]},
+ {id:'c2',w:'T',on:'*',t:'届いた書面・メールを消さずに残し、受け取った日をメモする',y:'補償・見舞金や相談のときの材料',src:[]},
+ {id:'c3',w:'W',on:'*',t:'見舞金・補償の案内があれば、公式サイトで手続きの方法を確かめる(他のサイトに個人情報を入れない)',y:'被害者向けをうたう不審なサイトの報道あり',src:[9]},
+ {id:'p1',w:'T',on:'pw',t:'漏れたサービスのパスワードを変える',y:'不正ログインを防ぐ',src:[1,2]},
+ {id:'p2',w:'T',on:'pw',t:'同じパスワードを使い回しているサービスも全部変える',y:'使い回しで被害が広がる',src:[1]},
+ {id:'p3',w:'W',on:'pw',t:'多要素認証(SMS・認証アプリ)やパスキーを設定する',src:[1,2]},
+ {id:'p4',w:'L',on:'pw',t:'ログイン履歴に見覚えのない端末・場所がないか、月に1回見る',src:[2]},
+ {id:'m1',w:'T',on:'mail',t:'メールアカウント自体の多要素認証を有効にし、ログイン履歴を見る',y:'パスワード再設定の踏み台にされやすい',src:[2]},
+ {id:'m2',w:'W',on:'mail',t:'そのアドレスで登録した重要なサービスを、金融→ネット通販・SNSの順に別々のパスワードへ変える',src:[2]},
+ {id:'k1',w:'T',on:'card',t:'カード裏面の番号からカード会社に連絡し、不正利用がないかの確認と、停止・再発行を相談する',src:[1,2]},
+ {id:'k2',w:'L',on:'card',t:'毎月の利用明細を見る(少額の見覚えのない請求も)',src:[1]},
+ {id:'b1',w:'T',on:'bank',t:'取引銀行の公式の窓口に、どの事業者から口座番号が漏れたと連絡があったか伝え、注意点を聞く',src:[]},
+ {id:'b2',w:'L',on:'bank',t:'入出金の明細と、身に覚えのない口座振替の登録・引き落としがないかを見る',src:[]},
+ {id:'i1',w:'W',on:'idd',t:'信用情報機関(CIC・JICC・KSC)への本人申告を検討する',y:'なりすましでカードやローンを作られるのを防ぐ',src:[2]},
+ {id:'i2',w:'W',on:'idd',t:'書類の発行元(マイナンバーは市区町村、免許証は警察)の案内を確かめる',src:[2]},
+ {id:'i3',w:'L',on:'idd',t:'信用情報の開示で、身に覚えのないカード・ローンの契約がないか確かめる',src:[2]},
+ {id:'t1',w:'T',on:'trade',t:'パスワードを変える(乗っ取られた疑いのある端末やサーバー以外から操作する)',src:[7]},
+ {id:'t2',w:'T',on:'trade',t:'取引履歴・残高・出金先口座の登録に変更がないかを見て、異常があれば事業者と警察へ',src:[7]},
+ {id:'a1',w:'L',on:'addr',t:'身に覚えのない着払いの荷物は受け取らない',src:[1]},
+ {id:'e1',w:'L',on:'tel',t:'知らない番号からの「補償」「返金」「本人確認」の電話・SMSに応じず、公式の番号にかけ直す',src:[1]},
+ {id:'v1',w:'L',on:'car',t:'保険会社・ディーラー・ロードサービスを名乗る連絡は、車検証や保険証券にある番号へ自分でかけ直して確かめる',src:[]},
+ {id:'h1',w:'L',on:'hist',t:'契約の中身を言い当てられても本物とは限らない。用件を聞いたら一度切り、公式の窓口で確かめる',src:[]},
+ {id:'n1',w:'L',on:'name|birth',t:'名前や生年月日入りの「当選」「未納」の連絡は、それだけで信用しない',src:[]}
+];
+var TRICK=[
+ {on:'mail|tel|name',t:'「漏えいのお詫び」「補償のご案内」を名乗るメール・SMS',s:'本物のお知らせのふりをしてリンクを開かせ、カード番号やパスワードを入れさせる。お知らせは公式サイトで確かめる。'},
+ {on:'pw|mail',t:'「パスワードの再設定」「ログインがありました」の通知',s:'自分で操作していない再設定の通知は、リンクを使わずアプリや公式サイトから確かめる。'},
+ {on:'addr',t:'身に覚えのない着払いの荷物',s:'受け取らない。受け取ってしまったら、配送業者と消費者ホットライン188へ。'},
+ {on:'tel|bank',t:'銀行・警察・役所を名乗り、暗証番号やワンタイムパスワードを聞く電話',s:'銀行や警察が電話で暗証番号を聞くことはありません。一度切って、公式の番号へかけ直す。'},
+ {on:'card',t:'カード会社を名乗る「不正利用を確認しました」のSMS',s:'カード裏面の番号に自分でかける。SMSの番号やリンクは使わない。'},
+ {on:'idd',t:'他人名義でのカード・ローン・携帯電話の契約',s:'身に覚えのない請求や審査の連絡が来たら、すぐ発行元と警察(#9110)へ。'},
+ {on:'car|hist',t:'車種やナンバー、契約内容を言い当てて信用させる連絡',s:'「事故対応」「保険の更新」「点検」などを口実に、支払いや個人情報を求める。自分で調べた番号にかけ直す。'},
+ {on:'trade',t:'「被害を取り戻せる」「情報を共有しよう」と誘うサイトやSNS',s:'回収をうたう業者や不審な被害者サイトに個人情報を入れない。相談は警察・消費生活センターへ。'}
+];
+var CH={
+ post:{ok:1,m:'書面で届いたお知らせでも、記載の電話番号やQRコードが本物かは、公式サイトの案内と照らし合わせてから使うと確実です。'},
+ site:{ok:1,m:'自分で公式サイトを確かめているなら、その案内が出発点です。下で漏れた項目を選んでください。'},
+ mail:{m:'<b>メールのリンクは開かず</b>、事業者の公式サイトを検索かブックマークから開いて、同じお知らせが出ているか確かめてください。'},
+ sms:{m:'<b>SMSで届く「漏えいのお知らせ」は、まず偽物を疑ってください。</b>リンクを開かず、事業者の公式サイトで同じお知らせが出ているか確かめます。開いてしまっても、パスワードやカード番号は入れないでください。'},
+ tel:{m:'<b>電話でのお知らせは、一度切ってください。</b>相手が名乗った番号ではなく、公式サイトに載っている窓口にかけ直して確かめます。暗証番号やワンタイムパスワードを聞かれたら、その時点で詐欺です。'},
+ sns:{m:'<b>SNSや「被害者の会」のサイトに個人情報を入れないでください。</b>GMOの件では、被害者の情報を集める不審なサイトが攻撃者側と関連する可能性が報じられています。公式サイトで確かめてから動きます。'}
+};
+
+/* 描画 */
+var box=$('items');
+ITEMS.forEach(function(it){
+  var d=document.createElement('div'); d.className='tag'+(it.hi?' hi':'');
+  d.innerHTML='<input type="checkbox" id="it-'+it.k+'" value="'+it.k+'"><label for="it-'+it.k+'">'+it.t+(it.s?'<small>'+it.s+'</small>':'')+'</label>';
+  box.appendChild(d);
+});
+st.items.forEach(function(k){var e=$('it-'+k); if(e) e.checked=true});
+if(st.ch){var r=$('ch-'+st.ch); if(r) r.checked=true}
+['fCo','fDate','fTel','fNo'].forEach(function(id){var e=$(id); if(st.f[id]) e.value=st.f[id]; e.addEventListener('input',function(){st.f[id]=e.value; save()})});
+
+function sel(){return ITEMS.filter(function(i){return $('it-'+i.k).checked}).map(function(i){return i.k})}
+function hit(on,s){if(on==='*')return true; return on.split('|').some(function(k){return s.indexOf(k)>=0})}
+function srcs(a){return a&&a.length?' <a href="#s'+a[0]+'" class="srcref">['+a.join('][')+']</a>':''}
+function list(){var s=sel(); return ACT.filter(function(a){return hit(a.on,s)})}
+
+function render(){
+  var s=sel(); st.items=s; save();
+  var acts=list(), lanes={T:$('lT'),W:$('lW'),L:$('lL')}, cnt={T:0,W:0,L:0}, done=0;
+  Object.keys(lanes).forEach(function(k){lanes[k].innerHTML=''});
+  acts.forEach(function(a){
+    var li=document.createElement('li'); var on=!!st.done[a.id]; if(on){li.className='done';done++}
+    li.innerHTML='<input type="checkbox" aria-label="済み" '+(on?'checked':'')+'><span class="txt">'+a.t+'</span>'+(a.y?'<span class="why">'+a.y+'</span>':'')+srcs(a.src);
+    li.querySelector('input').addEventListener('change',function(e){st.done[a.id]=e.target.checked; save(); render()});
+    lanes[a.w].appendChild(li); cnt[a.w]++;
+  });
+  Object.keys(lanes).forEach(function(k){
+    if(!cnt[k]) lanes[k].innerHTML='<li class="empty" style="padding-left:10px">'+(s.length?'この棚はありません':'上で項目を選ぶと出ます')+'</li>';
+  });
+  $('cT').textContent=cnt.T+'件'; $('cW').textContent=cnt.W+'件'; $('cL').textContent=cnt.L+'件';
+  $('prog').textContent=acts.length?('済み '+done+' / '+acts.length):'';
+  var tr=$('tricks'); tr.innerHTML='';
+  var ts=TRICK.filter(function(t){return hit(t.on,s)});
+  if(!s.length){tr.innerHTML='<li><span>項目を選ぶと、その組み合わせで使われやすい手口を出します。</span></li>'}
+  else if(!ts.length){tr.innerHTML='<li><span>選んだ項目に合う代表的な手口は登録していません。突然の連絡は公式の窓口で確かめる、を基本にしてください。</span></li>'}
+  ts.forEach(function(t){var li=document.createElement('li'); li.innerHTML='<b>'+t.t+'</b><span>'+t.s+'</span>'; tr.appendChild(li)});
+}
+function renderCh(){
+  var r=document.querySelector('input[name=ch]:checked'); var m=$('chMsg');
+  if(!r){m.innerHTML='';return}
+  st.ch=r.value; save();
+  var c=CH[r.value]; m.innerHTML='<div class="'+(c.ok?'okline':'alert')+'">'+c.m+'</div>';
+}
+box.addEventListener('change',render);
+$('chan').addEventListener('change',renderCh);
+$('allClear').addEventListener('click',function(){ITEMS.forEach(function(i){$('it-'+i.k).checked=false}); render()});
+render(); renderCh();
+
+function toast(t){var e=$('toast'); e.textContent=t; e.classList.add('on'); setTimeout(function(){e.classList.remove('on')},1800)}
+function memo(){
+  var s=sel(), names=ITEMS.filter(function(i){return s.indexOf(i.k)>=0}).map(function(i){return i.t});
+  var L=['漏えい対応メモ('+new Date().toLocaleDateString('ja-JP')+')'];
+  if(st.f.fCo) L.push('事業者: '+st.f.fCo);
+  if(st.f.fDate) L.push('受け取った日: '+st.f.fDate);
+  if(st.f.fTel) L.push('公式窓口: '+st.f.fTel);
+  if(st.f.fNo) L.push('番号: '+st.f.fNo);
+  L.push('漏れた項目: '+(names.join('、')||'(未選択)'));
+  var nm={T:'■今日',W:'■今週',L:'■3か月見張る'}, acts=list();
+  ['T','W','L'].forEach(function(w){
+    var a=acts.filter(function(x){return x.w===w}); if(!a.length)return;
+    L.push(''); L.push(nm[w]);
+    a.forEach(function(x){L.push((st.done[x.id]?'[済] ':'[ ] ')+x.t)});
+  });
+  L.push(''); L.push('相談先: 消費者ホットライン188 / 警察相談 #9110 / 被害時 110 / IPA 03-5978-7509');
+  L.push(location.href.split('#')[0]);
+  return L.join('\n');
+}
+function copy(t,msg){
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){toast(msg)},function(){fallback(t,msg)})}else fallback(t,msg);
+}
+function fallback(t,msg){var a=document.createElement('textarea'); a.value=t; document.body.appendChild(a); a.select(); try{document.execCommand('copy'); toast(msg)}catch(e){toast('コピーできませんでした')} a.remove()}
+$('bCopy').addEventListener('click',function(){copy(memo(),'メモをコピーしました')});
+$('bPrint').addEventListener('click',function(){window.print()});
+$('bIcs').addEventListener('click',function(){
+  function d(n){var x=new Date(); x.setDate(x.getDate()+n); return x.getFullYear()+String(x.getMonth()+1).padStart(2,'0')+String(x.getDate()).padStart(2,'0')}
+  function d1(n){return d(n+1)}
+  var co=st.f.fCo?('('+st.f.fCo+')'):'';
+  var url=location.href.split('#')[0];
+  function ev(n,t){return ['BEGIN:VEVENT','UID:day022-'+n+'-'+Date.now()+'@daily-launch-sites','DTSTAMP:'+d(0)+'T000000Z','DTSTART;VALUE=DATE:'+d(n),'DTEND;VALUE=DATE:'+d1(n),'SUMMARY:'+t+co,'DESCRIPTION:カード・口座の明細、ログイン履歴、身に覚えのない契約がないかを見る。 '+url,'END:VEVENT'].join('\r\n')}
+  var ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//daily-launch-sites//day022//JA',ev(30,'漏えい後の見直し 1か月'),ev(90,'漏えい後の見直し 3か月'),'END:VCALENDAR'].join('\r\n');
+  var b=new Blob([ics],{type:'text/calendar'}); var a=document.createElement('a'); a.href=URL.createObjectURL(b); a.download='roei-minaoshi.ics'; document.body.appendChild(a); a.click(); setTimeout(function(){URL.revokeObjectURL(a.href); a.remove()},500);
+});
+var url=location.href.split('#')[0], txt='漏えいのお知らせが来たら、漏れた項目から今日・今週・3か月のやることを仕分けるチェック表';
+$('shL').href='https://social-plugins.line.me/lineit/share?url='+encodeURIComponent(url);
+$('shX').href='https://twitter.com/intent/tweet?text='+encodeURIComponent(txt)+'&url='+encodeURIComponent(url);
+$('shC').addEventListener('click',function(){copy(url,'URLをコピーしました')});
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
