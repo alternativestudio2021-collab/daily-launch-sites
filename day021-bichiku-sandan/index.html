@@ -76,7 +76,7 @@ input[type=number]:focus,button:focus-visible{outline:3px solid var(--orange);ou
 .week li{margin:2px 0}
 .empty{color:var(--sub);font-size:14px}
 .tools{display:flex;flex-wrap:wrap;gap:10px}
-.btn{font:inherit;font-weight:700;padding:9px 16px;border-radius:4px;border:2px solid var(--khaki);background:var(--khaki);color:var(--paper);cursor:pointer}
+.btn{font:inherit;font-weight:700;padding:9px 16px;text-decoration:none;display:inline-block;border-radius:4px;border:2px solid var(--khaki);background:var(--khaki);color:var(--paper);cursor:pointer}
 .btn.ghost{background:transparent;color:var(--khaki)}
 .check{display:grid;gap:6px;margin:0;padding:0;list-style:none}
 .check li{display:flex;gap:8px;align-items:flex-start}
@@ -100,7 +100,7 @@ footer{font-size:12px;color:var(--sub);display:grid;gap:6px}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"緊急要請は何を求めているのですか","acceptedAnswer":{"@type":"Answer","text":"報道によると、細野防災担当相は防災庁の発足日の2026年11月2日に、全国民と中央省庁・全都道府県に向けて災害への備えを求める緊急要請を出す方針で、食べ物・水・トイレを最低3日、できれば1週間ぶん用意するよう呼びかけています。正式な文面は11月2日の政府発表で確認してください。"}},
+{"@type":"Question","name":"緊急要請は何を求めているのですか","acceptedAnswer":{"@type":"Answer","text":"防災庁が発足した2026年11月2日、細野防災担当相は全国民と中央省庁・都道府県に向けて「事前防災徹底のための緊急要請」を出しました。国民に向けては、水・食料・携帯トイレを最低3日、できれば1週間ぶん備えることのほか、住宅の耐震化と家具の固定、ハザードマップと避難経路の確認、非常持ち出し品の準備、防災訓練への参加を求めています(報道の全文掲載による)。"}},
 {"@type":"Question","name":"何か大きな災害が起きるという予告ですか","acceptedAnswer":{"@type":"Answer","text":"報道では、特定の災害を予告するものではなく、南海トラフ地震や首都直下地震などで行政の支援が届くまで時間がかかる場合に備えて自助を促す趣旨と説明されています。"}},
 {"@type":"Question","name":"水は1人何リットル必要ですか","acceptedAnswer":{"@type":"Answer","text":"農林水産省の資料では、飲み水と調理に使う水で1人1日3リットルが目安です。食器洗いなどの生活用水は別に必要です。"}},
 {"@type":"Question","name":"携帯トイレは何回分あればよいですか","acceptedAnswer":{"@type":"Answer","text":"内閣府のガイドラインをもとに、自治体は1人1日5回分を目安としています。4人家族で1週間なら140回分です。"}},
@@ -116,7 +116,7 @@ footer{font-size:12px;color:var(--sub);display:grid;gap:6px}
   <span class="stamp">2026.11.02 防災庁 発足日</span>
   <h1>備蓄の算段帳<br>3日・1週間ぶん</h1>
   <p class="lead">家族の人数を入れると、水・主食・おかず・携帯トイレ・カセットボンベの必要量を出します。家にある数を引いた不足ぶんは、1〜4週に分けた買い物メモにできます。入力はこの端末の中だけで使い、どこにも送りません。</p>
-  <p class="quote">「最低限3日、できれば1週間、食べ物や水、トイレを用意していただきたい」<small>細野豪志防災担当相。10月下旬、フジテレビのネット番組での発言として報道<a href="#s1">[1]</a>。11月2日の防災庁発足に合わせ、全国民と中央省庁・全都道府県に備えを求める「緊急要請」を出す方針と伝えられています<a href="#s1">[1]</a><a href="#s2">[2]</a>。</small></p>
+  <p class="quote">「最低限3日、できれば1週間、食べ物や水、トイレを用意していただきたい」<small>細野豪志防災担当相。10月下旬、フジテレビのネット番組での発言として報道<a href="#s1">[1]</a>。11月2日の防災庁発足の日に、全国民と中央省庁・都道府県へ「事前防災徹底のための緊急要請」が出されました<a href="#s12">[12]</a><a href="#s13">[13]</a>。</small></p>
 </header>
 
 <section class="card" aria-labelledby="h-in">
@@ -183,16 +183,28 @@ footer{font-size:12px;color:var(--sub);display:grid;gap:6px}
     <li><input type="checkbox" id="x5"><label for="x5">懐中電灯・ラジオ・モバイルバッテリー・乾電池</label></li>
     <li><input type="checkbox" id="x6"><label for="x6">ポリ袋・ラップ・ウェットティッシュ(皿に敷けば洗い物の水を減らせる)</label></li>
     <li><input type="checkbox" id="x7"><label for="x7">ペットの療法食・薬・キャリー・飼い主の連絡先を書いた札</label></li>
+    <li><input type="checkbox" id="x8"><label for="x8">寝室と子ども部屋の家具を固定した(倒れても出入り口をふさがない置き方に)。1981年以前に建てた家は耐震診断の窓口を自治体で確認</label></li>
+    <li><input type="checkbox" id="x9"><label for="x9">自宅・職場・学校のハザードマップを見て、避難先と道順を家族で決めた</label></li>
+    <li><input type="checkbox" id="x10"><label for="x10">非常持ち出し袋を玄関近くに置いた(備蓄とは別に、すぐ持ち出す1日ぶん)</label></li>
+    <li><input type="checkbox" id="x11"><label for="x11">地域や職場の防災訓練の日を調べた</label></li>
   </ul>
 </section>
 
+<section class="card noprint" aria-labelledby="h-share">
+  <h2 id="h-share">家族や近所のグループに送る</h2>
+  <p class="note">人数を入れ直せば、離れて住む親の家や近所の家の量もすぐ出ます。</p>
+  <div class="tools"><a class="btn ghost" id="shL" target="_blank" rel="noopener">LINEで送る</a><a class="btn ghost" id="shX" target="_blank" rel="noopener">Xで共有</a><button class="btn ghost" type="button" id="shC">URLをコピー</button></div>
+</section>
+
 <section class="card why" aria-labelledby="h-facts">
-  <h2 id="h-facts">要請について分かっていること(11月2日朝の時点)</h2>
+  <h2 id="h-facts">要請について分かっていること(11月2日夕方の時点)</h2>
   <ul class="facts">
-    <li>防災庁は2026年11月2日に発足。細野防災担当相は同じ日に、全国民だけでなく中央省庁と全都道府県にも災害への備えを進めるよう「緊急要請」を出す方針と報じられています<a href="#s1">[1]</a><a href="#s2">[2]</a>。</li>
-    <li>中身は食べ物・水・トイレを「最低3日、できれば1週間」。南海トラフ地震や首都直下地震などで行政の支援が遅れる可能性を考え、自助を進めてもらうことで、公助を本当に必要な人に集中させる、という説明です<a href="#s2">[2]</a>。</li>
-    <li>特定の災害を予告するものではないと伝えられています。SNSでは「何か起きるのか」という憶測も広がり、買い占めへの注意も呼びかけられています<a href="#s3">[3]</a>。</li>
-    <li>要請の正式な文面は11月2日に公表される予定で、このページはそれ以前の報道をもとにしています。数字が公表内容と違っていた場合は、公式の数字を優先してください。</li>
+    <li>防災庁は2026年11月2日に発足。細野防災担当相は同じ日、全国民と中央省庁・都道府県に「事前防災徹底のための緊急要請」を出しました<a href="#s12">[12]</a><a href="#s13">[13]</a>。</li>
+    <li>国民に向けた中身は、報道の全文掲載によると次の柱です<a href="#s12">[12]</a><a href="#s13">[13]</a>。(1) 住宅の耐震化と家具の固定(1981年以前に建てた家は耐震診断を。費用が重ければ寝室など一部の補強も)、(2) 水・食料・携帯トイレなどの備蓄を最低3日、できれば1週間ぶん、(3) ハザードマップと避難経路の確認、(4) 非常持ち出し品の準備、(5) 防災訓練への参加。このページの計算は(2)を受け持ちます。(1)(3)(4)(5)は上の「家ごとの備え」に確認欄を足しました。</li>
+    <li>中央省庁と都道府県には年末までに進み具合を報告させ、足りなければ再要請や防災庁の勧告権の行使も検討すると伝えられています<a href="#s12">[12]</a>。</li>
+    <li>発足前の報道では、南海トラフ地震や首都直下地震などで行政の支援が遅れる可能性を考え、自助を進めてもらうことで、公助を本当に必要な人に集中させる、という説明です<a href="#s2">[2]</a>。</li>
+    <li>細野氏は事前に、地震などの予知情報を受けた要請ではないと説明しています<a href="#s12">[12]</a>。SNSでは「何か起きるのか」という憶測も広がり、買い占めへの注意も呼びかけられています<a href="#s3">[3]</a>。</li>
+    <li>このページは要請の全文を掲載した報道をもとにしています。防災庁のサイトに載る正式な文面と違う点があれば、公式の内容を優先してください。</li>
   </ul>
   <div class="warn">店頭の水や携帯トイレが一時的に減ることがあります。家にあるものを先に数え、足りない分を何回かに分けて買うと、お店の在庫も自分の財布も無理がありません。</div>
 </section>
@@ -232,6 +244,8 @@ footer{font-size:12px;color:var(--sub);display:grid;gap:6px}
     <li id="s9">農林水産省 食育ガイド 第8章 <a href="https://www.maff.go.jp/j/syokuiku/plan/4_plan/togo/html/part8.html">maff.go.jp/j/syokuiku/plan/…/part8.html</a></li>
     <li id="s10">相模原市 ペットの災害対策 <a href="https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/pet/1020618.html">city.sagamihara.kanagawa.jp/…/1020618.html</a></li>
     <li id="s11">三重県 ペットの防災 <a href="https://www.pref.mie.lg.jp/ASMILE/71984044638.htm">pref.mie.lg.jp/ASMILE/71984044638.htm</a></li>
+    <li id="s12">FNNプライムオンライン(dメニューニュース)「【全文掲載】全国民に『事前防災徹底のための緊急要請』 細野防災大臣 『水・食料、携帯用トイレ等の備蓄』など」 <a href="https://topics.smt.docomo.ne.jp/article/fnn/nation/fnn-1144215">topics.smt.docomo.ne.jp/…/fnn-1144215</a></li>
+    <li id="s13">時事通信「家具固定、備蓄を緊急要請 細野氏『しっかり行動を』―防災庁が本格始動」 <a href="https://www.jiji.com/jc/article?k=2026110200085&amp;g=pol">jiji.com/jc/article?k=2026110200085</a></li>
   </ol>
 </section>
 
@@ -320,6 +334,10 @@ footer{font-size:12px;color:var(--sub);display:grid;gap:6px}
   $('reset').addEventListener('click',function(){try{localStorage.removeItem(KEY);}catch(e){}location.reload();});
   // チェックリストも保存
   document.querySelectorAll('#extra input').forEach(function(c){c.checked=!!(state.have['x_'+c.id]);c.addEventListener('change',function(){state.have['x_'+c.id]=c.checked?1:0;save();});});
+  var url=location.href.split('#')[0];
+  $('shX').href='https://twitter.com/intent/tweet?text='+encodeURIComponent('防災庁の緊急要請「最低3日、できれば1週間」。家族の人数を入れると水・携帯トイレ・主食の量が出て、家にあるぶんを引いた不足を数週に分けた買い物メモにできます')+'&url='+encodeURIComponent(url);
+  $('shL').href='https://social-plugins.line.me/lineit/share?url='+encodeURIComponent(url);
+  $('shC').addEventListener('click',function(){var b=this;(navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(function(){b.textContent='コピーしました';},function(){prompt('このURLをコピーしてください',url);});});
   render();
 })();
 </script>

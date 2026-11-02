@@ -52,6 +52,7 @@ p{margin:0 0 10px}
 .sheet{background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:20px 18px;min-width:0}
 .hint{font-size:13px;color:var(--sub)}
 a{color:var(--sky)}
+.shb{font:inherit;font-size:14px;font-weight:700;padding:8px 14px;border-radius:6px;border:1px solid var(--rule);background:transparent;color:inherit;text-decoration:none;cursor:pointer;display:inline-block}
 /* 入力 */
 .form{display:grid;gap:14px;margin-top:6px}
 .field{display:grid;gap:6px}
@@ -242,6 +243,12 @@ footer{font-size:12px;color:var(--sub);display:grid;gap:6px}
     </div>
   </section>
 
+  <section class="sheet" aria-labelledby="h-share">
+    <h2 id="h-share">家族や同僚に送る</h2>
+    <p style="margin:0 0 10px;font-size:14px;color:var(--sub)">共働きの相手や親の年収でも段が変わります。年収を入れ替えて確かめてもらえます。</p>
+    <div style="display:flex;flex-wrap:wrap;gap:8px"><a class="shb" id="shL" target="_blank" rel="noopener">LINEで送る</a><a class="shb" id="shX" target="_blank" rel="noopener">Xで共有</a><button class="shb" type="button" id="shC">URLをコピー</button></div>
+  </section>
+
   <section class="sheet" aria-labelledby="h-faq">
     <h2 id="h-faq">よくある質問</h2>
     <details><summary>結局いくらもらえますか?</summary><p>10月30日夕方の時点で決まっていません。示されているのは「年収119万円以下は年5千円程度」(10/29、2027・28年度の参考値)と「約2千万人に平均年3万円程度」(10/17)の参考値、それに「年収160万円まで増える」という試算(10/30)だけです。どちらも政府が与野党に示した案で、法律の成立後に政令で決まります。</p></details>
@@ -354,6 +361,10 @@ footer{font-size:12px;color:var(--sub);display:grid;gap:6px}
   $('incR').addEventListener('input',function(){$('incN').value=this.value;render()});
   $('incN').addEventListener('input',render);
   document.querySelectorAll('input[type=radio]').forEach(function(r){r.addEventListener('change',render)});
+  var url=location.href.split('#')[0];
+  $('shX').href='https://twitter.com/intent/tweet?text='+encodeURIComponent('新しい給付(就業者負担軽減支援金)、自分の年収はどの段? 下限の案ごとに「支給なし・定額・増える・減る」のどこかを判定します')+'&url='+encodeURIComponent(url);
+  $('shL').href='https://social-plugins.line.me/lineit/share?url='+encodeURIComponent(url);
+  $('shC').addEventListener('click',function(){var b=this;(navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(function(){b.textContent='コピーしました'},function(){prompt('このURLをコピーしてください',url)})});
   render();
 })();
 </script>
