@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>圏外のあとのSMS 手当て帳|偽基地局から自分のスマホを守る設定と、開いてしまったあとの手順</title>
+<meta name="description" content="銀座の偽基地局事件(2026年11月9日発表)で使われた「2Gへの誘導」と詐欺SMS。iPhone・Pixel・Galaxy・Xperia・AQUOSの2Gを切る設定の場所と、圏外になった・SMSが届いた・リンクを開いた・カード番号を入れたなど状況ごとの手順、旅行者向けの中国語・英語カードをまとめました。">
+<link rel="canonical" href="https://alternativestudio2021-collab.github.io/daily-launch-sites/day024-nise-kichikyoku/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="圏外のあとのSMS 手当て帳(偽基地局の対策)">
+<meta property="og:description" content="機種を選ぶと2Gを切る設定の場所を、状況を選ぶと今すぐ・今日・しばらくのやることを並べます。旅行者向けの中国語・英語カードつき。">
+<meta property="og:url" content="https://alternativestudio2021-collab.github.io/daily-launch-sites/day024-nise-kichikyoku/">
+<meta property="og:site_name" content="毎日ひとつの小さな道具箱">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700;900&family=M+PLUS+1+Code:wght@400;700&display=swap">
+<style>
+:root{
+  --bg:#f4f1ea; --paper:#fffdf8; --ink:#1b2420; --sub:#5b655f; --rule:#d8d2c4; --soft:#ece7dc;
+  --wave:#0f6b5c; --wave-soft:#dcefe9; --mag:#b8326a; --mag-soft:#f8e1ea; --amber:#9a6200; --amber-soft:#fbefd6;
+  --f:"Zen Kaku Gothic New","Hiragino Sans","Noto Sans JP",sans-serif; --m:"M PLUS 1 Code",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#101513; --paper:#171e1b; --ink:#e6ece8; --sub:#a1ada6; --rule:#2c3833; --soft:#1e2723;
+  --wave:#6fd1bd; --wave-soft:#15302a; --mag:#f08cb3; --mag-soft:#3a1828; --amber:#f0c26a; --amber-soft:#33270f; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#101513; --paper:#171e1b; --ink:#e6ece8; --sub:#a1ada6; --rule:#2c3833; --soft:#1e2723;
+  --wave:#6fd1bd; --wave-soft:#15302a; --mag:#f08cb3; --mag-soft:#3a1828; --amber:#f0c26a; --amber-soft:#33270f; color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);line-height:1.85;font-size:16px}
+a{color:var(--wave)}
+.wrap{max-width:920px;margin:0 auto;padding:18px 16px 72px;display:grid;gap:22px}
+.wrap>*{min-width:0}
+.crumb{font-size:13px;color:var(--sub)}
+.crumb a{color:var(--sub)}
+/* 携帯のステータスバー風ヘッダ */
+.hero{position:relative;background:var(--paper);border:1px solid var(--rule);border-radius:18px;overflow:hidden}
+.bar{display:flex;justify-content:space-between;align-items:center;padding:8px 18px;font-family:var(--m);font-size:13px;background:var(--ink);color:var(--paper)}
+.bar .sig{display:inline-flex;gap:3px;align-items:flex-end;height:14px;margin-right:8px;vertical-align:middle}
+.bar .sig i{display:block;width:4px;background:currentColor;opacity:.25;border-radius:1px}
+.bar .sig i:nth-child(1){height:4px;opacity:1}.bar .sig i:nth-child(2){height:7px}.bar .sig i:nth-child(3){height:10px}.bar .sig i:nth-child(4){height:14px}
+.bar .g2{background:var(--mag);color:#fff;border-radius:4px;padding:0 6px;font-weight:700;animation:blink 1.6s steps(2,end) infinite}
+@keyframes blink{50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.bar .g2{animation:none}}
+.hero .in{position:relative;padding:26px 22px 24px}
+.hero .in::after{content:"";position:absolute;right:-90px;top:-90px;width:300px;height:300px;border-radius:50%;
+  background:repeating-radial-gradient(circle,transparent 0 18px,var(--wave-soft) 18px 20px);pointer-events:none;opacity:.9}
+.kicker{font-family:var(--m);font-size:12px;color:var(--wave);letter-spacing:.06em;position:relative;z-index:1}
+h1{font-weight:900;font-size:clamp(28px,6.4vw,46px);line-height:1.25;margin:6px 0 12px;position:relative;z-index:1}
+h1 small{display:block;font-size:.42em;font-weight:700;color:var(--sub);margin-top:6px}
+.lead{margin:0;max-width:40em;position:relative;z-index:1}
+.stamp{display:inline-block;margin-top:12px;font-size:13px;color:var(--sub);position:relative;z-index:1}
+section{background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:22px 20px}
+h2{font-size:22px;font-weight:900;margin:0 0 12px;display:flex;gap:10px;align-items:baseline}
+h2 .n{font-family:var(--m);font-size:13px;color:var(--paper);background:var(--wave);border-radius:999px;padding:1px 9px;font-weight:700;flex:none}
+h3{font-size:17px;margin:18px 0 6px}
+p{margin:.5em 0}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:12px 0 4px}
+.fact{background:var(--soft);border-radius:10px;padding:12px 14px}
+.fact b{display:block;font-family:var(--m);font-size:22px;line-height:1.3;color:var(--wave)}
+.fact span{font-size:13px;color:var(--sub)}
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0 6px;counter-reset:f}
+.flow div{position:relative;border:1px dashed var(--rule);border-radius:10px;padding:10px 12px;font-size:14px}
+.flow div::before{counter-increment:f;content:counter(f);font-family:var(--m);font-weight:700;color:var(--mag);margin-right:6px}
+@media (max-width:620px){.flow{grid-template-columns:1fr}}
+.note{font-size:13px;color:var(--sub)}
+/* 選択チップ */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 4px}
+.chip{appearance:none;border:1.5px solid var(--rule);background:var(--paper);color:var(--ink);font:inherit;font-size:15px;padding:8px 14px;border-radius:999px;cursor:pointer;line-height:1.4}
+.chip:hover{border-color:var(--wave)}
+.chip[aria-pressed="true"]{background:var(--wave);border-color:var(--wave);color:var(--paper);font-weight:700}
+.chip:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.path{margin-top:14px;border-left:4px solid var(--wave);background:var(--wave-soft);border-radius:0 10px 10px 0;padding:14px 16px}
+.path ol{margin:6px 0 6px 1.2em;padding:0}
+.path .k{font-family:var(--m);font-size:14px;background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:0 6px;white-space:nowrap}
+.warn{border-left-color:var(--mag);background:var(--mag-soft)}
+/* 手当て */
+.sits{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px;margin-top:10px}
+.sit{display:flex;gap:10px;align-items:flex-start;border:1.5px solid var(--rule);border-radius:10px;padding:10px 12px;cursor:pointer;background:var(--paper)}
+.sit input{margin-top:6px;accent-color:var(--wave);width:18px;height:18px;flex:none}
+.sit:has(input:checked){border-color:var(--wave);background:var(--wave-soft)}
+.sit small{display:block;color:var(--sub);font-size:12.5px;line-height:1.5}
+.shelves{display:grid;gap:12px;margin-top:16px}
+.shelf{border-radius:12px;padding:14px 16px;border:1px solid var(--rule)}
+.shelf h3{margin:0 0 6px;font-size:16px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.shelf h3 .t{font-family:var(--m);font-size:12px;font-weight:400;color:var(--sub)}
+.shelf.now{background:var(--mag-soft);border-color:transparent}
+.shelf.today{background:var(--amber-soft);border-color:transparent}
+.shelf.later{background:var(--wave-soft);border-color:transparent}
+.shelf ul{margin:0;padding-left:1.2em}
+.shelf li{margin:.25em 0}
+.shelf li .why{display:block;font-size:13px;color:var(--sub)}
+.empty{color:var(--sub);font-size:14px;margin:0}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.btn{appearance:none;font:inherit;font-size:14px;border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:8px;padding:6px 14px;cursor:pointer}
+.btn.pri{background:var(--ink);color:var(--paper)}
+.btn:hover{border-color:var(--wave)}
+.msg{font-size:13px;color:var(--wave);min-height:1.4em;margin-top:4px}
+/* 相談先 */
+.contacts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.ct{border:1px solid var(--rule);border-radius:10px;padding:12px 14px}
+.ct b{font-family:var(--m);font-size:22px;display:block;color:var(--wave);line-height:1.3}
+.ct span{font-size:13.5px}
+/* 旅行者カード */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
+@media (max-width:700px){.cards{grid-template-columns:1fr}}
+.tc{border:2px solid var(--ink);border-radius:14px;padding:16px;background:var(--paper)}
+.tc .lang{font-family:var(--m);font-size:12px;color:var(--sub)}
+.tc p{margin:.4em 0;font-size:15.5px;line-height:1.75}
+.tc .big{font-size:19px;font-weight:900}
+.tc .tel{font-family:var(--m);font-weight:700}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{border-bottom:1px solid var(--rule);padding:8px 6px;text-align:left;vertical-align:top}
+th{font-size:13px;color:var(--sub);font-weight:700;white-space:nowrap}
+.tbl{overflow-x:auto}
+details{border-top:1px solid var(--rule);padding:10px 0}
+details:last-child{border-bottom:1px solid var(--rule)}
+summary{cursor:pointer;font-weight:700}
+.src ol{padding-left:1.3em;font-size:13.5px;margin:0}
+.src li{margin:.3em 0;word-break:break-all}
+.pr{border:1px dashed var(--rule);border-radius:10px;padding:12px 14px;font-size:14px}
+.pr .lb{display:inline-block;font-family:var(--m);font-size:11px;border:1px solid var(--sub);color:var(--sub);border-radius:4px;padding:0 5px;margin-right:6px}
+.share{display:flex;flex-wrap:wrap;gap:8px}
+.share a,.share button{font-size:14px}
+footer{font-size:13px;color:var(--sub);border-top:1px solid var(--rule);padding-top:14px}
+@media print{
+  body{background:#fff}
+  .hero .in::after,.bar,.crumb,.share,.tools,.pr,#devSec,#cardsSec,#factSec,#faqSec,.src,footer{display:none}
+  section{border:none;padding:0}
+  .sit:not(:has(input:checked)){display:none}
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"偽基地局とは何ですか","acceptedAnswer":{"@type":"Answer","text":"携帯電話会社の正規の基地局になりすまして電波を出す無許可の装置です。2026年11月9日に警視庁が発表した銀座の事件では、車に積んだ機器で周りのスマホを圏外にしたうえで、認証の弱い古い通信方式(2G)に接続させ、詐欺のSMSを送っていたとみられると報じられています。"}},
+{"@type":"Question","name":"日本で2Gを切っても困りませんか","acceptedAnswer":{"@type":"Answer","text":"国内の携帯電話会社は2Gのサービスを提供していないため、国内で使う分には通常困りません。2Gが残る国へ旅行するときに圏外になることがあれば、その間だけ戻してください。"}},
+{"@type":"Question","name":"iPhoneで2Gだけを切ることはできますか","acceptedAnswer":{"@type":"Answer","text":"iPhoneには2Gだけを切るスイッチはありません。Appleの説明では、ロックダウンモードをオンにすると2Gの通信が切られますが、メッセージの添付やウェブの機能なども制限されます。多くの人にとっては、圏外のあとに届いたSMSのリンクを開かないことが一番の対策です。"}},
+{"@type":"Question","name":"SMSのリンクを開いてしまいました。どうすればいいですか","acceptedAnswer":{"@type":"Answer","text":"開いただけで何も入力・インストールしていなければ、ページを閉じれば多くはそこで止まります。IDやパスワードを入れた場合は公式アプリか公式サイトからすぐ変更し、同じパスワードを使っている他のサービスも変えます。カード番号を入れた場合はカード裏面の電話番号でカード会社に連絡して止めてもらいます。"}},
+{"@type":"Question","name":"携帯電話会社の迷惑SMSフィルターで防げませんか","acceptedAnswer":{"@type":"Answer","text":"偽基地局から直接送られたSMSは携帯電話会社の設備を通らないため、会社側のフィルターに掛からない可能性があると指摘されています。差出人に銀行やカード会社の名前が出ていても、リンクから開かないでください。"}}
+]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="crumb"><a href="../">毎日ひとつの小さな道具箱</a> / Day 24</div>
+
+<header class="hero">
+  <div class="bar" aria-hidden="true"><span><span class="sig"><i></i><i></i><i></i><i></i></span><span class="g2">2G</span></span><span>圏外 → SMS 1件</span></div>
+  <div class="in">
+    <div class="kicker">FAKE BASE STATION / 偽基地局</div>
+    <h1>圏外のあとのSMS 手当て帳<small>偽基地局から自分のスマホを守る設定と、開いてしまったあとの手順</small></h1>
+    <p class="lead">2026年11月9日、警視庁は東京・銀座の路上で偽の基地局を動かしていた男を電波法違反の疑いで逮捕したと発表しました。周りのスマホを圏外にしてから古い通信方式「2G」につながせ、詐欺のSMSを送っていたとみられています。機種を選ぶと2Gを切る設定の場所を、いまの状況を選ぶとやることの順番を出します。</p>
+    <span class="stamp">情報は2026年11月11日朝時点の報道と公開資料にもとづきます。選んだ内容はこの端末の外に送りません。</span>
+  </div>
+</header>
+
+<section id="factSec">
+  <h2><span class="n">01</span>何が起きたか</h2>
+  <div class="facts">
+    <div class="fact"><b>1万台以上</b><span>圏外になったとされるスマホの台数(時間は報道で「約1時間」「2時間弱」など差あり)</span></div>
+    <div class="fact"><b>半径500m</b><span>妨害電波の影響が少なくとも及んだとされる範囲(時事通信)</span></div>
+    <div class="fact"><b>18人・約400万円</b><span>2025年1月以降、中国人観光客らから寄せられた相談と被害額(時事通信)</span></div>
+  </div>
+  <div class="flow" aria-label="手口の流れ">
+    <div>車に積んだ機器で強い妨害電波を出し、周りのスマホを正規の4G・5Gから切り離す</div>
+    <div>認証の仕組みが弱い2Gの偽の電波に、スマホを自動でつながせる</div>
+    <div>携帯電話会社を通さずにSMSを送りつける。今回は中国語の詐欺メッセージとみられる</div>
+  </div>
+  <p>逮捕は11月7日(現行犯)、発表は11月9日。容疑者は否認していると報じられています。総務省は2025年5月2日の時点で、都内周辺で不法な無線局とみられる混信により圏外や不審なSMSの受信が起きているとして注意を呼びかけていました。</p>
+  <p class="note">今回の狙いは買い物中の中国人観光客とみられていますが、圏外にされるのは近くにいるスマホ全部です。日本語の文面が送られる可能性もあります。被害の全体像は捜査中で、ここに書いた数字は報道ベースです。</p>
+</section>
+
+<section id="devSec">
+  <h2><span class="n">02</span>2Gを切る設定の場所</h2>
+  <p>国内の携帯電話会社は2Gのサービスを提供していないため、国内で使う分には切っても通常困りません。機種を選んでください。</p>
+  <div class="chips" role="group" aria-label="機種">
+    <button class="chip" data-dev="iphone">iPhone</button>
+    <button class="chip" data-dev="pixel">Pixel</button>
+    <button class="chip" data-dev="galaxy">Galaxy</button>
+    <button class="chip" data-dev="xperia">Xperia</button>
+    <button class="chip" data-dev="aquos">AQUOS</button>
+    <button class="chip" data-dev="other">その他のAndroid</button>
+  </div>
+  <div id="devOut" class="path" aria-live="polite"><p class="empty">機種を選ぶと、ここに手順が出ます。</p></div>
+  <p class="note">Androidは機種・OSの版・携帯電話会社によって項目の名前や場所が違い、項目そのものが無い機種もあります。見つからないときは設定アプリの検索欄に「2G」と入れてください。2Gを切っても、妨害電波で圏外にされること自体は防げません。</p>
+</section>
+
+<section id="sitSec">
+  <h2><span class="n">03</span>いまの状況から、やることを並べる</h2>
+  <p>当てはまるものをすべて選んでください。</p>
+  <div class="sits" id="sits">
+    <label class="sit"><input type="checkbox" value="prevent"><span>まだ何も起きていない。備えておきたい<small>繁華街・観光地によく行く、家族の設定も見たい</small></span></label>
+    <label class="sit"><input type="checkbox" value="outage"><span>急に圏外になった/見慣れない表示になった<small>アンテナ横が「E」「GPRS」「2G」など</small></span></label>
+    <label class="sit"><input type="checkbox" value="sms"><span>圏外のあとに怪しいSMSが届いた(まだ開いていない)<small>銀行・カード・宅配・携帯会社などを名乗る</small></span></label>
+    <label class="sit"><input type="checkbox" value="opened"><span>SMSのリンクを開いた(入力はしていない)</span></label>
+    <label class="sit"><input type="checkbox" value="password"><span>IDやパスワードを入れた</span></label>
+    <label class="sit"><input type="checkbox" value="code"><span>SMSで届いた認証コードを入れた/伝えた</span></label>
+    <label class="sit"><input type="checkbox" value="card"><span>クレジットカード番号を入れた</span></label>
+    <label class="sit"><input type="checkbox" value="bank"><span>ネットバンキングの情報や暗証番号を入れた</span></label>
+    <label class="sit"><input type="checkbox" value="app"><span>アプリや「プロファイル」を入れた</span></label>
+    <label class="sit"><input type="checkbox" value="money"><span>お金を払った・引き落とされた</span></label>
+  </div>
+  <div class="shelves" id="shelves" aria-live="polite">
+    <p class="empty">状況を選ぶと、「今すぐ」「今日のうちに」「しばらく見張る」の3段に分けて出します。</p>
+  </div>
+  <div class="tools">
+    <button class="btn pri" id="copyBtn" type="button">やることをコピー</button>
+    <button class="btn" id="printBtn" type="button">印刷する</button>
+    <button class="btn" id="resetBtn" type="button">選び直す</button>
+  </div>
+  <div class="msg" id="msg" role="status"></div>
+</section>
+
+<section>
+  <h2><span class="n">04</span>相談先</h2>
+  <div class="contacts">
+    <div class="ct"><b>#9110</b><span>警察相談専用電話。被害が出た・出そうなときの相談。急ぎの被害や身の危険は110番。</span></div>
+    <div class="ct"><b>188</b><span>消費者ホットライン。最寄りの消費生活センターにつながる。払ってしまった・請求が来たとき。</span></div>
+    <div class="ct"><b>カード裏面の番号</b><span>カードの停止・再発行・不正利用の調査。SMSやメールに書かれた番号には掛けない。</span></div>
+    <div class="ct"><b>info@antiphishing.jp</b><span>フィッシング対策協議会への報告先。届いたSMSの文面とURLを知らせると、注意喚起や閉鎖依頼に使われる。</span></div>
+  </div>
+  <p class="note">漏えいのお知らせが別に届いている人は、<a href="../day022-roei-taisho/">漏えい通知が来たら やること仕分け帳</a>で漏れた項目ごとの対処も確認できます。</p>
+</section>
+
+<section id="cardsSec">
+  <h2><span class="n">05</span>旅行者に見せるカード(中国語・英語)</h2>
+  <p>店頭やホテルのフロントで、圏外になった・おかしなSMSが来たという旅行者に見せる用です。印刷やコピーで使えます。</p>
+  <div class="cards">
+    <div class="tc" lang="zh-Hans" id="cardZh">
+      <div class="lang">简体中文</div>
+      <p class="big">手机突然显示"无服务"后收到的短信,请不要点击链接。</p>
+      <p>银座等繁华地区曾发现有人使用伪基站,先让周围手机断网,再发送诈骗短信。短信即使显示银行、信用卡公司或快递公司的名字,也可能是假的。</p>
+      <p>不要输入银行卡号、密码或验证码。如果已经输入,请立即拨打信用卡背面的电话停卡。</p>
+      <p>紧急情况请拨打 <span class="tel">110</span>(警察)。旅游咨询热线(24小时,中・英・韩):<span class="tel">050-3816-2787</span></p>
+    </div>
+    <div class="tc" lang="en" id="cardEn">
+      <div class="lang">English</div>
+      <p class="big">If your phone suddenly lost signal and then got a text message, do not tap the link.</p>
+      <p>Fake mobile base stations have been found in busy areas such as Ginza. They cut nearby phones off the network, then send scam texts. A sender name that looks like your bank, card company or a delivery company can be fake.</p>
+      <p>Do not enter card numbers, passwords or codes. If you already did, call the number on the back of your card right away.</p>
+      <p>Emergency: <span class="tel">110</span> (police). Japan Visitor Hotline, 24 h (English / Chinese / Korean): <span class="tel">050-3816-2787</span></p>
+    </div>
+  </div>
+  <div class="tools">
+    <button class="btn" type="button" data-copy="cardZh">中国語をコピー</button>
+    <button class="btn" type="button" data-copy="cardEn">英語をコピー</button>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">06</span>見分けにくい理由</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>ふだんの詐欺SMS</th><th>偽基地局から来るSMS</th></tr></thead>
+    <tbody>
+      <tr><td>携帯電話会社の設備を通るので、会社の迷惑SMSフィルターで止まることがある</td><td>携帯電話会社を通らないため、フィルターに掛からない可能性があると指摘されている</td></tr>
+      <tr><td>差出人は知らない番号が多い</td><td>差出人の表示を自由に作れるため、銀行・カード会社などの名前で届くことがある</td></tr>
+      <tr><td>時間や場所に関係なく届く</td><td>繁華街で急に圏外になった直後や、圏外が戻った直後に届きやすい</td></tr>
+    </tbody>
+  </table></div>
+  <p>どちらの場合も、守り方は同じです。SMSのリンクからは開かず、使っているサービスの<b>公式アプリか、自分でブックマークした公式サイト</b>から確かめます。総務省と携帯電話4社も同じことを呼びかけています。</p>
+</section>
+
+<section id="faqSec">
+  <h2><span class="n">07</span>よくある質問</h2>
+  <details><summary>偽基地局とは何ですか</summary><p>携帯電話会社の正規の基地局になりすまして電波を出す無許可の装置です。銀座の事件では、車に積んだ機器で周りのスマホを圏外にしたうえで、認証の弱い2Gに接続させ、詐欺のSMSを送っていたとみられると報じられています。海外では「SMSブラスター」「IMSIキャッチャー」とも呼ばれます。</p></details>
+  <details><summary>日本で2Gを切っても困りませんか</summary><p>国内の携帯電話会社は2Gのサービスを提供していないため、国内で使う分には通常困りません。2Gが残る国へ旅行して圏外が続くときは、その間だけ戻してください。</p></details>
+  <details><summary>iPhoneで2Gだけを切ることはできますか</summary><p>2Gだけを切るスイッチはありません。Appleの説明では、ロックダウンモードをオンにすると2Gの通信が切られます。ただしメッセージの添付やウェブの一部の機能も制限されるので、ふだん使いには向かない人が多いはずです。圏外のあとに届いたSMSのリンクを開かないことを一番の対策にしてください。</p></details>
+  <details><summary>SMSのリンクを開いてしまいました</summary><p>開いただけで何も入力・インストールしていなければ、ページを閉じれば多くはそこで止まります。IDやパスワードを入れた場合は公式アプリか公式サイトからすぐ変更し、同じパスワードを使っている他のサービスも変えます。カード番号を入れた場合はカード裏面の電話番号でカード会社に連絡します。上の「03」で状況を選ぶと順番に並べます。</p></details>
+  <details><summary>携帯電話会社の迷惑SMSフィルターで防げませんか</summary><p>偽基地局から直接送られたSMSは携帯電話会社の設備を通らないため、会社側のフィルターに掛からない可能性があると指摘されています。フィルターは入れておいて損はありませんが、それだけに頼らないでください。</p></details>
+</section>
+
+<section class="pr" aria-label="広告枠">
+  <!-- PR枠: セキュリティソフト・パスワード管理のA8公式コードが届いたら、改変せずここに1件だけ置く(owner_actions a8-security-day022) -->
+  <span class="lb">PR</span>この枠には、提携が決まったらパスワード管理・セキュリティ関連の案内を1件だけ載せます。いまは掲載していません。
+</section>
+
+<section>
+  <h2><span class="n">08</span>共有</h2>
+  <p class="note">家族や職場のスマホの設定をいっしょに見るときに。</p>
+  <div class="share">
+    <a class="btn" id="shLine" href="#" target="_blank" rel="noopener">LINEで送る</a>
+    <a class="btn" id="shX" href="#" target="_blank" rel="noopener">Xで共有</a>
+    <button class="btn" type="button" id="shCopy">URLをコピー</button>
+  </div>
+</section>
+
+<section class="src">
+  <h2><span class="n">09</span>出典</h2>
+  <ol>
+    <li>時事ドットコム「繁華街で偽基地局運用 電波法違反容疑で中国籍の男逮捕―詐欺メッセージ送信か・警視庁」2026年11月9日 https://www.jiji.com/jc/article?k=2026110900275&amp;g=soc</li>
+    <li>TBS NEWS DIG(Yahoo!ニュース)「いわゆる“ニセ基地局”を摘発 東京・銀座の路上でスマートフォンの通信を妨害か」https://news.yahoo.co.jp/articles/633d360aa5e361636c13232a09b7172ae9365116</li>
+    <li>TBS NEWS DIG(Yahoo!ニュース)「スマホの電波を強制的に『圏外』に 詐欺メッセージを送っていたか」https://news.yahoo.co.jp/articles/c26f47c48617eb18299c8d6200bd1ff542fadccd</li>
+    <li>東京新聞「携帯電話1万台が急に圏外に…警視庁が摘発『偽基地局』の実態は」https://www.tokyo-np.co.jp/article/527146</li>
+    <li>高橋暁子「偽基地局詐欺で中国籍男逮捕、詐欺SMSを送れる理由と『2Gをオフにする』対策の仕方は」Yahoo!ニュース エキスパート https://news.yahoo.co.jp/expert/articles/5621817001d5cf6997b1c40f369a29b0d05fb45d</li>
+    <li>ケータイ Watch「”偽基地局”の仕組みや対策、日本スマートフォンセキュリティ協会が解説ページを公開」https://k-tai.watch.impress.co.jp/docs/news/2010059.html</li>
+    <li>ケータイ Watch「もし偽基地局に遭遇したら 知識としての憶えておきたい対処方法」https://k-tai.watch.impress.co.jp/docs/column/keyword/2010977.html</li>
+    <li>ITmedia Mobile「話題の“偽基地局”問題、日本人は関係ないってホント? 対策方法は?」2025年5月 https://www.itmedia.co.jp/mobile/articles/2505/19/news124_2.html</li>
+    <li>Apple「ロックダウンモードについて」https://support.apple.com/ja-jp/105120</li>
+    <li>日本政府観光局(JNTO)「Japan Visitor Hotline」https://www.japan.travel/en/plan/hotline/</li>
+    <li>piyolog「偽基地局を使った詐欺SMSの送信についてまとめてみた」2026年11月10日 https://piyolog.hatenadiary.jp/entry/2026/11/10/004128</li>
+  </ol>
+  <p class="note">総務省の2025年5月2日の注意喚起は上記報道での要約にもとづきます。各社の設定画面は今後のアップデートで変わることがあります。</p>
+</section>
+
+<footer>掲載内容は公開資料と報道をもとにした情報提供です。被害の判断や手続きは、警察・消費生活センター・カード会社・携帯電話会社の窓口で確認してください。<br><a href="../">毎日ひとつの小さな道具箱</a> Day 24 / 2026年11月11日公開</footer>
+</div>
+
+<script>
+(function(){
+  var DEV={
+    iphone:{name:'iPhone',warn:true,html:'<p><b>2Gだけを切るスイッチはありません。</b>Appleの説明では、ロックダウンモードをオンにすると2Gの通信が切られます。</p><ol><li><span class="k">設定</span> → <span class="k">プライバシーとセキュリティ</span> → 下の方の <span class="k">ロックダウンモード</span></li><li>オンにすると再起動します</li></ol><p>ロックダウンモードはメッセージの添付やウェブの一部の機能も止まるため、ふだん使いには向かない人が多いはずです。多くの人は、<b>圏外のあとに届いたSMSのリンクを開かない</b>ことを守るのが現実的です。アンテナ横の表示が見慣れないものになったら、機内モードにしてその場を離れてください。</p>'},
+    pixel:{name:'Pixel',html:'<ol><li><span class="k">設定</span> → <span class="k">ネットワークとインターネット</span> → <span class="k">SIM</span></li><li>使っている携帯電話会社(SIM)をタップ</li><li><span class="k">2G を許可する</span> を<b>オフ</b></li></ol><p>新しいAndroidでは名前が「2G ネットワークの保護」「2G の制限」のように変わり、<b>スイッチの向きが逆</b>になる例があります。名前が「許可」ならオフ、「保護」「制限」ならオンが、2Gを切った状態です。</p>'},
+    galaxy:{name:'Galaxy',html:'<ol><li><span class="k">設定</span> → <span class="k">接続</span> → <span class="k">モバイルネットワーク</span></li><li><span class="k">2G サービスを許可</span> などの項目があれば<b>オフ</b></li></ol><p>機種やOSの版によって「詳細設定」の中にあったり、項目自体が無かったりします。見つからないときは設定の検索で「2G」と入れてください。名前が「保護」「制限」ならオンが2Gを切った状態です。</p>'},
+    xperia:{name:'Xperia',html:'<ol><li><span class="k">設定</span>を開き、上の検索欄に <span class="k">2G</span> と入れる</li><li>「2G を許可」などの項目が出たら<b>オフ</b>(「保護」「制限」ならオン)</li></ol><p>多くは <span class="k">ネットワークとインターネット</span> → <span class="k">SIM</span> → 携帯電話会社名 の中にあります。携帯電話会社の版によっては項目が無いことがあります。</p>'},
+    aquos:{name:'AQUOS',html:'<ol><li><span class="k">設定</span>を開き、上の検索欄に <span class="k">2G</span> と入れる</li><li>「2G を許可」などの項目が出たら<b>オフ</b>(「保護」「制限」ならオン)</li></ol><p>多くは <span class="k">ネットワークとインターネット</span> → <span class="k">SIM</span>(または <span class="k">モバイルネットワーク</span>)の中にあります。項目が無い機種もあります。</p>'},
+    other:{name:'その他のAndroid',html:'<ol><li><span class="k">設定</span>の検索欄に <span class="k">2G</span> と入れる</li><li>「2G を許可」ならオフ、「2G ネットワークの保護」「2G の制限」ならオン</li></ol><p>Android 12以降で項目が用意されている機種が多いものの、携帯電話会社の版などで消されていることがあります。項目が無い場合は、圏外のあとのSMSを開かないことで守ってください。</p>'}
+  };
+  var devOut=document.getElementById('devOut');
+  document.querySelectorAll('[data-dev]').forEach(function(b){
+    b.setAttribute('aria-pressed','false');
+    b.addEventListener('click',function(){
+      document.querySelectorAll('[data-dev]').forEach(function(x){x.setAttribute('aria-pressed','false')});
+      b.setAttribute('aria-pressed','true');
+      var d=DEV[b.dataset.dev];
+      devOut.className='path'+(d.warn?' warn':'');
+      devOut.innerHTML='<h3 style="margin-top:0">'+d.name+'</h3>'+d.html;
+    });
+  });
+
+  // 状況 → やること(now / today / later)
+  var A={
+    prevent:{
+      today:[['2Gを切る設定を済ませる','上の「02」で機種を選ぶと場所が出ます。家族のスマホも同じように。']],
+      later:[['繁華街で急に圏外になったら、戻った直後のSMSは開かないと決めておく','差出人が銀行・カード会社の名前でも同じです。'],['銀行・カード・通販は公式アプリかブックマークから開く習慣にする','SMSやメールのリンクから開かない、が一番効きます。']]
+    },
+    outage:{
+      now:[['その場を離れる','妨害の範囲は少なくとも半径500mと報じられています。数百m移動すると戻ることがあります。'],['圏外の間・戻った直後に届いたSMSのリンクは開かない','差出人の表示は偽装できます。']],
+      today:[['2Gを切る設定を済ませる','上の「02」で機種を選んでください。iPhoneは2Gだけを切れません。']],
+      later:[['同じ場所で何度も起きるなら携帯電話会社に知らせる','場所と時刻、端末の表示(「E」「GPRS」など)をメモしておくと伝えやすくなります。']]
+    },
+    sms:{
+      now:[['リンクを開かず、返信もしない','書かれた電話番号にも掛けません。'],['気になる内容は、公式アプリか自分のブックマークから確かめる','「未払い」「不在」「利用停止」などはよくある文句です。']],
+      today:[['画面を保存してから削除する','届いた時刻・場所がわかると、相談のときに役立ちます。'],['フィッシング対策協議会に報告する(任意)','info@antiphishing.jp に文面とURLを送ると、注意喚起や閉鎖依頼に使われます。']]
+    },
+    opened:{
+      now:[['ページを閉じる。何も入力しない','入力・インストールをしていなければ、多くはここで止まります。'],['「ウイルスに感染」「当選」などの表示が出ても指示に従わない','電話番号への発信、アプリの追加を促すものは無視します。']],
+      today:[['スマホのOSとブラウザを最新にする','設定のソフトウェア・アップデートから。']]
+    },
+    password:{
+      now:[['そのサービスのパスワードを、公式アプリか公式サイトから変更する','SMSに書かれたページからは変えません。'],['同じパスワードを使っている他のサービスも変更する','メールアドレスとパスワードの組で、ほかのサービスにも試されます。']],
+      today:[['2段階認証(ログイン時の確認コード)をオンにする',''],['ログイン履歴・登録情報(住所・電話・メール)が書き換えられていないか見る','']],
+      later:[['しばらくは「ログインがありました」の通知や身に覚えのない注文に気をつける','']]
+    },
+    code:{
+      now:[['コードを送った・入れたサービスに、公式の窓口からすぐ連絡する','コードはログインや決済の最後の鍵です。乗っ取りや決済に使われている可能性があります。'],['そのサービスのパスワードを変更し、ほかの端末からのログインを切る','']],
+      later:[['キャリア決済・電子マネーの利用履歴を確認する','携帯電話会社の会員ページやアプリから見られます。']]
+    },
+    card:{
+      now:[['カード裏面の電話番号でカード会社に連絡し、カードを止めてもらう','夜間・休日も受け付けている会社が多いです。SMSに書かれた番号には掛けません。']],
+      today:[['再発行の手続きをして、公共料金やサブスクの登録カードを差し替える',''],['ここ数日の利用明細を確認する','少額の「試し」の決済が先に来ることがあります。']],
+      later:[['次の請求が来るまで明細を見張る','覚えのない利用はカード会社に申し出ると、補償の対象になることがあります。条件は各社で確認を。']]
+    },
+    bank:{
+      now:[['銀行の公式サイトや通帳・キャッシュカードに書かれた番号で連絡し、ネットバンキングを止めてもらう',''],['暗証番号・ログインパスワードを変更する','銀行の窓口の案内に従ってください。']],
+      today:[['入出金の履歴と、振込先の登録が増えていないかを確認する','']],
+      later:[['被害が出ていたら警察(#9110、急ぎは110)にも届ける','銀行への補償の申し出に、警察への届出が求められることがあります。']]
+    },
+    app:{
+      now:[['機内モードにして通信を止める','入れたアプリがSMSや情報を外へ送るのを止めます。'],['入れたアプリ・プロファイルを削除する','iPhoneは 設定 → 一般 → VPNとデバイス管理 にプロファイルが無いか確認。Androidは「提供元不明のアプリ」の許可も戻します。']],
+      today:[['削除できない・不安が残るときは、携帯電話会社のショップかメーカーの窓口に相談する','データを残して初期化する方法を案内してもらえます。'],['そのスマホで使っていたサービスのパスワードを、別の端末から変更する','']]
+    },
+    money:{
+      now:[['支払いに使った手段(カード・銀行・電子マネー・キャリア決済)の窓口に、すぐ連絡する','早いほど止められる可能性があります。']],
+      today:[['警察に相談する(#9110、急ぎは110)','届いたSMSの画面、支払いの記録、時刻と場所をまとめて持参します。'],['消費者ホットライン188に相談する','次に何をすればよいか、地域の消費生活センターが案内します。']]
+    }
+  };
+  var order=['prevent','outage','sms','opened','password','code','card','bank','app','money'];
+  var shelvesEl=document.getElementById('shelves');
+  var current={now:[],today:[],later:[]};
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function render(){
+    var sel=[].slice.call(document.querySelectorAll('#sits input:checked')).map(function(i){return i.value});
+    current={now:[],today:[],later:[]};
+    var seen={};
+    order.forEach(function(k){
+      if(sel.indexOf(k)<0)return;
+      ['now','today','later'].forEach(function(s){
+        (A[k][s]||[]).forEach(function(it){ if(seen[it[0]])return; seen[it[0]]=1; current[s].push(it); });
+      });
+    });
+    if(!sel.length){shelvesEl.innerHTML='<p class="empty">状況を選ぶと、「今すぐ」「今日のうちに」「しばらく見張る」の3段に分けて出します。</p>';return}
+    var lab={now:['今すぐ','この画面を見ている間に'],today:['今日のうちに','落ち着いてから'],later:['しばらく見張る','次の請求・1〜2か月']};
+    var h='';
+    ['now','today','later'].forEach(function(s){
+      if(!current[s].length)return;
+      h+='<div class="shelf '+s+'"><h3>'+lab[s][0]+'<span class="t">'+lab[s][1]+'</span></h3><ul>';
+      current[s].forEach(function(it){h+='<li>'+esc(it[0])+(it[1]?'<span class="why">'+esc(it[1])+'</span>':'')+'</li>'});
+      h+='</ul></div>';
+    });
+    shelvesEl.innerHTML=h;
+  }
+  document.getElementById('sits').addEventListener('change',render);
+  var msg=document.getElementById('msg');
+  function say(t){msg.textContent=t;setTimeout(function(){msg.textContent=''},2600)}
+  function copyText(t,done){
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){say(done)},function(){fallback(t,done)})}else fallback(t,done);
+  }
+  function fallback(t,done){var ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');say(done)}catch(e){say('コピーできませんでした')}document.body.removeChild(ta)}
+  document.getElementById('copyBtn').addEventListener('click',function(){
+    var lab={now:'今すぐ',today:'今日のうちに',later:'しばらく見張る'},out=[];
+    ['now','today','later'].forEach(function(s){ if(!current[s].length)return; out.push('■'+lab[s]); current[s].forEach(function(it){out.push('・'+it[0])}); });
+    if(!out.length){say('先に状況を選んでください');return}
+    out.push('','相談先: 警察相談 #9110 / 消費者ホットライン 188 / カード裏面の番号',location.href.split('#')[0]);
+    copyText(out.join('\n'),'コピーしました');
+  });
+  document.getElementById('printBtn').addEventListener('click',function(){window.print()});
+  document.getElementById('resetBtn').addEventListener('click',function(){document.querySelectorAll('#sits input').forEach(function(i){i.checked=false});render()});
+  document.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var el=document.getElementById(b.dataset.copy);
+      var t=[].slice.call(el.querySelectorAll('p')).map(function(p){return p.textContent}).join('\n');
+      copyText(t,'コピーしました');
+    });
+  });
+  var url='https://alternativestudio2021-collab.github.io/daily-launch-sites/day024-nise-kichikyoku/';
+  var txt='偽基地局の対策。機種ごとの2Gを切る設定の場所と、SMSを開いてしまったあとの手順';
+  document.getElementById('shLine').href='https://social-plugins.line.me/lineit/share?url='+encodeURIComponent(url);
+  document.getElementById('shX').href='https://twitter.com/intent/tweet?text='+encodeURIComponent(txt)+'&url='+encodeURIComponent(url);
+  document.getElementById('shCopy').addEventListener('click',function(){copyText(url,'URLをコピーしました')});
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
