@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>5G SA 障害の確認帳|ドコモ11/5・11/11の通信障害 自分は対象か・4Gへの切り替え・補償の条件・記録メモ</title>
+<meta name="description" content="2026年11月5日と11日に続いたドコモの5G SA通信障害。契約から自分が対象かを確かめ、4Gへの切り替えと戻し方、報道されている約款の補償条件(24時間)との比べ、勤務先や取引先に見せる「つながらなかった時間」の記録メモをつくります。">
+<link rel="canonical" href="https://alternativestudio2021-collab.github.io/daily-launch-sites/day025-sa-shogai/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="5G SA 障害の確認帳(ドコモ 11/5・11/11)">
+<meta property="og:description" content="自分は対象か、今つながらないときの4G切り替え、補償の条件、つながらなかった時間の記録メモ。">
+<meta property="og:url" content="https://alternativestudio2021-collab.github.io/daily-launch-sites/day025-sa-shogai/">
+<meta property="og:site_name" content="毎日ひとつの小さな道具箱">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=DotGothic16&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+:root{
+  --bg:#eef0f3; --paper:#ffffff; --ink:#151a22; --sub:#596273; --rule:#d5dae2; --soft:#f4f6f9;
+  --board:#0f1724; --board-ink:#f2f5f9; --board-sub:#93a0b5;
+  --sig:#d7352b; --sig-soft:#fbe3e1; --amb:#b06a00; --amb-soft:#fdf0d9; --go:#1d7a4f; --go-soft:#ddf2e7; --line:#2457c5;
+  --f:"BIZ UDPGothic","Hiragino Sans","Noto Sans JP",sans-serif; --dot:"DotGothic16","BIZ UDPGothic",monospace; --m:"JetBrains Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0b0f15; --paper:#141a23; --ink:#e7ebf1; --sub:#a3adbd; --rule:#273141; --soft:#1a212c;
+  --board:#05080d; --board-ink:#f2f5f9; --board-sub:#8592a8;
+  --sig:#ff7a6e; --sig-soft:#3b1714; --amb:#f2b551; --amb-soft:#352510; --go:#5fd29a; --go-soft:#12301f; --line:#86a8ff; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0b0f15; --paper:#141a23; --ink:#e7ebf1; --sub:#a3adbd; --rule:#273141; --soft:#1a212c;
+  --board:#05080d; --board-ink:#f2f5f9; --board-sub:#8592a8;
+  --sig:#ff7a6e; --sig-soft:#3b1714; --amb:#f2b551; --amb-soft:#352510; --go:#5fd29a; --go-soft:#12301f; --line:#86a8ff; color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);line-height:1.85;font-size:16px}
+a{color:var(--line)}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px 72px}
+.crumb{font-size:13px;color:var(--sub);padding:14px 0}
+.crumb a{color:var(--sub)}
+.board{background:var(--board);color:var(--board-ink);border-radius:10px;padding:22px 20px 18px;display:grid;gap:14px}
+.board .tag{font-family:var(--dot);color:#ffcf4a;letter-spacing:.08em;font-size:14px}
+.board h1{margin:0;font-size:clamp(25px,5.4vw,38px);line-height:1.3;font-weight:700;text-wrap:balance}
+.board p{margin:0;color:var(--board-sub);font-size:15px}
+.rows{display:grid;gap:8px;margin-top:4px}
+.row{display:grid;grid-template-columns:4.6em 1fr;gap:4px 12px;align-items:baseline;border-top:1px dashed #2b3a52;padding-top:8px}
+.row .d{font-family:var(--dot);color:#ffcf4a;font-size:18px}
+.row .t{font-family:var(--m);font-size:14px}
+.row .t b{color:#ff8d82}
+.row .n{grid-column:2;font-size:13px;color:var(--board-sub)}
+h2{font-size:clamp(20px,3.8vw,25px);margin:44px 0 10px;line-height:1.4;display:flex;gap:10px;align-items:baseline}
+h2 .k{font-family:var(--m);font-size:13px;color:var(--paper);background:var(--ink);border-radius:4px;padding:1px 7px;flex:none}
+h3{font-size:17px;margin:18px 0 6px}
+p{margin:8px 0}
+.lead{color:var(--sub)}
+.card{background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:18px 16px}
+.note{font-size:14px;color:var(--sub)}
+.tl{position:relative;margin:14px 0 4px}
+.tl .ax{position:relative;height:16px;font-family:var(--m);font-size:11px;color:var(--sub)}
+.tl .ax span{position:absolute;transform:translateX(-50%)}
+.tl .ax span:first-child{transform:none}
+.tl .ax span:last-child{transform:translateX(-100%)}
+.bar{position:relative;height:30px;background:var(--soft);border-radius:4px;margin:6px 0 2px;overflow:hidden}
+.bar i{position:absolute;top:0;bottom:0;background:var(--sig);border-radius:3px}
+.bar i.part{background:repeating-linear-gradient(45deg,var(--amb) 0 6px,var(--amb-soft) 6px 12px)}
+.bar .lim{position:absolute;top:-2px;bottom:-2px;border-left:2px dashed var(--ink)}
+.bar b{position:absolute;left:8px;top:5px;font-size:12px;font-family:var(--m);color:var(--sub)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--sub)}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:5px;vertical-align:-1px;background:var(--sig)}
+.legend .p::before{background:repeating-linear-gradient(45deg,var(--amb) 0 3px,var(--amb-soft) 3px 6px)}
+.legend .l::before{background:none;border-left:2px dashed var(--ink);width:2px;border-radius:0}
+fieldset{border:0;margin:0;padding:0;display:grid;gap:8px}
+legend{font-weight:700;margin-bottom:6px}
+label.opt{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px solid var(--rule);border-radius:8px;background:var(--soft);cursor:pointer}
+label.opt:has(input:checked){border-color:var(--line);background:color-mix(in srgb,var(--line) 9%,var(--paper))}
+label.opt input{margin-top:6px}
+.res{margin-top:14px;padding:14px;border-radius:8px;border-left:5px solid var(--sub);background:var(--soft)}
+.res.hit{border-color:var(--sig);background:var(--sig-soft)}
+.res.maybe{border-color:var(--amb);background:var(--amb-soft)}
+.res.ok{border-color:var(--go);background:var(--go-soft)}
+.res strong{display:block;font-size:17px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.tabs button{font:inherit;font-size:14px;padding:6px 12px;border-radius:99px;border:1px solid var(--rule);background:var(--paper);color:var(--ink);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+ol.steps{margin:6px 0;padding-left:1.4em}
+ol.steps li{margin:4px 0}
+.path{font-family:var(--m);font-size:14px;background:var(--soft);border:1px solid var(--rule);border-radius:4px;padding:1px 6px;white-space:normal;word-break:break-word}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.inp{display:grid;gap:4px;font-size:14px}
+.inp input,.inp textarea,.inp select{font:inherit;font-size:16px;padding:8px 10px;border:1px solid var(--rule);border-radius:6px;background:var(--paper);color:var(--ink);width:100%}
+.inp textarea{min-height:84px}
+.span{grid-column:1/-1}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.btn{font:inherit;font-size:15px;padding:9px 16px;border-radius:8px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink)}
+pre.memo{white-space:pre-wrap;font-family:var(--f);font-size:15px;background:var(--paper);border:1px dashed var(--sub);border-radius:8px;padding:14px;margin:12px 0 0}
+.meter{display:grid;gap:6px;margin-top:10px}
+.meter .bar{height:22px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border-bottom:1px solid var(--rule);padding:8px 6px;text-align:left;vertical-align:top}
+th{font-weight:700;color:var(--sub);font-size:13px}
+td.num{font-family:var(--m);white-space:nowrap}
+.scroll{overflow-x:auto}
+details{background:var(--paper);border:1px solid var(--rule);border-radius:8px;padding:10px 14px;margin:8px 0}
+summary{font-weight:700;cursor:pointer}
+.warn{border:1px solid var(--sig);background:var(--sig-soft);border-radius:8px;padding:12px 14px}
+ul.src{font-size:13px;color:var(--sub);padding-left:1.2em;word-break:break-all}
+footer{margin-top:40px;font-size:13px;color:var(--sub);display:grid;gap:6px}
+.copied{font-size:13px;color:var(--go);align-self:center}
+@media print{body{background:#fff}.board{background:#fff;color:#000;border:1px solid #000}.no-print,.btns,.tabs,nav{display:none!important}}
+</style>
+</head><body>
+<div class="wrap">
+  <div class="crumb"><a href="../">毎日ひとつの小さな道具箱</a> / Day 25</div>
+
+  <header class="board">
+    <div class="tag">■ 運用情報 ─ 5G SA ─ 全国</div>
+    <h1>5G SA 障害の確認帳</h1>
+    <p>ドコモの5G SAで、11月5日と11日の2回、全国で通話・データ通信・SMSが使いづらくなりました。自分が対象だったか、いまつながらないときに何をするか、補償の条件に届くのか、勤務先などに見せる記録をどう残すかを、このページで順に確かめられます。</p>
+    <div class="rows" aria-label="障害の経過">
+      <div class="row"><span class="d">11/05</span><span class="t">11:18ごろ 発生 → <b>11/06 1:20ごろ 復旧</b>(約14時間)</span><span class="n">5G SA契約者が対象。最大158万7千契約に影響。原因は5G SA契約者を収容する交換機の輻輳とドコモが説明。</span></div>
+      <div class="row"><span class="d">11/11</span><span class="t">10:34ごろ 発生 → 一部を除き復旧 → <b>19:00すぎ 完全復旧と発表</b>(報道)</span><span class="n">同じく5G SA契約者が対象。原因は11日夕方の時点で調査中、不正アクセスやサイバー攻撃の形跡は確認していないとされる。緊急通報は影響なしと案内。</span></div>
+    </div>
+    <p style="font-size:13px">このページはNTTドコモとは関係のない個人の情報整理です。2026年11月12日朝までの報道とドコモの発表にもとづいています。最新の状況はドコモの「重要なお知らせ」でお確かめください。</p>
+  </header>
+
+  <h2><span class="k">01</span>2回の障害を1日の時間に並べると</h2>
+  <div class="card">
+    <div class="tl" aria-hidden="true">
+      <div class="ax"><span style="left:0">0時</span><span style="left:25%">6時</span><span style="left:50%">12時</span><span style="left:75%">18時</span><span style="left:100%">24時</span></div>
+    </div>
+    <div style="font-size:14px;font-weight:700">11月5日(木)〜6日(金)</div>
+    <div class="bar" role="img" aria-label="11月5日11時18分から6日1時20分まで、約14時間"><i style="left:47.08%;width:52.92%"></i><b>11:18 →</b></div>
+    <div class="bar" role="img" aria-label="11月6日0時から1時20分まで"><i style="left:0;width:5.56%"></i><b style="left:7%">→ 1:20 復旧(6日)</b></div>
+    <div style="font-size:14px;font-weight:700;margin-top:12px">11月11日(水)</div>
+    <div class="bar" role="img" aria-label="11月11日10時34分から、一部を除いて復旧した後、19時すぎに完全復旧"><i style="left:44.03%;width:14%"></i><i class="part" style="left:58.03%;width:22%"></i><b>10:34 →</b></div>
+    <div class="legend"><span>使いづらい状態</span><span class="p">一部を除き復旧〜完全復旧まで(時刻は報道から読み取った目安)</span></div>
+    <p class="note">11日の「一部を除き復旧」の正確な時刻は、手元で確認できた報道では示されていません。帯の切れ目は午後の途中経過の報道をもとにした目安です。</p>
+  </div>
+
+  <h2><span class="k">02</span>自分は対象だった?</h2>
+  <div class="card">
+    <fieldset id="q1">
+      <legend>使っている回線と契約</legend>
+      <label class="opt"><input type="radio" name="kind" value="sa"><span>ドコモ(ahamoを含む)で、オプションの<b>「5G SA」</b>を申し込んでいる</span></label>
+      <label class="opt"><input type="radio" name="kind" value="nsa"><span>ドコモ(ahamoを含む)で、5G SAは申し込んでいない(画面に「5G」と出ていても、5G SAとは別のことが多い)</span></label>
+      <label class="opt"><input type="radio" name="kind" value="unk"><span>ドコモだが、5G SAを申し込んだか覚えていない</span></label>
+      <label class="opt"><input type="radio" name="kind" value="mvno"><span>ドコモ回線を使う格安SIM(MVNO)</span></label>
+      <label class="opt"><input type="radio" name="kind" value="other"><span>ドコモ以外(au・ソフトバンク・楽天モバイルなど)</span></label>
+    </fieldset>
+    <fieldset style="margin-top:14px">
+      <legend>あの日、困ったこと(いくつでも)</legend>
+      <label class="opt"><input type="checkbox" name="hurt" value="work"><span>仕事の電話・連絡が取れなかった</span></label>
+      <label class="opt"><input type="checkbox" name="hurt" value="pay"><span>スマホ決済・認証コード(SMS)が使えなかった</span></label>
+      <label class="opt"><input type="checkbox" name="hurt" value="sms"><span>そのあと「返金」「お詫び」「見舞金」をうたうSMS・メールが来た</span></label>
+      <label class="opt"><input type="checkbox" name="hurt" value="still"><span>いまもつながりにくい</span></label>
+    </fieldset>
+    <div id="r1" class="res" aria-live="polite"><strong>上の質問に答えると、ここに結果が出ます。</strong></div>
+  </div>
+
+  <h2><span class="k">03</span>いまつながらないとき:4Gに切り替える</h2>
+  <div class="card">
+    <p>ドコモは、障害中は<b>ネットワーク設定で4Gを選び、端末の再起動か機内モードのオン・オフ</b>をすると使える場合があると案内していました。5G SA契約でない5G・4Gには影響がないとされています。</p>
+    <div class="tabs" role="tablist">
+      <button role="tab" aria-selected="true" data-t="ios">iPhone</button>
+      <button role="tab" aria-selected="false" data-t="pixel">Pixel など</button>
+      <button role="tab" aria-selected="false" data-t="galaxy">Galaxy</button>
+      <button role="tab" aria-selected="false" data-t="other">Xperia・AQUOS・その他</button>
+    </div>
+    <div data-p="ios">
+      <ol class="steps">
+        <li><span class="path">設定 → モバイル通信</span> を開き、ドコモの回線を選ぶ(回線が1つなら「通信のオプション」)。</li>
+        <li><span class="path">音声通話とデータ</span> で <b>4G</b> を選ぶ。</li>
+        <li>機内モードを入れて10秒ほど待ち、切る。だめなら再起動。</li>
+      </ol>
+    </div>
+    <div data-p="pixel" hidden>
+      <ol class="steps">
+        <li><span class="path">設定 → ネットワークとインターネット → SIM</span> でドコモの回線を開く。</li>
+        <li><span class="path">優先ネットワークの種類</span> を <b>4G</b>(または「LTE」)にする。</li>
+        <li>機内モードのオン・オフ、だめなら再起動。</li>
+      </ol>
+    </div>
+    <div data-p="galaxy" hidden>
+      <ol class="steps">
+        <li><span class="path">設定 → 接続 → モバイルネットワーク</span> を開く。</li>
+        <li><span class="path">ネットワークモード</span> で <b>LTE/3G</b> などの4Gまでの項目を選ぶ(5Gを含まないもの)。</li>
+        <li>機内モードのオン・オフ、だめなら再起動。</li>
+      </ol>
+    </div>
+    <div data-p="other" hidden>
+      <ol class="steps">
+        <li><span class="path">設定</span> の検索欄に「優先ネットワーク」または「ネットワークモード」と入れる。</li>
+        <li>出てきた項目で、5Gを含まない <b>4G / LTE</b> の選択肢を選ぶ。</li>
+        <li>機内モードのオン・オフ、だめなら再起動。</li>
+      </ol>
+    </div>
+    <p class="note">項目の名前は機種とOSの版で変わります。上の名前で見つからないときは、設定の検索を使ってください。</p>
+    <div class="warn" style="margin-top:12px"><b>復旧したら元に戻す。</b>ドコモは、4Gに変えた人に設定を戻すよう案内しています。4Gのままでも通話や通信はできますが、5Gの速さは使えません。戻し忘れが心配なら、明日の朝の通知をカレンダーに入れておけます。</div>
+    <div class="btns"><button class="btn ghost" id="icsBack" type="button">「5Gに戻す」をカレンダーに入れる(.ics)</button></div>
+  </div>
+
+  <h2><span class="k">04</span>補償はあるのか</h2>
+  <div class="card">
+    <p>報道によると、ドコモの約款では<b>まったく使えない状態が24時間以上続いた場合</b>に料金の減額などの定めがあり、11月5日の障害(約14時間)はこの条件に届かない見込みとされています。11日の障害も、発生から完全復旧の発表まで約8時間半です。</p>
+    <div class="meter" aria-label="24時間の条件との比べ">
+      <div style="font-size:13px">11/5〜6 約14時間</div>
+      <div class="bar"><i style="left:0;width:58.5%"></i><span class="lim" style="left:100%"></span></div>
+      <div style="font-size:13px">11/11 約8時間半(完全復旧の発表まで)</div>
+      <div class="bar"><i style="left:0;width:35.4%"></i><span class="lim" style="left:100%"></span></div>
+      <div class="legend"><span>障害の長さ</span><span class="l">右端=24時間</span></div>
+    </div>
+    <p>ただし、今回は「まったく使えない」ではなく「使いづらい」状態で、どう扱うかはドコモが明らかにしていないと伝える記事もあります。約款外のお詫びの措置については、<b>11月12日朝の時点でドコモの発表は見つけられませんでした</b>。発表があれば、ドコモの「重要なお知らせ」やMy docomoのお知らせに載るはずです。</p>
+    <p class="note">このページは補償を受けられるかを判断するものではありません。自分の契約での扱いは、ドコモの窓口(ドコモの携帯から151、ほかの電話から0120-800-000)でお確かめください。業務の損害については、契約の内容によって扱いが変わります。</p>
+    <h3>見舞金は別の話</h3>
+    <p>同じ11月5日に、ドコモは「My docomo」とオンラインショップへの不正アクセスも発表しています。流出は最大29万4839回線分(個人20万4157・法人9万682)で、氏名・生年月日・住所・本人確認書類の番号・契約情報などが含まれ、一部は口座番号や勤務先も含むとされます。<b>見舞金の支払いが検討されているのはこちらの件</b>で、通信障害とは別です。対象者・金額・方法はまだ決まっていないと報じられています。</p>
+    <div class="warn">「障害のお詫びに返金します」「見舞金の受け取り手続き」といったSMSやメールのリンクは開かないでください。障害や漏えいの直後は、それを口実にした詐欺の連絡が増えます。確かめるときは、届いた連絡のリンクではなく、自分でドコモの公式サイトやアプリを開いてください。漏えいの通知が届いたときのやることは <a href="../day022-roei-taisho/">Day 22 漏えい通知が来たら やること仕分け帳</a>、怪しいSMSを開いてしまったときは <a href="../day024-nise-kichikyoku/">Day 24 圏外のあとのSMS 手当て帳</a> にまとめています。</div>
+  </div>
+
+  <h2><span class="k">05</span>つながらなかった時間の記録メモ</h2>
+  <div class="card">
+    <p>電話に出られなかった、決済や認証ができずに遅れた、という説明を勤務先・取引先・学校にするとき、ドコモが発表した時間帯と自分の状況を1枚にまとめておくと話が早くなります。入力はこの端末の中だけで使い、どこにも送りません。</p>
+    <div class="grid2">
+      <label class="inp">どちらの日?<select id="mDay"><option value="1105">11月5日〜6日</option><option value="1111">11月11日</option><option value="both">両方</option></select></label>
+      <label class="inp">自分で気づいた時刻(わかれば)<input id="mFrom" type="time"></label>
+      <label class="inp">使えるようになった時刻(わかれば)<input id="mTo" type="time"></label>
+      <label class="inp">どうしたか<select id="mDid"><option value="">選ぶ</option><option>4Gに切り替えて使えた</option><option>4Gに切り替えても使えなかった</option><option>Wi-Fiで連絡した</option><option>別の電話・回線で連絡した</option><option>復旧まで待った</option></select></label>
+      <label class="inp span">困ったこと・相手(例:10時の取引先との電話に出られなかった/タクシーの支払いができなかった)<textarea id="mNote"></textarea></label>
+    </div>
+    <div class="btns"><button class="btn" id="mMake" type="button">メモをつくる</button><button class="btn ghost" id="mCopy" type="button">コピー</button><button class="btn ghost" id="mPrint" type="button">印刷</button><span class="copied" id="mOk" hidden>コピーしました</span></div>
+    <pre class="memo" id="memo" aria-live="polite">「メモをつくる」を押すと、ここに文面が出ます。</pre>
+  </div>
+
+  <h2><span class="k">06</span>次に止まっても困らないように</h2>
+  <div class="card">
+    <p>1週間に2回、同じ仕組みで止まったことで、連絡手段を1本に頼る危うさが見えました。仕事でスマホが止まると困る人は、次のどれかを用意しておくと、同じことが起きても連絡が途切れにくくなります。</p>
+    <div class="scroll"><table>
+      <thead><tr><th>備え</th><th>今回の障害で効いたか</th><th>手間</th></tr></thead>
+      <tbody>
+        <tr><td>5G SAを使わない(4Gや通常の5Gにしておく)</td><td>効いた。今回の対象は5G SA契約者のみ</td><td>設定だけ</td></tr>
+        <tr><td>自宅・職場のWi-Fiで、LINEやメールなどの連絡手段を持っておく</td><td>データ通信だけなら効いた。SMSの認証コードは届かない</td><td>ほぼなし</td></tr>
+        <tr><td>別の会社の回線をもう1本(eSIMのサブ回線)</td><td>効いた。障害が1社にとどまる場合に強い</td><td>申込と月額</td></tr>
+        <tr><td>認証をSMSだけにしない(認証アプリ・パスキー)</td><td>効いた。ログインや決済の確認が止まらない</td><td>サービスごとに設定</td></tr>
+        <tr><td>取引先に固定電話・代表メールも伝えておく</td><td>効いた</td><td>一度だけ</td></tr>
+      </tbody>
+    </table></div>
+    <!-- PR枠(サブ回線・eSIM): A8の公式コードが届いたらここに「PR」表記つきで置く。owner_actions a8-esim-day025 待ち -->
+  </div>
+
+  <h2><span class="k">07</span>よくある質問</h2>
+  <details><summary>画面に「5G」と出ていれば、5G SAですか?</summary><p>そうとは限りません。ドコモの5Gの多くは4Gの設備と組み合わせた方式で、5G SAは別に申し込むオプションです。ドコモの案内では、5G SAの利用には対応機種と、Ver.6・Ver.7・ahamoのドコモUIMカードまたはeSIMが必要です。申し込んだか覚えていなければ、契約内容を確かめてください。</p></details>
+  <details><summary>110番や119番はかけられましたか?</summary><p>ドコモは、11日の障害について緊急通報への影響はないと案内していました。</p></details>
+  <details><summary>補償や返金はありますか?</summary><p>報道によると、約款の定めは「まったく使えない状態が24時間以上」で、11月5日の約14時間はこれに届かない見込みとされています。約款外の措置について、11月12日朝の時点でドコモの発表は確認できませんでした。</p></details>
+  <details><summary>4Gにしたままでも問題はありませんか?</summary><p>通話や通信はできますが、5Gの速さは使えません。ドコモは復旧後に設定を戻すよう案内しています。</p></details>
+  <details><summary>見舞金の案内が届きました。本物ですか?</summary><p>見舞金は不正アクセスの件で検討中とされ、対象・金額・方法は決まっていないと報じられています。届いた連絡のリンクは開かず、ドコモの公式サイトやアプリを自分で開いて確かめてください。</p></details>
+
+  <h2><span class="k">08</span>出典</h2>
+  <ul class="src">
+    <li>NTTドコモ 重要なお知らせ【第八報】5G SAの音声通話・データ通信・SMSがご利用しづらい状況について(11月5日午後7時時点) https://www.docomo.ne.jp/info/network/kanto/pages/261105_09_m.html</li>
+    <li>NTTドコモ公式X(11月5日午後4時時点のお詫び) https://x.com/docomo/status/2118238200141582811</li>
+    <li>NTTドコモ 5G SAについて https://www.docomo.ne.jp/area/technology/5g/</li>
+    <li>ITmedia Mobile(dメニューニュース)ドコモ通信障害の対象範囲を特定、4G設定への切り替えで回避も(11/5) https://topics.smt.docomo.ne.jp/article/itmedia_mobile/business/itmedia_mobile-20261105_067?page=4</li>
+    <li>ITmedia Mobile(dメニューニュース)ドコモの通信障害が「復旧」原因は交換機の輻輳(11/6) https://topics.smt.docomo.ne.jp/article/itmedia_mobile/business/itmedia_mobile-20261106_045?topics_id=42dfc97ef90965b592ed652e8e820bc2</li>
+    <li>ITmedia Mobile NTTドコモが「不正アクセス事案」「5G SAの通信障害」について説明(11/6) https://www.itmedia.co.jp/mobile/articles/2611/06/news085.html</li>
+    <li>Selectra ドコモの通信障害は14時間で復旧、約款の返金条件「24時間」には届かず https://selectra.jp/telecom/news/docomo-outage-5g-sa-unauthorized-access-november-2026</li>
+    <li>ITmedia Mobile ドコモで再び通信障害が発生 5G SAに原因ありと判明(11/11) https://www.itmedia.co.jp/mobile/spv/2611/11/news060.html</li>
+    <li>ITmedia NEWS 続くドコモ通信障害 一部除き復旧も、完全解消には至らず(11/11) https://www.itmedia.co.jp/news/article/2611/11/2000003116/</li>
+    <li>ケータイ Watch ドコモで通信障害、全国に影響 11日昼〜 https://k-tai.watch.impress.co.jp/docs/news/2155413.html</li>
+    <li>S-MAX 5G SAの携帯電話サービスが11月11日10時34分より利用しづらい状況に https://s-max.jp/archives/1802446.html</li>
+    <li>Yahoo!ニュース(テレビ朝日系)ドコモ 障害から完全復旧と発表 https://news.yahoo.co.jp/pickup/6602230</li>
+    <li>時事通信(Yahoo!ニュース)ドコモの通信障害、ほぼ復旧 https://news.yahoo.co.jp/articles/15ce393aaa12fc4c4e2e239e8e0492f62e82f5ad</li>
+    <li>Impress Watch ドコモ、不正アクセスで最大30万件の情報漏えい https://www.watch.impress.co.jp/docs/news/2154107.html</li>
+    <li>CNET Japan(Yahoo!ニュース)ドコモ、不正アクセス被害者へお見舞金 流出は29万回線 https://news.yahoo.co.jp/articles/a8511be6bdb33978bf26bb348aded0f09efe99fb</li>
+  </ul>
+
+  <nav style="margin-top:28px;font-size:14px">ほかの道具:<a href="../day024-nise-kichikyoku/">圏外のあとのSMS 手当て帳</a> / <a href="../day022-roei-taisho/">漏えい通知が来たら やること仕分け帳</a> / <a href="../">一覧へ</a></nav>
+  <footer>
+    <div>このページは公開された発表と報道をもとにした情報提供で、NTTドコモの公式ページではありません。補償や契約の扱いは各社の窓口でお確かめください。</div>
+    <div>入力した内容はこの端末の中だけで使い、送信しません。</div>
+    <div>2026年11月12日 公開</div>
+  </footer>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"画面に「5G」と出ていれば、5G SAですか?","acceptedAnswer":{"@type":"Answer","text":"そうとは限りません。ドコモの5Gの多くは4Gの設備と組み合わせた方式で、5G SAは別に申し込むオプションです。申し込んだか覚えていなければ、契約内容を確かめてください。"}},
+{"@type":"Question","name":"110番や119番はかけられましたか?","acceptedAnswer":{"@type":"Answer","text":"ドコモは、11日の障害について緊急通報への影響はないと案内していました。"}},
+{"@type":"Question","name":"補償や返金はありますか?","acceptedAnswer":{"@type":"Answer","text":"報道によると、約款の定めは「まったく使えない状態が24時間以上」で、11月5日の約14時間はこれに届かない見込みとされています。約款外の措置について、11月12日朝の時点でドコモの発表は確認できませんでした。"}},
+{"@type":"Question","name":"4Gにしたままでも問題はありませんか?","acceptedAnswer":{"@type":"Answer","text":"通話や通信はできますが、5Gの速さは使えません。ドコモは復旧後に設定を戻すよう案内しています。"}},
+{"@type":"Question","name":"見舞金の案内が届きました。本物ですか?","acceptedAnswer":{"@type":"Answer","text":"見舞金は不正アクセスの件で検討中とされ、対象・金額・方法は決まっていないと報じられています。届いた連絡のリンクは開かず、ドコモの公式サイトやアプリを自分で開いて確かめてください。"}}
+]}
+</script>
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)}, $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  function save(k,v){try{localStorage.setItem('d025-'+k,v)}catch(e){}}
+  function load(k){try{return localStorage.getItem('d025-'+k)}catch(e){return null}}
+
+  // 02 判定
+  var msg={
+    sa:['hit','対象でした','5G SAを申し込んでいる回線は、11月5日・11日のどちらも障害の対象です。いまもつながりにくいなら、下の「03」で4Gに切り替えてください。'],
+    nsa:['ok','対象ではない見込みです','ドコモは、5G SAを契約していない回線の5G・4Gには影響がないと説明しています。同じ時間に使えなかったなら、別の原因(電波・端末・料金未払いなど)も疑ってください。'],
+    unk:['maybe','契約を確かめてください','5G SAは別に申し込むオプションです。対応するSIM(Ver.6・Ver.7・ahamo)かeSIMが必要なので、古いSIMのままなら対象外の可能性が高いです。My docomoが使えないときは、ドコモショップか151で確かめられます。'],
+    mvno:['maybe','各社のお知らせを確認','今回の対象はドコモの5G SA契約者と発表されています。格安SIMで5G SAが使えるかは会社ごとに違うので、契約している会社のお知らせを見てください。'],
+    other:['ok','今回の障害の対象外です','今回の障害はドコモの5G SAに限られます。']
+  };
+  var extra={
+    work:'仕事の連絡が取れなかったなら、下の「05」で、ドコモが発表した時間帯つきの記録メモを作っておくと説明に使えます。',
+    pay:'SMSの認証コードが届かないと、ログインや決済が止まります。認証アプリやパスキーに切り替えられるサービスは、この機会に変えておくと次に強くなります。',
+    sms:'「返金」「お詫び」「見舞金」をうたう連絡のリンクは開かないでください。開いてしまったときの手順は Day 24、漏えいの通知はDay 22にまとめています。',
+    still:'完全復旧の発表のあとも不安定なら、4Gへの切り替え→再起動を試し、直らなければ端末の故障やSIMの不具合も含めて151に相談してください。'
+  };
+  function judge(){
+    var k=($('input[name=kind]:checked')||{}).value, box=$('#r1');
+    var hurts=$$('input[name=hurt]:checked').map(function(x){return x.value});
+    save('kind',k||''); save('hurt',hurts.join(','));
+    if(!k){box.className='res';box.innerHTML='<strong>上の質問に答えると、ここに結果が出ます。</strong>';return}
+    var m=msg[k], h='<strong>'+m[1]+'</strong><p>'+m[2]+'</p>';
+    hurts.forEach(function(x){h+='<p>・'+extra[x]+'</p>'});
+    box.className='res '+m[0]; box.innerHTML=h;
+  }
+  $$('#q1 input, input[name=hurt]').forEach(function(i){i.addEventListener('change',judge)});
+  var sk=load('kind'); if(sk){var r=$('input[name=kind][value="'+sk+'"]'); if(r) r.checked=true}
+  (load('hurt')||'').split(',').forEach(function(v){if(v){var c=$('input[name=hurt][value="'+v+'"]'); if(c) c.checked=true}});
+  judge();
+
+  // 03 タブ
+  $$('.tabs button').forEach(function(b){b.addEventListener('click',function(){
+    $$('.tabs button').forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false')});
+    $$('[data-p]').forEach(function(p){p.hidden=p.getAttribute('data-p')!==b.getAttribute('data-t')});
+  })});
+  var ua=navigator.userAgent||''; if(/Android/.test(ua)){var t=/SM-|Galaxy/.test(ua)?'galaxy':(/Pixel/.test(ua)?'pixel':'other'); var bt=$('.tabs button[data-t='+t+']'); if(bt) bt.click()}
+
+  function dl(name,text,type){var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type:type}));a.download=name;document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},500)}
+  function pad(n){return (n<10?'0':'')+n}
+  $('#icsBack').addEventListener('click',function(){
+    var d=new Date(); d.setDate(d.getDate()+1);
+    var ds=d.getFullYear()+pad(d.getMonth()+1)+pad(d.getDate());
+    var now=new Date(), st=now.getUTCFullYear()+pad(now.getUTCMonth()+1)+pad(now.getUTCDate())+'T'+pad(now.getUTCHours())+pad(now.getUTCMinutes())+'00Z';
+    var ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//daily-launch-sites//day025//JA','BEGIN:VEVENT','UID:day025-'+ds+'@daily-launch-sites','DTSTAMP:'+st,
+      'DTSTART;TZID=Asia/Tokyo:'+ds+'T080000','DTEND;TZID=Asia/Tokyo:'+ds+'T081500','SUMMARY:スマホのネットワーク設定を5Gに戻す',
+      'DESCRIPTION:ドコモの障害対応で4Gにした設定を\\, 復旧を確かめてから元に戻す。','BEGIN:VALARM','TRIGGER:PT0M','ACTION:DISPLAY','DESCRIPTION:5Gに戻す','END:VALARM','END:VEVENT','END:VCALENDAR'].join('\r\n');
+    dl('5g-modosu.ics',ics,'text/calendar');
+  });
+
+  // 05 記録メモ
+  var ids=['mDay','mFrom','mTo','mDid','mNote'];
+  ids.forEach(function(id){var v=load(id); if(v!==null) $('#'+id).value=v; $('#'+id).addEventListener('input',function(){save(id,this.value)})});
+  var off={
+    '1105':'2026年11月5日(木)11時18分ごろ〜11月6日(金)1時20分ごろ(約14時間)。NTTドコモの5G SAサービスで、全国で音声通話・データ通信・SMSが利用しづらい状況(ドコモ発表。最大158万7千契約に影響、原因は交換機の輻輳)。',
+    '1111':'2026年11月11日(水)10時34分ごろ〜同日19時すぎ(完全復旧の発表、報道による)。NTTドコモの5G SAサービスで、全国で音声通話・データ通信・SMSが利用しづらい状況。'
+  };
+  function make(){
+    var day=$('#mDay').value, f=$('#mFrom').value, t=$('#mTo').value, did=$('#mDid').value, note=$('#mNote').value.trim();
+    var L=['【携帯電話がつながらなかった時間の記録】',''];
+    L.push('■ 公表されている障害');
+    if(day==='both'){L.push('・'+off['1105']);L.push('・'+off['1111'])} else L.push('・'+off[day]);
+    L.push('');
+    L.push('■ 私の状況');
+    L.push('・使っていた回線:NTTドコモ(5G SA契約)');
+    if(f||t) L.push('・自分で気づいた時間:'+(f||'不明')+' 〜 '+(t||'不明')+(day==='both'?'(上記いずれかの日)':''));
+    if(did) L.push('・対応:'+did);
+    if(note) L.push('・影響:'+note);
+    L.push('');
+    L.push('上記の障害により、この時間帯は電話・SMS・データ通信が利用しづらい状態でした。ご迷惑をおかけしたことをお詫びします。');
+    L.push('');
+    L.push('参考:NTTドコモ「重要なお知らせ(通信障害等)」 https://www.docomo.ne.jp/info/network/');
+    $('#memo').textContent=L.join('\n');
+  }
+  $('#mMake').addEventListener('click',make);
+  $('#mCopy').addEventListener('click',function(){
+    if(/^「メモをつくる」/.test($('#memo').textContent)) make();
+    var txt=$('#memo').textContent, ok=$('#mOk');
+    function done(){ok.hidden=false;setTimeout(function(){ok.hidden=true},1800)}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,function(){})}
+    else{var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');done()}catch(e){}ta.remove()}
+  });
+  $('#mPrint').addEventListener('click',function(){if(/^「メモをつくる」/.test($('#memo').textContent)) make(); window.print()});
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
