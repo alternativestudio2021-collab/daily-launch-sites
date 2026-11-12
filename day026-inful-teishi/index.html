@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>インフル 登校できる日と親の休み 早見|出席停止の数え方・子の看護等休暇の残り日数</title>
+<meta name="description" content="インフルエンザ・新型コロナの出席停止は「発症後5日、かつ解熱後2日(幼児は3日)」。発症日と熱が下がった日から、登校・登園できる最初の日をカレンダーで示し、親が休む日数と子の看護等休暇(2025年4月から学級閉鎖も対象、小3修了まで)の残りを数えて、会社への連絡文をつくります。">
+<link rel="canonical" href="https://alternativestudio2021-collab.github.io/daily-launch-sites/day026-inful-teishi/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="インフル 登校できる日と親の休み 早見">
+<meta property="og:description" content="発症日と解熱日から登校・登園できる日を数え、親が休む日数と子の看護等休暇の残り、会社への連絡文まで。">
+<meta property="og:url" content="https://alternativestudio2021-collab.github.io/daily-launch-sites/day026-inful-teishi/">
+<meta property="og:site_name" content="毎日ひとつの小さな道具箱">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=M+PLUS+1+Code:wght@500;700&display=swap">
+<style>
+:root{
+  --bg:#f6f1e7; --paper:#fffdf8; --ink:#2b2420; --sub:#6f645a; --rule:#e2d8c8; --soft:#f3ece0;
+  --fever:#d9534a; --fever-soft:#fbe1dc; --rest:#e3a63b; --rest-soft:#fbefd4; --ok:#2f8f6a; --ok-soft:#dcf1e7; --link:#2a62b8; --grid:#cfc3ae;
+  --f:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Noto Sans JP",sans-serif; --m:"M PLUS 1 Code",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1a1714; --paper:#24201c; --ink:#f1ebe2; --sub:#b8ac9e; --rule:#3a332c; --soft:#2c2722;
+  --fever:#ff8a7f; --fever-soft:#47201c; --rest:#f2c063; --rest-soft:#3e3017; --ok:#6fd3a6; --ok-soft:#173528; --link:#8fb4ff; --grid:#4a4238; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1a1714; --paper:#24201c; --ink:#f1ebe2; --sub:#b8ac9e; --rule:#3a332c; --soft:#2c2722;
+  --fever:#ff8a7f; --fever-soft:#47201c; --rest:#f2c063; --rest-soft:#3e3017; --ok:#6fd3a6; --ok-soft:#173528; --link:#8fb4ff; --grid:#4a4238; color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);line-height:1.85;font-size:16px;font-weight:500}
+a{color:var(--link)}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px 72px}
+.crumb{font-size:13px;color:var(--sub);padding:14px 0}
+.crumb a{color:var(--sub)}
+.hero{position:relative;background:var(--paper);border:2px solid var(--ink);border-radius:18px;padding:24px 20px 20px;box-shadow:6px 6px 0 var(--ink);overflow:hidden}
+.hero .stamp{display:inline-block;font-family:var(--m);font-size:12px;letter-spacing:.06em;border:1.5px solid var(--fever);color:var(--fever);border-radius:999px;padding:2px 10px;transform:rotate(-2deg)}
+.hero h1{margin:10px 0 8px;font-size:clamp(25px,5.6vw,38px);line-height:1.3;font-weight:900;text-wrap:balance}
+.hero p{margin:0;color:var(--sub);font-size:15px}
+.rule-card{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.rule-card div{background:var(--soft);border-radius:12px;padding:10px 12px;font-size:14px;line-height:1.6}
+.rule-card b{display:block;font-size:17px}
+.thermo{position:absolute;right:-18px;top:-18px;width:120px;height:120px;border-radius:50%;background:repeating-radial-gradient(circle,var(--fever-soft) 0 8px,transparent 8px 16px);opacity:.8;pointer-events:none}
+.sheet{background:var(--paper);border:1px solid var(--rule);border-radius:16px;padding:20px 18px;margin-top:22px}
+.sheet h2{margin:0 0 12px;font-size:21px;font-weight:900;display:flex;align-items:center;gap:10px}
+.sheet h2 .n{font-family:var(--m);font-size:13px;background:var(--ink);color:var(--paper);border-radius:6px;padding:1px 8px}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+label.f{display:grid;gap:4px;font-size:14px;color:var(--sub)}
+input[type=date],input[type=number],select{font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1.5px solid var(--rule);border-radius:10px;padding:8px 10px;width:100%}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg label{cursor:pointer}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg span{display:inline-block;border:1.5px solid var(--rule);border-radius:999px;padding:5px 13px;font-size:14px;background:var(--bg)}
+.seg input:checked+span{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.seg input:focus-visible+span{outline:2px solid var(--link);outline-offset:2px}
+.chk{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--sub)}
+.answer{margin-top:16px;border-radius:14px;background:var(--ok-soft);padding:14px 16px}
+.answer .big{font-size:clamp(22px,5vw,30px);font-weight:900;line-height:1.35}
+.answer .why{font-size:14px;color:var(--sub);margin-top:4px}
+.answer.wait{background:var(--rest-soft)}
+.cal{margin-top:14px;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+.cal .d{border:1.5px solid var(--grid);border-radius:10px;min-height:68px;padding:4px 5px;font-size:12px;line-height:1.35;background:var(--paper);position:relative}
+.cal .d .dt{font-family:var(--m);font-weight:700;font-size:13px}
+.cal .d .wd{color:var(--sub)}
+.cal .d .lb{display:block;margin-top:2px;font-size:11px;overflow-wrap:anywhere}
+.cal .d.fever{background:var(--fever-soft);border-color:var(--fever)}
+.cal .d.stop{background:var(--rest-soft);border-color:var(--rest)}
+.cal .d.go{background:var(--ok-soft);border-color:var(--ok);border-width:2.5px}
+.cal .d.pad{visibility:hidden}
+.cal .hd{text-align:center;font-size:12px;color:var(--sub)}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--sub);margin-top:8px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:4px;border:1.5px solid}
+table{border-collapse:collapse;width:100%;font-size:14px;margin-top:8px}
+th,td{border-bottom:1px solid var(--rule);padding:6px 6px;text-align:left;vertical-align:top}
+th{color:var(--sub);font-weight:700}
+td.num{font-family:var(--m);white-space:nowrap}
+.meter{height:16px;border-radius:999px;background:var(--soft);overflow:hidden;display:flex;margin:10px 0 4px;border:1px solid var(--rule)}
+.meter i{display:block;height:100%}
+.note{font-size:13px;color:var(--sub)}
+.box{background:var(--soft);border-radius:12px;padding:12px 14px;margin-top:12px;font-size:15px}
+.box.warn{background:var(--fever-soft)}
+ul.tight{margin:6px 0 0;padding-left:1.2em}
+ul.tight li{margin:3px 0}
+pre.memo{white-space:pre-wrap;font-family:var(--f);font-size:15px;background:var(--bg);border:1.5px dashed var(--grid);border-radius:12px;padding:12px 14px;margin:10px 0 0}
+button,.shb{font:inherit;font-size:14px;cursor:pointer;border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:999px;padding:6px 14px;text-decoration:none;display:inline-block}
+button.main{background:var(--ink);color:var(--paper)}
+.ok{color:var(--ok);font-size:13px;margin-left:6px}
+details{border-top:1px solid var(--rule);padding:10px 0}
+details:last-child{border-bottom:1px solid var(--rule)}
+summary{cursor:pointer;font-weight:700}
+.pr{border:1px dashed var(--grid);border-radius:12px;padding:12px 14px;margin-top:12px}
+.pr .tag{font-family:var(--m);font-size:11px;border:1px solid var(--sub);color:var(--sub);border-radius:4px;padding:0 5px;margin-right:6px}
+ol.src{font-size:13px;padding-left:1.4em;word-break:break-all}
+footer{margin-top:28px;font-size:13px;color:var(--sub)}
+@media (max-width:520px){.rule-card{grid-template-columns:1fr}.cal .d{min-height:58px;padding:3px}.cal .d .lb{font-size:10px}.sheet{padding:16px 14px}}
+@media print{body{background:#fff}.hero{box-shadow:none}.noprint,.pr,#share,.crumb{display:none}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"インフルエンザの出席停止は何日目から登校できますか","acceptedAnswer":{"@type":"Answer","text":"学校保健安全法施行規則では「発症した後5日を経過し、かつ、解熱した後2日(幼児は3日)を経過するまで」が出席停止です。発症した日・熱が下がった日は0日目で、翌日を1日目と数えます。発症日から数えて6日目以降で、かつ解熱日の3日後(幼児は4日後)以降の、遅いほうの日から登校できます。"}},
+{"@type":"Question","name":"熱が下がった日はどう決めますか","acceptedAnswer":{"@type":"Answer","text":"解熱剤を使わずに平熱に戻り、その後また上がらなかった最初の日を0日目とする扱いが一般的です。夕方に再び熱が出た場合は解熱日が後ろにずれます。学校・園や医師の説明が優先されます。"}},
+{"@type":"Question","name":"保育園の登園の目安も同じですか","acceptedAnswer":{"@type":"Answer","text":"こども家庭庁の保育所における感染症対策ガイドラインは、インフルエンザについて学校保健安全法施行規則と同じ「発症後5日を経過し、かつ解熱後3日を経過」を登園のめやすとしています。登園届や意見書の要否は自治体・園によって異なります。"}},
+{"@type":"Question","name":"学級閉鎖で子どもが元気なときも子の看護等休暇は使えますか","acceptedAnswer":{"@type":"Answer","text":"2025年4月の育児・介護休業法の改正で、感染症に伴う学級閉鎖等も子の看護等休暇の取得事由に加わり、対象も小学校3年生修了までに広がりました。子1人につき年5日、2人以上は年10日で、時間単位でも取れます。有給か無給かは会社の規定によります。"}},
+{"@type":"Question","name":"新型コロナの場合は何日休みますか","acceptedAnswer":{"@type":"Answer","text":"学校保健安全法施行規則では、新型コロナウイルス感染症は「発症した後5日を経過し、かつ、症状が軽快した後1日を経過するまで」が出席停止です。幼児の特例はありません。"}}
+]}
+</script>
+</head><body>
+<div class="wrap">
+<nav class="crumb"><a href="../">毎日ひとつの小さな道具箱</a> › Day 26</nav>
+
+<header class="hero">
+  <div class="thermo" aria-hidden="true"></div>
+  <span class="stamp">2026-27シーズン</span>
+  <h1>インフル 登校できる日と<br>親の休み 早見</h1>
+  <p>発症日と熱が下がった日を入れると、登校・登園できる最初の日をカレンダーで示します。続けて、親が仕事を休む日数と子の看護等休暇の残りを数え、会社への連絡文をつくります。</p>
+  <div class="rule-card">
+    <div><b>インフルエンザ</b>発症後5日を経過し、かつ解熱後2日(幼児は3日)を経過するまで</div>
+    <div><b>新型コロナ</b>発症後5日を経過し、かつ症状軽快後1日を経過するまで</div>
+  </div>
+  <p class="note" style="margin-top:10px">学校保健安全法施行規則 第19条の基準です。発症した日・熱が下がった日は「0日目」、その翌日が1日目です。全国の定点当たり報告数は第44週(10/26〜11/1)で10.26と注意報の目安(10)を超え、学級閉鎖などは2,400施設以上で出ています(ウェザーニュース 11/6)。</p>
+</header>
+
+<section class="sheet" aria-labelledby="h1">
+  <h2 id="h1"><span class="n">1</span>登校・登園できる日を数える</h2>
+  <div class="row">
+    <div><div class="note">病気</div>
+      <div class="seg" role="radiogroup" aria-label="病気">
+        <label><input type="radio" name="dz" value="flu" checked><span>インフルエンザ</span></label>
+        <label><input type="radio" name="dz" value="cov"><span>新型コロナ</span></label>
+      </div></div>
+    <div><div class="note">通っているところ</div>
+      <div class="seg" role="radiogroup" aria-label="通っているところ">
+        <label><input type="radio" name="ag" value="school" checked><span>小学校以上</span></label>
+        <label><input type="radio" name="ag" value="kid"><span>幼稚園・保育園など</span></label>
+      </div></div>
+  </div>
+  <div class="row" style="margin-top:12px">
+    <label class="f">発症した日(熱などの症状が出た日)<input type="date" id="onset"></label>
+    <label class="f"><span id="feverLabel">熱が下がった日(解熱剤なしで平熱に戻った日)</span><input type="date" id="defev"></label>
+  </div>
+  <label class="chk" style="margin-top:8px"><input type="checkbox" id="still"> まだ熱がある(下がった日がわからない)</label>
+  <div id="ans" class="answer" aria-live="polite"></div>
+  <div class="cal" id="cal" aria-label="出席停止のカレンダー"></div>
+  <div class="legend"><span><i style="background:var(--fever-soft);border-color:var(--fever)"></i>発症〜熱が下がるまで</span><span><i style="background:var(--rest-soft);border-color:var(--rest)"></i>熱は下がったが出席停止</span><span><i style="background:var(--ok-soft);border-color:var(--ok)"></i>登校・登園できる日</span></div>
+  <div id="ifTable"></div>
+  <div class="box"><b>数え方の注意</b>
+    <ul class="tight">
+      <li>夜に熱が出ても、その日が発症日(0日目)です。</li>
+      <li>解熱剤で一時的に下がった日は解熱日になりません。夕方に再び上がった場合は、次に平熱が続いた日が解熱日です。</li>
+      <li>登校・登園の可否は校長や園が判断し、医師が別の判断をすることもあります。治癒証明書・登校(登園)届の要否は自治体と学校・園で違うので、連絡帳や学校のお便りで確認してください。</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sheet" aria-labelledby="h2">
+  <h2 id="h2"><span class="n">2</span>親が休む日数と子の看護等休暇</h2>
+  <div class="seg" role="radiogroup" aria-label="休む理由">
+    <label><input type="radio" name="why" value="sick" checked><span>子が感染して出席停止</span></label>
+    <label><input type="radio" name="why" value="close"><span>学級閉鎖(子は元気)</span></label>
+  </div>
+  <div class="row" style="margin-top:12px" id="closeRow" hidden>
+    <label class="f">閉鎖の初日<input type="date" id="cFrom"></label>
+    <label class="f">閉鎖の最終日<input type="date" id="cTo"></label>
+  </div>
+  <div class="row" style="margin-top:12px">
+    <label class="f">子の学年<select id="grade"><option value="ok">小学3年生まで(未就学児を含む)</option><option value="ng">小学4年生以上</option></select></label>
+    <label class="f">小学3年生までの子の人数<select id="kids"><option value="1">1人</option><option value="2">2人以上</option></select></label>
+    <label class="f">今年度すでに使った看護等休暇(日)<input type="number" id="used" min="0" max="10" step="0.5" value="0" inputmode="decimal"></label>
+  </div>
+  <div style="margin-top:10px"><div class="note">自分が働く曜日</div>
+    <div class="seg" id="wds" aria-label="働く曜日"></div>
+    <label class="chk" style="margin-top:6px"><input type="checkbox" id="hol" checked> 祝日は休み</label>
+  </div>
+  <div id="leave" aria-live="polite"></div>
+  <p class="note">子の看護等休暇の年度は、会社が決めていなければ4月1日〜翌3月31日です。日数は法律の最低ラインで、会社によって多いことがあります。</p>
+</section>
+
+<section class="sheet" aria-labelledby="h3">
+  <h2 id="h3"><span class="n">3</span>会社への連絡文</h2>
+  <div class="row">
+    <label class="f">宛名<select id="to"><option>課長</option><option>部長</option><option>店長</option><option>リーダー</option><option>チームの皆さま</option></select></label>
+    <label class="f">休み方<select id="how"><option value="kango">子の看護等休暇</option><option value="nenkyu">年次有給休暇</option><option value="remote">在宅勤務に切り替え</option><option value="mix">看護等休暇と在宅の組み合わせ</option></select></label>
+  </div>
+  <pre class="memo" id="memo">上の1と2を入れると、ここに文面が出ます。</pre>
+  <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px" class="noprint"><button class="main" type="button" id="cp">コピー</button><span class="ok" id="cpOk" hidden>コピーしました</span></div>
+</section>
+
+<section class="sheet" aria-labelledby="h4">
+  <h2 id="h4"><span class="n">4</span>休みが足りないときの手当て</h2>
+  <table>
+    <tr><th>方法</th><th>使えるとき</th><th>確かめること</th></tr>
+    <tr><td>時間単位の看護等休暇</td><td>午前だけ通院に付き添う、昼まで在宅など</td><td>時間単位は法律で認められている。中抜けの可否は会社による</td></tr>
+    <tr><td>年次有給休暇</td><td>看護等休暇を使い切ったとき、小4以上の子</td><td>時季変更の運用、半日単位の有無</td></tr>
+    <tr><td>在宅勤務・時差出勤</td><td>子の熱が下がり、家で見ていればよい時期</td><td>就業規則・申請の締切</td></tr>
+    <tr><td>病児・病後児保育</td><td>熱が下がった後の出席停止期間(病後児)</td><td>事前登録が要る施設が多い。流行期は予約が埋まりやすい</td></tr>
+    <tr><td>ファミリー・サポート</td><td>きょうだいの送迎、短時間の見守り</td><td>病児の預かりは不可のことが多い</td></tr>
+    <tr><td>夫婦・家族で分担</td><td>出席停止が5日以上続くとき</td><td>2で出た日数を2人で割り振る</td></tr>
+  </table>
+  <div class="box warn">子の看護等休暇を申し出たこと・取ったことを理由に、解雇や減給などの不利益な扱いをすることは育児・介護休業法で禁じられています。困ったときは都道府県労働局の雇用環境・均等部(室)に相談できます。</div>
+  <div class="pr">
+    <p style="margin:0 0 6px"><span class="tag">PR</span>子どもの急な休みに合わせやすい、在宅・短時間の仕事を探している人向けの求人サイトです。</p>
+    <div>主婦のための求人応援サイト<br>
+<a href="https://px.a8.net/svt/ejp?a8mat=4BEFL6+1O4SVM+3CLE+5YRHE" rel="nofollow">「ママワークス」<b>mamaworks.jp</b></a>
+<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=4BEFL6+1O4SVM+3CLE+5YRHE" alt=""></div>
+  </div>
+</section>
+
+<section class="sheet" aria-labelledby="h5">
+  <h2 id="h5"><span class="n">?</span>よくある質問</h2>
+  <details><summary>何日目から登校できますか</summary><p>発症した日・熱が下がった日を0日目とし、翌日を1日目と数えます。インフルエンザでは「発症日+6日目」と「解熱日+3日目(幼児は+4日目)」の遅いほうの日から登校できます。たとえば月曜に発症し水曜に熱が下がれば、小学生は翌週の日曜(発症+6日)と土曜(解熱+3日)の遅いほう、日曜から出席できます。</p></details>
+  <details><summary>熱が下がった日はどう決めますか</summary><p>解熱剤を使わずに平熱に戻り、その後また上がらなかった最初の日を0日目とする扱いが一般的です。夕方に再び熱が出た場合は解熱日が後ろにずれます。学校・園や医師の説明が優先されます。</p></details>
+  <details><summary>保育園の登園の目安も同じですか</summary><p>こども家庭庁の「保育所における感染症対策ガイドライン」は、インフルエンザについて学校保健安全法施行規則と同じ「発症後5日を経過し、かつ解熱後3日を経過」を登園のめやすとしています。登園届や意見書の要否は自治体・園によって違います。</p></details>
+  <details><summary>学級閉鎖で子どもが元気なときも看護等休暇は使えますか</summary><p>使えます。2025年4月の改正で、感染症に伴う学級閉鎖等が取得事由に加わり、対象も小学校3年生修了までに広がりました。子1人につき年5日、2人以上は年10日で、時間単位でも取れます。有給か無給かは会社の規定によります。週の所定労働日数が2日以下の人は、労使協定で対象外とされている場合があります。</p></details>
+  <details><summary>新型コロナの場合は何日休みますか</summary><p>「発症した後5日を経過し、かつ、症状が軽快した後1日を経過するまで」です。幼児の特例はありません。この道具では「熱が下がった日」の欄を「症状が軽快した日」として数えます。</p></details>
+</section>
+
+<section class="sheet" id="share" aria-labelledby="h6">
+  <h2 id="h6">家族や同じクラスの保護者に送る</h2>
+  <div style="display:flex;flex-wrap:wrap;gap:8px"><a class="shb" id="shL" target="_blank" rel="noopener">LINEで送る</a><a class="shb" id="shX" target="_blank" rel="noopener">Xで共有</a><button type="button" id="shC">URLをコピー</button></div>
+  <p class="note" style="margin-top:12px">ほかの道具: <a href="../day020-renkin-check/">連勤チェック シフト表</a>(休む人が出た週のシフト確認に) / <a href="../">一覧</a></p>
+</section>
+
+<section class="sheet" aria-labelledby="h7">
+  <h2 id="h7">出典</h2>
+  <ol class="src">
+    <li><a href="https://laws.e-gov.go.jp/law/333M50000080018">学校保健安全法施行規則(e-Gov法令検索)</a> 第18条・第19条</li>
+    <li><a href="https://www.city.sapporo.jp/kyoiku/top/hoken/suspension/index.html">札幌市「出席停止について」</a>(発熱の翌日を1日目とする数え方)</li>
+    <li><a href="https://www.mhlw.go.jp/file/05-Shingikai-11921000-Kodomokateikyoku-Soumuka/2-2.pdf">厚生労働省 保育所における感染症対策ガイドライン 改訂の資料</a>(発症・解熱の翌日を1日目、学校保健安全法施行規則と同じ記載)</li>
+    <li><a href="https://www.city.osaka.lg.jp/kodomo/cmsfiles/contents/0000277/277938/05infuruenza.pdf">大阪市 インフルエンザ 登所(園)のめやす</a>(ガイドライン2018年改訂版を参照)</li>
+    <li><a href="https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/koyoukintou/ryouritsu/ikuji/law-amendment">厚生労働省 育児・介護休業法 改正のポイント</a>(子の看護等休暇:小3修了まで、学級閉鎖等・入園式等を追加)</li>
+    <li><a href="https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/koyoukintou/ryouritsu/ikuji/point02.html">厚生労働省 育児休業制度 特設サイト</a>(労使協定で除外できる範囲)</li>
+    <li><a href="https://weathernews.jp/news/202611/060241/">ウェザーニュース(2026年11月6日)</a> 第44週 定点当たり10.26、学級閉鎖など2,400施設以上</li>
+    <li><a href="https://www.pref.gunma.jp/site/houdou/782594.html">群馬県(2026年11月10日)</a> 第45週 定点当たり10.09で今季2回目の注意報</li>
+    <li><a href="https://kumanichi.com/articles/2044947">熊本日日新聞(2026年10月)</a> 今季初の全国「注意報」レベル、昨年同期比約7倍</li>
+  </ol>
+</section>
+
+<footer>この道具は公開資料をもとにした情報提供で、医療上の判断や登校の許可を行うものではありません。症状や登校・登園の可否は、医師と学校・園の指示に従ってください。入力した日付はこの端末の中だけで計算し、送信しません。<br>公開 2026年11月13日 / <a href="../">毎日ひとつの小さな道具箱</a></footer>
+</div>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var WD=['日','月','火','水','木','金','土'];
+  var HOL=['2026-11-03','2026-11-23','2027-01-01','2027-01-11','2027-02-11','2027-02-23','2027-03-22','2027-04-29','2027-05-03','2027-05-04','2027-05-05'];
+  function pad(n){return (n<10?'0':'')+n}
+  function iso(d){return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())}
+  function parse(s){if(!s)return null;var p=s.split('-');return new Date(+p[0],+p[1]-1,+p[2])}
+  function add(d,n){var x=new Date(d.getFullYear(),d.getMonth(),d.getDate());x.setDate(x.getDate()+n);return x}
+  function diff(a,b){return Math.round((b-a)/864e5)}
+  function jp(d){return (d.getMonth()+1)+'月'+d.getDate()+'日('+WD[d.getDay()]+')'}
+  function val(n){var e=document.querySelector('input[name='+n+']:checked');return e?e.value:''}
+  var today=new Date(); today=new Date(today.getFullYear(),today.getMonth(),today.getDate());
+  $('#onset').value=iso(add(today,-1));
+
+  var wbox=$('#wds');
+  [1,2,3,4,5,6,0].forEach(function(i){
+    var l=document.createElement('label');
+    l.innerHTML='<input type="checkbox" value="'+i+'"'+(i>=1&&i<=5?' checked':'')+'><span>'+WD[i]+'</span>';
+    wbox.appendChild(l);
+  });
+
+  var state={};
+  function rule(){
+    var dz=val('dz'), ag=val('ag');
+    if(dz==='cov') return {after:1, label:'症状が軽快した後1日', fl:'症状が軽快した日'};
+    return ag==='kid'?{after:3,label:'解熱した後3日',fl:'熱が下がった日'}:{after:2,label:'解熱した後2日',fl:'熱が下がった日'};
+  }
+  function calc(){
+    var r=rule(), on=parse($('#onset').value), still=$('#still').checked, df=still?null:parse($('#defev').value);
+    $('#feverLabel').textContent=(val('dz')==='cov'?'症状が軽快した日(熱が下がりせきなどが楽になった日)':'熱が下がった日(解熱剤なしで平熱に戻った日)');
+    $('#defev').disabled=still;
+    var ans=$('#ans'), cal=$('#cal'), tb=$('#ifTable');
+    state={};
+    if(!on){ans.className='answer wait';ans.innerHTML='<div class="big">発症した日を入れてください</div>';cal.innerHTML='';tb.innerHTML='';return}
+    if(df&&diff(on,df)<0){ans.className='answer wait';ans.innerHTML='<div class="big">熱が下がった日が発症日より前になっています</div>';cal.innerHTML='';tb.innerHTML='';return}
+    var byOnset=add(on,6), go=null;
+    if(df){var byFev=add(df,r.after+1); go=byOnset>=byFev?byOnset:byFev;
+      ans.className='answer';
+      var nx=go;while(nx.getDay()===0||nx.getDay()===6||HOL.indexOf(iso(nx))>=0)nx=add(nx,1);
+      ans.innerHTML='<div class="big">'+jp(go)+'から登校・登園できます</div><div class="why">発症後5日の経過で '+jp(byOnset)+'、'+r.label+'の経過で '+jp(byFev)+'。遅いほうの日です。'+(diff(today,go)>0?' 今日からあと'+diff(today,go)+'日。':'')+(+nx!==+go?' 土日・祝日に当たるため、実際に通うのは'+jp(nx)+'からです(土曜に授業・保育がある場合はその日から)。':'')+'</div>';
+    } else {
+      ans.className='answer wait';
+      ans.innerHTML='<div class="big">早くても'+jp(byOnset)+'から</div><div class="why">熱が下がった日で決まります。下の表で、下がった日ごとの登校できる日を確かめられます。</div>';
+    }
+    state={on:on,df:df,go:go,byOnset:byOnset,r:r};
+    // calendar
+    var end=go?add(go,0):add(on,10), start=on, html='';
+    WD.forEach(function(w){html+='<div class="hd">'+w+'</div>'});
+    for(var i=0;i<start.getDay();i++) html+='<div class="d pad"></div>';
+    for(var d=start,k=0; d<=end; d=add(d,1),k++){
+      var cls='', lb='';
+      var n=diff(on,d);
+      if(go&&+d===+go){cls='go';lb='登校・登園OK'}
+      else if(df&&d>=df){cls='stop';lb=(+d===+df?'解熱 0日目':'解熱後'+diff(df,d)+'日目')}
+      else {cls='fever';lb=(n===0?'発症 0日目':'発症後'+n+'日目')}
+      if(cls==='stop'&&n<=5) lb+=' / 発症後'+n+'日目';
+      html+='<div class="d '+cls+'"><span class="dt">'+(d.getMonth()+1)+'/'+d.getDate()+'</span> <span class="wd">'+WD[d.getDay()]+'</span><span class="lb">'+lb+'</span></div>';
+    }
+    cal.innerHTML=html;
+    // if-table
+    var t='<table><tr><th>熱が下がった日</th><th>登校・登園できる日</th><th>決め手</th></tr>';
+    for(var j=1;j<=6;j++){var f=add(on,j), bf=add(f,r.after+1), g=byOnset>=bf?byOnset:bf;
+      t+='<tr><td class="num">'+jp(f)+'(発症後'+j+'日目)</td><td class="num"><b>'+jp(g)+'</b></td><td>'+(byOnset>=bf?'発症後5日':r.label)+'</td></tr>'}
+    t+='</table>';
+    tb.innerHTML=(df?'<p class="note" style="margin:14px 0 0">熱が下がった日がずれた場合</p>':'<p class="note" style="margin:14px 0 0">熱が下がった日ごとの登校できる日</p>')+t;
+    leave();
+  }
+  function isWork(d){
+    var ws=[].map.call(wbox.querySelectorAll('input:checked'),function(e){return +e.value});
+    if(ws.indexOf(d.getDay())<0) return false;
+    if($('#hol').checked&&HOL.indexOf(iso(d))>=0) return false;
+    return true;
+  }
+  function leave(){
+    var why=val('why'); $('#closeRow').hidden=(why!=='close');
+    var from,to,box=$('#leave');
+    if(why==='close'){from=parse($('#cFrom').value);to=parse($('#cTo').value);
+      if(!from||!to||to<from){box.innerHTML='<div class="box">閉鎖の初日と最終日を入れてください。</div>';memo();return}}
+    else{ if(!state.on){box.innerHTML='';memo();return}
+      from=state.on; to=state.go?add(state.go,-1):add(state.byOnset,-1);}
+    var days=[],d;
+    for(d=from; d<=to; d=add(d,1)) if(isWork(d)) days.push(new Date(d));
+    var need=days.length, grade=$('#grade').value, cap=$('#kids').value==='2'?10:5;
+    var used=Math.max(0,parseFloat($('#used').value)||0), rem=Math.max(0,cap-used);
+    var useK=grade==='ok'?Math.min(rem,need):0, short=need-useK;
+    var h='<div class="answer'+(short>0?' wait':'')+'"><div class="big">仕事を休む日 '+need+'日'+((why==='sick'&&!state.go)?'以上':'')+'</div>';
+    h+='<div class="why">'+jp(from)+'〜'+jp(to)+'のうち、働く曜日'+($('#hol').checked?'(祝日を除く)':'')+'の日数です。'+(why==='sick'&&!state.go?'熱が下がった日が決まると確定します。':'')+'</div></div>';
+    if(grade==='ok'){
+      var tot=Math.max(need,1)+0, w1=cap?Math.min(used,cap)/cap*100:0, w2=cap?useK/cap*100:0;
+      h+='<div class="meter" role="img" aria-label="看護等休暇の使用状況"><i style="width:'+w1+'%;background:var(--grid)"></i><i style="width:'+w2+'%;background:var(--ok)"></i></div>';
+      h+='<p class="note" style="margin:0">灰色=使用済み '+used+'日 / 緑=今回 '+useK+'日 / 年'+cap+'日まで</p>';
+      h+='<table><tr><th>子の看護等休暇で休める</th><td class="num">'+useK+'日</td></tr><tr><th>使ったあとの残り</th><td class="num">'+(rem-useK)+'日</td></tr><tr><th>足りない日</th><td class="num">'+short+'日</td></tr></table>';
+      if(short>0) h+='<div class="box warn">'+short+'日ぶんは年次有給休暇・在宅勤務・家族との分担などで埋める必要があります。4の表を見てください。</div>';
+    } else {
+      h+='<div class="box warn">小学4年生以上の子は、法律上の子の看護等休暇の対象外です('+need+'日)。会社独自の制度がないか就業規則を確かめ、なければ年次有給休暇や在宅勤務で調整します。</div>';
+    }
+    if(days.length) h+='<p class="note">休む日: '+days.map(jp).join('、')+'</p>';
+    box.innerHTML=h;
+    state.need=need;state.useK=useK;state.days=days;state.from=from;state.to=to;state.why=why;
+    memo();
+  }
+  function memo(){
+    var m=$('#memo'); if(!state.from){m.textContent='上の1と2を入れると、ここに文面が出ます。';return}
+    var to=$('#to').value, how=$('#how').value, why=state.why;
+    var reason= why==='close'?'子どもの学級閉鎖のため':(val('dz')==='cov'?'子どもが新型コロナウイルス感染症と診断され':'子どもがインフルエンザと診断され');
+    var lines=[];
+    lines.push(to+(to.indexOf('皆さま')>=0?'':'')+'');
+    lines.push('');
+    lines.push('お疲れさまです。'+reason+(why==='close'?'、':'、学校保健安全法の出席停止期間のため、')+'家で看る必要があります。');
+    var span=jp(state.from)+'〜'+jp(state.to);
+    var hw={kango:'子の看護等休暇',nenkyu:'年次有給休暇',remote:'在宅勤務',mix:'子の看護等休暇と在宅勤務の組み合わせ'}[how];
+    lines.push(span+'のうち、出勤予定の'+state.need+'日について、'+hw+'で対応させてください。');
+    if(why==='sick'&&!state.go) lines.push('熱が下がった日によって登校できる日が決まるため、確定したら改めてご連絡します。');
+    if(why==='sick'&&state.go) lines.push('登校できるのは'+jp(state.go)+'からの見込みです。');
+    lines.push('急ぎの件は、メールかチャットでご連絡いただければ確認します。引き継ぎが必要な業務は別途まとめてお送りします。');
+    lines.push('ご迷惑をおかけしますが、よろしくお願いいたします。');
+    m.textContent=lines.join('\n');
+  }
+  ['#onset','#defev','#still'].forEach(function(s){$(s).addEventListener('input',calc);$(s).addEventListener('change',calc)});
+  document.querySelectorAll('input[name=dz],input[name=ag]').forEach(function(e){e.addEventListener('change',calc)});
+  document.querySelectorAll('input[name=why]').forEach(function(e){e.addEventListener('change',leave)});
+  ['#cFrom','#cTo','#grade','#kids','#used','#hol'].forEach(function(s){$(s).addEventListener('input',leave);$(s).addEventListener('change',leave)});
+  wbox.addEventListener('change',leave);
+  ['#to','#how'].forEach(function(s){$(s).addEventListener('change',memo)});
+  function copy(txt,ok){
+    function done(){if(ok){ok.hidden=false;setTimeout(function(){ok.hidden=true},1800)}}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,function(){})}
+    else{var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');done()}catch(e){}ta.remove()}
+  }
+  $('#cp').addEventListener('click',function(){copy($('#memo').textContent,$('#cpOk'))});
+  var url=location.href.split('#')[0], tx='インフル・コロナの出席停止、登校できる日と親が休む日数を数える早見';
+  $('#shL').href='https://social-plugins.line.me/lineit/share?url='+encodeURIComponent(url);
+  $('#shX').href='https://twitter.com/intent/tweet?text='+encodeURIComponent(tx)+'&url='+encodeURIComponent(url);
+  $('#shC').addEventListener('click',function(){copy(url,null);this.textContent='コピーしました'});
+  $('#still').checked=true;
+  calc();
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
