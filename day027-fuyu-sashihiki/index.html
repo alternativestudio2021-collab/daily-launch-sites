@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>この冬の 燃料と光熱 差し引き帳 2026-27|ガソリン・灯油の補助縮小と電気・ガス値引きの相殺</title>
+<meta name="description" content="ガソリン・灯油の補助は12月3日から縮小(基準価格170円→12月17日に175円、1月以降は毎月5円が基本)。電気・都市ガスは12月使用分から値引きが再開(電気1.0円→1・2月4.5円/kWh、都市ガス4円→18円/㎥)。月の給油量・灯油の缶数・電気とガスの使用量から、12月〜3月に家計がいくら増えて、いくら戻るかを月ごとに差し引きします。">
+<link rel="canonical" href="https://alternativestudio2021-collab.github.io/daily-launch-sites/day027-fuyu-sashihiki/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="この冬の 燃料と光熱 差し引き帳 2026-27">
+<meta property="og:description" content="ガソリン・灯油は12月から上がり、電気・都市ガスは12月から値引き。わが家の冬は差し引きいくらか、月ごとに計算します。">
+<meta property="og:url" content="https://alternativestudio2021-collab.github.io/daily-launch-sites/day027-fuyu-sashihiki/">
+<meta property="og:site_name" content="毎日ひとつの小さな道具箱">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Shippori+Mincho+B1:wght@700;800&family=Azeret+Mono:wght@500;700&display=swap">
+<style>
+:root{
+  --bg:#eef1f4; --paper:#fbfcfd; --ink:#1c2530; --sub:#5d6b79; --rule:#d5dce3; --soft:#e6ebf0;
+  --up:#c2561c; --up-soft:#fbe6d9; --down:#1f6fa8; --down-soft:#dcebf6; --net:#1c2530; --link:#1f5fa8; --frost:#9fb6c9;
+  --f:"BIZ UDPGothic","Hiragino Sans","Noto Sans JP",sans-serif; --h:"Shippori Mincho B1","Hiragino Mincho ProN",serif; --m:"Azeret Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#10161c; --paper:#182029; --ink:#e8eef4; --sub:#9fb0bf; --rule:#2b3846; --soft:#1f2933;
+  --up:#ff9a5c; --up-soft:#3d2414; --down:#6fb6ee; --down-soft:#132c40; --net:#e8eef4; --link:#8cc2ff; --frost:#3d5266; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#10161c; --paper:#182029; --ink:#e8eef4; --sub:#9fb0bf; --rule:#2b3846; --soft:#1f2933;
+  --up:#ff9a5c; --up-soft:#3d2414; --down:#6fb6ee; --down-soft:#132c40; --net:#e8eef4; --link:#8cc2ff; --frost:#3d5266; color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);line-height:1.8;font-size:16px}
+a{color:var(--link)}
+.wrap{max-width:880px;margin:0 auto;padding:20px 16px 48px}
+header{padding:18px 0 8px;border-bottom:3px double var(--rule)}
+.kicker{font-family:var(--m);font-size:12px;letter-spacing:.12em;color:var(--sub)}
+h1{font-family:var(--h);font-size:clamp(26px,6vw,40px);line-height:1.3;margin:6px 0 10px;font-weight:800}
+h1 .yr{font-family:var(--m);font-size:.5em;color:var(--sub);font-weight:500;margin-left:6px}
+.lead{margin:0 0 6px}
+.lead b.u{color:var(--up)} .lead b.d{color:var(--down)}
+h2{font-family:var(--h);font-size:22px;margin:36px 0 12px;font-weight:700;display:flex;gap:10px;align-items:baseline}
+h2 .n{font-family:var(--m);font-size:13px;color:var(--sub);font-weight:500}
+.card{background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:16px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:640px){.two{grid-template-columns:1fr}}
+.side-up{border-top:5px solid var(--up)} .side-down{border-top:5px solid var(--down)}
+.side-up h3,.side-down h3{margin:0 0 6px;font-size:16px}
+.side-up h3{color:var(--up)} .side-down h3{color:var(--down)}
+.steps{list-style:none;margin:0;padding:0;font-size:14px}
+.steps li{display:flex;justify-content:space-between;gap:8px;border-bottom:1px dashed var(--rule);padding:4px 0}
+.steps li span:last-child{font-family:var(--m);white-space:nowrap}
+.note{font-size:13px;color:var(--sub)}
+.presets{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.presets button{font:inherit;font-size:14px;border:1px solid var(--rule);background:var(--soft);color:var(--ink);border-radius:999px;padding:6px 12px;cursor:pointer}
+.presets button:hover{border-color:var(--frost)}
+fieldset{border:0;margin:0;padding:0}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px 16px}
+@media (max-width:640px){.grid{grid-template-columns:1fr}}
+label.f{display:block;font-size:14px}
+label.f .lb{display:block;font-weight:700;margin-bottom:4px}
+.inrow{display:flex;align-items:center;gap:8px}
+input[type=number],select{font:inherit;font-family:var(--m);width:100%;max-width:160px;padding:7px 9px;border:1px solid var(--rule);border-radius:6px;background:var(--paper);color:var(--ink)}
+select{font-family:var(--f);max-width:none}
+.unit{font-size:13px;color:var(--sub);white-space:nowrap}
+.hint{font-size:12px;color:var(--sub);margin-top:2px}
+.radios{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px}
+.scen{margin-top:14px;padding-top:12px;border-top:1px dashed var(--rule)}
+/* ledger */
+.ledger{width:100%;border-collapse:collapse;font-size:14px;margin-top:4px}
+.ledger th,.ledger td{padding:8px 6px;border-bottom:1px solid var(--rule);text-align:right;white-space:nowrap}
+.ledger th:first-child,.ledger td:first-child{text-align:left}
+.ledger thead th{font-size:12px;color:var(--sub);font-weight:700}
+.ledger td{font-family:var(--m)}
+.ledger td.u{color:var(--up)} .ledger td.d{color:var(--down)}
+.ledger td.net{font-weight:700}
+.ledger tfoot td{border-top:2px solid var(--ink);border-bottom:0;font-weight:700}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.bars{margin-top:16px;display:grid;gap:10px}
+.bar{display:grid;grid-template-columns:44px 1fr;gap:8px;align-items:center;font-size:13px}
+.track{position:relative;height:26px;background:linear-gradient(90deg,transparent calc(50% - 1px),var(--frost) calc(50% - 1px),var(--frost) calc(50% + 1px),transparent calc(50% + 1px))}
+.track i{position:absolute;top:3px;height:20px;border-radius:3px}
+.track i.u{background:var(--up)} .track i.d{background:var(--down)}
+.track b{position:absolute;top:2px;font-family:var(--m);font-size:12px;font-weight:700;white-space:nowrap}
+.legend{display:flex;gap:16px;font-size:12px;color:var(--sub);margin-top:6px;flex-wrap:wrap}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.legend .lu::before{background:var(--up)} .legend .ld::before{background:var(--down)}
+.verdict{margin:14px 0 0;padding:12px 14px;border-radius:8px;background:var(--soft);font-size:15px}
+.verdict .big{font-family:var(--m);font-size:24px;font-weight:700}
+.verdict .big.u{color:var(--up)} .verdict .big.d{color:var(--down)}
+.cal{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;font-size:13px}
+.cal div{background:var(--paper);border:1px solid var(--rule);border-left:4px solid var(--frost);border-radius:6px;padding:8px 10px}
+.cal div.u{border-left-color:var(--up)} .cal div.d{border-left-color:var(--down)}
+.cal .dt{font-family:var(--m);font-weight:700;display:block}
+table.plain{width:100%;border-collapse:collapse;font-size:14px}
+table.plain th,table.plain td{border-bottom:1px solid var(--rule);padding:7px 6px;text-align:left;vertical-align:top}
+table.plain th{font-size:12px;color:var(--sub)}
+details{background:var(--paper);border:1px solid var(--rule);border-radius:8px;padding:10px 14px;margin-bottom:8px}
+summary{cursor:pointer;font-weight:700}
+details p{margin:8px 0 0;font-size:14px}
+.pr{border:1px dashed var(--frost);border-radius:8px;padding:12px 14px;background:var(--paper);font-size:14px}
+.tag{display:inline-block;font-family:var(--m);font-size:11px;border:1px solid var(--sub);color:var(--sub);border-radius:3px;padding:0 5px;margin-right:6px}
+ol.src{font-size:13px;padding-left:20px;word-break:break-all}
+footer{margin-top:28px;font-size:12px;color:var(--sub);border-top:1px solid var(--rule);padding-top:12px}
+</style>
+</head><body>
+<div class="wrap">
+<header>
+  <div class="kicker">WINTER LEDGER / DEC 2026 – MAR 2027 / 2026.11.14 時点</div>
+  <h1>この冬の 燃料と光熱 差し引き帳<span class="yr">2026-27</span></h1>
+  <p class="lead">12月は、家計に向かう風が二つ同時に変わります。<b class="u">ガソリン・灯油は補助が縮んで上がり</b>、<b class="d">電気・都市ガスは値引きが戻って下がる</b>。車と灯油を多く使う家は増える方が大きく、車を使わず電気とガスの家は戻る方が大きくなります。わが家はどちらか、月ごとに差し引きします。</p>
+  <p class="note">入力はこの端末の中だけで計算し、送信しません。</p>
+</header>
+
+<h2><span class="n">01</span>12月から何が変わるか</h2>
+<div class="two">
+  <div class="card side-up">
+    <h3>上がる: ガソリン・軽油・灯油</h3>
+    <p class="note" style="margin:0 0 6px">いまは補助でレギュラー全国平均を170円程度に抑えています(11月9日 169.9円)。その「基準価格」を12月から引き上げます。</p>
+    <ul class="steps">
+      <li><span>11月中</span><span>170円程度</span></li>
+      <li><span>12月3日〜</span><span>172円</span></li>
+      <li><span>12月10日〜</span><span>174円</span></li>
+      <li><span>12月17日〜</span><span>175円</span></li>
+      <li><span>2027年1月以降</span><span>毎月5円が基本(未定)</span></li>
+    </ul>
+    <p class="note" style="margin:8px 0 0">灯油・軽油もガソリンと同じ額の補助(11月12日〜18日は1Lあたり36.7円)なので、上がり幅も同じと見込まれています。</p>
+  </div>
+  <div class="card side-down">
+    <h3>下がる: 電気・都市ガス(使用月)</h3>
+    <p class="note" style="margin:0 0 6px">10月・11月使用分は支援がなく、12月使用分から再開。申し込みは不要で、請求額から自動で引かれます。</p>
+    <ul class="steps">
+      <li><span>電気(低圧) 12月使用分</span><span>1.0円/kWh</span></li>
+      <li><span>電気(低圧) 1月・2月使用分</span><span>4.5円/kWh</span></li>
+      <li><span>都市ガス 12月使用分</span><span>4.0円/㎥</span></li>
+      <li><span>都市ガス 1月・2月使用分</span><span>18.0円/㎥</span></li>
+      <li><span>3月使用分</span><span>未定</span></li>
+    </ul>
+    <p class="note" style="margin:8px 0 0">プロパン(LP)ガスは対象外。値引きは使った月の翌月の請求に出ます。</p>
+  </div>
+</div>
+
+<h2><span class="n">02</span>わが家の使い方を入れる</h2>
+<div class="card">
+  <div class="presets" role="group" aria-label="例をあてはめる">
+    <button type="button" data-p="snow">雪国・車2台・灯油ストーブ</button>
+    <button type="button" data-p="local">地方・車1台・エアコン暖房</button>
+    <button type="button" data-p="city">都市部・車なし・ガス暖房</button>
+  </div>
+  <fieldset class="grid">
+    <label class="f"><span class="lb">ガソリン・軽油(1か月の給油量)</span>
+      <span class="inrow"><input type="number" id="gas" min="0" step="1" value="60" inputmode="decimal"><span class="unit">L / 月</span></span>
+      <span class="hint">わからなければ「月の走行km ÷ 燃費」。例: 月900km ÷ 15km/L = 60L</span></label>
+    <label class="f"><span class="lb">灯油(1週間に使う18L缶)</span>
+      <span class="inrow"><input type="number" id="ker" min="0" step="0.5" value="1.5" inputmode="decimal"><span class="unit">缶 / 週</span></span>
+      <span class="hint">使わないなら 0。1缶=18L で、1か月はおよそ4.3週で計算します</span></label>
+    <label class="f"><span class="lb">電気(1か月の使用量)</span>
+      <span class="inrow"><input type="number" id="kwh" min="0" step="10" value="400" inputmode="decimal"><span class="unit">kWh / 月</span></span>
+      <span class="hint">検針票・アプリの「ご使用量」。去年の1月の量が目安になります</span></label>
+    <label class="f"><span class="lb">ガスの種類と使用量</span>
+      <span class="inrow"><select id="gtype" style="max-width:150px"><option value="city">都市ガス</option><option value="lp">プロパン(LP)ガス</option><option value="none">ガスなし(オール電化)</option></select>
+      <input type="number" id="m3" min="0" step="1" value="30" inputmode="decimal" style="max-width:90px"><span class="unit">㎥ / 月</span></span>
+      <span class="hint">プロパンは国の値引きの対象外なので、量を入れても0円で数えます</span></label>
+  </fieldset>
+  <div class="scen">
+    <span class="lb" style="font-weight:700;font-size:14px">1月以降の燃料の見込み</span>
+    <div class="radios" role="radiogroup">
+      <label><input type="radio" name="sc" value="plan" checked> 方針どおり毎月5円ずつ上がる(1月180円・2月185円・3月190円)</label>
+      <label><input type="radio" name="sc" value="hold"> 175円で止まる</label>
+    </div>
+    <p class="hint">1月以降は「毎月5円が基本」と報じられていますが、終わりの時期と幅は決まっていません。原油が下がれば補助が先に小さくなるので、店頭価格が基準まで上がらないこともあります。</p>
+  </div>
+</div>
+
+<h2><span class="n">03</span>差し引き(11月と比べて)</h2>
+<div class="card">
+  <div class="scroll"><table class="ledger" id="ledger" aria-live="polite">
+    <thead><tr><th>使った月</th><th>ガソリン等</th><th>灯油</th><th>電気</th><th>都市ガス</th><th>差し引き</th></tr></thead>
+    <tbody></tbody><tfoot></tfoot>
+  </table></div>
+  <div class="bars" id="bars" aria-hidden="true"></div>
+  <div class="legend"><span class="lu">負担が増える</span><span class="ld">戻る(値引き)</span></div>
+  <div class="verdict" id="verdict"></div>
+  <p class="note" style="margin-top:10px">「+」は11月と同じ量を使ったときに増える額、「−」は値引きで減る額です。燃料は店頭価格が基準価格どおりに動いたと仮定した目安で、12月は週ごとの段差を日数で平均しています(12月の平均は約+3.8円/L)。電気・ガスの値引きは翌月の請求書に出ます。</p>
+</div>
+
+<h2><span class="n">04</span>日付ごとの動き</h2>
+<div class="cal" id="cal">
+  <div class="u"><span class="dt">12/3(木)</span>燃料の基準 172円へ</div>
+  <div class="u"><span class="dt">12/10(木)</span>燃料の基準 174円へ</div>
+  <div class="u"><span class="dt">12/17(木)</span>燃料の基準 175円へ(24日以降は据え置きの見込み)</div>
+  <div class="d"><span class="dt">12/1〜31</span>電気1.0円・都市ガス4.0円の値引き対象の使用期間</div>
+  <div class="d"><span class="dt">1月の請求</span>12月使用分の値引きが明細に出る</div>
+  <div class="d"><span class="dt">2月・3月の請求</span>4.5円/kWh・18円/㎥の大きい値引きが出る</div>
+  <div><span class="dt">1月以降</span>燃料は「毎月5円が基本」。終了時期は未定</div>
+  <div><span class="dt">3月使用分</span>電気・ガスの値引きは未定</div>
+</div>
+<p class="note">基準価格の切り替えは週の水曜発表・木曜からの補助単価に合わせたものとして報じられています。12月2日までに満タンにしても、差は1Lあたり2円ほど(50Lで約100円)です。並ぶほどの差ではありません。</p>
+
+<h2><span class="n">05</span>増える分を小さくする手</h2>
+<table class="plain">
+  <thead><tr><th>手</th><th>効く家</th><th>目安</th></tr></thead>
+  <tbody>
+    <tr><td>給油は価格比較アプリで近所の安い店を探す</td><td>車を多く使う家</td><td>店によって1Lあたり数円〜10円ほど違うことがあり、補助縮小の幅より大きい場合も</td></tr>
+    <tr><td>灯油は配達とセルフ店頭を比べる</td><td>灯油ストーブの家</td><td>配達は店頭より高めのことが多い。都道府県の平均は資源エネルギー庁の毎週の調査で見られます</td></tr>
+    <tr><td>暖房をエアコン中心にする日を増やす</td><td>エアコンがある家</td><td>1〜2月は電気が4.5円/kWh引かれるので、灯油との差が例年より小さくなります</td></tr>
+    <tr><td>ガソリン代の払い方を見直す(ガソリン系カード・ポイント)</td><td>給油の多い家</td><td>1Lあたり数円の値引きやポイント還元がある。年会費と見比べる</td></tr>
+    <tr><td>プロパンの家は自治体の支援を探す</td><td>LPガスの家</td><td>国の値引きは対象外。都道府県・市町村が独自にLPガス支援をしている場合があります</td></tr>
+  </tbody>
+</table>
+
+<div class="pr" style="margin-top:18px">
+  <p style="margin:0 0 6px"><span class="tag">PR</span>燃料費だけでなく、冬のボーナスや保険・固定費まで家計全体を一度見直したい人向けの、FP(ファイナンシャルプランナー)の無料相談です。</p>
+<a href="https://px.a8.net/svt/ejp?a8mat=4BEFL6+1U34XE+4GN2+1NJK7M" rel="nofollow">老後資金・資産形成をFPに無料相談！厳選プロが丁寧サポート【ガーデン】</a>
+<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=4BEFL6+1U34XE+4GN2+1NJK7M" alt="">
+</div>
+
+<h2><span class="n">06</span>よくある質問</h2>
+<details><summary>ガソリンは12月にいきなり5円上がるのですか</summary><p>報道では、基準価格を12月3日に172円、10日に174円、17日に175円と3段階で上げるとされています。いきなり5円ではなく、月の中で少しずつです。店頭価格は店の仕入れや在庫で数日ずれます。</p></details>
+<details><summary>灯油も上がりますか</summary><p>灯油・軽油・重油はガソリンと同じ額の補助を受けています(11月12日〜18日は1Lあたり36.7円)。補助が同じだけ小さくなるので、1Lあたりの上がり幅もガソリンと同じと見込まれます。18L缶なら1円/Lの上昇で18円です。</p></details>
+<details><summary>電気・ガスの値引きは申し込みが必要ですか</summary><p>不要です。電力会社・都市ガス会社が請求額から自動で引きます。12月使用分は1月の請求、1月・2月使用分は2月・3月の請求に出ます。新電力でも国の支援に参加している会社なら同じ単価で引かれます。</p></details>
+<details><summary>プロパンガスの家は何も戻らないのですか</summary><p>国の電気・ガス料金支援は都市ガスが対象で、LPガスは対象外です。都道府県や市町村がLPガスの利用者向けに独自の支援をしている場合があるので、お住まいの自治体の発表を確かめてください。</p></details>
+<details><summary>1月以降の数字はどこまで確かですか</summary><p>12月の3段階は報道がそろっていますが、1月以降は「毎月5円が基本」という方針のみで、終わる時期は決まっていません。中東情勢で原油は大きく動いており、原油が下がれば補助が先に小さくなるため、店頭価格が基準まで上がらないこともあります。この表の1月以降は見込みとして見てください。</p></details>
+
+<h2><span class="n">07</span>出典</h2>
+<ol class="src">
+  <li>資源エネルギー庁 燃料油価格の定額引下げ措置(特設サイト) <a href="https://nenryo-teigakuhikisage.go.jp/">nenryo-teigakuhikisage.go.jp</a> / 全国平均価格の推移(11月9日 169.9円) <a href="https://nenryo-teigakuhikisage.go.jp/current_graph.pdf">current_graph.pdf</a></li>
+  <li>朝日新聞(Yahoo!ニュース) 10月29日 首相が12月以降の基準価格引き上げを表明 <a href="https://news.yahoo.co.jp/articles/d95dff810d4e3bb7999ba061d72c03dcc837d63e">news.yahoo.co.jp</a></li>
+  <li>補助金ポータル ガソリン補助金は12月3日から縮小(11月12日〜の補助36.7円、灯油・軽油も) <a href="https://hojyokin-portal.jp/columns/petrol_hojyo_teigaku">hojyokin-portal.jp</a></li>
+  <li>ガソリン補助は12月から毎月5円縮小(12月3日172円・17日175円) <a href="https://min-taxes.com/column/gasoline-hojo-12gatsu-shukusho/">min-taxes.com</a></li>
+  <li>福井新聞 ガソリン 都道府県別の最新価格一覧 2026年11月11日発表 <a href="https://www.fukuishimbun.co.jp/articles/-/2744202">fukuishimbun.co.jp</a></li>
+  <li>灯油価格の推移(11月9日調査 18L 2,589円) <a href="https://biz-radar.jp/blog/toyu-kakaku-suii">biz-radar.jp</a></li>
+  <li>セレクトラ 電気・ガスの支援が12月に前倒し再開、1〜2月は4.5円 <a href="https://selectra.jp/energy/news/electricity-gas-subsidy-december-2026-restart">selectra.jp</a> / 大手電力の値引き額の正式発表 <a href="https://selectra.jp/energy/news/winter-subsidy-discount-bill-month-utilities-2027">selectra.jp</a> / LPガスは対象外 <a href="https://selectra.jp/energy/news/lpgas-subsidy-winter-2026">selectra.jp</a></li>
+  <li>電気・ガス代補助は12月使用分から3か月(電気1.0円・4.5円、都市ガス4円・18円) <a href="https://min-taxes.com/column/denki-gas-hojo-2026-fuyu/">min-taxes.com</a></li>
+  <li>財経新聞 IEA月報 原油価格は10月高値から32%下落(11月14日) <a href="https://www.zaikei.co.jp/article/20261114/877551.html">zaikei.co.jp</a></li>
+  <li>OANDA証券 中東情勢と原油の最新情勢(11月13日) <a href="https://www.oanda.jp/lab-education/market_news/20261113_middle_east_explained/">oanda.jp</a></li>
+</ol>
+<p class="note">ほかの道具: <a href="../day023-nencho-modori/">12月の戻り 見込み帳</a>(年末調整で戻る額) / <a href="../day021-bichiku-sandan/">備蓄の算段帳</a>(カセットボンベ・灯油の備え) / <a href="../">一覧</a></p>
+
+<footer>この道具は公開資料と報道をもとにした目安の計算で、実際の店頭価格や請求額を約束するものではありません。燃料の1月以降と電気・ガスの3月使用分は未定のため、決まりしだい更新します。<br>公開 2026年11月14日 / <a href="../">毎日ひとつの小さな道具箱</a></footer>
+</div>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"ガソリンは12月にいきなり5円上がるのですか","acceptedAnswer":{"@type":"Answer","text":"報道では基準価格を12月3日に172円、10日に174円、17日に175円と3段階で上げるとされています。店頭価格は数日ずれます。"}},
+{"@type":"Question","name":"灯油も上がりますか","acceptedAnswer":{"@type":"Answer","text":"灯油・軽油はガソリンと同じ額の補助を受けているため、1Lあたりの上がり幅もガソリンと同じと見込まれます。"}},
+{"@type":"Question","name":"電気・ガスの値引きは申し込みが必要ですか","acceptedAnswer":{"@type":"Answer","text":"不要です。12月使用分は1月の請求、1月・2月使用分は2月・3月の請求で自動的に引かれます。"}},
+{"@type":"Question","name":"プロパンガスの家は何も戻らないのですか","acceptedAnswer":{"@type":"Answer","text":"国の支援はLPガスを対象にしていません。自治体の独自支援がある場合があります。"}},
+{"@type":"Question","name":"1月以降の数字はどこまで確かですか","acceptedAnswer":{"@type":"Answer","text":"1月以降は毎月5円が基本という方針のみで、終了時期は未定です。原油が下がれば店頭価格が基準まで上がらないこともあります。"}}
+]}
+</script>
+<script>
+(function(){
+  // 11月(基準170円)と比べた1Lあたりの上がり幅
+  // 12月: 1-2日170, 3-9日172, 10-16日174, 17-31日175 を日数で平均
+  var decUp=((170*2+172*7+174*7+175*15)/31)-170;
+  var MONTHS=[
+    {k:"12月",fuel:{plan:decUp,hold:decUp},ele:1.0,gas:4.0},
+    {k:"1月",fuel:{plan:10,hold:5},ele:4.5,gas:18.0},
+    {k:"2月",fuel:{plan:15,hold:5},ele:4.5,gas:18.0},
+    {k:"3月",fuel:{plan:20,hold:5},ele:0,gas:0,undecided:true}
+  ];
+  var PRE={snow:{gas:100,ker:3,kwh:450,gtype:"lp",m3:15},local:{gas:50,ker:0,kwh:500,gtype:"city",m3:25},city:{gas:0,ker:0,kwh:280,gtype:"city",m3:40}};
+  var $=function(id){return document.getElementById(id)};
+  function num(id){var v=parseFloat($(id).value);return isFinite(v)&&v>0?v:0}
+  function yen(v){var s=Math.round(Math.abs(v)).toLocaleString("ja-JP");return (v>0.5?"+":v<-0.5?"−":"±")+s}
+  function calc(){
+    var sc=document.querySelector('input[name=sc]:checked').value;
+    var gasL=num("gas"), kerL=num("ker")*18*30.4/7, kwh=num("kwh"), gt=$("gtype").value, m3=gt==="city"?num("m3"):0;
+    $("m3").disabled=(gt==="none");
+    var rows=[],tot={g:0,k:0,e:0,c:0,n:0},tot3={n:0};
+    MONTHS.forEach(function(m,i){
+      var up=m.fuel[sc];
+      var g=gasL*up,k=kerL*up,e=-kwh*m.ele,c=-m3*m.gas,n=g+k+e+c;
+      rows.push({m:m,g:g,k:k,e:e,c:c,n:n});
+      if(i<3){tot.g+=g;tot.k+=k;tot.e+=e;tot.c+=c;tot.n+=n}
+      tot3.n+=n;
+    });
+    var tb=$("ledger").tBodies[0];tb.innerHTML="";
+    rows.forEach(function(r){
+      var tr=document.createElement("tr");
+      tr.innerHTML="<td>"+r.m.k+(r.m.undecided?"<span class='note'>(電気・ガス未定)</span>":"")+"</td>"+
+        "<td class='u'>"+yen(r.g)+"</td><td class='u'>"+yen(r.k)+"</td><td class='d'>"+yen(r.e)+"</td><td class='d'>"+(gt==="lp"?"対象外":yen(r.c))+"</td>"+
+        "<td class='net' style='color:var("+(r.n>0.5?"--up":r.n<-0.5?"--down":"--net")+")'>"+yen(r.n)+"円</td>";
+      tb.appendChild(tr);
+    });
+    $("ledger").tFoot.innerHTML="<tr><td>12〜2月の計</td><td class='u'>"+yen(tot.g)+"</td><td class='u'>"+yen(tot.k)+"</td><td class='d'>"+yen(tot.e)+"</td><td class='d'>"+(gt==="lp"?"対象外":yen(tot.c))+"</td><td style='color:var("+(tot.n>0.5?"--up":tot.n<-0.5?"--down":"--net")+")'>"+yen(tot.n)+"円</td></tr>";
+    // bars
+    var max=1;rows.forEach(function(r){max=Math.max(max,r.g+r.k,-(r.e+r.c))});
+    var bars=$("bars");bars.innerHTML="";
+    rows.forEach(function(r){
+      var upw=(r.g+r.k)/max*48, dnw=-(r.e+r.c)/max*48;
+      var d=document.createElement("div");d.className="bar";
+      d.innerHTML="<span>"+r.m.k+"</span><div class='track'>"+
+        (dnw>0?"<i class='d' style='right:50%;width:"+dnw+"%'></i>":"")+
+        (upw>0?"<i class='u' style='left:50%;width:"+upw+"%'></i>":"")+"</div>";
+      bars.appendChild(d);
+    });
+    var v=$("verdict"), cls=tot.n>0.5?"u":tot.n<-0.5?"d":"";
+    var msg;
+    if(cls==="u") msg="12〜2月の3か月で、燃料の値上がりが値引きを上回り、11月と比べて差し引き <span class='big u'>"+Math.round(tot.n).toLocaleString("ja-JP")+"円</span> 増える見込みです。";
+    else if(cls==="d") msg="12〜2月の3か月で、電気・ガスの値引きが燃料の値上がりを上回り、11月と比べて差し引き <span class='big d'>"+Math.round(-tot.n).toLocaleString("ja-JP")+"円</span> 戻る見込みです。";
+    else msg="12〜2月の3か月で、増える分と戻る分がほぼ同じです。";
+    msg+="<br><span class='note'>3月まで入れると "+yen(tot3.n)+"円(3月は電気・ガスの値引きが未定のため燃料の増加だけを数えています)。季節で使用量が増える分は含めず、11月と同じ量で比べています。</span>";
+    v.innerHTML=msg;
+  }
+  document.querySelectorAll(".presets button").forEach(function(b){
+    b.addEventListener("click",function(){var p=PRE[b.dataset.p];$("gas").value=p.gas;$("ker").value=p.ker;$("kwh").value=p.kwh;$("gtype").value=p.gtype;$("m3").value=p.m3;calc()});
+  });
+  ["gas","ker","kwh","m3","gtype"].forEach(function(id){$(id).addEventListener("input",calc);$(id).addEventListener("change",calc)});
+  document.querySelectorAll('input[name=sc]').forEach(function(r){r.addEventListener("change",calc)});
+  calc();
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
