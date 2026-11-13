@@ -250,6 +250,17 @@ footer{margin-top:40px;font-size:13px;color:var(--sub);display:grid;gap:6px}
   <details><summary>4Gにしたままでも問題はありませんか?</summary><p>通話や通信はできますが、5Gの速さは使えません。ドコモは復旧後に設定を戻すよう案内しています。</p></details>
   <details><summary>見舞金の案内が届きました。本物ですか?</summary><p>見舞金は不正アクセスの件で検討中とされ、対象・金額・方法は決まっていないと報じられています。届いた連絡のリンクは開かず、ドコモの公式サイトやアプリを自分で開いて確かめてください。</p></details>
 
+  <h2>職場や家族に送る</h2>
+  <div class="card">
+    <p style="margin-top:0">同じ職場や家族にドコモの5G SAを使っている人がいれば、4Gへの切り替え方と記録メモの作り方をこのまま送れます。</p>
+    <div style="display:flex;flex-wrap:wrap;gap:8px">
+      <a class="btn ghost" style="text-decoration:none" target="_blank" rel="noopener" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Falternativestudio2021-collab.github.io%2Fdaily-launch-sites%2Fday025-sa-shogai%2F">LINEで送る</a>
+      <a class="btn ghost" style="text-decoration:none" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=%E3%83%89%E3%82%B3%E3%83%A2%E3%81%AE5G%20SA%E9%9A%9C%E5%AE%B3%EF%BC%8811%2F5%E3%83%BB11%2F11%EF%BC%89%E3%80%82%E8%87%AA%E5%88%86%E3%81%8C%E5%AF%BE%E8%B1%A1%E3%81%8B%E3%80%814G%E3%81%B8%E3%81%AE%E5%88%87%E3%82%8A%E6%9B%BF%E3%81%88%E6%96%B9%E3%80%81%E8%A3%9C%E5%84%9F%E3%81%AE%E6%9D%A1%E4%BB%B6%E3%80%81%E5%8B%A4%E5%8B%99%E5%85%88%E3%81%AB%E8%A6%8B%E3%81%9B%E3%82%8B%E8%A8%98%E9%8C%B2%E3%83%A1%E3%83%A2&url=https%3A%2F%2Falternativestudio2021-collab.github.io%2Fdaily-launch-sites%2Fday025-sa-shogai%2F">Xで共有</a>
+      <button type="button" class="btn ghost" id="shareCopy">URLをコピー</button>
+    </div>
+    <p class="note" style="margin-bottom:0">ほかの道具: <a href="../day024-nise-kichikyoku/">圏外のあとのSMS 手当て帳</a> / <a href="../day022-roei-taisho/">漏えい通知が来たら やること仕分け帳</a> / <a href="../">一覧</a></p>
+  </div>
+
   <h2><span class="k">08</span>出典</h2>
   <ul class="src">
     <li>NTTドコモ 重要なお知らせ【第八報】5G SAの音声通話・データ通信・SMSがご利用しづらい状況について(11月5日午後7時時点) https://www.docomo.ne.jp/info/network/kanto/pages/261105_09_m.html</li>
@@ -376,6 +387,9 @@ footer{margin-top:40px;font-size:13px;color:var(--sub);display:grid;gap:6px}
   });
   $('#mPrint').addEventListener('click',function(){if(/^「メモをつくる」/.test($('#memo').textContent)) make(); window.print()});
 })();
+</script>
+<script>
+(function(){var b=document.getElementById('shareCopy');if(!b)return;b.addEventListener('click',function(){var u='https://alternativestudio2021-collab.github.io/daily-launch-sites/day025-sa-shogai/';try{if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(u).then(function(){b.textContent='コピーしました'},function(){});return}}catch(e){}window.prompt('URLをコピーしてください',u)})})();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
 </body></html>
