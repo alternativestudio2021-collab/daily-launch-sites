@@ -94,6 +94,9 @@ table.plain th{font-size:12px;color:var(--sub)}
 details{background:var(--paper);border:1px solid var(--rule);border-radius:8px;padding:10px 14px;margin-bottom:8px}
 summary{cursor:pointer;font-weight:700}
 details p{margin:8px 0 0;font-size:14px}
+.share{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.share a,.share button{font:inherit;font-size:14px;border:1px solid var(--rule);background:var(--paper);color:var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer;text-decoration:none}
+.share a:hover,.share button:hover{border-color:var(--frost)}
 .pr{border:1px dashed var(--frost);border-radius:8px;padding:12px 14px;background:var(--paper);font-size:14px}
 .tag{display:inline-block;font-family:var(--m);font-size:11px;border:1px solid var(--sub);color:var(--sub);border-radius:3px;padding:0 5px;margin-right:6px}
 ol.src{font-size:13px;padding-left:20px;word-break:break-all}
@@ -177,6 +180,12 @@ footer{margin-top:28px;font-size:12px;color:var(--sub);border-top:1px solid var(
   <div class="bars" id="bars" aria-hidden="true"></div>
   <div class="legend"><span class="lu">負担が増える</span><span class="ld">戻る(値引き)</span></div>
   <div class="verdict" id="verdict"></div>
+  <div class="share" aria-label="結果を送る">
+    <a id="shLine" target="_blank" rel="noopener" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Falternativestudio2021-collab.github.io%2Fdaily-launch-sites%2Fday027-fuyu-sashihiki%2F">家族にLINEで送る</a>
+    <a id="shX" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Falternativestudio2021-collab.github.io%2Fdaily-launch-sites%2Fday027-fuyu-sashihiki%2F">Xで共有</a>
+    <button type="button" id="shCopy">結果と URL をコピー</button>
+  </div>
+  <p class="note" style="margin-top:6px">送るのは「12〜2月で差し引き○円」の一文とこのページのURLだけです。入れた使用量は送りません。</p>
   <p class="note" style="margin-top:10px">「+」は11月と同じ量を使ったときに増える額、「−」は値引きで減る額です。燃料は店頭価格が基準価格どおりに動いたと仮定した目安で、12月は週ごとの段差を日数で平均しています(12月の平均は約+3.8円/L)。電気・ガスの値引きは翌月の請求書に出ます。</p>
 </div>
 
@@ -298,12 +307,18 @@ footer{margin-top:28px;font-size:12px;color:var(--sub);border-top:1px solid var(
     else msg="12〜2月の3か月で、増える分と戻る分がほぼ同じです。";
     msg+="<br><span class='note'>3月まで入れると "+yen(tot3.n)+"円(3月は電気・ガスの値引きが未定のため燃料の増加だけを数えています)。季節で使用量が増える分は含めず、11月と同じ量で比べています。</span>";
     v.innerHTML=msg;
+    var U="https://alternativestudio2021-collab.github.io/daily-launch-sites/day027-fuyu-sashihiki/";
+    var t="この冬の燃料と光熱、わが家は12〜2月で11月より差し引き"+(cls==="u"?Math.round(tot.n).toLocaleString("ja-JP")+"円増える":cls==="d"?Math.round(-tot.n).toLocaleString("ja-JP")+"円戻る":"ほぼ同じ")+"見込み(ガソリン・灯油の補助縮小と電気・ガス値引きの相殺)";
+    window.__shareText=t+" "+U;
+    $("shLine").href="https://line.me/R/share?text="+encodeURIComponent(t+"\n"+U);
+    $("shX").href="https://twitter.com/intent/tweet?text="+encodeURIComponent(t)+"&url="+encodeURIComponent(U);
   }
   document.querySelectorAll(".presets button").forEach(function(b){
     b.addEventListener("click",function(){var p=PRE[b.dataset.p];$("gas").value=p.gas;$("ker").value=p.ker;$("kwh").value=p.kwh;$("gtype").value=p.gtype;$("m3").value=p.m3;calc()});
   });
   ["gas","ker","kwh","m3","gtype"].forEach(function(id){$(id).addEventListener("input",calc);$(id).addEventListener("change",calc)});
   document.querySelectorAll('input[name=sc]').forEach(function(r){r.addEventListener("change",calc)});
+  $("shCopy").addEventListener("click",function(){var b=this,x=window.__shareText||"";try{if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(x).then(function(){b.textContent="コピーしました"},function(){window.prompt("コピーしてください",x)});return}}catch(e){}window.prompt("コピーしてください",x)});
   calc();
 })();
 </script>
