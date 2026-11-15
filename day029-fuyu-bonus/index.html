@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>冬のボーナス 手取り見込み帳 2026|夏の賞与明細から冬の手取りを計算</title>
+<meta name="description" content="2026年冬のボーナスの手取りを、夏の賞与明細の数字から計算します。健康保険・介護保険・子ども・子育て支援金・厚生年金・雇用保険・所得税を行ごとに出し、上限(厚生年金は1回150万円、健康保険は年度573万円)や40歳到達で変わる点も示します。明細が手元にない人向けの入力もあります。">
+<link rel="canonical" href="https://alternativestudio2021-collab.github.io/daily-launch-sites/day029-fuyu-bonus/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="冬のボーナス 手取り見込み帳 2026">
+<meta property="og:description" content="夏の賞与明細を写すと、冬のボーナスの手取りが行ごとに出ます。今年の明細にある「子ども・子育て支援金」の行も。">
+<meta property="og:url" content="https://alternativestudio2021-collab.github.io/daily-launch-sites/day029-fuyu-bonus/">
+<meta property="og:site_name" content="毎日ひとつの小さな道具箱">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&family=BIZ+UDPGothic:wght@400;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+:root{
+  --bg:#ecebe4; --paper:#fbfaf5; --ink:#1f2420; --sub:#5d635c; --rule:#cfcabb; --grid:#e3dfd2;
+  --pine:#1f4d3a; --pine-soft:#dde9e1; --shu:#b8352a; --shu-soft:#f6e0dc; --gold:#8a6a1f; --link:#1d5a8c;
+  --h:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif; --f:"BIZ UDPGothic","Hiragino Sans","Noto Sans JP",sans-serif; --m:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121512; --paper:#1a1e1a; --ink:#e9ece6; --sub:#a4aba2; --rule:#343a33; --grid:#262b25;
+  --pine:#8fd0b0; --pine-soft:#183026; --shu:#ff8f80; --shu-soft:#3a1c18; --gold:#e0c070; --link:#8cc2ff; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121512; --paper:#1a1e1a; --ink:#e9ece6; --sub:#a4aba2; --rule:#343a33; --grid:#262b25;
+  --pine:#8fd0b0; --pine-soft:#183026; --shu:#ff8f80; --shu-soft:#3a1c18; --gold:#e0c070; --link:#8cc2ff; color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);font-size:16.5px;line-height:1.85}
+a{color:var(--link)}
+.wrap{max-width:880px;margin:0 auto;padding:0 16px 64px}
+.crumb{font-size:13px;color:var(--sub);padding:14px 0 0}
+.crumb a{color:var(--sub)}
+header.top{padding:26px 0 6px;position:relative}
+.seal{position:absolute;right:4px;top:26px;width:74px;height:74px;border:3px solid var(--shu);border-radius:50%;color:var(--shu);font-family:var(--h);font-weight:800;font-size:15px;line-height:1.15;display:flex;align-items:center;justify-content:center;text-align:center;transform:rotate(-12deg);opacity:.85}
+h1{font-family:var(--h);font-weight:800;font-size:clamp(28px,6.2vw,44px);line-height:1.3;margin:0 90px 10px 0;letter-spacing:.02em}
+h1 small{display:block;font-size:.46em;color:var(--pine);margin-top:6px;letter-spacing:.06em}
+.lead{margin:0 0 8px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 4px}
+.fact{background:var(--paper);border:1px solid var(--rule);border-top:4px solid var(--pine);padding:10px 12px}
+.fact b{display:block;font-family:var(--m);font-size:22px;color:var(--pine);line-height:1.3}
+.fact span{font-size:13px;color:var(--sub);line-height:1.55;display:block}
+h2{font-family:var(--h);font-weight:800;font-size:24px;margin:44px 0 12px;display:flex;gap:10px;align-items:baseline;border-bottom:2px solid var(--ink);padding-bottom:6px}
+h2 .n{font-family:var(--m);font-size:14px;color:var(--shu)}
+h3{font-size:17px;margin:22px 0 6px}
+.tabs{display:flex;gap:0;margin:8px 0 0;border-bottom:2px solid var(--pine)}
+.tabs button{font:inherit;font-size:15px;font-weight:700;padding:8px 14px;border:1px solid var(--rule);border-bottom:none;background:var(--grid);color:var(--sub);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--pine);color:#fff;border-color:var(--pine)}
+.panel{background:var(--paper);border:1px solid var(--rule);border-top:none;padding:16px 14px}
+.slipform{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--rule)}
+.slipform .col{padding:10px 12px}
+.slipform .col+.col{border-left:1px solid var(--rule)}
+.slipform h4{margin:0 0 6px;font-size:13px;letter-spacing:.2em;color:var(--sub);font-weight:700;border-bottom:1px dashed var(--rule);padding-bottom:4px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:5px 0;border-bottom:1px solid var(--grid)}
+.row:last-child{border-bottom:none}
+.row label{font-size:14.5px;line-height:1.4}
+.row label small{display:block;color:var(--sub);font-size:12px}
+.row input,.row select{width:9.5em;font:inherit;font-family:var(--m);font-size:16px;text-align:right;padding:5px 7px;border:1px solid var(--rule);background:var(--bg);color:var(--ink);border-radius:3px}
+.row select{text-align:left;font-family:var(--f);font-size:14px}
+.row input:focus,.row select:focus{outline:2px solid var(--pine);outline-offset:1px}
+.winter{margin-top:14px;padding:12px;background:var(--pine-soft);border:1px solid var(--rule)}
+.winter .row{border-bottom-color:transparent}
+.quick{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 0}
+.quick button,.btn{font:inherit;font-size:13.5px;border:1px solid var(--pine);background:var(--paper);color:var(--pine);border-radius:3px;padding:4px 10px;cursor:pointer}
+.quick button:hover,.btn:hover{background:var(--pine);color:#fff}
+.note{font-size:13.5px;color:var(--sub);margin:8px 0 0}
+.warn{background:var(--shu-soft);border-left:4px solid var(--shu);padding:8px 12px;font-size:14.5px;margin:10px 0 0}
+.warn:empty{display:none}
+/* result slip */
+.result{margin:20px 0 0;background:var(--paper);border:2px solid var(--ink);position:relative}
+.result .hd{display:flex;justify-content:space-between;align-items:baseline;padding:10px 14px;border-bottom:2px solid var(--ink);flex-wrap:wrap;gap:6px}
+.result .hd b{font-family:var(--h);font-size:20px;letter-spacing:.3em}
+.result .hd span{font-size:12.5px;color:var(--sub)}
+.rtable{width:100%;border-collapse:collapse;font-size:15px}
+.rtable th,.rtable td{padding:7px 12px;border-bottom:1px solid var(--grid);text-align:left;vertical-align:top}
+.rtable td.v{text-align:right;font-family:var(--m);white-space:nowrap}
+.rtable td.s{text-align:right;font-family:var(--m);color:var(--sub);white-space:nowrap;font-size:13.5px}
+.rtable tr.sum td{border-top:1px solid var(--ink);font-weight:700}
+.rtable th{font-size:12.5px;color:var(--sub);font-weight:700;background:var(--grid)}
+.take{display:flex;justify-content:space-between;align-items:center;padding:14px;border-top:2px solid var(--ink);gap:10px;flex-wrap:wrap}
+.take .lb{font-family:var(--h);font-weight:800;font-size:18px}
+.take .big{font-family:var(--m);font-weight:600;font-size:clamp(30px,8vw,44px);color:var(--pine);line-height:1}
+.take .sm{font-size:13px;color:var(--sub);display:block;text-align:right}
+.diff{padding:0 14px 12px;font-size:14.5px}
+.share{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.share a,.share button{font:inherit;font-size:14px;border:1px solid var(--rule);background:var(--paper);color:var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer;text-decoration:none}
+.share a:hover,.share button:hover{border-color:var(--pine)}
+table.t{width:100%;border-collapse:collapse;font-size:14.5px;background:var(--paper)}
+table.t th,table.t td{border:1px solid var(--rule);padding:7px 9px;text-align:left;vertical-align:top}
+table.t th{background:var(--grid);font-size:13.5px}
+.tw{overflow-x:auto}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.card{background:var(--paper);border:1px solid var(--rule);padding:10px 12px}
+.card b{display:block;margin-bottom:2px}
+.card p{margin:0;font-size:14.5px}
+.tag{display:inline-block;font-family:var(--m);font-size:11px;border:1px solid var(--sub);color:var(--sub);border-radius:3px;padding:0 5px;margin-right:6px}
+.pr{background:var(--paper);border:1px dashed var(--rule);padding:12px 14px;font-size:14.5px}
+details{background:var(--paper);border:1px solid var(--rule);padding:8px 12px;margin:6px 0}
+summary{cursor:pointer;font-weight:700}
+details p{margin:8px 0 2px;font-size:15px}
+ol.src{font-size:13.5px;padding-left:22px}
+ol.src li{margin:4px 0;word-break:break-all}
+footer.ft{margin-top:36px;font-size:13px;color:var(--sub);border-top:1px solid var(--rule);padding-top:12px}
+.sr{position:absolute;left:-9999px}
+@media (max-width:640px){
+  .facts{grid-template-columns:1fr}
+  .slipform{grid-template-columns:1fr}
+  .slipform .col+.col{border-left:none;border-top:1px solid var(--rule)}
+  .cards{grid-template-columns:1fr}
+  .seal{width:60px;height:60px;font-size:12px;top:20px}
+  h1{margin-right:66px}
+  .row input,.row select{width:8.2em}
+  .rtable th,.rtable td{padding:6px 8px}
+}
+@media print{.tabs,.share,.quick,.pr,.crumb{display:none}body{background:#fff}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="crumb"><a href="../">毎日ひとつの小さな道具箱</a> / Day 29</div>
+<header class="top">
+  <div class="seal" aria-hidden="true">令和八年<br>冬季<br>賞与</div>
+  <h1>冬のボーナス 手取り見込み帳<small>2026年 冬 ― 夏の明細から、行ごとに</small></h1>
+  <p class="lead">賞与から引かれる額は、社会保険料は賞与の額に料率を掛けるだけ、所得税は前月の給与で決まる率を掛けるだけです。率は夏と冬で同じ年度・同じ年の表なので、<b>夏の賞与明細の数字を写せば、冬の手取りはかなり近く出せます</b>。今年の明細には、4月分から始まった「子ども・子育て支援金」の行も入っています。</p>
+  <div class="facts">
+    <div class="fact"><b>+3.0〜5.0%</b><span>民間の冬のボーナス予測(前年比)。第一生命経済研究所 +3.0%(11/6)、三菱UFJリサーチ&コンサルティング +5.0%(11/9)</span></div>
+    <div class="fact"><b>12月10日</b><span>国家公務員の冬のボーナスの支給日。地方公務員は条例、民間は会社の規則で決まります</span></div>
+    <div class="fact"><b>0.115%</b><span>子ども・子育て支援金の本人負担(2026年度の支援金率0.23%を会社と折半)。賞与にもかかります</span></div>
+  </div>
+</header>
+
+<h2><span class="n">01</span>手取りを出す</h2>
+<div class="tabs" role="tablist">
+  <button role="tab" id="tabA" aria-selected="true" aria-controls="pA">夏の明細がある</button>
+  <button role="tab" id="tabB" aria-selected="false" aria-controls="pB">明細が手元にない</button>
+</div>
+
+<div class="panel" id="pA" role="tabpanel" aria-labelledby="tabA">
+  <p class="note" style="margin-top:0">2026年の夏(6〜8月ごろ)の賞与明細を見て、その数字をそのまま入れてください。円単位で入れてください。行がない項目は0に。初めから入っている数字は計算の例です。</p>
+  <div class="slipform">
+    <div class="col">
+      <h4>夏の明細 ― 支給</h4>
+      <div class="row"><label for="aS">賞与(総支給額)</label><input id="aS" inputmode="numeric" value="600000"></div>
+      <h4 style="margin-top:12px">夏の明細 ― 控除</h4>
+      <div class="row"><label for="aH">健康保険料<small>支援金が同じ行に入っていればそのまま</small></label><input id="aH" inputmode="numeric" value="29880"></div>
+      <div class="row"><label for="aK">介護保険料<small>40〜64歳の人</small></label><input id="aK" inputmode="numeric" value="0"></div>
+      <div class="row"><label for="aC">子ども・子育て支援金<small>別の行になっていれば</small></label><input id="aC" inputmode="numeric" value="690"></div>
+    </div>
+    <div class="col">
+      <h4>&nbsp;</h4>
+      <div class="row"><label for="aP">厚生年金保険料</label><input id="aP" inputmode="numeric" value="54900"></div>
+      <div class="row"><label for="aU">雇用保険料</label><input id="aU" inputmode="numeric" value="3000"></div>
+      <div class="row"><label for="aT">所得税</label><input id="aT" inputmode="numeric" value="41782"></div>
+      <div class="row"><label for="aO">その他の控除<small>財形・組合費など。冬も同じとみなします</small></label><input id="aO" inputmode="numeric" value="0"></div>
+    </div>
+  </div>
+  <div class="winter">
+    <div class="row"><label for="aW"><b>冬の賞与(総支給額)</b><small>会社から聞いている額か見込み</small></label><input id="aW" inputmode="numeric" value="630000"></div>
+    <div class="quick" aria-label="見込みで入れる">
+      <button type="button" data-k="same">夏と同じ</button>
+      <button type="button" data-k="p3">夏の+3%</button>
+      <button type="button" data-k="p5">夏の+5%</button>
+    </div>
+    <div class="row" style="margin-top:6px"><label for="aAge">冬の時点の年齢</label>
+      <select id="aAge"><option value="same">夏と変わらない区分</option><option value="to40">夏のあと40歳になった</option><option value="to65">夏のあと65歳になった</option></select></div>
+    <div class="row"><label for="aPrev">この年度(4月〜)の冬より前の賞与<small>夏を除く。決算賞与などがあれば</small></label><input id="aPrev" inputmode="numeric" value="0"></div>
+  </div>
+  <p class="note">入力した数字はこの端末の中で計算するだけで、どこにも送りません。</p>
+</div>
+
+<div class="panel" id="pB" role="tabpanel" aria-labelledby="tabB" hidden>
+  <p class="note" style="margin-top:0">率は毎月の給与明細や会社の案内で確かめるのが確実です。初めから入っている数字は<b>仮の値</b>なので、わかるものから置き換えてください。</p>
+  <div class="slipform">
+    <div class="col">
+      <div class="row"><label for="bW"><b>冬の賞与(総支給額)</b></label><input id="bW" inputmode="numeric" value="630000"></div>
+      <div class="row"><label for="bH">健康保険料率(本人負担 %)<small>協会けんぽは都道府県で、健保組合は組合で違う</small></label><input id="bH" inputmode="decimal" value="5.0"></div>
+      <div class="row"><label for="bAge">年齢</label><select id="bAge"><option value="u40">40歳未満</option><option value="k">40〜64歳</option><option value="o65">65歳以上</option></select></div>
+      <div class="row"><label for="bK">介護保険料率(本人負担 %)</label><input id="bK" inputmode="decimal" value="0.8"></div>
+      <div class="row"><label for="bC">支援金率(本人負担 %)</label><input id="bC" inputmode="decimal" value="0.115"></div>
+    </div>
+    <div class="col">
+      <div class="row"><label for="bP">厚生年金(本人負担 %)</label><input id="bP" inputmode="decimal" value="9.15"></div>
+      <div class="row"><label for="bInd">雇用保険の区分</label><select id="bInd"><option value="0.5">一般の事業 0.5%</option><option value="0.6">建設・農林水産・清酒製造 0.6%</option><option value="0">雇用保険に入っていない</option></select></div>
+      <div class="row"><label for="bT">所得税の率(%)<small>国税庁の算出率の表で、前月給与と扶養の数から</small></label><input id="bT" inputmode="decimal" value="6.126" list="rates"></div>
+      <datalist id="rates"><option value="0"><option value="2.042"><option value="4.084"><option value="6.126"><option value="8.168"><option value="10.21"><option value="12.252"><option value="14.294"><option value="16.336"><option value="18.378"><option value="20.42"></datalist>
+      <div class="row"><label for="bPrev">この年度(4月〜)に受けた賞与の合計<small>夏の分など。健康保険の上限の判定に使う</small></label><input id="bPrev" inputmode="numeric" value="600000"></div>
+    </div>
+  </div>
+  <p class="note">所得税の率は、2026年1月以後に払う賞与に使う「賞与に対する源泉徴収税額の算出率の表(令和8年分)」で決まります。前月の給与(社会保険料を引いた後)と扶養親族等の数の交わるところの率です。前月に給与がない場合や、賞与が前月給与の10倍を超える場合は別の計算になります(下の04)。</p>
+</div>
+
+<div class="warn" id="warn" role="status"></div>
+
+<div class="result" aria-live="polite">
+  <div class="hd"><b>賞与明細(見込み)</b><span id="rMode">2026年 冬 ・ 夏の明細から</span></div>
+  <table class="rtable">
+    <thead><tr><th>項目</th><th style="text-align:right">冬の見込み</th><th style="text-align:right" id="thSum">夏の明細</th></tr></thead>
+    <tbody id="rBody"></tbody>
+  </table>
+  <div class="take"><span class="lb">差引支給額(手取り)</span><span><span class="big" id="rTake">―</span><span class="sm" id="rRate"></span></span></div>
+  <div class="diff" id="rDiff"></div>
+</div>
+<div class="share" aria-label="送る・残す">
+  <a id="shLine" target="_blank" rel="noopener" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Falternativestudio2021-collab.github.io%2Fdaily-launch-sites%2Fday029-fuyu-bonus%2F">LINEで送る</a>
+  <a id="shX" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Falternativestudio2021-collab.github.io%2Fdaily-launch-sites%2Fday029-fuyu-bonus%2F">Xで共有</a>
+  <button type="button" id="shCopy">ページのURLをコピー</button>
+  <button type="button" id="memoCopy">計算結果を自分用にコピー</button>
+  <button type="button" onclick="window.print()">明細の形で印刷</button>
+</div>
+<p class="note">LINE・Xで送るのはページの紹介とURLだけで、入力した金額は含みません。金額を残したいときは「自分用にコピー」を使ってください。</p>
+
+<h2><span class="n">02</span>明細の行と計算のしかた</h2>
+<div class="tw"><table class="t">
+<thead><tr><th>行</th><th>何に掛けるか</th><th>本人負担の率</th><th>このページでの扱い</th></tr></thead>
+<tbody>
+<tr><td>健康保険料</td><td>標準賞与額(賞与の1,000円未満を切り捨てた額)。年度(4月〜翌3月)の合計573万円まで</td><td>加入先で違う(協会けんぽは都道府県別、健保組合は組合ごと)</td><td>夏の明細の「保険料÷夏の標準賞与額」を冬に掛けます</td></tr>
+<tr><td>介護保険料</td><td>健康保険と同じ</td><td>40〜64歳の人だけ。加入先で違う</td><td>夏に引かれていれば同じ率。夏のあと40歳になった人は下の注意を表示</td></tr>
+<tr><td>子ども・子育て支援金</td><td>健康保険と同じ</td><td>2026年度は0.115%(支援金率0.23%を折半)</td><td>明細で別の行ならその率、健康保険の行に含まれていればそのまま</td></tr>
+<tr><td>厚生年金保険料</td><td>標準賞与額。1回150万円まで</td><td>9.15%(18.3%を折半)</td><td>夏の明細の率を使い、150万円の上限をかけ直します</td></tr>
+<tr><td>雇用保険料</td><td>賞与の額そのもの(切り捨てなし)</td><td>一般の事業0.5%、建設・農林水産・清酒製造0.6%(2026年度)</td><td>夏の「保険料÷賞与」を冬に掛けます</td></tr>
+<tr><td>所得税</td><td>賞与から上の社会保険料を引いた額</td><td>前月の給与(社会保険料を引いた後)と扶養の数で決まる率。復興特別所得税を含む</td><td>夏の「所得税÷(賞与−社会保険料)」を冬に掛けます</td></tr>
+<tr><td>住民税</td><td colspan="3">賞与からは引かれません(毎月の給与から引かれます)。</td></tr>
+</tbody></table></div>
+<p class="note">1円未満の端数は、本人負担分は50銭以下を切り捨て・50銭を超えると切り上げで計算しています(会社が別の決まりで処理している場合は数円ずれます)。</p>
+
+<h2><span class="n">03</span>2026年冬のボーナスの数字</h2>
+<div class="cards">
+  <div class="card"><b>民間 +5.0%(三菱UFJリサーチ&コンサルティング)</b><p>11月9日公表。民間の1人あたり支給額は前年比+5.0%で6年連続の増加、支給総額は20.4兆円(+7.0%)の予測。</p></div>
+  <div class="card"><b>民間 +3.0%(第一生命経済研究所)</b><p>11月6日公表。資源高が重荷になる中でも企業収益は高い水準を保つとして、1人あたり+3.0%の予測。</p></div>
+  <div class="card"><b>国家公務員 平均77万9,100円</b><p>三菱UFJリサーチ&コンサルティングの予測で前年比+4.4%(一般行政職)。人事院勧告で月給と支給月数がともに上がる見込み。</p></div>
+  <div class="card"><b>支給日</b><p>国家公務員は12月10日(木)の見込み。民間は12月上旬〜中旬が多いものの、会社の就業規則しだいです。</p></div>
+</div>
+<p class="note">予測は平均の話で、自分の額は会社の業績・評価・支給月数で決まります。上の「夏の+3%」「夏の+5%」は、額を聞いていないときの目安として置いています。</p>
+
+<h2><span class="n">04</span>夏と冬で手取りの率が変わるとき</h2>
+<div class="tw"><table class="t">
+<thead><tr><th>こんなとき</th><th>何が変わるか</th></tr></thead>
+<tbody>
+<tr><td>夏のあと40歳になった</td><td>40歳の誕生日の前日がある月から介護保険料がかかります。冬の賞与から介護保険料が新しく引かれる可能性があります(率は会社の案内か毎月の給与明細で確認)。</td></tr>
+<tr><td>夏のあと65歳になった</td><td>65歳になると介護保険料は健康保険からは引かれなくなり(市区町村に納める形に変わる)、賞与から介護保険料の行がなくなります。</td></tr>
+<tr><td>11月の給与が夏の前月と大きく違う</td><td>所得税の率は「賞与を払う月の前月の給与」で決まります。残業や昇給で前月給与が変わると、率が1段上下することがあります。</td></tr>
+<tr><td>扶養する家族が増えた・減った</td><td>所得税の率の列(扶養親族等の数)が変わります。年末調整の申告書を出し直していれば会社はそれで計算します。</td></tr>
+<tr><td>冬の賞与が150万円を超える</td><td>厚生年金は1回150万円で頭打ちになり、超えた分には掛かりません。</td></tr>
+<tr><td>年度の賞与の合計が573万円を超える</td><td>健康保険・介護保険・支援金は、4月からの合計573万円を超えた分には掛かりません。</td></tr>
+<tr><td>前月に給与がない/賞与が前月給与の10倍を超える</td><td>算出率の表は使わず、月額表を使う特例で計算します(賞与を6で割って月額表に当てはめる方法など)。このページの計算は当てはまらないので、会社の担当に確認してください。</td></tr>
+</tbody></table></div>
+
+<h2><span class="n">05</span>手取りが出たら</h2>
+<p>12月は年末調整の精算もあります。2026年分は基礎控除と給与所得控除の引き上げが11月までの天引きに入っていないため、12月の給与で戻りが大きくなる人がいます。戻りの見込みは <a href="../day023-nencho-modori/">12月の戻り 見込み帳 2026</a> で出せます。冬の光熱費・燃料費の増減は <a href="../day027-fuyu-sashihiki/">この冬の 燃料と光熱 差し引き帳</a> へ。</p>
+<div class="pr">
+  <p style="margin:0 0 6px"><span class="tag">PR</span>ボーナスを貯蓄・保険・老後資金にどう振り分けるかを、FP(ファイナンシャルプランナー)に無料で相談できるサービスです。このページの計算とは関係なく、相談は任意です。</p>
+<a href="https://px.a8.net/svt/ejp?a8mat=4BEFL6+1U34XE+4GN2+1NJK7M" rel="nofollow">老後資金・資産形成をFPに無料相談！厳選プロが丁寧サポート【ガーデン】</a>
+<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=4BEFL6+1U34XE+4GN2+1NJK7M" alt="">
+</div>
+
+<h2><span class="n">06</span>よくある質問</h2>
+<details><summary>夏の明細から出した額は、どのくらい当たりますか</summary><p>社会保険料は料率が年度の途中で変わらないため、冬の額が決まっていれば数円の差に収まることが多いです。所得税は、11月の給与と扶養の数が夏の前月と同じ区分なら同じ率になります。区分が変わると率が1段(2%前後)動き、数千円〜1万円ほどずれることがあります。</p></details>
+<details><summary>「子ども・子育て支援金」の行が明細にありません</summary><p>会社によっては健康保険料の行にまとめて表示しています。2026年4月分の保険料から始まり、多くの会社では5月の給与から引かれています。賞与からも引かれるので、夏の賞与明細にあれば冬も同じ率で引かれます。</p></details>
+<details><summary>住民税は引かれないのですか</summary><p>賞与からは引かれません。住民税は前年の所得をもとに毎月の給与から引かれます(特別徴収)。今年の賞与は、来年6月からの住民税の計算に入ります。</p></details>
+<details><summary>賞与の所得税は、年末調整で戻ることがありますか</summary><p>賞与で引かれた所得税も含めて、年末調整で1年分の税額と合わせて精算されます。賞与の源泉徴収はあくまで仮の天引きです。</p></details>
+<details><summary>公務員にも使えますか</summary><p>国家公務員・地方公務員は共済組合に加入しており、掛金の率が会社員と違います。夏の期末・勤勉手当の明細から計算する「夏の明細がある」の方法なら、そのまま使えます。</p></details>
+
+<h2><span class="n">07</span>出典</h2>
+<ol class="src">
+<li>三菱UFJリサーチ&コンサルティング「2026年冬のボーナス見通し」(2026年11月9日) <a href="https://www.murc.jp/wp-content/uploads/2026/11/bonus_2611_01.pdf">https://www.murc.jp/wp-content/uploads/2026/11/bonus_2611_01.pdf</a></li>
+<li>第一生命経済研究所「2026年冬のボーナス予測」(2026年11月6日) <a href="https://www.dlri.co.jp/report/macro/672476.html">https://www.dlri.co.jp/report/macro/672476.html</a></li>
+<li>国家公務員の冬のボーナス支給日(2026年) <a href="https://bestcalendar.jp/guides/kurashi/kokka-komuin-fuyu-bonus">https://bestcalendar.jp/guides/kurashi/kokka-komuin-fuyu-bonus</a></li>
+<li>OBC 360°「子ども・子育て支援金制度」(支援金率0.23%、本人・事業主0.115%ずつ、標準賞与額×支援金率) <a href="https://www.obc.co.jp/360/list/post504">https://www.obc.co.jp/360/list/post504</a></li>
+<li>賞与の社会保険料(子ども・子育て支援金も賞与にかかる) <a href="https://ayusawa-partners.jp/column/shouyo-shahokenryo">https://ayusawa-partners.jp/column/shouyo-shahokenryo</a></li>
+<li>マネーフォワード クラウド給与 FAQ(標準賞与額の上限 健康保険 年度573万円・厚生年金 1か月150万円) <a href="https://biz.moneyforward.com/support/payroll/faq/incentive/inc05.html">https://biz.moneyforward.com/support/payroll/faq/incentive/inc05.html</a></li>
+<li>freee「雇用保険料率」(2026年度 一般の事業 労働者負担5/1000) <a href="https://www.freee.co.jp/kb/kb-trend/employment-insurance-rate/">https://www.freee.co.jp/kb/kb-trend/employment-insurance-rate/</a></li>
+<li>労働新聞「雇用保険料率を0.1%引下げ 厚労省」 <a href="https://www.rodo.co.jp/news/211724/">https://www.rodo.co.jp/news/211724/</a></li>
+<li>国税庁「賞与に対する源泉徴収税額の算出率の表(令和8年分)」 <a href="https://www.nta.go.jp/publication/pamph/gensen/zeigakuhyo2026/data/15-16.pdf">https://www.nta.go.jp/publication/pamph/gensen/zeigakuhyo2026/data/15-16.pdf</a></li>
+<li>弥生給与「月額表と算出率の表の更新(適用開始日:令和8年1月1日)」 <a href="https://support.yayoi-kk.co.jp/subcontents.html?page_id=24317">https://support.yayoi-kk.co.jp/subcontents.html?page_id=24317</a></li>
+<li>弥生給与「賞与の所得税の求め方」(前月給与がない場合・10倍を超える場合の特例) <a href="https://support.yayoi-kk.co.jp/faq_Subcontents.html?page_id=19340">https://support.yayoi-kk.co.jp/faq_Subcontents.html?page_id=19340</a></li>
+</ol>
+<footer class="ft">2026年11月16日作成。計算は公開資料をもとにした見込みで、実際の支給額・控除額は会社の給与計算で決まります。税や社会保険の個別の扱いは、勤務先の担当や税務署・年金事務所でお確かめください。<br><a href="../">毎日ひとつの小さな道具箱 一覧へ</a></footer>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"夏の明細から出した額は、どのくらい当たりますか","acceptedAnswer":{"@type":"Answer","text":"社会保険料は料率が年度の途中で変わらないため、冬の額が決まっていれば数円の差に収まることが多いです。所得税は、11月の給与と扶養の数が夏の前月と同じ区分なら同じ率になります。区分が変わると率が1段動き、数千円〜1万円ほどずれることがあります。"}},
+{"@type":"Question","name":"「子ども・子育て支援金」の行が明細にありません","acceptedAnswer":{"@type":"Answer","text":"会社によっては健康保険料の行にまとめて表示しています。2026年4月分の保険料から始まり、賞与からも引かれます。"}},
+{"@type":"Question","name":"住民税は引かれないのですか","acceptedAnswer":{"@type":"Answer","text":"賞与からは引かれません。住民税は前年の所得をもとに毎月の給与から引かれます。"}},
+{"@type":"Question","name":"賞与の所得税は、年末調整で戻ることがありますか","acceptedAnswer":{"@type":"Answer","text":"賞与で引かれた所得税も含めて、年末調整で1年分の税額と合わせて精算されます。"}},
+{"@type":"Question","name":"公務員にも使えますか","acceptedAnswer":{"@type":"Answer","text":"共済組合の掛金の率は会社員と違いますが、夏の期末・勤勉手当の明細から計算する方法ならそのまま使えます。"}}
+]}
+</script>
+<script>
+(function(){
+  var U="https://alternativestudio2021-collab.github.io/daily-launch-sites/day029-fuyu-bonus/";
+  function $(i){return document.getElementById(i)}
+  function num(i){var v=String($(i).value).replace(/[,，\s円]/g,"").replace(/[０-９．]/g,function(c){return String.fromCharCode(c.charCodeAt(0)-0xFEE0)});var n=parseFloat(v);return isFinite(n)&&n>0?n:0}
+  function yen(n){return Math.round(n).toLocaleString("ja-JP")+"円"}
+  function r50(x){return x<=0?0:Math.ceil(x-0.5)} // 50銭以下切捨て・超は切上げ
+  function std(x){return Math.floor(x/1000)*1000}
+  var mode="A", last=null;
+  function tab(m){mode=m;$("tabA").setAttribute("aria-selected",m==="A");$("tabB").setAttribute("aria-selected",m==="B");$("pA").hidden=m!=="A";$("pB").hidden=m!=="B";calc()}
+  $("tabA").addEventListener("click",function(){tab("A")});
+  $("tabB").addEventListener("click",function(){tab("B")});
+  var HCAP=5730000, PCAP=1500000;
+
+  function calc(){
+    var w=[],rows,W,res={};
+    if(mode==="A"){
+      var S=num("aS"),H=num("aH"),K=num("aK"),C=num("aC"),P=num("aP"),Uu=num("aU"),T=num("aT"),O=num("aO");
+      W=num("aW"); var prev=num("aPrev"), age=$("aAge").value;
+      if(!S){w.push("夏の賞与(総支給額)を入れてください。")}
+      var sS=std(S), sW=std(W);
+      var hBaseS=Math.min(sS,HCAP), pBaseS=Math.min(sS,PCAP);
+      var rH=hBaseS?H/hBaseS:0, rK=hBaseS?K/hBaseS:0, rC=hBaseS?C/hBaseS:0, rP=pBaseS?P/pBaseS:0, rU=S?Uu/S:0;
+      var room=Math.max(0,HCAP-sS-std(prev)); var hBaseW=Math.min(sW,room); var pBaseW=Math.min(sW,PCAP);
+      if(age==="to40"&&K===0){w.push("夏のあと40歳になった人は、冬の賞与から介護保険料が新しく引かれる可能性があります。この計算には入っていません(率は毎月の給与明細の介護保険料÷標準報酬月額で確かめられます)。")}
+      if(age==="to65"&&K>0){rK=0;w.push("65歳以降は介護保険料が賞与から引かれなくなるため、冬の介護保険料を0円にしています。")}
+      if(sW>room&&W){w.push("この年度の賞与の合計が573万円を超えるため、健康保険・介護保険・支援金は "+yen(hBaseW)+" 分だけに掛けています。")}
+      if(sW>PCAP){w.push("冬の賞与が150万円を超えるため、厚生年金は150万円で頭打ちにしています。")}
+      if(rP&&(rP<0.085||rP>0.0935)){w.push("夏の厚生年金の率が "+(rP*100).toFixed(2)+"% で、9.15%と離れています。入力の桁を確かめてください(厚生年金基金などに入っている場合はそのままで構いません)。")}
+      if(rH>0.08){w.push("夏の健康保険料の率が "+(rH*100).toFixed(2)+"% と高めです。介護保険料が同じ行に入っていないか、入力を確かめてください。")}
+      var hW=r50(hBaseW*rH), kW=r50(hBaseW*rK), cW=r50(hBaseW*rC), pW=r50(pBaseW*rP), uW=r50(W*rU);
+      var socS=H+K+C+P+Uu, socW=hW+kW+cW+pW+uW;
+      var rT=(S-socS)>0?T/(S-socS):0;
+      var tW=Math.floor(Math.max(0,W-socW)*rT);
+      var takeS=S-socS-T-O, takeW=W-socW-tW-O;
+      rows=[["賞与(総支給額)",W,S,"支給"],["健康保険料",hW,H,(rH*100).toFixed(3)+"%"],["介護保険料",kW,K,(rK*100).toFixed(3)+"%"],["子ども・子育て支援金",cW,C,(rC*100).toFixed(3)+"%"],["厚生年金保険料",pW,P,(rP*100).toFixed(2)+"%"],["雇用保険料",uW,Uu,(rU*100).toFixed(2)+"%"],["所得税",tW,T,(rT*100).toFixed(3)+"%"],["その他の控除",O,O,""]];
+      res={W:W,take:takeW,takeS:takeS,S:S,ded:socW+tW+O,rT:rT};
+      $("thSum").textContent="夏の明細(率)";
+      $("rMode").textContent="2026年 冬 ・ 夏の明細から";
+    }else{
+      W=num("bW"); var prevB=num("bPrev"), ageB=$("bAge").value;
+      var sWB=std(W), roomB=Math.max(0,HCAP-std(prevB)), hb=Math.min(sWB,roomB), pb=Math.min(sWB,PCAP);
+      var qH=num("bH")/100, qK=ageB==="k"?num("bK")/100:0, qC=num("bC")/100, qP=num("bP")/100, qU=parseFloat($("bInd").value)/100, qT=num("bT")/100;
+      if(sWB>roomB&&W){w.push("この年度の賞与の合計が573万円を超えるため、健康保険・介護保険・支援金は "+yen(hb)+" 分だけに掛けています。")}
+      if(sWB>PCAP){w.push("冬の賞与が150万円を超えるため、厚生年金は150万円で頭打ちにしています。")}
+      if(ageB==="o65"){w.push("65歳以上の人は介護保険料を賞与から引かないため0円にしています。70歳以上で厚生年金に加入していない人は、厚生年金の率を0にしてください。")}
+      w.push("健康保険・介護保険・所得税の率は仮の値から始まっています。給与明細や国税庁の算出率の表で確かめた率に置き換えると精度が上がります。");
+      var h2=r50(hb*qH),k2=r50(hb*qK),c2=r50(hb*qC),p2=r50(pb*qP),u2=r50(W*qU);
+      var soc2=h2+k2+c2+p2+u2, t2=Math.floor(Math.max(0,W-soc2)*qT);
+      rows=[["賞与(総支給額)",W,null,"支給"],["健康保険料",h2,null,(qH*100).toFixed(3)+"%"],["介護保険料",k2,null,(qK*100).toFixed(3)+"%"],["子ども・子育て支援金",c2,null,(qC*100).toFixed(3)+"%"],["厚生年金保険料",p2,null,(qP*100).toFixed(2)+"%"],["雇用保険料",u2,null,(qU*100).toFixed(2)+"%"],["所得税",t2,null,(qT*100).toFixed(3)+"%"]];
+      res={W:W,take:W-soc2-t2,ded:soc2+t2,rT:qT};
+      $("thSum").textContent="使った率";
+      $("rMode").textContent="2026年 冬 ・ 率を入れて";
+    }
+    var h="",dedSum=0;
+    rows.forEach(function(r,i){
+      if(i>0)dedSum+=r[1];
+      var right=mode==="A"?(i===0?yen(r[2]):(r[0]==="その他の控除"?yen(r[2]):yen(r[2])+" <br>"+r[3])):(i===0?"―":r[3]);
+      h+="<tr><td>"+r[0]+"</td><td class='v'>"+(i>0&&r[1]?"−":"")+yen(r[1])+"</td><td class='s'>"+right+"</td></tr>";
+    });
+    h+="<tr class='sum'><td>控除の合計</td><td class='v'>−"+yen(dedSum)+"</td><td class='s'>"+(mode==="A"?yen(res.S-res.takeS):"")+"</td></tr>";
+    $("rBody").innerHTML=h;
+    $("rTake").textContent=W?yen(res.take):"―";
+    $("rRate").textContent=W?"総支給の "+(res.take/W*100).toFixed(1)+"% が手元に":"";
+    if(mode==="A"&&res.S&&W){var d=res.take-res.takeS;$("rDiff").textContent="夏の手取り "+yen(res.takeS)+" と比べて "+(d>=0?"+":"−")+yen(Math.abs(d))+"。";}else{$("rDiff").textContent=""}
+    $("warn").innerHTML=w.map(function(x){return "・"+x}).join("<br>");
+    last={rows:rows,res:res};
+  }
+  document.querySelectorAll(".quick button").forEach(function(b){b.addEventListener("click",function(){var S=num("aS"),k=b.dataset.k;$("aW").value=Math.round(S*(k==="p3"?1.03:k==="p5"?1.05:1)/1000)*1000;calc()})});
+  document.querySelectorAll("input,select").forEach(function(e){e.addEventListener("input",calc);e.addEventListener("change",calc)});
+  var st="冬のボーナスの手取りを、夏の賞与明細の数字から行ごとに計算できるページ。子ども・子育て支援金の行も。";
+  $("shLine").href="https://line.me/R/share?text="+encodeURIComponent(st+"\n"+U);
+  $("shX").href="https://twitter.com/intent/tweet?text="+encodeURIComponent(st)+"&url="+encodeURIComponent(U);
+  function copy(x,b,done){try{if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(x).then(function(){b.textContent=done},function(){window.prompt("コピーしてください",x)});return}}catch(e){}window.prompt("コピーしてください",x)}
+  $("shCopy").addEventListener("click",function(){copy(U,this,"コピーしました")});
+  $("memoCopy").addEventListener("click",function(){if(!last)return;var t="2026年冬のボーナス 手取り見込み\n";last.rows.forEach(function(r,i){t+=r[0]+" "+(i>0?"−":"")+yen(r[1])+"\n"});t+="手取り "+yen(last.res.take)+"\n"+U;copy(t,this,"コピーしました")});
+  calc();
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
