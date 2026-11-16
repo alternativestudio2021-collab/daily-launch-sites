@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>膨らんだ・リコール・もう使わない 充電池の手放し帳|モバイルバッテリー・ポータブル電源の出し先と準備</title>
+<meta name="description" content="膨らんだモバイルバッテリー、リコール中のポータブル電源(EcoFlow RIVER Pro は11月13日に充電中の火災が公表、回収率6.5%との報道)、使わなくなった充電池。種類と状態を選ぶと、今日やること・出し先の順番・出す前の準備を並べます。自治体に電話で聞くときのメモと、家じゅうの充電池の棚卸し表も。">
+<link rel="canonical" href="https://alternativestudio2021-collab.github.io/daily-launch-sites/day030-juden-tebanashi/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="膨らんだ・リコール・もう使わない 充電池の手放し帳">
+<meta property="og:description" content="膨らんだ電池は回収箱に入れない。リコール品は使うのをやめてメーカーへ。種類と状態から、出し先の順番と出す前の準備がわかります。">
+<meta property="og:url" content="https://alternativestudio2021-collab.github.io/daily-launch-sites/day030-juden-tebanashi/">
+<meta property="og:site_name" content="毎日ひとつの小さな道具箱">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;600;700&family=Dela+Gothic+One&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+:root{
+  --bg:#ecebe6; --panel:#fbfaf6; --ink:#16181c; --sub:#5d6068; --rule:#d3d0c6;
+  --volt:#f2b705; --volt-ink:#3b2c00; --volt-soft:#fdf1c7; --hot:#c4361c; --hot-soft:#f8ddd5; --cool:#1f6f5c; --cool-soft:#d9ede6; --link:#1a56a0; --case:#26292f;
+  --h:"Dela Gothic One","IBM Plex Sans JP",sans-serif; --f:"IBM Plex Sans JP","Hiragino Sans","Noto Sans JP",sans-serif; --m:"JetBrains Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#111317; --panel:#1a1d23; --ink:#eceef2; --sub:#a4a8b2; --rule:#30343d;
+  --volt:#ffcc33; --volt-ink:#ffe38a; --volt-soft:#342a0a; --hot:#ff8466; --hot-soft:#3a1a13; --cool:#7fd3b9; --cool-soft:#123128; --link:#8fc0ff; --case:#0b0c0f; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111317; --panel:#1a1d23; --ink:#eceef2; --sub:#a4a8b2; --rule:#30343d;
+  --volt:#ffcc33; --volt-ink:#ffe38a; --volt-soft:#342a0a; --hot:#ff8466; --hot-soft:#3a1a13; --cool:#7fd3b9; --cool-soft:#123128; --link:#8fc0ff; --case:#0b0c0f; color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);font-size:16.5px;line-height:1.85}
+a{color:var(--link)}
+.wrap{max-width:880px;margin:0 auto;padding:0 16px 64px}
+.toplink{font-size:13px;padding:14px 0 0;margin:0}
+.toplink a{color:var(--sub)}
+/* hero: battery case */
+.hero{margin:16px 0 8px;background:var(--case);color:#f4f2ea;border-radius:18px;padding:22px 20px 20px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-14px;top:38%;width:28px;height:64px;border-radius:6px;background:#3a3e46}
+.cells{display:flex;gap:6px;margin-bottom:14px}
+.cells i{display:block;height:10px;flex:1;border-radius:3px;background:#3a3e46}
+.cells i.on{background:#f2b705}.cells i.red{background:#e0573b}
+.hero .tag{font-family:var(--m);font-size:12px;letter-spacing:.12em;color:#f2b705}
+.hero h1{font-family:var(--h);font-weight:400;font-size:clamp(26px,6.2vw,42px);line-height:1.32;margin:6px 0 10px;letter-spacing:.01em}
+.hero h1 b{color:#f2b705;font-weight:400}
+.hero p{margin:0;color:#d6d4cc;font-size:15.5px;max-width:42em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chips span{font-size:13px;border:1px solid #4b505a;border-radius:999px;padding:2px 10px;color:#e9e7df}
+.alert{margin:16px 0;background:var(--hot-soft);border-left:6px solid var(--hot);border-radius:10px;padding:12px 14px;font-size:15px}
+.alert b{color:var(--hot)}
+h2{font-family:var(--h);font-weight:400;font-size:clamp(20px,4.6vw,26px);line-height:1.4;margin:40px 0 10px;display:flex;gap:10px;align-items:baseline}
+h2 .n{font-family:var(--m);font-weight:700;font-size:13px;background:var(--volt);color:#2a1f00;border-radius:4px;padding:1px 7px;flex:none}
+h3{font-size:17px;margin:20px 0 6px}
+.panel{background:var(--panel);border:1px solid var(--rule);border-radius:14px;padding:16px}
+fieldset{border:0;margin:0 0 14px;padding:0}
+legend{font-weight:700;font-size:15px;margin-bottom:6px;padding:0}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt label{display:block;border:1.5px solid var(--rule);border-radius:10px;padding:9px 11px 9px 34px;cursor:pointer;font-size:15px;line-height:1.5;background:var(--bg);position:relative;min-height:44px}
+.opt label:before{content:"";position:absolute;left:11px;top:13px;width:14px;height:14px;border-radius:50%;border:2px solid var(--sub)}
+.opt input:checked+label{border-color:var(--volt);background:var(--volt-soft)}
+.opt input:checked+label:before{background:var(--volt);border-color:var(--volt)}
+.opt input:focus-visible+label{outline:3px solid var(--link);outline-offset:2px}
+.opt label small{display:block;color:var(--sub);font-size:12.5px}
+.result{margin-top:16px;display:grid;gap:12px}
+.box{border-radius:12px;padding:14px 14px 10px;border:1px solid var(--rule);background:var(--panel)}
+.box h3{margin:0 0 6px;font-size:15px;font-family:var(--m);letter-spacing:.06em}
+.box.today{border-color:var(--hot);background:var(--hot-soft)}
+.box.today h3{color:var(--hot)}
+.box.route h3{color:var(--cool)}
+.box.prep h3{color:var(--volt-ink)}
+.box ol,.box ul{margin:0 0 6px;padding-left:1.3em}
+.box li{margin:4px 0}
+.route ol{list-style:none;padding:0;counter-reset:r}
+.route ol li{counter-increment:r;position:relative;padding:8px 10px 8px 46px;border-radius:10px;background:var(--cool-soft);margin:8px 0}
+.route ol li:before{content:counter(r);position:absolute;left:10px;top:8px;width:26px;height:26px;border-radius:50%;background:var(--cool);color:var(--panel);font-family:var(--m);font-weight:700;text-align:center;line-height:26px;font-size:14px}
+.route li b{display:block}
+.route li span{font-size:14.5px;color:var(--sub)}
+.ng{font-size:14.5px;color:var(--sub);margin:6px 0 0}
+.tbl{width:100%;border-collapse:collapse;font-size:14.5px}
+.tbl th,.tbl td{border-bottom:1px solid var(--rule);padding:8px 6px;text-align:left;vertical-align:top}
+.tbl th{font-size:13px;color:var(--sub);font-weight:600}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.mono{font-family:var(--m);font-size:.95em}
+.note{font-size:13.5px;color:var(--sub)}
+input[type=text]{font:inherit;font-size:16px;width:100%;padding:9px 11px;border:1.5px solid var(--rule);border-radius:9px;background:var(--bg);color:var(--ink)}
+select{font:inherit;font-size:16px;padding:8px;border:1.5px solid var(--rule);border-radius:9px;background:var(--bg);color:var(--ink);max-width:100%}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.row label{display:block;font-size:14px;font-weight:600;margin-bottom:2px}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.btn{font:inherit;font-size:15px;font-weight:700;border:0;border-radius:10px;padding:10px 16px;background:var(--volt);color:#2a1f00;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.ghost{background:transparent;border:1.5px solid var(--rule);color:var(--ink)}
+.memo{white-space:pre-wrap;font-family:var(--m);font-size:13.5px;background:var(--bg);border:1px dashed var(--rule);border-radius:10px;padding:12px;margin:10px 0 0;line-height:1.7}
+.links a{display:inline-block;margin:4px 10px 4px 0}
+.inv{display:grid;gap:8px;margin-top:10px}
+.item{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;background:var(--bg);border-radius:10px;padding:8px 10px;border:1px solid var(--rule)}
+.item .st{font-size:12.5px;border-radius:999px;padding:1px 9px;font-weight:700}
+.st.s-ok{background:var(--cool-soft);color:var(--cool)}.st.s-bad{background:var(--hot-soft);color:var(--hot)}.st.s-chk{background:var(--volt-soft);color:var(--volt-ink)}
+.item small{display:block;color:var(--sub);font-size:12.5px}
+.item button{font:inherit;font-size:13px;border:1px solid var(--rule);background:transparent;color:var(--sub);border-radius:8px;padding:3px 8px;cursor:pointer}
+details{background:var(--panel);border:1px solid var(--rule);border-radius:12px;padding:10px 14px;margin:8px 0}
+summary{cursor:pointer;font-weight:700}
+.src{font-size:13px;color:var(--sub);padding-left:1.4em;word-break:break-all}
+.src li{margin:4px 0}
+.also{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px}
+.also a{display:block;background:var(--panel);border:1px solid var(--rule);border-radius:12px;padding:10px 12px;text-decoration:none;color:var(--ink);font-size:14.5px}
+.also a b{display:block;color:var(--link)}
+footer{margin-top:44px;padding-top:14px;border-top:1px solid var(--rule);font-size:13px;color:var(--sub)}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:8px 16px;border-radius:999px;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.show{opacity:1}
+@media (max-width:560px){.row{grid-template-columns:1fr}.hero:after{display:none}}
+@media print{.noprint,.hero,.alert,nav,footer,.toast{display:none!important}body{background:#fff;color:#000}.panel,.box{border-color:#999;background:#fff}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"膨らんだモバイルバッテリーを家電量販店の回収箱に入れてもいいですか","acceptedAnswer":{"@type":"Answer","text":"入れないでください。一般社団法人JBRCの協力店にある回収箱は、膨張・破損した電池を受け付けていません。充電と使用をやめ、燃えやすい物から離して置き、お住まいの市区町村の窓口かメーカーに出し方を問い合わせてください。"}},
+{"@type":"Question","name":"モバイルバッテリーを燃えないごみや不燃ごみに出してもいいですか","acceptedAnswer":{"@type":"Answer","text":"家庭ごみに混ぜて出すと、収集車や処理施設で押しつぶされて発火するおそれがあります。多くの自治体は有害ごみ・危険ごみとして分けるか、拠点回収にしています。出し方は市区町村ごとに違うので、自治体の案内で確認してください。"}},
+{"@type":"Question","name":"ポータブル電源は回収箱に入れられますか","acceptedAnswer":{"@type":"Answer","text":"AC100Vのコンセント出力が付いたポータブル電源は、JBRCの回収の対象外とされています。自治体の扱いも地域で大きく違うため、まずメーカーの回収窓口を確認し、なければ市区町村に相談してください。"}},
+{"@type":"Question","name":"EcoFlow RIVER Pro はファームウェアを更新していても回収の対象ですか","acceptedAnswer":{"@type":"Answer","text":"報道では、2026年9月24日に始まった自主回収はファームウェア更新済みの製品も対象で、本体を返送するとRIVER Proは4万円分、専用エクストラバッテリーは1万円分のギフトカードと交換されるとされています。更新していない人は直ちに使用をやめるよう呼びかけられています。手順はEcoFlow Technology Japanの公式案内で確認してください。"}},
+{"@type":"Question","name":"2026年4月からモバイルバッテリーの捨て方は変わりましたか","acceptedAnswer":{"@type":"Answer","text":"2026年4月1日施行の改正資源有効利用促進法で、モバイルバッテリーは指定再資源化製品になり、メーカーや輸入販売事業者に無償での回収や回収場所の公表などが求められるようになりました。利用者側に新しい義務が加わったわけではなく、家庭ごみに混ぜないことはこれまでどおりです。"}}
+]}
+</script>
+</head><body>
+<div class="wrap">
+<p class="toplink noprint"><a href="../">← 毎日ひとつの小さな道具箱</a></p>
+
+<header class="hero">
+  <div class="cells" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="red"></i><i></i></div>
+  <div class="tag">DAY 030 / 2026.11.17</div>
+  <h1>膨らんだ・リコール・もう使わない<br><b>充電池の手放し帳</b></h1>
+  <p>モバイルバッテリーとポータブル電源の「どこに出すか」は、種類と状態で変わります。選ぶだけで、今日やること・出し先の順番・出す前の準備が並びます。大掃除の前に、家じゅうの充電池を棚卸しする表も付けました。</p>
+  <div class="chips"><span>入力は端末の中だけ</span><span>出典17件</span><span>広告なし</span></div>
+</header>
+
+<div class="alert" role="note"><b>11月13日:</b> 消費者庁が、リコール中のポータブル電源 EcoFlow「RIVER Pro」(型番 <span class="mono">EFRIVER600PRO-JP</span>)で充電中に火災が起きたと公表しました(原因は調査中)。対象は約5.7万台、回収率は6.5%と報じられています<sup><a href="#r17">17</a>,<a href="#r3">3</a></sup>。<a href="#recall">対象の見分け方と返送の流れ</a></div>
+
+<h2><span class="n">01</span>種類と状態を選ぶ</h2>
+<div class="panel">
+<fieldset><legend>手放したいもの</legend><div class="opts" id="qType">
+  <div class="opt"><input type="radio" name="type" id="t1" value="mb" checked><label for="t1">モバイルバッテリー<small>スマホを充電する持ち運び用</small></label></div>
+  <div class="opt"><input type="radio" name="type" id="t2" value="ps"><label for="t2">ポータブル電源<small>家庭用コンセント(AC100V)の差込口つき</small></label></div>
+  <div class="opt"><input type="radio" name="type" id="t3" value="in"><label for="t3">電池が入った製品<small>スマホ・イヤホン・加熱式たばこ・ハンディファンなど</small></label></div>
+</div></fieldset>
+<fieldset><legend>いまの状態</legend><div class="opts" id="qState">
+  <div class="opt"><input type="radio" name="state" id="s1" value="fire"><label for="s1">煙・火花・強い焦げ臭さ<small>いま起きている</small></label></div>
+  <div class="opt"><input type="radio" name="state" id="s2" value="swell"><label for="s2">膨らんだ・へこんだ・割れた<small>落とした後に熱くなる、も含む</small></label></div>
+  <div class="opt"><input type="radio" name="state" id="s3" value="recall"><label for="s3">リコール対象かもしれない<small>ニュースやメールで見た</small></label></div>
+  <div class="opt"><input type="radio" name="state" id="s4" value="ok" checked><label for="s4">見た目は普通<small>もう使わない・買い替えた</small></label></div>
+</div></fieldset>
+<fieldset><legend>作ったメーカー</legend><div class="opts" id="qMaker">
+  <div class="opt"><input type="radio" name="maker" id="m1" value="known" checked><label for="m1">わかる・いまも販売している</label></div>
+  <div class="opt"><input type="radio" name="maker" id="m2" value="unknown"><label for="m2">わからない・撤退した・海外通販で買った</label></div>
+</div></fieldset>
+<fieldset style="margin-bottom:0"><legend>リサイクルマーク(三つの矢印と「Li-ion」)</legend><div class="opts" id="qMark">
+  <div class="opt"><input type="radio" name="mark" id="k1" value="yes"><label for="k1">ある</label></div>
+  <div class="opt"><input type="radio" name="mark" id="k2" value="no"><label for="k2">ない</label></div>
+  <div class="opt"><input type="radio" name="mark" id="k3" value="dk" checked><label for="k3">見ていない・わからない</label></div>
+</div></fieldset>
+</div>
+
+<div class="result" id="result" aria-live="polite"></div>
+<div class="btns noprint">
+  <button class="btn" type="button" id="copyPlan">この手順をコピー</button>
+  <button class="btn ghost" type="button" onclick="window.print()">印刷</button>
+</div>
+
+<h2 id="recall"><span class="n">02</span>最近のリコールで、回収が進んでいないもの</h2>
+<p>回収率は「対象の台数のうち、メーカーが回収・交換できた割合」です。低いほど、まだ家庭に残っています。型番は本体の裏や側面の印字で確かめます。</p>
+<div class="scroll"><table class="tbl">
+<thead><tr><th>製品</th><th>型番</th><th>対象</th><th>回収率(報道)</th><th>手放し方</th></tr></thead>
+<tbody>
+<tr><td>EcoFlow ポータブル電源 RIVER Pro と専用エクストラバッテリー<br><span class="note">2020年11月〜2024年4月に販売</span></td><td class="mono">EFRIVER600PRO-JP</td><td>約5.7万台(エクストラバッテリー約6,600台)</td><td>6.5%</td><td>9月24日から自主回収。ファームウェア更新済みでも対象。返送するとRIVER Proは4万円分、エクストラバッテリーは1万円分のギフトカード。返送前に残量を0%にし、同梱の耐火シートで包むよう案内されています<sup><a href="#r1">1</a>,<a href="#r2">2</a>,<a href="#r3">3</a></sup></td></tr>
+<tr><td>Anker モバイルバッテリー(PowerCore 10000 ほか)</td><td class="mono">A1257 ほか</td><td>40万1,771台</td><td>55.3%(9月24日時点)</td><td>使用をやめ、Ankerのリコール受付へ。シリアル番号で対象か確かめる案内<sup><a href="#r4">4</a>,<a href="#r5">5</a></sup></td></tr>
+<tr><td>CIO・エレコム(旧フォースメディア)などのモバイルバッテリー</td><td>各社の告知を参照</td><td colspan="2">2026年に回収の追加・掲載あり</td><td>各社の公式告知と消費者庁のリコール情報サイトで型番を照合<sup><a href="#r6">6</a></sup></td></tr>
+</tbody></table></div>
+<p class="note">この表は主なものだけです。全体は<a href="https://www.recall.caa.go.jp/" target="_blank" rel="noopener">消費者庁リコール情報サイト</a>で、製品名・メーカー名・型番を入れて検索してください。モバイルバッテリーは「リチウム電池内蔵充電器」という名前で載っていることがあります<sup><a href="#r7">7</a></sup>。</p>
+
+<h2><span class="n">03</span>自治体に電話で聞くときのメモ</h2>
+<div class="panel">
+<p style="margin-top:0">膨らんだ電池やポータブル電源の出し方は、市区町村でかなり違います(拠点で回収する、事務所へ持ち込む、収集しない、など)<sup><a href="#r8">8</a></sup>。聞かれることを先にまとめておくと、1回の電話で済みます。</p>
+<div class="row">
+  <div><label for="city">市区町村名</label><input type="text" id="city" placeholder="例: 横浜市" autocomplete="address-level2"></div>
+  <div><label for="model">メーカー・型番(わかれば)</label><input type="text" id="model" placeholder="例: ○○ A1234"></div>
+</div>
+<div class="row" style="margin-top:10px">
+  <div><label for="size">大きさ・重さの目安</label><select id="size"><option>手のひらに乗る(スマホくらい)</option><option>両手で持つ(弁当箱くらい)</option><option>持ち手つき(数kg以上)</option></select></div>
+  <div><label for="count">個数</label><select id="count"><option>1個</option><option>2個</option><option>3個</option><option>4個以上</option></select></div>
+</div>
+<div class="memo" id="callMemo"></div>
+<div class="links noprint" id="cityLinks"></div>
+<div class="btns noprint"><button class="btn" type="button" id="copyMemo">メモをコピー</button></div>
+</div>
+
+<h2><span class="n">04</span>家じゅうの充電池 棚卸し表</h2>
+<div class="panel">
+<p style="margin-top:0">引き出し・車・防災袋・子ども部屋に、使っていない充電池が眠っていませんか。1つずつ書き出すと、リコール照合と手放す順番が決めやすくなります。記録はこの端末の中だけに残ります。</p>
+<div class="row">
+  <div><label for="invName">もの(メーカー・型番)</label><input type="text" id="invName" placeholder="例: 白いモバイルバッテリー A1257"></div>
+  <div><label for="invPlace">置き場所</label><input type="text" id="invPlace" placeholder="例: 玄関の防災袋"></div>
+</div>
+<div class="row" style="margin-top:10px">
+  <div><label for="invState">状態</label><select id="invState"><option value="s-ok">普通に使える</option><option value="s-chk">リコールを調べる</option><option value="s-bad">膨らみ・発熱あり(使わない)</option></select></div>
+  <div style="display:flex;align-items:flex-end"><button class="btn" type="button" id="invAdd" style="width:100%">表に加える</button></div>
+</div>
+<div class="inv" id="inv"></div>
+<div class="btns noprint"><button class="btn ghost" type="button" id="invCopy">表をコピー</button><button class="btn ghost" type="button" onclick="window.print()">印刷</button><button class="btn ghost" type="button" id="invClear">すべて消す</button></div>
+</div>
+
+<h2><span class="n">05</span>年末の帰省・旅行で飛行機に持っていくとき</h2>
+<ul>
+<li>預け入れの荷物には入れられません。機内に持ち込みます<sup><a href="#r9">9</a></sup>。</li>
+<li>2025年7月8日から、国内の航空会社では座席上の収納棚に入れず、手元で管理するルールです<sup><a href="#r10">10</a></sup>。</li>
+<li>2026年4月24日からは、国内線・国際線とも持ち込みは1人2個まで・160Wh以下、機内でモバイルバッテリーを充電することも、モバイルバッテリーから機器を充電することもできなくなったと報じられています<sup><a href="#r11">11</a>,<a href="#r12">12</a></sup>。航空会社ごとの細かい違いは各社の案内で確かめてください。</li>
+<li>膨らんでいる・リコール対象のものは、旅行に持っていかず、上の手順で手放します。</li>
+</ul>
+
+<h2><span class="n">06</span>よくある質問</h2>
+<details><summary>膨らんだモバイルバッテリーを家電量販店の回収箱に入れてもいい?</summary><p>入れないでください。JBRCの協力店にある回収箱は、膨張・破損した電池を受け付けていません<sup><a href="#r8">8</a>,<a href="#r13">13</a></sup>。充電と使用をやめ、燃えやすい物から離して置き、市区町村の窓口かメーカーに出し方を問い合わせます。</p></details>
+<details><summary>燃えないごみ(不燃ごみ)に出してもいい?</summary><p>家庭ごみに混ぜると、収集車や処理施設で押しつぶされて発火するおそれがあります。モバイルバッテリーなどの回収をメーカーに義務づけた背景にも、ごみ処理施設での発火が相次いだことがあります<sup><a href="#r14">14</a></sup>。出し方は自治体の案内に従ってください。</p></details>
+<details><summary>ポータブル電源は回収箱に入れられる?</summary><p>AC100Vのコンセント出力が付いたポータブル電源は、JBRCの回収の対象外とされています。自治体の扱いも地域差が大きく、大手メーカーは公式の回収窓口を設けている例が多い一方、送料の扱いはメーカーで違います<sup><a href="#r15">15</a></sup>。</p></details>
+<details><summary>EcoFlow RIVER Pro はファームウェアを更新済み。それでも回収の対象?</summary><p>報道では、9月24日からの自主回収は更新済みの製品も対象です。更新していない人は直ちに使用をやめるよう呼びかけられています<sup><a href="#r1">1</a>,<a href="#r2">2</a>,<a href="#r3">3</a></sup>。申込みはEcoFlow Technology Japanの公式案内から行います。</p></details>
+<details><summary>2026年4月から、捨て方は変わった?</summary><p>2026年4月1日施行の改正資源有効利用促進法で、モバイルバッテリー・スマートフォン・加熱式たばこの機器が指定再資源化製品になり、メーカーや輸入販売事業者に無償の回収や回収場所の公表などが求められるようになりました。利用者に新しい義務が加わったわけではなく、家庭ごみに混ぜないことはこれまでどおりです<sup><a href="#r14">14</a>,<a href="#r16">16</a></sup>。</p></details>
+
+<h2><span class="n">07</span>あわせて使える道具</h2>
+<div class="also">
+  <a href="../day021-bichiku-sandan/"><b>備蓄の算段帳 3日・1週間ぶん</b>防災袋のモバイルバッテリーを入れ替えるついでに、水・食料・トイレの量を確かめる</a>
+  <a href="../day027-fuyu-sashihiki/"><b>この冬の 燃料と光熱 差し引き帳</b>12月からの灯油・ガソリン・電気代の差し引き</a>
+  <a href="../day028-kani-denwa/"><b>カニ・いくらの電話が来たら 家族の断り帳</b>年末に増える電話勧誘への備え</a>
+</div>
+
+<h2><span class="n">08</span>出典</h2>
+<ol class="src">
+<li id="r1">ライブドアニュース「EcoFlowがRIVER Proの自主回収を開始、発煙・発火事象を受け5.7万台が対象」(2026年9月24日) https://news.livedoor.com/topics/detail/32398801/</li>
+<li id="r2">PHILE WEB「EcoFlowポータブル電源『RIVER Pro』に発煙・発火のおそれ、9月24日から自主回収」https://gadget.phileweb.com/post-133151/</li>
+<li id="r3">テクノエッジ(Yahoo!ニュース)「リコール中のEcoFlow『RIVER Pro』でまた火災、回収率は6.5%。ファームウェア更新済みでも4万円ギフトカードと交換可能」https://news.yahoo.co.jp/articles/11d18acda02838502d1c1b3cec90a0367c1ce5eb</li>
+<li id="r4">おたくま経済新聞「Ankerのリコール対象モバイルバッテリーで火災 約40万台対象、回収率55.3%」https://otakuma.net/archives/2026092803.html</li>
+<li id="r5">smartwatchlife「Anker PowerCore 10000のリコール対象品で火災(消費者庁公表)」https://www.smartwatchlife.jp/79661/</li>
+<li id="r6">MONOist「リコール製品情報まとめ(2026年9月版)」https://monoist.itmedia.co.jp/mn/articles/2610/19/news004_2.html</li>
+<li id="r7">でんちすて「モバイルバッテリーのリコール確認方法」https://www.denchisute.jp/mobile-battery-recall-check/</li>
+<li id="r8">つぶログ「モバイルバッテリーはどこに捨てる?膨張・破損・リサイクルマークなし・メーカー不明まで整理」(札幌市・横浜市・大阪市の例)https://uniquerui.com/tblog/mobile-battery-disposal/</li>
+<li id="r9">関西国際空港「モバイルバッテリーの機内持ち込みについて」https://www.kansai-airport.or.jp/notice/19856</li>
+<li id="r10">中部国際空港 お知らせ https://www.centrair.jp/news/1319705_1781.html</li>
+<li id="r11">PC Watch https://pc.watch.impress.co.jp/docs/news/2101717.html</li>
+<li id="r12">SMBC信託銀行 GLOBAL COMPASS「モバイルバッテリーの機内持ち込み」https://www.smbctb.co.jp/globalcompass/tips/power-bank/</li>
+<li id="r13">膨らんだモバイルバッテリーの捨て方(webernote)https://www.webernote.net/lifehack/swollen-mobile-battery-disposal.html</li>
+<li id="r14">ITmedia Mobile「スマホやモバイルバッテリーの回収義務付けの方針、2026年4月から 発火事故低減にも」https://www.itmedia.co.jp/mobile/spv/2508/14/news097.html</li>
+<li id="r15">ポータブル電源の処分・廃棄方法(shauninjapan)https://shauninjapan.jp/how-to-dispose-of-a-portable-power-supply/</li>
+<li id="r16">worktypeslab「モバイルバッテリーの捨て方2026|4月からメーカー回収は本体ごとに」https://www.worktypeslab.com/mobile-battery-sutekata-2026/</li>
+<li id="r17">消費者庁「消費生活用製品の重大製品事故:リコール製品で火災等(ポータブル電源(リチウムイオン))(11月13日)」https://www.caa.go.jp/notice/entry/048140</li>
+</ol>
+
+<footer>
+  <p>2026年11月17日公開。制度・リコールの内容は公開日時点の報道と公表資料にもとづきます。対象かどうかの最終確認は、メーカーの公式告知と消費者庁リコール情報サイトで行ってください。出し方は市区町村の案内が優先です。このページに広告・アフィリエイトはありません。</p>
+  <p><a href="../">毎日ひとつの小さな道具箱</a> に戻る</p>
+</footer>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function(){
+var $=function(id){return document.getElementById(id)};
+function val(n){var e=document.querySelector('input[name="'+n+'"]:checked');return e?e.value:""}
+function toast(t){var e=$("toast");e.textContent=t;e.classList.add("show");setTimeout(function(){e.classList.remove("show")},1600)}
+function copy(t){if(navigator.clipboard){navigator.clipboard.writeText(t).then(function(){toast("コピーしました")},function(){fallback(t)})}else fallback(t)}
+function fallback(t){var a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();try{document.execCommand("copy");toast("コピーしました")}catch(e){}document.body.removeChild(a)}
+var NAME={mb:"モバイルバッテリー",ps:"ポータブル電源",in:"電池が入った製品"};
+var plain="";
+
+function plan(){
+  var t=val("type"),s=val("state"),m=val("maker"),k=val("mark");
+  var today=[],route=[],prep=[],ng=[];
+  if(s==="fire"){
+    today.push("離れて119番へ。水をかけるか、消火器を使うかは消防の指示に従う。");
+    today.push("煙を吸わないよう部屋の窓を開け、家族を別の部屋へ。");
+    today.push("火が収まっても、すぐ素手で触らない。");
+  }
+  if(s==="swell"){
+    today.push("充電・使用をやめ、充電ケーブルを抜く。");
+    today.push("押さない・曲げない・穴をあけない。燃えやすい物(紙・布・カーテン)から離し、直射日光や暖房器具のそばを避けて置く。");
+    today.push("端子(差込口)に絶縁テープを貼る。");
+  }
+  if(s==="recall"){
+    today.push("本体の型番・シリアル番号(バッチコード)を書き写す。");
+    today.push("消費者庁リコール情報サイトかメーカーの告知で照合する。対象なら、その日から使わない。");
+  }
+  if(s==="ok"){
+    today.push("型番を書き写し、念のためリコール対象でないか照合しておく。");
+  }
+
+  // route
+  if(s==="recall"){
+    route.push(["メーカーのリコール受付","返送の方法・送料・交換や返金の条件はメーカーの案内どおりに。EcoFlow RIVER Pro は更新済みでも対象です。"]);
+    route.push(["わからないときは消費者庁リコール情報サイト","製品名・メーカー名で検索。「リチウム電池内蔵充電器」の名前で載っていることがあります。"]);
+  } else if(s==="swell"||s==="fire"){
+    if(m==="known") route.push(["メーカーの問い合わせ窓口","状態を伝え、回収してもらえるか聞く。2026年4月からモバイルバッテリーはメーカーの無償回収の対象です。"]);
+    route.push(["市区町村の清掃・ごみの窓口","膨張品を拠点で回収する、事務所へ持ち込む、など地域で違います。下の「電話で聞くときのメモ」を使うと早いです。"]);
+    if(m!=="known") route.push(["それでも引き取り先がないとき","自治体に紹介された処理業者に頼む。費用がかかることがあります。"]);
+    ng.push("JBRCの回収箱(家電量販店などの黄色い箱)には入れない。膨張・破損品は対象外です。");
+  } else {
+    if(t==="mb"){
+      if(m==="known") route.push(["メーカーの回収","2026年4月から、メーカーと輸入販売事業者に無償回収と回収場所の公表が求められています。公式サイトの「回収」「リサイクル」の案内を見る。"]);
+      if(k!=="no") route.push(["JBRCの協力店・協力自治体の回収箱","家電量販店などにある回収箱。JBRC会員の製品が対象なので、リサイクルマークとメーカーを確かめてから。"]);
+      route.push(["市区町村の回収","有害ごみ・危険ごみの日、公共施設の回収箱など。出し方は自治体ごとに違います。"]);
+    } else if(t==="ps"){
+      if(m==="known") route.push(["メーカーの回収窓口","大手は公式の回収窓口を設けている例が多い。送料の扱い(自己負担か)と、残量の指定を確かめる。"]);
+      route.push(["市区町村に相談","有害ごみとして集める自治体もあれば、収集しない自治体もあります。"]);
+      route.push(["処理業者・買い取り","メーカーが撤退している場合など。動くものは買い取りや譲渡も選べます。"]);
+      ng.push("JBRCの回収箱には入れない。AC100V出力つきのポータブル電源は対象外とされています。");
+    } else {
+      route.push(["メーカー・販売店・携帯電話会社の回収","スマートフォンと加熱式たばこの機器も、2026年4月からメーカーの回収の対象になりました。"]);
+      route.push(["市区町村の小型家電回収","回収箱や拠点回収。電池を外せる製品は、外して別に出すよう求める自治体もあります。"]);
+    }
+  }
+  if(m!=="known" && s==="ok") route.push(["メーカーがわからないとき","自治体の窓口に相談。海外通販の製品は回収先が見つからないことがあります。"]);
+
+  // prep
+  if(s!=="fire"){
+    prep.push("端子や差込口をビニールテープなどで絶縁する(ほかの金属や電池と触れて発熱するのを防ぐ)。");
+    prep.push("出すまでは、燃えやすい物から離し、高温になる場所(車内・暖房器具のそば・直射日光)を避けて置く。");
+    if(s==="recall"||t==="ps") prep.push("残量の指定(例: EcoFlow RIVER Pro の返送は0%まで使い切る)や梱包の方法は、メーカーの案内に従う。");
+    prep.push("型番と状態、出した日をメモしておく(下の棚卸し表が使えます)。");
+  }
+  ng.push("家庭ごみ(燃えるごみ・燃えないごみ)に混ぜない。収集車や処理施設で発火するおそれがあります。");
+  if(s==="swell") ng.push("膨らみを押して戻そうとしない。");
+
+  var h='';
+  h+='<div class="box today"><h3>TODAY 今日やること</h3><ol>'+today.map(function(x){return"<li>"+x+"</li>"}).join("")+'</ol></div>';
+  if(s!=="fire"){
+    h+='<div class="box route"><h3>ROUTE 出し先の順番('+NAME[t]+')</h3><ol>'+route.map(function(r){return"<li><b>"+r[0]+"</b><span>"+r[1]+"</span></li>"}).join("")+'</ol>';
+    h+='<p class="ng">'+ng.map(function(x){return"× "+x}).join("<br>")+'</p></div>';
+    h+='<div class="box prep"><h3>PREP 出す前の準備</h3><ul>'+prep.map(function(x){return"<li>"+x+"</li>"}).join("")+'</ul></div>';
+  } else {
+    h+='<div class="box route"><h3>落ち着いたら</h3><p style="margin:0 0 6px">火が収まり、消防の確認が済んだら、「膨らんだ・へこんだ・割れた」を選んで出し先を確かめてください。メーカーにも状況を伝えます。</p></div>';
+  }
+  $("result").innerHTML=h;
+  plain="【"+NAME[t]+"の手放し方】\n今日やること\n"+today.map(function(x,i){return(i+1)+". "+x}).join("\n");
+  if(s!=="fire"){plain+="\n\n出し先の順番\n"+route.map(function(r,i){return(i+1)+". "+r[0]+" — "+r[1]}).join("\n")+"\n\nやらないこと\n"+ng.map(function(x){return"・"+x}).join("\n")+"\n\n出す前の準備\n"+prep.map(function(x){return"・"+x}).join("\n");}
+  plain+="\n\n"+location.href.split("#")[0];
+  memo();
+}
+function memo(){
+  var t=val("type"),s=val("state"),k=val("mark");
+  var city=$("city").value.trim();
+  var stT={fire:"発煙・発火があった",swell:"膨らんでいる/へこみ・割れがある",recall:"リコール対象の可能性がある",ok:"見た目に異常はない"}[s];
+  var mkT={yes:"あり",no:"なし",dk:"未確認"}[k];
+  var m=(city?city+" ":"")+"清掃・ごみの窓口に確認したいこと\n"
+   +"・種類: "+NAME[t]+"\n"
+   +"・メーカー/型番: "+($("model").value.trim()||"(不明)")+"\n"
+   +"・状態: "+stT+"\n"
+   +"・大きさ: "+$("size").value+" / 個数: "+$("count").value+"\n"
+   +"・リサイクルマーク: "+mkT+"\n"
+   +"聞くこと\n 1) 何ごみ(どの回収)に出せるか、収集日に出せるか持ち込みか\n 2) 出すときの包み方・テープなどの指定\n 3) 市で受けられない場合の紹介先";
+  $("callMemo").textContent=m;
+  var L=$("cityLinks");
+  if(city){
+    var q1=city+" モバイルバッテリー 膨張 出し方", q2=city+" ポータブル電源 処分", q3=city+" 小型充電式電池 回収";
+    L.innerHTML='自治体のページを探す: '+[q1,q2,q3].map(function(q){return'<a href="https://www.google.com/search?q='+encodeURIComponent(q)+'" target="_blank" rel="noopener">'+q+'</a>'}).join(" ");
+  } else L.textContent="市区町村名を入れると、自治体のページを探す検索リンクを出します。";
+}
+["qType","qState","qMaker","qMark"].forEach(function(id){$(id).addEventListener("change",plan)});
+["city","model","size","count"].forEach(function(id){$(id).addEventListener("input",memo);$(id).addEventListener("change",memo)});
+$("copyPlan").addEventListener("click",function(){copy(plain)});
+$("copyMemo").addEventListener("click",function(){copy($("callMemo").textContent)});
+
+// inventory
+var KEY="day030-inv";var items=[];
+try{items=JSON.parse(localStorage.getItem(KEY)||"[]")||[]}catch(e){items=[]}
+var LBL={"s-ok":"使える","s-chk":"リコールを調べる","s-bad":"使わない・手放す"};
+function save(){try{localStorage.setItem(KEY,JSON.stringify(items))}catch(e){}}
+function esc(x){return String(x).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function render(){
+  var el=$("inv");
+  if(!items.length){el.innerHTML='<p class="note" style="margin:0">まだありません。</p>';return}
+  el.innerHTML=items.map(function(it,i){return'<div class="item"><div><b>'+esc(it.n)+'</b><small>'+esc(it.p||"置き場所未記入")+' ・ '+esc(it.d)+'</small></div><div><span class="st '+it.s+'">'+LBL[it.s]+'</span> <button type="button" data-i="'+i+'" class="noprint">消す</button></div></div>'}).join("");
+}
+$("invAdd").addEventListener("click",function(){
+  var n=$("invName").value.trim();if(!n){$("invName").focus();return}
+  var d=new Date();items.push({n:n,p:$("invPlace").value.trim(),s:$("invState").value,d:(d.getMonth()+1)+"/"+d.getDate()+"記入"});
+  $("invName").value="";$("invPlace").value="";save();render();
+});
+$("inv").addEventListener("click",function(e){var b=e.target.closest("button[data-i]");if(!b)return;items.splice(+b.getAttribute("data-i"),1);save();render()});
+$("invCopy").addEventListener("click",function(){copy("充電池の棚卸し\n"+items.map(function(it){return"・"+it.n+"("+(it.p||"-")+")"+LBL[it.s]}).join("\n"))});
+$("invClear").addEventListener("click",function(){if(confirm("棚卸し表をすべて消しますか")){items=[];save();render()}});
+render();plan();
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
