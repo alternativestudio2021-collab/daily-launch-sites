@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>12月1日の値上げ 家族の回線 差額帳|ドコモ・ahamo・irumo・ソフトバンクエアー</title>
+<meta name="description" content="12月1日利用分から、ドコモの多くのプランが月110〜550円上がり、ahamoは大盛りオプションが終わって40GB・60GB・120GBの段階制になります。家族の回線を並べると月と1年の差額を出し、ahamoは過去6か月の使用量から上限の設定ごとの損得を比べます。">
+<link rel="canonical" href="https://alternativestudio2021-collab.github.io/daily-launch-sites/day031-keitai-sagaku/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="12月1日の値上げ 家族の回線 差額帳">
+<meta property="og:description" content="eximo・ギガホ系は月550円、irumoとギガライト系は330円、ahamoは165円。家族の回線を並べて、月と1年でいくら上がるかを出します。ahamo大盛りの人は使用量しだいで下がる月も。">
+<meta property="og:url" content="https://alternativestudio2021-collab.github.io/daily-launch-sites/day031-keitai-sagaku/">
+<meta property="og:site_name" content="毎日ひとつの小さな道具箱">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap">
+<style>
+:root{
+  --bg:#e7ecea; --paper:#fffef9; --ink:#1c2326; --sub:#5b6569; --rule:#cfd6d3; --dash:#b8c1bd;
+  --up:#b3261e; --up-soft:#fbe4e1; --down:#1d6b52; --down-soft:#dcefe7; --mark:#2e4a62; --mark-soft:#e2eaf1; --warn:#8a5a00; --warn-soft:#fbefd2; --link:#1d5a99;
+  --f:"Zen Kaku Gothic New","Hiragino Sans","Noto Sans JP",sans-serif; --m:"Space Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f1314; --paper:#181d1f; --ink:#e8eeec; --sub:#a1abae; --rule:#2c3437; --dash:#3a4447;
+  --up:#ff8a7f; --up-soft:#3a1714; --down:#79d3b0; --down-soft:#10302a; --mark:#9cc0e0; --mark-soft:#16232f; --warn:#f2c06b; --warn-soft:#33270d; --link:#8cbcf2; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1314; --paper:#181d1f; --ink:#e8eeec; --sub:#a1abae; --rule:#2c3437; --dash:#3a4447;
+  --up:#ff8a7f; --up-soft:#3a1714; --down:#79d3b0; --down-soft:#10302a; --mark:#9cc0e0; --mark-soft:#16232f; --warn:#f2c06b; --warn-soft:#33270d; --link:#8cbcf2; color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);font-size:16.5px;line-height:1.85}
+a{color:var(--link)}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px 64px}
+.toplink{font-size:13px;padding:14px 0 0;margin:0}
+.toplink a{color:var(--sub)}
+.num{font-family:var(--m);font-variant-numeric:tabular-nums}
+/* hero = 明細の紙 */
+.bill{margin:16px 0 10px;background:var(--paper);border-radius:4px;padding:22px 20px 26px;position:relative;box-shadow:0 1px 0 var(--rule)}
+.bill:before,.bill:after{content:"";position:absolute;left:0;right:0;height:10px;background:radial-gradient(circle at 7px 0,var(--bg) 6px,transparent 6.5px) repeat-x;background-size:14px 10px}
+.bill:before{top:0}
+.bill:after{bottom:-1px;transform:rotate(180deg)}
+.bill .tag{font-family:var(--m);font-size:12px;letter-spacing:.14em;color:var(--sub);margin-top:6px}
+h1{font-size:clamp(25px,6vw,38px);line-height:1.3;margin:.25em 0 .4em;font-weight:900;letter-spacing:.01em}
+.lead{margin:0 0 14px}
+.rows{border-top:1.5px dashed var(--dash);margin-top:10px}
+.rows div{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dotted var(--dash);font-size:15px}
+.rows b{font-family:var(--m);color:var(--up);white-space:nowrap}
+.rows .dn{color:var(--down)}
+.stamp{display:inline-block;margin-top:14px;border:2px solid var(--up);color:var(--up);padding:2px 10px;border-radius:4px;font-weight:700;font-size:14px;transform:rotate(-2deg)}
+nav.toc{font-size:14px;margin:14px 0 6px;display:flex;flex-wrap:wrap;gap:6px 14px}
+h2{font-size:22px;margin:44px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--ink);font-weight:900}
+h2 .no{font-family:var(--m);font-size:14px;color:var(--sub);margin-right:8px}
+h3{font-size:17px;margin:22px 0 6px}
+.panel{background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:16px}
+.note{font-size:14px;color:var(--sub)}
+label{font-size:14px;font-weight:700;display:block;margin-bottom:2px}
+input,select,button{font:inherit;font-size:16px}
+input,select{width:100%;padding:8px 10px;border:1px solid var(--rule);border-radius:6px;background:var(--paper);color:var(--ink)}
+button{cursor:pointer;border:1.5px solid var(--ink);background:var(--ink);color:var(--paper);padding:8px 14px;border-radius:6px;font-weight:700}
+button.ghost{background:transparent;color:var(--ink)}
+button.small{font-size:13px;padding:4px 10px}
+.line{border:1px solid var(--rule);border-radius:8px;padding:12px;margin-bottom:10px;background:var(--paper)}
+.line .grid{display:grid;grid-template-columns:1fr 2fr;gap:8px 10px}
+.line .grid .full{grid-column:1/-1}
+.line .meta{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap}
+.pill{font-size:12.5px;padding:2px 8px;border-radius:99px;background:var(--mark-soft);color:var(--mark)}
+.pill.w{background:var(--warn-soft);color:var(--warn)}
+.diff{font-family:var(--m);font-weight:700;font-size:18px}
+.diff.up{color:var(--up)}.diff.dn{color:var(--down)}.diff.zero{color:var(--sub)}
+.total{margin-top:14px;background:var(--ink);color:var(--paper);border-radius:10px;padding:16px}
+.total .big{font-family:var(--m);font-size:clamp(26px,7vw,36px);font-weight:700;line-height:1.2}
+.total .sm{font-size:14px;opacity:.85}
+.total .flex{display:flex;gap:22px;flex-wrap:wrap}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.months{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+.months input{text-align:right;padding:8px 6px}
+@media(max-width:560px){.months{grid-template-columns:repeat(3,1fr)}.line .grid{grid-template-columns:1fr}}
+.tbl{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:10px}
+.tbl th,.tbl td{border-bottom:1px solid var(--rule);padding:7px 6px;text-align:right;vertical-align:top}
+.tbl th:first-child,.tbl td:first-child{text-align:left}
+.tbl thead th{font-size:13px;color:var(--sub);font-weight:700}
+.tbl td.num{white-space:nowrap}
+.scroll{overflow-x:auto}
+.best{background:var(--down-soft)}
+.callout{border-left:4px solid var(--warn);background:var(--warn-soft);padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0;font-size:15px}
+.callout.blue{border-color:var(--mark);background:var(--mark-soft)}
+ol.check{padding-left:1.3em}
+ol.check li{margin-bottom:8px}
+details{border-bottom:1px solid var(--rule);padding:8px 0}
+summary{cursor:pointer;font-weight:700}
+.src{font-size:13px;word-break:break-all}
+.src li{margin-bottom:4px}
+.related a{display:block;margin:4px 0}
+footer{margin-top:44px;padding-top:14px;border-top:1px solid var(--rule);font-size:13px;color:var(--sub)}
+.toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:8px 16px;border-radius:99px;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.on{opacity:1}
+@media print{.noprint,nav,footer,.toast{display:none!important}body{background:#fff;color:#000}.panel,.line{border-color:#999;background:#fff}.total{background:#fff;color:#000;border:2px solid #000}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"手続きをしないと値上げされないのですか","acceptedAnswer":{"@type":"Answer","text":"いいえ。報道とドコモの案内によると、既存の契約者にも12月1日の利用分から新しい料金が自動で適用されます。申し込みは要りません。"}},
+{"@type":"Question","name":"ahamoの大盛りオプションを付けている人はどうなりますか","acceptedAnswer":{"@type":"Answer","text":"大盛りオプションは11月30日で終わり、自動で外れます。12月からはその月に使ったデータ量で、40GBまで3,135円、60GBまで4,125円、120GBまで5,115円(税込)の段階で決まります。これまでの4,950円(2,970円+大盛り1,980円)と比べ、使用量が60GB以下の月は下がり、60GBを超える月は165円上がります。"}},
+{"@type":"Question","name":"大盛りを付けていないahamoの人は40GBを超えると4,125円になりますか","acceptedAnswer":{"@type":"Answer","text":"解説記事によると、大盛り未契約の人には12月1日に40GBの上限が自動で設定されるため、超えても速度が落ちるだけで3,135円のままとされています。上限を外したり60GBにしたりすると段階で料金が変わるので、設定はahamoのサイトで確かめてください。"}},
+{"@type":"Question","name":"値上げの対象にならないプランはありますか","acceptedAnswer":{"@type":"Answer","text":"報道では、ドコモ MAX、ポイ活 MAX、ポイ活 20、ドコモ mini は今回の改定の対象外とされています。"}},
+{"@type":"Question","name":"5Gギガホ プレミアの値上げ額は550円ですか330円ですか","acceptedAnswer":{"@type":"Answer","text":"解説記事によって550円と330円に分かれています。このページでは550円を初期値にしていますが、My docomoの料金案内か、ドコモの料金改定のお知らせで自分のプランの額を確かめ、差額帳の金額欄を書き換えてください。"}}
+]}
+</script>
+</head><body>
+<div class="wrap">
+<p class="toplink"><a href="../">毎日ひとつの小さな道具箱</a> / Day 031</p>
+
+<header class="bill">
+  <div class="tag">2026.12.01 ご利用分から ― 料金改定</div>
+  <h1>12月1日の値上げ<br>家族の回線 差額帳</h1>
+  <p class="lead">ドコモは12月1日の利用分から、受付を終えた旧プランを中心に月110〜550円の値上げをします。ahamoは大盛りオプションが11月30日で終わり、40GB・60GB・120GBの段階制になります。手続きをしなくても、既存の契約に自動で適用されます。家族の回線を並べて、月と1年でいくら変わるかを出します。</p>
+  <div class="rows">
+    <div><span>eximo・5Gギガホ系</span><b>+550円/月</b></div>
+    <div><span>irumo 3・6・9GB・5Gギガライト系</span><b>+330円/月</b></div>
+    <div><span>ahamo(40GBまで 2,970円→3,135円)</span><b>+165円/月</b></div>
+    <div><span>irumo 0.5GB・データプラス系</span><b>+110円/月</b></div>
+    <div><span>ahamo 大盛りの人(使用量60GB以下の月)</span><b class="dn">−825〜−1,815円</b></div>
+    <div><span>ドコモ MAX・ポイ活 MAX・ポイ活 20・mini</span><b class="dn">対象外</b></div>
+  </div>
+  <span class="stamp">手続き不要・自動で適用</span>
+  <p class="note" style="margin:12px 0 0">金額は税込。報道と各社の告知をもとに11月18日に整理(出典は下)。このページはドコモ・ソフトバンクとは関係のない個人の道具です。</p>
+</header>
+
+<nav class="toc noprint"><a href="#calc">01 家族の差額帳</a><a href="#ahamo">02 ahamo 使用量で比べる</a><a href="#todo">03 11月中に見ておくこと</a><a href="#faq">04 よくある問い</a><a href="#src">出典</a></nav>
+
+<h2 id="calc"><span class="no">01</span>家族の回線を並べる</h2>
+<p>回線ごとに、契約しているプランを選んでください。上がる額は自動で入りますが、My docomoの案内と違うときは書き換えられます。入力はこの端末の中だけに保存されます。</p>
+<div id="lines"></div>
+<div class="btns noprint">
+  <button type="button" id="addLine">回線を足す</button>
+  <button type="button" class="ghost" id="reset">はじめから</button>
+</div>
+<div class="total" aria-live="polite">
+  <div class="flex">
+    <div><div class="sm">ひと月の差</div><div class="big" id="tMonth">0円</div></div>
+    <div><div class="sm">1年(12か月)の差</div><div class="big" id="tYear">0円</div></div>
+  </div>
+  <div class="sm" id="tNote" style="margin-top:8px"></div>
+</div>
+<div class="btns noprint">
+  <button type="button" class="ghost" id="copySum">結果を文字でコピー</button>
+  <button type="button" class="ghost" onclick="window.print()">印刷する</button>
+</div>
+<p class="note">家族割・光回線とのセット割・dカードお支払割などの割引額は今回の改定で変わらない前提で、割引前の月額の差だけを足しています。端末代・通話料・オプションは含みません。</p>
+
+<h2 id="ahamo"><span class="no">02</span>ahamo:過去6か月の使用量で比べる</h2>
+<p>ahamoはこれまで30GBで2,970円、大盛りオプションを付けると110GBで4,950円でした。12月からはその月に使った量で料金が決まります。My docomo(ahamoアプリ)の「データ量」で過去の月ごとの使用量を見て、入れてください。</p>
+<div class="panel">
+  <label for="oomori">いまの契約</label>
+  <select id="oomori">
+    <option value="no">大盛りオプションなし(2,970円)</option>
+    <option value="yes">大盛りオプションあり(4,950円)</option>
+  </select>
+  <label style="margin-top:12px">月ごとの使用量(GB)</label>
+  <div class="months" id="months"></div>
+  <div class="scroll"><table class="tbl" id="ahamoTbl"></table></div>
+  <div id="ahamoMsg"></div>
+</div>
+<div class="callout blue">40GB・60GBの上限は無料で設定できると報じられています。上限を超えると通信速度が落ちますが、料金はその段で止まります。大盛り未契約の人は、12月1日に40GBの上限が自動で設定されると解説記事は伝えています(解除や変更はahamoのサイトで)。</div>
+
+<h2 id="todo"><span class="no">03</span>11月中に見ておくこと</h2>
+<ol class="check">
+  <li><b>家族全員のプラン名を確かめる。</b>My docomoの「ご契約内容」に出ます。「5Gギガホ プレミア」「ギガライト」など、受付を終えたプランほど上がる額が大きい傾向です。</li>
+  <li><b>ahamoで大盛りを付けている人は、過去の使用量を見る。</b>60GB以下の月が多いなら12月から安くなります。毎月60GBを超える人は165円の値上げです。</li>
+  <li><b>ポイ活オプションの人は月7,150円→7,315円。</b>大盛り+ポイ活の組み合わせは12月から120GBの5,115円+2,200円になると報じられています。</li>
+  <li><b>ドコモ mini の新規受付は11月30日まで</b>と報じられています。12月1日からは新プラン「ドコモ mini2」が始まります。mini は今回の値上げの対象外です。</li>
+  <li><b>ソフトバンクエアーは12月1日から月330円上がります</b>(既存の契約者も対象)。SoftBank 光は、自動更新ありプランの人は12月以降の契約満了月の翌月から改定後の料金になると案内されています。</li>
+  <li><b>乗り換えを考えるなら</b>、端末の残りの支払い、家族割の人数が減ることによるほかの回線への影響、光回線とのセット割、メールアドレスの持ち運びを先に確かめてください。このページは特定の会社への乗り換えを勧めるものではありません。</li>
+</ol>
+
+<h2 id="faq"><span class="no">04</span>よくある問い</h2>
+<details><summary>手続きをしないと値上げされないのですか</summary><p>いいえ。既存の契約者にも12月1日の利用分から新しい料金が自動で適用されると、ドコモの案内と各社の報道が伝えています。申し込みは要りません。</p></details>
+<details><summary>ahamoの大盛りオプションを付けている人はどうなりますか</summary><p>大盛りオプションは11月30日で終わり、自動で外れます。12月からは使ったデータ量で、40GBまで3,135円、60GBまで4,125円、120GBまで5,115円です。これまでの4,950円と比べて、40GB以下の月は1,815円、40〜60GBの月は825円下がり、60GBを超える月は165円上がります。</p></details>
+<details><summary>大盛りなしのahamoで40GBを超えたら4,125円になりますか</summary><p>解説記事によると、大盛り未契約の人には12月1日に40GBの上限が自動で設定され、超えても速度が落ちるだけで3,135円のままとされています。上限を外すと段階で料金が変わります。</p></details>
+<details><summary>値上げの対象にならないプランはありますか</summary><p>ドコモ MAX、ポイ活 MAX、ポイ活 20、ドコモ mini は対象外と報じられています。</p></details>
+<details><summary>5Gギガホ プレミアは550円ですか330円ですか</summary><p>解説記事によって550円と330円に分かれています。この差額帳は550円を初期値にしていますが、自分のプランの額をMy docomoかドコモの「料金プラン内容および月額料金改定のお知らせ」で確かめて、金額欄を書き換えてください。</p></details>
+
+<h3>あわせて使える道具</h3>
+<div class="related">
+  <a href="../day025-sa-shogai/">Day 025 5G SA 障害の確認帳(11月5日・11日のドコモの通信障害)</a>
+  <a href="../day027-fuyu-sashihiki/">Day 027 この冬の 燃料と光熱 差し引き帳(12月からのガソリン・灯油と電気・ガスの値引き)</a>
+  <a href="../day029-fuyu-bonus/">Day 029 冬のボーナス 手取り見込み帳</a>
+</div>
+
+<h2 id="src"><span class="no">—</span>出典</h2>
+<ol class="src">
+  <li>NTTドコモ「料金プラン内容および月額料金改定のお知らせ」 https://www.docomo.ne.jp/charge/plan_renewal2026/</li>
+  <li>NTTドコモ 報道発表(2026年9月25日) https://www.docomo.ne.jp/info/news_release/2026/09/25_00.html</li>
+  <li>ケータイ Watch「ドコモ、旧料金プランを中心に月額料金を最大550円値上げ 12月から」 https://k-tai.watch.impress.co.jp/docs/news/2143339.html</li>
+  <li>ケータイ Watch「ahamo『大盛りオプション』、11月30日で終了」 https://k-tai.watch.impress.co.jp/docs/news/2143344.html</li>
+  <li>ASCII.jp「ドコモ『ahamo』が値上げ! 40GBで月額3135円と165円アップ 60GB/120GBの3段階制に」 https://ascii.jp/elem/000/004/437/4437266/</li>
+  <li>セレクトラ「ドコモの値上げはahamoも対象!12/1〜40GB/60GB/120GBの段階制、上限設定オプションを新設」 https://selectra.jp/telecom/news/ahamo-price-increase-december-2026</li>
+  <li>ITmedia Mobile「ahamo改定の反響は? ――ドコモ前田社長」(2026年11月4日) https://www.itmedia.co.jp/mobile/articles/2611/04/news088.html</li>
+  <li>BUSINESS NETWORK「ドコモが料金改定、ahamoは150円値上げ」(税抜) https://businessnetwork.jp/?p=37334</li>
+  <li>コスパトラベル(大盛り未契約者への40GB上限の自動設定) https://www.kosupatravel.com/entry/2026/09/26/000000</li>
+  <li>アプリポ「irumo値上げはいくら?0.5GB 660円・3GB 2,497円・6GB 3,157円・9GB 3,707円」 https://applipo.ne.jp/app/irumo-neage-2026-12/</li>
+  <li>アプリポ「ドコモの値上げはいくら?eximo・ギガホ・ギガライトの新料金」 https://applipo.ne.jp/app/docomo-neage-2026-12/</li>
+  <li>アプリポ「ahamo新料金はいくら?大盛り終了後どうなる」(ポイ活 7,150円→7,315円) https://applipo.ne.jp/app/ahamo-ryoukin-kaitei-2026-12/</li>
+  <li>たろ速「ドコモが12月より料金値上げ!全プラン改定額一覧」 https://tarosoku.jp/2026/09/25/docomo-price-hike-plans-eximo-ahamo-defense/</li>
+  <li>ソフトバンク「SoftBank Air 料金」 https://www.softbank.jp/internet/air/price/</li>
+  <li>セレクトラ「ソフトバンクエアー値上げ 2026年12月」 https://selectra.jp/telecom/news/softbank-air-price-increase-december-2026</li>
+  <li>GMOとくとくBB「SoftBank光の値上げ」 https://gmobb.jp/media/hikari/softbankhikari/price-increase/</li>
+</ol>
+
+<footer>
+  <p>掲載内容は公開資料と報道をもとにした情報提供で、契約や乗り換えの判断を勧めるものではありません。金額は税込・割引前で、最終的な請求額は契約内容によって変わります。必ず各社の公式案内で確かめてください。このページはNTTドコモ、ソフトバンクとは関係ありません。</p>
+  <p>最終確認:2026年11月18日 / <a href="../">毎日ひとつの小さな道具箱</a></p>
+</footer>
+</div>
+<div class="toast" id="toast">コピーしました</div>
+<script>
+(function(){
+var $=function(id){return document.getElementById(id)};
+var yen=function(n){return (n>0?"+":n<0?"−":"")+Math.abs(n).toLocaleString("ja-JP")+"円"};
+var P=[
+ {g:"ドコモ(現行・受付中)",id:"eximo1",n:"eximo(〜1GB)4,565→5,115円",inc:550},
+ {g:"ドコモ(現行・受付中)",id:"eximo3",n:"eximo(1〜3GB)5,665→6,215円",inc:550},
+ {g:"ドコモ(現行・受付中)",id:"eximoU",n:"eximo(3GB超〜無制限)7,315→7,865円",inc:550},
+ {g:"ドコモ(現行・受付中)",id:"eximoP",n:"eximo ポイ活",inc:550},
+ {g:"ドコモ(現行・受付中)",id:"ex",n:"ドコモ MAX・ポイ活 MAX・ポイ活 20・mini(対象外)",inc:0},
+ {g:"ahamo",id:"ahamo",n:"ahamo 大盛りなし 2,970→3,135円",inc:165},
+ {g:"ahamo",id:"oomori",n:"ahamo 大盛りあり 4,950円→使用量で段階",inc:null},
+ {g:"ahamo",id:"ahamoP",n:"ahamo 大盛り+ポイ活 7,150→7,315円",inc:165},
+ {g:"irumo",id:"ir05",n:"irumo 0.5GB 550→660円",inc:110},
+ {g:"irumo",id:"ir3",n:"irumo 3GB 2,167→2,497円",inc:330},
+ {g:"irumo",id:"ir6",n:"irumo 6GB 2,827→3,157円",inc:330},
+ {g:"irumo",id:"ir9",n:"irumo 9GB 3,377→3,707円",inc:330},
+ {g:"ドコモ(受付終了の旧プラン)",id:"gigahoP",n:"5Gギガホ プレミア",inc:550,w:"記事により330円とするものあり。My docomoで確認"},
+ {g:"ドコモ(受付終了の旧プラン)",id:"gigaho",n:"5Gギガホ・ギガホ系",inc:550,w:"記事により330円とするものあり。My docomoで確認"},
+ {g:"ドコモ(受付終了の旧プラン)",id:"gigalite",n:"5Gギガライト・ギガライト系",inc:330},
+ {g:"ドコモ(受付終了の旧プラン)",id:"dplus",n:"データプラス系",inc:110},
+ {g:"ドコモ(受付終了の旧プラン)",id:"oldother",n:"そのほかの旧プラン(カケホーダイ系など 110〜550円)",inc:330,w:"110〜550円でプランにより違う。金額を書き換えてください"},
+ {g:"家のネット",id:"sbair",n:"ソフトバンクエアー",inc:330},
+ {g:"家のネット",id:"sbhikari",n:"SoftBank 光(自動更新ありは満了月の翌月から)",inc:330,w:"自動更新ありプランは12月以降の契約満了月の翌月から"},
+ {g:"そのほか",id:"custom",n:"自分で入力する",inc:0}
+];
+var BY={};P.forEach(function(p){BY[p.id]=p});
+var KEY="day031-lines",KEY2="day031-ahamo";
+var lines=[];
+try{lines=JSON.parse(localStorage.getItem(KEY)||"null")||[]}catch(e){lines=[]}
+if(!lines.length)lines=[{who:"自分",plan:"ahamo",amt:165,use:"40"}];
+function save(){try{localStorage.setItem(KEY,JSON.stringify(lines))}catch(e){}}
+function oomoriInc(u){return u==="40"?3135-4950:u==="60"?4125-4950:5115-4950}
+function opts(sel){
+  var h="",g="";
+  P.forEach(function(p){if(p.g!==g){if(g)h+="</optgroup>";h+='<optgroup label="'+p.g+'">';g=p.g}
+    h+='<option value="'+p.id+'"'+(p.id===sel?" selected":"")+'>'+p.n+'</option>'});
+  return h+"</optgroup>";
+}
+function esc(x){return String(x).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function render(){
+  $("lines").innerHTML=lines.map(function(l,i){
+    var p=BY[l.plan]||BY.custom;
+    var use=p.id==="oomori"?'<div class="full"><label>この回線の月の使用量</label><select data-k="use" data-i="'+i+'"><option value="40"'+(l.use==="40"?" selected":"")+'>40GB以下 → 3,135円</option><option value="60"'+(l.use==="60"?" selected":"")+'>40〜60GB → 4,125円</option><option value="120"'+(l.use==="120"?" selected":"")+'>60GB超 → 5,115円</option></select></div>':"";
+    var cls=l.amt>0?"up":l.amt<0?"dn":"zero";
+    var warn=p.w?'<span class="pill w">'+p.w+'</span>':(p.id==="ex"?'<span class="pill">今回の改定の対象外</span>':"");
+    return '<div class="line"><div class="grid">'+
+      '<div><label>だれの回線</label><input data-k="who" data-i="'+i+'" value="'+esc(l.who||"")+'" placeholder="例:母"></div>'+
+      '<div><label>プラン</label><select data-k="plan" data-i="'+i+'">'+opts(l.plan)+'</select></div>'+use+
+      '<div class="full"><label>月に上がる額(円、下がるならマイナス)</label><input data-k="amt" data-i="'+i+'" type="number" inputmode="numeric" step="1" value="'+l.amt+'"></div>'+
+      '</div><div class="meta"><span>'+warn+'</span><span><span class="diff '+cls+'">'+yen(l.amt)+'/月</span> <button type="button" class="ghost small noprint" data-del="'+i+'">外す</button></span></div></div>';
+  }).join("");
+  total();
+}
+function total(){
+  var m=0;lines.forEach(function(l){m+=+l.amt||0});
+  $("tMonth").textContent=yen(m);$("tYear").textContent=yen(m*12);
+  var n=lines.filter(function(l){return l.plan==="ex"}).length;
+  $("tNote").textContent=lines.length+"回線"+(n?"(うち対象外"+n+")":"")+"。12月1日の利用分から。";
+  save();
+}
+$("lines").addEventListener("input",function(e){
+  var t=e.target,i=+t.getAttribute("data-i"),k=t.getAttribute("data-k");if(isNaN(i)||!k)return;
+  if(k==="who"){lines[i].who=t.value;save();return}
+  if(k==="amt"){lines[i].amt=Math.round(+t.value||0);
+    var d=t.closest(".line").querySelector(".diff");d.textContent=yen(lines[i].amt)+"/月";d.className="diff "+(lines[i].amt>0?"up":lines[i].amt<0?"dn":"zero");total();return}
+});
+$("lines").addEventListener("change",function(e){
+  var t=e.target,i=+t.getAttribute("data-i"),k=t.getAttribute("data-k");if(isNaN(i)||!k)return;
+  if(k==="plan"){lines[i].plan=t.value;var p=BY[t.value];lines[i].use=lines[i].use||"40";lines[i].amt=p.id==="oomori"?oomoriInc(lines[i].use):p.inc;render()}
+  if(k==="use"){lines[i].use=t.value;lines[i].amt=oomoriInc(t.value);render()}
+});
+$("lines").addEventListener("click",function(e){var b=e.target.closest("button[data-del]");if(!b)return;lines.splice(+b.getAttribute("data-del"),1);if(!lines.length)lines=[{who:"",plan:"ahamo",amt:165,use:"40"}];render()});
+$("addLine").addEventListener("click",function(){lines.push({who:"",plan:"eximo1",amt:550,use:"40"});render()});
+$("reset").addEventListener("click",function(){if(confirm("入力をすべて消しますか")){lines=[{who:"自分",plan:"ahamo",amt:165,use:"40"}];render()}});
+function toast(){var t=$("toast");t.classList.add("on");setTimeout(function(){t.classList.remove("on")},1400)}
+function copy(s){if(navigator.clipboard){navigator.clipboard.writeText(s).then(toast,function(){prompt("コピーしてください",s)})}else{prompt("コピーしてください",s)}}
+$("copySum").addEventListener("click",function(){
+  var m=0,s="12月1日の料金改定 家族の回線 差額\n";
+  lines.forEach(function(l){m+=+l.amt||0;s+="・"+(l.who||"回線")+":"+(BY[l.plan]||BY.custom).n+" "+yen(+l.amt||0)+"/月\n"});
+  s+="合計 "+yen(m)+"/月、1年で "+yen(m*12)+"\n(税込・割引前。各社の公式案内で確認)\n"+location.href.split("#")[0];
+  copy(s);
+});
+
+// ahamo
+var mv=[];try{var a=JSON.parse(localStorage.getItem(KEY2)||"null");if(a){mv=a.m||[];$("oomori").value=a.o||"no"}}catch(e){}
+var mh="";for(var i=0;i<6;i++){mh+='<input type="number" inputmode="decimal" min="0" step="0.1" aria-label="'+(i+1)+'か月目のGB" placeholder="'+(i+1)+'月目" value="'+(mv[i]!=null?mv[i]:"")+'">'}
+$("months").innerHTML=mh;
+function tier(g,cap){if(cap===40)return{y:3135,slow:g>40};if(cap===60)return{y:g<=40?3135:4125,slow:g>60};return{y:g<=40?3135:g<=60?4125:5115,slow:g>120}}
+function ahamo(){
+  var ins=$("months").querySelectorAll("input"),gs=[];ins.forEach(function(x){if(x.value!=="")gs.push(Math.max(0,+x.value))});
+  var o=$("oomori").value;
+  try{localStorage.setItem(KEY2,JSON.stringify({o:o,m:Array.prototype.map.call(ins,function(x){return x.value===""?null:x.value})}))}catch(e){}
+  if(!gs.length){$("ahamoTbl").innerHTML="";$("ahamoMsg").innerHTML='<p class="note">使用量を1か月分以上入れると、上限の設定ごとに比べます。</p>';return}
+  var oldM=o==="yes"?4950:2970,old=oldM*gs.length;
+  var rows=[{k:40,n:"上限40GB"},{k:60,n:"上限60GB"},{k:0,n:"上限なし(使った分の段階)"}].map(function(r){
+    var sum=0,slow=0;gs.forEach(function(g){var t=tier(g,r.k);sum+=t.y;if(t.slow)slow++});return{n:r.n,sum:sum,slow:slow}});
+  var oldSlow=gs.filter(function(g){return g>(o==="yes"?110:30)}).length;
+  var best=rows.reduce(function(a,b){return(b.slow<a.slow||(b.slow===a.slow&&b.sum<a.sum))?b:a});
+  var h='<thead><tr><th>12月からの設定</th><th>'+gs.length+'か月の合計</th><th>いまとの差</th><th>速度が落ちる月</th></tr></thead><tbody>';
+  h+='<tr><td>いまの契約('+(o==="yes"?"大盛りあり 4,950円":"2,970円")+')</td><td class="num">'+old.toLocaleString()+'円</td><td class="num">—</td><td class="num">'+oldSlow+'</td></tr>';
+  rows.forEach(function(r){h+='<tr'+(r===best?' class="best"':'')+'><td>'+r.n+'</td><td class="num">'+r.sum.toLocaleString()+'円</td><td class="num">'+yen(r.sum-old)+'</td><td class="num">'+r.slow+'</td></tr>'});
+  $("ahamoTbl").innerHTML=h+"</tbody>";
+  var maxg=Math.max.apply(null,gs);
+  var msg=o==="yes"
+    ? (maxg<=40?"入れた月はすべて40GB以下です。12月からは月3,135円になり、いまより月1,815円下がります。上限40GBを設定しておくと、うっかり超えても段が上がりません。":maxg<=60?"いちばん多い月でも60GB以下です。上限60GBにすれば月4,125円以下に収まり、いまより下がります。":"60GBを超える月があります。上限なしなら、その月は5,115円(いまより165円高い)。速度が落ちてもよい月があるなら、上限60GBで抑える手もあります。")
+    : (maxg<=30?"30GB以下で収まっています。12月からは容量が40GBに増え、料金は165円上がって3,135円です。":maxg<=40?"いまは30GBを超えて速度が落ちていた月も、12月からは40GBまで3,135円で使えます。":"40GBを超える月があります。上限40GBのままなら3,135円で、超えた分は速度が落ちます。上限を60GBにすると、その月は4,125円です。");
+  $("ahamoMsg").innerHTML='<p style="margin:10px 0 0">'+msg+'</p><p class="note">緑の行が、速度が落ちる月がいちばん少なく、そのうえで安い設定です。</p>';
+}
+$("months").addEventListener("input",ahamo);$("oomori").addEventListener("change",ahamo);
+render();ahamo();
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
