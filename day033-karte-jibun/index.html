@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KARTE経由の漏えい 自分の分の確かめ帳</title>
+<meta name="description" content="プレイドの「KARTE」への不正アクセスで、DHC・JINS・しまむら・三菱UFJ銀行・CAMPFIREなど多くの会社が顧客情報の漏えいを公表しました。使っているサービスに印をつけると、自分について漏れたとされる項目をまとめ、気をつける詐欺の型と、やること・やらなくていいことを出します。">
+<link rel="canonical" href="https://alternativestudio2021-collab.github.io/daily-launch-sites/day033-karte-jibun/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="KARTE経由の漏えい 自分の分の確かめ帳">
+<meta property="og:description" content="使っているサービスに印をつけるだけ。漏れたとされる項目を自分の分としてまとめ、届きうる詐欺の型と、やること・やらなくていいことを出します。入力は端末の外に出ません。">
+<meta property="og:url" content="https://alternativestudio2021-collab.github.io/daily-launch-sites/day033-karte-jibun/">
+<meta property="og:site_name" content="毎日ひとつの小さな道具箱">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Shippori+Mincho+B1:wght@700;800&display=swap">
+<style>
+:root{--bg:#f1efe8;--paper:#fbfaf6;--ink:#1f2430;--sub:#5a6070;--line:#cfcabb;--rule:#e4dfd2;--stamp:#b3261e;--stamp-bg:#f7e3df;--ok:#2f6b3a;--ok-bg:#e3efe2;--hl:#fff3b8;
+  --f:"BIZ UDPGothic","Hiragino Sans","Noto Sans JP",sans-serif;--h:"Shippori Mincho B1","Hiragino Mincho ProN",serif}
+@media (prefers-color-scheme:dark){:root{--bg:#15171c;--paper:#1c1f26;--ink:#e6e8ee;--sub:#a3a9b8;--line:#3a3f4b;--rule:#2a2e37;--stamp:#ff8a7f;--stamp-bg:#3a201e;--ok:#8fd39b;--ok-bg:#1e3122;--hl:#4a4320;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);line-height:1.8;font-size:16px}
+a{color:inherit}
+.wrap{max-width:820px;margin:0 auto;padding:32px 16px 72px;display:grid;gap:28px}
+header{display:grid;gap:10px;border-bottom:3px double var(--line);padding-bottom:20px}
+.kicker{font-size:13px;color:var(--sub);letter-spacing:.08em}
+h1{font-family:var(--h);font-weight:800;font-size:clamp(26px,5.4vw,40px);line-height:1.35;margin:0;text-wrap:balance}
+h2{font-family:var(--h);font-size:22px;margin:0 0 10px;line-height:1.45}
+h3{font-size:16px;margin:0}
+p{margin:0}
+.lead{color:var(--sub)}
+.asof{display:inline-block;font-size:13px;border:1.5px solid var(--stamp);color:var(--stamp);padding:2px 10px;border-radius:4px;transform:rotate(-1.5deg);width:max-content;max-width:100%}
+section{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:20px 18px;display:grid;gap:14px;
+  background-image:repeating-linear-gradient(to bottom,transparent 0 31px,var(--rule) 31px 32px)}
+section.plain{background-image:none}
+.svc{display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.svc label{display:grid;grid-template-columns:auto 1fr;gap:2px 10px;align-items:start;padding:10px 12px;border:1px solid var(--line);border-radius:6px;background:var(--paper);cursor:pointer}
+.svc label:has(input:checked){border-color:var(--stamp);background:var(--stamp-bg)}
+.svc input{width:20px;height:20px;margin:3px 0 0;accent-color:var(--stamp);grid-row:span 2}
+.svc b{font-weight:700;line-height:1.4}
+.svc small{color:var(--sub);font-size:12px;line-height:1.5}
+.tools{display:flex;flex-wrap:wrap;gap:8px}
+button{font:inherit;font-size:14px;padding:6px 14px;border-radius:6px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+button.main{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+#out{display:grid;gap:16px}
+.empty{color:var(--sub)}
+.items{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:13px;padding:2px 10px;border-radius:99px;border:1px solid var(--line)}
+.chip.on{background:var(--stamp-bg);border-color:var(--stamp);color:var(--stamp);font-weight:700}
+.chip.off{color:var(--sub);text-decoration:line-through;opacity:.75}
+ul.do{margin:0;padding-left:1.2em;display:grid;gap:6px}
+ul.do li::marker{color:var(--stamp)}
+.notneed{border-left:4px solid var(--ok);background:var(--ok-bg);padding:10px 12px;border-radius:0 6px 6px 0}
+.warn{border-left:4px solid var(--stamp);background:var(--stamp-bg);padding:10px 12px;border-radius:0 6px 6px 0}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:560px}
+th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+th{font-size:12px;color:var(--sub);font-weight:700}
+td.n{white-space:nowrap}
+mark{background:var(--hl);color:inherit}
+textarea{width:100%;min-height:120px;font:inherit;font-size:14px;padding:10px;border:1px solid var(--line);border-radius:6px;background:var(--paper);color:var(--ink)}
+details{border-top:1px solid var(--line);padding-top:10px}
+summary{font-weight:700;cursor:pointer}
+details p{margin-top:6px;color:var(--sub)}
+ol.src{font-size:13px;color:var(--sub);padding-left:1.4em;margin:0;display:grid;gap:4px;word-break:break-all}
+footer{font-size:12px;color:var(--sub);display:grid;gap:6px}
+.more a{display:block;padding:10px 12px;border:1px solid var(--line);border-radius:6px;text-decoration:none;background:var(--paper)}
+.more{display:grid;gap:8px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"KARTEの件でパスワードは漏れましたか","acceptedAnswer":{"@type":"Answer","text":"11月19日までに見た各社の公表では、DHC・JINS・CAMPFIRE・ウェルスナビなどがログインパスワードやクレジットカード情報は含まれないと説明しています。ただし調査中の会社もあるため、使っている会社のお知らせを確認してください。"}},
+{"@type":"Question","name":"自分が対象かどうかはどうやって分かりますか","acceptedAnswer":{"@type":"Answer","text":"三菱UFJ銀行など多くの会社は、対象者にメール等で個別に連絡するとしています。ただしその連絡を装った偽メールも考えられるため、メール内のリンクではなく、ブックマークや公式アプリから各社のお知らせを開いて確かめるのが安全です。"}},
+{"@type":"Question","name":"漏えいの連絡が来たらパスワードを変えるべきですか","acceptedAnswer":{"@type":"Answer","text":"公表どおりパスワードが含まれていなければ、この件だけを理由に変える必要は必ずしもありません。ただし同じパスワードを別のサービスでも使っているなら、この機会に分けておくと安心です。"}},
+{"@type":"Question","name":"お詫びのギフト券や返金を案内するメールが来ました","acceptedAnswer":{"@type":"Answer","text":"漏えいのあとは、お詫びや補償を装ってカード番号やログイン情報を入力させる詐欺が出やすくなります。メールやSMSのリンクから入力せず、公式サイトの告知で同じ案内が出ているか確かめてください。"}}
+]}
+</script>
+</head><body>
+<div class="wrap">
+<header>
+  <p class="kicker">毎日ひとつの小さな道具箱 ・ Day 33</p>
+  <h1>KARTE経由の漏えい<br>自分の分の確かめ帳</h1>
+  <p class="lead">マーケティング用のクラウド「KARTE」(株式会社プレイド)が11月13日に不正アクセスを受け、導入していた会社から顧客情報の漏えいの公表が続いています。ニュースの一覧は会社ごとに並んでいますが、知りたいのは「自分について何が出たか」。使っているサービスに印をつけると、漏れたとされる項目を重ねて、届きうる詐欺の型と、やること・やらなくていいことを出します。</p>
+  <p class="asof">2026年11月19日までの公表・報道で作成</p>
+</header>
+
+<section class="plain" aria-labelledby="h-pick">
+  <h2 id="h-pick">1. 使っている(使っていた)サービスに印をつける</h2>
+  <p class="lead">退会していても対象に入っている例があります。家族の分をまとめて見るときは、家族が使っているものにも印を。入力した内容はこの端末の中だけで処理し、どこにも送りません。</p>
+  <div class="svc" id="svc"></div>
+  <div class="tools"><button type="button" id="clear">印を全部外す</button></div>
+</section>
+
+<section aria-labelledby="h-out" aria-live="polite">
+  <h2 id="h-out">2. 自分の分のまとめ</h2>
+  <div id="out"><p class="empty">上でサービスを選ぶと、ここにまとめが出ます。</p></div>
+</section>
+
+<section class="plain" aria-labelledby="h-fam">
+  <h2 id="h-fam">3. 家族に送る一言(選んだ内容から作ります)</h2>
+  <textarea id="msg" readonly aria-label="家族に送る文面"></textarea>
+  <div class="tools"><button type="button" class="main" id="copy">文面をコピー</button><span id="copied" class="lead" role="status"></span></div>
+</section>
+
+<section class="plain" aria-labelledby="h-tbl">
+  <h2 id="h-tbl">公表された会社と項目(主なもの)</h2>
+  <p class="lead">件数は会社ごとに数え方が違い(人数・アカウント数・レコード数・最大値)、足しても人数にはなりません。項目は公表の要約で、続報で変わることがあります。かならず各社の公式のお知らせで確かめてください。</p>
+  <div class="tbl"><table>
+    <thead><tr><th>会社・サービス</th><th>公表</th><th>件数</th><th>漏れたとされる項目</th><th>含まれないとされるもの</th></tr></thead>
+    <tbody id="tb"></tbody>
+  </table></div>
+  <p class="lead">ほかに、ゴールドウイン、ワールド、ワコールホールディングス、カウネット、エアークローゼット、トヨタファイナンス、三菱UFJ信託銀行、モリサワ、タカラベルモント、三陽商会、TSIホールディングス、ミスミ、IVRy、ルクミーなども公表したと報じられています(項目はこのページでは未確認)。まとめサイトでは11月19日時点で40社を超えています。</p>
+</section>
+
+<section class="plain" aria-labelledby="h-faq">
+  <h2 id="h-faq">よくある疑問</h2>
+  <details><summary>パスワードは漏れた?</summary><p>11月19日までに見た公表では、DHC・JINS・CAMPFIRE・ウェルスナビなどが、ログインパスワードやクレジットカード情報は含まれないと説明しています。調査中の会社もあるので、使っている会社のお知らせで最終確認を。</p></details>
+  <details><summary>自分が対象かどうか、どこで分かる?</summary><p>三菱UFJ銀行など多くの会社は対象者にメール等で個別に連絡するとしています。その連絡を装った偽メールも考えられるので、メールのリンクではなく、ブックマークや公式アプリから各社のお知らせを開いて確かめてください。</p></details>
+  <details><summary>パスワードは変えたほうがいい?</summary><p>公表どおりパスワードが含まれていなければ、この件だけを理由に変える必要は必ずしもありません。ただ、同じパスワードをほかでも使い回しているなら、この機会に分けておくと後の漏えいに強くなります。</p></details>
+  <details><summary>「お詫びのギフト券」「返金」のメールが来た</summary><p>漏えいのあとは、お詫びや補償を名目にカード番号やログイン情報を入力させる詐欺が出やすくなります。リンクからは入力せず、公式サイトに同じ案内が出ているか確かめてください。迷ったら最寄りの消費生活センター(188)へ。</p></details>
+  <details><summary>属性(性別・年代・都道府県)だけなら気にしなくていい?</summary><p>それだけでは連絡先が分からないため、直接の被害にはつながりにくいとされます。ただ、別の漏えいで出たメールアドレスと結びつけられると「あなたの年代・地域」に合わせた手の込んだ詐欺文面に使われうるので、届くメールへの用心は同じです。</p></details>
+</section>
+
+<section class="plain more" aria-labelledby="h-more">
+  <h2 id="h-more">あわせて使える道具</h2>
+  <a href="../day028-kani-denwa/">カニ・いくらの電話が来たら 家族の断り帳(Day 28)</a>
+  <a href="../day024-nise-kichikyoku/">圏外のあとのSMS 手当て帳(Day 24)</a>
+</section>
+
+<section class="plain" aria-labelledby="h-src">
+  <h2 id="h-src">出典</h2>
+  <ol class="src">
+    <li><a href="https://internet.watch.impress.co.jp/docs/news/2157316.html">INTERNET Watch「プレイドのKARTEに不正アクセス、導入企業の顧客情報が漏えい」</a></li>
+    <li><a href="https://www.watch.impress.co.jp/docs/news/2157620.html">Impress Watch「KARTE情報漏えい、JINS・三菱UFJなど多数の企業に影響」</a></li>
+    <li><a href="https://news.yahoo.co.jp/articles/f96aa9d43caf7b3733cabc3c58b0ebbd90b2375b">ネットショップ担当者フォーラム(Yahoo!ニュース)「DHC、しまむら、ワールド、JINS、RIZAPなどで顧客情報が漏えい」</a></li>
+    <li><a href="https://news.yahoo.co.jp/articles/2c468eff526c5356e830f31e380d0bad03482b1b">日本ネット経済新聞(Yahoo!ニュース)「プレイド、KARTEへの不正アクセスで情報漏えい メアド約8万件、外部連携の認証情報も」</a></li>
+    <li><a href="https://news.yahoo.co.jp/articles/79691d8b275682c79c6ae06bac2d55c3019045f5">CNET Japan(Yahoo!ニュース)「KARTE不正アクセス、しまむらやアルペンの顧客情報が漏えい」</a></li>
+    <li><a href="https://www.nikkei.com/article/DGXZQOUC1886Z0Y6A111C2000000/">日本経済新聞「DHC、約1911万件の顧客情報漏洩 プレイドへの不正アクセスで」</a></li>
+    <li><a href="https://news.yahoo.co.jp/articles/cf442fa92804817b7847907c62c7baa5b306a96f">WWDJAPAN(Yahoo!ニュース)「ジンズの会員情報、最大1829万アカウント分が漏えい」</a></li>
+    <li><a href="https://novaist.jp/articles/mufg-customer-data-leak/">NOVAIST「三菱UFJ銀行、顧客情報約650万件が漏えい」</a></li>
+    <li><a href="https://novaist.jp/articles/dhc-customer-data-breach/">NOVAIST「DHCが漏えい対象の情報を公表 カード情報とログインパスワードは含まれず」</a></li>
+    <li><a href="https://finance.biggo.jp/news/dd0743f5-ea9a-48da-908f-1cf96300e4d7">BigGo ファイナンス「三菱UFJ系2社で顧客情報流出、KARTE不正アクセスで証券口座番号6万件」</a></li>
+    <li><a href="https://innovatopia.jp/cyber-security/cyber-security-news/120149/">innovatopia「KARTEに不正アクセス、JINS最大約1,829万件・Francfranc最大約598万件に漏えいの可能性」</a></li>
+    <li><a href="https://www.misumi.co.jp/news/news_261117">ミスミ「当社が利用するWebサービス『KARTE』への不正アクセスによるお客さま情報の漏えいについて」</a></li>
+    <li><a href="https://www.shueisha.co.jp/wp-content/uploads/2026/11/b985e138d872933dc2ccc3b83c3a53e9.pdf">集英社「KARTEのサービス停止に伴うメールマガジン等の配信停止に関するお詫びとお知らせ」(便乗する不審メールへの注意)</a></li>
+    <li><a href="https://teriablog.com/karte-affected-companies-list-2026-11/">一覧記事「KARTE不正アクセスで情報漏えいを公表した45社」(社数・件数の照合に使用)</a></li>
+    <li><a href="https://www.kokusen.go.jp/category/188.html">国民生活センター 消費者ホットライン188</a></li>
+  </ol>
+</section>
+
+<footer>
+  <p>このページは報道と各社の公表を要約した情報提供で、個別の対象可否は判断できません。会社名は公表内容の説明のためにのみ記載しており、各社やプレイドとは関係ありません。誤りや新しい公表に気づいたら随時直します。</p>
+  <p><a href="../">毎日ひとつの小さな道具箱 一覧へ</a></p>
+</footer>
+</div>
+<script>
+// 項目コード: mail=メールアドレス name=氏名 addr=住所(詳細) tel=電話番号 birth=生年月日 attr=性別・年代・都道府県など id=会員IDや識別番号 acct=証券口座番号 hist=購入履歴関連 tbd=項目は確認中
+const L={mail:"メールアドレス",name:"氏名",addr:"住所",tel:"電話番号",birth:"生年月日・生年月",attr:"性別・年代・都道府県など",id:"会員ID・識別番号",acct:"証券口座番号",hist:"購入履歴に関する情報",tbd:"項目は確認中"};
+const S=[
+ {k:"dhc",n:"DHC",d:"11/18",c:"約1,911万件",i:["name","mail","birth"],x:"クレジットカード情報・ログインパスワード",note:"氏名・メールアドレス・生年月日など"},
+ {k:"jins",n:"JINS(ジンズ)",d:"11/17",c:"最大約1,829万アカウント",i:["id","mail","birth","attr"],x:"パスワード・クレジットカード情報",note:"会員ID・メール・生年月日など。姓・性別・都道府県を挙げる報道もある"},
+ {k:"shimamura",n:"しまむら(アプリ・オンラインストア)",d:"11/17〜18",c:"約700万件",i:["birth","attr"],x:"氏名・メールアドレスの漏えいは確認されていないと説明",note:"生年月日・性別・都道府県・郵便番号。登録した子どもの生年月 約5万件も"},
+ {k:"gdo",n:"ゴルフダイジェスト・オンライン",d:"11/18頃",c:"最大約697万件",i:["tbd"],x:"",note:"項目はこのページでは未確認"},
+ {k:"mufgb",n:"三菱UFJ銀行",d:"11/18",c:"約650万件",i:["attr"],x:"氏名・住所・電話番号・メールアドレス",note:"性別・年齢・居住地域(都道府県または政令市)。対象者にメール等で個別連絡"},
+ {k:"franc",n:"Francfranc",d:"11/18頃",c:"会員 最大約598万件",i:["tbd","hist"],x:"クレジットカード情報・ログインパスワードの流出は未確認と説明",note:"会員情報のほか、EC購入履歴関連 最大約400万件(別集計)"},
+ {k:"campfire",n:"CAMPFIRE",d:"11/18(第二報)",c:"5,819,779件",i:["mail","id"],x:"パスワード・クレジットカード情報・口座情報",note:"11/11までの会員登録者。メール・ハッシュ化されたユーザーID"},
+ {k:"rizap",n:"RIZAP・chocoZAP(ZAP ID)",d:"11/17",c:"最大約432万件",i:["mail","id","attr"],x:"",note:"メール・会員ID・性別・年代・都道府県・LINE連携用の識別番号。うち最大約6万件は氏名も"},
+ {k:"pokemaru",n:"ポケットマルシェ(雨風太陽)",d:"11/18",c:"約95万人分",i:["tbd"],x:"",note:"項目はこのページでは未確認"},
+ {k:"wealth",n:"ウェルスナビ",d:"11/18",c:"約91万人",i:["id","birth","attr"],x:"氏名・連絡先・ログイン情報・資産情報",note:"顧客識別コード・生年月・居住都道府県"},
+ {k:"yonden",n:"四国電力(よんでんコンシェルジュ)",d:"11/16",c:"約60万件",i:["name","mail","addr"],x:"",note:"個人・法人会員。氏名・メール・住所など"},
+ {k:"hankyu",n:"阪急阪神ホテルズ",d:"11/16",c:"最大331,586件",i:["name","attr","addr","tel","mail"],x:"クレジットカード情報・パスポート情報",note:"氏名・年齢・住所・電話・メールなど"},
+ {k:"mufgs",n:"三菱UFJ eスマート証券",d:"11/18〜19",c:"口座番号 約6万件・年齢 約10.5万件",i:["acct","attr"],x:"",note:"それぞれ他の情報と結び付かない状態と説明"},
+ {k:"mineo",n:"mineo(オプテージ)",d:"11/16",c:"確認中",i:["mail"],x:"",note:"漏えいの「可能性」として公表"},
+ {k:"radiko",n:"radiko",d:"11/17",c:"記載なし",i:["id"],x:"ログインに使うメールアドレスとは別の番号と説明",note:"社内でお客様を識別する番号"},
+ {k:"ok",n:"オーケー(ネットスーパー・アプリ)",d:"11/17",c:"記載なし",i:["tbd"],x:"",note:"漏えいの「可能性」として公表"},
+ {k:"mitsumore",n:"ミツモア",d:"11/18",c:"確認中",i:["tbd"],x:"",note:"連携していた顧客情報"}
+];
+const $=s=>document.querySelector(s);
+const box=$("#svc"),tb=$("#tb"),out=$("#out"),msg=$("#msg");
+const esc=t=>t.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+S.forEach(s=>{
+  const l=document.createElement("label");
+  l.innerHTML=`<input type="checkbox" value="${s.k}"><b>${esc(s.n)}</b><small>${esc(s.c)} ・ ${s.i.map(k=>L[k]).join("、")}</small>`;
+  box.appendChild(l);
+  const tr=document.createElement("tr");
+  tr.innerHTML=`<td>${esc(s.n)}</td><td class="n">${esc(s.d)}</td><td class="n">${esc(s.c)}</td><td>${esc(s.note)}</td><td>${esc(s.x||"記載を確認中")}</td>`;
+  tb.appendChild(tr);
+});
+let saved=[];try{saved=JSON.parse(localStorage.getItem("d033")||"[]")}catch(e){}
+box.querySelectorAll("input").forEach(i=>{if(saved.includes(i.value))i.checked=true});
+function render(){
+  const on=[...box.querySelectorAll("input:checked")].map(i=>S.find(s=>s.k===i.value));
+  try{localStorage.setItem("d033",JSON.stringify(on.map(s=>s.k)))}catch(e){}
+  if(!on.length){out.innerHTML='<p class="empty">上でサービスを選ぶと、ここにまとめが出ます。</p>';msg.value="";return}
+  const has=new Set(on.flatMap(s=>s.i));
+  const chips=Object.keys(L).filter(k=>k!=="tbd").map(k=>`<span class="chip ${has.has(k)?"on":"off"}">${L[k]}</span>`).join("");
+  const tbd=on.filter(s=>s.i.includes("tbd")).map(s=>s.n);
+  const contact=has.has("mail")||has.has("tel")||has.has("addr");
+  const mailN=on.filter(s=>s.i.includes("mail")).map(s=>s.n);
+  const scam=[],todo=[],nonneed=[];
+  if(has.has("mail")){scam.push(`「${mailN.join("」「")}」を名乗る、お詫び・返金・ポイント付与・本人確認のメール。名前や年代を添えて本物らしく見せてくることもあります。`)}
+  if(has.has("tel")||has.has("addr")){scam.push("電話・郵便で「漏えいの補償手続き」「調査の協力」をうたって、口座やカード番号、暗証番号を聞き出す手口。")}
+  if(has.has("name")&&has.has("mail")){scam.push("氏名入りのメール。宛名が正しくても本物の証拠にはなりません。")}
+  if(!contact){scam.push("選んだサービスでは、連絡先(メール・電話・住所)は含まれないか未確認と公表されています。これだけで直接連絡が来る可能性は低めですが、別の漏えいと結びつけられることはあります。")}
+  todo.push("各社のお知らせは、メールのリンクではなくブックマーク・公式アプリ・検索から開いて読む。");
+  if(has.has("mail"))todo.push("迷惑メールの振り分けを確かめ、届いたメールのリンクや添付は開かない。差出人の表示名は簡単に偽装できます。");
+  if(has.has("tel")||has.has("addr"))todo.push("家族と「会社から電話で口座やカード番号を聞かれても答えない」と決めておく。");
+  todo.push("同じパスワードを複数のサービスで使っているなら、金融・メール・よく買う店から順に分けておく(今回の件と関係なく効きます)。");
+  if(tbd.length)todo.push(`項目がまだ確認できていない「${tbd.join("」「")}」は、続報を公式のお知らせで見る。`);
+  todo.push("不安なときや、すでにお金を払ってしまったときは、消費者ホットライン188か警察相談専用電話#9110へ。");
+  nonneed.push("公表どおりなら、カード番号やログインパスワードは多くの会社で含まれていません。この件だけを理由に、カードの再発行や全サービスのパスワード変更を急ぐ必要は必ずしもありません(会社が個別に求めた場合は従ってください)。");
+  nonneed.push("「漏えいを調べます」「削除します」という有料の業者に頼む必要はありません。");
+  out.innerHTML=`
+   <div><h3>漏れたとされる項目(選んだ${on.length}件を重ねたもの)</h3><div class="items" style="margin-top:8px">${chips}</div>
+   ${tbd.length?`<p class="lead" style="margin-top:6px">※「${esc(tbd.join("」「"))}」は項目を確認中のため、上の色付けに入っていません。</p>`:""}</div>
+   <div class="warn"><h3>届きうる詐欺の型</h3><ul class="do">${scam.map(t=>`<li>${esc(t)}</li>`).join("")}</ul></div>
+   <div><h3>やること</h3><ul class="do">${todo.map(t=>`<li>${esc(t)}</li>`).join("")}</ul></div>
+   <div class="notneed"><h3>やらなくていいこと</h3><ul class="do">${nonneed.map(t=>`<li>${esc(t)}</li>`).join("")}</ul></div>`;
+  const items=Object.keys(L).filter(k=>k!=="tbd"&&has.has(k)).map(k=>L[k]).join("・")||"確認中";
+  msg.value=`KARTEという仕組みの不正アクセスで、${on.map(s=>s.n).join("、")}が会員情報の漏えいを公表しています。うちで使っている分だと、出たとされるのは「${items}」で、パスワードやカード番号は含まれないと説明している会社が多いです。\nしばらく、${has.has("mail")?mailN.join("・")+"を名乗る「お詫び」「返金」「本人確認」のメール":"漏えいの補償をうたう連絡"}が来てもリンクは押さず、公式アプリやサイトから確かめてね。電話で口座やカード番号を聞かれても答えないで。`;
+}
+box.addEventListener("change",render);
+$("#clear").addEventListener("click",()=>{box.querySelectorAll("input").forEach(i=>i.checked=false);render()});
+$("#copy").addEventListener("click",async()=>{if(!msg.value){$("#copied").textContent="先にサービスを選んでください";return}
+  try{await navigator.clipboard.writeText(msg.value);$("#copied").textContent="コピーしました"}catch(e){msg.select();$("#copied").textContent="選択しました。長押しでコピーしてください"}});
+render();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
