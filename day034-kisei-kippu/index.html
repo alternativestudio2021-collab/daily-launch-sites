@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>帰省きっぷ 申込日カレンダー 2026-27年末年始</title>
+<meta name="description" content="年末年始の新幹線・特急の指定席は乗車日の1か月前の10時に発売。12月31日と1月1日はどちらも12月1日です。行きと帰りの乗車日を入れると、えきねっと事前受付・e5489・スマートEXの申込開始と発売の日時を並べ、スマホのカレンダーに入れるファイル(.ics)を作ります。">
+<link rel="canonical" href="https://alternativestudio2021-collab.github.io/daily-launch-sites/day034-kisei-kippu/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="帰省きっぷ 申込日カレンダー 2026-27年末年始">
+<meta property="og:description" content="行きと帰りの乗車日を入れるだけ。事前受付の開始・締切と、1か月前10時の発売日時を並べて、カレンダーに入れられる形で出します。12/31・1/1は12/1発売。">
+<meta property="og:url" content="https://alternativestudio2021-collab.github.io/daily-launch-sites/day034-kisei-kippu/">
+<meta property="og:site_name" content="毎日ひとつの小さな道具箱">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=DotGothic16&display=swap">
+<style>
+:root{--bg:#eef0ea;--card:#ffffff;--ink:#1d2421;--sub:#56605b;--line:#c9cfc6;--board:#16261f;--board-ink:#f3f0d8;--amber:#f2a516;--green:#1f7a4d;--green-bg:#e2f1e8;--red:#b8321f;--red-bg:#f8e4df;
+  --f:"BIZ UDPGothic","Hiragino Sans","Noto Sans JP",sans-serif;--dot:"DotGothic16","BIZ UDPGothic",monospace}
+@media (prefers-color-scheme:dark){:root{--bg:#101512;--card:#18201c;--ink:#e7ece8;--sub:#a1aca6;--line:#34403a;--board:#0b1410;--board-ink:#f3f0d8;--amber:#ffb92e;--green:#7fd6a5;--green-bg:#17301f;--red:#ff9a86;--red-bg:#3a1f1a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);line-height:1.8;font-size:16px}
+a{color:inherit}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px 72px;display:grid;gap:26px}
+.board{background:var(--board);color:var(--board-ink);margin:0 -16px;padding:28px 20px 24px;display:grid;gap:12px;border-bottom:6px solid var(--amber)}
+.board .row{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:baseline;font-family:var(--dot);font-size:14px;color:var(--amber);letter-spacing:.06em}
+.board h1{font-family:var(--dot);font-weight:400;font-size:clamp(26px,6vw,42px);line-height:1.3;margin:0;letter-spacing:.04em}
+.board p{margin:0;color:#cfd6c9;max-width:42em}
+.asof{display:inline-block;font-size:13px;border:1px solid var(--amber);color:var(--amber);padding:1px 10px;border-radius:3px}
+h2{font-size:21px;margin:0 0 6px;line-height:1.45;display:flex;gap:10px;align-items:center}
+h2 .n{font-family:var(--dot);font-weight:400;background:var(--board);color:var(--amber);font-size:15px;padding:0 8px;border-radius:3px}
+h3{font-size:16px;margin:0}
+p{margin:0}
+.sub{color:var(--sub);font-size:14px}
+section{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px 18px;display:grid;gap:14px}
+.key{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.key div{border-left:4px solid var(--amber);padding:4px 0 4px 12px}
+.key b{display:block;font-size:20px;font-family:var(--dot);font-weight:400;letter-spacing:.03em}
+.form{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+label.f{display:grid;gap:4px;font-weight:700;font-size:14px}
+input[type=date]{font:inherit;font-size:17px;padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);width:100%}
+fieldset{border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin:0;display:grid;gap:6px}
+legend{font-weight:700;font-size:14px;padding:0 6px}
+fieldset label{display:grid;grid-template-columns:auto 1fr;gap:0 8px;align-items:start;cursor:pointer}
+fieldset input{width:19px;height:19px;margin:4px 0 0;accent-color:var(--green)}
+fieldset small{display:block;color:var(--sub);font-size:12px;line-height:1.5}
+.leg{border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.leg .hd{background:var(--board);color:var(--board-ink);padding:8px 14px;font-family:var(--dot);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.leg .hd span{color:var(--amber)}
+.leg ol{list-style:none;margin:0;padding:0}
+.leg li{display:grid;grid-template-columns:minmax(120px,170px) 1fr auto;gap:4px 12px;padding:10px 14px;border-top:1px solid var(--line);align-items:center}
+.leg li:first-child{border-top:0}
+.leg li .t{font-family:var(--dot);font-size:17px}
+.leg li .c{font-size:13px;white-space:nowrap;padding:1px 8px;border-radius:99px;background:var(--green-bg);color:var(--green)}
+.leg li.past{opacity:.55}
+.leg li.past .c{background:var(--red-bg);color:var(--red)}
+.leg li.main{background:color-mix(in srgb,var(--amber) 14%,transparent)}
+@media (max-width:560px){.leg li{grid-template-columns:1fr auto}.leg li .w{grid-column:1/-1}.leg li .c{grid-row:1;grid-column:2;justify-self:end}}
+.tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+button{font:inherit;font-size:15px;padding:8px 16px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+button.pri{background:var(--green);border-color:var(--green);color:#fff}
+@media (prefers-color-scheme:dark){button.pri{color:#0b1410}}
+textarea{width:100%;font:inherit;font-size:14px;padding:10px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);min-height:110px}
+.note{font-size:14px;background:var(--red-bg);border-radius:6px;padding:10px 12px}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px}
+th,td{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+th{font-size:13px;color:var(--sub);font-weight:700}
+tr.x td{background:color-mix(in srgb,var(--amber) 16%,transparent)}
+tr.gone td{color:var(--sub);text-decoration:line-through}
+ul{margin:0;padding-left:1.3em}
+li{margin:2px 0}
+details{border-top:1px solid var(--line);padding-top:10px}
+summary{font-weight:700;cursor:pointer}
+details p{margin-top:6px}
+.pr{border:1px dashed var(--line);border-radius:8px;padding:12px 14px;font-size:14px;color:var(--sub)}
+.pr b{color:var(--ink)}
+.src{font-size:13px;color:var(--sub);word-break:break-all}
+.more{display:grid;gap:6px;font-size:14px}
+footer{font-size:13px;color:var(--sub)}
+</style>
+</head><body>
+<div class="wrap">
+<header class="board">
+  <div class="row"><span>DAY 034</span><span>年末年始 2026→2027</span><span>新幹線・特急 指定席</span></div>
+  <h1>帰省きっぷ 申込日カレンダー</h1>
+  <p>指定席は乗車日の1か月前、朝10時に売り出されます。行きと帰りの日を入れると、事前の申込が始まる日時・締め切り・発売の日時を並べ、スマホのカレンダーに入れる形で出します。</p>
+  <span class="asof">2026年11月21日時点の公開情報で作成</span>
+</header>
+
+<section>
+  <h2><span class="n">01</span>まず押さえる3つ</h2>
+  <div class="key">
+    <div><b>1か月前の同じ日 10:00</b><span class="sub">12/26乗車なら11/26の10時に発売。</span></div>
+    <div><b>12/31と1/1は 12/1</b><span class="sub">11月に31日がないため、乗車月の1日にまとめて発売。</span></div>
+    <div><b>事前申込は その1週間前から</b><span class="sub">えきねっとは14時、e5489・スマートEXは朝5時半から。座席の確約ではありません。</span></div>
+  </div>
+</section>
+
+<section aria-labelledby="tool">
+  <h2 id="tool"><span class="n">02</span>乗る日を入れる</h2>
+  <div class="form">
+    <label class="f">行きの乗車日<input type="date" id="go" value="2026-12-29" min="2026-11-21" max="2027-03-31"></label>
+    <label class="f">帰りの乗車日(なければ空欄)<input type="date" id="back" value="2027-01-03" min="2026-11-21" max="2027-03-31"></label>
+  </div>
+  <fieldset id="sites">
+    <legend>使う予約サイト(路線で選ぶ)</legend>
+    <label><input type="checkbox" value="eki" checked><span>えきねっと 事前受付<small>東北・上越・北陸(JR東日本)・北海道新幹線など。JR東海・四国・九州の区間を含む申込は対象外。</small></span></label>
+    <label><input type="checkbox" value="ex"><span>スマートEX・EX予約 事前申込<small>東海道・山陽・九州新幹線。のぞみは12/25〜1/5は全席指定。</small></span></label>
+    <label><input type="checkbox" value="west"><span>e5489 事前申込<small>山陽新幹線・北陸新幹線(金沢以西)・JR西日本の特急。J-WESTカード/J-WESTネット会員のみ。</small></span></label>
+  </fieldset>
+  <div id="out" aria-live="polite" style="display:grid;gap:14px"></div>
+  <div class="tools">
+    <button class="pri" id="ics">カレンダーに入れる(.ics)</button>
+    <button id="copy">家族に送る文をコピー</button>
+    <span id="msg" class="sub"></span>
+  </div>
+  <textarea id="share" readonly aria-label="家族に送る文"></textarea>
+  <p class="sub">.ics はiPhoneの「カレンダー」、Googleカレンダー、Outlookで開けます。各予定には前日20時と30分前の通知を入れています。日時は日本時間です。</p>
+</section>
+
+<section>
+  <h2><span class="n">03</span>年末年始の早見表</h2>
+  <p class="sub">発売日の時刻はJR各社共通。事前申込の開始はえきねっと(14:00)と、e5489・スマートEX(5:30、年末年始の受付時刻は年度で変わることがあります)。過ぎた日は線で消えます。</p>
+  <div class="tbl"><table>
+    <thead><tr><th>乗車日</th><th>指定席の発売</th><th>えきねっと事前受付</th><th>e5489・スマートEX 事前申込</th></tr></thead>
+    <tbody id="tb">
+<tr data-s="2026-11-23"><td>12/23(水)</td><td><b>11/23(月) 10:00</b></td><td>11/16(月) 14:00〜</td><td>11/16(月) 5:30〜</td></tr>
+<tr data-s="2026-11-24"><td>12/24(木)</td><td><b>11/24(火) 10:00</b></td><td>11/17(火) 14:00〜</td><td>11/17(火) 5:30〜</td></tr>
+<tr data-s="2026-11-25"><td>12/25(金)</td><td><b>11/25(水) 10:00</b></td><td>11/18(水) 14:00〜</td><td>11/18(水) 5:30〜</td></tr>
+<tr data-s="2026-11-26"><td>12/26(土)</td><td><b>11/26(木) 10:00</b></td><td>11/19(木) 14:00〜</td><td>11/19(木) 5:30〜</td></tr>
+<tr data-s="2026-11-27"><td>12/27(日)</td><td><b>11/27(金) 10:00</b></td><td>11/20(金) 14:00〜</td><td>11/20(金) 5:30〜</td></tr>
+<tr data-s="2026-11-28"><td>12/28(月)</td><td><b>11/28(土) 10:00</b></td><td>11/21(土) 14:00〜</td><td>11/21(土) 5:30〜</td></tr>
+<tr data-s="2026-11-29"><td>12/29(火)</td><td><b>11/29(日) 10:00</b></td><td>11/22(日) 14:00〜</td><td>11/22(日) 5:30〜</td></tr>
+<tr data-s="2026-11-30"><td>12/30(水)</td><td><b>11/30(月) 10:00</b></td><td>11/23(月) 14:00〜</td><td>11/23(月) 5:30〜</td></tr>
+<tr class="x" data-s="2026-12-01"><td>12/31(木)</td><td><b>12/1(火) 10:00</b></td><td>11/24(火) 14:00〜</td><td>11/24(火) 5:30〜</td></tr>
+<tr class="x" data-s="2026-12-01"><td>1/1(金)</td><td><b>12/1(火) 10:00</b></td><td>11/24(火) 14:00〜</td><td>11/24(火) 5:30〜</td></tr>
+<tr data-s="2026-12-02"><td>1/2(土)</td><td><b>12/2(水) 10:00</b></td><td>11/25(水) 14:00〜</td><td>11/25(水) 5:30〜</td></tr>
+<tr data-s="2026-12-03"><td>1/3(日)</td><td><b>12/3(木) 10:00</b></td><td>11/26(木) 14:00〜</td><td>11/26(木) 5:30〜</td></tr>
+<tr data-s="2026-12-04"><td>1/4(月)</td><td><b>12/4(金) 10:00</b></td><td>11/27(金) 14:00〜</td><td>11/27(金) 5:30〜</td></tr>
+<tr data-s="2026-12-05"><td>1/5(火)</td><td><b>12/5(土) 10:00</b></td><td>11/28(土) 14:00〜</td><td>11/28(土) 5:30〜</td></tr>
+<tr data-s="2026-12-06"><td>1/6(水)</td><td><b>12/6(日) 10:00</b></td><td>11/29(日) 14:00〜</td><td>11/29(日) 5:30〜</td></tr>
+<tr data-s="2026-12-07"><td>1/7(木)</td><td><b>12/7(月) 10:00</b></td><td>11/30(月) 14:00〜</td><td>11/30(月) 5:30〜</td></tr>
+<tr data-s="2026-12-08"><td>1/8(金)</td><td><b>12/8(火) 10:00</b></td><td>12/1(火) 14:00〜</td><td>12/1(火) 5:30〜</td></tr>
+<tr data-s="2026-12-09"><td>1/9(土)</td><td><b>12/9(水) 10:00</b></td><td>12/2(水) 14:00〜</td><td>12/2(水) 5:30〜</td></tr>
+<tr data-s="2026-12-10"><td>1/10(日)</td><td><b>12/10(木) 10:00</b></td><td>12/3(木) 14:00〜</td><td>12/3(木) 5:30〜</td></tr>
+<tr data-s="2026-12-11"><td>1/11(月)</td><td><b>12/11(金) 10:00</b></td><td>12/4(金) 14:00〜</td><td>12/4(金) 5:30〜</td></tr>
+    </tbody></table></div>
+</section>
+
+<section>
+  <h2><span class="n">04</span>申込の締め切りと、取れなかったとき</h2>
+  <ul>
+    <li><b>えきねっと事前受付</b>: 発売日の1週間前(同じ曜日)14:00から、発売日の9:54まで。結果は10時以降に順次届き、年末年始は正午を過ぎることがあります。</li>
+    <li><b>e5489 事前申込</b>: 発売日の1週間前5:30から、発売日の7:59まで(JRおでかけネットの予約ガイド)。案内ページによって締め切りの表記が違うため、申込画面で確かめてください。</li>
+    <li><b>スマートEX・EX予約</b>: 例年の年末年始は発売日の7日前5:30から受付。締め切りは年度により9:30や7:30の案内があり、受付件数に上限があります。座席の位置を指定しないほうが成立しやすいと案内されています。</li>
+    <li>事前申込で取れなかった分は、10:00の一般発売で空いている列車を探せます。発売後も予定変更による払い戻しで空席が出ることがあるので、出発が近づいてからも空席照会で確かめられます。</li>
+    <li>のぞみは12/25〜1/5は自由席がありません。ひかり・こだま・みずほ・さくら・つばめには自由席があります(JR東海の案内)。</li>
+  </ul>
+  <p class="note">JR東日本は新しい新幹線予約「JRE GO」を2026年秋ごろに始めると2月に発表していました(開始時は東北・秋田・山形・上越・北陸〔東京〜上越妙高〕)。年末年始の分をどちらで申し込めるかは、えきねっととJR東日本の最新のお知らせで確かめてください。</p>
+</section>
+
+<section>
+  <h2><span class="n">05</span>よくある問い</h2>
+  <details open><summary>12月31日に乗るきっぷは、いつ買えますか</summary><p>12月1日の10時です。1か月前の同じ日(11月31日)がないため、乗車月の1日に発売されます。1月1日乗車分も同じ12月1日10時です。えきねっとの事前受付はその1週間前の11月24日14時からです。</p></details>
+  <details><summary>事前受付で申し込めば、席は確定しますか</summary><p>確定ではありません。発売日の10時から順に手配され、満席なら取れません。取れたかどうかはメールとサイトで確かめます。</p></details>
+  <details><summary>行きと帰りで発売日が違うのはなぜですか</summary><p>発売日は乗る日ごとに決まるからです。12月29日に行って1月3日に帰るなら、行きは11月29日、帰りは12月3日の10時。帰りの分を忘れやすいので、カレンダーに両方入れておくと安心です。</p></details>
+  <details><summary>東京から博多まで、東海道と山陽をまたぐ場合は</summary><p>東海道新幹線(JR東海)の区間を含む申込は、えきねっとの事前受付の対象外です。スマートEX・EX予約か、e5489を使います。</p></details>
+  <details><summary>飛行機や高速バスは</summary><p>このページはJRの指定席だけを扱っています。航空会社や高速バスは発売日の決まりが別で、多くはすでに発売中です。各社のサイトで確かめてください。</p></details>
+</section>
+
+<section class="plain">
+  <h2><span class="n">06</span>帰省先の宿・駐車場</h2>
+  <div class="pr"><b>PR</b> 帰省先の近くの宿を探す導線を準備中です(提携先のリンクが届きしだい掲載します)。</div>
+</section>
+
+<section class="plain">
+  <h2><span class="n">07</span>出典</h2>
+  <ul class="src">
+    <li>えきねっと「年末年始期間のお申込みにおすすめ!便利な事前受付」(12/26乗車分は11/19 14:00〜11/26 9:54、JR東海・四国・九州の区間を含む申込は対象外) https://www.eki-net.com/top/oshirase/busyperiod/winter.html</li>
+    <li>JR東日本 えきねっと事前受付の解説 https://media.jreast.co.jp/articles/1009</li>
+    <li>JRおでかけネット e5489 事前申込 https://www.jr-odekake.net/i/goyoyaku/about/e5489/reservation/jizen/</li>
+    <li>スマートEX 年末年始の事前申込のお知らせ(過去年度の例) https://smart-ex.jp/topics/detail/?id=695</li>
+    <li>JR東海「のぞみ」全席指定席の期間 https://railway.jr-central.co.jp/nozomi/</li>
+    <li>鉄道チャンネル 2026年度ののぞみ全席指定期間 https://tetsudo-ch.com/13020406.html</li>
+    <li>ITmedia Mobile「JRE GO」2026年秋から(2026/2/19) https://www.itmedia.co.jp/mobile/articles/2602/19/news128.html</li>
+  </ul>
+</section>
+
+<section class="plain">
+  <h2><span class="n">08</span>ほかの道具</h2>
+  <div class="more">
+    <a href="../day029-fuyu-bonus/">冬のボーナス 手取り見込み帳 2026</a>
+    <a href="../day027-fuyu-sashihiki/">この冬の 燃料と光熱 差し引き帳 2026-27</a>
+    <a href="../day026-inful-teishi/">インフル 登校できる日と親の休み 早見</a>
+    <a href="../">毎日ひとつの小さな道具箱(一覧)</a>
+  </div>
+</section>
+
+<footer>JR各社の公開資料をもとにした情報提供です。発売日や受付時刻は変わることがあるため、申込前に各予約サイトで確かめてください。このページは鉄道会社とは関係ありません。</footer>
+</div>
+<script>
+const $=s=>document.querySelector(s);
+const W="日月火水木金土";
+const p2=n=>String(n).padStart(2,"0");
+function parse(v){if(!v)return null;const[a,b,c]=v.split("-").map(Number);return new Date(a,b-1,c)}
+function saleDay(d){const y=d.getMonth()===0?d.getFullYear()-1:d.getFullYear(),m=d.getMonth()===0?11:d.getMonth()-1;
+  const last=new Date(y,m+1,0).getDate();return d.getDate()<=last?new Date(y,m,d.getDate()):new Date(d.getFullYear(),d.getMonth(),1)}
+function addD(d,n){const x=new Date(d);x.setDate(x.getDate()+n);return x}
+function at(d,h,mi){const x=new Date(d);x.setHours(h,mi,0,0);return x}
+const fmt=d=>`${d.getMonth()+1}/${d.getDate()}(${W[d.getDay()]}) ${d.getHours()}:${p2(d.getMinutes())}`;
+const fmtD=d=>`${d.getMonth()+1}/${d.getDate()}(${W[d.getDay()]})`;
+// 日本時間で動かすため、ブラウザの時刻をJSTに換算した「いま」
+function nowJst(){const n=new Date();return new Date(n.getTime()+(n.getTimezoneOffset()+540)*60000)}
+function left(t){const ms=t-nowJst();if(ms<0)return{p:true,s:"過ぎました"};const h=ms/36e5;
+  if(h<24)return{p:false,s:`あと${Math.max(1,Math.floor(h))}時間`};return{p:false,s:`あと${Math.floor(h/24)}日`}}
+const SITES={
+  eki:{n:"えきねっと 事前受付",open:[14,0],close:[9,54]},
+  ex:{n:"スマートEX・EX予約 事前申込",open:[5,30],close:null},
+  west:{n:"e5489 事前申込",open:[5,30],close:[7,59]}
+};
+let events=[];
+function legItems(label,d){
+  const s=saleDay(d),pre=addD(s,-7),items=[];
+  document.querySelectorAll("#sites input:checked").forEach(i=>{const k=SITES[i.value];
+    items.push({t:at(pre,...k.open),w:`${k.n} 申込開始`,leg:label});
+    if(k.close)items.push({t:at(s,...k.close),w:`${k.n} 締め切り`,leg:label});
+    else items.push({t:at(s,7,30),w:`${k.n} 締め切り(例年は当日朝。今年の時刻は公式で確認)`,leg:label,soft:true});
+  });
+  items.push({t:at(s,10,0),w:"指定席の発売(窓口・券売機・各サイト)",leg:label,main:true});
+  return{s,items:items.sort((a,b)=>a.t-b.t)};
+}
+function render(){
+  const go=parse($("#go").value),back=parse($("#back").value),out=$("#out");events=[];let html="",lines=[];
+  [["行き",go],["帰り",back]].forEach(([lb,d])=>{if(!d)return;const{s,items}=legItems(lb,d);events.push(...items.map(x=>({...x,ride:d})));
+    html+=`<div class="leg"><div class="hd"><span>${lb} ${fmtD(d)} 乗車</span>発売 ${fmtD(s)} 10:00</div><ol>`+
+      items.map(x=>{const l=left(x.t);return`<li class="${l.p?"past":""} ${x.main?"main":""}"><span class="t">${fmt(x.t)}</span><span class="w">${x.w}</span><span class="c">${l.s}</span></li>`}).join("")+`</ol></div>`;
+    const m=items.find(x=>x.main);lines.push(`${lb}(${fmtD(d)}乗車)は ${fmt(m.t)} 発売`+(items[0]!==m?`、事前申込は ${fmt(items[0].t)} から`:""));
+  });
+  if(go&&back&&back<go)html=`<p class="note">帰りの日が行きより前になっています。</p>`+html;
+  out.innerHTML=html||`<p class="sub">乗車日を入れてください。</p>`;
+  $("#share").value=lines.length?`年末年始の新幹線の指定席、申込の日を書いておくね。\n${lines.join("\n")}\n事前申込は席の確約じゃないので、取れなかったら10時の発売で探す。`:"";
+}
+function icsDate(d){const u=new Date(d.getTime()-9*36e5);return`${u.getFullYear()}${p2(u.getMonth()+1)}${p2(u.getDate())}T${p2(u.getHours())}${p2(u.getMinutes())}00Z`}
+$("#ics").addEventListener("click",()=>{
+  const fut=events.filter(e=>!left(e.t).p);if(!fut.length){$("#msg").textContent="これから先の予定がありません";return}
+  const st=icsDate(nowJst());
+  const body=fut.map((e,i)=>["BEGIN:VEVENT",`UID:day034-${i}-${e.t.getTime()}@daily-launch-sites`,`DTSTAMP:${st}`,`DTSTART:${icsDate(e.t)}`,`DTEND:${icsDate(new Date(e.t.getTime()+15*6e4))}`,
+    `SUMMARY:【${e.leg} ${fmtD(e.ride)}乗車】${e.w}`,`DESCRIPTION:帰省きっぷ 申込日カレンダーで作成。時刻は申込前に各予約サイトで確かめてください。`,
+    "BEGIN:VALARM","TRIGGER:-PT30M","ACTION:DISPLAY","DESCRIPTION:30分後","END:VALARM",
+    "BEGIN:VALARM",`TRIGGER;VALUE=DATE-TIME:${icsDate(at(addD(e.t,-1),20,0))}`,"ACTION:DISPLAY","DESCRIPTION:明日","END:VALARM","END:VEVENT"].join("\r\n")).join("\r\n");
+  const ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//daily-launch-sites//day034//JA","CALSCALE:GREGORIAN",body,"END:VCALENDAR"].join("\r\n");
+  const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([ics],{type:"text/calendar"}));a.download="kisei-kippu.ics";document.body.appendChild(a);a.click();a.remove();
+  $("#msg").textContent=`${fut.length}件の予定を書き出しました`;
+});
+$("#copy").addEventListener("click",async()=>{const v=$("#share").value;if(!v)return;
+  try{await navigator.clipboard.writeText(v);$("#msg").textContent="コピーしました"}catch(e){$("#share").select();$("#msg").textContent="選択しました。長押しでコピーしてください"}});
+["#go","#back"].forEach(s=>$(s).addEventListener("change",render));$("#sites").addEventListener("change",render);
+// 早見表: 発売日を過ぎた行に線
+(()=>{const n=nowJst();document.querySelectorAll("#tb tr").forEach(tr=>{const s=parse(tr.dataset.s);if(at(s,10,0)<n)tr.classList.add("gone")})})();
+render();
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"12月31日に乗る新幹線の指定席はいつ買えますか","acceptedAnswer":{"@type":"Answer","text":"12月1日の10時です。1か月前の同じ日(11月31日)がないため乗車月の1日に発売されます。1月1日乗車分も同じ12月1日10時です。"}},
+{"@type":"Question","name":"えきねっとの事前受付で申し込めば席は確定しますか","acceptedAnswer":{"@type":"Answer","text":"確定ではありません。発売日の10時から順に手配され、満席なら取れません。"}},
+{"@type":"Question","name":"東海道と山陽をまたぐ場合、えきねっとの事前受付は使えますか","acceptedAnswer":{"@type":"Answer","text":"JR東海の区間を含む申込はえきねっと事前受付の対象外です。スマートEX・EX予約かe5489を使います。"}}]}</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
