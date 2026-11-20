@@ -50,6 +50,7 @@ ul.do li::marker{color:var(--stamp)}
 .notneed{border-left:4px solid var(--ok);background:var(--ok-bg);padding:10px 12px;border-radius:0 6px 6px 0}
 .warn{border-left:4px solid var(--stamp);background:var(--stamp-bg);padding:10px 12px;border-radius:0 6px 6px 0}
 .tbl{overflow-x:auto}
+.wrap>*,section>*{min-width:0}
 table{border-collapse:collapse;width:100%;font-size:14px;min-width:560px}
 th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
 th{font-size:12px;color:var(--sub);font-weight:700}
@@ -66,10 +67,12 @@ footer{font-size:12px;color:var(--sub);display:grid;gap:6px}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"KARTEの件でパスワードは漏れましたか","acceptedAnswer":{"@type":"Answer","text":"11月19日までに見た各社の公表では、DHC・JINS・CAMPFIRE・ウェルスナビなどがログインパスワードやクレジットカード情報は含まれないと説明しています。ただし調査中の会社もあるため、使っている会社のお知らせを確認してください。"}},
+{"@type":"Question","name":"KARTEの件でパスワードは漏れましたか","acceptedAnswer":{"@type":"Answer","text":"11月20日までに見た各社の公表では、DHC・JINS・CAMPFIRE・ウェルスナビなどがログインパスワードやクレジットカード情報は含まれないと説明しています。ただし調査中の会社もあるため、使っている会社のお知らせを確認してください。"}},
 {"@type":"Question","name":"自分が対象かどうかはどうやって分かりますか","acceptedAnswer":{"@type":"Answer","text":"三菱UFJ銀行など多くの会社は、対象者にメール等で個別に連絡するとしています。ただしその連絡を装った偽メールも考えられるため、メール内のリンクではなく、ブックマークや公式アプリから各社のお知らせを開いて確かめるのが安全です。"}},
 {"@type":"Question","name":"漏えいの連絡が来たらパスワードを変えるべきですか","acceptedAnswer":{"@type":"Answer","text":"公表どおりパスワードが含まれていなければ、この件だけを理由に変える必要は必ずしもありません。ただし同じパスワードを別のサービスでも使っているなら、この機会に分けておくと安心です。"}},
 {"@type":"Question","name":"お詫びのギフト券や返金を案内するメールが来ました","acceptedAnswer":{"@type":"Answer","text":"漏えいのあとは、お詫びや補償を装ってカード番号やログイン情報を入力させる詐欺が出やすくなります。メールやSMSのリンクから入力せず、公式サイトの告知で同じ案内が出ているか確かめてください。"}}
+,
+{"@type":"Question","name":"退会したサービスやKARTEをやめた会社でも対象になりますか","acceptedAnswer":{"@type":"Answer","text":"なりえます。プレイドは2026年11月20日の調査結果で、KARTEの利用契約が終わった会社のデータも漏えいに含まれると認めました。昔使っていたサービスも、その会社の公式のお知らせで確かめてください。"}}
 ]}
 </script>
 </head><body>
@@ -78,12 +81,22 @@ footer{font-size:12px;color:var(--sub);display:grid;gap:6px}
   <p class="kicker">毎日ひとつの小さな道具箱 ・ Day 33</p>
   <h1>KARTE経由の漏えい<br>自分の分の確かめ帳</h1>
   <p class="lead">マーケティング用のクラウド「KARTE」(株式会社プレイド)が11月13日に不正アクセスを受け、導入していた会社から顧客情報の漏えいの公表が続いています。ニュースの一覧は会社ごとに並んでいますが、知りたいのは「自分について何が出たか」。使っているサービスに印をつけると、漏れたとされる項目を重ねて、届きうる詐欺の型と、やること・やらなくていいことを出します。</p>
-  <p class="asof">2026年11月19日までの公表・報道で作成</p>
+  <p class="asof">2026年11月20日までの公表・報道で更新</p>
 </header>
+
+<section class="plain" aria-labelledby="h-new">
+  <h2 id="h-new">11月20日 プレイドの調査結果で分かったこと</h2>
+  <ul class="do">
+    <li>会員などのデータが漏れたのは<b>570社</b>分、メール配信などほかのサービスとつなぐための認証情報(鍵)が漏れたのは<b>754社</b>分。両方に入る会社があり、足し算にはなりません。</li>
+    <li><b>KARTEの利用をやめた会社のデータも含まれます。</b>契約終了後に消すはずのデータが残っていたとプレイドが認めています。「もう使っていない店・アプリだから関係ない」とは言い切れません。</li>
+    <li>サービスの段階的な再開は<b>2027年1月中旬</b>が目標。それまで、KARTEを使ったメールマガジンやアプリ内のお知らせが止まったままの会社があります。止まっていること自体は今回の件の影響で、不審な動きではありません。</li>
+    <li>これから公表する会社がまだ出てくる見込みです。このページは公表を見つけ次第、表に足します。</li>
+  </ul>
+</section>
 
 <section class="plain" aria-labelledby="h-pick">
   <h2 id="h-pick">1. 使っている(使っていた)サービスに印をつける</h2>
-  <p class="lead">退会していても対象に入っている例があります。家族の分をまとめて見るときは、家族が使っているものにも印を。入力した内容はこの端末の中だけで処理し、どこにも送りません。</p>
+  <p class="lead">退会していても、また会社がKARTEをやめた後でも、対象に入っている例があります。家族の分をまとめて見るときは、家族が使っているものにも印を。入力した内容はこの端末の中だけで処理し、どこにも送りません。</p>
   <div class="svc" id="svc"></div>
   <div class="tools"><button type="button" id="clear">印を全部外す</button></div>
 </section>
@@ -101,20 +114,21 @@ footer{font-size:12px;color:var(--sub);display:grid;gap:6px}
 
 <section class="plain" aria-labelledby="h-tbl">
   <h2 id="h-tbl">公表された会社と項目(主なもの)</h2>
-  <p class="lead">件数は会社ごとに数え方が違い(人数・アカウント数・レコード数・最大値)、足しても人数にはなりません。項目は公表の要約で、続報で変わることがあります。かならず各社の公式のお知らせで確かめてください。</p>
+  <p class="lead">件数は会社ごとに数え方が違い(人数・アカウント数・レコード数・最大値)、足しても人数にはなりません。項目は公表の要約で、続報で変わることがあります。このページの件数・項目は報道やまとめ記事と照らし合わせたもので、印「※報道」の行は1つの記事でしか確かめられていません。かならず各社の公式のお知らせで確かめてください。</p>
   <div class="tbl"><table>
     <thead><tr><th>会社・サービス</th><th>公表</th><th>件数</th><th>漏れたとされる項目</th><th>含まれないとされるもの</th></tr></thead>
     <tbody id="tb"></tbody>
   </table></div>
-  <p class="lead">ほかに、ゴールドウイン、ワールド、ワコールホールディングス、カウネット、エアークローゼット、トヨタファイナンス、三菱UFJ信託銀行、モリサワ、タカラベルモント、三陽商会、TSIホールディングス、ミスミ、IVRy、ルクミーなども公表したと報じられています(項目はこのページでは未確認)。まとめサイトでは11月19日時点で40社を超えています。</p>
+  <p class="lead">ほかに、ゴールドウイン、ワールド、ワコールホールディングス、カウネット、エアークローゼット、トヨタファイナンス、三菱UFJ信託銀行、タカラベルモント、三陽商会、TSIホールディングス、ミスミ(約14万件)、IVRy、ルクミー、アインホールディングス、S.RIDE、リクルートマネジメントソリューションズ(法人の研修担当者 12,421件)なども公表したと報じられています(ワールドは「項目・件数・範囲は確認中」と公表。ほかの項目はこのページでは未確認)。日本経済新聞は、影響を受けた会社がのべ約2,200社にのぼると報じています。</p>
 </section>
 
 <section class="plain" aria-labelledby="h-faq">
   <h2 id="h-faq">よくある疑問</h2>
-  <details><summary>パスワードは漏れた?</summary><p>11月19日までに見た公表では、DHC・JINS・CAMPFIRE・ウェルスナビなどが、ログインパスワードやクレジットカード情報は含まれないと説明しています。調査中の会社もあるので、使っている会社のお知らせで最終確認を。</p></details>
+  <details><summary>パスワードは漏れた?</summary><p>11月20日までに見た公表では、DHC・JINS・CAMPFIRE・ウェルスナビなどが、ログインパスワードやクレジットカード情報は含まれないと説明しています。調査中の会社もあるので、使っている会社のお知らせで最終確認を。</p></details>
   <details><summary>自分が対象かどうか、どこで分かる?</summary><p>三菱UFJ銀行など多くの会社は対象者にメール等で個別に連絡するとしています。その連絡を装った偽メールも考えられるので、メールのリンクではなく、ブックマークや公式アプリから各社のお知らせを開いて確かめてください。</p></details>
   <details><summary>パスワードは変えたほうがいい?</summary><p>公表どおりパスワードが含まれていなければ、この件だけを理由に変える必要は必ずしもありません。ただ、同じパスワードをほかでも使い回しているなら、この機会に分けておくと後の漏えいに強くなります。</p></details>
   <details><summary>「お詫びのギフト券」「返金」のメールが来た</summary><p>漏えいのあとは、お詫びや補償を名目にカード番号やログイン情報を入力させる詐欺が出やすくなります。リンクからは入力せず、公式サイトに同じ案内が出ているか確かめてください。迷ったら最寄りの消費生活センター(188)へ。</p></details>
+  <details><summary>もう退会した・使っていないサービスでも関係ある?</summary><p>あります。プレイドは11月20日の調査結果で、KARTEの利用をやめた会社のデータも漏えいに含まれると認めました。会社側が契約を終えて1年以上たつのにデータが残っていたと公表した例(カイテク)もあります。昔の会員登録も、その会社のお知らせで確かめてください。</p></details>
   <details><summary>属性(性別・年代・都道府県)だけなら気にしなくていい?</summary><p>それだけでは連絡先が分からないため、直接の被害にはつながりにくいとされます。ただ、別の漏えいで出たメールアドレスと結びつけられると「あなたの年代・地域」に合わせた手の込んだ詐欺文面に使われうるので、届くメールへの用心は同じです。</p></details>
 </section>
 
@@ -141,6 +155,16 @@ footer{font-size:12px;color:var(--sub);display:grid;gap:6px}
     <li><a href="https://www.misumi.co.jp/news/news_261117">ミスミ「当社が利用するWebサービス『KARTE』への不正アクセスによるお客さま情報の漏えいについて」</a></li>
     <li><a href="https://www.shueisha.co.jp/wp-content/uploads/2026/11/b985e138d872933dc2ccc3b83c3a53e9.pdf">集英社「KARTEのサービス停止に伴うメールマガジン等の配信停止に関するお詫びとお知らせ」(便乗する不審メールへの注意)</a></li>
     <li><a href="https://teriablog.com/karte-affected-companies-list-2026-11/">一覧記事「KARTE不正アクセスで情報漏えいを公表した45社」(社数・件数の照合に使用)</a></li>
+    <li><a href="https://news.yahoo.co.jp/articles/9cc5368750f9b55aa469ec2abeb51d39d276e761">テクノエッジ(Yahoo!ニュース)「KARTE不正アクセス、プレイドが『解約後のデータ』漏えいを認める 取り込みデータは570社、連携用の認証情報は754社」(11/20)</a></li>
+    <li><a href="https://news.yahoo.co.jp/articles/d8ecc3e0790cf46e7a39f4c8ad23b3a798f05f2b">INTERNET Watch(Yahoo!ニュース)「プレイド、『KARTE』不正アクセスの調査結果を公表、2027年1月中旬の段階的な再開を目指す」(11/20)</a></li>
+    <li><a href="https://plaid.co.jp/news/20261120/">プレイド「『KARTE』への不正アクセスに関する当社調査結果と、サービス再開の見通し等のお知らせ」(11/20)</a></li>
+    <li><a href="https://www.nikkei.com/article/DGXZQOUC204SK0Q6A121C2000000/">日本経済新聞「『カルテ』の情報漏洩2200社 サービス停止で20億円の赤字へ」(11/20)</a></li>
+    <li><a href="https://smartscope.blog/blog/golf-digest-online-gdo-member-data-leak-up-2026/">SmartScope「ゴルフダイジェスト・オンライン 会員情報の漏えい」(GDOの公表の要約)</a></li>
+    <li><a href="https://smartscope.blog/blog/morisawa-fonts-23-957-customer-names-email-addresses-2026/">SmartScope「Morisawa Fonts 23,957件 氏名・メールアドレス」(モリサワの公表の要約)</a></li>
+    <li><a href="https://smartscope.blog/blog/nikkei-inc-nikkei-electronic-edition-potential-personal-information-2026/">SmartScope「日経電子版 個人情報漏えいの可能性」(日本経済新聞社の公表の要約)</a></li>
+    <li><a href="https://smartscope.blog/blog/infomart-up-2-735-267-customer-records-linked-2026/">SmartScope「インフォマート 最大2,735,267件」(インフォマートの公表の要約)</a></li>
+    <li><a href="https://smhn.info/202611-mineo-plaid-karte-unauthorized-access-email-leak">すまほん!!「mineo、KARTEへの不正アクセスでメールアドレス漏えいの可能性」</a></li>
+    <li><a href="https://rocket-boys.co.jp/security-measures-lab/caitech-karte-for-app-post-contract-data-retention-breach/">セキュリティ対策Lab「カイテク、契約終了から1年以上経過したKARTEに個人情報が残存・流出」</a></li>
     <li><a href="https://www.kokusen.go.jp/category/188.html">国民生活センター 消費者ホットライン188</a></li>
   </ol>
 </section>
@@ -157,7 +181,7 @@ const S=[
  {k:"dhc",n:"DHC",d:"11/18",c:"約1,911万件",i:["name","mail","birth"],x:"クレジットカード情報・ログインパスワード",note:"氏名・メールアドレス・生年月日など"},
  {k:"jins",n:"JINS(ジンズ)",d:"11/17",c:"最大約1,829万アカウント",i:["id","mail","birth","attr"],x:"パスワード・クレジットカード情報",note:"会員ID・メール・生年月日など。姓・性別・都道府県を挙げる報道もある"},
  {k:"shimamura",n:"しまむら(アプリ・オンラインストア)",d:"11/17〜18",c:"約700万件",i:["birth","attr"],x:"氏名・メールアドレスの漏えいは確認されていないと説明",note:"生年月日・性別・都道府県・郵便番号。登録した子どもの生年月 約5万件も"},
- {k:"gdo",n:"ゴルフダイジェスト・オンライン",d:"11/18頃",c:"最大約697万件",i:["tbd"],x:"",note:"項目はこのページでは未確認"},
+ {k:"gdo",n:"ゴルフダイジェスト・オンライン",d:"11/18頃",c:"最大6,974,506件(重複を含む)",i:["id","birth","attr"],x:"氏名・住所(郵便番号以外)・電話番号・メールアドレス・パスワード・カード情報",note:"識別ID・誕生日または生年月・年代・郵便番号・メール配信設定の情報 ※報道"},
  {k:"mufgb",n:"三菱UFJ銀行",d:"11/18",c:"約650万件",i:["attr"],x:"氏名・住所・電話番号・メールアドレス",note:"性別・年齢・居住地域(都道府県または政令市)。対象者にメール等で個別連絡"},
  {k:"franc",n:"Francfranc",d:"11/18頃",c:"会員 最大約598万件",i:["tbd","hist"],x:"クレジットカード情報・ログインパスワードの流出は未確認と説明",note:"会員情報のほか、EC購入履歴関連 最大約400万件(別集計)"},
  {k:"campfire",n:"CAMPFIRE",d:"11/18(第二報)",c:"5,819,779件",i:["mail","id"],x:"パスワード・クレジットカード情報・口座情報",note:"11/11までの会員登録者。メール・ハッシュ化されたユーザーID"},
@@ -167,7 +191,10 @@ const S=[
  {k:"yonden",n:"四国電力(よんでんコンシェルジュ)",d:"11/16",c:"約60万件",i:["name","mail","addr"],x:"",note:"個人・法人会員。氏名・メール・住所など"},
  {k:"hankyu",n:"阪急阪神ホテルズ",d:"11/16",c:"最大331,586件",i:["name","attr","addr","tel","mail"],x:"クレジットカード情報・パスポート情報",note:"氏名・年齢・住所・電話・メールなど"},
  {k:"mufgs",n:"三菱UFJ eスマート証券",d:"11/18〜19",c:"口座番号 約6万件・年齢 約10.5万件",i:["acct","attr"],x:"",note:"それぞれ他の情報と結び付かない状態と説明"},
- {k:"mineo",n:"mineo(オプテージ)",d:"11/16",c:"確認中",i:["mail"],x:"",note:"漏えいの「可能性」として公表"},
+ {k:"mineo",n:"mineo(オプテージ)",d:"11/16",c:"調査中(未公表)",i:["mail"],x:"クレジットカード情報(KARTEに渡していないと説明)",note:"メールアドレス。漏えいの「可能性」として公表"},
+ {k:"nikkei",n:"日経電子版(日本経済新聞社)",d:"11/17",c:"記載なし",i:["mail","tel","birth","attr"],x:"",note:"メールアドレス・電話番号・性別・生年月。漏えいの「可能性」として公表"},
+ {k:"morisawa",n:"Morisawa Fonts(モリサワ)",d:"11/17",c:"23,957件",i:["name","mail","id"],x:"",note:"2023年5月以降にサービスサイトで購入した人の一部。氏名・メール・ユーザーID ※報道"},
+ {k:"infomart",n:"インフォマート(BtoBプラットフォーム)",d:"11/17",c:"最大2,735,267件",i:["tbd"],x:"",note:"連携していたデータの総数による最大値。実際の対象はプレイドの報告待ちと説明"},
  {k:"radiko",n:"radiko",d:"11/17",c:"記載なし",i:["id"],x:"ログインに使うメールアドレスとは別の番号と説明",note:"社内でお客様を識別する番号"},
  {k:"ok",n:"オーケー(ネットスーパー・アプリ)",d:"11/17",c:"記載なし",i:["tbd"],x:"",note:"漏えいの「可能性」として公表"},
  {k:"mitsumore",n:"ミツモア",d:"11/18",c:"確認中",i:["tbd"],x:"",note:"連携していた顧客情報"}
@@ -202,6 +229,7 @@ function render(){
   todo.push("各社のお知らせは、メールのリンクではなくブックマーク・公式アプリ・検索から開いて読む。");
   if(has.has("mail"))todo.push("迷惑メールの振り分けを確かめ、届いたメールのリンクや添付は開かない。差出人の表示名は簡単に偽装できます。");
   if(has.has("tel")||has.has("addr"))todo.push("家族と「会社から電話で口座やカード番号を聞かれても答えない」と決めておく。");
+  todo.push("昔使っていて今はやめたサービスも、上で印をつけて見ておく。KARTEをやめた会社の古いデータも漏れた中に含まれています。");
   todo.push("同じパスワードを複数のサービスで使っているなら、金融・メール・よく買う店から順に分けておく(今回の件と関係なく効きます)。");
   if(tbd.length)todo.push(`項目がまだ確認できていない「${tbd.join("」「")}」は、続報を公式のお知らせで見る。`);
   todo.push("不安なときや、すでにお金を払ってしまったときは、消費者ホットライン188か警察相談専用電話#9110へ。");
