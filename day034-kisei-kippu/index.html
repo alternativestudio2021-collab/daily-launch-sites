@@ -55,6 +55,7 @@ fieldset small{display:block;color:var(--sub);font-size:12px;line-height:1.5}
 @media (max-width:560px){.leg li{grid-template-columns:1fr auto}.leg li .w{grid-column:1/-1}.leg li .c{grid-row:1;grid-column:2;justify-self:end}}
 .tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 button{font:inherit;font-size:15px;padding:8px 16px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+a.btnl{font-size:15px;padding:8px 16px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none}
 button.pri{background:var(--green);border-color:var(--green);color:#fff}
 @media (prefers-color-scheme:dark){button.pri{color:#0b1410}}
 textarea{width:100%;font:inherit;font-size:14px;padding:10px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);min-height:110px}
@@ -113,6 +114,10 @@ footer{font-size:13px;color:var(--sub)}
     <span id="msg" class="sub"></span>
   </div>
   <textarea id="share" readonly aria-label="家族に送る文"></textarea>
+  <div class="tools" aria-label="このページを送る">
+    <a class="btnl" target="_blank" rel="noopener" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Falternativestudio2021-collab.github.io%2Fdaily-launch-sites%2Fday034-kisei-kippu%2F">LINEでページを送る</a>
+    <a class="btnl" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=%E5%B9%B4%E6%9C%AB%E5%B9%B4%E5%A7%8B%E3%81%AE%E6%96%B0%E5%B9%B9%E7%B7%9A%E3%80%81%E8%A1%8C%E3%81%8D%E3%81%A8%E5%B8%B0%E3%82%8A%E3%81%AE%E7%94%B3%E8%BE%BC%E6%97%A5%E3%81%A8%E7%99%BA%E5%A3%B2%E3%81%AE%E6%97%A5%E6%99%82%E3%82%92%E3%81%BE%E3%81%A8%E3%82%81%E3%81%A6%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%E3%81%AB%E5%85%A5%E3%82%8C%E3%82%89%E3%82%8C%E3%82%8B%E3%80%8212/31%E3%81%A81/1%E3%81%AF12/1%E7%99%BA%E5%A3%B2&amp;url=https%3A%2F%2Falternativestudio2021-collab.github.io%2Fdaily-launch-sites%2Fday034-kisei-kippu%2F">Xで共有</a>
+  </div>
   <p class="sub">.ics はiPhoneの「カレンダー」、Googleカレンダー、Outlookで開けます。各予定には前日20時と30分前の通知を入れています。日時は日本時間です。</p>
 </section>
 
@@ -154,6 +159,9 @@ footer{font-size:13px;color:var(--sub)}
     <li>事前申込で取れなかった分は、10:00の一般発売で空いている列車を探せます。発売後も予定変更による払い戻しで空席が出ることがあるので、出発が近づいてからも空席照会で確かめられます。</li>
     <li>のぞみは12/25〜1/5は自由席がありません。ひかり・こだま・みずほ・さくら・つばめには自由席があります(JR東海の案内)。</li>
   </ul>
+  <div class="note" id="exsale"><b>割引の締め切り: EX早特☆期間限定セール(のぞみ)</b><br>
+    JR東海・JR西日本が、年末年始ののぞみ普通車指定席を割り引いています。対象は<b>上り(名古屋・京都・新大阪・岡山・広島→東京方面)の12/25〜31乗車</b>と、<b>下り(東京方面→名古屋〜広島)の1/2〜4乗車</b>。エクスプレス予約・スマートEXで<b>2名以上を同時に予約</b>する場合に限られ、席数に限りがあります。発売は<b>乗車日の40日前まで</b>なので、1か月前10時の発売日より先に締め切られます。<br>
+    締め切り: 上り12/31乗車分は11/21まで(12/25〜30乗車分は締め切り済み)。下り1/2乗車分は11/23、1/3乗車分は11/24、1/4乗車分は11/25まで。金額は区間と列車で違うため、予約画面で確かめてください。</div>
   <p class="note">JR東日本は新しい新幹線予約「JRE GO」を2026年秋ごろに始めると2月に発表していました(開始時は東北・秋田・山形・上越・北陸〔東京〜上越妙高〕)。年末年始の分をどちらで申し込めるかは、えきねっととJR東日本の最新のお知らせで確かめてください。</p>
 </section>
 
@@ -163,6 +171,7 @@ footer{font-size:13px;color:var(--sub)}
   <details><summary>事前受付で申し込めば、席は確定しますか</summary><p>確定ではありません。発売日の10時から順に手配され、満席なら取れません。取れたかどうかはメールとサイトで確かめます。</p></details>
   <details><summary>行きと帰りで発売日が違うのはなぜですか</summary><p>発売日は乗る日ごとに決まるからです。12月29日に行って1月3日に帰るなら、行きは11月29日、帰りは12月3日の10時。帰りの分を忘れやすいので、カレンダーに両方入れておくと安心です。</p></details>
   <details><summary>東京から博多まで、東海道と山陽をまたぐ場合は</summary><p>東海道新幹線(JR東海)の区間を含む申込は、えきねっとの事前受付の対象外です。スマートEX・EX予約か、e5489を使います。</p></details>
+  <details><summary>のぞみの年末年始の割引はありますか</summary><p>JR東海・JR西日本の「EX早特☆期間限定セール!」があります。上りは12/25〜31、下りは1/2〜4の乗車が対象で、エクスプレス予約・スマートEXで2名以上を同時に予約する場合に限られます。発売は乗車日の40日前までなので、1か月前の発売日より前に締め切られます。下りの1/4乗車分は11/25までです。</p></details>
   <details><summary>飛行機や高速バスは</summary><p>このページはJRの指定席だけを扱っています。航空会社や高速バスは発売日の決まりが別で、多くはすでに発売中です。各社のサイトで確かめてください。</p></details>
 </section>
 
@@ -180,6 +189,8 @@ footer{font-size:13px;color:var(--sub)}
     <li>スマートEX 年末年始の事前申込のお知らせ(過去年度の例) https://smart-ex.jp/topics/detail/?id=695</li>
     <li>JR東海「のぞみ」全席指定席の期間 https://railway.jr-central.co.jp/nozomi/</li>
     <li>鉄道チャンネル 2026年度ののぞみ全席指定期間 https://tetsudo-ch.com/13020406.html</li>
+    <li>JR西日本 プレスリリース「EX早特☆期間限定セール!」(2026/10/2、2名以上・各乗車日の40日前まで) https://www.westjr.co.jp/press/article/2026/10/02/items/261002_00_press_exhayatoku.pdf</li>
+    <li>トラベル Watch 年末年始ののぞみ「EX早特☆期間限定セール!」発売開始(11/5) https://travel.watch.impress.co.jp/docs/news/2153827.html</li>
     <li>ITmedia Mobile「JRE GO」2026年秋から(2026/2/19) https://www.itmedia.co.jp/mobile/articles/2602/19/news128.html</li>
   </ul>
 </section>
@@ -224,6 +235,9 @@ function legItems(label,d){
     if(k.close)items.push({t:at(s,...k.close),w:`${k.n} 締め切り`,leg:label});
     else items.push({t:at(s,7,30),w:`${k.n} 締め切り(例年は当日朝。今年の時刻は公式で確認)`,leg:label,soft:true});
   });
+  if(document.querySelector('#sites input[value="ex"]:checked')){const m=d.getMonth(),dd=d.getDate();
+    const dir=m===11&&dd>=25?"上り・東京方面":m===0&&dd>=2&&dd<=4?"下り・東京方面から":null;
+    if(dir)items.push({t:at(addD(d,-40),23,0),w:`EX早特☆期間限定セール 締め切り(${dir}のみ、2名以上同時予約。時刻は目安)`,leg:label});}
   items.push({t:at(s,10,0),w:"指定席の発売(窓口・券売機・各サイト)",leg:label,main:true});
   return{s,items:items.sort((a,b)=>a.t-b.t)};
 }
@@ -260,6 +274,7 @@ render();
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"12月31日に乗る新幹線の指定席はいつ買えますか","acceptedAnswer":{"@type":"Answer","text":"12月1日の10時です。1か月前の同じ日(11月31日)がないため乗車月の1日に発売されます。1月1日乗車分も同じ12月1日10時です。"}},
 {"@type":"Question","name":"えきねっとの事前受付で申し込めば席は確定しますか","acceptedAnswer":{"@type":"Answer","text":"確定ではありません。発売日の10時から順に手配され、満席なら取れません。"}},
-{"@type":"Question","name":"東海道と山陽をまたぐ場合、えきねっとの事前受付は使えますか","acceptedAnswer":{"@type":"Answer","text":"JR東海の区間を含む申込はえきねっと事前受付の対象外です。スマートEX・EX予約かe5489を使います。"}}]}</script>
+{"@type":"Question","name":"東海道と山陽をまたぐ場合、えきねっとの事前受付は使えますか","acceptedAnswer":{"@type":"Answer","text":"JR東海の区間を含む申込はえきねっと事前受付の対象外です。スマートEX・EX予約かe5489を使います。"}},
+{"@type":"Question","name":"年末年始ののぞみに割引はありますか","acceptedAnswer":{"@type":"Answer","text":"JR東海・JR西日本の「EX早特☆期間限定セール!」があります。上りは12月25日〜31日、下りは1月2日〜4日の乗車が対象で、エクスプレス予約・スマートEXで2名以上を同時に予約する場合に限られます。発売は乗車日の40日前までです。"}}]}</script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
 </body></html>

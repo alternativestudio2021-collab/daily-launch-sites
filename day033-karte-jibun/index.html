@@ -81,7 +81,7 @@ footer{font-size:12px;color:var(--sub);display:grid;gap:6px}
   <p class="kicker">毎日ひとつの小さな道具箱 ・ Day 33</p>
   <h1>KARTE経由の漏えい<br>自分の分の確かめ帳</h1>
   <p class="lead">マーケティング用のクラウド「KARTE」(株式会社プレイド)が11月13日に不正アクセスを受け、導入していた会社から顧客情報の漏えいの公表が続いています。ニュースの一覧は会社ごとに並んでいますが、知りたいのは「自分について何が出たか」。使っているサービスに印をつけると、漏れたとされる項目を重ねて、届きうる詐欺の型と、やること・やらなくていいことを出します。</p>
-  <p class="asof">2026年11月20日までの公表・報道で更新</p>
+  <p class="asof">2026年11月21日までの公表・報道で更新</p>
 </header>
 
 <section class="plain" aria-labelledby="h-new">
@@ -119,7 +119,7 @@ footer{font-size:12px;color:var(--sub);display:grid;gap:6px}
     <thead><tr><th>会社・サービス</th><th>公表</th><th>件数</th><th>漏れたとされる項目</th><th>含まれないとされるもの</th></tr></thead>
     <tbody id="tb"></tbody>
   </table></div>
-  <p class="lead">ほかに、ゴールドウイン、ワールド、ワコールホールディングス、カウネット、エアークローゼット、トヨタファイナンス、三菱UFJ信託銀行、タカラベルモント、三陽商会、TSIホールディングス、ミスミ(約14万件)、IVRy、ルクミー、アインホールディングス、S.RIDE、リクルートマネジメントソリューションズ(法人の研修担当者 12,421件)なども公表したと報じられています(ワールドは「項目・件数・範囲は確認中」と公表。ほかの項目はこのページでは未確認)。日本経済新聞は、影響を受けた会社がのべ約2,200社にのぼると報じています。</p>
+  <p class="lead">ほかに、ワールド、ワコールホールディングス、カウネット、エアークローゼット、トヨタファイナンス、三菱UFJ信託銀行、タカラベルモント、三陽商会、TSIホールディングス、ミスミ(約14万件)、IVRy、ルクミー、アインホールディングス、S.RIDE、リクルートマネジメントソリューションズ(法人の研修担当者 12,421件)なども公表したと報じられています(ワールドは「項目・件数・範囲は確認中」と公表。ほかの項目はこのページでは未確認)。日本経済新聞は、影響を受けた会社がのべ約2,200社にのぼると報じています。</p>
 </section>
 
 <section class="plain" aria-labelledby="h-faq">
@@ -165,6 +165,12 @@ footer{font-size:12px;color:var(--sub);display:grid;gap:6px}
     <li><a href="https://smartscope.blog/blog/infomart-up-2-735-267-customer-records-linked-2026/">SmartScope「インフォマート 最大2,735,267件」(インフォマートの公表の要約)</a></li>
     <li><a href="https://smhn.info/202611-mineo-plaid-karte-unauthorized-access-email-leak">すまほん!!「mineo、KARTEへの不正アクセスでメールアドレス漏えいの可能性」</a></li>
     <li><a href="https://rocket-boys.co.jp/security-measures-lab/caitech-karte-for-app-post-contract-data-retention-breach/">セキュリティ対策Lab「カイテク、契約終了から1年以上経過したKARTEに個人情報が残存・流出」</a></li>
+    <li><a href="https://k-tai.watch.impress.co.jp/docs/news/2157929.html">ケータイ Watch(mineoの第二報 最大142万件・項目)</a></li>
+    <li><a href="https://www.sbbit.jp/article/cont1/188589">ビジネス+IT(mineo 最大142万件など各社の続報)</a></li>
+    <li><a href="https://smartscope.blog/blog/pocket-marche-unauthorized-access-external-service-karte-leaks-2026/">SmartScope「ポケットマルシェ KARTE経由の漏えい」(雨風太陽の公表の要約)</a></li>
+    <li><a href="https://smartscope.blog/blog/toyota-wallet-unauthorized-access-karte-may-have-leaked-2026/">SmartScope「TOYOTA Wallet KARTEへの不正アクセス」(トヨタファイナンシャルサービスの公表の要約)</a></li>
+    <li><a href="https://smartscope.blog/blog/goldwin-partial-customer-data-leak-via-unauthorized-access-2026/">SmartScope「ゴールドウイン お客さま情報の一部漏えい」(ゴールドウインの公表の要約)</a></li>
+    <li><a href="https://smartscope.blog/blog/wowow-possible-leak-member-birth-dates-gender-postal-2026/">SmartScope「WOWOW 会員の生年月日・性別・郵便番号 漏えいの可能性」(WOWOWの公表の要約)</a></li>
     <li><a href="https://www.kokusen.go.jp/category/188.html">国民生活センター 消費者ホットライン188</a></li>
   </ol>
 </section>
@@ -186,13 +192,16 @@ const S=[
  {k:"franc",n:"Francfranc",d:"11/18頃",c:"会員 最大約598万件",i:["tbd","hist"],x:"クレジットカード情報・ログインパスワードの流出は未確認と説明",note:"会員情報のほか、EC購入履歴関連 最大約400万件(別集計)"},
  {k:"campfire",n:"CAMPFIRE",d:"11/18(第二報)",c:"5,819,779件",i:["mail","id"],x:"パスワード・クレジットカード情報・口座情報",note:"11/11までの会員登録者。メール・ハッシュ化されたユーザーID"},
  {k:"rizap",n:"RIZAP・chocoZAP(ZAP ID)",d:"11/17",c:"最大約432万件",i:["mail","id","attr"],x:"",note:"メール・会員ID・性別・年代・都道府県・LINE連携用の識別番号。うち最大約6万件は氏名も"},
- {k:"pokemaru",n:"ポケットマルシェ(雨風太陽)",d:"11/18",c:"約95万人分",i:["tbd"],x:"",note:"項目はこのページでは未確認"},
+ {k:"mineo",n:"mineo(オプテージ)",d:"11/16・11/18(第二報)",c:"最大142万件",i:["mail","birth","attr"],x:"クレジットカード・銀行口座の情報、本人確認書類、マイページのログインID・パスワード",note:"メール・性別・年代・郵便番号・都道府県・誕生日や記念日など(メール以外は人によって異なる)。2020年1月以降に解約した人の一部も含む"},
+ {k:"pokemaru",n:"ポケットマルシェ(雨風太陽)",d:"11/18",c:"消費者 944,885人・生産者 10,164人",i:["id","mail"],x:"ログインパスワード・クレジットカード情報(現時点で漏えいは未確認と説明)",note:"会員ID・メール・メール配信の設定・ニックネームの一部。退会した人も含む ※報道"},
  {k:"wealth",n:"ウェルスナビ",d:"11/18",c:"約91万人",i:["id","birth","attr"],x:"氏名・連絡先・ログイン情報・資産情報",note:"顧客識別コード・生年月・居住都道府県"},
  {k:"yonden",n:"四国電力(よんでんコンシェルジュ)",d:"11/16",c:"約60万件",i:["name","mail","addr"],x:"",note:"個人・法人会員。氏名・メール・住所など"},
  {k:"hankyu",n:"阪急阪神ホテルズ",d:"11/16",c:"最大331,586件",i:["name","attr","addr","tel","mail"],x:"クレジットカード情報・パスポート情報",note:"氏名・年齢・住所・電話・メールなど"},
+ {k:"twallet",n:"TOYOTA Wallet(トヨタファイナンシャルサービス)",d:"11/18",c:"約12万件",i:["id"],x:"",note:"社内管理用のお客様番号。これだけでは本人の特定やログイン・決済はできないと説明 ※報道"},
  {k:"mufgs",n:"三菱UFJ eスマート証券",d:"11/18〜19",c:"口座番号 約6万件・年齢 約10.5万件",i:["acct","attr"],x:"",note:"それぞれ他の情報と結び付かない状態と説明"},
- {k:"mineo",n:"mineo(オプテージ)",d:"11/16",c:"調査中(未公表)",i:["mail"],x:"クレジットカード情報(KARTEに渡していないと説明)",note:"メールアドレス。漏えいの「可能性」として公表"},
  {k:"nikkei",n:"日経電子版(日本経済新聞社)",d:"11/17",c:"記載なし",i:["mail","tel","birth","attr"],x:"",note:"メールアドレス・電話番号・性別・生年月。漏えいの「可能性」として公表"},
+ {k:"goldwin",n:"ゴールドウイン",d:"11/17",c:"調査中",i:["name","addr","birth","mail"],x:"クレジットカード・銀行口座の情報・ログインパスワード",note:"氏名・住所・生年月日・メールアドレスなど ※報道"},
+ {k:"wowow",n:"WOWOW",d:"11/17",c:"調査中",i:["mail","birth","attr","id"],x:"クレジットカード情報・金融機関口座情報・ログインパスワード",note:"生年月日・性別・郵便番号・メール・内部管理用ID。漏えいの「可能性」として公表 ※報道"},
  {k:"morisawa",n:"Morisawa Fonts(モリサワ)",d:"11/17",c:"23,957件",i:["name","mail","id"],x:"",note:"2023年5月以降にサービスサイトで購入した人の一部。氏名・メール・ユーザーID ※報道"},
  {k:"infomart",n:"インフォマート(BtoBプラットフォーム)",d:"11/17",c:"最大2,735,267件",i:["tbd"],x:"",note:"連携していたデータの総数による最大値。実際の対象はプレイドの報告待ちと説明"},
  {k:"radiko",n:"radiko",d:"11/17",c:"記載なし",i:["id"],x:"ログインに使うメールアドレスとは別の番号と説明",note:"社内でお客様を識別する番号"},
