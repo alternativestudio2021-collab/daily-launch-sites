@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>年末年始の飛行機 モバイルバッテリー持ち込み早見 2026-27</title>
+<meta name="description" content="帰省・旅行の飛行機に持っていく充電池を並べると、mAhからWhに換算し、国の新ルール(2026年4月24日から:モバイルバッテリーは160Wh以下を1人2個まで、機内で充電・給電しない)に合うかを1つずつ判定します。2027年1月から国際線で100Whが上限になるとの見通しも。">
+<link rel="canonical" href="https://alternativestudio2021-collab.github.io/daily-launch-sites/day035-battery-kinai/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="年末年始の飛行機 モバイルバッテリー持ち込み早見 2026-27">
+<meta property="og:description" content="持っていく充電池を並べるだけ。mAh→Wh換算、2個まで・160Wh以下・予備電池との組み合わせを判定し、出発前のチェックリストを作ります。">
+<meta property="og:url" content="https://alternativestudio2021-collab.github.io/daily-launch-sites/day035-battery-kinai/">
+<meta property="og:site_name" content="毎日ひとつの小さな道具箱">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@400;700&family=Zen+Kaku+Gothic+New:wght@400;700;900&display=swap">
+<style>
+:root{--bg:#dfe5e8;--tray:#c9d2d7;--card:#f7f9fa;--ink:#14212a;--sub:#4f5e68;--line:#aebac1;--scan:#0f3b4f;--scan2:#0a2a39;--cyan:#38d6c8;--orange:#ff7a1a;--ok:#13795b;--ok-bg:#ddf2ea;--ng:#b5261b;--ng-bg:#fbe3df;--warn:#8a5a00;--warn-bg:#fff1cf;
+ --f:"Zen Kaku Gothic New","Hiragino Sans","Noto Sans JP",sans-serif;--m:"M PLUS 1 Code",ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root{--bg:#0e1418;--tray:#162027;--card:#1a252c;--ink:#e3eaee;--sub:#9fb0ba;--line:#30404a;--scan:#071e29;--scan2:#04141c;--cyan:#4fe6d8;--orange:#ff9547;--ok:#6fdcb4;--ok-bg:#12302a;--ng:#ff9a8c;--ng-bg:#3b1c18;--warn:#ffd27a;--warn-bg:#3a2e12}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);line-height:1.8;font-size:16px}
+a{color:inherit}
+.wrap{max-width:880px;margin:0 auto;padding:0 16px 80px;display:grid;gap:24px}
+header.x{margin:0 -16px;background:radial-gradient(120% 140% at 80% 0%,#15607a 0%,var(--scan) 45%,var(--scan2) 100%);color:#e8fbff;padding:30px 20px 26px;position:relative;overflow:hidden}
+header.x::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(56,214,200,.08) 0 1px,transparent 1px 4px);pointer-events:none}
+header.x .belt{font-family:var(--m);font-size:13px;color:var(--cyan);letter-spacing:.12em;display:flex;flex-wrap:wrap;gap:6px 16px}
+header.x h1{font-weight:900;font-size:clamp(26px,6.4vw,44px);line-height:1.3;margin:10px 0 10px;letter-spacing:.02em}
+header.x h1 span{color:var(--orange)}
+header.x p{margin:0;max-width:40em;color:#c4e3ea}
+.asof{display:inline-block;margin-top:12px;font-family:var(--m);font-size:12px;border:1px solid var(--cyan);color:var(--cyan);padding:2px 10px;border-radius:2px}
+h2{font-size:21px;margin:0;line-height:1.45;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+h2 .tag{font-family:var(--m);font-size:12px;font-weight:700;background:var(--orange);color:#1a0d00;padding:1px 8px;border-radius:2px;letter-spacing:.08em}
+h3{font-size:16px;margin:0}
+p{margin:0}
+.sub{color:var(--sub);font-size:14px}
+section{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:20px 18px;display:grid;gap:14px}
+.three{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.three div{background:var(--tray);border-radius:14px;padding:14px 14px 12px;border:1px solid var(--line)}
+.three b{display:block;font-family:var(--m);font-size:26px;line-height:1.2;color:var(--ink)}
+.three span{font-size:14px;color:var(--sub)}
+.tray{background:var(--tray);border:1px solid var(--line);border-radius:16px;padding:12px;display:grid;gap:10px}
+.item{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px;display:grid;gap:8px;grid-template-columns:1fr;position:relative}
+.item .top{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.item .no{font-family:var(--m);font-size:12px;background:var(--scan);color:var(--cyan);padding:0 8px;border-radius:2px}
+.item select,.item input{font:inherit;font-size:16px;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink)}
+.item input{width:7.5em}
+.item .vals{display:flex;gap:8px 14px;flex-wrap:wrap;align-items:center;font-size:14px}
+.item .vals label{display:flex;gap:6px;align-items:center}
+.item .del{position:absolute;top:8px;right:8px;border:0;background:transparent;color:var(--sub);font-size:20px;cursor:pointer;line-height:1}
+.item .res{font-family:var(--m);font-size:14px}
+.pill{display:inline-block;padding:0 8px;border-radius:999px;font-size:12px;font-weight:700;font-family:var(--f)}
+.pill.ok{background:var(--ok-bg);color:var(--ok)}.pill.ng{background:var(--ng-bg);color:var(--ng)}.pill.warn{background:var(--warn-bg);color:var(--warn)}
+.btns{display:flex;gap:8px;flex-wrap:wrap}
+button.b{font:inherit;font-size:15px;font-weight:700;padding:8px 14px;border-radius:6px;border:1px solid var(--scan);background:var(--scan);color:#e8fbff;cursor:pointer}
+button.b.o{background:transparent;color:var(--ink);border-color:var(--line)}
+.opt{display:grid;gap:6px;font-size:15px}
+.opt label{display:flex;gap:8px;align-items:flex-start}
+.verdict{border-radius:10px;padding:14px 16px;display:grid;gap:8px;border:2px solid}
+.verdict.ok{background:var(--ok-bg);border-color:var(--ok)}.verdict.ng{background:var(--ng-bg);border-color:var(--ng)}
+.verdict h3{font-size:19px}
+.verdict ul{margin:0;padding-left:1.2em}
+.note{background:var(--warn-bg);color:var(--ink);border-left:4px solid var(--orange);padding:10px 12px;border-radius:4px;font-size:15px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:6px 8px;text-align:right;font-family:var(--m)}
+th{background:var(--tray);font-family:var(--f);text-align:center}
+td:first-child{text-align:left}
+td.ok{color:var(--ok)}td.w{color:var(--warn)}
+.tscroll{overflow-x:auto}
+ul.chk{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+ul.chk li{display:flex;gap:8px;align-items:flex-start}
+textarea{width:100%;min-height:150px;font:inherit;font-size:15px;padding:10px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink)}
+.pr{border:1px dashed var(--line);border-radius:6px;padding:10px 12px;font-size:14px;color:var(--sub)}
+.pr b{font-family:var(--m);background:var(--sub);color:var(--card);padding:0 6px;border-radius:2px;margin-right:6px}
+details{border-top:1px solid var(--line);padding-top:10px}
+details summary{font-weight:700;cursor:pointer}
+details p{margin-top:6px}
+ol.src{margin:0;padding-left:1.4em;font-size:14px;word-break:break-all}
+.links{display:grid;gap:6px;font-size:15px}
+footer{font-size:13px;color:var(--sub);text-align:center}
+.msg{font-size:14px;color:var(--ok);min-height:1.4em}
+</style></head><body>
+<div class="wrap">
+<header class="x">
+  <div class="belt"><span>SECURITY CHECK</span><span>LITHIUM-ION / 機内持ち込み</span><span>2026-27 年末年始</span></div>
+  <h1>飛行機に持っていく<br><span>モバイルバッテリー</span>持ち込み早見</h1>
+  <p>手持ちの充電池をトレーに並べるように入れていくと、mAhからWhに直して、国の新しいルールに合うかを1つずつ判定します。帰省の前の晩に、家族の分もまとめて見られます。</p>
+  <span class="asof">2026年11月22日時点の情報</span>
+</header>
+
+<section aria-labelledby="h-rule">
+  <h2 id="h-rule"><span class="tag">RULE</span>2026年4月24日からのルール(国内線・国際線)</h2>
+  <div class="three">
+    <div><b>2個まで</b><span>モバイルバッテリーは1人2個まで。容量の小さいものも数に入ります</span></div>
+    <div><b>160Wh以下</b><span>1個あたり160Whを超えるものは持ち込めません。預け入れはどの容量でも不可</span></div>
+    <div><b>機内で充電しない</b><span>モバイルバッテリー本体の充電も、そこからスマホなどへの給電もできません</span></div>
+  </div>
+  <p class="sub">国土交通省が2026年4月14日に発表し、4月24日から適用しています。頭上の収納棚には入れず、座席前のポケットなど手元に置きます(2025年7月8日から)。端子はテープでふさぐか、1個ずつ袋に入れます。違反は航空法の罰則の対象になりえます。</p>
+</section>
+
+<section aria-labelledby="h-tool">
+  <h2 id="h-tool"><span class="tag">TRAY</span>持っていく充電池を並べる</h2>
+  <p class="sub">本体の裏や側面の小さな文字を見て入れます。Whが書いてあればWhを、mAhしかなければmAhと電圧(V)を入れてください。電圧は「3.6V」「3.7V」「3.85V」のように書かれた電池側の値です。分からなければ3.7Vで計算します。</p>
+  <div class="tray" id="tray"></div>
+  <div class="btns">
+    <button class="b o" id="addMb" type="button">+ モバイルバッテリー</button>
+    <button class="b o" id="addSp" type="button">+ 予備電池(カメラ・PCなどから外したもの)</button>
+  </div>
+  <div class="opt">
+    <label><input type="checkbox" id="y27"> 2027年1月1日以降に、国際線か外国の航空会社に乗る</label>
+    <label><input type="checkbox" id="foreign"> 外国の航空会社の便がある(日本の航空会社より厳しい社内ルールがありえます)</label>
+  </div>
+  <div id="out" aria-live="polite"></div>
+</section>
+
+<section aria-labelledby="h-wh">
+  <h2 id="h-wh"><span class="tag">Wh</span>mAhからWhへの早見</h2>
+  <p>計算は <b style="font-family:var(--m)">Wh = mAh × V ÷ 1000</b> です。20,000mAh・3.7Vなら74Whで、持ち込めます。</p>
+  <div class="tscroll"><table id="whTable"><thead><tr><th>容量(mAh)</th><th>3.6V</th><th>3.7V</th><th>3.85V</th></tr></thead><tbody></tbody></table></div>
+  <p class="sub">緑は100Wh以下、黄は100Wh超〜160Wh以下。27,000mAh前後が100Whの境目です。箱や本体に「定格容量 ◯mAh(5V)」と出力側の数字が書かれている製品もあります。その場合は電池側の容量(大きい方の数字)と電圧で計算してください。</p>
+</section>
+
+<section aria-labelledby="h-2027">
+  <h2 id="h-2027"><span class="tag">2027</span>年明けからの見通し:国際線は100Whが上限になる可能性</h2>
+  <p>日本航空は、国際航空運送協会(IATA)の規定変更により<b>2027年1月以降は100Whに制限される可能性がある</b>と案内しています(確定ではないとしています)。海外の報道では、2027年1月1日に発効するIATAの危険物規則書 第68版で、100Wh超〜160Wh以下のモバイルバッテリーを航空会社の承認つきで持ち込める扱いがなくなるとされています。</p>
+  <p>国内線のルールが変わるという発表は、11月22日時点では見当たりません。年末年始の旅行は今のルールで判定し、<b>これから買うなら100Wh以下</b>(3.7Vなら27,000mAhまで)を選んでおくと、年明け以降の海外旅行でも困りません。ブラックフライデーで買い足す人は、商品ページのWh表示を確かめてから選んでください。</p>
+</section>
+
+<section aria-labelledby="h-chk">
+  <h2 id="h-chk"><span class="tag">CHECK</span>出発前のチェックリスト</h2>
+  <ul class="chk" id="chk">
+    <li><input type="checkbox" id="c1"><label for="c1">モバイルバッテリーは機内持ち込みの手荷物に入れた(スーツケースに入れていない)</label></li>
+    <li><input type="checkbox" id="c2"><label for="c2">本体のWh・mAhの表示が読める。読めないものは、製品ページを画面に保存した</label></li>
+    <li><input type="checkbox" id="c3"><label for="c3">端子をテープでふさぐか、1個ずつ小袋に入れた</label></li>
+    <li><input type="checkbox" id="c4"><label for="c4">スマホ・タブレットは出発前に満充電にした(機内でバッテリーからは充電できない)</label></li>
+    <li><input type="checkbox" id="c5"><label for="c5">膨らみ・へこみ・熱くなる症状があるものは持っていかない</label></li>
+    <li><input type="checkbox" id="c6"><label for="c6">外国の航空会社に乗る場合、その会社の案内を確かめた</label></li>
+  </ul>
+  <p class="sub">膨らんだ充電池やリコール対象の製品の手放し方は <a href="../day030-juden-tebanashi/">充電池の手放し帳(Day 30)</a> にまとめています。</p>
+</section>
+
+<section aria-labelledby="h-share">
+  <h2 id="h-share"><span class="tag">SEND</span>家族に送る</h2>
+  <p class="sub">トレーに入れた内容から作ります。送るのは判定の一文とこのページのURLだけです。</p>
+  <textarea id="share" readonly></textarea>
+  <div class="btns">
+    <button class="b" id="line" type="button">LINEで送る</button>
+    <button class="b o" id="xpost" type="button">Xで共有</button>
+    <button class="b o" id="copy" type="button">コピー</button>
+  </div>
+  <p class="msg" id="msg"></p>
+</section>
+
+<div class="pr"><b>PR</b> 100Wh以下のモバイルバッテリーを探す導線を準備中です(提携先のリンクが届きしだい掲載します)。</div>
+
+<section aria-labelledby="h-faq">
+  <h2 id="h-faq"><span class="tag">FAQ</span>よくある迷いどころ</h2>
+  <details><summary>20,000mAhのモバイルバッテリーは持ち込めますか</summary><p>3.7Vなら74Whで、160Wh以下なので持ち込めます。数は、ほかのモバイルバッテリーと合わせて1人2個までです。</p></details>
+  <details><summary>3個持っていきたい場合は</summary><p>モバイルバッテリーは容量に関係なく1人2個までなので、3個目は持ち込めません。同行する家族の分として、それぞれが2個までを持つ形になります。</p></details>
+  <details><summary>カメラの予備バッテリーも数に入りますか</summary><p>100Wh以下の予備電池は個数の制限がなく、2個の数にも入りません。100Wh超〜160Wh以下の予備電池は、同じ帯のモバイルバッテリーと合わせて2個までです(100Wh以下のモバイルバッテリーだけなら最大2個)。</p></details>
+  <details><summary>ポータブル電源は持ち込めますか</summary><p>多くのポータブル電源は160Whを超えるため、機内持ち込みも預け入れもできません。160Wh以下の小型のものはモバイルバッテリーと同じ扱いになります。本体のWh表示で判断してください。</p></details>
+  <details><summary>機内でスマホをモバイルバッテリーにつないでおくのもだめですか</summary><p>だめです。モバイルバッテリーから他の機器への給電も、座席の電源やUSBでモバイルバッテリー本体を充電することも禁止されています。座席の電源でスマホを直接充電するのは、各航空会社の案内に従ってください。</p></details>
+</section>
+
+<section aria-labelledby="h-src">
+  <h2 id="h-src"><span class="tag">SRC</span>出典</h2>
+  <ol class="src">
+    <li><a href="https://www.mlit.go.jp/report/press/kouku10_hh_000310.html" rel="noopener">国土交通省 報道発表資料「モバイルバッテリーの機内持込みの新たなルールについて」(2026年4月14日)</a></li>
+    <li><a href="https://www.mlit.go.jp/report/press/content/001995959.pdf" rel="noopener">国土交通省 航空局 同資料PDF(適用開始4月24日、Whの計算式)</a></li>
+    <li><a href="https://www.jal.co.jp/jp/ja/info/2026/other/260330/" rel="noopener">日本航空 モバイルバッテリーの持ち込みに関するお知らせ(2027年1月以降100Whに制限される可能性の注記)</a></li>
+    <li><a href="https://www.ana.co.jp/ja/jp/guide/boarding-procedures/baggage/international/caution-restriction03/" rel="noopener">ANA 国際線 リチウム電池・モバイルバッテリーの案内</a></li>
+    <li><a href="https://travel.watch.impress.co.jp/docs/news/2101674.html" rel="noopener">トラベル Watch「国内線の機内持ち込み、4月24日から新ルール適用。モバイルバッテリーのWh数とは?」</a></li>
+    <li><a href="https://www.watch.impress.co.jp/docs/news/2101635.html" rel="noopener">Impress Watch「モバイルバッテリーは機内で使用禁止 新ルールが4月24日スタート」(100Wh以下の予備電池は2個の対象外)</a></li>
+    <li><a href="https://www.elecom.co.jp/pickup/mobile_battery/basic13.html" rel="noopener">エレコム モバイルバッテリーのWhの計算(20,000mAh×3.7V=74Wh)</a></li>
+    <li><a href="https://www.icao.int/news/new-power-bank-restrictions-will-safeguard-international-aviation?pubDate=20260328" rel="noopener">ICAO "New power bank restrictions will safeguard international aviation"(2026年3月)</a></li>
+    <li><a href="https://www.insideflyer.com/posts/new-2027-rules-restrict-larger-power-banks-on-flights/" rel="noopener">InsideFlyer "New 2027 rules restrict larger power banks on flights"</a></li>
+    <li><a href="https://www.smbctb.co.jp/globalcompass/tips/power-bank/" rel="noopener">SMBC信託銀行 グローバルコンパス「モバイルバッテリー持ち込み・使用制限の新ルール」(収納棚に入れないルール)</a></li>
+  </ol>
+  <p class="sub">このページは公開資料をもとにした情報の整理です。最終的な可否は、搭乗する航空会社と保安検査場の判断に従ってください。</p>
+</section>
+
+<section aria-labelledby="h-more">
+  <h2 id="h-more"><span class="tag">MORE</span>ほかの道具</h2>
+  <div class="links">
+    <a href="../day034-kisei-kippu/">帰省きっぷ 申込日カレンダー 2026-27(新幹線・特急の申込日)</a>
+    <a href="../day030-juden-tebanashi/">膨らんだ・リコール・もう使わない 充電池の手放し帳</a>
+    <a href="../day032-bf-jisshitsu/">ブラックフライデー 実質いくら帳 2026</a>
+    <a href="../">毎日ひとつの小さな道具箱(一覧)</a>
+  </div>
+</section>
+<footer>毎日ひとつの小さな道具箱 · Day 035</footer>
+</div>
+<script>
+const $=s=>document.querySelector(s);
+const URLP="https://alternativestudio2021-collab.github.io/daily-launch-sites/day035-battery-kinai/";
+let items=[],seq=0;
+function add(kind){items.push({id:++seq,kind,mode:"mah",wh:"",mah:"",v:"3.7",qty:1});draw();}
+function whOf(it){if(it.mode==="wh"){const w=parseFloat(it.wh);return isFinite(w)&&w>0?w:null}
+  const m=parseFloat(it.mah),v=parseFloat(it.v);return isFinite(m)&&m>0&&isFinite(v)&&v>0?m*v/1000:null}
+function band(w){return w==null?null:w<=100?"le100":w<=160?"mid":"over"}
+const BL={le100:"100Wh以下",mid:"100Wh超〜160Wh以下",over:"160Wh超"};
+function draw(){
+  const t=$("#tray");t.innerHTML="";
+  items.forEach((it,i)=>{
+    const d=document.createElement("div");d.className="item";
+    d.innerHTML=`<button class="del" type="button" aria-label="削除">×</button>
+    <div class="top"><span class="no">#${String(i+1).padStart(2,"0")}</span>
+      <select data-k="kind" aria-label="種類"><option value="mb">モバイルバッテリー</option><option value="sp">予備電池</option></select>
+      <select data-k="mode" aria-label="表示"><option value="mah">mAhで入れる</option><option value="wh">Whで入れる</option></select>
+      <label class="sub">個数 <input data-k="qty" type="number" min="1" max="9" inputmode="numeric" style="width:4em"></label></div>
+    <div class="vals"></div><div class="res"></div>`;
+    d.querySelector('[data-k=kind]').value=it.kind;d.querySelector('[data-k=mode]').value=it.mode;d.querySelector('[data-k=qty]').value=it.qty;
+    const vals=d.querySelector(".vals");
+    vals.innerHTML=it.mode==="wh"?`<label><input data-k="wh" type="number" step="0.1" min="0" inputmode="decimal" placeholder="例 74"> Wh</label>`
+      :`<label><input data-k="mah" type="number" min="0" inputmode="numeric" placeholder="例 20000"> mAh</label><label>× <input data-k="v" type="number" step="0.01" min="0" inputmode="decimal" style="width:5em"> V</label>`;
+    vals.querySelectorAll("input").forEach(x=>x.value=it[x.dataset.k]);
+    d.querySelectorAll("[data-k]").forEach(x=>{const ev=x.tagName==="SELECT"?"change":"input";x.addEventListener(ev,()=>{
+      it[x.dataset.k]=x.dataset.k==="qty"?Math.max(1,parseInt(x.value)||1):x.value;
+      if(x.tagName==="SELECT")draw();else{resOf(d,it);judge();}
+    })});
+    d.querySelector(".del").addEventListener("click",()=>{items=items.filter(z=>z.id!==it.id);draw()});
+    resOf(d,it);t.appendChild(d);
+  });
+  if(!items.length)t.innerHTML=`<p class="sub" style="margin:6px">下のボタンで充電池を追加してください。</p>`;
+  judge();
+}
+function resOf(d,it){const w=whOf(it),b=band(w),r=d.querySelector(".res");
+  if(w==null){r.innerHTML=`<span class="sub">容量を入れると判定します</span>`;return}
+  const cls=b==="le100"?"ok":b==="mid"?"warn":"ng";
+  r.innerHTML=`${w.toFixed(1)} Wh <span class="pill ${cls}">${BL[b]}</span>`+(b==="over"?` <span class="pill ng">持ち込み不可</span>`:"");}
+function judge(){
+  const out=$("#out"),y27=$("#y27").checked,fr=$("#foreign").checked;
+  const valid=items.filter(it=>whOf(it)!=null);
+  if(!valid.length){out.innerHTML="";$("#share").value="";return}
+  let mbN=0,mbMid=0,spMid=0,over=[],mb100plus=[],spLe=0;
+  valid.forEach(it=>{const b=band(whOf(it)),q=it.qty;
+    if(b==="over"){over.push(it);return}
+    if(it.kind==="mb"){mbN+=q;if(b==="mid"){mbMid+=q;mb100plus.push(it)}}
+    else{if(b==="mid")spMid+=q;else spLe+=q}});
+  const ng=[],warn=[];
+  if(over.length)ng.push(`160Whを超えるものが${over.reduce((a,b)=>a+b.qty,0)}個あります。機内にも預け入れにもできません。`);
+  if(mbN>2)ng.push(`モバイルバッテリーが${mbN}個あります。1人2個までなので、${mbN-2}個減らすか、同行者に持ってもらってください。`);
+  if(mbMid+spMid>2)ng.push(`100Wh超〜160Wh以下のものが合わせて${mbMid+spMid}個あります。モバイルバッテリーと予備電池を合わせて2個までです。`);
+  if(mbMid+spMid>0&&mbMid+spMid<=2)warn.push("100Wh超〜160Wh以下のものがあります。外国の航空会社では事前の承認を求められることがあります。");
+  if(y27&&mb100plus.length)warn.push("2027年1月以降の国際線では、100Whを超えるモバイルバッテリーが持ち込めなくなる可能性があります。乗る航空会社の案内を出発前に確かめてください。");
+  if(fr)warn.push("外国の航空会社は、1人1個までなど日本より厳しい社内ルールを設けている場合があります。");
+  if(spLe>0)warn.push(`100Wh以下の予備電池${spLe}個は、2個の数に入りません(個数制限なし)。端子の絶縁は必要です。`);
+  const ok=!ng.length;
+  out.innerHTML=`<div class="verdict ${ok?"ok":"ng"}"><h3>${ok?"今のルールでは、このまま持ち込めます":"このままでは持ち込めないものがあります"}</h3>
+    ${ng.length?`<ul>${ng.map(x=>`<li>${x}</li>`).join("")}</ul>`:""}
+    <p class="sub">モバイルバッテリー ${mbN}個(うち100Wh超 ${mbMid}個)/ 予備電池 100Wh超 ${spMid}個・100Wh以下 ${spLe}個</p>
+    <p class="sub">どれも機内での充電・給電はできません。預け入れ荷物には入れないでください。</p></div>`+
+    (warn.length?`<div class="note" style="margin-top:10px"><ul style="margin:0;padding-left:1.2em">${warn.map(x=>`<li>${x}</li>`).join("")}</ul></div>`:"");
+  $("#share").value=(ok?`飛行機に持っていく充電池、今のルールで持ち込めるか確かめたよ(モバイルバッテリー${mbN}個)。`:`飛行機に持っていく充電池、このままだと持ち込めないものがある。`)
+    +`\nモバイルバッテリーは1人2個まで・160Wh以下、機内では充電も給電もできないので、スマホは出発前に満充電にしておいて。\n${URLP}`;
+}
+$("#addMb").addEventListener("click",()=>add("mb"));$("#addSp").addEventListener("click",()=>add("sp"));
+$("#y27").addEventListener("change",judge);$("#foreign").addEventListener("change",judge);
+// 早見表
+(()=>{const tb=$("#whTable tbody");[5000,10000,15000,20000,26800,27000,30000,40000,43000].forEach(m=>{
+  const tr=document.createElement("tr");tr.innerHTML=`<td>${m.toLocaleString()}</td>`+[3.6,3.7,3.85].map(v=>{const w=m*v/1000;return`<td class="${w<=100?"ok":w<=160?"w":""}">${w.toFixed(1)}</td>`}).join("");tb.appendChild(tr)})})();
+function msg(t){$("#msg").textContent=t}
+$("#copy").addEventListener("click",async()=>{const v=$("#share").value||`飛行機のモバイルバッテリー持ち込み早見\n${URLP}`;
+  try{await navigator.clipboard.writeText(v);msg("コピーしました")}catch(e){$("#share").select();msg("選択しました。長押しでコピーしてください")}});
+$("#line").addEventListener("click",()=>{const v=$("#share").value||`飛行機のモバイルバッテリー持ち込み早見\n${URLP}`;window.open("https://line.me/R/share?text="+encodeURIComponent(v),"_blank","noopener")});
+$("#xpost").addEventListener("click",()=>{window.open("https://x.com/intent/post?text="+encodeURIComponent("飛行機のモバイルバッテリー、持っていく分が2個まで・160Wh以下に収まるか並べて確かめられる早見")+"&url="+encodeURIComponent(URLP),"_blank","noopener")});
+add("mb");
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"20,000mAhのモバイルバッテリーは飛行機に持ち込めますか","acceptedAnswer":{"@type":"Answer","text":"3.7Vなら74Whで、160Wh以下なので持ち込めます。数はほかのモバイルバッテリーと合わせて1人2個までです。"}},
+{"@type":"Question","name":"モバイルバッテリーを3個持っていけますか","acceptedAnswer":{"@type":"Answer","text":"2026年4月24日からモバイルバッテリーは容量に関係なく1人2個までのため、3個目は持ち込めません。"}},
+{"@type":"Question","name":"カメラの予備バッテリーはモバイルバッテリーの2個に数えますか","acceptedAnswer":{"@type":"Answer","text":"100Wh以下の予備電池は個数制限がなく、2個の数に入りません。100Wh超〜160Wh以下の予備電池は、同じ帯のモバイルバッテリーと合わせて2個までです。"}},
+{"@type":"Question","name":"ポータブル電源は飛行機に持ち込めますか","acceptedAnswer":{"@type":"Answer","text":"160Whを超えるものは機内持ち込みも預け入れもできません。多くのポータブル電源はこれに当たります。"}},
+{"@type":"Question","name":"2027年からモバイルバッテリーのルールは変わりますか","acceptedAnswer":{"@type":"Answer","text":"日本航空はIATAの規定変更により2027年1月以降は100Whに制限される可能性があると案内しています(確定ではないとしています)。国内線の変更の発表は2026年11月22日時点では見当たりません。"}}]}</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
