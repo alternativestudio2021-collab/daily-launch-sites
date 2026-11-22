@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>タワレコ・ニトリ…2026年の大型漏えい 重ね合わせ帳</title>
+<meta name="description" content="タワーレコード オンライン約1,100万件(11/21発表)、ニトリ最大3,762万件、アイリスプラザ約770万人分、バーガーキング約1,118万件、第一興商約872万件など、2026年は大型の漏えいが続きました。使ったことのあるサービスに印をつけると、自分について出回った可能性のある項目を1枚に重ね、届きやすい詐欺の型と、パスワードを変える順番を出します。">
+<link rel="canonical" href="https://alternativestudio2021-collab.github.io/daily-launch-sites/day036-roei-kasane/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="タワレコ・ニトリ…2026年の大型漏えい 重ね合わせ帳">
+<meta property="og:description" content="使ったサービスに印をつけるだけ。漏れた可能性のある項目を1枚の「身元カード」に重ね、届きやすい詐欺の型とパスワードを変える順番を出します。入力は端末の外に出ません。">
+<meta property="og:url" content="https://alternativestudio2021-collab.github.io/daily-launch-sites/day036-roei-kasane/">
+<meta property="og:site_name" content="毎日ひとつの小さな道具箱">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+:root{--bg:#e9edf1;--card:#f8fafb;--ink:#13202b;--sub:#53626f;--line:#c6d0d9;--soft:#dde4ea;
+  --amber:#b86a00;--amber-bg:#fdf0d8;--red:#b42318;--red-bg:#fbe4e1;--blue:#1d4f7a;--blue-bg:#e1ecf6;--ok:#2d6a3e;--ok-bg:#e2f0e5;
+  --f:"IBM Plex Sans JP","Hiragino Sans","Noto Sans JP",sans-serif;--m:"IBM Plex Mono",ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f151b;--card:#161e26;--ink:#e3eaf0;--sub:#9aa9b6;--line:#2c3945;--soft:#1e2832;
+  --amber:#f2a73b;--amber-bg:#3a2a12;--red:#ff8a7d;--red-bg:#3b1d1a;--blue:#8cc0ec;--blue-bg:#16283a;--ok:#8fd3a0;--ok-bg:#183022;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f151b;--card:#161e26;--ink:#e3eaf0;--sub:#9aa9b6;--line:#2c3945;--soft:#1e2832;
+  --amber:#f2a73b;--amber-bg:#3a2a12;--red:#ff8a7d;--red-bg:#3b1d1a;--blue:#8cc0ec;--blue-bg:#16283a;--ok:#8fd3a0;--ok-bg:#183022;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);line-height:1.8;font-size:16px}
+a{color:var(--blue)}
+.wrap{max-width:860px;margin:0 auto;padding:28px 16px 72px;display:grid;gap:26px}
+header{display:grid;gap:12px}
+.kicker{font-family:var(--m);font-size:12px;letter-spacing:.12em;color:var(--sub)}
+h1{font-size:clamp(25px,5.2vw,38px);line-height:1.35;margin:0;font-weight:700;text-wrap:balance}
+h2{font-size:21px;margin:0;line-height:1.45}
+h3{font-size:16px;margin:0;line-height:1.5}
+p{margin:0}
+.lead{color:var(--sub)}
+.asof{font-family:var(--m);font-size:12px;color:var(--amber);border:1px dashed var(--amber);padding:2px 10px;border-radius:3px;width:max-content;max-width:100%}
+section{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px 18px;display:grid;gap:14px}
+.step{font-family:var(--m);font-size:12px;color:var(--sub);letter-spacing:.1em}
+.svc{display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.svc label{display:grid;grid-template-columns:auto 1fr;gap:0 10px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;cursor:pointer;background:var(--card);position:relative}
+.svc label:has(input:checked){border-color:var(--amber);background:var(--amber-bg);box-shadow:3px 3px 0 var(--amber)}
+.svc input{width:20px;height:20px;margin:3px 0 0;accent-color:var(--amber);grid-row:span 3}
+.svc b{line-height:1.45}
+.svc small{font-size:12px;color:var(--sub);line-height:1.55}
+.svc .st{font-family:var(--m);font-size:11px}
+.tools{display:flex;flex-wrap:wrap;gap:8px}
+button{font:inherit;font-size:14px;padding:7px 14px;border-radius:7px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+button.pri{background:var(--ink);color:var(--card);border-color:var(--ink)}
+/* 身元カード */
+.idcard{border:2px solid var(--ink);border-radius:12px;padding:16px;display:grid;gap:12px;background:
+  repeating-linear-gradient(135deg,transparent 0 10px,var(--soft) 10px 11px),var(--card)}
+.idhead{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:8px}
+.idhead b{font-family:var(--m);letter-spacing:.08em}
+.idhead span{font-size:13px;color:var(--sub)}
+.fields{display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}
+.fld{border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:var(--card);display:grid;gap:2px;min-height:68px}
+.fld .k{font-size:12px;color:var(--sub)}
+.fld .v{font-family:var(--m);font-size:15px;letter-spacing:.06em;color:var(--sub)}
+.fld .w{font-size:11px;color:var(--sub);line-height:1.5}
+.fld.on{border-color:var(--amber);background:var(--amber-bg)}
+.fld.on .v{color:var(--amber);font-weight:600}
+.fld.pw.on{border-color:var(--red);background:var(--red-bg)}
+.fld.pw.on .v{color:var(--red)}
+.empty{color:var(--sub);font-size:14px}
+.risk{display:grid;gap:10px}
+.risk article{border-left:4px solid var(--amber);padding:6px 0 6px 12px;display:grid;gap:4px}
+.risk article.hi{border-left-color:var(--red)}
+.risk .ex{font-size:14px;background:var(--soft);border-radius:6px;padding:6px 10px}
+ol.todo{margin:0;padding-left:1.4em;display:grid;gap:6px}
+ul{margin:0;padding-left:1.3em;display:grid;gap:4px}
+.pwgrid{display:flex;flex-wrap:wrap;gap:8px}
+.pwgrid label{border:1px solid var(--line);border-radius:99px;padding:4px 12px;cursor:pointer;font-size:14px}
+.pwgrid label:has(input:checked){border-color:var(--red);background:var(--red-bg)}
+.pwgrid input{accent-color:var(--red);margin-right:6px}
+.order{counter-reset:o;display:grid;gap:6px;margin:0;padding:0;list-style:none}
+.order li{display:grid;grid-template-columns:34px 1fr;gap:8px;align-items:start}
+.order li::before{counter-increment:o;content:counter(o);font-family:var(--m);font-weight:600;background:var(--red);color:var(--card);border-radius:50%;width:26px;height:26px;display:grid;place-items:center;font-size:13px;margin-top:2px}
+.dont{background:var(--ok-bg);border-radius:8px;padding:12px 14px;display:grid;gap:6px}
+.dont h3{color:var(--ok)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+.tbl{overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+th{background:var(--soft);font-weight:600;white-space:nowrap}
+td.n{font-family:var(--m);white-space:nowrap}
+textarea{width:100%;min-height:120px;font:inherit;font-size:14px;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink)}
+details{border-top:1px solid var(--line);padding-top:10px}
+summary{cursor:pointer;font-weight:600}
+details p{margin-top:6px;color:var(--sub)}
+.src{font-size:13px;display:grid;gap:4px;padding-left:1.2em;margin:0}
+.src li{word-break:break-all}
+.note{font-size:13px;color:var(--sub)}
+footer{font-size:13px;color:var(--sub);display:grid;gap:8px}
+.more{display:grid;gap:6px;font-size:14px}
+@media print{.tools,.share,.pwsec{display:none}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"タワーレコードの流出で、自分が対象かどうかはどこで分かりますか?","acceptedAnswer":{"@type":"Answer","text":"同社は対象の会員にメール等で順次連絡するとしています(11/21発表時点)。退会して3年以内の人も含まれます。届いたメールのリンクからではなく、タワーレコードの公式サイトを自分で開いてお知らせを確かめてください。"}},
+{"@type":"Question","name":"パスワードはハッシュ値なら変えなくてよいですか?","acceptedAnswer":{"@type":"Answer","text":"ハッシュ値は元のパスワードそのものではありませんが、短いパスワードや使い回しの多いパスワードは元に戻される場合があります。同じパスワードを別のサービスでも使っているなら、そちらを先に変えるのが安全です。"}},
+{"@type":"Question","name":"クレジットカードは止めた方がいいですか?","acceptedAnswer":{"@type":"Answer","text":"このページで扱う各社の公表では、クレジットカード情報は流出した項目に含まれていないか、会社がカード番号を保持していないとされています。再発行より、明細に覚えのない請求がないかを月に一度見ることと、カード番号を聞いてくる連絡に答えないことが先です。"}},
+{"@type":"Question","name":"「流出したか確認できます」というサイトにメールアドレスを入れてもいいですか?","acceptedAnswer":{"@type":"Answer","text":"会社の公式サイト以外の確認サイトに、メールアドレスやパスワードを入れないでください。漏えいの話題に便乗した偽サイトが出ることがあります。このページは入力内容を送信しません。"}},
+{"@type":"Question","name":"いくつものサービスで漏れていると、何が困りますか?","acceptedAnswer":{"@type":"Answer","text":"1社では氏名とメールだけでも、別の会社で電話番号や生年月日、住所が出ていれば、組み合わせて本人らしく装った連絡が作れます。項目が増えるほど、詐欺の連絡が本物らしく見える点に気をつけてください。"}}
+]}
+</script>
+</head><body>
+<div class="wrap">
+<header>
+  <div class="kicker">DAY 036 / 毎日ひとつの小さな道具箱</div>
+  <h1>タワレコ・ニトリ…<br>2026年の大型漏えい 重ね合わせ帳</h1>
+  <p class="lead">11月21日、タワーレコード オンラインが会員情報 約1,100万件の流出を発表しました。今年はニトリ、アイリスプラザ、バーガーキング、第一興商(ビッグエコー)など、大きな漏えいが続いています。1社ごとでは「メールアドレスだけ」でも、重なると氏名・電話・生年月日・住所がそろってしまいます。使ったことのあるサービスに印をつけて、自分の分を1枚に重ねてみてください。</p>
+  <p class="asof">2026年11月23日時点の公表・報道をもとに作成</p>
+</header>
+
+<section>
+  <div class="step">STEP 1</div>
+  <h2>使ったことがあるサービスに印をつける</h2>
+  <p class="note">退会した会員も対象に含む会社があります(タワーレコードは退会3年以内)。迷ったら印をつけておく方が安全です。入力はこの端末の中だけで処理し、どこにも送りません。</p>
+  <div class="svc" id="svc"></div>
+  <div class="tools">
+    <button type="button" id="all">全部に印</button>
+    <button type="button" id="none">印を外す</button>
+  </div>
+</section>
+
+<section aria-live="polite">
+  <div class="step">STEP 2</div>
+  <h2>あなたについて出回った可能性のある項目</h2>
+  <div class="idcard">
+    <div class="idhead"><b>IDENTITY SHEET</b><span id="cnt">サービスを選ぶと、ここに重なります</span></div>
+    <div class="fields" id="fields"></div>
+  </div>
+  <p class="note">「確認」は会社が流出を確認したもの、「可能性」「おそれ」は調査中や可能性の段階のものです。どちらも、すべての会員のすべての項目が出たという意味ではありません。</p>
+</section>
+
+<section>
+  <div class="step">STEP 3</div>
+  <h2>届きやすい連絡の型</h2>
+  <div class="risk" id="risk"><p class="empty">STEP 1 で印をつけると表示します。</p></div>
+</section>
+
+<section class="pwsec">
+  <div class="step">STEP 4</div>
+  <h2>パスワードを変える順番</h2>
+  <p>漏れたサービスと<strong>同じパスワード</strong>を使っている所に印をつけてください。変える順番を並べます。</p>
+  <div class="pwgrid" id="pw"></div>
+  <ol class="order" id="order"></ol>
+  <p class="note">メールを先にするのは、メールを乗っ取られると、ほかのサービスの「パスワードを忘れた」から再設定されてしまうためです。変えたら、各サービスの2段階認証(認証アプリやパスキー)もあわせて設定しておくと安心です。</p>
+</section>
+
+<section>
+  <h2>今日やること</h2>
+  <ol class="todo" id="todo"></ol>
+  <div class="dont">
+    <h3>やらなくていいこと・やってはいけないこと</h3>
+    <ul>
+      <li>ここで扱う各社の公表では、クレジットカード情報は対象外か、会社がカード番号を持っていません。慌ててカードを止めるより、明細の確認を続ける方が先です。</li>
+      <li>「流出したか確認できます」という公式以外のサイトに、メールアドレスやパスワードを入れない。</li>
+      <li>「お詫びの返金」「補償金」を名乗るメール・SMS・電話から、口座番号・カード番号・認証コードを伝えない。かけ直すときは、公式サイトに載っている番号へ自分から。</li>
+      <li>メールアドレスや電話番号を、慌てて全部変える必要はありません。迷惑メールのフィルターと、知らない番号に出ない習慣で足ります。</li>
+    </ul>
+  </div>
+</section>
+
+<section class="share">
+  <h2>家族に送る</h2>
+  <p class="note">選んだサービスに合わせて文が変わります。親や子どもに一言送っておくと、電話やSMSでだまされにくくなります。</p>
+  <textarea id="msg" aria-label="家族に送る文"></textarea>
+  <div class="tools">
+    <button type="button" class="pri" id="copy">文をコピー</button>
+    <button type="button" id="line">LINEで送る</button>
+    <button type="button" id="x">Xで送る</button>
+    <button type="button" onclick="window.print()">印刷</button>
+  </div>
+</section>
+
+<section>
+  <h2>各社の公表の一覧</h2>
+  <p class="note">件数は各社の発表・報道の数字です。「件」は人数と一致しないことがあります。最新の状況は各社の公式のお知らせで確かめてください。</p>
+  <div class="tbl"><table>
+    <thead><tr><th>サービス</th><th>発表</th><th>規模</th><th>主な項目</th><th>含まれないとされるもの</th></tr></thead>
+    <tbody id="tbl"></tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>よくある質問</h2>
+  <details><summary>タワーレコードの流出で、自分が対象かどうかはどこで分かりますか?</summary><p>同社は対象の会員にメール等で順次連絡するとしています(11/21発表時点)。退会して3年以内の人も含まれます。届いたメールのリンクからではなく、タワーレコードの公式サイトを自分で開いてお知らせを確かめてください。</p></details>
+  <details><summary>パスワードはハッシュ値なら変えなくてよいですか?</summary><p>ハッシュ値は元のパスワードそのものではありませんが、短いパスワードや使い回しの多いパスワードは元に戻される場合があります。同じパスワードを別のサービスでも使っているなら、そちらを先に変えるのが安全です。</p></details>
+  <details><summary>クレジットカードは止めた方がいいですか?</summary><p>このページで扱う各社の公表では、クレジットカード情報は流出した項目に含まれていないか、会社がカード番号を保持していないとされています。再発行より、明細に覚えのない請求がないかを月に一度見ることと、カード番号を聞いてくる連絡に答えないことが先です。</p></details>
+  <details><summary>「流出したか確認できます」というサイトにメールアドレスを入れてもいいですか?</summary><p>会社の公式サイト以外の確認サイトに、メールアドレスやパスワードを入れないでください。漏えいの話題に便乗した偽サイトが出ることがあります。このページは入力内容を送信しません。</p></details>
+  <details><summary>いくつものサービスで漏れていると、何が困りますか?</summary><p>1社では氏名とメールだけでも、別の会社で電話番号や生年月日、住所が出ていれば、組み合わせて本人らしく装った連絡が作れます。項目が増えるほど、詐欺の連絡が本物らしく見える点に気をつけてください。</p></details>
+</section>
+
+<section>
+  <h2>出典</h2>
+  <ol class="src">
+    <li><a href="https://news.web.nhk/newsweb/na/nd-20261122de79936" rel="noopener">NHK「タワーレコード 不正アクセスで約1100万件の個人情報流出」(2026/11/22)</a></li>
+    <li><a href="https://news.yahoo.co.jp/articles/2c435a45fad1b2e1a1a2b51fa3211f2e0b5f3144" rel="noopener">ビジネス+IT(Yahoo!ニュース)「タワーレコード会員約1,100万件が流出」</a></li>
+    <li><a href="https://netshop.impress.co.jp/n/2026/11/11/17020" rel="noopener">ネットショップ担当者フォーラム「ニトリ、外部からの不正アクセスで最大3762万件が流出した可能性」(2026/11/11)</a></li>
+    <li><a href="https://news.livedoor.com/article/detail/32771734/" rel="noopener">ライブドアニュース「ニトリ、個人情報の漏えい可能性『最大3762万件』を報告」</a></li>
+    <li><a href="https://www.irisohyama.co.jp/news/2026/?date=1105" rel="noopener">アイリスオーヤマ「(第2報)株式会社アイリスプラザECサイト一時停止のお知らせ」(2026/11/5)</a></li>
+    <li><a href="https://netshop.impress.co.jp/n/2026/11/09/17001" rel="noopener">ネットショップ担当者フォーラム「アイリスプラザ、不正アクセス被害でECサイトを停止」(2026/11/9)</a></li>
+    <li><a href="https://www.itmedia.co.jp/business/articles/2610/15/news093.html" rel="noopener">ITmedia ビジネスオンライン「バーガーキング公式アプリ、約1118万件の情報漏えい」(2026/10/15)</a></li>
+    <li><a href="https://www.nikkei.com/article/DGXZQOUC157B50V11C26A0000000/" rel="noopener">日本経済新聞「バーガーキング、1118万件のアプリ会員情報流出」</a></li>
+    <li><a href="https://www.nikkei.com/article/DGXZQOUC088GB0Y6A001C2000000/" rel="noopener">日本経済新聞「『ビッグエコー』の第一興商、個人情報872万件漏洩の恐れ」</a></li>
+    <li><a href="https://cybersecurity-jp.com/news/117121" rel="noopener">サイバーセキュリティ.com「第一興商、約872万件の個人情報漏洩のおそれ」</a></li>
+    <li><a href="https://www.arara.com/news/info/20261106_arara" rel="noopener">アララ「『アララメッセージ』への不正アクセスに関するお詫びと今後の対応について」(2026/11/6)</a></li>
+    <li><a href="https://www.itmedia.co.jp/news/article/2611/04/2000002861/" rel="noopener">ITmedia NEWS「メルアド7700万件流出か アララメッセージの不正アクセスで続報」</a></li>
+    <li><a href="https://www.sega.co.jp/release/261109_1.html" rel="noopener">セガ「業務委託企業への不正アクセスによる個人情報流出に関するお詫びとお知らせ」(2026/11/9)</a></li>
+    <li><a href="https://www.itmedia.co.jp/mobile/articles/2607/06/news111.html" rel="noopener">ITmedia Mobile「KDDIのメールシステム不正アクセス、約1223万件のアドレス/約762万のパスワードが漏えい」(2026/7/6)</a></li>
+    <li><a href="https://piyolog.hatenadiary.jp/entry/2026/07/07/182112" rel="noopener">piyolog「KDDIのISP事業者向けメールシステムへの不正アクセスについてまとめてみた」</a></li>
+    <li><a href="https://www.sakigake.jp/news/article/20260518OR0184/" rel="noopener">秋田魁新報(オリコン)「ユニバーサル ミュージック、不正アクセスで個人情報流出『合計3,105,585件』と発表」(2026/5/18)</a></li>
+    <li><a href="https://www.shohinet-h.or.jp/20261109_nisehagaki/" rel="noopener">北海道消費者協会「国民生活センターをかたるニセのハガキにご注意ください」</a></li>
+  </ol>
+  <p class="note">KARTE(プレイド)経由の漏えいは対象の会社が多いため、別のページにまとめています。</p>
+</section>
+
+<footer>
+  <div class="more">
+    <b>ほかの道具</b>
+    <a href="../day033-karte-jibun/">KARTE経由の漏えい 自分の分の確かめ帳(Day 33)</a>
+    <a href="../day028-kani-denwa/">カニ・いくらの電話が来たら 家族の断り帳(Day 28)</a>
+    <a href="../day024-nise-kichikyoku/">圏外のあとのSMS 手当て帳(Day 24)</a>
+  </div>
+  <p>このページは各社の公表と報道を要約した情報提供で、あなたが対象かどうかは判断できません。会社名は公表内容の説明のためにのみ記載しており、各社とは関係ありません。誤りや新しい公表に気づいたら随時直します。</p>
+  <p><a href="../">毎日ひとつの小さな道具箱 一覧へ</a></p>
+</footer>
+</div>
+<script>
+// 項目: mail name birth gender tel addr pw id hist
+const F=[
+ ["name","氏名","YAMADA ****"],["birth","生年月日","19**/**/**"],["gender","性別","*"],["tel","電話番号","0*0-****-****"],
+ ["addr","住所・郵便番号","〒***-**** ****"],["mail","メールアドレス","****@****"],["pw","パスワード(ハッシュ・暗号化含む)","••••••••"],
+ ["id","会員ID","ID-********"],["hist","購入・注文の履歴","ORDER-****"]];
+// lv: a=多くの会員 p=一部の会員 / c=会社によって
+const S=[
+ {k:"tower",n:"タワーレコード オンライン",sub:"タワーレコードメンバーズ(退会3年以内も)",d:"2026/11/21",st:"流出を確認",size:"約1,100万件(ログイン情報10,214,652件/会員情報2,784,514件/配送先776,953件)",
+  it:{mail:"a",id:"a",pw:"a",name:"p",birth:"p",gender:"p",addr:"p",tel:"p"},
+  note:"パスワードはハッシュ値。氏名・生年月日など約278万件、住所・電話など約78万件は一部の会員。",no:"クレジットカード情報",pw:"ハッシュ値"},
+ {k:"nitori",n:"ニトリ",sub:"ニトリメンバーズ・ニトリネット・モールの公式ショップ・法人会員",d:"2026/11/9",st:"流出した可能性",size:"最大3,762万件",
+  it:{name:"a",addr:"a",tel:"a",mail:"a",birth:"a"},note:"氏名・住所・電話番号・メールアドレス・生年月日など。件数は精査で変わる可能性。",no:"ログインパスワード、クレジットカード情報"},
+ {k:"iris",n:"アイリスプラザ",sub:"アイリスオーヤマの自社EC(会員・非会員)",d:"2026/11/5 第2報",st:"漏えいの可能性",size:"約770万人分(会員約580万・非会員約190万、保存データの総数)",
+  it:{name:"a",addr:"a",tel:"a",mail:"a",gender:"p",birth:"p",pw:"p"},note:"性別・生年月日・パスワード(暗号化)は会員のみ。実際の漏えい件数は調査中。",no:"クレジットカード情報",pw:"暗号化"},
+ {k:"bk",n:"バーガーキング公式アプリ",sub:"アプリの会員",d:"2026/10/15",st:"漏えいを確認",size:"約1,118万件",
+  it:{id:"a",mail:"a",name:"a",tel:"a",birth:"a",gender:"a"},note:"会員ID・メール・氏名・電話・生年月日・性別・都道府県・モバイルオーダー履歴の有無など10項目。",no:"クレジットカード番号(保持していない)、ログインパスワード(漏えいは確認されていない)"},
+ {k:"dk",n:"第一興商",sub:"ビッグエコー・DKダイニング・カラオケCLUB DAM・メガビッグ",d:"2026/10/8",st:"漏えいのおそれ",size:"約872万件(委託先端末のマルウェア感染)",
+  it:{name:"a",gender:"a",birth:"a",mail:"a",tel:"a"},note:"氏名(登録名)・性別・生年月日・メールアドレス・電話番号。公表時点で外部流出は確認されていない。",no:"パスワード、クレジットカード情報"},
+ {k:"arara",n:"アララメッセージを使う会社のメール",sub:"メルマガ配信を委託していた会社(セガなど、各社が公表)",d:"2026/11/6 第3報",st:"流出を確認(件数は精査中)",size:"契約企業の環境から約7,700万件とされる",
+  it:{mail:"a",name:"c",birth:"c",gender:"c",tel:"c",addr:"c",id:"c"},note:"基本はメールアドレス。会社によって氏名・生年月日・電話番号・住所・会員番号なども。",no:"パスワード、クレジットカード番号"},
+ {k:"kddi",n:"ビッグローブなどのプロバイダメール",sub:"KDDIのISP向けメール基盤を使う6社",d:"2026/7/6",st:"流出を確認",size:"アドレス約1,223万件・パスワード約762万件",
+  it:{mail:"a",pw:"p"},note:"メールのパスワードそのもの。各社がパスワードの強制変更を案内。auメール・UQ mobileメールは別設備と報道。",no:"",pw:"メールのパスワード"},
+ {k:"um",n:"UNIVERSAL MUSIC STORE / THE BEATLES STORE",sub:"ユニバーサル ミュージックのEC(購入者)",d:"2026/5/18 最終報告",st:"流出を確認",size:"3,105,585件",
+  it:{name:"a",addr:"a",tel:"a",mail:"a",hist:"a",birth:"p",gender:"p"},note:"氏名・住所・電話・メール・購入履歴(配送先・請求先として生年月日・性別を含む)。",no:"ログインパスワード、決済情報(保持していない)"}
+];
+const LV={a:"",p:"一部",c:"会社による"};
+const $=id=>document.getElementById(id);
+const sv=$("svc");
+S.forEach(s=>{const l=document.createElement("label");l.innerHTML=`<input type="checkbox" value="${s.k}"><b>${s.n}</b><small>${s.sub}</small><small class="st">${s.d} ・ ${s.st}</small>`;sv.appendChild(l)});
+const tb=$("tbl");
+S.forEach(s=>{const tr=document.createElement("tr");const items=Object.keys(s.it).map(k=>F.find(f=>f[0]==k)[1].replace(/\(.*\)/,"")+(LV[s.it[k]]?`(${LV[s.it[k]]})`:"")).join("、");
+ tr.innerHTML=`<td><b>${s.n}</b><br><small>${s.sub}</small></td><td class="n">${s.d}</td><td>${s.st}<br><small>${s.size}</small></td><td>${items}<br><small>${s.note}</small></td><td>${s.no||"―"}</td>`;tb.appendChild(tr)});
+const PW=[["mail","メール(Gmail・プロバイダなど)",1],["bank","銀行・証券・決済アプリ",2],["carrier","携帯会社のID(dアカウント・au ID など)",3],["shop","通販(Amazon・楽天など)",4],["sns","SNS・LINE",5],["other","その他の会員サイト",6]];
+const pwBox=$("pw");
+PW.forEach(p=>{const l=document.createElement("label");l.innerHTML=`<input type="checkbox" value="${p[0]}">${p[1]}`;pwBox.appendChild(l)});
+const PWWHY={mail:"ほかのサービスの再設定メールが届く場所。最優先。",bank:"お金に直結。ログイン通知もオンに。",carrier:"乗っ取られるとSMSの認証コードやキャリア決済を使われる。",shop:"登録カードで買い物される前に。",sns:"なりすましで知人に詐欺の連絡が行くのを防ぐ。",other:"使っていないなら退会も。"};
+function sel(){return [...sv.querySelectorAll("input:checked")].map(i=>S.find(s=>s.k==i.value))}
+function render(){
+ const ch=sel();
+ // fields
+ const fe=$("fields");fe.innerHTML="";
+ const hit={};
+ ch.forEach(s=>Object.entries(s.it).forEach(([k,v])=>{(hit[k]=hit[k]||[]).push({n:s.n,v})}));
+ F.forEach(([k,lab,mask])=>{const h=hit[k];const d=document.createElement("div");d.className="fld"+(k=="pw"?" pw":"")+(h?" on":"");
+  d.innerHTML=`<span class="k">${lab}</span><span class="v">${h?mask:"—"}</span><span class="w">${h?h.length+"社: "+h.map(x=>x.n.replace(/ \/.*|のメール|などのプロバイダメール/,"")+(LV[x.v]?`(${LV[x.v]})`:"")).join("・"):"出ていない(選んだ範囲では)"}</span>`;fe.appendChild(d)});
+ const nk=Object.keys(hit).length;
+ $("cnt").textContent=ch.length?`${ch.length}社を重ねた結果: ${nk}種類の項目`:"サービスを選ぶと、ここに重なります";
+ // risks
+ const r=[];const has=k=>!!hit[k];
+ if(has("pw"))r.push(["hi","使い回したパスワードでのログイン",`${hit.pw.map(x=>x.n.replace(/ \/.*/,"")).join("・")}でパスワード(ハッシュ値・暗号化を含む)が出ています。元に戻された場合、同じメールアドレスとパスワードの組み合わせで、ほかのサービスに次々ログインを試されます。`,"知らない端末からのログイン通知、身に覚えのないパスワード変更メール"]);
+ if(has("mail")&&has("name"))r.push(["","名前入りのお詫び・返金メール","氏名とメールアドレスがそろうと「〇〇様」と名前入りで届き、本物らしく見えます。漏えいのお詫びや返金、ポイント付与を口実に偽サイトへ誘います。","「【重要】〇〇様 個人情報流出に関するお詫びと返金手続きのお願い」"]);
+ else if(has("mail"))r.push(["","お詫び・確認を装うメール","メールアドレスが出ています。流出したサービスを名乗るメールや、無関係の通販・宅配を装うメールが増える可能性があります。","「アカウントの安全確認のため、24時間以内にログインしてください」"]);
+ if(has("tel"))r.push([has("birth")?"hi":"","SMS・電話でのなりすまし",has("birth")?"電話番号に加えて生年月日・氏名も出ています。本人確認を装い「生年月日は〇〇ですね」と正しい情報を言ってから、カード番号・暗証番号・認証コードを聞き出す手口に注意してください。":"電話番号が出ています。宅配の不在通知や、流出したサービスを名乗るSMSが届く可能性があります。","「〇〇様ですね。流出の件で補償の手続きをご案内します。お手元のSMSに届いた番号を…」"]);
+ if(has("addr"))r.push(["","はがき・郵便・訪問","住所と氏名から、公的機関や会社を名乗るはがき(「最終確認通知書」など)が届くことがあります。国民生活センターをかたる偽はがきの注意喚起も出ています。","はがきの電話番号ではなく、自分で調べた公式の窓口に確認する"]);
+ if(has("hist"))r.push(["","注文・購入を装う連絡","購入や注文の履歴に関する情報が出ています。実際に使った店の名前や買った物を出して「ご注文の商品について」と連絡してくる手口に注意してください。","「先日ご購入の商品に不具合があり、返金のため口座を確認させてください」"]);
+ if(nk>=5)r.push(["hi","組み合わせで本人になりすます",`選んだ範囲で${nk}種類の項目が出ています。1社ずつでは足りない情報も、重ねると本人確認の質問に答えられるほどそろいます。銀行や携帯会社の「本人確認」を名乗る連絡には、こちらから公式の番号へかけ直してください。`,"「ご本人確認のため、お名前・生年月日・ご住所をお願いします」→ そろっているので通ってしまう"]);
+ $("risk").innerHTML=r.length?r.map(x=>`<article class="${x[0]}"><h3>${x[1]}</h3><p>${x[2]}</p><p class="ex">例: ${x[3]}</p></article>`).join(""):'<p class="empty">STEP 1 で印をつけると表示します。</p>';
+ // todo
+ const t=[];
+ if(has("pw"))t.push("パスワードが出たサービスのパスワードを変える(タワーレコード オンラインは再開後に。サイト停止中は、まず同じパスワードを使っているほかのサービスから)。");
+ t.push("同じパスワードを使っているサービスを STEP 4 で選び、上から順に変える。");
+ if(ch.some(s=>s.k=="tower"))t.push("タワーレコードからの連絡は、メールのリンクを押さず、公式サイトを自分で開いてお知らせを確かめる。");
+ if(ch.some(s=>s.k=="arara"))t.push("アララメッセージを使っていた会社は各社が個別に公表しています。メルマガを受け取っていた会社のお知らせを確かめる。");
+ if(has("tel"))t.push("知らない番号からの電話には出ず、留守電を聞いてから公式の番号にかけ直す。SMSのリンクは開かない。");
+ if(has("birth")||has("addr"))t.push("家族(とくに親)に、お詫びや補償を名乗る電話・はがきが来ても、その場で答えないよう伝える(下の文を送れます)。");
+ t.push("クレジットカードと銀行の明細を、今月と来月は一度ずつ見る。");
+ t.push("使っていないサービスは退会する(ただし、退会後もしばらくデータを保持する会社がある点は覚えておく)。");
+ $("todo").innerHTML=t.map(x=>`<li>${x}</li>`).join("");
+ renderPw();msg();
+}
+function renderPw(){
+ const c=[...pwBox.querySelectorAll("input:checked")].map(i=>PW.find(p=>p[0]==i.value)).sort((a,b)=>a[2]-b[2]);
+ $("order").innerHTML=c.length?c.map(p=>`<li><span><b>${p[1]}</b><br><small>${PWWHY[p[0]]}</small></span></li>`).join(""):'<li style="grid-template-columns:1fr"><span class="empty">使い回している所に印をつけると、順番を出します。使い回していなければ、漏れたサービスだけ変えれば足ります。</span></li>';
+}
+function msg(){
+ const ch=sel();
+ const names=ch.map(s=>s.n.replace(/ \/.*/,"").replace(/を使う会社のメール/,"").replace(/などのプロバイダメール/,"などのプロバイダ"));
+ const list=names.length?names.join("、"):"タワーレコードやニトリなど";
+ $("msg").value=`${list}で、会員の個人情報が漏れたと発表されています。うちも使ったことがあるので念のため。\n・お詫びや返金、補償を名乗るメール・SMS・電話が来ても、リンクを押したり、カード番号や認証コードを言ったりしないで。\n・確かめるときは、会社の公式サイトや自分で調べた番号から。\n・同じパスワードを使っている所があれば変えておいて。\n迷ったら、すぐ答えずにいったん電話を切って連絡してね。`;
+}
+sv.addEventListener("change",render);pwBox.addEventListener("change",renderPw);
+$("all").onclick=()=>{sv.querySelectorAll("input").forEach(i=>i.checked=true);render()};
+$("none").onclick=()=>{sv.querySelectorAll("input").forEach(i=>i.checked=false);render()};
+$("copy").onclick=async()=>{try{await navigator.clipboard.writeText($("msg").value);$("copy").textContent="コピーしました"}catch(e){$("msg").select()}setTimeout(()=>$("copy").textContent="文をコピー",1600)};
+const url=location.origin+location.pathname;
+$("line").onclick=()=>window.open("https://line.me/R/share?text="+encodeURIComponent($("msg").value+"\n"+url),"_blank","noopener");
+$("x").onclick=()=>window.open("https://x.com/intent/post?text="+encodeURIComponent("タワレコ・ニトリなど、今年の大型漏えいを自分の分だけ重ねて確かめる道具")+"&url="+encodeURIComponent(url),"_blank","noopener");
+try{const v=JSON.parse(localStorage.getItem("d36")||"[]");sv.querySelectorAll("input").forEach(i=>{if(v.includes(i.value))i.checked=true})}catch(e){}
+sv.addEventListener("change",()=>{try{localStorage.setItem("d36",JSON.stringify(sel().map(s=>s.k)))}catch(e){}});
+render();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
