@@ -45,6 +45,8 @@ h1 span{display:block;font-family:var(--m);font-size:13px;letter-spacing:.2em;co
 h2{font-family:var(--d);font-weight:400;font-size:22px;line-height:1.4;margin:44px 0 10px;display:flex;gap:10px;align-items:baseline}
 h2 .n{font-family:var(--m);font-size:13px;background:var(--ink);color:var(--bg);padding:1px 7px;border-radius:2px}
 .note{font-size:13.5px;color:var(--sub)}
+.nowbox{border:1px solid var(--rule);border-left:4px solid currentColor;padding:10px 14px;margin:8px 0 14px;border-radius:6px}
+.nowbox p{margin:4px 0}
 table{border-collapse:collapse;width:100%;font-size:14.5px}
 .tblwrap{overflow-x:auto;background:var(--card);border:1px solid var(--rule);border-radius:6px}
 th,td{padding:9px 10px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
@@ -117,6 +119,26 @@ footer{margin-top:40px;font-size:13px;color:var(--sub);border-top:1px solid var(
 <div class="wrap">
 
 <h2><span class="n">01</span>日程と条件(11月19日夕方の時点)</h2>
+<div id="nowbox" class="nowbox" aria-live="polite"></div>
+<script>
+(function(){
+ // 日本時間で判定。表の日程と同じ
+ var E=[["楽天市場 ショップ買いまわり","2026-11-19T20:00:00+09:00","2026-11-25T01:59:59+09:00"],
+  ["Yahoo!ショッピング","2026-11-22T00:00:00+09:00","2026-11-30T01:59:59+09:00"],
+  ["Amazon 先行セール","2026-11-27T00:00:00+09:00","2026-11-29T23:59:59+09:00"],
+  ["Amazon 本番","2026-11-30T00:00:00+09:00","2026-12-07T23:59:59+09:00"],
+  ["楽天リーベイツ","2026-11-20T00:00:00+09:00","2026-11-30T23:59:59+09:00"]];
+ var now=Date.now(),on=[],soon=[];
+ function left(ms){var h=Math.floor(ms/3600000);return h>=48?"あと"+Math.floor(h/24)+"日":"あと"+h+"時間"}
+ E.forEach(function(e){var a=Date.parse(e[1]),b=Date.parse(e[2]);
+  if(now>=a&&now<=b)on.push("<b>"+e[0]+"</b>(終了まで"+left(b-now)+")");
+  else if(now<a)soon.push(e[0]+"(開始まで"+left(a-now)+")");});
+ var el=document.getElementById("nowbox");
+ if(!on.length&&!soon.length){el.innerHTML="2026年のブラックフライデーは、表の店すべてで終わりました。";return}
+ el.innerHTML=(on.length?"<p>いま開催中: "+on.join("、")+"</p>":"")+(soon.length?"<p>これから: "+soon.join("、")+"</p>":"")+"<p class=\"note\">この端末の時計で計算しています。</p>";
+})();
+</script>
+
 <div class="tblwrap"><table>
 <thead><tr><th>店</th><th>期間</th><th>ポイントの条件</th><th>気をつける点</th></tr></thead>
 <tbody>
