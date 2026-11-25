@@ -161,6 +161,7 @@ footer{margin-top:44px;padding-top:14px;border-top:1px solid var(--rule);font-si
 <div class="callout blue">40GB・60GBの上限は無料で設定できると報じられています。上限を超えると通信速度が落ちますが、料金はその段で止まります。大盛り未契約の人は、12月1日に40GBの上限が自動で設定されると解説記事は伝えています(解除や変更はahamoのサイトで)。</div>
 
 <h2 id="todo"><span class="no">03</span>11月中に見ておくこと</h2>
+<div class="callout" id="leftDays" role="status" style="font-weight:700">ahamo 大盛りオプションは11月30日で終わり、ドコモ mini の新規受付も同じ日までと報じられています。</div>
 <ol class="check">
   <li><b>家族全員のプラン名を確かめる。</b>My docomoの「ご契約内容」に出ます。「5Gギガホ プレミア」「ギガライト」など、受付を終えたプランほど上がる額が大きい傾向です。</li>
   <li><b>ahamoで大盛りを付けている人は、過去の使用量を見る。</b>60GB以下の月が多いなら12月から安くなります。毎月60GBを超える人は165円の値上げです。</li>
@@ -168,6 +169,15 @@ footer{margin-top:44px;padding-top:14px;border-top:1px solid var(--rule);font-si
   <li><b>ドコモ mini の新規受付は11月30日まで</b>と報じられています。12月1日からは新プラン「ドコモ mini2」が始まります。mini は今回の値上げの対象外です。</li>
   <li><b>ソフトバンクエアーは12月1日から月330円上がります</b>(既存の契約者も対象)。SoftBank 光は、自動更新ありプランの人は12月以降の契約満了月の翌月から改定後の料金になると案内されています。</li>
   <li><b>乗り換えを考えるなら</b>、端末の残りの支払い、家族割の人数が減ることによるほかの回線への影響、光回線とのセット割、メールアドレスの持ち運びを先に確かめてください。このページは特定の会社への乗り換えを勧めるものではありません。</li>
+</ol>
+
+<h3 id="bill12" style="margin:28px 0 8px;font-size:18px">12月の利用分を払う最初の請求で確かめること</h3>
+<p class="note" style="margin-top:0">改定は12月1日の利用分からなので、上がった額が初めて載るのは12月分の請求(多くは1月に確定)です。11月分の請求には出ません。</p>
+<ol class="check">
+  <li><b>回線ごとの基本料が、上の差額帳の「改定後」と合っているか。</b>My docomoの「料金内訳」で、家族の回線を1本ずつ見ます。合わないときは、家族割・光セット割などの割引が変わっていないかを先に確かめてください。</li>
+  <li><b>ahamoで大盛りを付けていた人は、120GBの段(5,115円)になっているか。</b>大盛りの人は自動で最上位の段に移ると報じられています。使用量が60GB以下の月が多いなら、上限を40GB・60GBに下げると安くなります。</li>
+  <li><b>大盛りを付けていなかった人は、40GBの上限が設定されているか。</b>上限を超えると速度が落ちます。12月に速度が落ちたと感じたら、上限の設定を見てください。</li>
+  <li><b>ソフトバンクエアーは330円上がっているか。</b>SoftBank 光は、自動更新ありプランなら契約満了月の翌月からなので、12月の請求ではまだ変わらない人もいます。</li>
 </ol>
 
 <h2 id="faq"><span class="no">04</span>よくある問い</h2>
@@ -325,6 +335,13 @@ function ahamo(){
 $("months").addEventListener("input",ahamo);$("oomori").addEventListener("change",ahamo);
 render();ahamo();
 })();
+</script>
+<script>
+(function(){try{var el=document.getElementById('leftDays');if(!el)return;var now=new Date();var end=new Date(2026,10,30,23,59,59);var start=new Date(2026,11,1);
+var d=Math.ceil((end-now)/86400000);
+if(now<start){el.textContent='11月30日まで、あと'+d+'日です。ahamo 大盛りオプションの終了とドコモ mini の新規受付終了は、どちらもこの日と報じられています。今のうちに家族のプラン名と使用量を見ておいてください。';}
+else{el.innerHTML='12月1日の改定は始まっています。上の項目は11月中の確認用です。いま確かめるのは<a href="#bill12">12月分の最初の請求</a>です。';}
+}catch(e){}})();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
 </body></html>
