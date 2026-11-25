@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>奨学金 固定か見直しか 比べ帳(2027年3月に貸与が終わる人)</title>
+<meta name="description" content="日本学生支援機構の第二種奨学金(有利子)は、利率の算定方法(利率固定方式・利率見直し方式)を変えられるのが貸与中だけです。2027年3月に貸与が終わる人向けに、借りた額と返還年数から、固定と見直しの毎月の返還額・利息の合計を、金利が横ばい・上がる・下がる場合で並べて比べます。">
+<link rel="canonical" href="https://alternativestudio2021-collab.github.io/daily-launch-sites/day039-shogakukin-riritsu/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="奨学金 固定か見直しか 比べ帳(2027年3月に貸与が終わる人)">
+<meta property="og:description" content="第二種奨学金の利率の算定方法は貸与中しか変えられません。借りた額を入れると、固定と見直しの利息の合計を金利の動き別に並べます。学校の締切の前に。">
+<meta property="og:url" content="https://alternativestudio2021-collab.github.io/daily-launch-sites/day039-shogakukin-riritsu/">
+<meta property="og:site_name" content="毎日ひとつの小さな道具箱">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Shippori+Mincho:wght@600;800&family=Roboto+Mono:wght@500;700&display=swap">
+<style>
+:root{--bg:#eef0ea;--paper:#fbfaf4;--ink:#18233a;--sub:#5a6273;--line:#cfd3c6;--rule:#e3e6dc;--cover:#1d2f5c;--cover2:#243a6e;--gold:#c9a24a;--fix:#b4462f;--fix-bg:#f7e3dc;--var:#2a6f8f;--var-bg:#dcedf3;--ok:#22704a;--ok-bg:#e0f1e6;--warn:#7b5600;--warn-bg:#fbefc8;--chip:#e7eadf;
+ --f:"BIZ UDPGothic","Hiragino Sans","Noto Sans JP",sans-serif;--h:"Shippori Mincho","Hiragino Mincho ProN",serif;--m:"Roboto Mono",ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root{--bg:#10141d;--paper:#171d29;--ink:#e6e8ee;--sub:#a4abba;--line:#2e3647;--rule:#222a39;--cover:#0d1630;--cover2:#14204a;--gold:#e0bd6a;--fix:#ff917a;--fix-bg:#3a1e18;--var:#79c6e6;--var-bg:#142d38;--ok:#86dcaf;--ok-bg:#15301f;--warn:#ffd77a;--warn-bg:#352a0d;--chip:#212a3a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);line-height:1.85;font-size:16px}
+a{color:var(--var)}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px 80px;display:grid;gap:22px}
+header.h{margin:0 -16px;padding:30px 20px 30px;color:#f1eee2;background:linear-gradient(160deg,var(--cover),var(--cover2));border-bottom:6px double var(--gold)}
+.belt{font-size:13px;letter-spacing:.12em;color:var(--gold)}
+header.h h1{font-family:var(--h);font-weight:800;font-size:clamp(25px,6.2vw,40px);line-height:1.4;margin:10px 0 12px}
+header.h h1 small{display:block;font-size:.48em;color:var(--gold);font-weight:600}
+header.h p{margin:0;max-width:38em;opacity:.93}
+.stamp{display:inline-block;margin-top:14px;border:2px solid var(--gold);color:var(--gold);padding:4px 12px;border-radius:4px;font-size:14px;transform:rotate(-2deg)}
+section{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:20px 18px;display:grid;gap:14px;border-left:6px solid var(--cover2)}
+h2{font-family:var(--h);font-weight:800;font-size:22px;margin:0;line-height:1.45;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+h2 .n{font-family:var(--m);font-size:14px;color:var(--gold);background:var(--cover);padding:2px 8px;border-radius:3px}
+h3{font-size:16px;margin:0}
+p{margin:0}
+.sub{color:var(--sub);font-size:14px}
+.note{background:var(--warn-bg);color:var(--ink);border-left:4px solid var(--warn);padding:10px 12px;border-radius:4px;font-size:15px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+label{display:grid;gap:4px;font-size:14px;font-weight:700}
+label span{font-weight:400;color:var(--sub);font-size:13px}
+input,select{font:inherit;font-family:var(--m);font-size:17px;padding:8px 10px;border:1px solid var(--line);border-radius:4px;background:var(--paper);color:var(--ink);width:100%}
+.unit{display:flex;align-items:center;gap:6px}
+.unit input{flex:1}
+.ledger{width:100%;border-collapse:collapse;font-size:15px}
+.ledger th,.ledger td{border-bottom:1px solid var(--rule);padding:8px 6px;text-align:right;vertical-align:top}
+.ledger th:first-child,.ledger td:first-child{text-align:left}
+.ledger thead th{font-size:13px;color:var(--sub);font-weight:700;border-bottom:2px solid var(--line)}
+.ledger td{font-family:var(--m)}
+.ledger td:first-child{font-family:var(--f)}
+.ledger tr.fix td:first-child{color:var(--fix);font-weight:700}
+.ledger tr.var td:first-child{color:var(--var);font-weight:700}
+.diff-plus{color:var(--ok);font-weight:700}
+.diff-minus{color:var(--fix);font-weight:700}
+.tw{overflow-x:auto}
+.big{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.big div{border:1px solid var(--line);border-radius:6px;padding:10px 12px;background:var(--chip)}
+.big b{display:block;font-family:var(--m);font-size:24px;line-height:1.3}
+.big .f{border-top:4px solid var(--fix)}
+.big .v{border-top:4px solid var(--var)}
+svg{width:100%;height:auto;display:block}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--sub)}
+.legend i{display:inline-block;width:18px;height:3px;vertical-align:middle;margin-right:4px}
+ol,ul{margin:0;padding-left:1.3em}
+li{margin:4px 0}
+.chk li{list-style:none;margin-left:-1.3em}
+.chk input{width:auto;margin-right:8px;transform:scale(1.2)}
+details{border-top:1px solid var(--rule);padding-top:8px}
+summary{cursor:pointer;font-weight:700}
+details p{margin-top:6px}
+.src{font-size:13px;color:var(--sub)}
+.src li{word-break:break-all}
+footer{text-align:center;color:var(--sub);font-size:13px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"第二種奨学金の利率の算定方法は、いつまで変えられますか","acceptedAnswer":{"@type":"Answer","text":"貸与中だけです。貸与が終わったあとは変えられません。届出は在学している学校を通して出し、締切は学校が決めます。日本学生支援機構は2027年3月に貸与が終わる人に、早めに学校へ申し出るよう呼びかけています。"}},
+{"@type":"Question","name":"利率固定方式と利率見直し方式の違いは何ですか","acceptedAnswer":{"@type":"Answer","text":"利率固定方式は貸与が終わった月に決まった利率が返還完了まで変わりません。利率見直し方式は返還期間中おおむね5年ごと(猶予期間を除く)に利率が見直されます。どちらも利率の上限は年3%で、在学中と返還期限猶予中は利息がつきません。"}},
+{"@type":"Question","name":"増額貸与を受けている場合の利率はどうなりますか","acceptedAnswer":{"@type":"Answer","text":"増額部分には原則として基本月額の利率に0.2%を上乗せした利率がつき、全体の利率は基本部分と増額部分の金額で按分して決まります。"}},
+{"@type":"Question","name":"いま自分がどちらの方式か、どこで確かめられますか","acceptedAnswer":{"@type":"Answer","text":"スカラネット・パーソナルの「詳細情報」で確認できると日本学生支援機構が案内しています。"}}
+]}
+</script>
+</head><body>
+<div class="wrap">
+<header class="h">
+ <div class="belt">毎日ひとつの小さな道具箱 · DAY 039</div>
+ <h1>奨学金 固定か見直しか 比べ帳<small>第二種(有利子)を借りていて、2027年3月に貸与が終わる人へ</small></h1>
+ <p>利率の算定方法は、貸与が終わると変えられません。届出は学校を通して出すので、締切は卒業よりかなり前に来ます。借りた額を入れて、固定と見直しで利息の合計がどれだけ違うかを、金利の動き別に並べます。</p>
+ <div class="stamp" id="stamp">2027年3月の貸与終了まで あと…</div>
+</header>
+
+<section>
+ <h2><span class="n">01</span>いま知っておく3つのこと</h2>
+ <ol>
+  <li><b>変えられるのは貸与中だけ。</b>固定→見直し、見直し→固定のどちらも、貸与が終わった後はできません<a href="#s2">[2]</a><a href="#s3">[3]</a>。</li>
+  <li><b>届出は学校経由で、締切は学校が決める。</b>日本学生支援機構は2027年3月に貸与が終わる人に「お早めに学校へ」と呼びかけています<a href="#s1">[1]</a>。人的保証の人は連帯保証人・保証人の印鑑証明書が要る学校もあり<a href="#s9">[9]</a>、そろえるのに日数がかかります。</li>
+  <li><b>上限はどちらも年3%(基本月額分)。</b>固定方式の利率は2026年7月以降、上限の3%で決まる月が続いています<a href="#s8">[8]</a><a href="#s10">[10]</a>。固定がちょうど3%で決まるなら、見直し方式の基本月額分の利率がそれを上回ることは制度上ありません<a href="#s2">[2]</a>。</li>
+ </ol>
+ <p class="note">このページは計算の目安です。どちらを選ぶべきかを勧めるものではありません。実際の利率は貸与が終わった月に決まり、返還額は貸与終了後に届く書類とスカラネット・パーソナルで確かめてください。</p>
+</section>
+
+<section>
+ <h2><span class="n">02</span>借りた額を入れる</h2>
+ <div class="grid">
+  <label>基本月額分の貸与総額<span>月額×貸与月数の合計(増額部分を除く)</span><div class="unit"><input id="b" type="number" inputmode="decimal" min="0" step="1" value="240"><b>万円</b></div></label>
+  <label>増額部分の合計<span>増額貸与・入学時特別増額。なければ0</span><div class="unit"><input id="a" type="number" inputmode="decimal" min="0" step="1" value="0"><b>万円</b></div></label>
+  <label>返還年数<span>貸与総額で決まります。手元の書類の回数÷12</span><div class="unit"><input id="y" type="number" inputmode="numeric" min="1" max="20" step="1" value="15"><b>年</b></div></label>
+ </div>
+ <div class="grid">
+  <label>固定方式で決まると見込む利率<span>直近は上限の3.000%(2026年10月終了分)</span><div class="unit"><input id="rf" type="number" inputmode="decimal" min="0" max="3" step="0.001" value="3.000"><b>%</b></div></label>
+  <label>見直し方式の最初の利率<span>直近は2.274%(2026年10月終了分)</span><div class="unit"><input id="rv" type="number" inputmode="decimal" min="0" max="3" step="0.001" value="2.274"><b>%</b></div></label>
+  <label>見直しのたびの金利の動き(おおむね5年ごと)<span>下の表は4通りすべてを出します</span><select id="sc"><option value="0">横ばい</option><option value="0.5" selected>毎回 +0.5%</option><option value="-0.5">毎回 −0.5%</option><option value="cap">次の見直しで上限3%</option></select></label>
+ </div>
+ <p class="sub">利率は元金に対して年利、毎月の元利均等返還で計算しています(第二種は元利均等<a href="#s5">[5]</a>)。増額部分の利率は基本月額分に0.2%を足し、全体は金額で按分しています<a href="#s4">[4]</a>。基本月額分の利率は3%で頭打ちにしています。</p>
+</section>
+
+<section>
+ <h2><span class="n">03</span>並べた結果</h2>
+ <div class="big">
+  <div class="f">固定方式 毎月の返還額<b id="mf">—</b><span class="sub" id="tf"></span></div>
+  <div class="v">見直し方式 最初の5年の毎月<b id="mv">—</b><span class="sub" id="tv"></span></div>
+ </div>
+ <p id="verdict"></p>
+ <svg id="chart" viewBox="0 0 640 260" role="img" aria-label="毎月の返還額の推移"></svg>
+ <div class="legend"><span><i style="background:var(--fix)"></i>固定方式</span><span><i style="background:var(--var)"></i>見直し方式(選んだ金利の動き)</span></div>
+ <div class="tw"><table class="ledger">
+  <thead><tr><th>方式・金利の動き</th><th>最初の毎月</th><th>利息の合計</th><th>返還の総額</th><th>固定との差</th></tr></thead>
+  <tbody id="tbl"></tbody>
+ </table></div>
+ <p class="sub">「固定との差」は、見直し方式の利息が固定より少なければ緑(+)で示します。見直しは返還開始からおおむね5年・10年・15年に行う前提で、猶予を受けた期間は数えていません。</p>
+</section>
+
+<section>
+ <h2><span class="n">04</span>締切までにやること</h2>
+ <ul class="chk" id="chk">
+  <li><label><input type="checkbox">スカラネット・パーソナルの「詳細情報」で、いまの利率の算定方法(固定か見直しか)を見る<a href="#s1">[1]</a></label></li>
+  <li><label><input type="checkbox">学校の奨学金窓口に、利率の算定方法の変更届の締切を聞く(学校の掲示・ポータルも見る)</label></li>
+  <li><label><input type="checkbox">変更する場合は「第二種奨学金『利率の算定方法』変更届」を窓口で受け取る<a href="#s3">[3]</a></label></li>
+  <li><label><input type="checkbox">人的保証なら、連帯保証人・保証人に印鑑証明書を頼む(学校の案内に従う)<a href="#s9">[9]</a></label></li>
+  <li><label><input type="checkbox">第一種も借りている人は、返還方式(所得連動・定額)も一緒に見直す。所得連動→定額の変更は貸与中だけ<a href="#s1">[1]</a></label></li>
+  <li><label><input type="checkbox">就職先に奨学金の代理返還(企業が肩代わりする制度)があるかを確かめる。利用企業は2026年3月末で4,852社<a href="#s7">[7]</a></label></li>
+ </ul>
+ <p class="sub">チェックはこの端末にだけ残ります。</p>
+</section>
+
+<section>
+ <h2><span class="n">05</span>利率はこう動いてきた</h2>
+ <div class="tw"><table class="ledger">
+  <thead><tr><th>貸与が終わった月</th><th>固定方式</th><th>見直し方式</th><th>出典</th></tr></thead>
+  <tbody>
+   <tr><td>2022年3月</td><td>0.369%</td><td>—</td><td><a href="#s7">[7]</a></td></tr>
+   <tr><td>2026年3月</td><td>2.423%</td><td>—</td><td><a href="#s7">[7]</a></td></tr>
+   <tr><td>2026年8月</td><td>3%(上限)</td><td>2.2%</td><td><a href="#s8">[8]</a></td></tr>
+   <tr><td>2026年10月</td><td>3.000%</td><td>2.274%</td><td><a href="#s10">[10]</a></td></tr>
+  </tbody>
+ </table></div>
+ <p class="sub">いずれも基本月額分の利率です。正式な値は日本学生支援機構の「貸与利率」のページ<a href="#s6">[6]</a>で確かめてください。2026年10月の数字は民間サイトのまとめで、機構の原文とはまだ照らしていません。</p>
+</section>
+
+<section>
+ <h2><span class="n">06</span>よくある疑問</h2>
+ <details><summary>見直し方式は、金利が上がり続けたら青天井ですか</summary><p>いいえ。どちらの方式も利率の上限は年3%です<a href="#s2">[2]</a>。ただし増額部分には基本月額分に0.2%を足した利率がつくので<a href="#s4">[4]</a>、増額貸与を受けた人の全体の利率は3%を少し超えることがあります。</p></details>
+ <details><summary>固定方式が上限の3%で決まった場合、固定を選ぶ意味はありますか</summary><p>基本月額分については、見直し方式の利率が3%を超えることはないので、利息の合計が固定を上回ることは計算上ありません。一方で、見直しのたびに毎月の返還額が変わるため、家計の見通しが立てにくくなります。どちらを重く見るかは人によって違います。</p></details>
+ <details><summary>卒業後、返すのが苦しくなったら</summary><p>月々の返還額を減らす減額返還や、返還を待ってもらう返還期限猶予の制度があります(猶予中は利息がつきません<a href="#s2">[2]</a>)。延滞する前に日本学生支援機構に相談してください。</p></details>
+ <details><summary>いま自分がどちらの方式か分かりません</summary><p>スカラネット・パーソナルの「詳細情報」で確認できます<a href="#s1">[1]</a>。採用時の書類にも記載があります。</p></details>
+</section>
+
+<section>
+ <h2><span class="n">+</span>ほかの道具</h2>
+ <p><a href="../day029-fuyu-bonus/">冬のボーナス 手取り見込み帳 2026</a>(社会人の人の家計に) · <a href="../day031-keitai-sagaku/">12月1日の値上げ 家族の回線 差額帳</a>(新生活の固定費の見直しに) · <a href="../">一覧へ</a></p>
+</section>
+
+<section>
+ <h2><span class="n">§</span>出典</h2>
+ <ol class="src">
+  <li id="s1">日本学生支援機構「《2027年3月に奨学金の貸与が終了する方》返還方式・利率の算定方法の変更を希望する場合は、お早めに学校へ申し出てください」 https://www.jasso.go.jp/news/mankihenkou202610.html</li>
+  <li id="s2">日本学生支援機構「利率の算定方法選択制」 https://www.jasso.go.jp/shogakukin/seido/riritsu/sentaku.html</li>
+  <li id="s3">日本学生支援機構「利率の算定方法の変更」 https://www.jasso.go.jp/shogakukin/saiyochu/todokede/riritsu.html</li>
+  <li id="s4">日本学生支援機構「利率の算定方法」(増額部分の利率) https://www.jasso.go.jp/shogakukin/about/taiyo/taiyo_2shu/riritsu_santei.html</li>
+  <li id="s5">日本学生支援機構「返還期間(回数)」 https://www.jasso.go.jp/shogakukin/henkan/houhou/henkan_hoshiki/henkan_kikan/index.html</li>
+  <li id="s6">日本学生支援機構「貸与利率」 https://www.jasso.go.jp/shogakukin/seido/riritsu/riritsu_19ikou.html</li>
+  <li id="s7">共同通信「奨学金、金利上昇で返済負担重く 学生支援機構、企業が肩代わりも」(熊本日日新聞掲載、2026年7月) https://kumanichi.com/articles/2012655</li>
+  <li id="s8">公明新聞 主張(2026年9月、8月時点の第二種の利率) https://www.komei.or.jp/komeinews/p513599/</li>
+  <li id="s9">東京大学「3月満期(貸与終了)者の手続き」 https://www.u-tokyo.ac.jp/ja/students/welfare/h_02_01_01_08.html</li>
+  <li id="s10">民間サイトによる第二種奨学金の月別利率まとめ(2026年11月) https://finance-no1.com/bank-scholarship-interest.php</li>
+ </ol>
+ <p class="src">2026年11月26日時点で、上の資料と報道を検索結果の要約で照らして作りました。機構のページの原文はこの環境から開けていないため、締切・利率は必ず学校と機構の案内で確かめてください。</p>
+</section>
+<footer>毎日ひとつの小さな道具箱 · Day 039</footer>
+</div>
+<script>
+const $=s=>document.querySelector(s);
+const yen=n=>Math.round(n).toLocaleString('ja-JP')+'円';
+const man=n=>(n/10000).toLocaleString('ja-JP',{maximumFractionDigits:1})+'万円';
+function stamp(){const end=new Date(2027,2,31),now=new Date();const d=Math.ceil((end-now)/864e5);$('#stamp').textContent=d>0?`2027年3月の貸与終了まで あと${d}日(学校の締切はもっと前)`:'2027年3月の貸与は終わりました。変更はできません';}
+function blended(base,B,A){const rb=Math.min(base,3);const ra=rb+0.2;return (B+A)>0?(B*rb+A*ra)/(B+A):rb;}
+function pmt(P,r,n){const i=r/100/12;return i===0?P/n:P*i/(1-Math.pow(1+i,-n));}
+function run(P,rates,n){ // rates: array per 60-month block (base rate already blended)
+ let bal=P,paid=0,line=[],first=0;
+ for(let k=0;k<n;k+=60){const left=n-k;const r=rates[Math.min(Math.floor(k/60),rates.length-1)];const m=pmt(bal,r,left);if(k===0)first=m;const i=r/100/12;
+  for(let t=0;t<Math.min(60,left);t++){const int=bal*i;bal=bal+int-m;paid+=m;line.push(m);}}
+ return {first,paid,line};
+}
+function path(rv,mode,blocks){const a=[];let r=rv;for(let j=0;j<blocks;j++){if(j>0){if(mode==='cap')r=3;else r=r+Number(mode);}r=Math.max(0,Math.min(3,r));a.push(r);}return a;}
+function calc(){
+ const B=Math.max(0,+$('#b').value||0)*1e4,A=Math.max(0,+$('#a').value||0)*1e4,Y=Math.min(20,Math.max(1,Math.round(+$('#y').value||1)));
+ const rf=+$('#rf').value||0,rv=+$('#rv').value||0,P=B+A,n=Y*12,blocks=Math.ceil(n/60);
+ if(P<=0){$('#tbl').innerHTML='';return;}
+ const fx=run(P,[blended(rf,B,A)],n);
+ const modes=[['0','横ばい'],['0.5','毎回 +0.5%'],['-0.5','毎回 −0.5%'],['cap','次の見直しで上限3%']];
+ const res=modes.map(([m,l])=>{const bp=path(rv,m,blocks);return {m,l,bp,r:run(P,bp.map(x=>blended(x,B,A)),n)}});
+ const fint=fx.paid-P;
+ let h=`<tr class="fix"><td>固定方式(${blended(rf,B,A).toFixed(3)}%)</td><td>${yen(fx.first)}</td><td>${man(fint)}</td><td>${man(fx.paid)}</td><td>—</td></tr>`;
+ res.forEach(o=>{const d=fint-(o.r.paid-P);h+=`<tr class="var"><td>見直し・${o.l}<br><span class="sub">${o.bp.map(x=>x.toFixed(2)+'%').join(' → ')}</span></td><td>${yen(o.r.first)}</td><td>${man(o.r.paid-P)}</td><td>${man(o.r.paid)}</td><td class="${d>=0?'diff-plus':'diff-minus'}">${d>=0?'+':'−'}${man(Math.abs(d))}</td></tr>`});
+ $('#tbl').innerHTML=h;
+ const sel=res.find(o=>o.m===$('#sc').value);
+ $('#mf').textContent=yen(fx.first);$('#tf').textContent=`利息の合計 ${man(fint)}`;
+ $('#mv').textContent=yen(sel.r.first);$('#tv').textContent=`利息の合計 ${man(sel.r.paid-P)}(${sel.l})`;
+ const d=fint-(sel.r.paid-P);
+ let v=`選んだ金利の動き(${sel.l})では、${Y}年間の利息は見直し方式のほうが${man(Math.abs(d))}${d>=0?'少なく':'多く'}なります。`;
+ if(rf>=3)v+=' 固定を上限の3%で見込んでいるので、基本月額分は見直しの利息が固定を上回ることはありません。差が出るのは、見直しのたびに毎月の額が変わる点です。';
+ $('#verdict').textContent=v;
+ draw(fx.line,sel.r.line,n);
+}
+function draw(a,b,n){
+ const W=640,H=260,L=56,R=12,T=14,Bm=34;const mx=Math.max(...a,...b)*1.08,mn=Math.min(...a,...b)*0.85;
+ const x=i=>L+(W-L-R)*i/(n-1||1),y=v=>T+(H-T-Bm)*(1-(v-mn)/(mx-mn||1));
+ const pl=arr=>arr.map((v,i)=>(i?'L':'M')+x(i).toFixed(1)+' '+y(v).toFixed(1)).join(' ');
+ let g='';for(let k=0;k<=4;k++){const v=mn+(mx-mn)*k/4;g+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--rule)"/><text x="${L-6}" y="${y(v)+4}" text-anchor="end" font-size="11" fill="var(--sub)">${Math.round(v).toLocaleString()}</text>`;}
+ for(let yr=0;yr<=n/12;yr+=5){const i=Math.min(n-1,yr*12);g+=`<text x="${x(i)}" y="${H-12}" text-anchor="middle" font-size="11" fill="var(--sub)">${yr}年</text>`;}
+ g+=`<path d="${pl(a)}" fill="none" stroke="var(--fix)" stroke-width="2.5"/><path d="${pl(b)}" fill="none" stroke="var(--var)" stroke-width="2.5" stroke-dasharray="6 4"/>`;
+ $('#chart').innerHTML=g;
+}
+['#b','#a','#y','#rf','#rv','#sc'].forEach(s=>$(s).addEventListener('input',calc));
+const KEY='day039-chk';
+function loadChk(){let s=[];try{s=JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){}document.querySelectorAll('#chk input').forEach((c,i)=>{c.checked=!!s[i];c.addEventListener('change',()=>{const v=[...document.querySelectorAll('#chk input')].map(x=>x.checked);try{localStorage.setItem(KEY,JSON.stringify(v))}catch(e){}})});}
+stamp();calc();loadChk();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
