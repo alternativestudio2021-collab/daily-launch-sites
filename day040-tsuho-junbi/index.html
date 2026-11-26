@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>公益通報 12/1改正 小さな会社の見直し帳</title>
+<meta name="description" content="改正公益通報者保護法が2026年12月1日に施行されます。通報を理由にした解雇・懲戒への刑事罰、通報から1年以内の解雇・懲戒の推定、フリーランスの保護、通報者探索・通報妨害の禁止。300人以下の会社でも当てはまる部分を仕分け、施行前に見直す書類のチェック表、通報日から1年の早見、窓口の周知文の下書きを1枚にまとめます。">
+<link rel="canonical" href="https://alternativestudio2021-collab.github.io/daily-launch-sites/day040-tsuho-junbi/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="公益通報 12/1改正 小さな会社の見直し帳">
+<meta property="og:description" content="300人以下でも関係するのはどこか。誓約書・業務委託契約・懲戒の手順で先に見直すところと、窓口の周知文の下書き。">
+<meta property="og:url" content="https://alternativestudio2021-collab.github.io/daily-launch-sites/day040-tsuho-junbi/">
+<meta property="og:site_name" content="毎日ひとつの小さな道具箱">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPMincho:wght@400;700&family=BIZ+UDPGothic:wght@400;700&display=swap">
+<style>
+:root{--bg:#eceae4;--paper:#fbfaf6;--ink:#1d2230;--sub:#5a6070;--line:#cfccc2;--rule:#e2dfd6;--navy:#1f2f55;--navy2:#2b3f6e;--seal:#b8322a;--seal-bg:#f7e3df;--gold:#a57b1e;--ok:#1d6b45;--ok-bg:#e0f0e6;--warn:#7a5600;--warn-bg:#fbf0cf;--chip:#e9e6dc;
+ --f:"BIZ UDPGothic","Hiragino Sans","Noto Sans JP",sans-serif;--h:"BIZ UDPMincho","Hiragino Mincho ProN","Noto Serif JP",serif}
+@media (prefers-color-scheme:dark){:root{--bg:#12151c;--paper:#1a1e28;--ink:#e8e6df;--sub:#a5aab6;--line:#343a49;--rule:#262b37;--navy:#0e1830;--navy2:#18264a;--seal:#ff8a7c;--seal-bg:#3a1915;--gold:#e3bd5d;--ok:#84d8a9;--ok-bg:#15301f;--warn:#ffd77a;--warn-bg:#352a0d;--chip:#262b37}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);line-height:1.85;font-size:16px}
+a{color:var(--navy2)}
+@media (prefers-color-scheme:dark){a{color:#9fb6ff}}
+.wrap{max-width:880px;margin:0 auto;padding:0 16px 80px;display:grid;gap:22px}
+header.h{margin:0 -16px;padding:30px 20px 30px;color:#f4f2ec;background:var(--navy);border-bottom:6px double var(--gold);position:relative;overflow:hidden}
+header.h::before{content:"改正";position:absolute;right:18px;top:18px;width:74px;height:74px;border:3px solid #e2574c;color:#e2574c;border-radius:50%;display:grid;place-items:center;font-family:var(--h);font-weight:700;font-size:20px;transform:rotate(-12deg);opacity:.9}
+.belt{font-size:13px;letter-spacing:.12em;color:#e3c77a}
+header.h h1{font-family:var(--h);font-weight:700;font-size:clamp(25px,6vw,40px);line-height:1.4;margin:10px 90px 12px 0}
+header.h h1 small{display:block;font-size:.5em;color:#e3c77a;font-weight:400}
+header.h p{margin:0;max-width:40em;opacity:.93}
+.count{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.count div{border:1px solid rgba(244,242,236,.4);padding:6px 12px;font-size:13px;background:rgba(255,255,255,.05)}
+.count b{font-family:var(--h);font-size:28px;color:#fff;margin-right:4px}
+section.s{background:var(--paper);border:1px solid var(--line);padding:22px 20px;position:relative}
+section.s>h2{font-family:var(--h);font-size:22px;margin:0 0 6px;display:flex;gap:10px;align-items:baseline}
+section.s>h2 .n{font-family:var(--h);color:var(--seal);font-size:15px;border:1.5px solid var(--seal);padding:0 7px;border-radius:2px}
+.lead{color:var(--sub);margin:0 0 14px;font-size:15px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:620px){.grid2{grid-template-columns:1fr}}
+label{display:block;font-weight:700;font-size:14px;margin-bottom:4px}
+input[type=number],input[type=text],input[type=date],select{width:100%;font:inherit;padding:8px 10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:2px}
+.radios{display:flex;gap:8px;flex-wrap:wrap}
+.radios label{font-weight:400;border:1px solid var(--line);padding:5px 12px;cursor:pointer;background:var(--chip);margin:0}
+.radios input{margin-right:6px}
+.lanes{display:grid;gap:10px;margin-top:16px}
+.lane{border-left:6px solid var(--line);padding:10px 14px;background:var(--bg)}
+.lane h3{margin:0 0 4px;font-size:16px}
+.lane ul{margin:4px 0 0;padding-left:1.2em}
+.lane.all{border-color:var(--seal);background:var(--seal-bg)}
+.lane.must{border-color:var(--navy2)}
+.lane.try{border-color:var(--gold)}
+.lane.off{opacity:.55}
+.tag{display:inline-block;font-size:12px;padding:0 6px;margin-left:6px;border:1px solid currentColor;border-radius:2px;vertical-align:2px}
+.tag.a{color:var(--seal)}.tag.m{color:var(--navy2)}.tag.t{color:var(--gold)}
+@media (prefers-color-scheme:dark){.tag.m{color:#9fb6ff}}
+.chk{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.chk li{display:flex;gap:10px;align-items:flex-start;border-bottom:1px dashed var(--rule);padding:6px 0}
+.chk input{width:20px;height:20px;margin-top:4px;flex:none;accent-color:var(--seal)}
+.chk .w{font-size:13px;color:var(--sub);display:block}
+.chk li.done span.t{text-decoration:line-through;color:var(--sub)}
+.bar{height:8px;background:var(--rule);margin:10px 0 4px}
+.bar i{display:block;height:100%;background:var(--seal);width:0;transition:width .2s}
+.out{margin-top:14px;padding:14px;border:2px solid var(--navy2);background:var(--bg)}
+.out b.big{font-family:var(--h);font-size:24px}
+.note{font-size:13px;color:var(--sub)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:8px;text-align:left;vertical-align:top}
+th{background:var(--chip);font-weight:700}
+.scroll{overflow-x:auto}
+textarea{width:100%;min-height:230px;font:inherit;font-size:14px;line-height:1.7;padding:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+button.b{font:inherit;font-size:14px;padding:6px 14px;border:1px solid var(--navy2);background:var(--navy2);color:#fff;cursor:pointer;border-radius:2px}
+button.g{font:inherit;font-size:14px;padding:6px 14px;border:1px solid var(--line);background:var(--chip);color:var(--ink);cursor:pointer;border-radius:2px}
+.tabs{display:flex;gap:6px;margin:12px 0 8px;flex-wrap:wrap}
+.tabs button[aria-pressed=true]{background:var(--seal);border-color:var(--seal);color:#fff}
+details{border-top:1px solid var(--rule);padding:8px 0}
+details summary{cursor:pointer;font-weight:700}
+.src li{word-break:break-all;font-size:14px}
+.share{font-size:14px}
+.share button{font:inherit;font-size:14px;padding:3px 10px;border:1px solid var(--line);background:var(--chip);color:var(--ink);cursor:pointer}
+.disc{font-size:13px;color:var(--sub);border:1px dashed var(--line);padding:12px}
+footer{font-size:13px;color:var(--sub);text-align:center}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"従業員300人以下の会社にも改正公益通報者保護法は関係しますか","acceptedAnswer":{"@type":"Answer","text":"関係します。窓口づくり・従事者の指定・周知は300人以下では努力義務のままですが、通報を理由にした解雇・懲戒などの不利益な取扱い、正当な理由のない通報者の探索、通報をしない約束を求めるなどの通報妨害の禁止は、会社の規模を問わず適用されると解説されています。"}},
+{"@type":"Question","name":"フリーランスはどこまで保護の対象になりますか","acceptedAnswer":{"@type":"Answer","text":"事業者と業務委託の関係にあるフリーランスと、業務委託の関係が終わって1年以内のフリーランスが加わると解説されています。通報を理由にした契約の解除、発注量の削減、報酬の減額も不利益な取扱いになり得ます。"}},
+{"@type":"Question","name":"通報から1年以内の解雇・懲戒はどう扱われますか","acceptedAnswer":{"@type":"Answer","text":"通報から1年以内に行われた解雇・懲戒は、公益通報を理由とするものと推定されると解説されています。会社側が別の正当な理由を示す必要が出てきます。"}},
+{"@type":"Question","name":"罰則はどうなりますか","acceptedAnswer":{"@type":"Answer","text":"公益通報を理由に解雇・懲戒をした個人には6か月以下の拘禁刑または30万円以下の罰金、法人には3,000万円以下の罰金と解説されています。300人を超える事業者が従事者の指定義務に違反し、勧告・命令に従わない場合は30万円以下の罰金です。"}}
+]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<header class="h">
+ <div class="belt">2026年12月1日施行 ・ 中小企業・個人事業主向け</div>
+ <h1>公益通報 12/1改正<small>小さな会社の見直し帳</small></h1>
+ <p>通報を理由にした解雇・懲戒に刑事罰がつき、フリーランスも保護の対象に加わります。窓口づくりは300人以下なら努力義務のままですが、<strong>「探さない」「止めない」「不利益に扱わない」は会社の大きさに関係なく</strong>当てはまります。施行前に、誓約書や業務委託契約、懲戒の手順で先に見直すところを1枚にしました。</p>
+ <div class="count"><div><b id="days">–</b><span id="dayslabel">日で施行</span></div><div id="stamp">確認日 2026年11月27日</div></div>
+</header>
+
+<section class="s" id="lane">
+ <h2><span class="n">一</span>うちはどこまで当てはまるか</h2>
+ <p class="lead">常時使用する労働者の数(パート・アルバイトを含む)と、業務委託で仕事を頼んでいる相手がいるかを選ぶと、義務・努力義務・規模を問わない禁止に分けて表示します。</p>
+ <div class="grid2">
+  <div><label for="emp">常時使用する労働者の数</label><input type="number" id="emp" min="0" value="25" inputmode="numeric"></div>
+  <div><label>フリーランス・個人の外注先</label>
+   <div class="radios"><label><input type="radio" name="fl" value="y" checked>いる</label><label><input type="radio" name="fl" value="n">いない</label><label><input type="radio" name="fl" value="past">1年以内に終わった相手がいる</label></div></div>
+ </div>
+ <div class="lanes" id="lanes"></div>
+</section>
+
+<section class="s" id="check">
+ <h2><span class="n">二</span>12月1日までの見直し表</h2>
+ <p class="lead">チェックはこの端末の中だけに残ります。<span class="tag a">全社</span>は規模を問わず、<span class="tag m">301人以上</span>は義務(300人以下は努力義務)の項目です。</p>
+ <div class="bar"><i id="barI"></i></div><div class="note" id="barT"></div>
+ <ul class="chk" id="chk"></ul>
+ <p style="margin-top:12px"><button class="g" type="button" id="chkReset">チェックを消す</button> <button class="g" type="button" id="chkCopy">未完了の項目をコピー</button></p>
+</section>
+
+<section class="s" id="year">
+ <h2><span class="n">三</span>通報日から1年の早見</h2>
+ <p class="lead">解雇・懲戒を考える前に、その人が通報した日から1年以内かどうかを確かめます。1年以内なら、公益通報を理由とするものと推定されると解説されています。フリーランスとの契約解除・発注減・報酬減を考えるときにも使えます。</p>
+ <div class="grid2">
+  <div><label for="tday">通報した日(分かる範囲で)</label><input type="date" id="tday"></div>
+  <div><label for="aday">解雇・懲戒・契約解除を考えている日</label><input type="date" id="aday"></div>
+ </div>
+ <div class="out" id="yout">日付を入れると表示します。</div>
+ <p class="note">期間の数え方(初日を数えるか等)や、通報が「公益通報」に当たるかの判断は、ここでは行いません。迷うときは弁護士・社会保険労務士に相談してください。</p>
+</section>
+
+<section class="s" id="doc">
+ <h2><span class="n">四</span>窓口の周知文 下書き</h2>
+ <p class="lead">入れた内容で、社内掲示用と、外注先のフリーランスに送るメール用の2通を作ります。300人以下なら努力義務ですが、窓口があることを知らせておくと、社外に出る前に話してもらえる余地が増えます。</p>
+ <div class="grid2">
+  <div><label for="co">会社名・屋号</label><input type="text" id="co" value="株式会社〇〇"></div>
+  <div><label for="dept">窓口の担当(部署・役職)</label><input type="text" id="dept" value="総務部 内部通報窓口"></div>
+  <div><label for="mail">連絡先(メール・電話など)</label><input type="text" id="mail" value="tsuho@example.co.jp"></div>
+  <div><label for="ext">社外の窓口(弁護士事務所など。なければ空欄)</label><input type="text" id="ext" value=""></div>
+ </div>
+ <div class="tabs"><button class="g" type="button" data-t="in" aria-pressed="true">社内掲示用</button><button class="g" type="button" data-t="fl" aria-pressed="false">フリーランス向けメール</button></div>
+ <textarea id="draft" aria-label="周知文の下書き"></textarea>
+ <p><button class="b" type="button" id="dcopy">下書きをコピー</button> <span class="note" id="dmsg"></span></p>
+ <p class="note">下書きです。就業規則・内部通報規程の内容と合わせ、社内で確かめてから使ってください。</p>
+ <!-- PR枠: 外部通報窓口サービス・労務管理ソフト(提携コード受領後に、公式コードを改変せず「PR」表記付きで設置) -->
+</section>
+
+<section class="s" id="pen">
+ <h2><span class="n">五</span>変わる点と罰則</h2>
+ <div class="scroll"><table>
+  <tr><th>変わる点</th><th>中身(解説記事による)</th><th>対象</th></tr>
+  <tr><td>解雇・懲戒への刑事罰</td><td>公益通報を理由に解雇・懲戒をした個人(実質的に関わった人を含む)に6か月以下の拘禁刑または30万円以下の罰金。法人に3,000万円以下の罰金</td><td>全社</td></tr>
+  <tr><td>1年以内の推定</td><td>通報から1年以内の解雇・懲戒は、公益通報を理由とするものと推定</td><td>全社</td></tr>
+  <tr><td>フリーランスの保護</td><td>業務委託の関係にあるフリーランスと、関係が終わって1年以内のフリーランスを追加。契約解除・発注減・報酬減も不利益な取扱いになり得る</td><td>全社</td></tr>
+  <tr><td>通報妨害の禁止</td><td>正当な理由なく、通報しない約束を求めるなどして通報を妨げることを禁止。違反する合意は無効</td><td>全社</td></tr>
+  <tr><td>通報者探索の禁止</td><td>正当な理由なく、通報した人を特定しようとすることを禁止</td><td>全社</td></tr>
+  <tr><td>従事者指定の実効性</td><td>指定義務に違反し勧告に従わないと消費者庁が命令でき、命令違反は30万円以下の罰金</td><td>301人以上</td></tr>
+  <tr><td>体制整備・周知</td><td>窓口・従事者の指定・周知などの体制整備</td><td>301人以上は義務、300人以下は努力義務</td></tr>
+ </table></div>
+ <p class="note">従事者の守秘義務違反(30万円以下の罰金)は改正前からあります。条文の正確な表現は、消費者庁の公表資料と法律の本文で確かめてください。</p>
+</section>
+
+<section class="s" id="faq">
+ <h2><span class="n">六</span>よくある疑問</h2>
+ <details><summary>従業員が数人の会社や個人事業主にも関係しますか</summary><p>通報を理由にした解雇・懲戒、通報者の探索、通報の妨害の禁止は、規模を問わず当てはまると解説されています。人を雇っていなくても、フリーランスに仕事を頼んでいるなら、通報を理由にした契約の解除や発注減が問題になり得ます。</p></details>
+ <details><summary>入社時の誓約書や退職時の合意書に秘密保持の条項があります</summary><p>正当な理由なく通報しない約束を求めることは禁止され、それに当たる合意は無効とされます。一般的な秘密保持と、通報を妨げる書き方とをどう分けるかは書類ごとに違うので、文面は弁護士・社会保険労務士に見てもらうのが確実です。</p></details>
+ <details><summary>フリーランスへの発注を減らす予定があります</summary><p>理由が通報と関係ないことを、発注量の推移や取引上の理由として記録しておくと、後から説明しやすくなります。相手が通報をしてから1年以内かどうかは「三」の早見で確かめられます。</p></details>
+ <details><summary>300人以下なので窓口は作らなくてもいいですか</summary><p>体制整備は努力義務のままです。ただ、窓口がないと、困った人はいきなり行政機関や報道機関に向かうことがあります。担当者を1人決めて連絡先を知らせるだけでも、社内で先に話を聞ける余地が生まれます。</p></details>
+</section>
+
+<section class="s" id="src">
+ <h2><span class="n">七</span>出典と確認先</h2>
+ <p class="lead">この環境からは消費者庁のサイトを開けなかったため、内容は以下の法律事務所・専門メディアの解説で照合しています。最終確認は消費者庁の資料でお願いします。</p>
+ <ol class="src">
+  <li><a href="https://www.caa.go.jp/policies/policy/consumer_partnerships/whisleblower_protection_system/" target="_blank" rel="noopener">消費者庁 公益通報者保護制度(確認先)</a></li>
+  <li><a href="https://www.toben.or.jp/know/iinkai/koueki/column/post_26.html" target="_blank" rel="noopener">東京弁護士会 公益通報者保護法が改正されました</a></li>
+  <li><a href="https://prospire-law.com/articles_corporate/26062601/" target="_blank" rel="noopener">プロスパイア法律事務所 2026年12月施行 公益通報者保護法改正の概要</a></li>
+  <li><a href="https://houkaisei.jp/laws/koueki-tsuho-kaisei-2026/" target="_blank" rel="noopener">法改正ナビ 公益通報者保護法の改正(不利益取扱いへの刑事罰)</a></li>
+  <li><a href="https://compliance21.com/whistleblower-protection-act-2026-companies/" target="_blank" rel="noopener">改正公益通報者保護法 2026年12月施行、解雇・懲戒に刑事罰と推定規定</a></li>
+  <li><a href="https://mag.smarthr.jp/hr/labor/koueki-tsuhosha-hogohou/" target="_blank" rel="noopener">SmartHR Mag. 公益通報者保護法改正で企業が施行までにとるべき対応</a></li>
+  <li><a href="https://lawmirai.jp/column/5725/" target="_blank" rel="noopener">弁護士法人ひょうご 改正公益通報者保護法とは</a></li>
+  <li><a href="https://legal-gpt.com/whistleblower-sme-response/" target="_blank" rel="noopener">公益通報者保護法改正 300人以下の中小企業がやること</a></li>
+  <li><a href="https://roumu.com/archives/132373.html" target="_blank" rel="noopener">労務ドットコム 改正法に準拠したハンドブック等が公開</a></li>
+  <li><a href="https://www.issoh.co.jp/column/details/12539/" target="_blank" rel="noopener">内部通報制度の改正ポイント 2026年12月1日施行の公益通報者保護法と改正指針</a></li>
+  <li><a href="https://keiyaku-watch.jp/media/hourei/koekitsuhosyahogohou-2026/" target="_blank" rel="noopener">契約ウォッチ 公益通報者保護法 2026年改正</a></li>
+ </ol>
+</section>
+
+<p class="share">同じ立場の人に送る: <a href="https://twitter.com/intent/tweet?text=12/1%E3%81%8B%E3%82%89%E5%85%AC%E7%9B%8A%E9%80%9A%E5%A0%B1%E8%80%85%E4%BF%9D%E8%AD%B7%E6%B3%95%E3%81%8C%E5%A4%89%E3%82%8F%E3%82%8B%E3%80%82%E9%80%9A%E5%A0%B1%E3%82%92%E7%90%86%E7%94%B1%E3%81%AB%E3%81%97%E3%81%9F%E8%A7%A3%E9%9B%87%E3%83%BB%E6%87%B2%E6%88%92%E3%81%AB%E5%88%91%E4%BA%8B%E7%BD%B0%E3%80%81%E3%83%95%E3%83%AA%E3%83%BC%E3%83%A9%E3%83%B3%E3%82%B9%E3%82%82%E4%BF%9D%E8%AD%B7%E5%AF%BE%E8%B1%A1%E3%81%AB%E3%80%82%E5%B0%8F%E3%81%95%E3%81%AA%E4%BC%9A%E7%A4%BE%E3%81%8C%E5%85%88%E3%81%AB%E8%A6%8B%E7%9B%B4%E3%81%99%E3%81%A8%E3%81%93%E3%82%8D%E3%82%921%E6%9E%9A%E3%81%AB%E3%81%97%E3%81%9F&amp;url=https%3A%2F%2Falternativestudio2021-collab.github.io%2Fdaily-launch-sites%2Fday040-tsuho-junbi%2F" target="_blank" rel="noopener">Xで送る</a> · <a href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Falternativestudio2021-collab.github.io%2Fdaily-launch-sites%2Fday040-tsuho-junbi%2F" target="_blank" rel="noopener">LINEで送る</a> · <button type="button" id="cp">リンクをコピー</button></p>
+
+<p class="disc">このページは法律の解説記事をもとにした情報整理と下書きで、法律相談ではありません。個別の事案が公益通報に当たるか、処分や契約変更が許されるかの判断は、弁護士・社会保険労務士にご相談ください。消費者庁をはじめ、どの行政機関・団体とも関係はありません。入力した内容はこの端末の中だけで扱い、送信しません。</p>
+<footer><a href="../">毎日ひとつの小さな道具箱</a> · Day 40 · 2026年11月27日</footer>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+(function(){const t=new Date('2026-12-01T00:00:00+09:00'),n=new Date();const d=Math.ceil((t-n)/864e5);
+ if(d>0){$('days').textContent=d;$('dayslabel').textContent='日で施行(12/1)'}else{$('days').textContent='施行済';$('days').style.fontSize='20px';$('dayslabel').textContent='2026年12月1日から'}})();
+
+function lanes(){const e=Math.max(0,parseInt($('emp').value||'0',10));const fl=document.querySelector('input[name=fl]:checked').value;
+ const big=e>300;let h='';
+ h+=`<div class="lane all"><h3>規模を問わず当てはまる(${e}人でも)</h3><ul>
+ <li>公益通報を理由にした解雇・懲戒の禁止 → 個人に6か月以下の拘禁刑か30万円以下の罰金、法人に3,000万円以下の罰金</li>
+ <li>通報から1年以内の解雇・懲戒は、通報が理由と推定</li>
+ <li>正当な理由なく通報者を探すことの禁止</li>
+ <li>通報しない約束を求めるなど、通報を妨げることの禁止(その合意は無効)</li>
+ ${fl!=='n'?`<li><strong>フリーランス</strong>${fl==='past'?'(関係が終わって1年以内の相手も)':''}への、通報を理由にした契約解除・発注減・報酬減も不利益な取扱いになり得る</li>`:''}
+ </ul></div>`;
+ h+=`<div class="lane ${big?'must':'off'}"><h3>301人以上は義務${big?'(あなたの会社は該当)':'(該当しない)'}</h3><ul>
+ <li>窓口など内部通報の体制整備と、その周知</li><li>通報に対応する従事者の指定(違反し勧告に従わないと命令、命令違反は30万円以下の罰金)</li></ul></div>`;
+ h+=`<div class="lane ${big?'off':'try'}"><h3>300人以下は努力義務${big?'':'(あなたの会社は該当)'}</h3><ul>
+ <li>窓口・従事者・周知は努力義務のまま。担当者を1人決めて連絡先を知らせるだけでも始められる</li></ul></div>`;
+ $('lanes').innerHTML=h;store('t40_emp',String(e));store('t40_fl',fl);renderChk()}
+
+const ITEMS=[
+ {id:'c1',s:'a',t:'入社時の誓約書・就業規則・退職時の合意書に「通報しない」「外部に申告しない」と読める文言がないか見る',w:'正当な理由なく通報しない約束を求めることは禁止、その合意は無効'},
+ {id:'c2',s:'a',t:'業務委託契約・NDAのひな形に同じ文言がないか見る',w:'フリーランスが保護の対象に加わる',fl:1},
+ {id:'c3',s:'a',t:'管理職に「通報した人を探さない・聞き出さない」を1回伝える',w:'正当な理由のない探索は規模を問わず禁止'},
+ {id:'c4',s:'a',t:'解雇・懲戒の前に「通報から1年以内でないか」を確かめる手順を決める',w:'1年以内は通報が理由と推定される'},
+ {id:'c5',s:'a',t:'フリーランスとの契約解除・発注減・報酬減の前にも同じ確認をする',w:'関係が終わって1年以内の相手も対象',fl:1},
+ {id:'c6',s:'a',t:'処分や発注変更の理由を、日付つきで記録しておく習慣をつくる',w:'推定がはたらくと、会社側が別の理由を示す必要がある'},
+ {id:'c7',s:'a',t:'刑事罰(個人30万円以下・法人3,000万円以下の罰金など)を経営者と管理職で共有する',w:''},
+ {id:'c8',s:'m',t:'通報の窓口(社内・社外)を決める',w:'300人以下は努力義務'},
+ {id:'c9',s:'m',t:'通報に対応する従事者を書面で指定する',w:'301人以上は命令・罰則の対象になる'},
+ {id:'c10',s:'m',t:'窓口と使い方を従業員・役員に知らせる(「四」の下書き)',w:'取引のあるフリーランスにも知らせると行き違いが減る'},
+ {id:'c11',s:'m',t:'内部通報規程の「通報できる人」にフリーランスを加える',w:''}
+];
+function renderChk(){const fl=document.querySelector('input[name=fl]:checked').value;let st={};try{st=JSON.parse(store('t40_chk')||'{}')}catch(e){}
+ const list=ITEMS.filter(i=>!(i.fl&&fl==='n'));
+ $('chk').innerHTML=list.map(i=>`<li class="${st[i.id]?'done':''}"><input type="checkbox" id="${i.id}" ${st[i.id]?'checked':''}><label for="${i.id}" style="font-weight:400;margin:0"><span class="t">${i.t}</span><span class="tag ${i.s}">${i.s==='a'?'全社':'301人以上'}</span>${i.w?`<span class="w">${i.w}</span>`:''}</label></li>`).join('');
+ const done=list.filter(i=>st[i.id]).length;$('barI').style.width=(done/list.length*100)+'%';$('barT').textContent=`${list.length}項目中 ${done}項目 済み`;
+ list.forEach(i=>$(i.id).addEventListener('change',ev=>{st[i.id]=ev.target.checked;store('t40_chk',JSON.stringify(st));renderChk()}))}
+$('chkReset').onclick=()=>{store('t40_chk','{}');renderChk()};
+$('chkCopy').onclick=()=>{let st={};try{st=JSON.parse(store('t40_chk')||'{}')}catch(e){}const fl=document.querySelector('input[name=fl]:checked').value;
+ const t=ITEMS.filter(i=>!(i.fl&&fl==='n')&&!st[i.id]).map(i=>'□ '+i.t).join('\n');copy('公益通報 12/1改正 見直し(未完了)\n'+t,$('barT'))};
+
+function yearCalc(){const a=$('tday').value,b=$('aday').value;if(!a){$('yout').textContent='日付を入れると表示します。';return}
+ const t=new Date(a+'T00:00:00');const end=new Date(t);end.setFullYear(end.getFullYear()+1);
+ const f=d=>`${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日`;
+ let h=`通報日 ${f(t)} から1年 → <b class="big">${f(end)}</b> ごろまで`;
+ if(b){const x=new Date(b+'T00:00:00');const inside=x>=t&&x<end;const left=Math.ceil((end-x)/864e5);
+  h+=inside?`<p style="margin:8px 0 0;color:var(--seal);font-weight:700">考えている日(${f(x)})は1年の内側です。あと約${left}日。解雇・懲戒なら公益通報が理由と推定されます。別の理由と記録を整え、専門家に相談してから進めてください。</p>`:(x<t?`<p style="margin:8px 0 0">考えている日が通報日より前になっています。</p>`:`<p style="margin:8px 0 0;color:var(--ok);font-weight:700">考えている日(${f(x)})は1年の外です。推定ははたらきませんが、通報を理由にした不利益な取扱いの禁止そのものは続きます。</p>`)}
+ $('yout').innerHTML=h}
+['tday','aday'].forEach(i=>$(i).addEventListener('input',yearCalc));
+
+let tab='in';
+function draft(){const co=$('co').value||'当社',dp=$('dept').value||'内部通報窓口',ml=$('mail').value||'(連絡先)',ex=$('ext').value.trim();
+ let s;
+ if(tab==='in'){s=`【お知らせ】内部通報(公益通報)の窓口について
+
+${co}では、法令違反やそのおそれに気づいたときに相談・通報できる窓口を設けています。2026年12月1日から公益通報者保護法の改正が施行されるのに合わせ、あらためてお知らせします。
+
+■ 窓口
+ ${dp}
+ 連絡先:${ml}
+${ex?` 社外の窓口:${ex}\n`:''}
+■ 使える人
+ 従業員(パート・アルバイト・派遣を含む)、役員、退職した人、業務を委託しているフリーランスの方
+
+■ 約束すること
+ ・相談・通報した人を探したり、聞き出したりしません
+ ・相談・通報したことを理由に、解雇・懲戒・配置転換・契約の解除などの不利益な扱いをしません
+ ・相談・通報の内容と、した人の情報は、対応する担当者だけで扱います
+ ・匿名でも受け付けます
+
+■ 社外への通報
+ 行政機関などへの通報も、法律の要件を満たせば保護されます。社内の窓口を先に使うことを求めるものではありません。
+
+${co} ${new Date().getFullYear()}年${new Date().getMonth()+1}月`}
+ else{s=`件名:【${co}】内部通報窓口のご案内(業務委託先の皆さまへ)
+
+いつもお世話になっております。${co}です。
+
+2026年12月1日から改正公益通報者保護法が施行され、業務委託でお仕事をお願いしているフリーランスの方も、通報者として保護の対象に加わります。これに合わせ、当社の窓口をご案内します。
+
+■ 窓口:${dp}
+■ 連絡先:${ml}
+${ex?`■ 社外の窓口:${ex}\n`:''}
+当社の業務に関して法令違反やそのおそれに気づかれた場合は、こちらにご連絡ください。ご連絡いただいたことを理由に、契約の解除・発注量の削減・報酬の減額などの不利益な扱いはいたしません。ご連絡くださった方を探すことも、ご連絡の内容を担当者以外に広げることもしません。契約が終わってから1年以内の方も同じ扱いです。
+
+${co}`}
+ $('draft').value=s;['co','dept','mail','ext'].forEach(k=>store('t40_'+k,$(k).value))}
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{tab=b.dataset.t;document.querySelectorAll('.tabs button').forEach(x=>x.setAttribute('aria-pressed',x===b));draft()});
+['co','dept','mail','ext'].forEach(k=>{const v=store('t40_'+k);if(v!==null&&v!==undefined)$(k).value=v;$(k).addEventListener('input',draft)});
+$('dcopy').onclick=()=>copy($('draft').value,$('dmsg'));
+
+function copy(t,el){const done=()=>{if(el){const o=el.textContent;el.textContent='コピーしました';setTimeout(()=>{el.textContent=o},1600)}};
+ if(navigator.clipboard)navigator.clipboard.writeText(t).then(done,()=>{fallback(t);done()});else{fallback(t);done()}}
+function fallback(t){const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}a.remove()}
+$('cp').onclick=()=>copy(location.href.split('#')[0],null);
+
+(function init(){const e=store('t40_emp');if(e)$('emp').value=e;const f=store('t40_fl');if(f){const r=document.querySelector(`input[name=fl][value="${f}"]`);if(r)r.checked=true}
+ $('emp').addEventListener('input',lanes);document.querySelectorAll('input[name=fl]').forEach(r=>r.addEventListener('change',lanes));lanes();draft()})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59431ea6e48b47b49215d824ddbbe573"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
