@@ -92,7 +92,7 @@ footer{font-size:13px;color:var(--sub);text-align:center}
 <header class="h">
  <div class="belt">2026年12月1日施行 ・ 中小企業・個人事業主向け</div>
  <h1>公益通報 12/1改正<small>小さな会社の見直し帳</small></h1>
- <p>通報を理由にした解雇・懲戒に刑事罰がつき、フリーランスも保護の対象に加わります。窓口づくりは300人以下なら努力義務のままですが、<strong>「探さない」「止めない」「不利益に扱わない」は会社の大きさに関係なく</strong>当てはまります。施行前に、誓約書や業務委託契約、懲戒の手順で先に見直すところを1枚にしました。</p>
+ <p>通報を理由にした解雇・懲戒に刑事罰がつき、フリーランスも保護の対象に加わります。窓口づくりは300人以下なら努力義務のままですが、<strong>「探さない」「止めない」「不利益に扱わない」は会社の大きさに関係なく</strong>当てはまります。<span id="leadWhen">施行前に、誓約書や業務委託契約、懲戒の手順で先に見直すところを1枚にしました。</span></p>
  <div class="count"><div><b id="days">–</b><span id="dayslabel">日で施行</span></div><div id="stamp">確認日 2026年11月27日</div></div>
 </header>
 
@@ -108,7 +108,7 @@ footer{font-size:13px;color:var(--sub);text-align:center}
 </section>
 
 <section class="s" id="check">
- <h2><span class="n">二</span>12月1日までの見直し表</h2>
+ <h2><span class="n">二</span><span id="h2When">12月1日までの</span>見直し表</h2>
  <p class="lead">チェックはこの端末の中だけに残ります。<span class="tag a">全社</span>は規模を問わず、<span class="tag m">301人以上</span>は義務(300人以下は努力義務)の項目です。</p>
  <div class="bar"><i id="barI"></i></div><div class="note" id="barT"></div>
  <ul class="chk" id="chk"></ul>
@@ -197,7 +197,7 @@ footer{font-size:13px;color:var(--sub);text-align:center}
 const $=id=>document.getElementById(id);
 function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
 (function(){const t=new Date('2026-12-01T00:00:00+09:00'),n=new Date();const d=Math.ceil((t-n)/864e5);
- if(d>0){$('days').textContent=d;$('dayslabel').textContent='日で施行(12/1)'}else{$('days').textContent='施行済';$('days').style.fontSize='20px';$('dayslabel').textContent='2026年12月1日から'}})();
+ if(d>0){$('days').textContent=d;$('dayslabel').textContent='日で施行(12/1)'}else{$('days').textContent='施行済';$('days').style.fontSize='20px';$('dayslabel').textContent='2026年12月1日から';$('leadWhen').textContent='改正はもう始まっています。誓約書や業務委託契約、懲戒の手順に古い書き方が残っていないか、下の表で確かめられます。';$('h2When').textContent='施行後に残っていないかの'}})();
 
 function lanes(){const e=Math.max(0,parseInt($('emp').value||'0',10));const fl=document.querySelector('input[name=fl]:checked').value;
  const big=e>300;let h='';
